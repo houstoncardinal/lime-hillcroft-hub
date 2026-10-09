@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Update the domain here and in robots.txt if the site moves to a custom domain (see src/components/site/seo.ts). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/store.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/store.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/financing</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/financing"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/financiamiento"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/financing"/>
+    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/financing.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/financiamiento</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/financing"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/financiamiento"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/financing"/>
+    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/financing.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/shop</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/shop"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/tienda"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/shop"/>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/tienda</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/shop"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/tienda"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/shop"/>
+  </url>
+</urlset>

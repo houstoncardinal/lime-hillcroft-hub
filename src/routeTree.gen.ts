@@ -10,33 +10,235 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as FinancingRouteImport } from './routes/financing'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminAnalyticsRouteImport } from './routes/admin/analytics'
+import { Route as AdminEmployeesRouteImport } from './routes/admin/employees'
+import { Route as AdminInventoryRouteImport } from './routes/admin/inventory'
+import { Route as AdminPayrollRouteImport } from './routes/admin/payroll'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
+import { Route as AdminShopifyRouteImport } from './routes/admin/shopify'
+import { Route as AdminTimeClockRouteImport } from './routes/admin/time-clock'
+import { Route as EsIndexRouteImport } from './routes/es/index'
+import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
+import { Route as ShopIndexRouteImport } from './routes/shop/index'
+import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
+import { Route as EsTiendaIndexRouteImport } from './routes/es/tienda/index'
+import { Route as EsTiendaHandleRouteImport } from './routes/es/tienda/$handle'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancingRoute = FinancingRouteImport.update({
+  id: '/financing',
+  path: '/financing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEmployeesRoute = AdminEmployeesRouteImport.update({
+  id: '/employees',
+  path: '/employees',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminInventoryRoute = AdminInventoryRouteImport.update({
+  id: '/inventory',
+  path: '/inventory',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPayrollRoute = AdminPayrollRouteImport.update({
+  id: '/payroll',
+  path: '/payroll',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminShopifyRoute = AdminShopifyRouteImport.update({
+  id: '/shopify',
+  path: '/shopify',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminTimeClockRoute = AdminTimeClockRouteImport.update({
+  id: '/time-clock',
+  path: '/time-clock',
+  getParentRoute: () => AdminRoute,
+} as any)
+const EsIndexRoute = EsIndexRouteImport.update({
+  id: '/es/',
+  path: '/es/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsFinanciamientoRoute = EsFinanciamientoRouteImport.update({
+  id: '/es/financiamiento',
+  path: '/es/financiamiento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopIndexRoute = ShopIndexRouteImport.update({
+  id: '/shop/',
+  path: '/shop/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopHandleRoute = ShopHandleRouteImport.update({
+  id: '/shop/$handle',
+  path: '/shop/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsTiendaIndexRoute = EsTiendaIndexRouteImport.update({
+  id: '/es/tienda/',
+  path: '/es/tienda/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsTiendaHandleRoute = EsTiendaHandleRouteImport.update({
+  id: '/es/tienda/$handle',
+  path: '/es/tienda/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/financing': typeof FinancingRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/employees': typeof AdminEmployeesRoute
+  '/admin/inventory': typeof AdminInventoryRoute
+  '/admin/payroll': typeof AdminPayrollRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/shopify': typeof AdminShopifyRoute
+  '/admin/time-clock': typeof AdminTimeClockRoute
+  '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/shop/$handle': typeof ShopHandleRoute
+  '/admin/': typeof AdminIndexRoute
+  '/es/': typeof EsIndexRoute
+  '/shop/': typeof ShopIndexRoute
+  '/es/tienda/$handle': typeof EsTiendaHandleRoute
+  '/es/tienda/': typeof EsTiendaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/financing': typeof FinancingRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/employees': typeof AdminEmployeesRoute
+  '/admin/inventory': typeof AdminInventoryRoute
+  '/admin/payroll': typeof AdminPayrollRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/shopify': typeof AdminShopifyRoute
+  '/admin/time-clock': typeof AdminTimeClockRoute
+  '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/shop/$handle': typeof ShopHandleRoute
+  '/admin': typeof AdminIndexRoute
+  '/es': typeof EsIndexRoute
+  '/shop': typeof ShopIndexRoute
+  '/es/tienda/$handle': typeof EsTiendaHandleRoute
+  '/es/tienda': typeof EsTiendaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/financing': typeof FinancingRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/employees': typeof AdminEmployeesRoute
+  '/admin/inventory': typeof AdminInventoryRoute
+  '/admin/payroll': typeof AdminPayrollRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/shopify': typeof AdminShopifyRoute
+  '/admin/time-clock': typeof AdminTimeClockRoute
+  '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/shop/$handle': typeof ShopHandleRoute
+  '/admin/': typeof AdminIndexRoute
+  '/es/': typeof EsIndexRoute
+  '/shop/': typeof ShopIndexRoute
+  '/es/tienda/$handle': typeof EsTiendaHandleRoute
+  '/es/tienda/': typeof EsTiendaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/financing'
+    | '/admin/analytics'
+    | '/admin/employees'
+    | '/admin/inventory'
+    | '/admin/payroll'
+    | '/admin/settings'
+    | '/admin/shopify'
+    | '/admin/time-clock'
+    | '/es/financiamiento'
+    | '/shop/$handle'
+    | '/admin/'
+    | '/es/'
+    | '/shop/'
+    | '/es/tienda/$handle'
+    | '/es/tienda/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/financing'
+    | '/admin/analytics'
+    | '/admin/employees'
+    | '/admin/inventory'
+    | '/admin/payroll'
+    | '/admin/settings'
+    | '/admin/shopify'
+    | '/admin/time-clock'
+    | '/es/financiamiento'
+    | '/shop/$handle'
+    | '/admin'
+    | '/es'
+    | '/shop'
+    | '/es/tienda/$handle'
+    | '/es/tienda'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/financing'
+    | '/admin/analytics'
+    | '/admin/employees'
+    | '/admin/inventory'
+    | '/admin/payroll'
+    | '/admin/settings'
+    | '/admin/shopify'
+    | '/admin/time-clock'
+    | '/es/financiamiento'
+    | '/shop/$handle'
+    | '/admin/'
+    | '/es/'
+    | '/shop/'
+    | '/es/tienda/$handle'
+    | '/es/tienda/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
+  FinancingRoute: typeof FinancingRoute
+  EsFinanciamientoRoute: typeof EsFinanciamientoRoute
+  ShopHandleRoute: typeof ShopHandleRoute
+  EsIndexRoute: typeof EsIndexRoute
+  ShopIndexRoute: typeof ShopIndexRoute
+  EsTiendaHandleRoute: typeof EsTiendaHandleRoute
+  EsTiendaIndexRoute: typeof EsTiendaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +250,155 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financing': {
+      id: '/financing'
+      path: '/financing'
+      fullPath: '/financing'
+      preLoaderRoute: typeof FinancingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/analytics': {
+      id: '/admin/analytics'
+      path: '/analytics'
+      fullPath: '/admin/analytics'
+      preLoaderRoute: typeof AdminAnalyticsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/employees': {
+      id: '/admin/employees'
+      path: '/employees'
+      fullPath: '/admin/employees'
+      preLoaderRoute: typeof AdminEmployeesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/inventory': {
+      id: '/admin/inventory'
+      path: '/inventory'
+      fullPath: '/admin/inventory'
+      preLoaderRoute: typeof AdminInventoryRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/payroll': {
+      id: '/admin/payroll'
+      path: '/payroll'
+      fullPath: '/admin/payroll'
+      preLoaderRoute: typeof AdminPayrollRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/shopify': {
+      id: '/admin/shopify'
+      path: '/shopify'
+      fullPath: '/admin/shopify'
+      preLoaderRoute: typeof AdminShopifyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/time-clock': {
+      id: '/admin/time-clock'
+      path: '/time-clock'
+      fullPath: '/admin/time-clock'
+      preLoaderRoute: typeof AdminTimeClockRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/es/': {
+      id: '/es/'
+      path: '/es'
+      fullPath: '/es/'
+      preLoaderRoute: typeof EsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/financiamiento': {
+      id: '/es/financiamiento'
+      path: '/es/financiamiento'
+      fullPath: '/es/financiamiento'
+      preLoaderRoute: typeof EsFinanciamientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/': {
+      id: '/shop/'
+      path: '/shop'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof ShopIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$handle': {
+      id: '/shop/$handle'
+      path: '/shop/$handle'
+      fullPath: '/shop/$handle'
+      preLoaderRoute: typeof ShopHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/tienda/': {
+      id: '/es/tienda/'
+      path: '/es/tienda'
+      fullPath: '/es/tienda/'
+      preLoaderRoute: typeof EsTiendaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/tienda/$handle': {
+      id: '/es/tienda/$handle'
+      path: '/es/tienda/$handle'
+      fullPath: '/es/tienda/$handle'
+      preLoaderRoute: typeof EsTiendaHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminAnalyticsRoute: typeof AdminAnalyticsRoute
+  AdminEmployeesRoute: typeof AdminEmployeesRoute
+  AdminInventoryRoute: typeof AdminInventoryRoute
+  AdminPayrollRoute: typeof AdminPayrollRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminShopifyRoute: typeof AdminShopifyRoute
+  AdminTimeClockRoute: typeof AdminTimeClockRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAnalyticsRoute: AdminAnalyticsRoute,
+  AdminEmployeesRoute: AdminEmployeesRoute,
+  AdminInventoryRoute: AdminInventoryRoute,
+  AdminPayrollRoute: AdminPayrollRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminShopifyRoute: AdminShopifyRoute,
+  AdminTimeClockRoute: AdminTimeClockRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
+  FinancingRoute: FinancingRoute,
+  EsFinanciamientoRoute: EsFinanciamientoRoute,
+  ShopHandleRoute: ShopHandleRoute,
+  EsIndexRoute: EsIndexRoute,
+  ShopIndexRoute: ShopIndexRoute,
+  EsTiendaHandleRoute: EsTiendaHandleRoute,
+  EsTiendaIndexRoute: EsTiendaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

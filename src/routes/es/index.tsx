@@ -4,12 +4,12 @@ import { homeHead } from "@/components/pages/heads";
 import { HomePage } from "@/components/pages/home-page";
 import { getCatalog } from "@/shop/storefront";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/es/")({
   loader: () => getCatalog(),
-  head: () => homeHead("en"),
+  head: () => homeHead("es"),
   component: Home,
 });
 
 function Home() {
-  return <HomePage lang="en" catalog={Route.useLoaderData()} />;
+  return <HomePage lang="es" catalog={Route.useLoaderData()} />;
 }
