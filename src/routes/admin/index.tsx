@@ -8,6 +8,7 @@ import {
   DollarSign,
   MousePointerClick,
   Package,
+  ScanLine,
   Users,
 } from "lucide-react";
 
@@ -67,6 +68,11 @@ function Overview() {
         })}
         actions={
           <>
+            <a href="/admin/inventory?scan=1">
+              <Button>
+                <ScanLine className="h-4 w-4" /> Scan item
+              </Button>
+            </a>
             <Link to="/admin/time-clock">
               <Button>
                 <Clock className="h-4 w-4" /> Time clock

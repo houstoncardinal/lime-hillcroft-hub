@@ -15,6 +15,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { conversionFor, track } from "@/admin/tracker";
 import { THEME_INIT_SCRIPT } from "@/components/site/themes";
+import { syncTidio } from "@/components/site/tidio";
 
 function NotFoundComponent() {
   return (
@@ -134,6 +135,9 @@ function RootComponent() {
   // Website statistics for /admin/analytics: page views plus call/directions/language clicks.
   useEffect(() => {
     track("pageview", pathname);
+  }, [pathname]);
+  useEffect(() => {
+    syncTidio(pathname);
   }, [pathname]);
   useEffect(() => {
     const onClick = (e: MouseEvent) => {

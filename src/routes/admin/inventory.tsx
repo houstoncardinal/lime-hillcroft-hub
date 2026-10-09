@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import {
   AlertTriangle,
   Boxes,
@@ -20,6 +20,8 @@ import {
 import { toast } from "sonner";
 
 import { download, parseCsv, toCsv } from "@/admin/csv";
+import { ScannerModal, type NewProductDraft } from "@/admin/scanner/scanner";
+import { useHandheldScanner } from "@/admin/scanner/use-handheld";
 import { inventory, useAdminData, type ProductInput } from "@/admin/store";
 import {
   CATEGORIES,
@@ -77,6 +79,18 @@ function Inventory() {
   const [editing, setEditing] = useState<Product | "new" | null>(null);
   const [adjusting, setAdjusting] = useState<Product | null>(null);
   const [scanOpen, setScanOpen] = useState(false);
+  const [scanCode, setScanCode] = useState<string | null>(null);
+  const [draft, setDraft] = useState<NewProductDraft | null>(null);
+
+  const openScanner = (code: string | null = null) => {
+    setScanCode(code);
+    setScanOpen(true);
+  };
+  // Handheld scanners work anywhere on this page; /admin/inventory?scan=1 opens the camera.
+  useHandheldScanner((code) => openScanner(code), !scanOpen && !editing && !adjusting);
+  useEffect(() => {
+    if (new URLSearchParams(location.search).get("scan") === "1") openScanner();
+  }, []);
   const [history, setHistory] = useState<Product | null>(null);
   const [selected, setSelected] = useState<string[]>([]);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -190,8 +204,8 @@ function Inventory() {
         description="Every phone, console, laptop and accessory in the store. Adjust stock in one click, scan to find items, and keep Shopify in sync."
         actions={
           <>
-            <Button onClick={() => setScanOpen(true)}>
-              <ScanLine className="h-4 w-4" /> Quick adjust
+            <Button tone="primary" onClick={() => openScanner()}>
+              <ScanLine className="h-4 w-4" /> Scan
             </Button>
             <Button onClick={exportCsv}>
               <Download className="h-4 w-4" /> Export
@@ -210,7 +224,7 @@ function Inventory() {
                 e.target.value = "";
               }}
             />
-            <Button tone="primary" onClick={() => setEditing("new")}>
+            <Button onClick={() => setEditing("new")}>
               <Plus className="h-4 w-4" /> Add product
             </Button>
           </>
@@ -459,20 +473,32 @@ function Inventory() {
         <ProductEditor
           product={editing === "new" ? null : editing}
           sku={nextSku(products)}
-          onClose={() => setEditing(null)}
+          draft={editing === "new" ? draft : null}
+          onClose={() => {
+            setEditing(null);
+            setDraft(null);
+          }}
         />
       )}
       {adjusting && <AdjustModal product={adjusting} onClose={() => setAdjusting(null)} />}
-      {scanOpen && (
-        <ScanModal
-          products={products}
-          onPick={(p) => {
-            setScanOpen(false);
-            setAdjusting(p);
-          }}
-          onClose={() => setScanOpen(false)}
-        />
-      )}
+      <ScannerModal
+        open={scanOpen}
+        initialCode={scanCode}
+        onClose={() => setScanOpen(false)}
+        onCreate={(d) => {
+          setScanOpen(false);
+          setDraft(d);
+          setEditing("new");
+        }}
+        onEdit={(p) => {
+          setScanOpen(false);
+          setEditing(p);
+        }}
+        onAdjust={(p) => {
+          setScanOpen(false);
+          setAdjusting(p);
+        }}
+      />
       {history && <HistoryModal product={history} onClose={() => setHistory(null)} />}
     </>
   );
@@ -510,14 +536,16 @@ function nextSku(products: Product[]) {
 function ProductEditor({
   product,
   sku,
+  draft,
   onClose,
 }: {
   product: Product | null;
   sku: string;
+  draft: NewProductDraft | null;
   onClose: () => void;
 }) {
   const [form, setForm] = useState<ProductInput>(() =>
-    product ? { ...product } : { ...emptyProduct(), sku },
+    product ? { ...product } : { ...emptyProduct(), sku, ...(draft ?? {}) },
   );
   const set = <K extends keyof ProductInput>(k: K, v: ProductInput[K]) =>
     setForm((f) => ({ ...f, [k]: v }));
@@ -756,74 +784,6 @@ function AdjustModal({ product, onClose }: { product: Product; onClose: () => vo
           </Button>
         </div>
       </form>
-    </Modal>
-  );
-}
-
-function ScanModal({
-  products,
-  onPick,
-  onClose,
-}: {
-  products: Product[];
-  onPick: (p: Product) => void;
-  onClose: () => void;
-}) {
-  const [q, setQ] = useState("");
-  const term = q.trim().toLowerCase();
-  const matches = term
-    ? products
-        .filter((p) =>
-          [p.sku, p.barcode, p.name, p.brand].some((v) => v.toLowerCase().includes(term)),
-        )
-        .slice(0, 8)
-    : [];
-  return (
-    <Modal
-      open
-      onOpenChange={(o) => !o && onClose()}
-      title="Quick adjust"
-      description="Scan a barcode or type a SKU or name, then press Enter."
-    >
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const exact = products.find(
-            (p) => p.barcode === q.trim() || p.sku.toLowerCase() === term,
-          );
-          const pick = exact ?? matches[0];
-          if (pick) onPick(pick);
-          else toast.error("No product found");
-        }}
-      >
-        <div className="relative">
-          <ScanLine className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
-          <Input
-            autoFocus
-            className="h-12 pl-11 text-base"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Scan or search…"
-          />
-        </div>
-      </form>
-      <ul className="mt-2 space-y-1">
-        {matches.map((p) => (
-          <li key={p.id}>
-            <button
-              type="button"
-              onClick={() => onPick(p)}
-              className="flex w-full cursor-pointer items-center justify-between rounded-xl px-3 py-2.5 text-left transition hover:bg-white/8"
-            >
-              <span>
-                <span className="block text-sm font-medium">{p.name}</span>
-                <span className="block text-xs text-muted-foreground">{p.sku}</span>
-              </span>
-              <span className="tabular text-sm text-muted-foreground">{p.quantity} on hand</span>
-            </button>
-          </li>
-        ))}
-      </ul>
     </Modal>
   );
 }

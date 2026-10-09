@@ -3,6 +3,7 @@ import { useSyncExternalStore } from "react";
 import { readTrackedEvents } from "@/admin/tracker";
 import type {
   AdminData,
+  Camera,
   Employee,
   MovementReason,
   PayrollLine,
@@ -45,8 +46,32 @@ function empty(): AdminData {
     timeEntries: [],
     payrollRuns: [],
     events: [],
+    cameras: defaultCameras(),
     settings: { ...DEFAULT_SETTINGS },
   };
+}
+
+// Camera slots laid out for the store, waiting to be connected to the camera system.
+function defaultCameras(): Camera[] {
+  const slots: [string, Camera["zone"], Camera["placeholder"]][] = [
+    ["Front entrance", "Entrance", "storefront"],
+    ["Sales floor", "Sales floor", "counter"],
+    ["Accessory wall", "Sales floor", "case-wall"],
+    ["Display cases", "Display cases", "display"],
+    ["Register", "Register", "apple"],
+    ["Parking lot", "Parking lot", "plaza"],
+  ];
+  return slots.map(([name, zone, placeholder]) => ({
+    id: uid(),
+    name,
+    zone,
+    source: "none",
+    url: "",
+    deviceId: "",
+    refreshSeconds: 2,
+    enabled: true,
+    placeholder,
+  }));
 }
 
 let cache: AdminData | null = null;
@@ -168,6 +193,38 @@ export const inventory = {
       p.updatedAt = nowIso();
       if (p.shopifyVariantId && reason !== "Shopify sync") p.syncStatus = "pending";
       d.movements.unshift({ id: uid(), productId, delta, reason, note, by, at: nowIso() });
+    });
+  },
+  /** Attach a scanned barcode to an existing product. */
+  setBarcode(productId: string, barcode: string) {
+    update((d) => {
+      const p = d.products.find((x) => x.id === productId);
+      if (!p) return;
+      p.barcode = barcode;
+      p.updatedAt = nowIso();
+    });
+  },
+  /** Stock count: set each counted product to its counted quantity in one step. */
+  applyCounts(counts: Record<string, number>, by: string) {
+    update((d) => {
+      for (const [productId, counted] of Object.entries(counts)) {
+        const p = d.products.find((x) => x.id === productId);
+        if (!p) continue;
+        const delta = counted - p.quantity;
+        if (delta === 0) continue;
+        p.quantity = counted;
+        p.updatedAt = nowIso();
+        if (p.shopifyVariantId) p.syncStatus = "pending";
+        d.movements.unshift({
+          id: uid(),
+          productId,
+          delta,
+          reason: "Adjusted",
+          note: "Stock count (scanner)",
+          by,
+          at: nowIso(),
+        });
+      }
     });
   },
   remove(ids: string[]) {
@@ -349,6 +406,34 @@ export const payroll = {
   },
 };
 
+// ---------- Cameras ----------
+
+export type CameraInput = Omit<Camera, "id">;
+
+export const cameras = {
+  save(input: CameraInput & { id?: string }) {
+    update((d) => {
+      const existing = input.id ? d.cameras.find((c) => c.id === input.id) : undefined;
+      if (existing) Object.assign(existing, input);
+      else d.cameras.push({ ...input, id: uid() });
+    });
+  },
+  remove(id: string) {
+    update((d) => {
+      d.cameras = d.cameras.filter((c) => c.id !== id);
+    });
+  },
+  move(id: string, by: -1 | 1) {
+    update((d) => {
+      const i = d.cameras.findIndex((c) => c.id === id);
+      const j = i + by;
+      if (i < 0 || j < 0 || j >= d.cameras.length) return;
+      const [cam] = d.cameras.splice(i, 1);
+      if (cam) d.cameras.splice(j, 0, cam);
+    });
+  },
+};
+
 // ---------- Settings & data management ----------
 
 export const settings = {
@@ -366,14 +451,14 @@ export const settings = {
   async checkPasscode(passcode: string) {
     return (await hashSecret(passcode)) === load().settings.passcodeHash;
   },
-  /** Remove all sample records and start clean (keeps passcode and payroll rules). */
+  /** Remove all sample records and start clean (keeps passcode, payroll rules and cameras). */
   clearDemo() {
-    const s = load().settings;
-    commit({ ...empty(), settings: { ...s, demo: false } });
+    const { settings: s, cameras } = load();
+    commit({ ...empty(), cameras, settings: { ...s, demo: false } });
   },
   loadDemo() {
-    const s = load().settings;
-    commit(seedDemo({ ...empty(), settings: { ...s } }));
+    const { settings: s, cameras } = load();
+    commit(seedDemo({ ...empty(), cameras, settings: { ...s } }));
   },
   exportJson() {
     return JSON.stringify(load(), null, 2);

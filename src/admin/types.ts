@@ -137,6 +137,54 @@ export type AnalyticsEvent = {
   at: string;
 };
 
+export const CAMERA_SOURCES = [
+  "none",
+  "hls",
+  "webrtc",
+  "mjpeg",
+  "snapshot",
+  "embed",
+  "device",
+] as const;
+export type CameraSource = (typeof CAMERA_SOURCES)[number];
+
+export const CAMERA_ZONES = [
+  "Entrance",
+  "Sales floor",
+  "Display cases",
+  "Register",
+  "Repair bench",
+  "Stock room",
+  "Parking lot",
+] as const;
+export type CameraZone = (typeof CAMERA_ZONES)[number];
+
+/** Placeholder backdrops (store photos) shown while a camera isn't connected. */
+export const CAMERA_PLACEHOLDERS = [
+  "storefront",
+  "counter",
+  "case-wall",
+  "display",
+  "apple",
+  "plaza",
+] as const;
+export type CameraPlaceholder = (typeof CAMERA_PLACEHOLDERS)[number];
+
+export type Camera = {
+  id: string;
+  name: string;
+  zone: CameraZone;
+  source: CameraSource;
+  /** Stream, snapshot or embed URL (unused for "none" and "device"). */
+  url: string;
+  /** Browser camera to use when source is "device". */
+  deviceId: string;
+  /** Seconds between refreshes for "snapshot" sources. */
+  refreshSeconds: number;
+  enabled: boolean;
+  placeholder: CameraPlaceholder;
+};
+
 export type Settings = {
   storeName: string;
   /** SHA-256 hash of the dashboard passcode (local mode). */
@@ -157,5 +205,6 @@ export type AdminData = {
   timeEntries: TimeEntry[];
   payrollRuns: PayrollRun[];
   events: AnalyticsEvent[];
+  cameras: Camera[];
   settings: Settings;
 };

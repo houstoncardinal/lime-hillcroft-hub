@@ -261,6 +261,18 @@ html[data-palette="crimson"] {
 @utility animate-spin-slow {
   animation: spin-slow 80s linear infinite;
 }
+@keyframes scanline {
+  0%,
+  100% {
+    top: 4%;
+  }
+  50% {
+    top: 94%;
+  }
+}
+@utility animate-scanline {
+  animation: scanline 2.4s ease-in-out infinite;
+}
 @utility animate-rise {
   animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -271,7 +283,8 @@ html[data-palette="crimson"] {
   }
   .animate-marquee,
   .animate-spin-slow,
-  .animate-rise {
+  .animate-rise,
+  .animate-scanline {
     animation: none;
   }
 }

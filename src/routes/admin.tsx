@@ -3,6 +3,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import {
   BarChart3,
   Banknote,
+  Cctv,
   Clock,
   ExternalLink,
   LayoutDashboard,
@@ -38,6 +39,7 @@ const NAV = [
   { to: "/admin/time-clock", label: "Time clock", icon: Clock },
   { to: "/admin/employees", label: "Employees", icon: Users },
   { to: "/admin/payroll", label: "Payroll", icon: Banknote },
+  { to: "/admin/cameras", label: "Cameras", icon: Cctv },
   { to: "/admin/analytics", label: "Website stats", icon: BarChart3 },
   { to: "/admin/shopify", label: "Shopify", icon: ShoppingBag },
   { to: "/admin/settings", label: "Settings", icon: Settings },

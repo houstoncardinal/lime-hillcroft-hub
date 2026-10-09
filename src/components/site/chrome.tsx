@@ -203,7 +203,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
 
 export function MobileCallBar({ lang }: { lang: Lang }) {
   return (
-    <div className="fixed inset-x-3 bottom-3 z-50 flex gap-2 md:hidden">
+    <div className="fixed inset-x-3 bottom-3 z-50 flex gap-2 transition-[right] md:hidden in-[.has-chat]:right-[92px]">
       <a
         href={TEL}
         className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-semibold text-primary-foreground shadow-2xl"

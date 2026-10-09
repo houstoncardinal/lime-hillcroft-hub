@@ -14,6 +14,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as FinancingRouteImport } from './routes/financing'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin/analytics'
+import { Route as AdminCamerasRouteImport } from './routes/admin/cameras'
 import { Route as AdminEmployeesRouteImport } from './routes/admin/employees'
 import { Route as AdminInventoryRouteImport } from './routes/admin/inventory'
 import { Route as AdminPayrollRouteImport } from './routes/admin/payroll'
@@ -50,6 +51,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
   id: '/analytics',
   path: '/analytics',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCamerasRoute = AdminCamerasRouteImport.update({
+  id: '/cameras',
+  path: '/cameras',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminEmployeesRoute = AdminEmployeesRouteImport.update({
@@ -118,6 +124,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteWithChildren
   '/financing': typeof FinancingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/cameras': typeof AdminCamerasRoute
   '/admin/employees': typeof AdminEmployeesRoute
   '/admin/inventory': typeof AdminInventoryRoute
   '/admin/payroll': typeof AdminPayrollRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/financing': typeof FinancingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/cameras': typeof AdminCamerasRoute
   '/admin/employees': typeof AdminEmployeesRoute
   '/admin/inventory': typeof AdminInventoryRoute
   '/admin/payroll': typeof AdminPayrollRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRouteWithChildren
   '/financing': typeof FinancingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/cameras': typeof AdminCamerasRoute
   '/admin/employees': typeof AdminEmployeesRoute
   '/admin/inventory': typeof AdminInventoryRoute
   '/admin/payroll': typeof AdminPayrollRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/financing'
     | '/admin/analytics'
+    | '/admin/cameras'
     | '/admin/employees'
     | '/admin/inventory'
     | '/admin/payroll'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/'
     | '/financing'
     | '/admin/analytics'
+    | '/admin/cameras'
     | '/admin/employees'
     | '/admin/inventory'
     | '/admin/payroll'
@@ -214,6 +225,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/financing'
     | '/admin/analytics'
+    | '/admin/cameras'
     | '/admin/employees'
     | '/admin/inventory'
     | '/admin/payroll'
@@ -276,6 +288,13 @@ declare module '@tanstack/react-router' {
       path: '/analytics'
       fullPath: '/admin/analytics'
       preLoaderRoute: typeof AdminAnalyticsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/cameras': {
+      id: '/admin/cameras'
+      path: '/cameras'
+      fullPath: '/admin/cameras'
+      preLoaderRoute: typeof AdminCamerasRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/employees': {
@@ -367,6 +386,7 @@ declare module '@tanstack/react-router' {
 
 interface AdminRouteChildren {
   AdminAnalyticsRoute: typeof AdminAnalyticsRoute
+  AdminCamerasRoute: typeof AdminCamerasRoute
   AdminEmployeesRoute: typeof AdminEmployeesRoute
   AdminInventoryRoute: typeof AdminInventoryRoute
   AdminPayrollRoute: typeof AdminPayrollRoute
@@ -378,6 +398,7 @@ interface AdminRouteChildren {
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminAnalyticsRoute: AdminAnalyticsRoute,
+  AdminCamerasRoute: AdminCamerasRoute,
   AdminEmployeesRoute: AdminEmployeesRoute,
   AdminInventoryRoute: AdminInventoryRoute,
   AdminPayrollRoute: AdminPayrollRoute,
