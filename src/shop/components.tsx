@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Loader2, Minus, Phone, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
+import { Money } from "@/components/intl/money";
 import { PHONE, TEL } from "@/components/site/business";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { cart, cartCount, cartSubtotal, money, useCart } from "@/shop/cart";
@@ -64,7 +65,9 @@ export function Price({ product, lang }: { product: ShopProduct; lang: Lang }) {
   return (
     <span className="tabular-nums">
       {varies && <span className="mr-1 text-sm font-normal text-muted-foreground">{t.from}</span>}
-      <span className="font-semibold">{money(min)}</span>
+      <span className="font-semibold">
+        <Money usd={min / 100} />
+      </span>
       {compare && compare > min && (
         <span className="ml-2 text-sm text-muted-foreground line-through">{money(compare)}</span>
       )}
@@ -245,7 +248,9 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                             <p className="text-sm text-muted-foreground">{l.variantTitle}</p>
                           )}
                         </div>
-                        <p className="tabular-nums font-semibold">{money(l.price * l.quantity)}</p>
+                        <p className="tabular-nums font-semibold">
+                          <Money usd={(l.price * l.quantity) / 100} />
+                        </p>
                       </div>
                       <div className="mt-auto flex items-center justify-between pt-3">
                         <div className="flex items-center rounded-full border">
@@ -285,7 +290,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 <div className="flex items-baseline justify-between">
                   <span className="text-muted-foreground">{t.cart.subtotal}</span>
                   <span className="tabular-nums font-display text-2xl font-semibold">
-                    {money(cartSubtotal(state))}
+                    <Money usd={cartSubtotal(state) / 100} />
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>

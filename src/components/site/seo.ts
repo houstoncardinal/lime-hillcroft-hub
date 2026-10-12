@@ -12,8 +12,10 @@ export const absoluteUrl = (path: string) =>
 // English and Spanish versions of each page, used for hreflang and the language switcher.
 export const ALTERNATES = {
   home: { en: "/", es: "/es" },
-  financing: { en: "/financing", es: "/es/financiamiento" },
+  leasing: { en: "/leasing", es: "/es/arrendamiento" },
   shop: { en: "/shop", es: "/es/tienda" },
+  areas: { en: "/areas", es: "/es/zonas" },
+  guides: { en: "/guides", es: "/es/guias" },
 } as const;
 
 /** English and Spanish paths of one page. */
@@ -31,6 +33,7 @@ export function pageHead({
   image,
   imageAlt,
   jsonLd,
+  noindex = false,
 }: {
   paths: Paths;
   lang: Lang;
@@ -39,6 +42,8 @@ export function pageHead({
   image: string;
   imageAlt: string;
   jsonLd: object;
+  /** Keep a page out of search results (e.g. preview products with placeholder prices). */
+  noindex?: boolean;
 }) {
   const url = absoluteUrl(alt[lang]);
   const img = absoluteUrl(image);
@@ -46,7 +51,13 @@ export function pageHead({
     meta: [
       { title },
       { name: "description", content: description },
-      { name: "robots", content: "index, follow, max-image-preview:large" },
+      // Let Google (including AI Overviews) quote pages in full and show large images.
+      {
+        name: "robots",
+        content: noindex
+          ? "noindex, follow"
+          : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
       { name: "geo.region", content: "US-TX" },
       { name: "geo.placename", content: "Houston" },
       { name: "geo.position", content: "29.7262272;-95.5014118" },

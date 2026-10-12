@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { MoneyText } from "@/components/intl/money";
 import { useMemo, useState } from "react";
 import { ArrowRight, MapPin, Phone, Search, Sparkles, Store } from "lucide-react";
 
@@ -26,7 +27,10 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
     const list = catalog.products.filter(
       (p) =>
         (category === "all" || p.category === category) &&
-        (!q || `${p.title} ${p.vendor} ${t.categories[p.category]}`.toLowerCase().includes(q)),
+        (!q ||
+          `${p.title} ${p.vendor} ${(<MoneyText text={t.categories[p.category]} />)}`
+            .toLowerCase()
+            .includes(q)),
     );
     if (sort === "price-asc") return [...list].sort((a, b) => minPrice(a) - minPrice(b));
     if (sort === "price-desc") return [...list].sort((a, b) => minPrice(b) - minPrice(a));
@@ -52,16 +56,18 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         <div className="mx-auto max-w-7xl px-5 pb-14 pt-32 md:pb-20 md:pt-40">
           <h1>
             <span className="eyebrow flex items-center gap-3 text-primary">
-              <span className="h-px w-8 bg-primary" /> {t.hero.kicker}
+              <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
             </span>
             <span className="mt-6 block max-w-4xl text-[clamp(2.75rem,6.5vw,5.5rem)] font-semibold leading-[0.95]">
-              {t.hero.title[0]} <span className="text-primary">{t.hero.title[1]}</span>
+              {<MoneyText text={t.hero.title[0]} />}{" "}
+              <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/70">{t.hero.body}</p>
+          <p className="mt-6 max-w-xl text-lg text-white/70">{<MoneyText text={t.hero.body} />}</p>
           {catalog.source === "preview" && (
             <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-white/75">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> {t.hero.preview}
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />{" "}
+              {<MoneyText text={t.hero.preview} />}
             </p>
           )}
           <div className="relative mt-10 max-w-xl">
@@ -93,12 +99,12 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   category === c ? "border-ink bg-ink text-white" : "bg-card hover:border-ink/40",
                 )}
               >
-                {t.categories[c]}
+                {<MoneyText text={t.categories[c]} />}
               </button>
             ))}
           </div>
           <label className="hidden shrink-0 items-center gap-2 text-sm text-muted-foreground md:flex">
-            {t.sort.label}
+            {<MoneyText text={t.sort.label} />}
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as Sort)}
@@ -106,7 +112,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             >
               {(["featured", "price-asc", "price-desc", "name"] as const).map((s) => (
                 <option key={s} value={s}>
-                  {t.sort[s]}
+                  {<MoneyText text={t.sort[s]} />}
                 </option>
               ))}
             </select>
@@ -116,11 +122,11 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       {/* Grid */}
       <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
-        <h2 className="sr-only">{t.categories[category]}</h2>
+        <h2 className="sr-only">{<MoneyText text={t.categories[category]} />}</h2>
         <p className="mb-8 text-sm text-muted-foreground">{t.results(products.length)}</p>
         {products.length === 0 ? (
           <div className="rounded-3xl border border-dashed py-20 text-center">
-            <p className="text-muted-foreground">{t.empty}</p>
+            <p className="text-muted-foreground">{<MoneyText text={t.empty} />}</p>
             <button
               type="button"
               onClick={() => {
@@ -129,7 +135,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               }}
               className="mt-4 cursor-pointer rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white"
             >
-              {t.clear}
+              {<MoneyText text={t.clear} />}
             </button>
           </div>
         ) : (
@@ -141,7 +147,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         )}
       </section>
 
-      {/* Trust + financing */}
+      {/* Trust + leasing */}
       <section className="mx-auto max-w-7xl px-5 pb-24">
         <div className="grid gap-4 md:grid-cols-4">
           {t.trust.map(([title, body], i) => {
@@ -149,21 +155,21 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             return (
               <div key={title} className="rounded-3xl border bg-card p-6">
                 <Icon className="h-5 w-5 text-primary" />
-                <p className="mt-4 font-semibold">{title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+                <p className="mt-4 font-semibold">{<MoneyText text={title} />}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{<MoneyText text={body} />}</p>
               </div>
             );
           })}
           <Link
-            to={ALTERNATES.financing[lang]}
+            to={ALTERNATES.leasing[lang]}
             className="group flex flex-col justify-between rounded-3xl bg-ink p-6 text-white"
           >
             <div>
-              <p className="font-semibold">{t.financing.title}</p>
-              <p className="mt-1 text-sm text-white/65">{t.financing.body}</p>
+              <p className="font-semibold">{<MoneyText text={t.leasing.title} />}</p>
+              <p className="mt-1 text-sm text-white/65">{<MoneyText text={t.leasing.body} />}</p>
             </div>
             <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-              {t.financing.cta}
+              {<MoneyText text={t.leasing.cta} />}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </span>
           </Link>

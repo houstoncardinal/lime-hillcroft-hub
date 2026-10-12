@@ -1,16 +1,16 @@
 import { PHONE, STREET } from "@/components/site/business";
 
-// All visible text on the financing landing page, in English and Spanish. Keep both in sync.
+// All visible text on the leasing landing page, in English and Spanish. Keep both in sync.
 const en = {
   meta: {
-    title: "PS5, Xbox & Laptop Financing, No Credit Needed | TIC Wireless",
+    title: "PS5, Xbox & Laptop Leasing, No Credit Needed | TIC Wireless",
     description:
-      "PS5, Xbox, Switch 2, MacBook, laptop & phone financing in Houston. Lease-to-own, no credit needed, from $40 down. TIC Wireless, 3640 Hillcroft St.",
+      "PS5, Xbox, Switch 2, MacBook, laptop & phone leasing in Houston. Lease-to-own, no credit needed, from $40 down. TIC Wireless, 3640 Hillcroft St.",
     imageAlt: "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Houston",
-    breadcrumb: ["Home", "Financing"],
+    breadcrumb: ["Home", "Leasing"],
   },
   hero: {
-    kicker: "Financing & lease-to-own · Houston",
+    kicker: "Leasing · lease-to-own · Houston",
     title: ["Play now.", "Pay over time."],
     body: [
       "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or the latest phone today — ",
@@ -122,19 +122,19 @@ const en = {
   },
   faq: {
     kicker: "Questions",
-    title: "Financing, explained.",
+    title: "Leasing, explained.",
     items: [
       {
         q: "Can I get a PS5 or Xbox with bad credit?",
         a: "Yes. We offer lease-to-own options where no credit is needed, so bad credit isn't a deal-breaker. Approval isn't guaranteed, but it takes just a few minutes in store to find out.",
       },
       {
-        q: "Can I finance a laptop or MacBook with no credit?",
+        q: "Can I lease a laptop or MacBook with no credit?",
         a: "Yes. Lease-to-own works on laptops, MacBooks and iPads as well as phones and consoles. Stop by or call and we'll check what's in stock.",
       },
       {
-        q: "What's the difference between financing and lease-to-own?",
-        a: "Financing is a loan you pay back over time. Lease-to-own means you lease the item and make regular payments; once the plan is complete — or you buy it out early — it's yours. Lease-to-own isn't a loan, and the total cost to own can be more than the cash price. We'll walk you through the exact terms before you sign.",
+        q: "What's the difference between leasing and a loan?",
+        a: "A loan is money you borrow and pay back over time. Leasing works differently: Lease-to-own means you lease the item and make regular payments; once the plan is complete — or you buy it out early — it's yours. Lease-to-own isn't a loan, and the total cost to own can be more than the cash price. We'll walk you through the exact terms before you sign.",
       },
       {
         q: "How much do I pay upfront?",
@@ -160,18 +160,18 @@ const en = {
     directions: "Get directions",
   },
   disclaimer:
-    "Financing and lease-to-own options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own may be more than the retail price. Down payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
+    "Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own may be more than the retail price. Down payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
 };
 
-export type FinancingCopy = typeof en;
+export type LeasingCopy = typeof en;
 
-const es: FinancingCopy = {
+const es: LeasingCopy = {
   meta: {
     title: "PS5, Xbox y Laptops a Pagos Sin Crédito | TIC Wireless Houston",
     description:
       "PS5, Xbox, Switch 2, MacBook, laptops y celulares a pagos en Houston. Sin necesidad de crédito, desde $40 de enganche. TIC Wireless, 3640 Hillcroft St.",
     imageAlt: "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Houston",
-    breadcrumb: ["Inicio", "Financiamiento"],
+    breadcrumb: ["Inicio", "Arrendamiento"],
   },
   hero: {
     kicker: "A pagos con opción a compra · Houston",
@@ -295,7 +295,7 @@ const es: FinancingCopy = {
   },
   faq: {
     kicker: "Preguntas",
-    title: "El financiamiento, explicado.",
+    title: "El arrendamiento, explicado.",
     items: [
       {
         q: "¿Puedo sacar un PS5 o Xbox a pagos con mal crédito?",
@@ -306,8 +306,8 @@ const es: FinancingCopy = {
         a: "Sí. El arrendamiento con opción a compra aplica a laptops, MacBook y iPad además de celulares y consolas. Ven o llámanos y revisamos qué tenemos disponible.",
       },
       {
-        q: "¿Cuál es la diferencia entre financiamiento y arrendamiento con opción a compra?",
-        a: "El financiamiento es un préstamo que pagas con el tiempo. En el arrendamiento con opción a compra rentas el equipo y haces pagos regulares; al terminar el plan — o si lo liquidas antes — es tuyo. No es un préstamo, y el costo total puede ser mayor que el precio de contado. Te explicamos los términos exactos antes de firmar.",
+        q: "¿Cuál es la diferencia entre el arrendamiento y un préstamo?",
+        a: "Un préstamo es dinero que pides y pagas con el tiempo. El arrendamiento funciona distinto: En el arrendamiento con opción a compra rentas el equipo y haces pagos regulares; al terminar el plan — o si lo liquidas antes — es tuyo. No es un préstamo, y el costo total puede ser mayor que el precio de contado. Te explicamos los términos exactos antes de firmar.",
       },
       {
         q: "¿Cuánto doy de enganche?",
@@ -333,7 +333,7 @@ const es: FinancingCopy = {
     directions: "Cómo llegar",
   },
   disclaimer:
-    "El financiamiento y el arrendamiento con opción a compra son ofrecidos por compañías asociadas y están sujetos a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total puede ser mayor que el precio de contado. El enganche, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
+    "El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total puede ser mayor que el precio de contado. El enganche, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
 };
 
-export const FINANCING_COPY = { en, es };
+export const LEASING_COPY = { en, es };

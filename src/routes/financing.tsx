@@ -1,9 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { FinancingPage } from "@/components/pages/financing-page";
-import { financingHead } from "@/components/pages/heads";
-
+// Old address: the page is now /leasing. Permanent redirect keeps shared links and rankings.
 export const Route = createFileRoute("/financing")({
-  head: () => financingHead("en"),
-  component: () => <FinancingPage lang="en" />,
+  beforeLoad: () => {
+    throw redirect({ to: "/leasing", statusCode: 301 });
+  },
 });

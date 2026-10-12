@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as FinancingRouteImport } from './routes/financing'
+import { Route as LeasingRouteImport } from './routes/leasing'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin/analytics'
 import { Route as AdminCamerasRouteImport } from './routes/admin/cameras'
@@ -21,16 +23,30 @@ import { Route as AdminPayrollRouteImport } from './routes/admin/payroll'
 import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
 import { Route as AdminShopifyRouteImport } from './routes/admin/shopify'
 import { Route as AdminTimeClockRouteImport } from './routes/admin/time-clock'
+import { Route as AreasIndexRouteImport } from './routes/areas/index'
+import { Route as AreasSlugRouteImport } from './routes/areas/$slug'
 import { Route as EsIndexRouteImport } from './routes/es/index'
+import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
+import { Route as GuidesIndexRouteImport } from './routes/guides/index'
+import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
+import { Route as EsGuiasIndexRouteImport } from './routes/es/guias/index'
+import { Route as EsGuiasSlugRouteImport } from './routes/es/guias/$slug'
 import { Route as EsTiendaIndexRouteImport } from './routes/es/tienda/index'
 import { Route as EsTiendaHandleRouteImport } from './routes/es/tienda/$handle'
+import { Route as EsZonasIndexRouteImport } from './routes/es/zonas/index'
+import { Route as EsZonasSlugRouteImport } from './routes/es/zonas/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangRoute = LangRouteImport.update({
+  id: '/$lang',
+  path: '/$lang',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRoute = AdminRouteImport.update({
@@ -41,6 +57,11 @@ const AdminRoute = AdminRouteImport.update({
 const FinancingRoute = FinancingRouteImport.update({
   id: '/financing',
   path: '/financing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeasingRoute = LeasingRouteImport.update({
+  id: '/leasing',
+  path: '/leasing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -88,14 +109,39 @@ const AdminTimeClockRoute = AdminTimeClockRouteImport.update({
   path: '/time-clock',
   getParentRoute: () => AdminRoute,
 } as any)
+const AreasIndexRoute = AreasIndexRouteImport.update({
+  id: '/areas/',
+  path: '/areas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasSlugRoute = AreasSlugRouteImport.update({
+  id: '/areas/$slug',
+  path: '/areas/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsIndexRoute = EsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsArrendamientoRoute = EsArrendamientoRouteImport.update({
+  id: '/es/arrendamiento',
+  path: '/es/arrendamiento',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsFinanciamientoRoute = EsFinanciamientoRouteImport.update({
   id: '/es/financiamiento',
   path: '/es/financiamiento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesIndexRoute = GuidesIndexRouteImport.update({
+  id: '/guides/',
+  path: '/guides/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesSlugRoute = GuidesSlugRouteImport.update({
+  id: '/guides/$slug',
+  path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopIndexRoute = ShopIndexRouteImport.update({
@@ -108,6 +154,16 @@ const ShopHandleRoute = ShopHandleRouteImport.update({
   path: '/shop/$handle',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsGuiasIndexRoute = EsGuiasIndexRouteImport.update({
+  id: '/es/guias/',
+  path: '/es/guias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsGuiasSlugRoute = EsGuiasSlugRouteImport.update({
+  id: '/es/guias/$slug',
+  path: '/es/guias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsTiendaIndexRoute = EsTiendaIndexRouteImport.update({
   id: '/es/tienda/',
   path: '/es/tienda/',
@@ -118,11 +174,23 @@ const EsTiendaHandleRoute = EsTiendaHandleRouteImport.update({
   path: '/es/tienda/$handle',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsZonasIndexRoute = EsZonasIndexRouteImport.update({
+  id: '/es/zonas/',
+  path: '/es/zonas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsZonasSlugRoute = EsZonasSlugRouteImport.update({
+  id: '/es/zonas/$slug',
+  path: '/es/zonas/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRoute
   '/admin': typeof AdminRouteWithChildren
   '/financing': typeof FinancingRoute
+  '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
   '/admin/employees': typeof AdminEmployeesRoute
@@ -131,17 +199,28 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/shopify': typeof AdminShopifyRoute
   '/admin/time-clock': typeof AdminTimeClockRoute
+  '/areas/$slug': typeof AreasSlugRoute
+  '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/admin/': typeof AdminIndexRoute
+  '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
+  '/guides/': typeof GuidesIndexRoute
   '/shop/': typeof ShopIndexRoute
+  '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
+  '/es/zonas/$slug': typeof EsZonasSlugRoute
+  '/es/guias/': typeof EsGuiasIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
+  '/es/zonas/': typeof EsZonasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRoute
   '/financing': typeof FinancingRoute
+  '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
   '/admin/employees': typeof AdminEmployeesRoute
@@ -150,19 +229,30 @@ export interface FileRoutesByTo {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/shopify': typeof AdminShopifyRoute
   '/admin/time-clock': typeof AdminTimeClockRoute
+  '/areas/$slug': typeof AreasSlugRoute
+  '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/admin': typeof AdminIndexRoute
+  '/areas': typeof AreasIndexRoute
   '/es': typeof EsIndexRoute
+  '/guides': typeof GuidesIndexRoute
   '/shop': typeof ShopIndexRoute
+  '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
+  '/es/zonas/$slug': typeof EsZonasSlugRoute
+  '/es/guias': typeof EsGuiasIndexRoute
   '/es/tienda': typeof EsTiendaIndexRoute
+  '/es/zonas': typeof EsZonasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$lang': typeof LangRoute
   '/admin': typeof AdminRouteWithChildren
   '/financing': typeof FinancingRoute
+  '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
   '/admin/employees': typeof AdminEmployeesRoute
@@ -171,20 +261,31 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/shopify': typeof AdminShopifyRoute
   '/admin/time-clock': typeof AdminTimeClockRoute
+  '/areas/$slug': typeof AreasSlugRoute
+  '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/admin/': typeof AdminIndexRoute
+  '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
+  '/guides/': typeof GuidesIndexRoute
   '/shop/': typeof ShopIndexRoute
+  '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
+  '/es/zonas/$slug': typeof EsZonasSlugRoute
+  '/es/guias/': typeof EsGuiasIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
+  '/es/zonas/': typeof EsZonasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$lang'
     | '/admin'
     | '/financing'
+    | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
     | '/admin/employees'
@@ -193,17 +294,28 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/shopify'
     | '/admin/time-clock'
+    | '/areas/$slug'
+    | '/es/arrendamiento'
     | '/es/financiamiento'
+    | '/guides/$slug'
     | '/shop/$handle'
     | '/admin/'
+    | '/areas/'
     | '/es/'
+    | '/guides/'
     | '/shop/'
+    | '/es/guias/$slug'
     | '/es/tienda/$handle'
+    | '/es/zonas/$slug'
+    | '/es/guias/'
     | '/es/tienda/'
+    | '/es/zonas/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$lang'
     | '/financing'
+    | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
     | '/admin/employees'
@@ -212,18 +324,29 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/shopify'
     | '/admin/time-clock'
+    | '/areas/$slug'
+    | '/es/arrendamiento'
     | '/es/financiamiento'
+    | '/guides/$slug'
     | '/shop/$handle'
     | '/admin'
+    | '/areas'
     | '/es'
+    | '/guides'
     | '/shop'
+    | '/es/guias/$slug'
     | '/es/tienda/$handle'
+    | '/es/zonas/$slug'
+    | '/es/guias'
     | '/es/tienda'
+    | '/es/zonas'
   id:
     | '__root__'
     | '/'
+    | '/$lang'
     | '/admin'
     | '/financing'
+    | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
     | '/admin/employees'
@@ -232,25 +355,45 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/shopify'
     | '/admin/time-clock'
+    | '/areas/$slug'
+    | '/es/arrendamiento'
     | '/es/financiamiento'
+    | '/guides/$slug'
     | '/shop/$handle'
     | '/admin/'
+    | '/areas/'
     | '/es/'
+    | '/guides/'
     | '/shop/'
+    | '/es/guias/$slug'
     | '/es/tienda/$handle'
+    | '/es/zonas/$slug'
+    | '/es/guias/'
     | '/es/tienda/'
+    | '/es/zonas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LangRoute: typeof LangRoute
   AdminRoute: typeof AdminRouteWithChildren
   FinancingRoute: typeof FinancingRoute
+  LeasingRoute: typeof LeasingRoute
+  AreasSlugRoute: typeof AreasSlugRoute
+  EsArrendamientoRoute: typeof EsArrendamientoRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
+  GuidesSlugRoute: typeof GuidesSlugRoute
   ShopHandleRoute: typeof ShopHandleRoute
+  AreasIndexRoute: typeof AreasIndexRoute
   EsIndexRoute: typeof EsIndexRoute
+  GuidesIndexRoute: typeof GuidesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
+  EsGuiasSlugRoute: typeof EsGuiasSlugRoute
   EsTiendaHandleRoute: typeof EsTiendaHandleRoute
+  EsZonasSlugRoute: typeof EsZonasSlugRoute
+  EsGuiasIndexRoute: typeof EsGuiasIndexRoute
   EsTiendaIndexRoute: typeof EsTiendaIndexRoute
+  EsZonasIndexRoute: typeof EsZonasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -260,6 +403,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang': {
+      id: '/$lang'
+      path: '/$lang'
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -274,6 +424,13 @@ declare module '@tanstack/react-router' {
       path: '/financing'
       fullPath: '/financing'
       preLoaderRoute: typeof FinancingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leasing': {
+      id: '/leasing'
+      path: '/leasing'
+      fullPath: '/leasing'
+      preLoaderRoute: typeof LeasingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/': {
@@ -339,6 +496,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminTimeClockRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/areas/': {
+      id: '/areas/'
+      path: '/areas'
+      fullPath: '/areas/'
+      preLoaderRoute: typeof AreasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/$slug': {
+      id: '/areas/$slug'
+      path: '/areas/$slug'
+      fullPath: '/areas/$slug'
+      preLoaderRoute: typeof AreasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/': {
       id: '/es/'
       path: '/es'
@@ -346,11 +517,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/arrendamiento': {
+      id: '/es/arrendamiento'
+      path: '/es/arrendamiento'
+      fullPath: '/es/arrendamiento'
+      preLoaderRoute: typeof EsArrendamientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/financiamiento': {
       id: '/es/financiamiento'
       path: '/es/financiamiento'
       fullPath: '/es/financiamiento'
       preLoaderRoute: typeof EsFinanciamientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/': {
+      id: '/guides/'
+      path: '/guides'
+      fullPath: '/guides/'
+      preLoaderRoute: typeof GuidesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/$slug': {
+      id: '/guides/$slug'
+      path: '/guides/$slug'
+      fullPath: '/guides/$slug'
+      preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop/': {
@@ -367,6 +559,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopHandleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/guias/': {
+      id: '/es/guias/'
+      path: '/es/guias'
+      fullPath: '/es/guias/'
+      preLoaderRoute: typeof EsGuiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/guias/$slug': {
+      id: '/es/guias/$slug'
+      path: '/es/guias/$slug'
+      fullPath: '/es/guias/$slug'
+      preLoaderRoute: typeof EsGuiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/tienda/': {
       id: '/es/tienda/'
       path: '/es/tienda'
@@ -379,6 +585,20 @@ declare module '@tanstack/react-router' {
       path: '/es/tienda/$handle'
       fullPath: '/es/tienda/$handle'
       preLoaderRoute: typeof EsTiendaHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/zonas/': {
+      id: '/es/zonas/'
+      path: '/es/zonas'
+      fullPath: '/es/zonas/'
+      preLoaderRoute: typeof EsZonasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/zonas/$slug': {
+      id: '/es/zonas/$slug'
+      path: '/es/zonas/$slug'
+      fullPath: '/es/zonas/$slug'
+      preLoaderRoute: typeof EsZonasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -412,14 +632,25 @@ const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LangRoute: LangRoute,
   AdminRoute: AdminRouteWithChildren,
   FinancingRoute: FinancingRoute,
+  LeasingRoute: LeasingRoute,
+  AreasSlugRoute: AreasSlugRoute,
+  EsArrendamientoRoute: EsArrendamientoRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
+  GuidesSlugRoute: GuidesSlugRoute,
   ShopHandleRoute: ShopHandleRoute,
+  AreasIndexRoute: AreasIndexRoute,
   EsIndexRoute: EsIndexRoute,
+  GuidesIndexRoute: GuidesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
+  EsGuiasSlugRoute: EsGuiasSlugRoute,
   EsTiendaHandleRoute: EsTiendaHandleRoute,
+  EsZonasSlugRoute: EsZonasSlugRoute,
+  EsGuiasIndexRoute: EsGuiasIndexRoute,
   EsTiendaIndexRoute: EsTiendaIndexRoute,
+  EsZonasIndexRoute: EsZonasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

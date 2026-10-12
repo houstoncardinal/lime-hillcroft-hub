@@ -11,6 +11,7 @@ import {
   Wallet,
 } from "lucide-react";
 
+import { Money, MoneyText } from "@/components/intl/money";
 import consoles from "@/assets/photos/consoles-wide.jpg";
 import consolesSm from "@/assets/photos/consoles-wide-sm.jpg";
 import laptops from "@/assets/photos/laptops-tablets.jpg";
@@ -19,7 +20,7 @@ import iphone17 from "@/assets/photos/iphone-17-pro.jpg";
 import iphone17Sm from "@/assets/photos/iphone-17-pro-sm.jpg";
 import jbl from "@/assets/photos/jbl-display.jpg";
 import jblSm from "@/assets/photos/jbl-display-sm.jpg";
-import { FINANCING_COPY } from "@/components/pages/financing-copy";
+import { LEASING_COPY } from "@/components/pages/leasing-copy";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
@@ -39,11 +40,11 @@ const TILE_MEDIA = [
 ];
 const PERK_ICONS = [BadgeCheck, Wallet, CalendarClock, ShieldCheck];
 
-export function FinancingPage({ lang }: { lang: Lang }) {
-  const t = FINANCING_COPY[lang];
+export function LeasingPage({ lang }: { lang: Lang }) {
+  const t = LEASING_COPY[lang];
   return (
     <main className="overflow-x-hidden">
-      <SiteHeader lang={lang} paths={ALTERNATES.financing} />
+      <SiteHeader lang={lang} paths={ALTERNATES.leasing} />
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-ink text-white">
@@ -53,27 +54,31 @@ export function FinancingPage({ lang }: { lang: Lang }) {
           <div className="animate-rise">
             <h1>
               <span className="eyebrow flex items-center gap-3 text-primary">
-                <span className="h-px w-8 bg-primary" /> {t.hero.kicker}
+                <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
               </span>
               <span className="mt-6 block text-[clamp(3rem,7.5vw,6.25rem)] font-semibold leading-[0.92]">
-                {t.hero.title[0]}
+                {<MoneyText text={t.hero.title[0]} />}
                 <br />
-                <span className="text-primary">{t.hero.title[1]}</span>
+                <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
               </span>
             </h1>
             <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/70">
-              {t.hero.body[0]}
-              <strong className="font-semibold text-white">{t.hero.body[1]}</strong>
-              {t.hero.body[2]}
-              <strong className="font-semibold text-white">{t.hero.body[3]}</strong>
-              {t.hero.body[4]}
+              {<MoneyText text={t.hero.body[0]} />}
+              <strong className="font-semibold text-white">
+                {<MoneyText text={t.hero.body[1]} />}
+              </strong>
+              {<MoneyText text={t.hero.body[2]} />}
+              <strong className="font-semibold text-white">
+                {<MoneyText text={t.hero.body[3]} />}
+              </strong>
+              {<MoneyText text={t.hero.body[4]} />}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href={TEL}
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition hover:brightness-110"
               >
-                <Phone className="h-4 w-4" /> {t.hero.call}
+                <Phone className="h-4 w-4" /> {<MoneyText text={t.hero.call} />}
               </a>
               <a
                 href={DIRECTIONS}
@@ -81,7 +86,7 @@ export function FinancingPage({ lang }: { lang: Lang }) {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold transition hover:border-white/60"
               >
-                {t.hero.visit}
+                {<MoneyText text={t.hero.visit} />}
                 <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             </div>
@@ -91,7 +96,7 @@ export function FinancingPage({ lang }: { lang: Lang }) {
                   key={chip}
                   className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-white/85"
                 >
-                  {chip}
+                  {<MoneyText text={chip} />}
                 </li>
               ))}
             </ul>
@@ -117,7 +122,7 @@ export function FinancingPage({ lang }: { lang: Lang }) {
                 className="aspect-[16/9]"
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-5 pb-4 pt-12 font-display text-lg font-semibold">
-                {t.hero.mainCaption}
+                {<MoneyText text={t.hero.mainCaption} />}
               </figcaption>
             </figure>
             {TILE_MEDIA.map((g, i) => {
@@ -143,14 +148,16 @@ export function FinancingPage({ lang }: { lang: Lang }) {
               );
             })}
             <div className="absolute -right-3 -top-6 hidden rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-right-6">
-              <p className="eyebrow text-slate">{t.hero.cardLabel}</p>
+              <p className="eyebrow text-slate">{<MoneyText text={t.hero.cardLabel} />}</p>
               <p className="mt-1 font-display text-3xl font-semibold">
-                $40{" "}
+                <Money usd={40} stacked />{" "}
                 <span className="text-base font-medium text-muted-foreground">
-                  {t.hero.cardUnit}
+                  {<MoneyText text={t.hero.cardUnit} />}
                 </span>
               </p>
-              <p className="text-sm text-muted-foreground">{t.hero.cardNote}</p>
+              <p className="text-sm text-muted-foreground">
+                {<MoneyText text={t.hero.cardNote} />}
+              </p>
             </div>
           </div>
         </div>
@@ -166,7 +173,7 @@ export function FinancingPage({ lang }: { lang: Lang }) {
             <ul key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
               {t.ticker.map((item) => (
                 <li key={item} className="eyebrow flex items-center gap-8 px-4 text-sm">
-                  {item}
+                  {<MoneyText text={item} />}
                   <span className="h-1.5 w-1.5 rounded-full bg-ink" />
                 </li>
               ))}
@@ -179,12 +186,14 @@ export function FinancingPage({ lang }: { lang: Lang }) {
       <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow text-slate">{t.categories.kicker}</p>
+            <p className="eyebrow text-slate">{<MoneyText text={t.categories.kicker} />}</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-6xl">
-              {t.categories.title}
+              {<MoneyText text={t.categories.title} />}
             </h2>
           </div>
-          <p className="max-w-sm text-muted-foreground">{t.categories.intro}</p>
+          <p className="max-w-sm text-muted-foreground">
+            {<MoneyText text={t.categories.intro} />}
+          </p>
         </div>
 
         <div className="mt-14 grid gap-4 md:grid-cols-2">
@@ -210,14 +219,16 @@ export function FinancingPage({ lang }: { lang: Lang }) {
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                   <Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-5 text-3xl font-semibold md:text-4xl">{title}</h3>
+                <h3 className="mt-5 text-3xl font-semibold md:text-4xl">
+                  {<MoneyText text={title} />}
+                </h3>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {items.map((item) => (
                     <li
                       key={item}
                       className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-sm backdrop-blur"
                     >
-                      {item}
+                      {<MoneyText text={item} />}
                     </li>
                   ))}
                 </ul>
@@ -226,27 +237,27 @@ export function FinancingPage({ lang }: { lang: Lang }) {
           })}
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
-          {t.categories.stock[0]}{" "}
+          {<MoneyText text={t.categories.stock[0]} />}{" "}
           <a href={TEL} className="font-semibold text-ink hover:underline">
             {PHONE}
           </a>{" "}
-          {t.categories.stock[1]}
+          {<MoneyText text={t.categories.stock[1]} />}
         </p>
       </section>
 
       {/* How it works */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-7xl px-5 py-24 md:py-32">
-          <p className="eyebrow text-primary">{t.steps.kicker}</p>
+          <p className="eyebrow text-primary">{<MoneyText text={t.steps.kicker} />}</p>
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-6xl">
-            {t.steps.title}
+            {<MoneyText text={t.steps.title} />}
           </h2>
           <ol className="mt-16 grid gap-px overflow-hidden rounded-3xl bg-white/10 md:grid-cols-2 lg:grid-cols-4">
             {t.steps.items.map(([title, body], i) => (
               <li key={title} className="flex flex-col bg-ink p-8">
                 <span className="font-display text-6xl font-semibold text-primary">0{i + 1}</span>
-                <h3 className="mt-8 text-xl font-semibold">{title}</h3>
-                <p className="mt-2 leading-relaxed text-white/60">{body}</p>
+                <h3 className="mt-8 text-xl font-semibold">{<MoneyText text={title} />}</h3>
+                <p className="mt-2 leading-relaxed text-white/60">{<MoneyText text={body} />}</p>
               </li>
             ))}
           </ol>
@@ -257,18 +268,18 @@ export function FinancingPage({ lang }: { lang: Lang }) {
       <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
           <div>
-            <p className="eyebrow text-slate">{t.perks.kicker}</p>
+            <p className="eyebrow text-slate">{<MoneyText text={t.perks.kicker} />}</p>
             <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
-              {t.perks.title}
+              {<MoneyText text={t.perks.title} />}
             </h2>
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-muted-foreground">
-              {t.perks.body}
+              {<MoneyText text={t.perks.body} />}
             </p>
             <p
               lang={lang === "en" ? "es" : "en"}
               className="mt-6 max-w-sm border-l-2 border-primary pl-4 text-sm italic text-muted-foreground"
             >
-              {t.perks.quote}
+              {<MoneyText text={t.perks.quote} />}
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -279,8 +290,10 @@ export function FinancingPage({ lang }: { lang: Lang }) {
                   <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/15 text-primary">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 text-lg font-semibold">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                  <h3 className="mt-6 text-lg font-semibold">{<MoneyText text={title} />}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {<MoneyText text={body} />}
+                  </p>
                 </article>
               );
             })}
@@ -292,9 +305,9 @@ export function FinancingPage({ lang }: { lang: Lang }) {
       <section id="faq" className="border-t bg-secondary/60">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 md:py-32 lg:grid-cols-[1fr_1.6fr]">
           <div>
-            <p className="eyebrow text-slate">{t.faq.kicker}</p>
+            <p className="eyebrow text-slate">{<MoneyText text={t.faq.kicker} />}</p>
             <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
-              {t.faq.title}
+              {<MoneyText text={t.faq.title} />}
             </h2>
           </div>
           <FaqList items={t.faq.items} />
@@ -312,8 +325,10 @@ export function FinancingPage({ lang }: { lang: Lang }) {
             ]}
           />
           <div className="relative max-w-2xl">
-            <h2 className="text-4xl font-semibold leading-[1.02] md:text-6xl">{t.cta.title}</h2>
-            <p className="mt-5 text-lg">{t.cta.body}</p>
+            <h2 className="text-4xl font-semibold leading-[1.02] md:text-6xl">
+              {<MoneyText text={t.cta.title} />}
+            </h2>
+            <p className="mt-5 text-lg">{<MoneyText text={t.cta.body} />}</p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href={TEL}
@@ -327,14 +342,14 @@ export function FinancingPage({ lang }: { lang: Lang }) {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-ink/30 px-7 py-3.5 font-semibold transition hover:border-ink"
               >
-                {t.cta.directions} <ArrowUpRight className="h-4 w-4" />
+                {<MoneyText text={t.cta.directions} />} <ArrowUpRight className="h-4 w-4" />
               </a>
               <OpenBadge lang={lang} className="ml-2 rounded-full bg-ink px-4 py-2 text-white" />
             </div>
           </div>
         </div>
         <p className="mx-auto mt-8 max-w-7xl text-xs leading-relaxed text-muted-foreground">
-          {t.disclaimer}
+          {<MoneyText text={t.disclaimer} />}
         </p>
       </section>
 

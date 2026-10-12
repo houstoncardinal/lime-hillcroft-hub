@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Money, MoneyText } from "@/components/intl/money";
 import { useState } from "react";
 import { Check, ChevronRight, Minus, Phone, Plus, ShoppingBag } from "lucide-react";
 
@@ -50,11 +51,11 @@ export function ProductPage({
           className="mb-8 flex flex-wrap items-center gap-1 text-sm text-muted-foreground"
         >
           <Link to={ALTERNATES.home[lang]} className="hover:text-foreground">
-            {t.meta.breadcrumb[0]}
+            {<MoneyText text={t.meta.breadcrumb[0]} />}
           </Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <Link to={ALTERNATES.shop[lang]} className="hover:text-foreground">
-            {t.meta.breadcrumb[1]}
+            {<MoneyText text={t.meta.breadcrumb[1]} />}
           </Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <span className="text-foreground">{product.title}</span>
@@ -104,7 +105,7 @@ export function ProductPage({
             </h1>
             <p className="mt-5 flex items-baseline gap-3">
               <span className="tabular-nums font-display text-3xl font-semibold">
-                {variant ? money(variant.price) : ""}
+                {variant ? <Money usd={variant.price / 100} /> : ""}
               </span>
               {variant?.compareAtPrice && variant.compareAtPrice > variant.price && (
                 <span className="tabular-nums text-lg text-muted-foreground line-through">
@@ -182,13 +183,16 @@ export function ProductPage({
             </div>
             {variant?.available && (
               <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" /> {t.inStock}
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />{" "}
+                {<MoneyText text={t.inStock} />}
               </p>
             )}
 
             {product.features.length > 0 && (
               <div className="mt-10 border-t pt-8">
-                <h2 className="font-display text-lg font-semibold">{t.features}</h2>
+                <h2 className="font-display text-lg font-semibold">
+                  {<MoneyText text={t.features} />}
+                </h2>
                 <ul className="mt-4 space-y-3">
                   {product.features.map((f) => (
                     <li key={f} className="flex gap-3 text-muted-foreground">
@@ -200,8 +204,8 @@ export function ProductPage({
             )}
 
             <div className="mt-10 rounded-3xl bg-ink p-6 text-white">
-              <p className="font-semibold">{t.questions}</p>
-              <p className="mt-1 text-sm text-white/65">{t.trust[2]?.[1]}</p>
+              <p className="font-semibold">{<MoneyText text={t.questions} />}</p>
+              <p className="mt-1 text-sm text-white/65">{<MoneyText text={t.trust[2]?.[1]} />}</p>
               <a
                 href={TEL}
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold transition hover:bg-white/20"
@@ -215,7 +219,7 @@ export function ProductPage({
 
       {related.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 pb-24">
-          <h2 className="font-display text-3xl font-semibold">{t.related}</h2>
+          <h2 className="font-display text-3xl font-semibold">{<MoneyText text={t.related} />}</h2>
           <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 lg:gap-x-6">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />

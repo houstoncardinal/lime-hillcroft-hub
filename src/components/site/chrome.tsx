@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Languages, MapPin, Phone, Star } from "lucide-react";
+import { MapPin, Phone, Star } from "lucide-react";
 
 import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/business";
+import { LanguageMenu } from "@/components/intl/language-menu";
+import { SHOP_ENABLED } from "@/components/site/features";
 import { Logo } from "@/components/site/logo";
 import { Toaster } from "@/components/ui/sonner";
 import { CartButton, CartDrawer } from "@/shop/components";
@@ -15,25 +17,29 @@ const NAV: Record<Lang, [string, string][]> = {
   en: [
     ["Services", "/#services"],
     ["Shop", "/shop"],
-    ["Financing", "/financing"],
+    ["Leasing", "/leasing"],
     ["Repair", "/#repair"],
     ["Visit", "/#visit"],
   ],
   es: [
     ["Servicios", "/es#services"],
     ["Tienda", "/es/tienda"],
-    ["Financiamiento", "/es/financiamiento"],
+    ["Arrendamiento", "/es/arrendamiento"],
     ["Reparación", "/es#repair"],
     ["Visítanos", "/es#visit"],
   ],
 };
 
+const nav = (lang: Lang) =>
+  NAV[lang].filter(([, href]) => SHOP_ENABLED || !/\/(shop|es\/tienda)$/.test(href));
+
 const T = {
   en: {
     call: "Call",
+    areas: "Areas we serve",
+    guides: "Guides",
     directions: "Directions",
     home: "TIC Wireless home",
-    switchTo: "Español",
     tagline: "Buy · Sell · Repair · Unlock. Your one-stop phone shop in Houston. Se habla español.",
     trademarks:
       "PlayStation, Xbox, Nintendo Switch, iPhone, MacBook, Galaxy, JBL, Xfinity and carrier names are trademarks of their respective owners.",
@@ -44,9 +50,10 @@ const T = {
   },
   es: {
     call: "Llamar",
+    areas: "Zonas que atendemos",
+    guides: "Guías",
     directions: "Cómo llegar",
     home: "Inicio de TIC Wireless",
-    switchTo: "English",
     tagline:
       "Compra · Venta · Reparación · Liberación. Tu tienda de celulares en Houston. We speak English.",
     trademarks:
@@ -113,31 +120,24 @@ export function Stars({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-function LanguageSwitch({ lang, paths }: { lang: Lang; paths: Paths }) {
-  const other: Lang = lang === "en" ? "es" : "en";
+export function SiteHeader({
+  lang,
+  paths,
+  current,
+}: {
+  lang: Lang;
+  paths: Paths;
+  /** Language code shown in the menu when it isn't en/es (language summary pages). */
+  current?: string;
+}) {
   return (
-    <a
-      href={paths[other]}
-      hrefLang={other}
-      lang={other}
-      className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
-    >
-      <Languages className="h-4 w-4" />
-      <span className="hidden sm:inline">{T[lang].switchTo}</span>
-      <span className="sm:hidden">{other.toUpperCase()}</span>
-    </a>
-  );
-}
-
-export function SiteHeader({ lang, paths }: { lang: Lang; paths: Paths }) {
-  return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header lang={lang} dir="ltr" className="fixed inset-x-0 top-0 z-50">
       <div className="mx-3 mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-full border border-white/10 bg-ink/90 px-4 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-xl sm:mx-4 sm:px-5 xl:mx-auto">
         <Link to={ALTERNATES.home[lang]} aria-label={T[lang].home}>
           <Logo light className="[&_span]:text-base sm:[&_span]:text-lg" />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-7 text-sm text-white/70 lg:flex">
-          {NAV[lang].map(([label, href]) => (
+          {nav(lang).map(([label, href]) => (
             <a key={href} href={href} className="transition hover:text-white">
               {label}
             </a>
@@ -149,8 +149,8 @@ export function SiteHeader({ lang, paths }: { lang: Lang; paths: Paths }) {
             lang={lang}
             className="text-white/80 hover:bg-white/10 hover:text-white"
           />
-          <LanguageSwitch lang={lang} paths={paths} />
-          <CartButton lang={lang} />
+          <LanguageMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
+          {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
             href={TEL}
             className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:inline-flex"
@@ -160,7 +160,7 @@ export function SiteHeader({ lang, paths }: { lang: Lang; paths: Paths }) {
           </a>
         </div>
       </div>
-      <CartDrawer lang={lang} />
+      {SHOP_ENABLED && <CartDrawer lang={lang} />}
       <Toaster position="bottom-center" />
     </header>
   );
@@ -168,7 +168,7 @@ export function SiteHeader({ lang, paths }: { lang: Lang; paths: Paths }) {
 
 export function SiteFooter({ lang }: { lang: Lang }) {
   return (
-    <footer className="border-t border-white/10 bg-ink text-white">
+    <footer lang={lang} dir="ltr" className="border-t border-white/10 bg-ink text-white">
       <div className="mx-auto max-w-7xl px-5 pb-28 pt-16 md:pb-16">
         <div className="flex flex-wrap items-start justify-between gap-10">
           <div>
@@ -179,11 +179,17 @@ export function SiteFooter({ lang }: { lang: Lang }) {
             aria-label="Footer"
             className="grid grid-cols-2 gap-x-16 gap-y-2 text-sm text-white/70"
           >
-            {NAV[lang].map(([label, href]) => (
+            {nav(lang).map(([label, href]) => (
               <a key={href} href={href} className="hover:text-white">
                 {label}
               </a>
             ))}
+            <a href={ALTERNATES.areas[lang]} className="hover:text-white">
+              {T[lang].areas}
+            </a>
+            <a href={ALTERNATES.guides[lang]} className="hover:text-white">
+              {T[lang].guides}
+            </a>
           </nav>
           <address className="text-sm not-italic text-white/70">
             <p>{ADDRESS}</p>

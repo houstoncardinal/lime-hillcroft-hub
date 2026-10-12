@@ -57,6 +57,7 @@ export function productHead(
   return pageHead({
     paths,
     lang,
+    noindex: source !== "shopify",
     title,
     description,
     image,

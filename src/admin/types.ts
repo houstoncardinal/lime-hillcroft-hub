@@ -37,7 +37,7 @@ export type Product = {
   reorderPoint: number;
   barcode: string;
   notes: string;
-  /** Lease-to-own / financing eligible (shown on the public financing page). */
+  /** Lease-to-own (leasing) eligible (shown on the public leasing page). */
   financeable: boolean;
   shopifyProductId: string | null;
   shopifyVariantId: string | null;

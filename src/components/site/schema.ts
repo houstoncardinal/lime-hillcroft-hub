@@ -6,6 +6,8 @@ import { ALTERNATES, absoluteUrl, type Lang, type Paths } from "@/components/sit
 // re-published third-party) star ratings, so the 4.7 Google rating stays visible text only.
 
 const STORE_ID = absoluteUrl("/#store");
+// Bump when the business facts on the site change (freshness signal for search and AI answers).
+const SITE_UPDATED = "2026-10-09";
 const WEBSITE_ID = absoluteUrl("/#website");
 const LANGUAGE = { en: "en-US", es: "es-US" } as const;
 
@@ -32,11 +34,11 @@ const neighborhoods = [
 const services = {
   en: [
     [
-      "Phone financing",
-      "Unlocked iPhones and Android phones with financing and lease-to-own options, no credit needed.",
+      "Phone leasing",
+      "Unlocked iPhones and Android phones with leasing (lease-to-own) options, no credit needed.",
     ],
     [
-      "Game console, laptop & tablet financing",
+      "Game console, laptop & tablet leasing",
       "Lease-to-own on PlayStation 5, Xbox, Nintendo Switch 2, MacBooks, laptops and iPads.",
     ],
     [
@@ -70,7 +72,7 @@ const services = {
   es: [
     [
       "Celulares a pagos",
-      "iPhone y Android desbloqueados con financiamiento y arrendamiento con opción a compra, sin necesidad de crédito.",
+      "iPhone y Android desbloqueados con arrendamiento con opción a compra, sin necesidad de crédito.",
     ],
     [
       "Consolas, laptops y tabletas a pagos",
@@ -110,7 +112,7 @@ const services = {
 } as const;
 
 const DESCRIPTION = {
-  en: "TIC Wireless is a one-stop cell phone store on Hillcroft in Houston: financing on unlocked iPhones and Androids with no credit needed, lease-to-own on game consoles and laptops, prepaid plans, Xfinity Prepaid internet, same-day phone repair, unlocking, bill payments, international recharge and accessories. Se habla español.",
+  en: "TIC Wireless is a one-stop cell phone store on Hillcroft in Houston: leasing on unlocked iPhones and Androids with no credit needed, lease-to-own on game consoles and laptops, prepaid plans, Xfinity Prepaid internet, same-day phone repair, unlocking, bill payments, international recharge and accessories. Se habla español.",
   es: "TIC Wireless es una tienda de celulares en Hillcroft, Houston: celulares a pagos sin necesidad de crédito, consolas y laptops con opción a compra, planes prepagados, internet prepagado Xfinity, reparación de celulares el mismo día, liberación, pago de facturas, recargas internacionales y accesorios. Se habla español.",
 };
 
@@ -132,9 +134,30 @@ function store(lang: Lang) {
     image: [
       absoluteUrl("/og/store.jpg"),
       absoluteUrl("/og/home.jpg"),
-      absoluteUrl("/og/financing.jpg"),
+      absoluteUrl("/og/leasing.jpg"),
     ],
     telephone: "+1-713-339-9300",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-713-339-9300",
+      contactType: "customer service",
+      availableLanguage: ["English", "Spanish"],
+      areaServed: "US-TX",
+      hoursAvailable: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "09:00",
+          closes: "20:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Sunday",
+          opens: "09:00",
+          closes: "17:00",
+        },
+      ],
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: STREET,
@@ -161,6 +184,21 @@ function store(lang: Lang) {
     ],
     currenciesAccepted: "USD",
     knowsLanguage: ["en", "es"],
+    knowsAbout: [
+      "Unlocked smartphones",
+      "iPhone",
+      "Samsung Galaxy",
+      "Phone leasing",
+      "Lease-to-own",
+      "Prepaid cell phone plans",
+      "Cell phone repair",
+      "iPhone screen repair",
+      "Phone battery replacement",
+      "Phone unlocking",
+      "Phone accessories",
+      "Xfinity Prepaid internet",
+      "International mobile recharge",
+    ],
     publicAccess: true,
     amenityFeature: [
       {
@@ -192,8 +230,8 @@ function store(lang: Lang) {
       "@type": "OfferCatalog",
       name:
         lang === "en"
-          ? "Phones, plans, repair & financing"
-          : "Celulares, planes, reparación y financiamiento",
+          ? "Phones, plans, repair & leasing"
+          : "Celulares, planes, reparación y arrendamiento",
       itemListElement: services[lang].map(([name, description]) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name, description, provider: { "@id": STORE_ID } },
@@ -218,6 +256,11 @@ function website() {
     inLanguage: ["en-US", "es-US"],
     publisher: { "@id": STORE_ID },
   };
+}
+
+/** The store and website nodes, for pages that build their own graph (language pages). */
+export function baseGraph(lang: Lang) {
+  return [store(lang), website()];
 }
 
 export type Faq = { q: string; a: string };
@@ -254,6 +297,7 @@ export function pageSchema({
         name,
         description,
         inLanguage: LANGUAGE[lang],
+        dateModified: SITE_UPDATED,
         isPartOf: { "@id": WEBSITE_ID },
         about: { "@id": STORE_ID },
         primaryImageOfPage: {
@@ -294,19 +338,19 @@ export function pageSchema({
   };
 }
 
-export function financingService(lang: Lang, items: string[]) {
-  const url = absoluteUrl(ALTERNATES.financing[lang]);
+export function leasingService(lang: Lang, items: string[]) {
+  const url = absoluteUrl(ALTERNATES.leasing[lang]);
   return {
     "@type": "Service",
     "@id": `${url}#service`,
     name:
       lang === "en"
-        ? "Lease-to-own & financing on consoles, laptops and phones"
+        ? "Leasing (lease-to-own) on consoles, laptops and phones"
         : "Consolas, laptops y celulares a pagos con opción a compra",
-    serviceType: lang === "en" ? "Lease-to-own financing" : "Arrendamiento con opción a compra",
+    serviceType: lang === "en" ? "Leasing (lease-to-own)" : "Arrendamiento con opción a compra",
     description:
       lang === "en"
-        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with lease-to-own and financing options. No credit needed; options starting at $40 down. Subject to approval."
+        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. No credit needed; options starting at $40 down. Subject to approval."
         : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Sin necesidad de crédito; opciones desde $40 de enganche. Sujeto a aprobación.",
     url,
     provider: { "@id": STORE_ID },
@@ -337,7 +381,7 @@ export function financingService(lang: Lang, items: string[]) {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: lang === "en" ? "Products available with financing" : "Productos disponibles a pagos",
+      name: lang === "en" ? "Products available to lease" : "Productos disponibles a pagos",
       itemListElement: items.map((item) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Product", name: item },

@@ -15,6 +15,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { conversionFor, track } from "@/admin/tracker";
 import { THEME_INIT_SCRIPT } from "@/components/site/themes";
+import { findIntl } from "@/components/intl/languages";
 import { syncTidio } from "@/components/site/tidio";
 
 function NotFoundComponent() {
@@ -113,7 +114,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   const lang = useRouterState({
-    select: (s) => (/^\/es(\/|$)/.test(s.location.pathname) ? "es" : "en"),
+    select: (s) => {
+      const seg = s.location.pathname.split("/")[1] ?? "";
+      if (seg === "es") return "es";
+      return findIntl(seg)?.tag ?? "en";
+    },
   });
   return (
     <html lang={lang} suppressHydrationWarning>

@@ -1,5 +1,10 @@
 # Online shop (`/shop`, `/es/tienda`)
 
+> **Currently switched off.** `SHOP_ENABLED = false` in `src/components/site/features.ts` hides the
+> Shop menu link, cart, home-page product row and shop pages (they temporarily redirect to the home
+> page). To bring it back: set it to `true`, run `npm run seo:sitemap`, and restore the shop lines in
+> `public/llms.txt`, `public/llms-full.txt` and the Tidio files (`docs/tidio`).
+
 The shop sells accessories (cases, glass, earbuds, speakers, smartwatches, chargers, gaming).
 It runs in **preview mode** until Shopify is connected:
 

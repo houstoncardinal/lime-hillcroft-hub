@@ -1,7 +1,7 @@
 {
   "name": "TIC Wireless",
   "short_name": "TIC Wireless",
-  "description": "Cell phone store, repair and financing on Hillcroft in Houston, TX.",
+  "description": "Cell phone store, repair and leasing on Hillcroft in Houston, TX.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f1a26",

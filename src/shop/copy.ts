@@ -52,10 +52,10 @@ const en = {
     ["Se habla español", "Help in English or Spanish, in store or on the phone."],
     ["Need it today?", "Call us to check stock and set an item aside."],
   ],
-  financing: {
+  leasing: {
     title: "Bigger purchase?",
     body: "Phones, consoles and laptops are available with lease-to-own, no credit needed.",
-    cta: "See financing",
+    cta: "See leasing",
   },
   questions: "Questions about this item?",
   cart: {
@@ -138,10 +138,10 @@ const es: ShopCopy = {
     ["We speak English", "Te atendemos en español o inglés, en tienda o por teléfono."],
     ["¿Lo necesitas hoy?", "Llámanos para revisar inventario y apartarlo."],
   ],
-  financing: {
+  leasing: {
     title: "¿Una compra más grande?",
     body: "Celulares, consolas y laptops con opción a compra, sin necesidad de crédito.",
-    cta: "Ver financiamiento",
+    cta: "Ver arrendamiento",
   },
   questions: "¿Preguntas sobre este producto?",
   cart: {

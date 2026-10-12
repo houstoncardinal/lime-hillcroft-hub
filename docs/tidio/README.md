@@ -5,14 +5,14 @@ Files in this folder:
 | File | What it is | How to add it in Tidio |
 |---|---|---|
 | `tic-wireless-knowledge-base.md` | Everything about the business in plain text | **Upload file** (Plus plan and up; save as .txt or .pdf if the uploader rejects .md), or copy each section into a Q&A / knowledge entry |
-| `tic-wireless-qa.csv` | 62 ready-made questions and answers (English + Spanish) | Add as **Q&A** entries (open the CSV in Excel/Google Sheets and copy each row in), or import if your plan offers CSV import |
+| `tic-wireless-qa.csv` | 64 ready-made questions and answers (English + Spanish) | Add as **Q&A** entries (open the CSV in Excel/Google Sheets and copy each row in), or import if your plan offers CSV import |
 | This README | Instructions + things to confirm | Don't upload this file |
 
 Also add the website as a source so Lyro learns from it directly:
 
 - `https://lime-hillcroft-hub.lovable.app/` (English)
 - `https://lime-hillcroft-hub.lovable.app/es` (Spanish)
-- `https://lime-hillcroft-hub.lovable.app/financing`
+- `https://lime-hillcroft-hub.lovable.app/leasing`
 
 Re-sync the website source whenever the site changes. If the site moves to a custom domain, use
 the new address and update the links inside the knowledge file and CSV.
@@ -24,7 +24,7 @@ the new address and update the links inside the knowledge file and CSV.
 3. **Add Q&A** → enter the pairs from `tic-wireless-qa.csv` (or import it).
 4. **Upload file** → `tic-wireless-knowledge-base.md` (if your plan supports uploads).
 5. Paste the **Guidance** below into Lyro's guidance / instructions setting.
-6. Set **handoff to a human** for: repair quotes, stock checks, financing applications and
+6. Set **handoff to a human** for: repair quotes, stock checks, leasing applications and
    complaints — with the phone number (713) 339-9300 as the fallback.
 7. Test with the questions in the "Test questions" list below before turning Lyro on.
 
@@ -39,7 +39,7 @@ Spanish. Keep answers short, warm and specific, and end with a next step when he
 Rules:
 - Never quote exact prices for repairs, phones, plans or accessories. Say the price depends on
   the model and invite them to call (713) 339-9300 or visit for a quote.
-- Financing: say "no credit needed, bad credit OK, options start at $40 down, subject to
+- Leasing: say "no credit needed, bad credit OK, options start at $40 down, subject to
   approval". Never promise approval or a specific payment.
 - Never promise an item is in stock. Offer to have them call to check or set it aside.
 - Never ask for or accept card numbers, passwords, Social Security numbers or account PINs.
@@ -54,7 +54,7 @@ These came from older signs, the old website or a business card and should be do
 - [ ] **Sunday hours (9 AM – 5 PM).** Google only showed a weekday (9 AM – 8 PM).
 - [ ] **"Options start at $40 down"** (from a November 2025 business card; a counter sign
       showed "$10 to start" for one program). Use whichever is current.
-- [ ] **Financing ID requirements** — currently "a valid photo ID".
+- [ ] **Leasing ID requirements** — currently "a valid photo ID".
 - [ ] **Services list** still accurate: tablet/laptop/computer repair, buy·sell·trade, bill
       payments with no extra charges, international recharge (Tigo, Digicel, Movistar, Telcel).
 - [ ] **Carrier list:** Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple

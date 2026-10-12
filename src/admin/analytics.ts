@@ -75,7 +75,7 @@ export const change = (cur: number, prev: number) =>
 
 export const PAGE_NAMES: Record<string, string> = {
   "/": "Home",
-  "/financing": "Financing",
+  "/leasing": "Leasing",
   "/es": "Inicio (ES)",
-  "/es/financiamiento": "Financiamiento (ES)",
+  "/es/arrendamiento": "Arrendamiento (ES)",
 };

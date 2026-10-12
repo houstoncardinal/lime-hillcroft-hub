@@ -1,9 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { FinancingPage } from "@/components/pages/financing-page";
-import { financingHead } from "@/components/pages/heads";
-
+// Dirección anterior: la página ahora es /es/arrendamiento (redirección permanente).
 export const Route = createFileRoute("/es/financiamiento")({
-  head: () => financingHead("es"),
-  component: () => <FinancingPage lang="es" />,
+  beforeLoad: () => {
+    throw redirect({ to: "/es/arrendamiento", statusCode: 301 });
+  },
 });

@@ -1,7 +1,7 @@
 # TIC Wireless — Business Knowledge Base
 
 TIC Wireless (also listed as "TIC Wireless - Hillcroft") is an independent cell phone store in
-Houston, Texas. It sells new unlocked phones with financing, prepaid phone plans, Xfinity
+Houston, Texas. It sells new unlocked phones with leasing, prepaid phone plans, Xfinity
 Prepaid internet and accessories, and does phone repair and unlocking. Slogan: "Buy · Sell ·
 Repair · Unlock." The team speaks English and Spanish (Se habla español).
 
@@ -33,23 +33,24 @@ the old address — the correct address is 3640 Hillcroft St, Houston, TX 77057.
 - Holiday hours may vary — customers should call (713) 339-9300 to confirm.
 - No appointment is needed for anything, including repairs.
 
-## Phones and financing
+## Phones and leasing
 
 - New unlocked iPhones and Android phones (Samsung Galaxy, Motorola and more), including the
-  latest models such as iPhone 17 Pro.
-- Financing and lease-to-own are available: no credit needed, bad credit is OK, options start at
+  latest models such as the new iPhone 18 Pro Max (and iPhone 17 Pro).
+- Leasing (lease-to-own) are available: no credit needed, bad credit is OK, options start at
   $40 down. The exact down payment and payments depend on the item and the plan the customer is
   approved for. Approval is not guaranteed.
 - Lease-to-own is not a loan: the customer leases the item and makes regular payments; when the
   plan is complete (or bought out early) the item is theirs. The total cost to own can be more
   than the cash price. Staff explain all terms in store before anything is signed.
+- Payment schedules: weekly, biweekly or monthly payments are available.
 - To apply: come to the store with a valid photo ID. The application takes a few minutes at the
   counter. Staff will say if anything else is needed.
 - Early payoff: customers can ask about early-payoff options when they apply.
-- Financing is also available on game consoles (PlayStation 5, Xbox, Nintendo Switch 2),
+- Leasing is also available on game consoles (PlayStation 5, Xbox, Nintendo Switch 2),
   laptops (including MacBook Air and Windows laptops), tablets (iPad, iPad Pro, iPad mini,
   Galaxy Tab), and audio and wearables (AirPods, Galaxy Buds, smartwatches, JBL speakers).
-- Financing details page: https://lime-hillcroft-hub.lovable.app/financing
+- Leasing details page: https://lime-hillcroft-hub.lovable.app/leasing
 - Buy · sell · trade: customers can trade in their old phone toward a new one or sell it.
 
 ## Prepaid plans, internet and payments
@@ -100,10 +101,7 @@ customers should call (713) 339-9300.
 
 ## Online shop
 
-- Accessories can be browsed online at https://lime-hillcroft-hub.lovable.app/shop (Spanish:
-  /es/tienda).
-- Online checkout is launching soon. Until then, customers can call (713) 339-9300 or visit the
-  store to buy.
+- Online shopping is temporarily unavailable and coming back soon. To buy accessories, call (713) 339-9300 or visit the store.
 
 ## Reviews
 
@@ -118,7 +116,7 @@ customers should call (713) 339-9300.
 
 - Do not quote specific prices for repairs, phones, plans or accessories — prices depend on the
   model and change often. Direct the customer to call (713) 339-9300 or visit.
-- Do not promise financing approval or a specific down payment beyond "options start at $40
+- Do not promise leasing approval or a specific down payment beyond "options start at $40
   down, subject to approval".
 - Do not promise that an item is in stock — suggest calling to check or to set it aside.
 - Do not ask for or accept card numbers, passwords, Social Security numbers or account PINs in

@@ -1,10 +1,16 @@
+import { redirect } from "@tanstack/react-router";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 
+import { SHOP_ENABLED } from "@/components/site/features";
 import { productHead } from "@/shop/heads";
 import { ProductPage } from "@/shop/product-page";
 import { getCatalog } from "@/shop/storefront";
 
 export const Route = createFileRoute("/es/tienda/$handle")({
+  // Shop is temporarily switched off (src/components/site/features.ts).
+  beforeLoad: () => {
+    if (!SHOP_ENABLED) throw redirect({ to: "/es", statusCode: 307 });
+  },
   loader: async ({ params }) => {
     const catalog = await getCatalog();
     const product = catalog.products.find((p) => p.handle === params.handle);

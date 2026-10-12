@@ -17,8 +17,10 @@ describe("App routing", () => {
 
   it.each([
     ["/es", "/es/"],
-    ["/es/financiamiento", "/es/financiamiento"],
+    ["/es/arrendamiento", "/es/arrendamiento"],
     ["/es/tienda", "/es/tienda/"],
+    ["/es/zonas", "/es/zonas/"],
+    ["/es/zonas/gulfton", "/es/zonas/$slug"],
     ["/es/tienda/airpods-pro-2", "/es/tienda/$handle"],
   ])("matches the Spanish page %s", (path, routeId) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
@@ -29,17 +31,28 @@ describe("App routing", () => {
   it.each([
     ["/shop", "/shop/"],
     ["/shop/airpods-pro-2", "/shop/$handle"],
+    ["/areas", "/areas/"],
+    ["/areas/sharpstown", "/areas/$slug"],
+    ["/guides", "/guides/"],
+    ["/guides/how-to-unlock-your-phone", "/guides/$slug"],
+    ["/es/guias/how-lease-to-own-works", "/es/guias/$slug"],
   ])("matches the shop page %s", (path, routeId) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 
     expect(router.matchRoutes(path).at(-1)?.routeId).toBe(routeId);
   });
 
-  it("matches the financing landing page", () => {
+  it.each(["/vi", "/zh", "/ar"])("matches the language page %s", (path) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 
-    const matches = router.matchRoutes("/financing");
+    expect(router.matchRoutes(path).at(-1)?.routeId).toBe("/$lang");
+  });
 
-    expect(matches.at(-1)?.routeId).toBe("/financing");
+  it("matches the leasing landing page", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/leasing");
+
+    expect(matches.at(-1)?.routeId).toBe("/leasing");
   });
 });

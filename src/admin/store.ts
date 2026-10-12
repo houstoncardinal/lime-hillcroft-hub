@@ -663,7 +663,7 @@ function seedDemo(d: AdminData): AdminData {
   }
   d.timeEntries.sort((a, b) => b.clockIn.localeCompare(a.clockIn));
   // 30 days of sample website traffic.
-  const paths = ["/", "/", "/", "/financing", "/es", "/es/financiamiento"];
+  const paths = ["/", "/", "/", "/leasing", "/es", "/es/arrendamiento"];
   const refs = [
     "google.com",
     "google.com",
@@ -692,7 +692,7 @@ function seedDemo(d: AdminData): AdminData {
           ...base,
           id: uid(),
           type: "pageview",
-          path: path === "/" ? "/financing" : "/",
+          path: path === "/" ? "/leasing" : "/",
           at: time,
         });
       if (Math.random() < 0.09) d.events.push({ ...base, id: uid(), type: "call", path, at: time });

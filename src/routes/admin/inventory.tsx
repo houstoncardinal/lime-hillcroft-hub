@@ -290,7 +290,7 @@ function Inventory() {
                 ["all", "All"],
                 ["low", "Low"],
                 ["out", "Out"],
-                ["financeable", "Financeable"],
+                ["financeable", "Leasable"],
                 ["shopify", "On Shopify"],
               ] as [StockFilter, string][]
             ).map(([key, label]) => (
@@ -677,7 +677,7 @@ function ProductEditor({
             checked={form.financeable}
             onChange={(e) => set("financeable", e.target.checked)}
           />
-          Eligible for financing / lease-to-own
+          Eligible for leasing (lease-to-own)
         </label>
         <div className="flex justify-end gap-2 sm:col-span-2">
           <Button onClick={onClose}>Cancel</Button>

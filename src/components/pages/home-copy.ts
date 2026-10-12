@@ -5,30 +5,32 @@ const en = {
   meta: {
     title: "Cell Phone Store & Phone Repair on Hillcroft, Houston | TIC Wireless",
     description:
-      "Cell phone store at 3640 Hillcroft St, Houston: phones with no-credit financing from $40 down, same-day screen repair & unlocking. Se habla español.",
-    imageAlt: "Boxed iPhone 17 Pro phones at TIC Wireless in Houston",
+      "Cell phone store at 3640 Hillcroft St, Houston: phones with no-credit leasing from $40 down, same-day screen repair & unlocking. Se habla español.",
+    imageAlt: "iPhone 18 Pro Max in plum, unlocked, at TIC Wireless in Houston",
     breadcrumb: "Home",
   },
   hero: {
     kicker: "Cell phone store & repair · Hillcroft, Houston",
     title: ["Your phone,", "sorted."],
     body: [
-      "The latest unlocked iPhones and Androids with financing from ",
+      "The new iPhone 18 Pro Max and the latest unlocked Androids, with leasing from ",
       "$40 down",
       " — bad credit, no problem. Plus prepaid plans, same-day repairs and every accessory you need.",
     ],
     directions: "Get directions",
     reviews: "400+ Google reviews",
     language: "Se habla español",
-    imageCaption: "iPhone 17 Pro — in stock, unlocked.",
-    imageAlt:
-      "Five boxed iPhone 17 Pro phones in cosmic orange, deep blue and silver with a TIC Wireless business card",
-    financingLabel: "Financing",
-    financingUnit: "down",
-    financingNote: "Bad credit? No problem.",
+    imageKicker: "Just in",
+    imageTitle: "iPhone 18 Pro Max",
+    imageSub: "Unlocked · lease-to-own available",
+    imageCta: "See leasing",
+    imageAlt: "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless",
+    leaseLabel: "Leasing",
+    leaseUnit: "down",
+    leaseNote: "Weekly, biweekly or monthly options",
   },
   ticker: [
-    "Financing from $40 down",
+    "Leasing from $40 down",
     "Bad credit? No problem",
     "Unlocked iPhones & Androids",
     "Prepaid plans",
@@ -57,9 +59,9 @@ const en = {
       "Buying, switching, fixing or paying — skip the mall and the big-box lines. We handle it all on Hillcroft.",
     featured: {
       title: "Unlocked iPhones & Androids",
-      body: "Walk out with a new phone today. Financing starting at $40 down on the latest iPhone and Galaxy models.",
+      body: "Walk out with a new phone today. Leasing starting at $40 down on the latest iPhone and Galaxy models.",
       chips: ["Bad credit OK", "$40 down", "iPhone & Galaxy", "Take it home today"],
-      link: "Financing on consoles, laptops & more",
+      link: "Leasing on consoles, laptops & more",
       imageAlt: "Samsung Galaxy S24 Ultra unboxed on the TIC Wireless counter",
     },
     items: [
@@ -141,6 +143,25 @@ const en = {
     cta: "See us on Google",
     imageAlt: "Samsung Galaxy S22 Ultra on the counter next to a rugged case",
   },
+  glance: {
+    kicker: "At a glance",
+    title: "TIC Wireless in 30 seconds.",
+    summary:
+      "TIC Wireless is an independent cell phone store and phone repair shop at 3640 Hillcroft St in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down, prepaid plans for every major carrier and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.",
+    facts: [
+      ["Address", "3640 Hillcroft St, Houston, TX 77057"],
+      ["Phone", "(713) 339-9300"],
+      ["Hours", "Mon–Sat 9 AM–8 PM · Sun 9 AM–5 PM · no appointment needed"],
+      ["Leasing", "No credit needed · from $40 down · weekly, biweekly or monthly payments"],
+      ["Repairs", "Same-day screen, battery & charging-port repair for iPhone, Samsung & Android"],
+      [
+        "Prepaid carriers",
+        "Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile",
+      ],
+      ["Languages", "English & Spanish"],
+      ["Rating", "4.7★ on Google · 400+ reviews"],
+    ],
+  },
   area: {
     kicker: "Areas we serve",
     title: "Your neighborhood phone store in Southwest Houston.",
@@ -161,12 +182,15 @@ const en = {
       "Alief",
     ],
     zips: "Nearby ZIP codes: 77057 · 77036 · 77063 · 77042 · 77081 · 77074 · 77056",
+    cta: "Find your area or ZIP code",
   },
   faq: {
     kicker: "Questions",
     title: "Good to know.",
     more: "Anything else? Call us at",
     languages: "English & Español",
+    guides: "Helpful guides",
+    allGuides: "All guides",
     items: [
       {
         q: "Where is TIC Wireless located?",
@@ -174,7 +198,7 @@ const en = {
       },
       {
         q: "Can I get a phone with bad credit or no credit?",
-        a: "Yes. We offer financing and lease-to-own on unlocked iPhones and Android phones starting at $40 down — bad credit is no problem. Stop by and we'll walk you through the options in a few minutes.",
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones starting at $40 down — bad credit is no problem. Stop by and we'll walk you through the options in a few minutes.",
       },
       {
         q: "Do you fix cracked iPhone and Samsung screens?",
@@ -228,26 +252,29 @@ const es: HomeCopy = {
     title: "Tienda de Celulares y Reparación en Hillcroft, Houston | TIC Wireless",
     description:
       "Tienda de celulares en 3640 Hillcroft St, Houston: celulares a pagos sin crédito desde $40, cambio de pantalla el mismo día, liberación y planes prepagados.",
-    imageAlt: "Cajas de iPhone 17 Pro en TIC Wireless, Houston",
+    imageAlt: "iPhone 18 Pro Max color ciruela, desbloqueado, en TIC Wireless Houston",
     breadcrumb: "Inicio",
   },
   hero: {
     kicker: "Tienda de celulares y reparación · Hillcroft, Houston",
     title: ["Tu celular,", "resuelto."],
     body: [
-      "Los iPhone y Android desbloqueados más nuevos, a pagos desde ",
+      "El nuevo iPhone 18 Pro Max y los Android más recientes, desbloqueados y a pagos desde ",
       "$40 de enganche",
       " — ¿mal crédito? No hay problema. Además planes prepagados, reparaciones el mismo día y todos los accesorios que necesitas.",
     ],
     directions: "Cómo llegar",
     reviews: "400+ reseñas en Google",
     language: "We speak English",
-    imageCaption: "iPhone 17 Pro — disponible y desbloqueado.",
+    imageKicker: "Recién llegado",
+    imageTitle: "iPhone 18 Pro Max",
+    imageSub: "Desbloqueado · con opción a compra",
+    imageCta: "Ver arrendamiento",
     imageAlt:
-      "Cinco cajas de iPhone 17 Pro en naranja, azul y plata con una tarjeta de presentación de TIC Wireless",
-    financingLabel: "A pagos",
-    financingUnit: "de enganche",
-    financingNote: "¿Mal crédito? No hay problema.",
+      "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless",
+    leaseLabel: "A pagos",
+    leaseUnit: "de enganche",
+    leaseNote: "Opciones semanales, quincenales o mensuales",
   },
   ticker: [
     "A pagos desde $40",
@@ -375,6 +402,31 @@ const es: HomeCopy = {
     cta: "Míranos en Google",
     imageAlt: "Samsung Galaxy S22 Ultra en el mostrador junto a una funda resistente",
   },
+  glance: {
+    kicker: "En resumen",
+    title: "TIC Wireless en 30 segundos.",
+    summary:
+      "TIC Wireless es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche, planes prepagados de todas las compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.",
+    facts: [
+      ["Dirección", "3640 Hillcroft St, Houston, TX 77057"],
+      ["Teléfono", "(713) 339-9300"],
+      ["Horario", "Lun–Sáb 9 AM–8 PM · Dom 9 AM–5 PM · sin cita"],
+      [
+        "Arrendamiento",
+        "Sin necesidad de crédito · desde $40 de enganche · pagos semanales, quincenales o mensuales",
+      ],
+      [
+        "Reparaciones",
+        "Pantallas, baterías y puertos de carga el mismo día para iPhone, Samsung y Android",
+      ],
+      [
+        "Compañías prepagadas",
+        "Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile",
+      ],
+      ["Idiomas", "Español e inglés"],
+      ["Calificación", "4.7★ en Google · más de 400 reseñas"],
+    ],
+  },
   area: {
     kicker: "Zonas que atendemos",
     title: "Tu tienda de celulares de confianza en el suroeste de Houston.",
@@ -395,12 +447,15 @@ const es: HomeCopy = {
       "Alief",
     ],
     zips: "Códigos postales cercanos: 77057 · 77036 · 77063 · 77042 · 77081 · 77074 · 77056",
+    cta: "Busca tu zona o código postal",
   },
   faq: {
     kicker: "Preguntas",
     title: "Bueno saberlo.",
     more: "¿Algo más? Llámanos al",
     languages: "Español & English",
+    guides: "Guías útiles",
+    allGuides: "Todas las guías",
     items: [
       {
         q: "¿Dónde está TIC Wireless?",
@@ -408,7 +463,7 @@ const es: HomeCopy = {
       },
       {
         q: "¿Puedo sacar un celular a pagos con mal crédito o sin crédito?",
-        a: "Sí. Tenemos financiamiento y arrendamiento con opción a compra en iPhone y Android desbloqueados desde $40 de enganche — el mal crédito no es problema. Ven y te explicamos las opciones en unos minutos.",
+        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $40 de enganche — el mal crédito no es problema. Ven y te explicamos las opciones en unos minutos.",
       },
       {
         q: "¿Reparan pantallas rotas de iPhone y Samsung?",
