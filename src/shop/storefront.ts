@@ -147,7 +147,7 @@ export const getCatalog = createServerFn({ method: "GET" }).handler(async (): Pr
 });
 
 export const createCheckout = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => {
+  .validator((d: unknown) => {
     const lines = (d as { lines?: unknown }).lines;
     if (!Array.isArray(lines) || lines.length === 0 || lines.length > 100)
       throw new Error("Cart is empty");

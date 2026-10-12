@@ -6,7 +6,7 @@ import { createServerFn } from "@tanstack/react-start";
 export type UpcInfo = { title: string; brand: string; category: string } | null;
 
 export const lookupBarcode = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => {
+  .validator((d: unknown) => {
     const code = String((d as { code?: unknown } | null)?.code ?? "").trim();
     if (!/^\d{8,14}$/.test(code)) throw new Error("Not a UPC/EAN barcode");
     return { code };

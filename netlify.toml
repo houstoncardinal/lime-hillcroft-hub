@@ -1,0 +1,9 @@
+# Netlify build settings (these override the values in the Netlify UI).
+# Nitro detects Netlify automatically: static files go to dist/, the server-rendered pages and
+# server functions go to .netlify/functions-internal/.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

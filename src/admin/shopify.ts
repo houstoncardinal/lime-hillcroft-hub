@@ -72,7 +72,7 @@ const validateKey = (d: unknown) => {
 };
 
 export const shopifyStatus = createServerFn({ method: "POST" })
-  .inputValidator(validateKey)
+  .validator(validateKey)
   .handler(async ({ data }) => {
     const { domain, token, version } = shopifyConfig();
     const base = {
@@ -126,7 +126,7 @@ type ProductsPage = {
 };
 
 export const shopifyPullProducts = createServerFn({ method: "POST" })
-  .inputValidator(validateKey)
+  .validator(validateKey)
   .handler(async ({ data }): Promise<ShopifyVariantRow[]> => {
     authorize(data.adminKey);
     const rows: ShopifyVariantRow[] = [];
@@ -165,7 +165,7 @@ export const shopifyPullProducts = createServerFn({ method: "POST" })
   });
 
 export const shopifyPushQuantities = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => {
+  .validator((d: unknown) => {
     const { adminKey } = validateKey(d);
     const items = (d as { items?: unknown }).items;
     if (!Array.isArray(items)) throw new Error("items is required");
