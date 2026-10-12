@@ -11,6 +11,7 @@ import {
   Wallet,
 } from "lucide-react";
 
+import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
 import consoles from "@/assets/photos/consoles-wide.jpg";
 import consolesSm from "@/assets/photos/consoles-wide-sm.jpg";
@@ -181,6 +182,8 @@ export function LeasingPage({ lang }: { lang: Lang }) {
           ))}
         </div>
       </section>
+
+      <LeasingPortals lang={lang} />
 
       {/* Categories */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
@@ -353,7 +356,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
         </p>
       </section>
 
-      <SiteFooter lang={lang} />
+      <SiteFooter lang={lang} portals={false} />
       <MobileCallBar lang={lang} />
     </main>
   );

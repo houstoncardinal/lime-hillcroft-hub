@@ -65,6 +65,7 @@ import {
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
+import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -383,6 +384,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </a>
         </div>
       </section>
+
+      <LeasingPortals lang={lang} />
 
       {/* Carriers */}
       <section className="border-y bg-secondary/60">
@@ -796,7 +799,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
-      <SiteFooter lang={lang} />
+      <SiteFooter lang={lang} portals={false} />
       <MobileCallBar lang={lang} />
     </main>
   );

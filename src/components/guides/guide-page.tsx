@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { LeasingPortals } from "@/components/site/leasing-portals";
 import { MoneyText } from "@/components/intl/money";
 import {
   ArrowRight,
@@ -197,7 +198,8 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
         </div>
       </section>
 
-      <SiteFooter lang={lang} />
+      {guide.slug === "how-lease-to-own-works" && <LeasingPortals lang={lang} />}
+      <SiteFooter lang={lang} portals={guide.slug !== "how-lease-to-own-works"} />
       <MobileCallBar lang={lang} />
     </main>
   );

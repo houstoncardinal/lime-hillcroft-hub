@@ -132,9 +132,10 @@ function store(lang: Lang) {
       height: 190,
     },
     image: [
-      absoluteUrl("/og/store.jpg"),
-      absoluteUrl("/og/home.jpg"),
-      absoluteUrl("/og/leasing.jpg"),
+      absoluteUrl("/photos/storefront-3640.jpg"),
+      absoluteUrl("/og/home-en.jpg"),
+      absoluteUrl("/photos/plaza.jpg"),
+      absoluteUrl("/photos/store-counter.jpg"),
     ],
     telephone: "+1-713-339-9300",
     contactPoint: {

@@ -13,6 +13,7 @@ import {
   Navigation,
   Phone,
   ShoppingBag,
+  Wallet,
   X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -24,6 +25,7 @@ import { SERVICE_ICONS } from "@/components/services/icons";
 import { servicePath } from "@/components/services/paths";
 import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { SHOP_ENABLED } from "@/components/site/features";
+import { LeasingPortalLinks } from "@/components/site/leasing-portals";
 import { Logo } from "@/components/site/logo";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 import { setChatHidden } from "@/components/site/tidio";
@@ -42,11 +44,13 @@ const T = {
     services: "Services",
     allServices: "All services",
     explore: "Explore",
+    apply: "Apply for leasing online",
     language: "Language & currency",
     more: "Summary pages in other languages",
     currency: "Currency",
     home: "Home",
     leasing: "Leasing · no credit needed",
+    prepaid: "Prepaid plans & prices",
     shop: "Shop",
     location: "Location & hours",
     areas: "Areas we serve",
@@ -65,11 +69,13 @@ const T = {
     services: "Servicios",
     allServices: "Todos los servicios",
     explore: "Explora",
+    apply: "Solicita arrendamiento en línea",
     language: "Idioma y moneda",
     more: "Páginas de resumen en otros idiomas",
     currency: "Moneda",
     home: "Inicio",
     leasing: "Arrendamiento · sin crédito",
+    prepaid: "Planes prepagados y precios",
     shop: "Tienda",
     location: "Ubicación y horario",
     areas: "Zonas que atendemos",
@@ -109,6 +115,7 @@ export function MobileMenu({
     [t.home, ALTERNATES.home[lang], Home],
     [t.allServices, ALTERNATES.services[lang], LayoutGrid],
     [t.leasing, ALTERNATES.leasing[lang], Gamepad2],
+    [t.prepaid, servicePath(lang, "prepaid-plans"), Wallet],
     ...(SHOP_ENABLED
       ? [[t.shop, ALTERNATES.shop[lang], ShoppingBag] as [string, string, typeof Home]]
       : []),
@@ -208,6 +215,10 @@ export function MobileMenu({
                 <ul className="space-y-1">
                   {main.map(([label, href, Icon]) => row(label, href, Icon))}
                 </ul>
+              </Section>
+
+              <Section title={t.apply}>
+                <LeasingPortalLinks lang={lang} />
               </Section>
 
               <Section title={t.services}>

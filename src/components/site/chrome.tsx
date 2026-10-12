@@ -6,6 +6,7 @@ import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/busi
 import { LanguageMenu } from "@/components/intl/language-menu";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { Logo } from "@/components/site/logo";
+import { LeasingPortalsBanner } from "@/components/site/leasing-portals";
 import { MobileMenu } from "@/components/site/mobile-menu";
 import { AREAS, shortName } from "@/components/areas/data";
 import { areaPath } from "@/components/areas/paths";
@@ -23,6 +24,7 @@ const NAV: Record<Lang, [string, string][]> = {
     ["Services", "/services"],
     ["Shop", "/shop"],
     ["Leasing", "/leasing"],
+    ["Prepaid", "/services/prepaid-plans"],
     ["Repair", "/services/phone-repair"],
     ["Location", "/location"],
   ],
@@ -30,6 +32,7 @@ const NAV: Record<Lang, [string, string][]> = {
     ["Servicios", "/es/servicios"],
     ["Tienda", "/es/tienda"],
     ["Arrendamiento", "/es/arrendamiento"],
+    ["Prepago", "/es/servicios/prepaid-plans"],
     ["Reparación", "/es/servicios/phone-repair"],
     ["Ubicación", "/es/ubicacion"],
   ],
@@ -145,7 +148,10 @@ export function SiteHeader({
         >
           <Logo light compact />
         </Link>
-        <nav aria-label="Main" className="hidden items-center gap-7 text-sm text-white/70 lg:flex">
+        <nav
+          aria-label="Main"
+          className="hidden items-center gap-5 text-sm text-white/70 lg:flex xl:gap-7"
+        >
           {nav(lang).map(([label, href]) => (
             <a key={href} href={href} className="transition hover:text-white">
               {label}
@@ -181,6 +187,7 @@ const FOOTER = {
     store: "Store",
     home: "Home",
     leasing: "Leasing",
+    prepaid: "Prepaid plans",
     shop: "Shop",
     location: "Location & hours",
     areas: "Areas we serve",
@@ -194,6 +201,7 @@ const FOOTER = {
     store: "Tienda",
     home: "Inicio",
     leasing: "Arrendamiento",
+    prepaid: "Planes prepagados",
     shop: "Tienda en línea",
     location: "Ubicación y horario",
     areas: "Zonas que atendemos",
@@ -220,81 +228,97 @@ function FooterColumn({ title, links }: { title: string; links: [string, string]
   );
 }
 
-export function SiteFooter({ lang }: { lang: Lang }) {
+export function SiteFooter({
+  lang,
+  portals = true,
+}: {
+  lang: Lang;
+  /** The leasing-application band above the footer; off on pages with the full section. */
+  portals?: boolean;
+}) {
   const t = T[lang];
   const f = FOOTER[lang];
   return (
-    <footer lang={lang} dir="ltr" className="border-t border-white/10 bg-ink text-white">
-      <div className="mx-auto max-w-7xl px-5 pb-28 pt-14 md:pb-14 md:pt-20">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_3fr]">
-          <div>
-            <Logo light />
-            <p className="mt-4 max-w-xs text-sm text-white/60">{t.tagline}</p>
-            <address className="mt-6 text-sm not-italic text-white/75">
-              <p>{ADDRESS}</p>
-              <a href={TEL} className="mt-2 block font-display text-xl font-semibold text-primary">
-                {PHONE}
-              </a>
-            </address>
-            <OpenBadge lang={lang} className="mt-3 text-white/70" />
-            <div className="mt-6 flex flex-wrap gap-2">
-              <a
-                href={DIRECTIONS}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-sm font-semibold transition hover:border-white/60"
-              >
-                <MapPin className="h-4 w-4" /> {t.directions}
-              </a>
+    <>
+      {portals && <LeasingPortalsBanner lang={lang} />}
+      <footer lang={lang} dir="ltr" className="border-t border-white/10 bg-ink text-white">
+        <div className="mx-auto max-w-7xl px-5 pb-28 pt-14 md:pb-14 md:pt-20">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_3fr]">
+            <div>
+              <Logo light />
+              <p className="mt-4 max-w-xs text-sm text-white/60">{t.tagline}</p>
+              <address className="mt-6 text-sm not-italic text-white/75">
+                <p>{ADDRESS}</p>
+                <a
+                  href={TEL}
+                  className="mt-2 block font-display text-xl font-semibold text-primary"
+                >
+                  {PHONE}
+                </a>
+              </address>
+              <OpenBadge lang={lang} className="mt-3 text-white/70" />
+              <div className="mt-6 flex flex-wrap gap-2">
+                <a
+                  href={DIRECTIONS}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-sm font-semibold transition hover:border-white/60"
+                >
+                  <MapPin className="h-4 w-4" /> {t.directions}
+                </a>
+              </div>
             </div>
+            <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+              <FooterColumn
+                title={f.services}
+                links={[
+                  ...SERVICES.map((s): [string, string] => [
+                    s.text[lang].name,
+                    servicePath(lang, s.slug),
+                  ]),
+                  [f.allServices, ALTERNATES.services[lang]],
+                ]}
+              />
+              <FooterColumn
+                title={f.store}
+                links={[
+                  [f.home, ALTERNATES.home[lang]],
+                  [f.leasing, ALTERNATES.leasing[lang]],
+                  [f.prepaid, servicePath(lang, "prepaid-plans")],
+                  ...(SHOP_ENABLED ? [[f.shop, ALTERNATES.shop[lang]] as [string, string]] : []),
+                  [f.location, ALTERNATES.location[lang]],
+                  [f.areas, ALTERNATES.areas[lang]],
+                  [f.guides, ALTERNATES.guides[lang]],
+                ]}
+              />
+              <FooterColumn
+                title={f.areas}
+                links={[
+                  ...AREAS.map((a): [string, string] => [shortName(a), areaPath(lang, a.slug)]),
+                  [f.allAreas, ALTERNATES.areas[lang]],
+                ]}
+              />
+              <FooterColumn
+                title={f.guides}
+                links={[
+                  ...GUIDES.map((g): [string, string] => [
+                    g.text[lang].metaTitle,
+                    guidePath(lang, g.slug),
+                  ]),
+                  [f.allGuides, ALTERNATES.guides[lang]],
+                ]}
+              />
+            </nav>
           </div>
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
-            <FooterColumn
-              title={f.services}
-              links={[
-                ...SERVICES.map((s): [string, string] => [
-                  s.text[lang].name,
-                  servicePath(lang, s.slug),
-                ]),
-                [f.allServices, ALTERNATES.services[lang]],
-              ]}
-            />
-            <FooterColumn
-              title={f.store}
-              links={[
-                [f.home, ALTERNATES.home[lang]],
-                [f.leasing, ALTERNATES.leasing[lang]],
-                ...(SHOP_ENABLED ? [[f.shop, ALTERNATES.shop[lang]] as [string, string]] : []),
-                [f.location, ALTERNATES.location[lang]],
-                [f.areas, ALTERNATES.areas[lang]],
-                [f.guides, ALTERNATES.guides[lang]],
-              ]}
-            />
-            <FooterColumn
-              title={f.areas}
-              links={[
-                ...AREAS.map((a): [string, string] => [shortName(a), areaPath(lang, a.slug)]),
-                [f.allAreas, ALTERNATES.areas[lang]],
-              ]}
-            />
-            <FooterColumn
-              title={f.guides}
-              links={[
-                ...GUIDES.map((g): [string, string] => [
-                  g.text[lang].metaTitle,
-                  guidePath(lang, g.slug),
-                ]),
-                [f.allGuides, ALTERNATES.guides[lang]],
-              ]}
-            />
-          </nav>
+          <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
+            <p>
+              © {new Date().getFullYear()} TIC Wireless Electronic & Repair Center · Houston, TX
+            </p>
+            <p>{t.trademarks}</p>
+          </div>
         </div>
-        <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} TIC Wireless Electronic & Repair Center · Houston, TX</p>
-          <p>{t.trademarks}</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
 

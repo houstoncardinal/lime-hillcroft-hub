@@ -11,6 +11,7 @@ import { PrepaidPlans } from "@/components/services/prepaid-section";
 import { ADDRESS, DIRECTIONS, HOURS, PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
+import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -129,6 +130,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       </section>
 
       {service.slug === "prepaid-plans" && <PrepaidPlans lang={lang} />}
+      {service.slug === "unlocked-phones" && <LeasingPortals lang={lang} />}
 
       <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-2">
@@ -228,7 +230,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
         </div>
       </section>
 
-      <SiteFooter lang={lang} />
+      <SiteFooter lang={lang} portals={service.slug !== "unlocked-phones"} />
       <MobileCallBar lang={lang} />
     </main>
   );

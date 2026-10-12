@@ -7,7 +7,7 @@ const en = {
     description:
       "Cell phone store at 3640 Hillcroft St, Suite C, Houston: phones with no-credit leasing from $40 down, same-day screen repair & unlocking. Se habla español.",
     imageAlt:
-      "iPhone 18 Pro Max in plum, unlocked, at TIC Wireless Electronic & Repair Center in Houston",
+      "The storefront of TIC Wireless Electronic & Repair Center at 3640 Hillcroft St, Suite C, Houston",
     breadcrumb: "Home",
   },
   hero: {
@@ -259,7 +259,7 @@ const es: HomeCopy = {
     description:
       "Tienda de celulares en Hillcroft, Houston: celulares a pagos sin crédito desde $40, cambio de pantalla el mismo día, liberación y planes prepagados.",
     imageAlt:
-      "iPhone 18 Pro Max color ciruela, desbloqueado, en TIC Wireless Electronic & Repair Center Houston",
+      "Fachada de TIC Wireless Electronic & Repair Center en 3640 Hillcroft St, Suite C, Houston",
     breadcrumb: "Inicio",
   },
   hero: {

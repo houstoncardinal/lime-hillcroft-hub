@@ -72,12 +72,12 @@ const T = {
   home: {
     en: {
       kicker: "Cell phone store & repair · Houston",
-      headline: "Your phone, sorted. iPhone 18 Pro Max, repairs & plans.",
+      headline: "Your phone store on Hillcroft — phones, repairs & plans.",
       sub: "Unlocked phones with leasing — no credit needed. Same-day repair, prepaid plans and unlocking.",
     },
     es: {
       kicker: "Tienda de celulares y reparación · Houston",
-      headline: "Tu celular, resuelto. iPhone 18 Pro Max, reparaciones y planes.",
+      headline: "Tu tienda de celulares en Hillcroft: celulares, reparaciones y planes.",
       sub: "Celulares desbloqueados a pagos sin necesidad de crédito. Reparación el mismo día, planes y liberación.",
     },
   },
@@ -162,7 +162,7 @@ const page = (
 export function ogCards(): OgCard[] {
   return [
     ...LANGS.flatMap((lang) => [
-      page("home", lang, "iphone-18-pro-max", T.home[lang]),
+      page("home", lang, "storefront-3640", T.home[lang]),
       page("leasing", lang, "consoles-wide", T.leasing[lang], "0% 50%"),
       page("location", lang, "storefront-3640", T.location[lang]),
       page("services", lang, "store-counter", T.services[lang]),
