@@ -1,27 +1,28 @@
+import { ogImage } from "@/components/site/og";
 import { GUIDES, type Guide } from "@/components/guides/data";
 import { GUIDES_HUB } from "@/components/guides/hub-copy";
 import { guidePath, guidePaths } from "@/components/guides/paths";
 import { pageSchema } from "@/components/site/schema";
-import { ALTERNATES, absoluteUrl, pageHead, type Lang } from "@/components/site/seo";
+import { ALTERNATES, absoluteUrl, pageHead, withBrand, type Lang } from "@/components/site/seo";
 
-const IMAGE = "/og/store.jpg";
 const LANGUAGE = { en: "en-US", es: "es-US" } as const;
 
 export function guidesHubHead(lang: Lang) {
   const t = GUIDES_HUB[lang];
+  const image = ogImage("guides", lang);
   return pageHead({
     paths: ALTERNATES.guides,
     lang,
     title: t.title,
     description: t.description,
-    image: IMAGE,
+    image,
     imageAlt: t.title,
     jsonLd: pageSchema({
       paths: ALTERNATES.guides,
       lang,
       name: t.title,
       description: t.description,
-      image: IMAGE,
+      image,
       breadcrumb: [
         [t.breadcrumb[0] ?? "", ALTERNATES.home[lang]],
         [t.breadcrumb[1] ?? "", ALTERNATES.guides[lang]],
@@ -50,19 +51,20 @@ export function guideHead(lang: Lang, guide: Guide | undefined) {
   const url = absoluteUrl(paths[lang]);
   const hub = GUIDES_HUB[lang];
   const store = { "@id": absoluteUrl("/#store") };
+  const image = ogImage(`guide-${guide.slug}`, lang);
   return pageHead({
     paths,
     lang,
-    title: `${t.title} | TIC Wireless`,
+    title: withBrand(t.metaTitle),
     description: t.description,
-    image: IMAGE,
+    image,
     imageAlt: t.title,
     jsonLd: pageSchema({
       paths,
       lang,
       name: t.title,
       description: t.description,
-      image: IMAGE,
+      image,
       breadcrumb: [
         [hub.breadcrumb[0] ?? "", ALTERNATES.home[lang]],
         [hub.breadcrumb[1] ?? "", ALTERNATES.guides[lang]],
@@ -81,7 +83,7 @@ export function guideHead(lang: Lang, guide: Guide | undefined) {
           dateModified: guide.updated,
           author: store,
           publisher: store,
-          image: absoluteUrl(IMAGE),
+          image: absoluteUrl(image),
           mainEntityOfPage: { "@id": `${url}#webpage` },
           articleSection: hub.breadcrumb[1],
           wordCount: [

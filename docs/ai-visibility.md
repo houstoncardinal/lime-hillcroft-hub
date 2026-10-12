@@ -68,7 +68,7 @@ the neighborhood in replies to reviews from customers there.
    - Answer the Q&A section; reply to every review.
 3. **Fix the old address everywhere.** Yelp, MapQuest, Waze, Apple Maps and directories still
    show 3838 Hillcroft St, Suite 100. Inconsistent name/address/phone is the #1 reason AI and
-   maps give wrong answers. Use exactly: *TIC Wireless, 3640 Hillcroft St, Houston, TX 77057,
+   maps give wrong answers. Use exactly: *TIC Wireless, 3640 Hillcroft St, Suite C, Houston, TX 77057,
    (713) 339-9300*.
 4. **Bing Webmaster Tools** (bing.com/webmasters) — ChatGPT and Copilot search use Bing.
    Verify the site and submit the sitemap. Also claim **Bing Places**.

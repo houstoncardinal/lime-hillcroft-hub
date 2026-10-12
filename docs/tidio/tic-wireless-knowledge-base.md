@@ -1,13 +1,13 @@
-# TIC Wireless — Business Knowledge Base
+# TIC Wireless Electronic & Repair Center — Business Knowledge Base
 
-TIC Wireless (also listed as "TIC Wireless - Hillcroft") is an independent cell phone store in
+TIC Wireless Electronic & Repair Center (also known as "TIC Wireless" and listed on Google as "TIC Wireless - Hillcroft") is an independent cell phone store in
 Houston, Texas. It sells new unlocked phones with leasing, prepaid phone plans, Xfinity
 Prepaid internet and accessories, and does phone repair and unlocking. Slogan: "Buy · Sell ·
 Repair · Unlock." The team speaks English and Spanish (Se habla español).
 
 ## Contact and location
 
-- Address: 3640 Hillcroft St, Houston, TX 77057.
+- Address: 3640 Hillcroft St, Suite C, Houston, TX 77057.
 - Where: in the shopping center on Hillcroft Avenue near Windswept Lane, just north of the
   Westpark Tollway, in Southwest Houston (Westside / Mid West area), near the Mahatma Gandhi
   District (Harwin / Hillcroft), Gulfton, Sharpstown, Westchase and the Galleria.
@@ -22,9 +22,9 @@ Repair · Unlock." The team speaks English and Spanish (Se habla español).
 
 ## We moved
 
-TIC Wireless moved from its old location at 3838 Hillcroft St, Suite 100, to a bigger store at
-3640 Hillcroft St. Same team, same phone number. Some map apps and directories may still show
-the old address — the correct address is 3640 Hillcroft St, Houston, TX 77057.
+TIC Wireless Electronic & Repair Center moved from its old location at 3838 Hillcroft St, Suite 100, to a bigger store at
+3640 Hillcroft St, Suite C. Same team, same phone number. Some map apps and directories may still show
+the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, TX 77057.
 
 ## Hours
 
@@ -79,7 +79,7 @@ the old address — the correct address is 3640 Hillcroft St, Houston, TX 77057.
 
 ## Unlocking
 
-- TIC Wireless unlocks phones so customers can use them with the carrier they choose.
+- TIC Wireless Electronic & Repair Center unlocks phones so customers can use them with the carrier they choose.
 - Customers should bring the phone in so staff can check it.
 
 ## Accessories
@@ -105,7 +105,7 @@ customers should call (713) 339-9300.
 
 ## Reviews
 
-- TIC Wireless is rated 4.7 out of 5 on Google, from 400+ reviews.
+- TIC Wireless Electronic & Repair Center is rated 4.7 out of 5 on Google, from 400+ reviews.
 
 ## Language
 

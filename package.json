@@ -13,7 +13,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "seo:sitemap": "node scripts/seo.mjs sitemap",
-    "seo:indexnow": "node scripts/seo.mjs indexnow"
+    "seo:indexnow": "node scripts/seo.mjs indexnow",
+    "seo:og": "node scripts/og.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1"

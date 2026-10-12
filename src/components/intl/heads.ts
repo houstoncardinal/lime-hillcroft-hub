@@ -1,8 +1,7 @@
 import { INTL_LANGS, intlPath, type IntlLang } from "@/components/intl/languages";
+import { ogImage } from "@/components/site/og";
 import { baseGraph } from "@/components/site/schema";
 import { ALTERNATES, absoluteUrl } from "@/components/site/seo";
-
-const IMAGE = "/og/home.jpg";
 
 /** hreflang links shared by the home page in every language. */
 export const homeAlternates = () => [
@@ -17,22 +16,29 @@ export const homeAlternates = () => [
 ];
 
 export function intlHead(l: IntlLang | undefined) {
-  if (!l) return { meta: [{ title: "TIC Wireless" }] };
+  if (!l) return { meta: [{ title: "TIC Wireless Electronic & Repair Center" }] };
   const url = absoluteUrl(intlPath(l.code));
-  const img = absoluteUrl(IMAGE);
+  const img = absoluteUrl(ogImage(`lang-${l.code}`));
   return {
     meta: [
       { title: l.title },
       { name: "description", content: l.description },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "TIC Wireless" },
+      { property: "og:site_name", content: "TIC Wireless Electronic & Repair Center" },
       { property: "og:locale", content: l.tag.replace("-", "_") },
       { property: "og:url", content: url },
       { property: "og:title", content: l.title },
       { property: "og:description", content: l.description },
       { property: "og:image", content: img },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: l.h1 },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: l.title },
+      { name: "twitter:description", content: l.description },
+      { name: "twitter:image", content: img },
+      { name: "twitter:image:alt", content: l.h1 },
     ],
     links: [{ rel: "canonical", href: url }, ...homeAlternates()],
     scripts: [

@@ -50,7 +50,7 @@ function Settings() {
       <GlassCard className="mb-6">
         <CardTitle
           title="Appearance"
-          description="Dashboard theme for this device. The website has its own theme picker (palette icon in its header)."
+          description="Dashboard theme for this device. The public website always uses the Signature theme."
         />
         <ThemeGrid value={theme} onChange={setTheme} large />
       </GlassCard>

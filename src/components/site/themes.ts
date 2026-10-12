@@ -1,6 +1,6 @@
 // Color themes for the website and the /admin dashboard. Each theme is a set of CSS tokens in
 // src/styles.css under html[data-palette="<id>"]; "signature" (the TIC logo colors) is the default.
-// The website and the dashboard remember their theme separately.
+// The public website always uses the default (Signature) theme; only /admin offers a theme picker.
 
 export type ThemeId = "signature" | "gold" | "emerald" | "royal" | "rose" | "ocean" | "crimson";
 
@@ -58,7 +58,6 @@ export const THEMES: Theme[] = [
 ];
 
 export const DEFAULT_THEME: ThemeId = "signature";
-export const SITE_THEME_KEY = "tic-theme";
 export const ADMIN_THEME_KEY = "tic-admin-theme";
 export const THEME_EVENT = "tic-theme-change";
 
@@ -87,5 +86,5 @@ export function saveTheme(key: string, id: ThemeId) {
   window.dispatchEvent(new CustomEvent(THEME_EVENT, { detail: { key, id } }));
 }
 
-/** Runs in <head> before first paint so a saved theme never flashes the default. */
-export const THEME_INIT_SCRIPT = `(function(){try{var k=location.pathname.indexOf("/admin")===0?"${ADMIN_THEME_KEY}":"${SITE_THEME_KEY}";var t=localStorage.getItem(k);var ok=${JSON.stringify(THEMES.map((t) => t.id))};document.documentElement.setAttribute("data-palette",ok.indexOf(t)>-1?t:"${DEFAULT_THEME}")}catch(e){}})();`;
+/** Runs in <head> before first paint: Signature on the website, the saved choice in /admin. */
+export const THEME_INIT_SCRIPT = `(function(){try{var t="${DEFAULT_THEME}";if(location.pathname.indexOf("/admin")===0){var s=localStorage.getItem("${ADMIN_THEME_KEY}");var ok=${JSON.stringify(THEMES.map((t) => t.id))};if(ok.indexOf(s)>-1)t=s}document.documentElement.setAttribute("data-palette",t)}catch(e){}})();`;

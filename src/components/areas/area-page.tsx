@@ -63,7 +63,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
           >
             <Link to={ALTERNATES.home[lang]} className="hover:text-white">
-              TIC Wireless
+              TIC Wireless Electronic & Repair Center
             </Link>
             <span>/</span>
             <Link to={ALTERNATES.areas[lang]} className="hover:text-white">
@@ -197,7 +197,10 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
               {<MoneyText text={t.routeTitle} />}
             </h2>
             <ol className="mt-8 space-y-4">
-              {[...area.route, "TIC Wireless · 3640 Hillcroft St"].map((step, i, all) => (
+              {[
+                ...area.route,
+                "TIC Wireless Electronic & Repair Center · 3640 Hillcroft St, Suite C",
+              ].map((step, i, all) => (
                 <li key={step} className="flex items-start gap-4">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary font-display text-sm font-semibold text-primary-foreground">
                     {i === all.length - 1 ? <MapPin className="h-4 w-4" /> : i + 1}
@@ -225,7 +228,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
                 width={2000}
                 height={1500}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                alt="The glass storefront of TIC Wireless at 3640 Hillcroft St, Houston"
+                alt="The glass storefront of TIC Wireless Electronic & Repair Center at 3640 Hillcroft St, Suite C, Houston"
                 className="aspect-[16/10]"
               />
             </div>
@@ -236,15 +239,15 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
                 width={2000}
                 height={1500}
                 sizes="(min-width: 1024px) 25vw, 50vw"
-                alt="The shopping center at 3640 Hillcroft St from the parking lot"
+                alt="The shopping center at 3640 Hillcroft St, Suite C from the parking lot"
                 className="aspect-[4/3]"
               />
             </div>
             <iframe
-              title={`Map: TIC Wireless near ${short}`}
+              title={`Map: TIC Wireless Electronic & Repair Center near ${short}`}
               loading="lazy"
               className="aspect-[4/3] h-full w-full rounded-3xl border-0"
-              src={`https://maps.google.com/maps?q=TIC%20Wireless%2C%203640%20Hillcroft%20St%2C%20Houston%2C%20TX%2077057&z=13&hl=${lang}&output=embed`}
+              src={`https://maps.google.com/maps?q=TIC%20Wireless%2C%203640%20Hillcroft%20St%2C%20Suite%20C%2C%20Houston%2C%20TX%2077057&z=13&hl=${lang}&output=embed`}
             />
           </div>
         </div>

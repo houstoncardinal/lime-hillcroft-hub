@@ -4,11 +4,8 @@
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -18,309 +15,515 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
-    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/home.jpg</image:loc></image:image>
-    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/store.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://lime-hillcroft-hub.lovable.app/ur"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://lime-hillcroft-hub.lovable.app/hi"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lime-hillcroft-hub.lovable.app/fr"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
-    <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
-    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/home.jpg</image:loc></image:image>
-    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/store.jpg</image:loc></image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/home-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/leasing</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/arrendamiento"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
-    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/leasing.jpg</image:loc></image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/leasing-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/arrendamiento</loc>
+    <loc>https://lime-hillcroft-hub.lovable.app/services</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/arrendamiento"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
-    <image:image><image:loc>https://lime-hillcroft-hub.lovable.app/og/leasing.jpg</image:loc></image:image>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/services-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/unlocked-phones</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/unlocked-phones"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/unlocked-phones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/unlocked-phones"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/phone-repair</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/phone-repair"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/phone-repair"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/phone-repair"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-phone-repair-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/prepaid-plans</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/prepaid-plans"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/prepaid-plans"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/prepaid-plans"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-prepaid-plans-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/xfinity-prepaid-internet"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-xfinity-prepaid-internet-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/phone-unlocking</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/phone-unlocking"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/phone-unlocking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/phone-unlocking"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-phone-unlocking-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/buy-sell-trade"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-buy-sell-trade-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/bill-payments</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/bill-payments"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/bill-payments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/bill-payments"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-bill-payments-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/services/international-recharge</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/international-recharge"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/international-recharge"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/international-recharge"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-international-recharge-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/guides</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/guias</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/areas-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/mahatma-gandhi-district</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/mahatma-gandhi-district"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-mahatma-gandhi-district-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/gulfton</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/gulfton"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/gulfton</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/gulfton"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/gulfton"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/gulfton"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-gulfton-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/sharpstown</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/sharpstown"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/sharpstown</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/sharpstown"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/sharpstown"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/sharpstown"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-sharpstown-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/westchase</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/westchase"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/westchase"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/westchase"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/westchase</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/westchase"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/westchase"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/westchase"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-westchase-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/galleria-uptown</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/galleria-uptown"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-galleria-uptown-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/bellaire</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/bellaire"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/bellaire</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/bellaire"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/bellaire"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/bellaire"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-bellaire-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/alief</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/alief"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/alief"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/alief"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/alief</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/alief"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/alief"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/alief"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-alief-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/areas/meyerland</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/meyerland"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-meyerland-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/meyerland</loc>
+    <loc>https://lime-hillcroft-hub.lovable.app/guides</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/meyerland"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/meyerland"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/meyerland"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guides-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/cracked-screen-repair-or-replace"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/guias/cracked-screen-repair-or-replace</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/cracked-screen-repair-or-replace"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-cracked-screen-repair-or-replace-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/how-lease-to-own-works"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/guias/how-lease-to-own-works</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/how-lease-to-own-works"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-how-lease-to-own-works-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/how-to-unlock-your-phone"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone"/>
-  </url>
-  <url>
-    <loc>https://lime-hillcroft-hub.lovable.app/es/guias/how-to-unlock-your-phone</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/how-to-unlock-your-phone"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-how-to-unlock-your-phone-en.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/guides/choosing-a-prepaid-plan-houston</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/choosing-a-prepaid-plan-houston"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-choosing-a-prepaid-plan-houston-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://lime-hillcroft-hub.lovable.app/ur"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://lime-hillcroft-hub.lovable.app/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lime-hillcroft-hub.lovable.app/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/home-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/arrendamiento</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/arrendamiento"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/leasing-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/services-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/unlocked-phones</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/unlocked-phones"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/unlocked-phones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/unlocked-phones"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/phone-repair</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/phone-repair"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/phone-repair"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/phone-repair"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-phone-repair-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/prepaid-plans</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/prepaid-plans"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/prepaid-plans"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/prepaid-plans"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-prepaid-plans-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/xfinity-prepaid-internet</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/xfinity-prepaid-internet"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-xfinity-prepaid-internet-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/phone-unlocking</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/phone-unlocking"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/phone-unlocking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/phone-unlocking"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-phone-unlocking-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/buy-sell-trade</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/buy-sell-trade"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-buy-sell-trade-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/bill-payments</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/bill-payments"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/bill-payments"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/bill-payments"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-bill-payments-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/servicios/international-recharge</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services/international-recharge"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/servicios/international-recharge"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/services/international-recharge"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/service-international-recharge-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/areas-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/mahatma-gandhi-district</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/mahatma-gandhi-district"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/mahatma-gandhi-district"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-mahatma-gandhi-district-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/gulfton</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/gulfton"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/gulfton"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/gulfton"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-gulfton-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/sharpstown</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/sharpstown"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/sharpstown"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/sharpstown"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-sharpstown-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/westchase</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/westchase"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/westchase"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/westchase"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-westchase-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/galleria-uptown</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/galleria-uptown"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/galleria-uptown"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-galleria-uptown-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/bellaire</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/bellaire"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/bellaire"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/bellaire"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-bellaire-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/alief</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/alief"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/alief"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/alief"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-alief-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/zonas/meyerland</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/areas/meyerland"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/zonas/meyerland"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/areas/meyerland"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/area-meyerland-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/guias</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guides-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/guias/cracked-screen-repair-or-replace</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/cracked-screen-repair-or-replace"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/cracked-screen-repair-or-replace"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-cracked-screen-repair-or-replace-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/guias/how-lease-to-own-works</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/how-lease-to-own-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/how-lease-to-own-works"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-how-lease-to-own-works-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/guias/how-to-unlock-your-phone</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/how-to-unlock-your-phone"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/how-to-unlock-your-phone"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-how-to-unlock-your-phone-es.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/es/guias/choosing-a-prepaid-plan-houston</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/guides/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/guias/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/guides/choosing-a-prepaid-plan-houston"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/guide-choosing-a-prepaid-plan-houston-es.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/vi</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -330,15 +533,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-vi.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/zh</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -348,15 +552,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-zh.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/ar</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -366,15 +571,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-ar.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/ur</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -384,15 +590,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-ur.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/hi</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -402,15 +609,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-hi.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/fr</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -420,15 +628,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-fr.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/pt</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -438,15 +647,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-pt.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/ko</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -456,15 +666,16 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-ko.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lime-hillcroft-hub.lovable.app/tl</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lime-hillcroft-hub.lovable.app/vi"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://lime-hillcroft-hub.lovable.app/zh"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://lime-hillcroft-hub.lovable.app/ar"/>
@@ -474,5 +685,9 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://lime-hillcroft-hub.lovable.app/pt"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://lime-hillcroft-hub.lovable.app/ko"/>
     <xhtml:link rel="alternate" hreflang="tl" href="https://lime-hillcroft-hub.lovable.app/tl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/lang-tl.jpg</image:loc>
+    </image:image>
   </url>
 </urlset>

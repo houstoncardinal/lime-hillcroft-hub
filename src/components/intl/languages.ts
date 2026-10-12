@@ -34,12 +34,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Vietnamese",
     native: "Tiếng Việt",
     dir: "ltr",
-    title: "TIC Wireless – Cửa hàng điện thoại & sửa điện thoại tại Houston (Hillcroft)",
+    title: "Cửa hàng điện thoại & sửa điện thoại tại Houston | TIC Wireless",
     description:
-      "Điện thoại mở khóa, thuê mua không cần tín dụng từ $40, sửa màn hình trong ngày, mở mạng, gói trả trước và nạp tiền quốc tế. 3640 Hillcroft St, Houston.",
+      "Điện thoại mở khóa, thuê mua không cần tín dụng từ $40, sửa màn hình trong ngày, mở mạng, gói trả trước và nạp tiền quốc tế. Hillcroft, Houston.",
     h1: "Cửa hàng điện thoại và sửa điện thoại tại Houston",
     intro:
-      "TIC Wireless là cửa hàng điện thoại độc lập tại 3640 Hillcroft St, Houston, TX 77057. Chúng tôi bán điện thoại đã mở khóa, sửa điện thoại trong ngày và hỗ trợ các gói cước trả trước của mọi nhà mạng lớn.",
+      "TIC Wireless Electronic & Repair Center là cửa hàng điện thoại độc lập tại 3640 Hillcroft St, Suite C, Houston, TX 77057. Chúng tôi bán điện thoại đã mở khóa, sửa điện thoại trong ngày và hỗ trợ các gói cước trả trước của mọi nhà mạng lớn.",
     servicesTitle: "Dịch vụ của chúng tôi",
     services: [
       "Điện thoại mới đã mở khóa: iPhone 18 Pro Max, Samsung Galaxy và nhiều dòng Android khác.",
@@ -73,12 +73,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Chinese (Simplified)",
     native: "简体中文",
     dir: "ltr",
-    title: "TIC Wireless – 休斯顿手机店及手机维修（Hillcroft）",
+    title: "休斯顿手机店及手机维修 | TIC Wireless",
     description:
-      "已解锁手机、免信用租购（首付 $40 起）、当日修屏、手机解锁、预付费套餐及国际充值。地址：3640 Hillcroft St, Houston。",
+      "已解锁手机、免信用租购（首付 $40 起）、当日修屏、手机解锁、预付费套餐及国际充值。地址：3640 Hillcroft St, Suite C, Houston。",
     h1: "休斯顿手机店与手机维修",
     intro:
-      "TIC Wireless 是位于 3640 Hillcroft St, Houston, TX 77057 的独立手机店。我们销售已解锁手机，提供当日手机维修，并支持各大预付费运营商。",
+      "TIC Wireless Electronic & Repair Center 是位于 3640 Hillcroft St, Suite C, Houston, TX 77057 的独立手机店。我们销售已解锁手机，提供当日手机维修，并支持各大预付费运营商。",
     servicesTitle: "我们的服务",
     services: [
       "全新已解锁手机：iPhone 18 Pro Max、Samsung Galaxy 及更多 Android 机型。",
@@ -107,12 +107,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Arabic",
     native: "العربية",
     dir: "rtl",
-    title: "TIC Wireless – متجر هواتف وإصلاح هواتف في هيوستن (Hillcroft)",
+    title: "متجر هواتف وإصلاح هواتف في هيوستن | TIC Wireless",
     description:
-      "هواتف مفتوحة، تأجير منتهٍ بالتملك بدون ائتمان يبدأ من $40، إصلاح الشاشات في نفس اليوم، فك قفل الهواتف، باقات مسبقة الدفع وشحن دولي. \u20663640 Hillcroft St, Houston\u2069.",
+      "هواتف مفتوحة، تأجير منتهٍ بالتملك بدون ائتمان يبدأ من $40، إصلاح الشاشات في نفس اليوم، فك قفل الهواتف، باقات مسبقة الدفع وشحن دولي. \u2066Hillcroft, Houston\u2069.",
     h1: "متجر هواتف وإصلاح هواتف في هيوستن",
     intro:
-      "TIC Wireless متجر هواتف مستقل في \u20663640 Hillcroft St, Houston, TX 77057\u2069. نبيع هواتف مفتوحة، ونصلح الهواتف في نفس اليوم، ونوفر باقات جميع شركات الاتصالات الكبرى مسبقة الدفع.",
+      "TIC Wireless Electronic & Repair Center متجر هواتف مستقل في \u20663640 Hillcroft St, Suite C, Houston, TX 77057\u2069. نبيع هواتف مفتوحة، ونصلح الهواتف في نفس اليوم، ونوفر باقات جميع شركات الاتصالات الكبرى مسبقة الدفع.",
     servicesTitle: "خدماتنا",
     services: [
       "هواتف جديدة مفتوحة: iPhone 18 Pro Max وSamsung Galaxy والمزيد من هواتف Android.",
@@ -145,12 +145,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Urdu",
     native: "اردو",
     dir: "rtl",
-    title: "TIC Wireless – ہیوسٹن میں موبائل فون اسٹور اور فون مرمت (Hillcroft)",
+    title: "ہیوسٹن میں موبائل فون اسٹور اور فون مرمت | TIC Wireless",
     description:
-      "ان لاکڈ فون، بغیر کریڈٹ کے لیز ٹو اون $40 سے، اسی دن اسکرین کی مرمت، فون ان لاک، پری پیڈ پلان اور بین الاقوامی ری چارج۔ \u20663640 Hillcroft St, Houston\u2069.",
+      "ان لاکڈ فون، بغیر کریڈٹ کے لیز ٹو اون $40 سے، اسی دن اسکرین کی مرمت، فون ان لاک، پری پیڈ پلان اور بین الاقوامی ری چارج۔ \u20663640 Hillcroft St, Suite C, Houston\u2069.",
     h1: "ہیوسٹن میں موبائل فون اسٹور اور فون کی مرمت",
     intro:
-      "TIC Wireless ایک آزاد موبائل فون اسٹور ہے جو \u20663640 Hillcroft St, Houston, TX 77057\u2069 پر واقع ہے۔ ہم ان لاکڈ فون فروخت کرتے ہیں، اسی دن فون کی مرمت کرتے ہیں اور تمام بڑی پری پیڈ کمپنیوں کے پلان فراہم کرتے ہیں۔",
+      "TIC Wireless Electronic & Repair Center ایک آزاد موبائل فون اسٹور ہے جو \u20663640 Hillcroft St, Suite C, Houston, TX 77057\u2069 پر واقع ہے۔ ہم ان لاکڈ فون فروخت کرتے ہیں، اسی دن فون کی مرمت کرتے ہیں اور تمام بڑی پری پیڈ کمپنیوں کے پلان فراہم کرتے ہیں۔",
     servicesTitle: "ہماری خدمات",
     services: [
       "نئے ان لاکڈ فون: iPhone 18 Pro Max، Samsung Galaxy اور دیگر Android فون۔",
@@ -183,12 +183,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Hindi",
     native: "हिन्दी",
     dir: "ltr",
-    title: "TIC Wireless – ह्यूस्टन में मोबाइल फ़ोन स्टोर और फ़ोन रिपेयर (Hillcroft)",
+    title: "ह्यूस्टन में मोबाइल फ़ोन स्टोर और फ़ोन रिपेयर | TIC Wireless",
     description:
-      "अनलॉक्ड फ़ोन, बिना क्रेडिट के लीज़-टू-ओन $40 से, उसी दिन स्क्रीन रिपेयर, फ़ोन अनलॉक, प्रीपेड प्लान और अंतरराष्ट्रीय रिचार्ज। 3640 Hillcroft St, Houston.",
+      "अनलॉक्ड फ़ोन, बिना क्रेडिट के लीज़-टू-ओन $40 से, उसी दिन स्क्रीन रिपेयर, फ़ोन अनलॉक, प्रीपेड प्लान और अंतरराष्ट्रीय रिचार्ज। Hillcroft, Houston.",
     h1: "ह्यूस्टन में मोबाइल फ़ोन स्टोर और फ़ोन रिपेयर",
     intro:
-      "TIC Wireless एक स्वतंत्र मोबाइल फ़ोन स्टोर है, जो 3640 Hillcroft St, Houston, TX 77057 पर है। हम अनलॉक्ड फ़ोन बेचते हैं, उसी दिन फ़ोन रिपेयर करते हैं और सभी बड़ी प्रीपेड कंपनियों के प्लान देते हैं।",
+      "TIC Wireless Electronic & Repair Center एक स्वतंत्र मोबाइल फ़ोन स्टोर है, जो 3640 Hillcroft St, Suite C, Houston, TX 77057 पर है। हम अनलॉक्ड फ़ोन बेचते हैं, उसी दिन फ़ोन रिपेयर करते हैं और सभी बड़ी प्रीपेड कंपनियों के प्लान देते हैं।",
     servicesTitle: "हमारी सेवाएँ",
     services: [
       "नए अनलॉक्ड फ़ोन: iPhone 18 Pro Max, Samsung Galaxy और अन्य Android फ़ोन।",
@@ -222,12 +222,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "French",
     native: "Français",
     dir: "ltr",
-    title: "TIC Wireless – Magasin de téléphones et réparation à Houston (Hillcroft)",
+    title: "Magasin de téléphones et réparation à Houston | TIC Wireless",
     description:
-      "Téléphones débloqués, location avec option d'achat sans crédit dès $40, réparation d'écran le jour même, déblocage, forfaits prépayés et recharge internationale. 3640 Hillcroft St, Houston.",
+      "Téléphones débloqués, location-achat sans crédit dès $40, réparation d'écran le jour même, déblocage, forfaits prépayés et recharge internationale à Houston.",
     h1: "Magasin de téléphones et réparation à Houston",
     intro:
-      "TIC Wireless est un magasin de téléphonie indépendant situé au 3640 Hillcroft St, Houston, TX 77057. Nous vendons des téléphones débloqués, réparons les téléphones le jour même et proposons les forfaits prépayés des principaux opérateurs.",
+      "TIC Wireless Electronic & Repair Center est un magasin de téléphonie indépendant situé au 3640 Hillcroft St, Suite C, Houston, TX 77057. Nous vendons des téléphones débloqués, réparons les téléphones le jour même et proposons les forfaits prépayés des principaux opérateurs.",
     servicesTitle: "Nos services",
     services: [
       "Téléphones neufs débloqués : iPhone 18 Pro Max, Samsung Galaxy et autres Android.",
@@ -258,12 +258,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Portuguese",
     native: "Português",
     dir: "ltr",
-    title: "TIC Wireless – Loja de celulares e conserto em Houston (Hillcroft)",
+    title: "Loja de celulares e conserto em Houston | TIC Wireless",
     description:
-      "Celulares desbloqueados, leasing sem crédito a partir de $40, conserto de tela no mesmo dia, desbloqueio, planos pré-pagos e recarga internacional. 3640 Hillcroft St, Houston.",
+      "Celulares desbloqueados, leasing sem crédito a partir de $40, conserto de tela no mesmo dia, desbloqueio, planos pré-pagos e recarga internacional em Houston.",
     h1: "Loja de celulares e conserto de celular em Houston",
     intro:
-      "A TIC Wireless é uma loja de celulares independente no 3640 Hillcroft St, Houston, TX 77057. Vendemos celulares desbloqueados, consertamos celulares no mesmo dia e oferecemos planos pré-pagos das principais operadoras.",
+      "A TIC Wireless Electronic & Repair Center é uma loja de celulares independente no 3640 Hillcroft St, Suite C, Houston, TX 77057. Vendemos celulares desbloqueados, consertamos celulares no mesmo dia e oferecemos planos pré-pagos das principais operadoras.",
     servicesTitle: "Nossos serviços",
     services: [
       "Celulares novos desbloqueados: iPhone 18 Pro Max, Samsung Galaxy e outros Android.",
@@ -294,12 +294,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Korean",
     native: "한국어",
     dir: "ltr",
-    title: "TIC Wireless – 휴스턴 휴대폰 매장 및 수리 (Hillcroft)",
+    title: "휴스턴 휴대폰 매장 및 수리 | TIC Wireless",
     description:
-      "언락폰, 신용 조회 없는 리스 후 구매 $40부터, 당일 액정 수리, 언락, 선불 요금제 및 국제 충전. 3640 Hillcroft St, Houston.",
+      "언락폰, 신용 조회 없는 리스 후 구매 $40부터, 당일 액정 수리, 언락, 선불 요금제 및 국제 충전. Hillcroft, Houston.",
     h1: "휴스턴 휴대폰 매장 및 휴대폰 수리",
     intro:
-      "TIC Wireless는 3640 Hillcroft St, Houston, TX 77057에 있는 독립 휴대폰 매장입니다. 언락폰을 판매하고, 당일 휴대폰 수리를 하며, 주요 선불 통신사 요금제를 제공합니다.",
+      "TIC Wireless Electronic & Repair Center는 3640 Hillcroft St, Suite C, Houston, TX 77057에 있는 독립 휴대폰 매장입니다. 언락폰을 판매하고, 당일 휴대폰 수리를 하며, 주요 선불 통신사 요금제를 제공합니다.",
     servicesTitle: "서비스",
     services: [
       "새 언락폰: iPhone 18 Pro Max, Samsung Galaxy 및 기타 Android 휴대폰.",
@@ -328,12 +328,12 @@ export const INTL_LANGS: IntlLang[] = [
     english: "Tagalog",
     native: "Tagalog",
     dir: "ltr",
-    title: "TIC Wireless – Tindahan ng cellphone at pag-aayos ng phone sa Houston (Hillcroft)",
+    title: "Tindahan ng cellphone at repair sa Houston | TIC Wireless",
     description:
-      "Unlocked na phone, lease-to-own nang walang credit mula $40, same-day na pag-aayos ng screen, unlocking, prepaid plans at international recharge. 3640 Hillcroft St, Houston.",
+      "Unlocked na phone, lease-to-own nang walang credit mula $40, same-day na pag-aayos ng screen, unlocking, prepaid plans at international recharge sa Houston.",
     h1: "Tindahan ng cellphone at pag-aayos ng phone sa Houston",
     intro:
-      "Ang TIC Wireless ay isang independent na tindahan ng cellphone sa 3640 Hillcroft St, Houston, TX 77057. Nagbebenta kami ng unlocked na phone, nag-aayos ng phone sa parehong araw, at nag-aalok ng prepaid plans ng mga pangunahing carrier.",
+      "Ang TIC Wireless Electronic & Repair Center ay isang independent na tindahan ng cellphone sa 3640 Hillcroft St, Suite C, Houston, TX 77057. Nagbebenta kami ng unlocked na phone, nag-aayos ng phone sa parehong araw, at nag-aalok ng prepaid plans ng mga pangunahing carrier.",
     servicesTitle: "Aming mga serbisyo",
     services: [
       "Bagong unlocked na phone: iPhone 18 Pro Max, Samsung Galaxy at iba pang Android.",

@@ -1,11 +1,11 @@
-# TIC Wireless
+# TIC Wireless Electronic & Repair Center
 
-> TIC Wireless is an independent cell phone store at 3640 Hillcroft St, Houston, TX 77057 (Southwest Houston, near Westpark Tollway and the Mahatma Gandhi District). It sells unlocked iPhones (including iPhone 18 Pro Max) and Android phones with no-credit-needed leasing (lease-to-own) from $40 down, prepaid plans for all major carriers, Xfinity Prepaid internet and accessories, and does same-day phone screen, battery and charging-port repair, plus unlocking, bill payments and international recharge. Phone (713) 339-9300. Open Mon–Sat 9 AM–8 PM, Sun 9 AM–5 PM. Rated 4.7 on Google (400+ reviews). Se habla español.
+> TIC Wireless Electronic & Repair Center is an independent cell phone store at 3640 Hillcroft St, Suite C, Houston, TX 77057 (Southwest Houston, near Westpark Tollway and the Mahatma Gandhi District). It sells unlocked iPhones (including iPhone 18 Pro Max) and Android phones with no-credit-needed leasing (lease-to-own) from $40 down, prepaid plans for all major carriers, Xfinity Prepaid internet and accessories, and does same-day phone screen, battery and charging-port repair, plus unlocking, bill payments and international recharge. Phone (713) 339-9300. Open Mon–Sat 9 AM–8 PM, Sun 9 AM–5 PM. Rated 4.7 on Google (400+ reviews). Se habla español.
 
 Key facts:
 
-- Name: TIC Wireless (also "TIC Wireless - Hillcroft")
-- Address: 3640 Hillcroft St, Houston, TX 77057, USA (moved from 3838 Hillcroft St, Suite 100)
+- Name: TIC Wireless Electronic & Repair Center (also "TIC Wireless" and "TIC Wireless - Hillcroft")
+- Address: 3640 Hillcroft St, Suite C, Houston, TX 77057, USA (moved from 3838 Hillcroft St, Suite 100)
 - Phone: (713) 339-9300
 - Hours: Monday–Saturday 9:00 AM–8:00 PM; Sunday 9:00 AM–5:00 PM; no appointment needed
 - Languages: English and Spanish
@@ -20,6 +20,19 @@ Key facts:
 - [Leasing & lease-to-own](https://lime-hillcroft-hub.lovable.app/leasing): phones, game consoles, laptops and tablets with no credit needed
 - [Inicio (español)](https://lime-hillcroft-hub.lovable.app/es)
 - [Arrendamiento (español)](https://lime-hillcroft-hub.lovable.app/es/arrendamiento)
+
+## Services
+
+- [All services](https://lime-hillcroft-hub.lovable.app/services)
+- [Unlocked iPhones & Androids](https://lime-hillcroft-hub.lovable.app/services/unlocked-phones): new unlocked phones incl. iPhone 18 Pro Max, leasing with no credit needed
+- [Same-day phone repair](https://lime-hillcroft-hub.lovable.app/services/phone-repair): screens, batteries, charging ports; price quoted before work starts
+- [Prepaid phone plans](https://lime-hillcroft-hub.lovable.app/services/prepaid-plans): Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile
+- [Xfinity Prepaid internet](https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet): sold and set up in store
+- [Phone unlocking](https://lime-hillcroft-hub.lovable.app/services/phone-unlocking): lock status checked first, switch carriers in store
+- [Buy · Sell · Trade](https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade): trade in or sell your phone
+- [Phone bill payments](https://lime-hillcroft-hub.lovable.app/services/bill-payments): pay prepaid bills in person, no extra charges
+- [International recharge](https://lime-hillcroft-hub.lovable.app/services/international-recharge): Tigo, Digicel, Movistar, Telcel and more
+- Spanish versions: https://lime-hillcroft-hub.lovable.app/es/servicios
 
 ## Other languages
 

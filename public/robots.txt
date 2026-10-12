@@ -1,11 +1,11 @@
-# TIC Wireless — search engines and AI assistants are welcome on all public pages.
+# TIC Wireless Electronic & Repair Center — search engines and AI assistants are welcome on all public pages.
 # The store dashboard (/admin) is private.
 
 User-agent: *
 Allow: /
 Disallow: /admin
 
-# AI search & assistants (explicitly allowed so TIC Wireless can be cited in AI answers)
+# AI search & assistants (explicitly allowed so TIC Wireless Electronic & Repair Center can be cited in AI answers)
 User-agent: Googlebot
 User-agent: Google-Extended
 User-agent: Bingbot

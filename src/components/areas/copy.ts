@@ -1,7 +1,7 @@
 import { PHONE } from "@/components/site/business";
 import { SHOP_ENABLED } from "@/components/site/features";
 import type { Faq } from "@/components/site/schema";
-import type { Lang } from "@/components/site/seo";
+import { withBrand, type Lang } from "@/components/site/seo";
 
 import { areaName, shortName, type Area } from "@/components/areas/data";
 import { LOCAL } from "@/components/areas/local";
@@ -16,11 +16,11 @@ export function areaCopy(a: Area, lang: Lang) {
   const local = LOCAL[a.slug];
   if (lang === "es") {
     return {
-      title: `Reparación de Celulares cerca de ${short}, Houston (${a.zips[0]}) | TIC Wireless`,
-      description: `Tienda de celulares y reparación el mismo día a ${mi(a.miles)} millas de ${short}: pantallas, baterías, liberación, celulares a pagos sin crédito y planes prepagados. 3640 Hillcroft St.`,
+      title: withBrand(`Reparación de Celulares en ${short}, Houston ${a.zips[0]}`),
+      description: `Reparación de celulares el mismo día a ${mi(a.miles)} millas de ${short}: pantallas, baterías, liberación, arrendamiento sin crédito y planes prepagados.`,
       kicker: `Atendemos ${name} · ${zipList(a)}`,
       h1: [`Reparación de celulares cerca de`, short],
-      distance: `TIC Wireless está a ${mi(a.miles)} millas de ${short} — unos ${a.minutes} minutos en carro sin tráfico — en 3640 Hillcroft St.`,
+      distance: `TIC Wireless Electronic & Repair Center está a ${mi(a.miles)} millas de ${short} — unos ${a.minutes} minutos en carro sin tráfico — en 3640 Hillcroft St, Suite C.`,
       stats: [
         ["Distancia", `${mi(a.miles)} mi`],
         ["En carro", `~${a.minutes} min`],
@@ -43,22 +43,22 @@ export function areaCopy(a: Area, lang: Lang) {
       ] as [string, string, string][],
       routeTitle: `Cómo llegar desde ${short}`,
       routeEnd:
-        "Busca el centro comercial sobre Hillcroft cerca de Windswept, al norte del Westpark Tollway: 3640 Hillcroft St.",
+        "Busca el centro comercial sobre Hillcroft cerca de Windswept, al norte del Westpark Tollway: 3640 Hillcroft St, Suite C.",
       routeNote: "Ruta y tiempo calculados con mapas de OpenStreetMap, sin tráfico.",
       faqTitle: `Preguntas de clientes de ${short}`,
       nearbyTitle: "Zonas cercanas",
       allAreas: "Todas las zonas",
       rating: "4.7★ en Google · más de 400 reseñas",
-      whyTitle: `Por qué ${short} elige TIC Wireless`,
+      whyTitle: `Por qué ${short} elige TIC Wireless Electronic & Repair Center`,
       aboutTitle: `Sobre ${short}`,
       faqs: [
         ...(local ? [local.faq.es] : []),
         {
           q: `¿Dónde puedo reparar mi celular cerca de ${short}?`,
-          a: `En TIC Wireless, 3640 Hillcroft St, Houston, TX 77057, a ${mi(a.miles)} millas de ${short}. La mayoría de cambios de pantalla, batería y puerto de carga quedan el mismo día, y te damos el precio antes de empezar.`,
+          a: `En TIC Wireless Electronic & Repair Center, 3640 Hillcroft St, Suite C, Houston, TX 77057, a ${mi(a.miles)} millas de ${short}. La mayoría de cambios de pantalla, batería y puerto de carga quedan el mismo día, y te damos el precio antes de empezar.`,
         },
         {
-          q: `¿Qué tan lejos está TIC Wireless de ${zipList(a)}?`,
+          q: `¿Qué tan lejos está TIC Wireless Electronic & Repair Center de ${zipList(a)}?`,
           a: `Unas ${mi(a.miles)} millas, alrededor de ${a.minutes} minutos en carro sin tráfico, por ${a.route.join(", ")}.`,
         },
         {
@@ -69,11 +69,11 @@ export function areaCopy(a: Area, lang: Lang) {
     };
   }
   return {
-    title: `Phone Repair near ${short}, Houston (${a.zips[0]}) | TIC Wireless`,
-    description: `Cell phone store & same-day phone repair ${mi(a.miles)} mi from ${short}: screens, batteries, unlocking, no-credit phone leasing and prepaid plans. 3640 Hillcroft St.`,
+    title: withBrand(`Phone Repair near ${short}, Houston ${a.zips[0]}`),
+    description: `Same-day phone repair & cell phone store ${mi(a.miles)} mi from ${short}: screens, batteries, unlocking, no-credit phone leasing and prepaid plans.`,
     kicker: `Serving ${name} · ${zipList(a)}`,
     h1: [`Phone repair & cell phone store near`, short],
-    distance: `TIC Wireless is ${mi(a.miles)} miles from ${short} — about ${a.minutes} minutes by car without traffic — at 3640 Hillcroft St.`,
+    distance: `TIC Wireless Electronic & Repair Center is ${mi(a.miles)} miles from ${short} — about ${a.minutes} minutes by car without traffic — at 3640 Hillcroft St, Suite C.`,
     stats: [
       ["Distance", `${mi(a.miles)} mi`],
       ["Drive", `~${a.minutes} min`],
@@ -92,22 +92,22 @@ export function areaCopy(a: Area, lang: Lang) {
     ] as [string, string, string][],
     routeTitle: `Getting here from ${short}`,
     routeEnd:
-      "Look for the shopping center on Hillcroft near Windswept, just north of the Westpark Tollway: 3640 Hillcroft St.",
+      "Look for the shopping center on Hillcroft near Windswept, just north of the Westpark Tollway: 3640 Hillcroft St, Suite C.",
     routeNote: "Route and drive time calculated with OpenStreetMap routing, without traffic.",
     faqTitle: `Questions from ${short} customers`,
     nearbyTitle: "Nearby areas",
     allAreas: "All areas we serve",
     rating: "4.7★ on Google · 400+ reviews",
-    whyTitle: `Why ${short} chooses TIC Wireless`,
+    whyTitle: `Why ${short} chooses TIC Wireless Electronic & Repair Center`,
     aboutTitle: `About ${short}`,
     faqs: [
       ...(local ? [local.faq.en] : []),
       {
         q: `Where can I get my phone fixed near ${short}?`,
-        a: `At TIC Wireless, 3640 Hillcroft St, Houston, TX 77057 — ${mi(a.miles)} miles from ${short}. Most screen, battery and charging-port repairs are done the same day, and we quote the price before any work starts.`,
+        a: `At TIC Wireless Electronic & Repair Center, 3640 Hillcroft St, Suite C, Houston, TX 77057 — ${mi(a.miles)} miles from ${short}. Most screen, battery and charging-port repairs are done the same day, and we quote the price before any work starts.`,
       },
       {
-        q: `How far is TIC Wireless from ${zipList(a)}?`,
+        q: `How far is TIC Wireless Electronic & Repair Center from ${zipList(a)}?`,
         a: `About ${mi(a.miles)} miles — roughly ${a.minutes} minutes by car without traffic, via ${a.route.join(", ")}.`,
       },
       {
@@ -120,9 +120,9 @@ export function areaCopy(a: Area, lang: Lang) {
 
 export const HUB_COPY = {
   en: {
-    title: "Phone Repair & Cell Phone Store for Southwest Houston | TIC Wireless",
+    title: "Phone Repair in Southwest Houston — Find Your Area | TIC Wireless",
     description:
-      "Same-day phone repair, unlocked phones with no-credit leasing and prepaid plans for Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, the Galleria and Harwin. Find your ZIP.",
+      "Same-day phone repair, no-credit phone leasing and prepaid plans for Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, the Galleria & Harwin.",
     kicker: "Areas we serve",
     h1: ["Your phone store for", "Southwest Houston."],
     body: "One store on Hillcroft, minutes from the neighborhoods around us. Find your area or ZIP code for distance, drive time and directions.",
@@ -137,7 +137,7 @@ export const HUB_COPY = {
   es: {
     title: "Reparación de Celulares en el Suroeste de Houston | TIC Wireless",
     description:
-      "Reparación de celulares el mismo día, celulares a pagos sin crédito y planes prepagados para Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, la Galleria y Harwin. Busca tu código postal.",
+      "Reparación de celulares el mismo día, celulares a pagos sin crédito y planes para Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, Galleria y Harwin.",
     kicker: "Zonas que atendemos",
     h1: ["Tu tienda de celulares en el", "suroeste de Houston."],
     body: "Una tienda en Hillcroft, a minutos de los barrios que nos rodean. Busca tu zona o código postal para ver distancia, tiempo y cómo llegar.",

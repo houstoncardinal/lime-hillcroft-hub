@@ -1,7 +1,7 @@
 import type { Lang } from "@/components/site/seo";
 
 // Service-area pages. Distances and drive times were computed with OpenStreetMap routing
-// (OSRM, no traffic) from each area's mapped center to the store at 3640 Hillcroft St; ZIP codes
+// (OSRM, no traffic) from each area's mapped center to the store at 3640 Hillcroft St, Suite C; ZIP codes
 // come from reverse-geocoding a grid of points across each area; local facts come from each
 // area's Wikipedia article. Re-run the numbers if the store moves.
 
@@ -31,8 +31,8 @@ export const AREAS: Area[] = [
     minutes: 2,
     route: ["Hillcroft Avenue north", "Hillcroft St"],
     intro: {
-      en: "Locals call it Harwin, Hillcroft or Little India — the stretch of Hillcroft Avenue and Harwin Drive lined with Indian and Pakistani restaurants and shops. TIC Wireless is right up Hillcroft from the district, so a cracked screen or a new phone is a two-minute drive away.",
-      es: "Los vecinos le dicen Harwin, Hillcroft o Little India: la zona de Hillcroft Avenue y Harwin Drive llena de restaurantes y tiendas de India y Pakistán. TIC Wireless está subiendo por Hillcroft, a solo dos minutos en carro para arreglar una pantalla o comprar un celular nuevo.",
+      en: "Locals call it Harwin, Hillcroft or Little India — the stretch of Hillcroft Avenue and Harwin Drive lined with Indian and Pakistani restaurants and shops. TIC Wireless Electronic & Repair Center is right up Hillcroft from the district, so a cracked screen or a new phone is a two-minute drive away.",
+      es: "Los vecinos le dicen Harwin, Hillcroft o Little India: la zona de Hillcroft Avenue y Harwin Drive llena de restaurantes y tiendas de India y Pakistán. TIC Wireless Electronic & Repair Center está subiendo por Hillcroft, a solo dos minutos en carro para arreglar una pantalla o comprar un celular nuevo.",
     },
     lat: 29.72055,
     lon: -95.49824,
@@ -91,8 +91,8 @@ export const AREAS: Area[] = [
     minutes: 8,
     route: ["Post Oak Blvd", "Westheimer Road west", "Hillcroft Avenue south"],
     intro: {
-      en: "Uptown — the Galleria area along Post Oak Boulevard and Westheimer Road — is one of the largest business districts in the country. Skip the mall kiosks: TIC Wireless is about eight minutes west on Westheimer, then south on Hillcroft, with unlocked phones, leasing and same-day repairs.",
-      es: "Uptown, la zona de la Galleria sobre Post Oak Boulevard y Westheimer Road, es uno de los distritos de negocios más grandes del país. Olvídate de los kioscos del mall: TIC Wireless está a unos ocho minutos al oeste por Westheimer y luego al sur por Hillcroft, con celulares desbloqueados, arrendamiento y reparaciones el mismo día.",
+      en: "Uptown — the Galleria area along Post Oak Boulevard and Westheimer Road — is one of the largest business districts in the country. Skip the mall kiosks: TIC Wireless Electronic & Repair Center is about eight minutes west on Westheimer, then south on Hillcroft, with unlocked phones, leasing and same-day repairs.",
+      es: "Uptown, la zona de la Galleria sobre Post Oak Boulevard y Westheimer Road, es uno de los distritos de negocios más grandes del país. Olvídate de los kioscos del mall: TIC Wireless Electronic & Repair Center está a unos ocho minutos al oeste por Westheimer y luego al sur por Hillcroft, con celulares desbloqueados, arrendamiento y reparaciones el mismo día.",
     },
     lat: 29.74556,
     lon: -95.46136,

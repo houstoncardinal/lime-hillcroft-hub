@@ -7,7 +7,7 @@ import { ALTERNATES, absoluteUrl, type Lang, type Paths } from "@/components/sit
 
 const STORE_ID = absoluteUrl("/#store");
 // Bump when the business facts on the site change (freshness signal for search and AI answers).
-const SITE_UPDATED = "2026-10-09";
+const SITE_UPDATED = "2026-10-12";
 const WEBSITE_ID = absoluteUrl("/#website");
 const LANGUAGE = { en: "en-US", es: "es-US" } as const;
 
@@ -112,16 +112,16 @@ const services = {
 } as const;
 
 const DESCRIPTION = {
-  en: "TIC Wireless is a one-stop cell phone store on Hillcroft in Houston: leasing on unlocked iPhones and Androids with no credit needed, lease-to-own on game consoles and laptops, prepaid plans, Xfinity Prepaid internet, same-day phone repair, unlocking, bill payments, international recharge and accessories. Se habla español.",
-  es: "TIC Wireless es una tienda de celulares en Hillcroft, Houston: celulares a pagos sin necesidad de crédito, consolas y laptops con opción a compra, planes prepagados, internet prepagado Xfinity, reparación de celulares el mismo día, liberación, pago de facturas, recargas internacionales y accesorios. Se habla español.",
+  en: "TIC Wireless Electronic & Repair Center is a one-stop cell phone store on Hillcroft in Houston: leasing on unlocked iPhones and Androids with no credit needed, lease-to-own on game consoles and laptops, prepaid plans, Xfinity Prepaid internet, same-day phone repair, unlocking, bill payments, international recharge and accessories. Se habla español.",
+  es: "TIC Wireless Electronic & Repair Center es una tienda de celulares en Hillcroft, Houston: celulares a pagos sin necesidad de crédito, consolas y laptops con opción a compra, planes prepagados, internet prepagado Xfinity, reparación de celulares el mismo día, liberación, pago de facturas, recargas internacionales y accesorios. Se habla español.",
 };
 
 function store(lang: Lang) {
   return {
     "@type": ["MobilePhoneStore", "ElectronicsStore"],
     "@id": STORE_ID,
-    name: "TIC Wireless",
-    alternateName: ["TIC Wireless - Hillcroft", "TIC Wireless Houston"],
+    name: "TIC Wireless Electronic & Repair Center",
+    alternateName: ["TIC Wireless", "TIC Wireless - Hillcroft", "TIC Wireless Houston"],
     slogan: "Buy · Sell · Repair · Unlock",
     description: DESCRIPTION[lang],
     url: absoluteUrl(ALTERNATES.home[lang]),
@@ -252,7 +252,7 @@ function website() {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
     url: absoluteUrl("/"),
-    name: "TIC Wireless",
+    name: "TIC Wireless Electronic & Repair Center",
     inLanguage: ["en-US", "es-US"],
     publisher: { "@id": STORE_ID },
   };
@@ -385,6 +385,58 @@ export function leasingService(lang: Lang, items: string[]) {
       itemListElement: items.map((item) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Product", name: item },
+      })),
+    },
+  };
+}
+
+/** A Service offered at the store (service pages). No prices: they change and are quoted in store. */
+export function serviceNode({
+  lang,
+  path,
+  name,
+  serviceType,
+  description,
+  image,
+  offers,
+}: {
+  lang: Lang;
+  path: string;
+  name: string;
+  serviceType: string;
+  description: string;
+  image: string;
+  offers: string[];
+}) {
+  const url = absoluteUrl(path);
+  return {
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name,
+    serviceType,
+    description,
+    url,
+    image: absoluteUrl(image),
+    inLanguage: LANGUAGE[lang],
+    provider: { "@id": STORE_ID },
+    areaServed: houston,
+    availableLanguage: ["English", "Spanish"],
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceLocation: { "@id": STORE_ID },
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: "+1-713-339-9300",
+        contactType: "customer service",
+        availableLanguage: ["English", "Spanish"],
+      },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name,
+      itemListElement: offers.map((o) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: o.replace(/\.$/, "") },
       })),
     },
   };

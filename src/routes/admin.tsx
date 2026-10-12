@@ -20,7 +20,7 @@ import { settings, useAdminData } from "@/admin/store";
 import { Button, Field, Input } from "@/admin/ui";
 import { DotRing } from "@/components/site/logo";
 import { ThemeSwitcher } from "@/components/site/theme-switcher";
-import { ADMIN_THEME_KEY, SITE_THEME_KEY, applyTheme, storedTheme } from "@/components/site/themes";
+import { ADMIN_THEME_KEY, DEFAULT_THEME, applyTheme, storedTheme } from "@/components/site/themes";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +28,10 @@ export const Route = createFileRoute("/admin")({
   // Data lives in the browser (local mode), so the dashboard renders client-side only.
   ssr: false,
   head: () => ({
-    meta: [{ title: "Dashboard · TIC Wireless" }, { name: "robots", content: "noindex, nofollow" }],
+    meta: [
+      { title: "Dashboard · TIC Wireless Electronic & Repair Center" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
   }),
   component: AdminLayout,
 });
@@ -64,7 +67,7 @@ function AdminLayout() {
     applyTheme(storedTheme(ADMIN_THEME_KEY));
     return () => {
       document.documentElement.classList.remove("admin-theme");
-      applyTheme(storedTheme(SITE_THEME_KEY));
+      applyTheme(DEFAULT_THEME);
     };
   }, []);
 
@@ -149,7 +152,7 @@ function Gate({ hasPasscode, onUnlock }: { hasPasscode: boolean; onUnlock: () =>
         <p className="mt-1 text-center text-sm text-muted-foreground">
           {hasPasscode
             ? "Enter the dashboard passcode."
-            : "Create a passcode to lock the TIC Wireless dashboard on this device."}
+            : "Create a passcode to lock the TIC Wireless Electronic & Repair Center dashboard on this device."}
         </p>
         <div className="mt-6 space-y-3">
           <Field label="Passcode">
@@ -222,7 +225,9 @@ function Brand() {
         ]}
       />
       <span>
-        <span className="block text-sm font-semibold leading-tight">TIC Wireless</span>
+        <span className="block text-sm font-semibold leading-tight">
+          TIC Wireless Electronic & Repair Center
+        </span>
         <span className="block text-xs text-muted-foreground">Store dashboard</span>
       </span>
     </Link>

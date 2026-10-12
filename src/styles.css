@@ -36,7 +36,7 @@
   --color-paper: var(--paper);
 }
 
-/* Brand palette taken from the TIC Wireless logo: orange + slate dots on deep navy type. */
+/* Brand palette taken from the TIC Wireless Electronic & Repair Center logo: orange + slate dots on deep navy type. */
 :root {
   --radius: 1rem;
   --background: oklch(0.985 0.004 80);

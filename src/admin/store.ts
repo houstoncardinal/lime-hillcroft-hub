@@ -29,7 +29,7 @@ export async function hashSecret(secret: string) {
 }
 
 const DEFAULT_SETTINGS: Settings = {
-  storeName: "TIC Wireless",
+  storeName: "TIC Wireless Electronic & Repair Center",
   passcodeHash: null,
   overtimeThreshold: 40,
   overtimeMultiplier: 1.5,

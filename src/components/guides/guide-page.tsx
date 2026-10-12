@@ -28,7 +28,7 @@ const UI = {
     quick: "Quick answer",
     updated: "Updated",
     read: (n: number) => `${n} min read`,
-    by: "By the TIC Wireless team · 3640 Hillcroft St, Houston",
+    by: "By the TIC Wireless Electronic & Repair Center team · 3640 Hillcroft St, Suite C, Houston",
     faq: "Common questions",
     help: "Want help in person?",
     helpBody:
@@ -46,7 +46,7 @@ const UI = {
     quick: "Respuesta rápida",
     updated: "Actualizado",
     read: (n: number) => `${n} min de lectura`,
-    by: "Por el equipo de TIC Wireless · 3640 Hillcroft St, Houston",
+    by: "Por el equipo de TIC Wireless Electronic & Repair Center · 3640 Hillcroft St, Suite C, Houston",
     faq: "Preguntas frecuentes",
     help: "¿Quieres ayuda en persona?",
     helpBody: "Ven sin cita. Lun–Sáb 9 AM–8 PM, Dom 9 AM–5 PM. We speak English.",
@@ -80,7 +80,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
               className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
             >
               <Link to={ALTERNATES.home[lang]} className="hover:text-white">
-                TIC Wireless
+                TIC Wireless Electronic & Repair Center
               </Link>
               <span>/</span>
               <Link to={ALTERNATES.guides[lang]} className="hover:text-white">

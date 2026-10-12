@@ -3,10 +3,11 @@ import { PHONE, RATING, STREET } from "@/components/site/business";
 // All visible text on the home page, in English and Spanish. Keep both in sync.
 const en = {
   meta: {
-    title: "Cell Phone Store & Phone Repair on Hillcroft, Houston | TIC Wireless",
+    title: "Cell Phone Store & Phone Repair in Houston, TX | TIC Wireless",
     description:
-      "Cell phone store at 3640 Hillcroft St, Houston: phones with no-credit leasing from $40 down, same-day screen repair & unlocking. Se habla español.",
-    imageAlt: "iPhone 18 Pro Max in plum, unlocked, at TIC Wireless in Houston",
+      "Cell phone store at 3640 Hillcroft St, Suite C, Houston: phones with no-credit leasing from $40 down, same-day screen repair & unlocking. Se habla español.",
+    imageAlt:
+      "iPhone 18 Pro Max in plum, unlocked, at TIC Wireless Electronic & Repair Center in Houston",
     breadcrumb: "Home",
   },
   hero: {
@@ -24,7 +25,8 @@ const en = {
     imageTitle: "iPhone 18 Pro Max",
     imageSub: "Unlocked · lease-to-own available",
     imageCta: "See leasing",
-    imageAlt: "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless",
+    imageAlt:
+      "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless Electronic & Repair Center",
     leaseLabel: "Leasing",
     leaseUnit: "down",
     leaseNote: "Weekly, biweekly or monthly options",
@@ -44,7 +46,7 @@ const en = {
     title: "Bigger store. Same neighborhood.",
     body: `We moved down the street to ${STREET} — more room for phones, accessories and the team Hillcroft already knows.`,
     imageAlt:
-      "Inside the new TIC Wireless store on Hillcroft: glass display counters, accessory walls and service stations",
+      "Inside the new TIC Wireless Electronic & Repair Center store on Hillcroft: glass display counters, accessory walls and service stations",
     stats: [
       [`${RATING}★`, "400+ Google reviews"],
       ["12+", "Carriers & recharge brands"],
@@ -54,6 +56,7 @@ const en = {
   },
   services: {
     kicker: "What we do",
+    more: "Learn more",
     title: "Everything mobile, under one roof.",
     intro:
       "Buying, switching, fixing or paying — skip the mall and the big-box lines. We handle it all on Hillcroft.",
@@ -62,7 +65,8 @@ const en = {
       body: "Walk out with a new phone today. Leasing starting at $40 down on the latest iPhone and Galaxy models.",
       chips: ["Bad credit OK", "$40 down", "iPhone & Galaxy", "Take it home today"],
       link: "Leasing on consoles, laptops & more",
-      imageAlt: "Samsung Galaxy S24 Ultra unboxed on the TIC Wireless counter",
+      imageAlt:
+        "Samsung Galaxy S24 Ultra unboxed on the TIC Wireless Electronic & Repair Center counter",
     },
     items: [
       [
@@ -145,11 +149,11 @@ const en = {
   },
   glance: {
     kicker: "At a glance",
-    title: "TIC Wireless in 30 seconds.",
+    title: "TIC Wireless Electronic & Repair Center in 30 seconds.",
     summary:
-      "TIC Wireless is an independent cell phone store and phone repair shop at 3640 Hillcroft St in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down, prepaid plans for every major carrier and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.",
+      "TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down, prepaid plans for every major carrier and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.",
     facts: [
-      ["Address", "3640 Hillcroft St, Houston, TX 77057"],
+      ["Address", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Phone", "(713) 339-9300"],
       ["Hours", "Mon–Sat 9 AM–8 PM · Sun 9 AM–5 PM · no appointment needed"],
       ["Leasing", "No credit needed · from $40 down · weekly, biweekly or monthly payments"],
@@ -193,7 +197,7 @@ const en = {
     allGuides: "All guides",
     items: [
       {
-        q: "Where is TIC Wireless located?",
+        q: "Where is TIC Wireless Electronic & Repair Center located?",
         a: `We're at ${STREET}, Houston, TX 77057 — in the shopping center on Hillcroft near Windswept, just north of the Westpark Tollway. Call ${PHONE} for directions.`,
       },
       {
@@ -209,7 +213,7 @@ const en = {
         a: "Yes. We unlock phones so you can switch to the carrier you want. Bring your phone in and we'll check it for you.",
       },
       {
-        q: "Can I pay my phone bill at TIC Wireless?",
+        q: "Can I pay my phone bill at TIC Wireless Electronic & Repair Center?",
         a: "Yes. We take bill payments for all major prepaid carriers in store, with no extra charges. We also sell Xfinity Prepaid internet and international recharge.",
       },
       {
@@ -221,7 +225,7 @@ const en = {
         a: "¡Sí! Se habla español. Te ayudamos con celulares, planes, reparaciones y pagos en tu idioma.",
       },
       {
-        q: "Did TIC Wireless move?",
+        q: "Did TIC Wireless Electronic & Repair Center move?",
         a: `Yes — we moved from 3838 Hillcroft (Suite 100) to our new, bigger store at ${STREET}. Same team, same phone number.`,
       },
     ],
@@ -232,8 +236,8 @@ const en = {
     caption:
       "in the shopping center near Hillcroft & Windswept, just north of the Westpark Tollway.",
     storefrontAlt:
-      "The glass storefront of the new TIC Wireless store at 3640 Hillcroft St, Houston",
-    plazaAlt: "The shopping center at 3640 Hillcroft St from the parking lot",
+      "The glass storefront of the new TIC Wireless Electronic & Repair Center store at 3640 Hillcroft St, Suite C, Houston",
+    plazaAlt: "The shopping center at 3640 Hillcroft St, Suite C from the parking lot",
     plazaCta: "Look for the plaza",
     accessible: "Wheelchair-accessible entrance & parking",
     directions: "Directions",
@@ -241,7 +245,8 @@ const en = {
       ["Monday – Saturday", "9:00 AM – 8:00 PM"],
       ["Sunday", "9:00 AM – 5:00 PM"],
     ],
-    mapTitle: "Map showing TIC Wireless at 3640 Hillcroft St, Houston",
+    mapTitle:
+      "Map showing TIC Wireless Electronic & Repair Center at 3640 Hillcroft St, Suite C, Houston",
   },
 };
 
@@ -249,10 +254,11 @@ export type HomeCopy = typeof en;
 
 const es: HomeCopy = {
   meta: {
-    title: "Tienda de Celulares y Reparación en Hillcroft, Houston | TIC Wireless",
+    title: "Tienda de Celulares y Reparación en Houston, TX | TIC Wireless",
     description:
-      "Tienda de celulares en 3640 Hillcroft St, Houston: celulares a pagos sin crédito desde $40, cambio de pantalla el mismo día, liberación y planes prepagados.",
-    imageAlt: "iPhone 18 Pro Max color ciruela, desbloqueado, en TIC Wireless Houston",
+      "Tienda de celulares en Hillcroft, Houston: celulares a pagos sin crédito desde $40, cambio de pantalla el mismo día, liberación y planes prepagados.",
+    imageAlt:
+      "iPhone 18 Pro Max color ciruela, desbloqueado, en TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: "Inicio",
   },
   hero: {
@@ -271,7 +277,7 @@ const es: HomeCopy = {
     imageSub: "Desbloqueado · con opción a compra",
     imageCta: "Ver arrendamiento",
     imageAlt:
-      "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless",
+      "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless Electronic & Repair Center",
     leaseLabel: "A pagos",
     leaseUnit: "de enganche",
     leaseNote: "Opciones semanales, quincenales o mensuales",
@@ -291,7 +297,7 @@ const es: HomeCopy = {
     title: "Tienda más grande. El mismo barrio.",
     body: `Nos mudamos a unas cuadras, al ${STREET} — más espacio para celulares, accesorios y el equipo que Hillcroft ya conoce.`,
     imageAlt:
-      "Interior de la nueva tienda TIC Wireless en Hillcroft: vitrinas, paredes de accesorios y estaciones de servicio",
+      "Interior de la nueva tienda TIC Wireless Electronic & Repair Center en Hillcroft: vitrinas, paredes de accesorios y estaciones de servicio",
     stats: [
       [`${RATING}★`, "400+ reseñas en Google"],
       ["12+", "Compañías y recargas"],
@@ -301,6 +307,7 @@ const es: HomeCopy = {
   },
   services: {
     kicker: "Lo que hacemos",
+    more: "Ver más",
     title: "Todo para tu celular, en un solo lugar.",
     intro:
       "Comprar, cambiar de compañía, reparar o pagar — sin filas de centro comercial. Lo resolvemos todo en Hillcroft.",
@@ -309,7 +316,8 @@ const es: HomeCopy = {
       body: "Llévate tu celular nuevo hoy mismo. A pagos desde $40 de enganche en los últimos modelos de iPhone y Galaxy.",
       chips: ["Mal crédito OK", "$40 de enganche", "iPhone y Galaxy", "Llévatelo hoy"],
       link: "Consolas, laptops y más a pagos",
-      imageAlt: "Samsung Galaxy S24 Ultra en el mostrador de TIC Wireless",
+      imageAlt:
+        "Samsung Galaxy S24 Ultra en el mostrador de TIC Wireless Electronic & Repair Center",
     },
     items: [
       [
@@ -404,11 +412,11 @@ const es: HomeCopy = {
   },
   glance: {
     kicker: "En resumen",
-    title: "TIC Wireless en 30 segundos.",
+    title: "TIC Wireless Electronic & Repair Center en 30 segundos.",
     summary:
-      "TIC Wireless es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche, planes prepagados de todas las compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.",
+      "TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche, planes prepagados de todas las compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.",
     facts: [
-      ["Dirección", "3640 Hillcroft St, Houston, TX 77057"],
+      ["Dirección", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Teléfono", "(713) 339-9300"],
       ["Horario", "Lun–Sáb 9 AM–8 PM · Dom 9 AM–5 PM · sin cita"],
       [
@@ -458,7 +466,7 @@ const es: HomeCopy = {
     allGuides: "Todas las guías",
     items: [
       {
-        q: "¿Dónde está TIC Wireless?",
+        q: "¿Dónde está TIC Wireless Electronic & Repair Center?",
         a: `Estamos en ${STREET}, Houston, TX 77057 — en el centro comercial sobre Hillcroft cerca de Windswept, justo al norte del Westpark Tollway. Llama al ${PHONE} si necesitas indicaciones.`,
       },
       {
@@ -474,7 +482,7 @@ const es: HomeCopy = {
         a: "Sí. Liberamos celulares para que puedas cambiarte a la compañía que quieras. Tráelo y lo revisamos.",
       },
       {
-        q: "¿Puedo pagar mi factura de teléfono en TIC Wireless?",
+        q: "¿Puedo pagar mi factura de teléfono en TIC Wireless Electronic & Repair Center?",
         a: "Sí. Recibimos pagos de todas las compañías prepagadas principales, sin cargos extra. También vendemos internet prepagado Xfinity y recargas internacionales.",
       },
       {
@@ -486,7 +494,7 @@ const es: HomeCopy = {
         a: "Yes! Our team helps customers in English and Spanish.",
       },
       {
-        q: "¿TIC Wireless se cambió de lugar?",
+        q: "¿TIC Wireless Electronic & Repair Center se cambió de lugar?",
         a: `Sí — nos mudamos del 3838 Hillcroft (Suite 100) a nuestra nueva tienda, más grande, en ${STREET}. El mismo equipo y el mismo número de teléfono.`,
       },
     ],
@@ -497,8 +505,8 @@ const es: HomeCopy = {
     caption:
       "en el centro comercial cerca de Hillcroft y Windswept, justo al norte del Westpark Tollway.",
     storefrontAlt:
-      "Fachada de vidrio de la nueva tienda TIC Wireless en 3640 Hillcroft St, Houston",
-    plazaAlt: "El centro comercial de 3640 Hillcroft St visto desde el estacionamiento",
+      "Fachada de vidrio de la nueva tienda TIC Wireless Electronic & Repair Center en 3640 Hillcroft St, Suite C, Houston",
+    plazaAlt: "El centro comercial de 3640 Hillcroft St, Suite C visto desde el estacionamiento",
     plazaCta: "Busca esta plaza",
     accessible: "Entrada y estacionamiento accesibles para silla de ruedas",
     directions: "Cómo llegar",
@@ -506,7 +514,8 @@ const es: HomeCopy = {
       ["Lunes – Sábado", "9:00 AM – 8:00 PM"],
       ["Domingo", "9:00 AM – 5:00 PM"],
     ],
-    mapTitle: "Mapa de TIC Wireless en 3640 Hillcroft St, Houston",
+    mapTitle:
+      "Mapa de TIC Wireless Electronic & Repair Center en 3640 Hillcroft St, Suite C, Houston",
   },
 };
 

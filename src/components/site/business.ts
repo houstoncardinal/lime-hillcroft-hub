@@ -1,7 +1,7 @@
 // Business details from the TIC Wireless Google Business Profile, store signage and business card.
 export const PHONE = "(713) 339-9300";
 export const TEL = "tel:+17133399300";
-export const STREET = "3640 Hillcroft St";
+export const STREET = "3640 Hillcroft St, Suite C";
 export const CITY = "Houston, TX 77057";
 export const ADDRESS = `${STREET}, ${CITY}`;
 export const MAPS =

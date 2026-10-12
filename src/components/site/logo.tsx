@@ -39,17 +39,38 @@ const LOGO_RINGS: Ring[] = [
   { r: 52, count: 10, dot: 6.5, className: "fill-slate" },
 ];
 
-export function Logo({ className, light }: { className?: string; light?: boolean }) {
+export function Logo({
+  className,
+  light,
+  compact,
+}: {
+  className?: string;
+  light?: boolean;
+  /** Smaller lockup for the header bar. */
+  compact?: boolean;
+}) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <DotRing rings={LOGO_RINGS} className="h-8 w-8" />
-      <span
-        className={cn(
-          "whitespace-nowrap font-display text-xl font-medium tracking-[0.04em]",
-          light ? "text-white" : "text-ink",
-        )}
-      >
-        TIC Wireless
+      <DotRing rings={LOGO_RINGS} className={compact ? "h-8 w-8 shrink-0" : "h-10 w-10 shrink-0"} />
+      <span className="flex flex-col leading-none">
+        <span
+          className={cn(
+            "whitespace-nowrap font-display font-medium tracking-[0.04em]",
+            compact ? "text-base sm:text-lg" : "text-xl",
+            light ? "text-white" : "text-ink",
+          )}
+        >
+          TIC Wireless
+        </span>
+        <span
+          className={cn(
+            "mt-1 whitespace-nowrap font-display font-medium uppercase tracking-[0.14em]",
+            compact ? "text-[9px] sm:text-[10px]" : "text-[11px]",
+            light ? "text-white/70" : "text-muted-foreground",
+          )}
+        >
+          Electronic &amp; Repair Center
+        </span>
       </span>
     </span>
   );

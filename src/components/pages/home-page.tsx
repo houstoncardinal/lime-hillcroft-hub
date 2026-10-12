@@ -45,6 +45,7 @@ import { AREAS, shortName } from "@/components/areas/data";
 import { areaPath } from "@/components/areas/paths";
 import { GUIDES } from "@/components/guides/data";
 import { GuideCard } from "@/components/guides/guide-page";
+import { servicePath } from "@/components/services/paths";
 import { HOME_COPY } from "@/components/pages/home-copy";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { ProductCard } from "@/shop/components";
@@ -68,6 +69,16 @@ import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 const SERVICE_ICONS = [Wallet, Router, Wrench, KeyRound, Repeat, Receipt, Globe];
+// Detail page for each services card, in the same order as copy.services.items.
+const SERVICE_SLUGS = [
+  "prepaid-plans",
+  "xfinity-prepaid-internet",
+  "phone-repair",
+  "phone-unlocking",
+  "buy-sell-trade",
+  "bill-payments",
+  "international-recharge",
+];
 
 const CARRIERS = [
   "Verizon Prepaid",
@@ -304,7 +315,12 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             </span>
             <div>
               <h3 className="max-w-md text-3xl font-semibold md:text-5xl">
-                {<MoneyText text={t.services.featured.title} />}
+                <Link
+                  to={servicePath(lang, "unlocked-phones")}
+                  className="after:absolute after:inset-0 after:content-[''] hover:text-primary"
+                >
+                  {<MoneyText text={t.services.featured.title} />}
+                </Link>
               </h3>
               <p className="mt-3 max-w-md text-lg leading-relaxed text-white/75">
                 {<MoneyText text={t.services.featured.body} />}
@@ -321,7 +337,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               </div>
               <Link
                 to={ALTERNATES.leasing[lang]}
-                className="mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
+                className="relative z-10 mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
               >
                 {<MoneyText text={t.services.featured.link} />} <ArrowRight className="h-4 w-4" />
               </Link>
@@ -331,18 +347,25 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           {t.services.items.map(([title, body], i) => {
             const Icon = SERVICE_ICONS[i] ?? Wrench;
             return (
-              <article
+              <Link
                 key={title}
-                className="group rounded-3xl border bg-card p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
+                to={servicePath(lang, SERVICE_SLUGS[i] ?? "")}
+                className="group flex flex-col rounded-3xl border bg-card p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-ink transition group-hover:bg-primary">
                   <Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-6 text-lg font-semibold">{<MoneyText text={title} />}</h3>
+                <h3 className="mt-6 text-lg font-semibold group-hover:text-primary">
+                  {<MoneyText text={title} />}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {<MoneyText text={body} />}
                 </p>
-              </article>
+                <span className="mt-auto flex items-center gap-1 pt-5 text-sm font-semibold">
+                  {t.services.more}
+                  <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-1" />
+                </span>
+              </Link>
             );
           })}
 
@@ -762,7 +785,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             title={t.visit.mapTitle}
             className="mt-4 h-[360px] w-full rounded-3xl border-0"
             loading="lazy"
-            src={`https://maps.google.com/maps?q=TIC%20Wireless%2C%203640%20Hillcroft%20St%2C%20Houston%2C%20TX%2077057&z=16&hl=${lang}&output=embed`}
+            src={`https://maps.google.com/maps?q=TIC%20Wireless%2C%203640%20Hillcroft%20St%2C%20Suite%20C%2C%20Houston%2C%20TX%2077057&z=16&hl=${lang}&output=embed`}
           />
         </div>
       </section>

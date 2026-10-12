@@ -175,8 +175,8 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </Link>
         </div>
         <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-          <MapPin className="h-4 w-4 text-primary" /> TIC Wireless · 3640 Hillcroft St, Houston, TX
-          77057
+          <MapPin className="h-4 w-4 text-primary" /> TIC Wireless Electronic & Repair Center · 3640
+          Hillcroft St, Suite C, Houston, TX 77057
         </p>
       </section>
 

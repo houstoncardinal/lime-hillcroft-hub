@@ -1,3 +1,4 @@
+import { ogImage } from "@/components/site/og";
 import { homeAlternates } from "@/components/intl/heads";
 import { LEASING_COPY } from "@/components/pages/leasing-copy";
 import { HOME_COPY } from "@/components/pages/home-copy";
@@ -6,7 +7,7 @@ import { ALTERNATES, pageHead, type Lang } from "@/components/site/seo";
 
 export function homeHead(lang: Lang) {
   const t = HOME_COPY[lang];
-  const image = "/og/home.jpg";
+  const image = ogImage("home", lang);
   const head = pageHead({
     paths: ALTERNATES.home,
     lang,
@@ -30,7 +31,7 @@ export function homeHead(lang: Lang) {
 
 export function leasingHead(lang: Lang) {
   const t = LEASING_COPY[lang];
-  const image = "/og/leasing.jpg";
+  const image = ogImage("leasing", lang);
   return pageHead({
     paths: ALTERNATES.leasing,
     lang,

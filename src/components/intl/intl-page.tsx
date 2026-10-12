@@ -131,7 +131,7 @@ export function IntlPage({ l }: { l: IntlLang }) {
                 width={2000}
                 height={1500}
                 sizes="(min-width: 768px) 50vw, 100vw"
-                alt="TIC Wireless, 3640 Hillcroft St, Houston"
+                alt="TIC Wireless Electronic & Repair Center, 3640 Hillcroft St, Suite C, Houston"
                 className="aspect-[4/3]"
               />
             </div>

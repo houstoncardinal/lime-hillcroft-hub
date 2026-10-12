@@ -3,13 +3,14 @@ import type { ShopCategory } from "@/shop/types";
 // Visible text for the online shop, cart and product pages.
 const en = {
   meta: {
-    title: "Shop Phone Accessories Online — Cases, AirPods & JBL | TIC Wireless",
+    title:
+      "Shop Phone Accessories Online — Cases, AirPods & JBL | TIC Wireless Electronic & Repair Center",
     description:
-      "Shop phone cases, tempered glass, AirPods, Galaxy Buds, JBL speakers, smartwatches and chargers from TIC Wireless on Hillcroft in Houston.",
+      "Shop phone cases, tempered glass, AirPods, Galaxy Buds, JBL speakers, smartwatches and chargers from TIC Wireless Electronic & Repair Center on Hillcroft in Houston.",
     breadcrumb: ["Home", "Shop"],
   },
   hero: {
-    kicker: "TIC Wireless online shop",
+    kicker: "TIC Wireless Electronic & Repair Center online shop",
     title: ["The accessory wall,", "now online."],
     body: "Cases, glass, AirPods, Galaxy Buds, JBL speakers, smartwatches and chargers — the same gear we stock on Hillcroft.",
     search: "Search cases, AirPods, JBL…",
@@ -48,7 +49,7 @@ const en = {
   features: "Highlights",
   related: "You might also like",
   trust: [
-    ["Real store on Hillcroft", "See it, hold it, ask questions — 3640 Hillcroft St."],
+    ["Real store on Hillcroft", "See it, hold it, ask questions — 3640 Hillcroft St, Suite C."],
     ["Se habla español", "Help in English or Spanish, in store or on the phone."],
     ["Need it today?", "Call us to check stock and set an item aside."],
   ],
@@ -89,13 +90,14 @@ export type ShopCopy = typeof en;
 
 const es: ShopCopy = {
   meta: {
-    title: "Accesorios para Celular en Línea — Fundas, AirPods y JBL | TIC Wireless",
+    title:
+      "Accesorios para Celular en Línea — Fundas, AirPods y JBL | TIC Wireless Electronic & Repair Center",
     description:
-      "Compra fundas, micas de vidrio templado, AirPods, Galaxy Buds, bocinas JBL, relojes inteligentes y cargadores de TIC Wireless en Hillcroft, Houston.",
+      "Compra fundas, micas de vidrio templado, AirPods, Galaxy Buds, bocinas JBL, relojes inteligentes y cargadores de TIC Wireless Electronic & Repair Center en Hillcroft, Houston.",
     breadcrumb: ["Inicio", "Tienda"],
   },
   hero: {
-    kicker: "Tienda en línea de TIC Wireless",
+    kicker: "Tienda en línea de TIC Wireless Electronic & Repair Center",
     title: ["La pared de accesorios,", "ahora en línea."],
     body: "Fundas, micas, AirPods, Galaxy Buds, bocinas JBL, relojes inteligentes y cargadores — lo mismo que tenemos en Hillcroft.",
     search: "Busca fundas, AirPods, JBL…",
@@ -134,7 +136,7 @@ const es: ShopCopy = {
   features: "Características",
   related: "También te puede gustar",
   trust: [
-    ["Tienda real en Hillcroft", "Velo, tócalo y pregunta — 3640 Hillcroft St."],
+    ["Tienda real en Hillcroft", "Velo, tócalo y pregunta — 3640 Hillcroft St, Suite C."],
     ["We speak English", "Te atendemos en español o inglés, en tienda o por teléfono."],
     ["¿Lo necesitas hoy?", "Llámanos para revisar inventario y apartarlo."],
   ],

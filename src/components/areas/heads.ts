@@ -1,26 +1,26 @@
+import { ogImage } from "@/components/site/og";
 import { areaCopy, HUB_COPY } from "@/components/areas/copy";
 import { AREAS, shortName, type Area } from "@/components/areas/data";
 import { areaPath, areaPaths } from "@/components/areas/paths";
 import { pageSchema } from "@/components/site/schema";
 import { ALTERNATES, absoluteUrl, pageHead, type Lang } from "@/components/site/seo";
 
-const IMAGE = "/og/store.jpg";
-
 export function areasHubHead(lang: Lang) {
   const t = HUB_COPY[lang];
+  const image = ogImage("areas", lang);
   return pageHead({
     paths: ALTERNATES.areas,
     lang,
     title: t.title,
     description: t.description,
-    image: IMAGE,
+    image,
     imageAlt: t.title,
     jsonLd: pageSchema({
       paths: ALTERNATES.areas,
       lang,
       name: t.title,
       description: t.description,
-      image: IMAGE,
+      image,
       breadcrumb: [
         [t.breadcrumb[0] ?? "", ALTERNATES.home[lang]],
         [t.breadcrumb[1] ?? "", ALTERNATES.areas[lang]],
@@ -48,19 +48,20 @@ export function areaHead(lang: Lang, area: Area | undefined) {
   const paths = areaPaths(area.slug);
   const url = absoluteUrl(paths[lang]);
   const hub = HUB_COPY[lang];
+  const image = ogImage(`area-${area.slug}`, lang);
   return pageHead({
     paths,
     lang,
     title: t.title,
     description: t.description,
-    image: IMAGE,
+    image,
     imageAlt: t.title,
     jsonLd: pageSchema({
       paths,
       lang,
       name: t.title,
       description: t.description,
-      image: IMAGE,
+      image,
       breadcrumb: [
         [hub.breadcrumb[0] ?? "", ALTERNATES.home[lang]],
         [hub.breadcrumb[1] ?? "", ALTERNATES.areas[lang]],

@@ -3,10 +3,11 @@ import { PHONE, STREET } from "@/components/site/business";
 // All visible text on the leasing landing page, in English and Spanish. Keep both in sync.
 const en = {
   meta: {
-    title: "PS5, Xbox & Laptop Leasing, No Credit Needed | TIC Wireless",
+    title: "Lease-to-Own PS5, Xbox & Laptops in Houston | TIC Wireless",
     description:
-      "PS5, Xbox, Switch 2, MacBook, laptop & phone leasing in Houston. Lease-to-own, no credit needed, from $40 down. TIC Wireless, 3640 Hillcroft St.",
-    imageAlt: "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Houston",
+      "PS5, Xbox, Switch 2, MacBook, laptop & phone leasing in Houston. Lease-to-own with no credit needed, from $40 down. 3640 Hillcroft St, Suite C.",
+    imageAlt:
+      "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Home", "Leasing"],
   },
   hero: {
@@ -23,7 +24,7 @@ const en = {
     visit: "Visit the store",
     chips: ["No credit needed", "From $40 down", "Take it home today", "Se habla español"],
     mainAlt:
-      "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless next to a lease-to-own, no credit needed sign",
+      "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center next to a lease-to-own, no credit needed sign",
     mainCaption: "PS5 & Switch 2 — in store now",
     tiles: [
       ["MacBook Air and iPads in a display case", "MacBook & iPad"],
@@ -60,17 +61,17 @@ const en = {
           "Nintendo Switch 2",
           "Controllers & headsets",
         ],
-        alt: "PlayStation 5 Slim and Nintendo Switch 2 boxes on display at TIC Wireless",
+        alt: "PlayStation 5 Slim and Nintendo Switch 2 boxes on display at TIC Wireless Electronic & Repair Center",
       },
       {
         title: "Laptops & tablets",
         items: ["MacBook Air", "Windows laptops", "iPad, iPad Pro & iPad mini", "Galaxy Tab"],
-        alt: "MacBook Air, iPad Pro, iPad and iPad mini boxes in a TIC Wireless display case",
+        alt: "MacBook Air, iPad Pro, iPad and iPad mini boxes in a TIC Wireless Electronic & Repair Center display case",
       },
       {
         title: "Phones",
         items: ["iPhone 17 Pro", "Samsung Galaxy", "Unlocked Android", "Any carrier"],
-        alt: "Boxed iPhone 17 Pro phones with a TIC Wireless business card",
+        alt: "Boxed iPhone 17 Pro phones with a TIC Wireless Electronic & Repair Center business card",
       },
       {
         title: "Audio & wearables",
@@ -167,10 +168,11 @@ export type LeasingCopy = typeof en;
 
 const es: LeasingCopy = {
   meta: {
-    title: "PS5, Xbox y Laptops a Pagos Sin Crédito | TIC Wireless Houston",
+    title: "PS5, Xbox y Laptops a Pagos en Houston | TIC Wireless",
     description:
-      "PS5, Xbox, Switch 2, MacBook, laptops y celulares a pagos en Houston. Sin necesidad de crédito, desde $40 de enganche. TIC Wireless, 3640 Hillcroft St.",
-    imageAlt: "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Houston",
+      "PS5, Xbox, Switch 2, MacBook, laptops y celulares a pagos en Houston. Sin necesidad de crédito, desde $40 de enganche. 3640 Hillcroft St, Suite C.",
+    imageAlt:
+      "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Inicio", "Arrendamiento"],
   },
   hero: {
@@ -192,7 +194,7 @@ const es: LeasingCopy = {
       "We speak English",
     ],
     mainAlt:
-      "PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless junto a un letrero de arrendamiento sin necesidad de crédito",
+      "PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center junto a un letrero de arrendamiento sin necesidad de crédito",
     mainCaption: "PS5 y Switch 2 — ya en tienda",
     tiles: [
       ["MacBook Air y iPad en una vitrina", "MacBook y iPad"],
@@ -224,17 +226,17 @@ const es: LeasingCopy = {
       {
         title: "Consolas de videojuegos",
         items: ["PlayStation 5", "Xbox Series X y S", "Nintendo Switch 2", "Controles y audífonos"],
-        alt: "Cajas de PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless",
+        alt: "Cajas de PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center",
       },
       {
         title: "Laptops y tabletas",
         items: ["MacBook Air", "Laptops Windows", "iPad, iPad Pro y iPad mini", "Galaxy Tab"],
-        alt: "Cajas de MacBook Air, iPad Pro, iPad y iPad mini en una vitrina de TIC Wireless",
+        alt: "Cajas de MacBook Air, iPad Pro, iPad y iPad mini en una vitrina de TIC Wireless Electronic & Repair Center",
       },
       {
         title: "Celulares",
         items: ["iPhone 17 Pro", "Samsung Galaxy", "Android desbloqueado", "Cualquier compañía"],
-        alt: "Cajas de iPhone 17 Pro con una tarjeta de presentación de TIC Wireless",
+        alt: "Cajas de iPhone 17 Pro con una tarjeta de presentación de TIC Wireless Electronic & Repair Center",
       },
       {
         title: "Audio y relojes",

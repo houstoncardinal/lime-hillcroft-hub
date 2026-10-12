@@ -30,10 +30,14 @@ import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
 import { Route as EsGuiasIndexRouteImport } from './routes/es/guias/index'
 import { Route as EsGuiasSlugRouteImport } from './routes/es/guias/$slug'
+import { Route as EsServiciosIndexRouteImport } from './routes/es/servicios/index'
+import { Route as EsServiciosSlugRouteImport } from './routes/es/servicios/$slug'
 import { Route as EsTiendaIndexRouteImport } from './routes/es/tienda/index'
 import { Route as EsTiendaHandleRouteImport } from './routes/es/tienda/$handle'
 import { Route as EsZonasIndexRouteImport } from './routes/es/zonas/index'
@@ -144,6 +148,16 @@ const GuidesSlugRoute = GuidesSlugRouteImport.update({
   path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopIndexRoute = ShopIndexRouteImport.update({
   id: '/shop/',
   path: '/shop/',
@@ -162,6 +176,16 @@ const EsGuiasIndexRoute = EsGuiasIndexRouteImport.update({
 const EsGuiasSlugRoute = EsGuiasSlugRouteImport.update({
   id: '/es/guias/$slug',
   path: '/es/guias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
+  id: '/es/servicios/',
+  path: '/es/servicios/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsServiciosSlugRoute = EsServiciosSlugRouteImport.update({
+  id: '/es/servicios/$slug',
+  path: '/es/servicios/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsTiendaIndexRoute = EsTiendaIndexRouteImport.update({
@@ -203,16 +227,20 @@ export interface FileRoutesByFullPath {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
+  '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/guias/': typeof EsGuiasIndexRoute
+  '/es/servicios/': typeof EsServiciosIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
   '/es/zonas/': typeof EsZonasIndexRoute
 }
@@ -233,16 +261,20 @@ export interface FileRoutesByTo {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/admin': typeof AdminIndexRoute
   '/areas': typeof AreasIndexRoute
   '/es': typeof EsIndexRoute
   '/guides': typeof GuidesIndexRoute
+  '/services': typeof ServicesIndexRoute
   '/shop': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
+  '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/guias': typeof EsGuiasIndexRoute
+  '/es/servicios': typeof EsServiciosIndexRoute
   '/es/tienda': typeof EsTiendaIndexRoute
   '/es/zonas': typeof EsZonasIndexRoute
 }
@@ -265,16 +297,20 @@ export interface FileRoutesById {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
+  '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/guias/': typeof EsGuiasIndexRoute
+  '/es/servicios/': typeof EsServiciosIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
   '/es/zonas/': typeof EsZonasIndexRoute
 }
@@ -298,16 +334,20 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/services/$slug'
     | '/shop/$handle'
     | '/admin/'
     | '/areas/'
     | '/es/'
     | '/guides/'
+    | '/services/'
     | '/shop/'
     | '/es/guias/$slug'
+    | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
     | '/es/guias/'
+    | '/es/servicios/'
     | '/es/tienda/'
     | '/es/zonas/'
   fileRoutesByTo: FileRoutesByTo
@@ -328,16 +368,20 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/services/$slug'
     | '/shop/$handle'
     | '/admin'
     | '/areas'
     | '/es'
     | '/guides'
+    | '/services'
     | '/shop'
     | '/es/guias/$slug'
+    | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
     | '/es/guias'
+    | '/es/servicios'
     | '/es/tienda'
     | '/es/zonas'
   id:
@@ -359,16 +403,20 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/services/$slug'
     | '/shop/$handle'
     | '/admin/'
     | '/areas/'
     | '/es/'
     | '/guides/'
+    | '/services/'
     | '/shop/'
     | '/es/guias/$slug'
+    | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
     | '/es/guias/'
+    | '/es/servicios/'
     | '/es/tienda/'
     | '/es/zonas/'
   fileRoutesById: FileRoutesById
@@ -383,15 +431,19 @@ export interface RootRouteChildren {
   EsArrendamientoRoute: typeof EsArrendamientoRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
   ShopHandleRoute: typeof ShopHandleRoute
   AreasIndexRoute: typeof AreasIndexRoute
   EsIndexRoute: typeof EsIndexRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
+  EsServiciosSlugRoute: typeof EsServiciosSlugRoute
   EsTiendaHandleRoute: typeof EsTiendaHandleRoute
   EsZonasSlugRoute: typeof EsZonasSlugRoute
   EsGuiasIndexRoute: typeof EsGuiasIndexRoute
+  EsServiciosIndexRoute: typeof EsServiciosIndexRoute
   EsTiendaIndexRoute: typeof EsTiendaIndexRoute
   EsZonasIndexRoute: typeof EsZonasIndexRoute
 }
@@ -545,6 +597,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop/': {
       id: '/shop/'
       path: '/shop'
@@ -571,6 +637,20 @@ declare module '@tanstack/react-router' {
       path: '/es/guias/$slug'
       fullPath: '/es/guias/$slug'
       preLoaderRoute: typeof EsGuiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/servicios/': {
+      id: '/es/servicios/'
+      path: '/es/servicios'
+      fullPath: '/es/servicios/'
+      preLoaderRoute: typeof EsServiciosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/servicios/$slug': {
+      id: '/es/servicios/$slug'
+      path: '/es/servicios/$slug'
+      fullPath: '/es/servicios/$slug'
+      preLoaderRoute: typeof EsServiciosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/tienda/': {
@@ -640,15 +720,19 @@ const rootRouteChildren: RootRouteChildren = {
   EsArrendamientoRoute: EsArrendamientoRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
   GuidesSlugRoute: GuidesSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
   ShopHandleRoute: ShopHandleRoute,
   AreasIndexRoute: AreasIndexRoute,
   EsIndexRoute: EsIndexRoute,
   GuidesIndexRoute: GuidesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
+  EsServiciosSlugRoute: EsServiciosSlugRoute,
   EsTiendaHandleRoute: EsTiendaHandleRoute,
   EsZonasSlugRoute: EsZonasSlugRoute,
   EsGuiasIndexRoute: EsGuiasIndexRoute,
+  EsServiciosIndexRoute: EsServiciosIndexRoute,
   EsTiendaIndexRoute: EsTiendaIndexRoute,
   EsZonasIndexRoute: EsZonasIndexRoute,
 }

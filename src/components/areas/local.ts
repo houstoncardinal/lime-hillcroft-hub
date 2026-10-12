@@ -48,12 +48,12 @@ export const LOCAL: Record<string, Local> = {
     },
     faq: {
       en: {
-        q: "Is TIC Wireless inside the Mahatma Gandhi District?",
-        a: "We're just north of it, on Hillcroft Avenue at 3640 Hillcroft St — about a mile up from Harwin Drive, a two-minute drive.",
+        q: "Is TIC Wireless Electronic & Repair Center inside the Mahatma Gandhi District?",
+        a: "We're just north of it, on Hillcroft Avenue at 3640 Hillcroft St, Suite C — about a mile up from Harwin Drive, a two-minute drive.",
       },
       es: {
-        q: "¿TIC Wireless está dentro del Distrito Mahatma Gandhi?",
-        a: "Estamos justo al norte, sobre Hillcroft Avenue en 3640 Hillcroft St, a una milla de Harwin Drive: dos minutos en carro.",
+        q: "¿TIC Wireless Electronic & Repair Center está dentro del Distrito Mahatma Gandhi?",
+        a: "Estamos justo al norte, sobre Hillcroft Avenue en 3640 Hillcroft St, Suite C, a una milla de Harwin Drive: dos minutos en carro.",
       },
     },
   },
@@ -338,11 +338,11 @@ export const LOCAL: Record<string, Local> = {
     faq: {
       en: {
         q: "Is there a phone repair shop near Meyerland Plaza?",
-        a: "TIC Wireless is about 5.4 miles from Meyerland — roughly eleven minutes north on Hillcroft Avenue without traffic — with same-day repairs for most phones.",
+        a: "TIC Wireless Electronic & Repair Center is about 5.4 miles from Meyerland — roughly eleven minutes north on Hillcroft Avenue without traffic — with same-day repairs for most phones.",
       },
       es: {
         q: "¿Hay un taller de celulares cerca de Meyerland Plaza?",
-        a: "TIC Wireless está a unas 5.4 millas de Meyerland, unos once minutos al norte por Hillcroft Avenue sin tráfico, con reparaciones el mismo día para la mayoría de celulares.",
+        a: "TIC Wireless Electronic & Repair Center está a unas 5.4 millas de Meyerland, unos once minutos al norte por Hillcroft Avenue sin tráfico, con reparaciones el mismo día para la mayoría de celulares.",
       },
     },
   },

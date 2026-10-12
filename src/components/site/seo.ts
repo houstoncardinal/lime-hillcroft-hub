@@ -16,12 +16,17 @@ export const ALTERNATES = {
   shop: { en: "/shop", es: "/es/tienda" },
   areas: { en: "/areas", es: "/es/zonas" },
   guides: { en: "/guides", es: "/es/guias" },
+  services: { en: "/services", es: "/es/servicios" },
 } as const;
 
 /** English and Spanish paths of one page. */
 export type Paths = { en: string; es: string };
 
 export type PageKey = keyof typeof ALTERNATES;
+
+/** Adds the short brand to a page title when it still fits in Google's ~65-character title. */
+export const withBrand = (title: string) =>
+  title.length + 15 <= 65 ? `${title} | TIC Wireless` : title;
 
 const LOCALE = { en: "en_US", es: "es_US" } as const;
 
@@ -63,7 +68,7 @@ export function pageHead({
       { name: "geo.position", content: "29.7262272;-95.5014118" },
       { name: "ICBM", content: "29.7262272, -95.5014118" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "TIC Wireless" },
+      { property: "og:site_name", content: "TIC Wireless Electronic & Repair Center" },
       { property: "og:locale", content: LOCALE[lang] },
       { property: "og:locale:alternate", content: LOCALE[lang === "en" ? "es" : "en"] },
       { property: "og:url", content: url },

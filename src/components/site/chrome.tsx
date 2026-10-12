@@ -9,23 +9,21 @@ import { Logo } from "@/components/site/logo";
 import { Toaster } from "@/components/ui/sonner";
 import { CartButton, CartDrawer } from "@/shop/components";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
-import { ThemeSwitcher } from "@/components/site/theme-switcher";
-import { SITE_THEME_KEY } from "@/components/site/themes";
 
 // Plain anchors with a leading "/" so the section links work from every page.
 const NAV: Record<Lang, [string, string][]> = {
   en: [
-    ["Services", "/#services"],
+    ["Services", "/services"],
     ["Shop", "/shop"],
     ["Leasing", "/leasing"],
-    ["Repair", "/#repair"],
+    ["Repair", "/services/phone-repair"],
     ["Visit", "/#visit"],
   ],
   es: [
-    ["Servicios", "/es#services"],
+    ["Servicios", "/es/servicios"],
     ["Tienda", "/es/tienda"],
     ["Arrendamiento", "/es/arrendamiento"],
-    ["Reparación", "/es#repair"],
+    ["Reparación", "/es/servicios/phone-repair"],
     ["Visítanos", "/es#visit"],
   ],
 };
@@ -39,7 +37,7 @@ const T = {
     areas: "Areas we serve",
     guides: "Guides",
     directions: "Directions",
-    home: "TIC Wireless home",
+    home: "TIC Wireless Electronic & Repair Center home",
     tagline: "Buy · Sell · Repair · Unlock. Your one-stop phone shop in Houston. Se habla español.",
     trademarks:
       "PlayStation, Xbox, Nintendo Switch, iPhone, MacBook, Galaxy, JBL, Xfinity and carrier names are trademarks of their respective owners.",
@@ -53,7 +51,7 @@ const T = {
     areas: "Zonas que atendemos",
     guides: "Guías",
     directions: "Cómo llegar",
-    home: "Inicio de TIC Wireless",
+    home: "Inicio de TIC Wireless Electronic & Repair Center",
     tagline:
       "Compra · Venta · Reparación · Liberación. Tu tienda de celulares en Houston. We speak English.",
     trademarks:
@@ -134,7 +132,7 @@ export function SiteHeader({
     <header lang={lang} dir="ltr" className="fixed inset-x-0 top-0 z-50">
       <div className="mx-3 mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-full border border-white/10 bg-ink/90 px-4 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-xl sm:mx-4 sm:px-5 xl:mx-auto">
         <Link to={ALTERNATES.home[lang]} aria-label={T[lang].home}>
-          <Logo light className="[&_span]:text-base sm:[&_span]:text-lg" />
+          <Logo light compact />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-7 text-sm text-white/70 lg:flex">
           {nav(lang).map(([label, href]) => (
@@ -144,11 +142,6 @@ export function SiteHeader({
           ))}
         </nav>
         <div className="flex items-center gap-1">
-          <ThemeSwitcher
-            storageKey={SITE_THEME_KEY}
-            lang={lang}
-            className="text-white/80 hover:bg-white/10 hover:text-white"
-          />
           <LanguageMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
           {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
@@ -199,7 +192,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           </address>
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} TIC Wireless · Houston, TX</p>
+          <p>© {new Date().getFullYear()} TIC Wireless Electronic & Repair Center · Houston, TX</p>
           <p>{T[lang].trademarks}</p>
         </div>
       </div>

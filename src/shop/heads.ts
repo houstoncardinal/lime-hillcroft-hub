@@ -1,3 +1,4 @@
+import { ogImage } from "@/components/site/og";
 import { pageSchema } from "@/components/site/schema";
 import { ALTERNATES, absoluteUrl, pageHead, type Lang } from "@/components/site/seo";
 import { SHOP_COPY } from "@/shop/copy";
@@ -7,7 +8,7 @@ import type { Catalog, ShopProduct } from "@/shop/types";
 export function shopHead(lang: Lang, catalog: Catalog | undefined) {
   const t = SHOP_COPY[lang];
   const products = catalog?.products ?? [];
-  const image = products[0]?.images[0]?.url ?? "/og/home.jpg";
+  const image = products[0]?.images[0]?.url ?? ogImage("home", lang);
   return pageHead({
     paths: ALTERNATES.shop,
     lang,
@@ -51,9 +52,9 @@ export function productHead(
   if (!product) return { meta: [{ title: t.meta.title }] };
   const paths = productPaths(product.handle);
   const url = absoluteUrl(paths[lang]);
-  const image = product.images[0]?.url ?? "/og/home.jpg";
+  const image = product.images[0]?.url ?? ogImage("home", lang);
   const description = product.description.slice(0, 155);
-  const title = `${product.title} — ${product.vendor} | TIC Wireless Houston`;
+  const title = `${product.title} — ${product.vendor} | TIC Wireless Electronic & Repair Center Houston`;
   return pageHead({
     paths,
     lang,

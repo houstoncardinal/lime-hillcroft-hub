@@ -42,6 +42,17 @@ describe("App routing", () => {
     expect(router.matchRoutes(path).at(-1)?.routeId).toBe(routeId);
   });
 
+  it.each([
+    ["/services", "/services/"],
+    ["/services/phone-repair", "/services/$slug"],
+    ["/es/servicios", "/es/servicios/"],
+    ["/es/servicios/prepaid-plans", "/es/servicios/$slug"],
+  ])("matches the services page %s", (path, routeId) => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    expect(router.matchRoutes(path).at(-1)?.routeId).toBe(routeId);
+  });
+
   it.each(["/vi", "/zh", "/ar"])("matches the language page %s", (path) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 

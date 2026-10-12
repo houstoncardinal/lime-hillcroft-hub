@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0f1a26" },
-      { title: "TIC Wireless — Cell Phone Store & Repair in Houston" },
+      { title: "TIC Wireless Electronic & Repair Center — Cell Phone Store & Repair in Houston" },
       { name: "format-detection", content: "telephone=yes" },
     ],
     links: [
