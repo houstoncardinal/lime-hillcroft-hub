@@ -43,7 +43,7 @@ const services = {
     ],
     [
       "Prepaid cell phone plans",
-      "Prepaid plans from Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca and more.",
+      "Prepaid plans from T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca, Gen Mobile, Metro, Boost and GoSmart.",
     ],
     ["Xfinity Prepaid internet", "Prepaid home internet sold and set up in store."],
     [
@@ -80,7 +80,7 @@ const services = {
     ],
     [
       "Planes prepagados",
-      "Planes prepagados de Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca y más.",
+      "Planes prepagados de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca, Gen Mobile, Metro, Boost y GoSmart.",
     ],
     [
       "Internet prepagado Xfinity",
@@ -274,6 +274,7 @@ export function pageSchema({
   breadcrumb,
   faqs,
   extra = [],
+  pageType = "WebPage",
 }: {
   paths: Paths;
   lang: Lang;
@@ -283,6 +284,8 @@ export function pageSchema({
   breadcrumb: [string, string][];
   faqs: Faq[];
   extra?: object[];
+  /** schema.org page type, e.g. ["WebPage", "ContactPage"] for the location page. */
+  pageType?: string | string[];
 }) {
   const url = absoluteUrl(paths[lang]);
   return {
@@ -291,7 +294,7 @@ export function pageSchema({
       store(lang),
       website(),
       {
-        "@type": "WebPage",
+        "@type": pageType,
         "@id": `${url}#webpage`,
         url,
         name,

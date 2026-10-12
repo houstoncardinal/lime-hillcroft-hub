@@ -47,6 +47,8 @@ describe("App routing", () => {
     ["/services/phone-repair", "/services/$slug"],
     ["/es/servicios", "/es/servicios/"],
     ["/es/servicios/prepaid-plans", "/es/servicios/$slug"],
+    ["/location", "/location/"],
+    ["/es/ubicacion", "/es/ubicacion/"],
   ])("matches the services page %s", (path, routeId) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 

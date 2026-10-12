@@ -6,6 +6,13 @@ import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/busi
 import { LanguageMenu } from "@/components/intl/language-menu";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { Logo } from "@/components/site/logo";
+import { MobileMenu } from "@/components/site/mobile-menu";
+import { AREAS, shortName } from "@/components/areas/data";
+import { areaPath } from "@/components/areas/paths";
+import { GUIDES } from "@/components/guides/data";
+import { guidePath } from "@/components/guides/paths";
+import { SERVICES } from "@/components/services/data";
+import { servicePath } from "@/components/services/paths";
 import { Toaster } from "@/components/ui/sonner";
 import { CartButton, CartDrawer } from "@/shop/components";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
@@ -17,14 +24,14 @@ const NAV: Record<Lang, [string, string][]> = {
     ["Shop", "/shop"],
     ["Leasing", "/leasing"],
     ["Repair", "/services/phone-repair"],
-    ["Visit", "/#visit"],
+    ["Location", "/location"],
   ],
   es: [
     ["Servicios", "/es/servicios"],
     ["Tienda", "/es/tienda"],
     ["Arrendamiento", "/es/arrendamiento"],
     ["Reparación", "/es/servicios/phone-repair"],
-    ["Visítanos", "/es#visit"],
+    ["Ubicación", "/es/ubicacion"],
   ],
 };
 
@@ -130,8 +137,12 @@ export function SiteHeader({
 }) {
   return (
     <header lang={lang} dir="ltr" className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-3 mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-full border border-white/10 bg-ink/90 px-4 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-xl sm:mx-4 sm:px-5 xl:mx-auto">
-        <Link to={ALTERNATES.home[lang]} aria-label={T[lang].home}>
+      <div className="mx-3 mt-3 flex max-w-7xl items-center justify-between gap-2 rounded-full border border-white/10 bg-ink/90 py-2 pl-4 pr-2 shadow-2xl shadow-black/20 backdrop-blur-xl sm:mx-4 sm:py-2.5 sm:pl-5 sm:pr-3 xl:mx-auto">
+        <Link
+          to={ALTERNATES.home[lang]}
+          aria-label={T[lang].home}
+          className="min-w-0 overflow-hidden"
+        >
           <Logo light compact />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-7 text-sm text-white/70 lg:flex">
@@ -141,16 +152,20 @@ export function SiteHeader({
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-1">
-          <LanguageMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
+        <div className="flex shrink-0 items-center gap-1.5">
+          {/* On phones, language & currency live in the menu. */}
+          <div className="hidden sm:block">
+            <LanguageMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
+          </div>
           {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
             href={TEL}
-            className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:inline-flex"
           >
             <Phone className="h-4 w-4" />
             {PHONE}
           </a>
+          <MobileMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
         </div>
       </div>
       {SHOP_ENABLED && <CartDrawer lang={lang} />}
@@ -159,41 +174,124 @@ export function SiteHeader({
   );
 }
 
+const FOOTER = {
+  en: {
+    services: "Services",
+    allServices: "All services",
+    store: "Store",
+    home: "Home",
+    leasing: "Leasing",
+    shop: "Shop",
+    location: "Location & hours",
+    areas: "Areas we serve",
+    guides: "Guides",
+    allAreas: "All areas",
+    allGuides: "All guides",
+  },
+  es: {
+    services: "Servicios",
+    allServices: "Todos los servicios",
+    store: "Tienda",
+    home: "Inicio",
+    leasing: "Arrendamiento",
+    shop: "Tienda en línea",
+    location: "Ubicación y horario",
+    areas: "Zonas que atendemos",
+    guides: "Guías",
+    allAreas: "Todas las zonas",
+    allGuides: "Todas las guías",
+  },
+};
+
+function FooterColumn({ title, links }: { title: string; links: [string, string][] }) {
+  return (
+    <div>
+      <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white/50">{title}</h2>
+      <ul className="mt-4 space-y-2.5 text-sm text-white/75 pointer-coarse:space-y-0">
+        {links.map(([label, href]) => (
+          <li key={href}>
+            <Link to={href} className="transition hover:text-white">
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function SiteFooter({ lang }: { lang: Lang }) {
+  const t = T[lang];
+  const f = FOOTER[lang];
   return (
     <footer lang={lang} dir="ltr" className="border-t border-white/10 bg-ink text-white">
-      <div className="mx-auto max-w-7xl px-5 pb-28 pt-16 md:pb-16">
-        <div className="flex flex-wrap items-start justify-between gap-10">
+      <div className="mx-auto max-w-7xl px-5 pb-28 pt-14 md:pb-14 md:pt-20">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_3fr]">
           <div>
             <Logo light />
-            <p className="mt-4 max-w-xs text-sm text-white/60">{T[lang].tagline}</p>
-          </div>
-          <nav
-            aria-label="Footer"
-            className="grid grid-cols-2 gap-x-16 gap-y-2 text-sm text-white/70"
-          >
-            {nav(lang).map(([label, href]) => (
-              <a key={href} href={href} className="hover:text-white">
-                {label}
+            <p className="mt-4 max-w-xs text-sm text-white/60">{t.tagline}</p>
+            <address className="mt-6 text-sm not-italic text-white/75">
+              <p>{ADDRESS}</p>
+              <a href={TEL} className="mt-2 block font-display text-xl font-semibold text-primary">
+                {PHONE}
               </a>
-            ))}
-            <a href={ALTERNATES.areas[lang]} className="hover:text-white">
-              {T[lang].areas}
-            </a>
-            <a href={ALTERNATES.guides[lang]} className="hover:text-white">
-              {T[lang].guides}
-            </a>
+            </address>
+            <OpenBadge lang={lang} className="mt-3 text-white/70" />
+            <div className="mt-6 flex flex-wrap gap-2">
+              <a
+                href={DIRECTIONS}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-sm font-semibold transition hover:border-white/60"
+              >
+                <MapPin className="h-4 w-4" /> {t.directions}
+              </a>
+            </div>
+          </div>
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+            <FooterColumn
+              title={f.services}
+              links={[
+                ...SERVICES.map((s): [string, string] => [
+                  s.text[lang].name,
+                  servicePath(lang, s.slug),
+                ]),
+                [f.allServices, ALTERNATES.services[lang]],
+              ]}
+            />
+            <FooterColumn
+              title={f.store}
+              links={[
+                [f.home, ALTERNATES.home[lang]],
+                [f.leasing, ALTERNATES.leasing[lang]],
+                ...(SHOP_ENABLED ? [[f.shop, ALTERNATES.shop[lang]] as [string, string]] : []),
+                [f.location, ALTERNATES.location[lang]],
+                [f.areas, ALTERNATES.areas[lang]],
+                [f.guides, ALTERNATES.guides[lang]],
+              ]}
+            />
+            <FooterColumn
+              title={f.areas}
+              links={[
+                ...AREAS.map((a): [string, string] => [shortName(a), areaPath(lang, a.slug)]),
+                [f.allAreas, ALTERNATES.areas[lang]],
+              ]}
+            />
+            <FooterColumn
+              title={f.guides}
+              links={[
+                ...GUIDES.map((g): [string, string] => [
+                  g.text[lang].metaTitle,
+                  guidePath(lang, g.slug),
+                ]),
+                [f.allGuides, ALTERNATES.guides[lang]],
+              ]}
+            />
           </nav>
-          <address className="text-sm not-italic text-white/70">
-            <p>{ADDRESS}</p>
-            <a href={TEL} className="mt-1 block hover:text-white">
-              {PHONE}
-            </a>
-          </address>
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
           <p>© {new Date().getFullYear()} TIC Wireless Electronic & Repair Center · Houston, TX</p>
-          <p>{T[lang].trademarks}</p>
+          <p>{t.trademarks}</p>
         </div>
       </div>
     </footer>

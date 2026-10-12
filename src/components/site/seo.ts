@@ -17,6 +17,7 @@ export const ALTERNATES = {
   areas: { en: "/areas", es: "/es/zonas" },
   guides: { en: "/guides", es: "/es/guias" },
   services: { en: "/services", es: "/es/servicios" },
+  location: { en: "/location", es: "/es/ubicacion" },
 } as const;
 
 /** English and Spanish paths of one page. */

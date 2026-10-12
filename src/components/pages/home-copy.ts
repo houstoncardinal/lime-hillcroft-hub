@@ -239,6 +239,7 @@ const en = {
       "The glass storefront of the new TIC Wireless Electronic & Repair Center store at 3640 Hillcroft St, Suite C, Houston",
     plazaAlt: "The shopping center at 3640 Hillcroft St, Suite C from the parking lot",
     plazaCta: "Look for the plaza",
+    more: "Full location details, photos & parking",
     accessible: "Wheelchair-accessible entrance & parking",
     directions: "Directions",
     hours: [
@@ -508,6 +509,7 @@ const es: HomeCopy = {
       "Fachada de vidrio de la nueva tienda TIC Wireless Electronic & Repair Center en 3640 Hillcroft St, Suite C, Houston",
     plazaAlt: "El centro comercial de 3640 Hillcroft St, Suite C visto desde el estacionamiento",
     plazaCta: "Busca esta plaza",
+    more: "Ubicación completa, fotos y estacionamiento",
     accessible: "Entrada y estacionamiento accesibles para silla de ruedas",
     directions: "Cómo llegar",
     hours: [

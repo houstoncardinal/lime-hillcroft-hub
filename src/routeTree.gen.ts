@@ -30,6 +30,7 @@ import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
+import { Route as LocationIndexRouteImport } from './routes/location/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop/index'
@@ -40,6 +41,7 @@ import { Route as EsServiciosIndexRouteImport } from './routes/es/servicios/inde
 import { Route as EsServiciosSlugRouteImport } from './routes/es/servicios/$slug'
 import { Route as EsTiendaIndexRouteImport } from './routes/es/tienda/index'
 import { Route as EsTiendaHandleRouteImport } from './routes/es/tienda/$handle'
+import { Route as EsUbicacionIndexRouteImport } from './routes/es/ubicacion/index'
 import { Route as EsZonasIndexRouteImport } from './routes/es/zonas/index'
 import { Route as EsZonasSlugRouteImport } from './routes/es/zonas/$slug'
 
@@ -148,6 +150,11 @@ const GuidesSlugRoute = GuidesSlugRouteImport.update({
   path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocationIndexRoute = LocationIndexRouteImport.update({
+  id: '/location/',
+  path: '/location/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -198,6 +205,11 @@ const EsTiendaHandleRoute = EsTiendaHandleRouteImport.update({
   path: '/es/tienda/$handle',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsUbicacionIndexRoute = EsUbicacionIndexRouteImport.update({
+  id: '/es/ubicacion/',
+  path: '/es/ubicacion/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsZonasIndexRoute = EsZonasIndexRouteImport.update({
   id: '/es/zonas/',
   path: '/es/zonas/',
@@ -233,6 +245,7 @@ export interface FileRoutesByFullPath {
   '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/location/': typeof LocationIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
@@ -242,6 +255,7 @@ export interface FileRoutesByFullPath {
   '/es/guias/': typeof EsGuiasIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
+  '/es/ubicacion/': typeof EsUbicacionIndexRoute
   '/es/zonas/': typeof EsZonasIndexRoute
 }
 export interface FileRoutesByTo {
@@ -267,6 +281,7 @@ export interface FileRoutesByTo {
   '/areas': typeof AreasIndexRoute
   '/es': typeof EsIndexRoute
   '/guides': typeof GuidesIndexRoute
+  '/location': typeof LocationIndexRoute
   '/services': typeof ServicesIndexRoute
   '/shop': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
@@ -276,6 +291,7 @@ export interface FileRoutesByTo {
   '/es/guias': typeof EsGuiasIndexRoute
   '/es/servicios': typeof EsServiciosIndexRoute
   '/es/tienda': typeof EsTiendaIndexRoute
+  '/es/ubicacion': typeof EsUbicacionIndexRoute
   '/es/zonas': typeof EsZonasIndexRoute
 }
 export interface FileRoutesById {
@@ -303,6 +319,7 @@ export interface FileRoutesById {
   '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/location/': typeof LocationIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
@@ -312,6 +329,7 @@ export interface FileRoutesById {
   '/es/guias/': typeof EsGuiasIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
+  '/es/ubicacion/': typeof EsUbicacionIndexRoute
   '/es/zonas/': typeof EsZonasIndexRoute
 }
 export interface FileRouteTypes {
@@ -340,6 +358,7 @@ export interface FileRouteTypes {
     | '/areas/'
     | '/es/'
     | '/guides/'
+    | '/location/'
     | '/services/'
     | '/shop/'
     | '/es/guias/$slug'
@@ -349,6 +368,7 @@ export interface FileRouteTypes {
     | '/es/guias/'
     | '/es/servicios/'
     | '/es/tienda/'
+    | '/es/ubicacion/'
     | '/es/zonas/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -374,6 +394,7 @@ export interface FileRouteTypes {
     | '/areas'
     | '/es'
     | '/guides'
+    | '/location'
     | '/services'
     | '/shop'
     | '/es/guias/$slug'
@@ -383,6 +404,7 @@ export interface FileRouteTypes {
     | '/es/guias'
     | '/es/servicios'
     | '/es/tienda'
+    | '/es/ubicacion'
     | '/es/zonas'
   id:
     | '__root__'
@@ -409,6 +431,7 @@ export interface FileRouteTypes {
     | '/areas/'
     | '/es/'
     | '/guides/'
+    | '/location/'
     | '/services/'
     | '/shop/'
     | '/es/guias/$slug'
@@ -418,6 +441,7 @@ export interface FileRouteTypes {
     | '/es/guias/'
     | '/es/servicios/'
     | '/es/tienda/'
+    | '/es/ubicacion/'
     | '/es/zonas/'
   fileRoutesById: FileRoutesById
 }
@@ -436,6 +460,7 @@ export interface RootRouteChildren {
   AreasIndexRoute: typeof AreasIndexRoute
   EsIndexRoute: typeof EsIndexRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
+  LocationIndexRoute: typeof LocationIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
@@ -445,6 +470,7 @@ export interface RootRouteChildren {
   EsGuiasIndexRoute: typeof EsGuiasIndexRoute
   EsServiciosIndexRoute: typeof EsServiciosIndexRoute
   EsTiendaIndexRoute: typeof EsTiendaIndexRoute
+  EsUbicacionIndexRoute: typeof EsUbicacionIndexRoute
   EsZonasIndexRoute: typeof EsZonasIndexRoute
 }
 
@@ -597,6 +623,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/location/': {
+      id: '/location/'
+      path: '/location'
+      fullPath: '/location/'
+      preLoaderRoute: typeof LocationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -667,6 +700,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsTiendaHandleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/ubicacion/': {
+      id: '/es/ubicacion/'
+      path: '/es/ubicacion'
+      fullPath: '/es/ubicacion/'
+      preLoaderRoute: typeof EsUbicacionIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/zonas/': {
       id: '/es/zonas/'
       path: '/es/zonas'
@@ -725,6 +765,7 @@ const rootRouteChildren: RootRouteChildren = {
   AreasIndexRoute: AreasIndexRoute,
   EsIndexRoute: EsIndexRoute,
   GuidesIndexRoute: GuidesIndexRoute,
+  LocationIndexRoute: LocationIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
@@ -734,6 +775,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsGuiasIndexRoute: EsGuiasIndexRoute,
   EsServiciosIndexRoute: EsServiciosIndexRoute,
   EsTiendaIndexRoute: EsTiendaIndexRoute,
+  EsUbicacionIndexRoute: EsUbicacionIndexRoute,
   EsZonasIndexRoute: EsZonasIndexRoute,
 }
 export const routeTree = rootRouteImport

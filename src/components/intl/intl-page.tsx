@@ -119,7 +119,7 @@ export function IntlPage({ l }: { l: IntlLang }) {
               </div>
               <Link
                 to={ALTERNATES.home.en}
-                className="inline-flex items-center gap-2 font-semibold text-white underline decoration-primary decoration-2 underline-offset-4"
+                className="tap inline-flex items-center gap-2 font-semibold text-white underline decoration-primary decoration-2 underline-offset-4"
               >
                 {l.fullSite} <ArrowUpRight className="h-4 w-4" />
               </Link>

@@ -2,8 +2,8 @@ import type { Faq } from "@/components/site/schema";
 import type { Lang } from "@/components/site/seo";
 
 // Detailed service pages (/services/<slug>, /es/servicios/<slug>). Only facts already confirmed
-// for the store — no prices, no carrier policies stated as fixed rules. Prices change, so pages
-// send people to call or visit.
+// for the store — no carrier policies stated as fixed rules. The prepaid page's plan prices live
+// in prepaid-plans.ts (dated); every other price is quoted in store.
 
 export type PhotoKey =
   | "iphone18"
@@ -43,7 +43,7 @@ export type Service = {
 };
 
 const CARRIERS =
-  "Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro by T-Mobile, Cricket, Boost Mobile, Simple Mobile, Lyca Mobile, GoSmart and Gen Mobile";
+  "T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile and GoSmart";
 
 export const SERVICES: Service[] = [
   {
@@ -323,9 +323,9 @@ export const SERVICES: Service[] = [
     text: {
       en: {
         name: "Prepaid phone plans",
-        metaTitle: "Prepaid Phone Plans in Houston — Cricket, Metro, AT&T & More",
+        metaTitle: "Prepaid Plans in Houston — Compare 12 Carriers from $10/mo",
         metaDescription:
-          "Compare Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile & more at one counter on Hillcroft. No contract, no credit check.",
+          "Compare T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca & Gen Mobile prepaid plans and prices. Unlimited from $35/mo. On Hillcroft.",
         h1: "Prepaid phone plans in Houston — every major carrier",
         intro:
           "Compare prepaid plans from the major carriers at one counter, get set up in store, and keep your number. Prepaid means no contract, no credit check and no surprise bills.",
@@ -358,7 +358,7 @@ export const SERVICES: Service[] = [
           ],
         ],
         why: [
-          "10+ prepaid carriers",
+          "12 prepaid carriers",
           "No contract, no credit check",
           "Keep your number",
           "Se habla español",
@@ -370,7 +370,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "How much are prepaid plans?",
-            a: "Prices depend on the carrier and change often. Call (713) 339-9300 or stop by and we'll compare current plans for you.",
+            a: "Plans start at $10/mo (Gen Mobile, 2GB). Unlimited data starts at $35/mo with AutoPay (Cricket Select Unlimited), and most unlimited plans with hotspot run $45–$60/mo. See every plan above — prices change, so we confirm today's price before you pay.",
           },
           {
             q: "Can I keep my phone number?",
@@ -383,9 +383,9 @@ export const SERVICES: Service[] = [
       },
       es: {
         name: "Planes prepagados",
-        metaTitle: "Planes Prepagados en Houston — Cricket, Metro, AT&T y Más",
+        metaTitle: "Planes Prepagados en Houston — 12 Compañías desde $10/mes",
         metaDescription:
-          "Compara Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile y más en un solo mostrador en Hillcroft. Sin contrato ni crédito.",
+          "Compara planes y precios de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca y Gen Mobile. Ilimitados desde $35/mes. En Hillcroft.",
         h1: "Planes prepagados en Houston — todas las compañías",
         intro:
           "Compara planes prepagados de las principales compañías en un solo mostrador, actívalo en la tienda y conserva tu número. Prepagado significa sin contrato, sin revisión de crédito y sin sorpresas.",
@@ -418,7 +418,7 @@ export const SERVICES: Service[] = [
           ],
         ],
         why: [
-          "Más de 10 compañías",
+          "12 compañías prepagadas",
           "Sin contrato ni crédito",
           "Conserva tu número",
           "We speak English",
@@ -430,7 +430,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Cuánto cuestan los planes?",
-            a: "Los precios dependen de la compañía y cambian seguido. Llama al (713) 339-9300 o ven y comparamos los planes actuales.",
+            a: "Hay planes desde $10/mes (Gen Mobile, 2GB). Los datos ilimitados empiezan en $35/mes con AutoPay (Cricket Select Unlimited) y la mayoría de los ilimitados con hotspot cuestan entre $45 y $60/mes. Mira todos los planes arriba; los precios cambian, así que confirmamos el precio del día antes de que pagues.",
           },
           {
             q: "¿Puedo conservar mi número?",

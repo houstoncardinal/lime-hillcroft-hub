@@ -1,41 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  CircleCheck,
-  Globe,
-  KeyRound,
-  MapPin,
-  MessageCircleQuestion,
-  Phone,
-  Receipt,
-  Repeat,
-  Router,
-  Smartphone,
-  Wallet,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight, CircleCheck, MapPin, MessageCircleQuestion, Phone } from "lucide-react";
 
 import { MoneyText } from "@/components/intl/money";
 import { findService, type Service } from "@/components/services/data";
 import { SERVICES_HUB } from "@/components/services/hub-copy";
 import { servicePath, servicePaths } from "@/components/services/paths";
+import { SERVICE_ICONS } from "@/components/services/icons";
 import { SERVICE_PHOTOS } from "@/components/services/photos";
+import { PrepaidPlans } from "@/components/services/prepaid-section";
 import { ADDRESS, DIRECTIONS, HOURS, PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
-
-const SERVICE_ICONS = {
-  phone: Smartphone,
-  plans: Wallet,
-  internet: Router,
-  repair: Wrench,
-  unlock: KeyRound,
-  trade: Repeat,
-  bill: Receipt,
-  globe: Globe,
-};
 
 const UI = {
   en: {
@@ -150,6 +127,8 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
           </div>
         </div>
       </section>
+
+      {service.slug === "prepaid-plans" && <PrepaidPlans lang={lang} />}
 
       <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-2">

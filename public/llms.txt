@@ -10,7 +10,7 @@ Key facts:
 - Hours: Monday–Saturday 9:00 AM–8:00 PM; Sunday 9:00 AM–5:00 PM; no appointment needed
 - Languages: English and Spanish
 - Leasing: no credit needed, bad credit OK, options from $40 down, weekly/biweekly/monthly payments, subject to approval; also on PS5, Xbox, Nintendo Switch 2, MacBook, laptops and iPads
-- Carriers (prepaid): Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro by T-Mobile, Cricket, Boost Mobile, Simple Mobile, Lyca Mobile, GoSmart, Gen Mobile; Xfinity Prepaid internet
+- Carriers (prepaid): T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile, GoSmart; Xfinity Prepaid internet
 - Repairs: iPhone, Samsung and Android phones, tablets, laptops and computers; most phone repairs same day; price quoted before work starts
 - Areas served: Southwest Houston — Westside/Mid West, Mahatma Gandhi District (Harwin/Hillcroft), Gulfton, Sharpstown, Westchase, Galleria/Uptown, Briarmeadow, Bellaire, Alief
 
@@ -21,12 +21,16 @@ Key facts:
 - [Inicio (español)](https://lime-hillcroft-hub.lovable.app/es)
 - [Arrendamiento (español)](https://lime-hillcroft-hub.lovable.app/es/arrendamiento)
 
+## Location & hours
+
+- [Location, hours & directions](https://lime-hillcroft-hub.lovable.app/location): address, full weekly hours, parking, accessibility, driving times from nearby neighborhoods, store photos and what to bring (Spanish: https://lime-hillcroft-hub.lovable.app/es/ubicacion)
+
 ## Services
 
 - [All services](https://lime-hillcroft-hub.lovable.app/services)
 - [Unlocked iPhones & Androids](https://lime-hillcroft-hub.lovable.app/services/unlocked-phones): new unlocked phones incl. iPhone 18 Pro Max, leasing with no credit needed
 - [Same-day phone repair](https://lime-hillcroft-hub.lovable.app/services/phone-repair): screens, batteries, charging ports; price quoted before work starts
-- [Prepaid phone plans](https://lime-hillcroft-hub.lovable.app/services/prepaid-plans): Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile
+- [Prepaid phone plans](https://lime-hillcroft-hub.lovable.app/services/prepaid-plans): plan-by-plan prices for T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca and Gen Mobile (from $10/mo; unlimited from $35/mo), plus Metro, Boost and GoSmart
 - [Xfinity Prepaid internet](https://lime-hillcroft-hub.lovable.app/services/xfinity-prepaid-internet): sold and set up in store
 - [Phone unlocking](https://lime-hillcroft-hub.lovable.app/services/phone-unlocking): lock status checked first, switch carriers in store
 - [Buy · Sell · Trade](https://lime-hillcroft-hub.lovable.app/services/buy-sell-trade): trade in or sell your phone

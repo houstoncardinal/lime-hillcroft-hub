@@ -1,6 +1,7 @@
 import { SERVICES, type Service } from "@/components/services/data";
 import { SERVICES_HUB } from "@/components/services/hub-copy";
 import { servicePath, servicePaths } from "@/components/services/paths";
+import { CARRIERS, PLANS_CHECKED } from "@/components/services/prepaid-plans";
 import { ogImage } from "@/components/site/og";
 import { pageSchema, serviceNode } from "@/components/site/schema";
 import { ALTERNATES, absoluteUrl, pageHead, withBrand, type Lang } from "@/components/site/seo";
@@ -77,7 +78,37 @@ export function serviceHead(lang: Lang, service: Service | undefined) {
           image,
           offers: t.offers,
         }),
+        ...(service.slug === "prepaid-plans" ? [prepaidCatalog(lang, paths[lang])] : []),
       ],
     }),
   });
+}
+
+/** The prepaid plans on the page as an OfferCatalog, one Offer per plan with its monthly price. */
+function prepaidCatalog(lang: Lang, path: string) {
+  const url = absoluteUrl(path);
+  return {
+    "@type": "OfferCatalog",
+    "@id": `${url}#plans`,
+    name: lang === "en" ? "Prepaid phone plans" : "Planes prepagados",
+    itemListElement: CARRIERS.map((c) => ({
+      "@type": "OfferCatalog",
+      name: c.name,
+      itemListElement: c.plans.map((p) => ({
+        "@type": "Offer",
+        name: `${c.name} ${p.name?.[lang] ?? p.data[lang]}`,
+        description: [p.data[lang], p.hotspot?.[lang]].filter(Boolean).join(" · "),
+        url: `${url}#plans-${c.id}`,
+        seller: { "@id": absoluteUrl("/#store") },
+        availability: "https://schema.org/InStoreOnly",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: p.price,
+          priceCurrency: "USD",
+          unitCode: "MON",
+          validFrom: PLANS_CHECKED,
+        },
+      })),
+    })),
+  };
 }

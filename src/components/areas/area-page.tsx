@@ -272,7 +272,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             </h2>
             <Link
               to={ALTERNATES.areas[lang]}
-              className="inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
+              className="tap inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
             >
               {<MoneyText text={t.allAreas} />} <ArrowRight className="h-4 w-4" />
             </Link>

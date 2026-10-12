@@ -66,8 +66,8 @@ body{width:1200px;height:630px;overflow:hidden;background:var(--ink);color:#fff;
 .bar{position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--primary)}
 .content{position:absolute;left:68px;top:52px;width:720px;bottom:44px;display:flex;flex-direction:column}
 .brand{display:flex;align-items:center;gap:14px}
-.brand b{display:block;font-family:Saira,sans-serif;font-weight:500;font-size:27px;letter-spacing:.04em;line-height:1}
-.brand small{display:block;margin-top:6px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+.brand b{display:block;font-family:Saira,sans-serif;font-weight:600;font-size:27px;letter-spacing:.04em;line-height:1}
+.brand small{display:block;margin-top:7px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);font-weight:700}
 .text{margin-top:auto;margin-bottom:auto;padding:18px 0}
 .kicker{display:flex;align-items:center;gap:12px;color:var(--primary);font-weight:700;font-size:20px;letter-spacing:.14em;text-transform:uppercase}
 .kicker:before{content:"";width:34px;height:2px;background:var(--primary)}

@@ -226,6 +226,34 @@ html[data-palette="crimson"] {
   text-transform: uppercase;
 }
 
+/* Touch screens: at least a 44px-tall tap area for small text links, without changing the
+   layout for mouse users. Breadcrumb and footer links get it automatically. */
+@utility tap {
+  @media (pointer: coarse) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+}
+
+/* The chat widget stays out of the way while the mobile menu is open (see setChatHidden). */
+html.menu-open #tidio-chat,
+html.menu-open #tidio-chat-iframe {
+  display: none !important;
+}
+
+@layer base {
+  @media (pointer: coarse) {
+    nav[aria-label="Breadcrumb"] a,
+    footer nav a,
+    footer address a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+    }
+  }
+}
+
 @utility grain {
   background-image: radial-gradient(circle at 1px 1px, oklch(1 0 0 / 7%) 1px, transparent 0);
   background-size: 22px 22px;

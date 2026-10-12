@@ -50,7 +50,7 @@ export function LanguageMenu({
     <Popover>
       <PopoverTrigger
         aria-label={t.label}
-        className="inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
+        className="inline-flex h-11 cursor-pointer items-center gap-1.5 rounded-full px-2.5 text-sm sm:px-3 text-white/80 transition hover:bg-white/10 hover:text-white"
       >
         <Globe className="h-4 w-4" />
         <span className="uppercase">{active}</span>

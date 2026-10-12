@@ -50,12 +50,23 @@ export function Logo({
   compact?: boolean;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <DotRing rings={LOGO_RINGS} className={compact ? "h-8 w-8 shrink-0" : "h-10 w-10 shrink-0"} />
+    <span
+      className={cn(
+        "inline-flex items-center",
+        compact ? "gap-2 sm:gap-2.5" : "gap-2.5",
+        className,
+      )}
+    >
+      <DotRing
+        rings={LOGO_RINGS}
+        className={
+          compact ? "h-7 w-7 shrink-0 min-[360px]:h-8 min-[360px]:w-8" : "h-10 w-10 shrink-0"
+        }
+      />
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "whitespace-nowrap font-display font-medium tracking-[0.04em]",
+            "whitespace-nowrap font-display font-semibold tracking-[0.04em]",
             compact ? "text-base sm:text-lg" : "text-xl",
             light ? "text-white" : "text-ink",
           )}
@@ -64,9 +75,11 @@ export function Logo({
         </span>
         <span
           className={cn(
-            "mt-1 whitespace-nowrap font-display font-medium uppercase tracking-[0.14em]",
-            compact ? "text-[9px] sm:text-[10px]" : "text-[11px]",
-            light ? "text-white/70" : "text-muted-foreground",
+            "whitespace-nowrap font-sans font-bold uppercase",
+            compact
+              ? "mt-1 text-[10px] tracking-[0.08em] min-[400px]:text-[11px] min-[400px]:tracking-[0.12em]"
+              : "mt-1.5 text-xs tracking-[0.14em]",
+            light ? "text-white/90" : "text-ink/75",
           )}
         >
           Electronic &amp; Repair Center

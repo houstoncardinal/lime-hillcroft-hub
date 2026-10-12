@@ -155,7 +155,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 href={MAPS}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 hover:text-white"
+                className="tap flex items-center gap-2 hover:text-white"
               >
                 <span className="text-primary">
                   <Stars />
@@ -211,7 +211,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 </div>
                 <Link
                   to={ALTERNATES.leasing[lang]}
-                  className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                  className="tap group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                 >
                   {<MoneyText text={t.hero.imageCta} />}
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -337,7 +337,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               </div>
               <Link
                 to={ALTERNATES.leasing[lang]}
-                className="relative z-10 mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
+                className="tap relative z-10 mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
               >
                 {<MoneyText text={t.services.featured.link} />} <ArrowRight className="h-4 w-4" />
               </Link>
@@ -624,7 +624,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 <li key={a.slug}>
                   <Link
                     to={areaPath(lang, a.slug)}
-                    className="inline-flex items-center gap-1.5 rounded-full border bg-card px-4 py-2 text-sm font-medium transition hover:border-primary hover:text-primary"
+                    className="tap inline-flex items-center gap-1.5 rounded-full border bg-card px-4 py-2 text-sm font-medium transition hover:border-primary hover:text-primary"
                   >
                     <MapPin className="h-3.5 w-3.5 text-primary" /> {shortName(a)}
                     <span className="text-xs text-muted-foreground">{a.miles.toFixed(1)} mi</span>
@@ -635,7 +635,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             <p className="mt-5 text-sm text-muted-foreground">{<MoneyText text={t.area.zips} />}</p>
             <Link
               to={ALTERNATES.areas[lang]}
-              className="mt-5 inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
+              className="tap mt-5 inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
             >
               {<MoneyText text={t.area.cta} />} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -674,7 +674,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </h2>
           <Link
             to={ALTERNATES.guides[lang]}
-            className="inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
+            className="tap inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
           >
             {<MoneyText text={t.faq.allGuides} />} <ArrowRight className="h-4 w-4" />
           </Link>
@@ -719,7 +719,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   <p className="text-white/70">{CITY}</p>
                   <a
                     href={TEL}
-                    className="mt-4 block font-display text-2xl font-semibold text-primary"
+                    className="tap mt-4 block font-display text-2xl font-semibold text-primary"
                   >
                     {PHONE}
                   </a>
@@ -758,6 +758,12 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                     <Facebook className="h-4 w-4" /> Facebook
                   </a>
                 </div>
+                <Link
+                  to={ALTERNATES.location[lang]}
+                  className="tap mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                >
+                  {t.visit.more} <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
               <div className="relative min-h-[180px] flex-1 overflow-hidden rounded-3xl">
                 <Photo
@@ -773,7 +779,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   href={MAPS}
                   target="_blank"
                   rel="noreferrer"
-                  className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink shadow-lg"
+                  className="tap absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink shadow-lg"
                 >
                   {<MoneyText text={t.visit.plazaCta} />} <ArrowRight className="h-4 w-4" />
                 </a>

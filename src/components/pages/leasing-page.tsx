@@ -147,7 +147,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                 </figure>
               );
             })}
-            <div className="absolute -right-3 -top-6 hidden rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-right-6">
+            <div className="absolute right-4 -top-6 hidden rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-right-6">
               <p className="eyebrow text-slate">{<MoneyText text={t.hero.cardLabel} />}</p>
               <p className="mt-1 font-display text-3xl font-semibold">
                 <Money usd={40} stacked />{" "}

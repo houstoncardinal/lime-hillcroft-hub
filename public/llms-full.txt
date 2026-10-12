@@ -55,15 +55,23 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 ## Prepaid plans, internet and payments
 
-- Prepaid plans from: Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro by T-Mobile, Cricket,
-  Boost Mobile, Simple Mobile, Lyca Mobile, GoSmart and Gen Mobile. No contracts.
+- Prepaid plans from 12 carriers: T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket,
+  Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile
+  and GoSmart. No contracts.
+- Plan prices (as advertised by the carriers, checked October 12, 2026; plus taxes & fees, subject
+  to change): plans start at $10/mo (Gen Mobile 2GB). Unlimited data from $35/mo with AutoPay
+  (Cricket Select Unlimited). T-Mobile Prepaid $40 (15GB) / $45 Unlimited / $60 Unlimited Plus with
+  AutoPay. Verizon Prepaid $35 (15GB) / $50 Unlimited / $60 Unlimited Plus with Auto Pay. AT&T
+  Prepaid $20 (5GB), $35 Unlimited Saver, $45 / $60 / $75 unlimited. Cricket $30 (10GB), $35, $45,
+  $55 with AutoPay. Simple Mobile $25 / $30 / $40 / $50 / $60. Tracfone $15–$40 carryover data,
+  $50 unlimited. H2O Wireless $20–$60. Lyca Mobile $15–$59. Gen Mobile $10–$50.
+- Full plan-by-plan comparison: https://lime-hillcroft-hub.lovable.app/services/prepaid-plans
 - Xfinity Prepaid home internet is sold and set up in store.
 - Bill payments: customers can pay their phone bill in person for the major prepaid carriers,
   with no extra charges.
 - International recharge (top-ups to phones abroad), including Tigo, Digicel, Movistar and
   Telcel, and more.
-- Plan prices change often and depend on the carrier — customers should call or visit for
-  current prices.
+- Carriers change prices often — the store confirms the current price before payment.
 
 ## Repairs
 
@@ -116,6 +124,7 @@ customers should call (713) 339-9300.
 
 - Home: https://lime-hillcroft-hub.lovable.app/ (Spanish: https://lime-hillcroft-hub.lovable.app/es)
 - Leasing & lease-to-own (phones, PS5, Xbox, laptops): https://lime-hillcroft-hub.lovable.app/leasing (Spanish: https://lime-hillcroft-hub.lovable.app/es/arrendamiento)
+- Location, hours, parking & directions (with store photos): https://lime-hillcroft-hub.lovable.app/location (Spanish: https://lime-hillcroft-hub.lovable.app/es/ubicacion)
 - Services overview: https://lime-hillcroft-hub.lovable.app/services (Spanish: https://lime-hillcroft-hub.lovable.app/es/servicios)
 - Unlocked iPhones & Androids: https://lime-hillcroft-hub.lovable.app/services/unlocked-phones
 - Same-day phone repair: https://lime-hillcroft-hub.lovable.app/services/phone-repair

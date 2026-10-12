@@ -31,6 +31,34 @@
     </image:image>
   </url>
   <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/location</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/location"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/ubicacion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/location"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/location-en.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/apple-display.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/case-wall.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/jbl-display.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/plaza.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/store-counter.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/storefront-3640.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://lime-hillcroft-hub.lovable.app/services</loc>
     <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/services"/>
@@ -287,6 +315,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/leasing"/>
     <image:image>
       <image:loc>https://lime-hillcroft-hub.lovable.app/og/leasing-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lime-hillcroft-hub.lovable.app/es/ubicacion</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lime-hillcroft-hub.lovable.app/location"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://lime-hillcroft-hub.lovable.app/es/ubicacion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lime-hillcroft-hub.lovable.app/location"/>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/og/location-es.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/apple-display.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/case-wall.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/jbl-display.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/plaza.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/store-counter.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lime-hillcroft-hub.lovable.app/photos/storefront-3640.jpg</image:loc>
     </image:image>
   </url>
   <url>

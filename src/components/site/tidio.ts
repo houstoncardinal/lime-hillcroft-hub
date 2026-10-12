@@ -45,3 +45,14 @@ export function syncTidio(pathname: string) {
   }
   w.tidioChatApi?.show();
 }
+
+/**
+ * Hide the chat launcher while a full-screen panel (the mobile menu) is open, so it can't cover
+ * the menu's links or close button, and bring it back afterwards.
+ */
+export function setChatHidden(hidden: boolean) {
+  const w = window as TidioWindow;
+  document.documentElement.classList.toggle("menu-open", hidden);
+  if (hidden) w.tidioChatApi?.hide();
+  else if (!location.pathname.startsWith("/admin")) w.tidioChatApi?.show();
+}

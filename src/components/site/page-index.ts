@@ -8,6 +8,7 @@ import { guideHead, guidesHubHead } from "@/components/guides/heads";
 import { guidePath } from "@/components/guides/paths";
 import { intlHead } from "@/components/intl/heads";
 import { INTL_LANGS, intlPath } from "@/components/intl/languages";
+import { locationHead } from "@/components/location/heads";
 import { homeHead, leasingHead } from "@/components/pages/heads";
 import { SERVICES } from "@/components/services/data";
 import { serviceHead, servicesHubHead } from "@/components/services/heads";
@@ -26,6 +27,7 @@ function pages(): [string, Head][] {
       [ALTERNATES.home[l], homeHead(l)],
       [ALTERNATES.leasing[l], leasingHead(l)],
       ...(SHOP_ENABLED ? [[ALTERNATES.shop[l], shopHead(l, undefined)] as [string, Head]] : []),
+      [ALTERNATES.location[l], locationHead(l)],
       [ALTERNATES.services[l], servicesHubHead(l)],
       ...SERVICES.map((s): [string, Head] => [servicePath(l, s.slug), serviceHead(l, s)]),
       [ALTERNATES.areas[l], areasHubHead(l)],

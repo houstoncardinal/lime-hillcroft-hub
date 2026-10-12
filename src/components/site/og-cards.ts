@@ -105,6 +105,18 @@ const T = {
       sub: "Celulares desbloqueados, reparación el mismo día, planes prepagados, liberación, pagos y recargas.",
     },
   },
+  location: {
+    en: {
+      kicker: "Location & hours",
+      headline: "3640 Hillcroft St, Suite C. Walk in, park out front.",
+      sub: "Mon–Sat 9 AM – 8 PM · Sun 9 AM – 5 PM · Near Hillcroft & Windswept, north of the Westpark Tollway.",
+    },
+    es: {
+      kicker: "Ubicación y horario",
+      headline: "3640 Hillcroft St, Suite C. Ven sin cita, estaciona enfrente.",
+      sub: "Lun–Sáb 9 AM – 8 PM · Dom 9 AM – 5 PM · Cerca de Hillcroft y Windswept, al norte del Westpark Tollway.",
+    },
+  },
   areas: {
     en: {
       kicker: "Areas we serve",
@@ -152,6 +164,7 @@ export function ogCards(): OgCard[] {
     ...LANGS.flatMap((lang) => [
       page("home", lang, "iphone-18-pro-max", T.home[lang]),
       page("leasing", lang, "consoles-wide", T.leasing[lang], "0% 50%"),
+      page("location", lang, "storefront-3640", T.location[lang]),
       page("services", lang, "store-counter", T.services[lang]),
       ...SERVICES.map((s) => {
         const t = s.text[lang];
