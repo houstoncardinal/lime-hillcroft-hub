@@ -26,6 +26,8 @@ import jbl from "@/assets/photos/jbl-display.jpg";
 import jblSm from "@/assets/photos/jbl-display-sm.jpg";
 import laptops from "@/assets/photos/laptops-tablets.jpg";
 import laptopsSm from "@/assets/photos/laptops-tablets-sm.jpg";
+import phones from "@/assets/photos/phones-display.jpg";
+import phonesSm from "@/assets/photos/phones-display-sm.jpg";
 import plaza from "@/assets/photos/plaza.jpg";
 import plazaSm from "@/assets/photos/plaza-sm.jpg";
 import storefront from "@/assets/photos/storefront-3640.jpg";
@@ -39,12 +41,15 @@ import { DIRECTIONS, MAPS, PHONE, TEL, hoursOn } from "@/components/site/busines
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { Photo } from "@/components/site/photo";
+import { StoreVideo } from "@/components/site/store-video";
+import { ReviewsCarousel } from "@/components/reviews/reviews-carousel";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
 
 const PHOTOS: Record<GalleryPhoto, { src: string; sm: string; w: number; h: number }> = {
   storefront: { src: storefront, sm: storefrontSm, w: 2000, h: 1500 },
   plaza: { src: plaza, sm: plazaSm, w: 2000, h: 1500 },
+  phones: { src: phones, sm: phonesSm, w: 1600, h: 1200 },
   counter: { src: counter, sm: counterSm, w: 2000, h: 1500 },
   caseWall: { src: caseWall, sm: caseWallSm, w: 2000, h: 1500 },
   apple: { src: apple, sm: appleSm, w: 1500, h: 2000 },
@@ -155,6 +160,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
               sizes="(min-width: 1024px) 45vw, 100vw"
               alt={t.hero.photoAlt}
               priority
+              className="absolute inset-0"
             />
             <figcaption className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-semibold backdrop-blur sm:left-4 sm:top-4 sm:text-sm">
               <Store className="h-4 w-4 text-primary" /> Suite C
@@ -264,8 +270,9 @@ export function LocationPage({ lang }: { lang: Lang }) {
                 const p = PHOTOS[key];
                 return (
                   <figure key={key} className="overflow-hidden rounded-3xl bg-card">
-                    <div className="aspect-[4/3]">
+                    <div className="relative aspect-[4/3] overflow-hidden">
                       <Photo
+                        className="absolute inset-0"
                         src={p.src}
                         srcSm={p.sm}
                         width={p.w}
@@ -371,13 +378,28 @@ export function LocationPage({ lang }: { lang: Lang }) {
           </div>
           {/* Swipeable row on phones, grid from tablets up. */}
           <ul className="mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3">
+            <li className="w-[82%] shrink-0 snap-start sm:col-span-2 sm:w-auto lg:col-span-2 lg:row-span-2">
+              <figure className="flex h-full flex-col overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10">
+                <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto sm:min-h-[18rem] sm:flex-1">
+                  <StoreVideo
+                    clip="storeInterior"
+                    label={t.inside.video}
+                    className="absolute inset-0"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-sm text-white/80">
+                  {t.inside.video}
+                </figcaption>
+              </figure>
+            </li>
             {t.inside.photos.map(([key, caption]) => {
               const p = PHOTOS[key];
               return (
                 <li key={key} className="w-[82%] shrink-0 snap-start sm:w-auto">
                   <figure className="overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10">
-                    <div className="aspect-[4/3]">
+                    <div className="relative aspect-[4/3] overflow-hidden">
                       <Photo
+                        className="absolute inset-0"
                         src={p.src}
                         srcSm={p.sm}
                         width={p.w}
@@ -459,6 +481,8 @@ export function LocationPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <ReviewsCarousel lang={lang} className="bg-secondary/40" />
 
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-5 py-14 md:py-24">

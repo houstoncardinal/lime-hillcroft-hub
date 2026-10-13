@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import {
+  ArrowRight,
   ArrowUpRight,
   BadgeCheck,
   CalendarClock,
@@ -28,6 +30,14 @@ import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
+
+// Where each "What you can take home" card leads (same order as the cards).
+const CATEGORY_LINKS: Record<Lang, string>[] = [
+  ALTERNATES.consoles,
+  ALTERNATES.laptops,
+  { en: "/services/unlocked-phones", es: "/es/servicios/unlocked-phones" },
+  { en: "/accessories#audio", es: "/es/accesorios#audio" },
+];
 
 const CATEGORY_MEDIA = [
   { icon: Gamepad2, src: consoles, sm: consolesSm, w: 1240, h: 720 },
@@ -205,9 +215,10 @@ export function LeasingPage({ lang }: { lang: Lang }) {
             if (!m) return null;
             const Icon = m.icon;
             return (
-              <article
+              <Link
                 key={title}
-                className={`group relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-3xl bg-ink p-8 text-white md:p-10 ${i === 0 ? "md:min-h-[520px]" : ""}`}
+                to={CATEGORY_LINKS[i]?.[lang] ?? ALTERNATES.leasing[lang]}
+                className={`group relative isolate flex min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl bg-ink p-6 text-white transition hover:-translate-y-1 hover:shadow-2xl sm:min-h-[360px] md:min-h-[420px] md:p-10 ${i === 0 ? "md:min-h-[520px]" : ""}`}
               >
                 <Photo
                   src={m.src}
@@ -225,7 +236,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                 <h3 className="mt-5 text-3xl font-semibold md:text-4xl">
                   {<MoneyText text={title} />}
                 </h3>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {items.map((item) => (
                     <li
                       key={item}
@@ -235,7 +246,11 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                     </li>
                   ))}
                 </ul>
-              </article>
+                <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-primary">
+                  {lang === "en" ? `See ${title.toLowerCase()}` : `Ver ${title.toLowerCase()}`}
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </span>
+              </Link>
             );
           })}
         </div>

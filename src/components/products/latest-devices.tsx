@@ -1,0 +1,125 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, Phone } from "lucide-react";
+
+import { INVENTORY_UPDATED, type Device } from "@/components/products/inventory";
+import { TEL } from "@/components/site/business";
+import { Scroller } from "@/components/site/scroller";
+import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { cn } from "@/lib/utils";
+
+const T = {
+  en: {
+    kicker: "New in store",
+    title: "The latest devices on our shelves.",
+    body: "In stock at 3640 Hillcroft St and available with leasing — no credit needed, as low as $40 down. Ask us which carriers each phone works with.",
+    updated: (d: string) => `Updated ${d}`,
+    inStore: "In store now",
+    call: "Call to check stock",
+    lease: "Apply for leasing",
+    prev: "Previous devices",
+    next: "More devices",
+  },
+  es: {
+    kicker: "Nuevo en la tienda",
+    title: "Lo más nuevo en nuestras vitrinas.",
+    body: "Disponibles en 3640 Hillcroft St y con arrendamiento: sin crédito, desde $40 de enganche. Pregúntanos con qué compañías funciona cada celular.",
+    updated: (d: string) => `Actualizado el ${d}`,
+    inStore: "En tienda",
+    call: "Llama para ver existencias",
+    lease: "Solicita arrendamiento",
+    prev: "Equipos anteriores",
+    next: "Más equipos",
+  },
+};
+
+export function LatestDevices({
+  devices,
+  lang,
+  title,
+  className,
+}: {
+  devices: Device[];
+  lang: Lang;
+  /** Override the section heading (e.g. "iPads in store"). */
+  title?: string;
+  className?: string;
+}) {
+  const t = T[lang];
+  const date = new Date(`${INVENTORY_UPDATED}T12:00:00`).toLocaleDateString(
+    lang === "en" ? "en-US" : "es-MX",
+    { month: "short", day: "numeric", year: "numeric" },
+  );
+  return (
+    <section
+      id="latest"
+      aria-labelledby="latest-title"
+      className={cn("scroll-mt-24 py-14 md:py-20", className)}
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2 px-5">
+          <div className="max-w-2xl">
+            <p className="eyebrow text-primary">{t.kicker}</p>
+            <h2 id="latest-title" className="mt-2 text-3xl font-semibold leading-tight sm:text-4xl">
+              {title ?? t.title}
+            </h2>
+            <p className="mt-2 text-muted-foreground">{t.body}</p>
+          </div>
+          <p className="text-xs font-medium text-muted-foreground">{t.updated(date)}</p>
+        </div>
+
+        <Scroller label={title ?? t.title} prevLabel={t.prev} nextLabel={t.next} className="mt-4">
+          {devices.map((d) => (
+            <li key={d.id} className="w-[72%] shrink-0 snap-start sm:w-60 lg:w-64">
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl border bg-card">
+                <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
+                  <img
+                    src={d.image}
+                    alt={d.alt[lang]}
+                    width={d.w}
+                    height={d.h}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  {d.fiveG && (
+                    <span className="absolute right-3 top-3 rounded-full bg-ink px-2.5 py-1 text-xs font-bold text-white">
+                      5G
+                    </span>
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {d.brand}
+                  </p>
+                  <h3 className="mt-0.5 font-display text-lg font-semibold leading-snug">
+                    {d.name}
+                  </h3>
+                  {d.note && <p className="mt-0.5 text-sm text-muted-foreground">{d.note[lang]}</p>}
+                  <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-emerald-600">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                    {t.inStore}
+                  </p>
+                </div>
+              </article>
+            </li>
+          ))}
+        </Scroller>
+
+        <div className="mt-4 flex flex-col gap-2 px-5 sm:flex-row">
+          <a
+            href={TEL}
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 font-semibold text-white"
+          >
+            <Phone className="h-4 w-4" /> {t.call}
+          </a>
+          <Link
+            to={ALTERNATES.leasing[lang]}
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border px-6 font-semibold hover:border-primary hover:text-primary"
+          >
+            {t.lease} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

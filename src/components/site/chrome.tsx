@@ -1,45 +1,24 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { MapPin, Phone, Star } from "lucide-react";
+import { Globe, MapPin, Phone, Star } from "lucide-react";
 
 import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/business";
+import { setLangPref } from "@/components/intl/lang-pref";
+import { LanguageAuto } from "@/components/intl/language-auto";
 import { LanguageMenu } from "@/components/intl/language-menu";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { Logo } from "@/components/site/logo";
 import { LeasingPortalsBanner } from "@/components/site/leasing-portals";
+import { DesktopNav } from "@/components/site/desktop-nav";
 import { MobileMenu } from "@/components/site/mobile-menu";
+import { productNav, serviceNav } from "@/components/site/nav";
 import { AREAS, shortName } from "@/components/areas/data";
 import { areaPath } from "@/components/areas/paths";
 import { GUIDES } from "@/components/guides/data";
 import { guidePath } from "@/components/guides/paths";
-import { SERVICES } from "@/components/services/data";
-import { servicePath } from "@/components/services/paths";
 import { Toaster } from "@/components/ui/sonner";
 import { CartButton, CartDrawer } from "@/shop/components";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
-
-// Plain anchors with a leading "/" so the section links work from every page.
-const NAV: Record<Lang, [string, string][]> = {
-  en: [
-    ["Services", "/services"],
-    ["Shop", "/shop"],
-    ["Leasing", "/leasing"],
-    ["Prepaid", "/services/prepaid-plans"],
-    ["Repair", "/services/phone-repair"],
-    ["Location", "/location"],
-  ],
-  es: [
-    ["Servicios", "/es/servicios"],
-    ["Tienda", "/es/tienda"],
-    ["Arrendamiento", "/es/arrendamiento"],
-    ["Prepago", "/es/servicios/prepaid-plans"],
-    ["Reparación", "/es/servicios/phone-repair"],
-    ["Ubicación", "/es/ubicacion"],
-  ],
-};
-
-const nav = (lang: Lang) =>
-  NAV[lang].filter(([, href]) => SHOP_ENABLED || !/\/(shop|es\/tienda)$/.test(href));
 
 const T = {
   en: {
@@ -128,6 +107,32 @@ export function Stars({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+function HeaderLangToggle({
+  lang,
+  paths,
+  current,
+}: {
+  lang: Lang;
+  paths: Paths;
+  current?: string;
+}) {
+  // On an English (or summary-language) page offer Spanish; on a Spanish page offer English.
+  const to: Lang = lang === "es" || current ? "en" : "es";
+  return (
+    <a
+      href={paths[to]}
+      hrefLang={to}
+      lang={to}
+      onClick={() => setLangPref(to)}
+      aria-label={to === "es" ? "Ver en español" : "View in English"}
+      className="hidden h-11 items-center gap-1 rounded-full px-2.5 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/10 min-[375px]:inline-flex sm:hidden"
+    >
+      <Globe className="h-4 w-4 text-primary" aria-hidden="true" />
+      {to.toUpperCase()}
+    </a>
+  );
+}
+
 export function SiteHeader({
   lang,
   paths,
@@ -148,32 +153,28 @@ export function SiteHeader({
         >
           <Logo light compact />
         </Link>
-        <nav
-          aria-label="Main"
-          className="hidden items-center gap-5 text-sm text-white/70 lg:flex xl:gap-7"
-        >
-          {nav(lang).map(([label, href]) => (
-            <a key={href} href={href} className="transition hover:text-white">
-              {label}
-            </a>
-          ))}
-        </nav>
+        <DesktopNav lang={lang} />
         <div className="flex shrink-0 items-center gap-1.5">
-          {/* On phones, language & currency live in the menu. */}
+          {/* Tablets & desktop: full language & currency menu. */}
           <div className="hidden sm:block">
             <LanguageMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
           </div>
+          {/* Phones: one tap to switch English ⇄ Spanish (more languages in the menu). */}
+          <HeaderLangToggle lang={lang} paths={paths} {...(current ? { current } : {})} />
           {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
             href={TEL}
-            className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:inline-flex"
+            aria-label={PHONE}
+            className="hidden h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:inline-flex lg:w-11 lg:justify-center lg:px-0 xl:w-auto xl:px-4"
           >
-            <Phone className="h-4 w-4" />
-            {PHONE}
+            <Phone className="h-4 w-4 shrink-0" />
+            {/* Number shows on tablets and wide screens; laptops get the icon so the menu fits. */}
+            <span className="lg:hidden xl:inline">{PHONE}</span>
           </a>
           <MobileMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
         </div>
       </div>
+      <LanguageAuto lang={lang} paths={paths} {...(current ? { current } : {})} />
       {SHOP_ENABLED && <CartDrawer lang={lang} />}
       <Toaster position="bottom-center" />
     </header>
@@ -182,28 +183,36 @@ export function SiteHeader({
 
 const FOOTER = {
   en: {
+    products: "Products",
     services: "Services",
     allServices: "All services",
     store: "Store",
     home: "Home",
     leasing: "Leasing",
     prepaid: "Prepaid plans",
+    consoles: "Game consoles",
+    accessories: "Accessories",
     shop: "Shop",
     location: "Location & hours",
+    reviews: "Reviews",
     areas: "Areas we serve",
     guides: "Guides",
     allAreas: "All areas",
     allGuides: "All guides",
   },
   es: {
+    products: "Productos",
     services: "Servicios",
     allServices: "Todos los servicios",
     store: "Tienda",
     home: "Inicio",
     leasing: "Arrendamiento",
     prepaid: "Planes prepagados",
+    consoles: "Consolas",
+    accessories: "Accesorios",
     shop: "Tienda en línea",
     location: "Ubicación y horario",
+    reviews: "Reseñas",
     areas: "Zonas que atendemos",
     guides: "Guías",
     allAreas: "Todas las zonas",
@@ -270,12 +279,16 @@ export function SiteFooter({
             </div>
             <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
               <FooterColumn
+                title={f.products}
+                links={[
+                  ...productNav(lang).map((i): [string, string] => [i.label, i.href]),
+                  [f.leasing, ALTERNATES.leasing[lang]],
+                ]}
+              />
+              <FooterColumn
                 title={f.services}
                 links={[
-                  ...SERVICES.map((s): [string, string] => [
-                    s.text[lang].name,
-                    servicePath(lang, s.slug),
-                  ]),
+                  ...serviceNav(lang).map((i): [string, string] => [i.label, i.href]),
                   [f.allServices, ALTERNATES.services[lang]],
                 ]}
               />
@@ -283,12 +296,14 @@ export function SiteFooter({
                 title={f.store}
                 links={[
                   [f.home, ALTERNATES.home[lang]],
-                  [f.leasing, ALTERNATES.leasing[lang]],
-                  [f.prepaid, servicePath(lang, "prepaid-plans")],
-                  ...(SHOP_ENABLED ? [[f.shop, ALTERNATES.shop[lang]] as [string, string]] : []),
                   [f.location, ALTERNATES.location[lang]],
+                  [f.reviews, ALTERNATES.reviews[lang]],
                   [f.areas, ALTERNATES.areas[lang]],
                   [f.guides, ALTERNATES.guides[lang]],
+                  ...GUIDES.map((g): [string, string] => [
+                    g.text[lang].metaTitle,
+                    guidePath(lang, g.slug),
+                  ]),
                 ]}
               />
               <FooterColumn
@@ -296,16 +311,6 @@ export function SiteFooter({
                 links={[
                   ...AREAS.map((a): [string, string] => [shortName(a), areaPath(lang, a.slug)]),
                   [f.allAreas, ALTERNATES.areas[lang]],
-                ]}
-              />
-              <FooterColumn
-                title={f.guides}
-                links={[
-                  ...GUIDES.map((g): [string, string] => [
-                    g.text[lang].metaTitle,
-                    guidePath(lang, g.slug),
-                  ]),
-                  [f.allGuides, ALTERNATES.guides[lang]],
                 ]}
               />
             </nav>

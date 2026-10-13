@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-// Store photos ship in two widths (see src/assets/photos): 900px "-sm" and 2000px.
+// Store photos ship in two widths (see src/assets/photos): 900px "-sm" and full size.
 export function Photo({
   src,
   srcSm,
@@ -10,6 +10,7 @@ export function Photo({
   sizes = "100vw",
   priority,
   className,
+  style,
 }: {
   src: string;
   srcSm: string;
@@ -19,11 +20,13 @@ export function Photo({
   sizes?: string;
   priority?: boolean;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <img
       src={src}
-      srcSet={`${srcSm} 900w, ${src} 2000w`}
+      // The large file is the photo at full size, so its real width is the descriptor.
+      srcSet={`${srcSm} 900w, ${src} ${width}w`}
       sizes={sizes}
       alt={alt}
       width={width}
@@ -32,6 +35,7 @@ export function Photo({
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
       className={cn("h-full w-full object-cover", className)}
+      style={style}
     />
   );
 }

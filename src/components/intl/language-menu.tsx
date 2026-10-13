@@ -1,6 +1,7 @@
 import { Check, Globe } from "lucide-react";
 
 import { CURRENCIES, setCurrency, useCurrency } from "@/components/intl/currency";
+import { setLangPref } from "@/components/intl/lang-pref";
 import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import type { Lang, Paths } from "@/components/site/seo";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -71,7 +72,14 @@ export function LanguageMenu({
               ["es", "Español", paths.es],
             ] as const
           ).map(([c, name, href]) => (
-            <a key={c} href={href} hrefLang={c} lang={c} className={item(active === c)}>
+            <a
+              key={c}
+              href={href}
+              hrefLang={c}
+              lang={c}
+              onClick={() => setLangPref(c)}
+              className={item(active === c)}
+            >
               {name}
               {active === c && <Check className="h-4 w-4 text-primary" />}
             </a>
@@ -88,6 +96,7 @@ export function LanguageMenu({
               hrefLang={l.tag}
               lang={l.tag}
               dir={l.dir}
+              onClick={() => setLangPref(l.code)}
               className={item(active === l.code)}
               title={l.english}
             >

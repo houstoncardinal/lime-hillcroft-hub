@@ -16,6 +16,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { conversionFor, track } from "@/admin/tracker";
 import { THEME_INIT_SCRIPT } from "@/components/site/themes";
 import { findIntl } from "@/components/intl/languages";
+import { syncAnalytics } from "@/components/site/analytics";
 import { syncTidio } from "@/components/site/tidio";
 
 function NotFoundComponent() {
@@ -96,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Saira:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Saira:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
@@ -143,6 +144,7 @@ function RootComponent() {
   }, [pathname]);
   useEffect(() => {
     syncTidio(pathname);
+    syncAnalytics(pathname);
   }, [pathname]);
   useEffect(() => {
     const onClick = (e: MouseEvent) => {

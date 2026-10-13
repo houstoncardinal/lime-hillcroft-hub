@@ -65,6 +65,9 @@ import {
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
+import { LATEST_DEVICES } from "@/components/products/inventory";
+import { LatestDevices } from "@/components/products/latest-devices";
+import { ReviewsCarousel } from "@/components/reviews/reviews-carousel";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
@@ -287,6 +290,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
+      <LatestDevices devices={LATEST_DEVICES} lang={lang} className="bg-secondary/40" />
+
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 md:py-32">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -485,13 +490,22 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               {<MoneyText text={t.accessories.body} />}
             </p>
           </div>
-          <ul className="flex flex-wrap gap-2 lg:justify-end">
-            {t.accessories.items.map((a) => (
-              <li key={a} className="rounded-full border bg-card px-4 py-2 text-sm font-medium">
-                {a}
-              </li>
-            ))}
-          </ul>
+          <div className="lg:text-right">
+            <ul className="flex flex-wrap gap-2 lg:justify-end">
+              {t.accessories.items.map((a) => (
+                <li key={a} className="rounded-full border bg-card px-4 py-2 text-sm font-medium">
+                  {a}
+                </li>
+              ))}
+            </ul>
+            <Link
+              to={ALTERNATES.accessories[lang]}
+              className="tap mt-5 inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
+            >
+              {lang === "en" ? "See all accessories" : "Ver todos los accesorios"}{" "}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12 grid auto-rows-[240px] gap-4 sm:grid-cols-2 md:auto-rows-[280px] lg:grid-cols-4">
@@ -581,6 +595,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </div>
         </div>
       </section>
+
+      <ReviewsCarousel lang={lang} />
 
       {/* At a glance: a plain, quotable summary for people, search engines and AI answers */}
       <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-24 md:pt-32">

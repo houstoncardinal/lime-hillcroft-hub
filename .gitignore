@@ -33,3 +33,6 @@ dist-ssr
 
 # Netlify build output
 .netlify
+
+# Original camera files (HEIC/HEVC). Web versions live in public/media and src/assets/photos.
+media-originals/

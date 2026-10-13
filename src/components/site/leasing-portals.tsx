@@ -192,19 +192,3 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
     </aside>
   );
 }
-
-/** Three stacked buttons for the mobile menu. */
-export function LeasingPortalLinks({ lang }: { lang: Lang }) {
-  return (
-    <div className="grid gap-2 px-1">
-      {PORTALS.map((p) => (
-        <PortalButton
-          key={p.id}
-          portal={p}
-          lang={lang}
-          className="justify-between rounded-2xl bg-white/5 text-left text-[15px] ring-1 ring-white/15 hover:bg-white/10"
-        />
-      ))}
-    </div>
-  );
-}

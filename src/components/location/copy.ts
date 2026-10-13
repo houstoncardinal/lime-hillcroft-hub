@@ -5,7 +5,15 @@ import type { Lang } from "@/components/site/seo";
 // public/llms-full.txt — no landmarks or amenities we haven't confirmed.
 
 export type GalleryPhoto =
-  "storefront" | "counter" | "caseWall" | "apple" | "jbl" | "laptops" | "consoles" | "plaza";
+  | "storefront"
+  | "counter"
+  | "caseWall"
+  | "apple"
+  | "jbl"
+  | "laptops"
+  | "consoles"
+  | "plaza"
+  | "phones";
 
 const en = {
   meta: {
@@ -89,7 +97,9 @@ const en = {
       ["jbl", "JBL speakers, smartwatches and chargers"],
       ["laptops", "Laptops and tablets available with leasing"],
       ["consoles", "PlayStation 5, Nintendo Switch 2 and prepaid plan displays"],
+      ["phones", "iPhones and Samsung Galaxy phones in the display case"],
     ] as [GalleryPhoto, string][],
+    video: "A walk past the counter and accessory walls inside the store",
   },
   offer: {
     kicker: "At this location",
@@ -250,7 +260,9 @@ const es: LocationCopy = {
       ["jbl", "Bocinas JBL, relojes inteligentes y cargadores"],
       ["laptops", "Laptops y tabletas disponibles a pagos"],
       ["consoles", "PlayStation 5, Nintendo Switch 2 y planes prepagados"],
+      ["phones", "iPhone y Samsung Galaxy en la vitrina"],
     ],
+    video: "Un recorrido por el mostrador y las paredes de accesorios de la tienda",
   },
   offer: {
     kicker: "En esta tienda",

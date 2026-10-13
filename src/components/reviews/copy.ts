@@ -1,0 +1,76 @@
+// Text for the reviews page (/reviews, /es/resenas).
+
+export const REVIEWS_COPY = {
+  en: {
+    title: "TIC Wireless Reviews — 4.7★ on Google from 408 Customers",
+    description:
+      "Real Google reviews of TIC Wireless on Hillcroft in Houston: phone sales, same-day screen repair, cases and friendly bilingual staff. 4.7 from 408 reviews.",
+    breadcrumb: ["Home", "Reviews"],
+    imageAlt: "TIC Wireless is rated 4.7 out of 5 on Google from 408 reviews",
+    kicker: "Customer reviews",
+    h1: ["Houston trusts TIC Wireless.", "Here's why."],
+    intro:
+      "Real reviews from our Google Business Profile — word for word. Customers talk about the phone selection, a patient and polite team, quick screen repairs and an easy process.",
+    reviews: (n: number) => `${n} reviews on Google`,
+    readAll: "Read all reviews on Google",
+    write: "Write a review",
+    topics: "What customers mention most",
+    topicsNote: "Topics and counts from our Google reviews.",
+    latest: "Recent reviews",
+    imported: (d: string) =>
+      `Copied from Google on ${d}; dates as shown on Google that day. Names shortened to first name and last initial.`,
+    original: "",
+    cta: "Come see us on Hillcroft",
+    ctaBody: "Walk in any day — no appointment needed. Se habla español.",
+    directions: "Directions",
+  },
+  es: {
+    title: "Reseñas de TIC Wireless — 4.7★ en Google de 408 Clientes",
+    description:
+      "Reseñas reales de Google de TIC Wireless en Hillcroft, Houston: celulares, reparación de pantallas el mismo día, fundas y personal bilingüe. 4.7 de 408 reseñas.",
+    breadcrumb: ["Inicio", "Reseñas"],
+    imageAlt: "TIC Wireless tiene 4.7 de 5 en Google con 408 reseñas",
+    kicker: "Reseñas de clientes",
+    h1: ["Houston confía en TIC Wireless.", "Esto dicen."],
+    intro:
+      "Reseñas reales de nuestro perfil de Google, palabra por palabra. Los clientes hablan de la variedad de celulares, un equipo paciente y amable, reparaciones rápidas de pantalla y un proceso fácil.",
+    reviews: (n: number) => `${n} reseñas en Google`,
+    readAll: "Leer todas las reseñas en Google",
+    write: "Escribir una reseña",
+    topics: "Lo que más mencionan",
+    topicsNote: "Temas y cantidades de nuestras reseñas de Google.",
+    latest: "Reseñas recientes",
+    imported: (d: string) =>
+      `Copiadas de Google el ${d}; fechas como aparecían ese día. Nombres abreviados a nombre e inicial.`,
+    original: "Las reseñas están en su idioma original (inglés).",
+    cta: "Visítanos en Hillcroft",
+    ctaBody: "Ven cualquier día, sin cita. We speak English.",
+    directions: "Cómo llegar",
+  },
+};
+
+// Labels for the review cards and carousel.
+export const REVIEW_UI = {
+  en: {
+    kicker: "Real Google reviews",
+    title: "What customers say about TIC Wireless.",
+    summary: (r: number, n: number) => `${r} out of 5 on Google · ${n} reviews`,
+    google: "Google review",
+    all: "See all reviews",
+    onGoogle: "Read them on Google",
+    original: "",
+    prev: "Previous reviews",
+    next: "More reviews",
+  },
+  es: {
+    kicker: "Reseñas reales de Google",
+    title: "Lo que dicen nuestros clientes.",
+    summary: (r: number, n: number) => `${r} de 5 en Google · ${n} reseñas`,
+    google: "Reseña de Google",
+    all: "Ver todas las reseñas",
+    onGoogle: "Leerlas en Google",
+    original: "Reseñas originales en inglés.",
+    prev: "Reseñas anteriores",
+    next: "Más reseñas",
+  },
+};

@@ -14,6 +14,7 @@ import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as FinancingRouteImport } from './routes/financing'
 import { Route as LeasingRouteImport } from './routes/leasing'
+import { Route as AccessoriesIndexRouteImport } from './routes/accessories/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin/analytics'
 import { Route as AdminCamerasRouteImport } from './routes/admin/cameras'
@@ -28,15 +29,22 @@ import { Route as AreasSlugRouteImport } from './routes/areas/$slug'
 import { Route as EsIndexRouteImport } from './routes/es/index'
 import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
+import { Route as GameConsolesIndexRouteImport } from './routes/game-consoles/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
+import { Route as LaptopsTabletsIndexRouteImport } from './routes/laptops-tablets/index'
 import { Route as LocationIndexRouteImport } from './routes/location/index'
+import { Route as ReviewsIndexRouteImport } from './routes/reviews/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
+import { Route as EsAccesoriosIndexRouteImport } from './routes/es/accesorios/index'
+import { Route as EsConsolasIndexRouteImport } from './routes/es/consolas/index'
 import { Route as EsGuiasIndexRouteImport } from './routes/es/guias/index'
 import { Route as EsGuiasSlugRouteImport } from './routes/es/guias/$slug'
+import { Route as EsLaptopsYTabletasIndexRouteImport } from './routes/es/laptops-y-tabletas/index'
+import { Route as EsResenasIndexRouteImport } from './routes/es/resenas/index'
 import { Route as EsServiciosIndexRouteImport } from './routes/es/servicios/index'
 import { Route as EsServiciosSlugRouteImport } from './routes/es/servicios/$slug'
 import { Route as EsTiendaIndexRouteImport } from './routes/es/tienda/index'
@@ -68,6 +76,11 @@ const FinancingRoute = FinancingRouteImport.update({
 const LeasingRoute = LeasingRouteImport.update({
   id: '/leasing',
   path: '/leasing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessoriesIndexRoute = AccessoriesIndexRouteImport.update({
+  id: '/accessories/',
+  path: '/accessories/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -140,6 +153,11 @@ const EsFinanciamientoRoute = EsFinanciamientoRouteImport.update({
   path: '/es/financiamiento',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GameConsolesIndexRoute = GameConsolesIndexRouteImport.update({
+  id: '/game-consoles/',
+  path: '/game-consoles/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GuidesIndexRoute = GuidesIndexRouteImport.update({
   id: '/guides/',
   path: '/guides/',
@@ -150,9 +168,19 @@ const GuidesSlugRoute = GuidesSlugRouteImport.update({
   path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LaptopsTabletsIndexRoute = LaptopsTabletsIndexRouteImport.update({
+  id: '/laptops-tablets/',
+  path: '/laptops-tablets/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocationIndexRoute = LocationIndexRouteImport.update({
   id: '/location/',
   path: '/location/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsIndexRoute = ReviewsIndexRouteImport.update({
+  id: '/reviews/',
+  path: '/reviews/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
@@ -175,6 +203,16 @@ const ShopHandleRoute = ShopHandleRouteImport.update({
   path: '/shop/$handle',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsAccesoriosIndexRoute = EsAccesoriosIndexRouteImport.update({
+  id: '/es/accesorios/',
+  path: '/es/accesorios/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsConsolasIndexRoute = EsConsolasIndexRouteImport.update({
+  id: '/es/consolas/',
+  path: '/es/consolas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsGuiasIndexRoute = EsGuiasIndexRouteImport.update({
   id: '/es/guias/',
   path: '/es/guias/',
@@ -183,6 +221,16 @@ const EsGuiasIndexRoute = EsGuiasIndexRouteImport.update({
 const EsGuiasSlugRoute = EsGuiasSlugRouteImport.update({
   id: '/es/guias/$slug',
   path: '/es/guias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsLaptopsYTabletasIndexRoute = EsLaptopsYTabletasIndexRouteImport.update({
+  id: '/es/laptops-y-tabletas/',
+  path: '/es/laptops-y-tabletas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsResenasIndexRoute = EsResenasIndexRouteImport.update({
+  id: '/es/resenas/',
+  path: '/es/resenas/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
@@ -241,18 +289,26 @@ export interface FileRoutesByFullPath {
   '/guides/$slug': typeof GuidesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
+  '/accessories/': typeof AccessoriesIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
+  '/game-consoles/': typeof GameConsolesIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/laptops-tablets/': typeof LaptopsTabletsIndexRoute
   '/location/': typeof LocationIndexRoute
+  '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
+  '/es/accesorios/': typeof EsAccesoriosIndexRoute
+  '/es/consolas/': typeof EsConsolasIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
+  '/es/laptops-y-tabletas/': typeof EsLaptopsYTabletasIndexRoute
+  '/es/resenas/': typeof EsResenasIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
   '/es/ubicacion/': typeof EsUbicacionIndexRoute
@@ -277,18 +333,26 @@ export interface FileRoutesByTo {
   '/guides/$slug': typeof GuidesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
+  '/accessories': typeof AccessoriesIndexRoute
   '/admin': typeof AdminIndexRoute
   '/areas': typeof AreasIndexRoute
   '/es': typeof EsIndexRoute
+  '/game-consoles': typeof GameConsolesIndexRoute
   '/guides': typeof GuidesIndexRoute
+  '/laptops-tablets': typeof LaptopsTabletsIndexRoute
   '/location': typeof LocationIndexRoute
+  '/reviews': typeof ReviewsIndexRoute
   '/services': typeof ServicesIndexRoute
   '/shop': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
+  '/es/accesorios': typeof EsAccesoriosIndexRoute
+  '/es/consolas': typeof EsConsolasIndexRoute
   '/es/guias': typeof EsGuiasIndexRoute
+  '/es/laptops-y-tabletas': typeof EsLaptopsYTabletasIndexRoute
+  '/es/resenas': typeof EsResenasIndexRoute
   '/es/servicios': typeof EsServiciosIndexRoute
   '/es/tienda': typeof EsTiendaIndexRoute
   '/es/ubicacion': typeof EsUbicacionIndexRoute
@@ -315,18 +379,26 @@ export interface FileRoutesById {
   '/guides/$slug': typeof GuidesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
+  '/accessories/': typeof AccessoriesIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/es/': typeof EsIndexRoute
+  '/game-consoles/': typeof GameConsolesIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/laptops-tablets/': typeof LaptopsTabletsIndexRoute
   '/location/': typeof LocationIndexRoute
+  '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
+  '/es/accesorios/': typeof EsAccesoriosIndexRoute
+  '/es/consolas/': typeof EsConsolasIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
+  '/es/laptops-y-tabletas/': typeof EsLaptopsYTabletasIndexRoute
+  '/es/resenas/': typeof EsResenasIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
   '/es/tienda/': typeof EsTiendaIndexRoute
   '/es/ubicacion/': typeof EsUbicacionIndexRoute
@@ -354,18 +426,26 @@ export interface FileRouteTypes {
     | '/guides/$slug'
     | '/services/$slug'
     | '/shop/$handle'
+    | '/accessories/'
     | '/admin/'
     | '/areas/'
     | '/es/'
+    | '/game-consoles/'
     | '/guides/'
+    | '/laptops-tablets/'
     | '/location/'
+    | '/reviews/'
     | '/services/'
     | '/shop/'
     | '/es/guias/$slug'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
+    | '/es/accesorios/'
+    | '/es/consolas/'
     | '/es/guias/'
+    | '/es/laptops-y-tabletas/'
+    | '/es/resenas/'
     | '/es/servicios/'
     | '/es/tienda/'
     | '/es/ubicacion/'
@@ -390,18 +470,26 @@ export interface FileRouteTypes {
     | '/guides/$slug'
     | '/services/$slug'
     | '/shop/$handle'
+    | '/accessories'
     | '/admin'
     | '/areas'
     | '/es'
+    | '/game-consoles'
     | '/guides'
+    | '/laptops-tablets'
     | '/location'
+    | '/reviews'
     | '/services'
     | '/shop'
     | '/es/guias/$slug'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
+    | '/es/accesorios'
+    | '/es/consolas'
     | '/es/guias'
+    | '/es/laptops-y-tabletas'
+    | '/es/resenas'
     | '/es/servicios'
     | '/es/tienda'
     | '/es/ubicacion'
@@ -427,18 +515,26 @@ export interface FileRouteTypes {
     | '/guides/$slug'
     | '/services/$slug'
     | '/shop/$handle'
+    | '/accessories/'
     | '/admin/'
     | '/areas/'
     | '/es/'
+    | '/game-consoles/'
     | '/guides/'
+    | '/laptops-tablets/'
     | '/location/'
+    | '/reviews/'
     | '/services/'
     | '/shop/'
     | '/es/guias/$slug'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
+    | '/es/accesorios/'
+    | '/es/consolas/'
     | '/es/guias/'
+    | '/es/laptops-y-tabletas/'
+    | '/es/resenas/'
     | '/es/servicios/'
     | '/es/tienda/'
     | '/es/ubicacion/'
@@ -457,17 +553,25 @@ export interface RootRouteChildren {
   GuidesSlugRoute: typeof GuidesSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ShopHandleRoute: typeof ShopHandleRoute
+  AccessoriesIndexRoute: typeof AccessoriesIndexRoute
   AreasIndexRoute: typeof AreasIndexRoute
   EsIndexRoute: typeof EsIndexRoute
+  GameConsolesIndexRoute: typeof GameConsolesIndexRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
+  LaptopsTabletsIndexRoute: typeof LaptopsTabletsIndexRoute
   LocationIndexRoute: typeof LocationIndexRoute
+  ReviewsIndexRoute: typeof ReviewsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
   EsServiciosSlugRoute: typeof EsServiciosSlugRoute
   EsTiendaHandleRoute: typeof EsTiendaHandleRoute
   EsZonasSlugRoute: typeof EsZonasSlugRoute
+  EsAccesoriosIndexRoute: typeof EsAccesoriosIndexRoute
+  EsConsolasIndexRoute: typeof EsConsolasIndexRoute
   EsGuiasIndexRoute: typeof EsGuiasIndexRoute
+  EsLaptopsYTabletasIndexRoute: typeof EsLaptopsYTabletasIndexRoute
+  EsResenasIndexRoute: typeof EsResenasIndexRoute
   EsServiciosIndexRoute: typeof EsServiciosIndexRoute
   EsTiendaIndexRoute: typeof EsTiendaIndexRoute
   EsUbicacionIndexRoute: typeof EsUbicacionIndexRoute
@@ -509,6 +613,13 @@ declare module '@tanstack/react-router' {
       path: '/leasing'
       fullPath: '/leasing'
       preLoaderRoute: typeof LeasingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessories/': {
+      id: '/accessories/'
+      path: '/accessories'
+      fullPath: '/accessories/'
+      preLoaderRoute: typeof AccessoriesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/': {
@@ -609,6 +720,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsFinanciamientoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/game-consoles/': {
+      id: '/game-consoles/'
+      path: '/game-consoles'
+      fullPath: '/game-consoles/'
+      preLoaderRoute: typeof GameConsolesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guides/': {
       id: '/guides/'
       path: '/guides'
@@ -623,11 +741,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/laptops-tablets/': {
+      id: '/laptops-tablets/'
+      path: '/laptops-tablets'
+      fullPath: '/laptops-tablets/'
+      preLoaderRoute: typeof LaptopsTabletsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/location/': {
       id: '/location/'
       path: '/location'
       fullPath: '/location/'
       preLoaderRoute: typeof LocationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews/': {
+      id: '/reviews/'
+      path: '/reviews'
+      fullPath: '/reviews/'
+      preLoaderRoute: typeof ReviewsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/': {
@@ -658,6 +790,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopHandleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/accesorios/': {
+      id: '/es/accesorios/'
+      path: '/es/accesorios'
+      fullPath: '/es/accesorios/'
+      preLoaderRoute: typeof EsAccesoriosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/consolas/': {
+      id: '/es/consolas/'
+      path: '/es/consolas'
+      fullPath: '/es/consolas/'
+      preLoaderRoute: typeof EsConsolasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/guias/': {
       id: '/es/guias/'
       path: '/es/guias'
@@ -670,6 +816,20 @@ declare module '@tanstack/react-router' {
       path: '/es/guias/$slug'
       fullPath: '/es/guias/$slug'
       preLoaderRoute: typeof EsGuiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/laptops-y-tabletas/': {
+      id: '/es/laptops-y-tabletas/'
+      path: '/es/laptops-y-tabletas'
+      fullPath: '/es/laptops-y-tabletas/'
+      preLoaderRoute: typeof EsLaptopsYTabletasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/resenas/': {
+      id: '/es/resenas/'
+      path: '/es/resenas'
+      fullPath: '/es/resenas/'
+      preLoaderRoute: typeof EsResenasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/servicios/': {
@@ -762,17 +922,25 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesSlugRoute: GuidesSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ShopHandleRoute: ShopHandleRoute,
+  AccessoriesIndexRoute: AccessoriesIndexRoute,
   AreasIndexRoute: AreasIndexRoute,
   EsIndexRoute: EsIndexRoute,
+  GameConsolesIndexRoute: GameConsolesIndexRoute,
   GuidesIndexRoute: GuidesIndexRoute,
+  LaptopsTabletsIndexRoute: LaptopsTabletsIndexRoute,
   LocationIndexRoute: LocationIndexRoute,
+  ReviewsIndexRoute: ReviewsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
   EsServiciosSlugRoute: EsServiciosSlugRoute,
   EsTiendaHandleRoute: EsTiendaHandleRoute,
   EsZonasSlugRoute: EsZonasSlugRoute,
+  EsAccesoriosIndexRoute: EsAccesoriosIndexRoute,
+  EsConsolasIndexRoute: EsConsolasIndexRoute,
   EsGuiasIndexRoute: EsGuiasIndexRoute,
+  EsLaptopsYTabletasIndexRoute: EsLaptopsYTabletasIndexRoute,
+  EsResenasIndexRoute: EsResenasIndexRoute,
   EsServiciosIndexRoute: EsServiciosIndexRoute,
   EsTiendaIndexRoute: EsTiendaIndexRoute,
   EsUbicacionIndexRoute: EsUbicacionIndexRoute,

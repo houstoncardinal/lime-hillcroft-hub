@@ -65,7 +65,12 @@ const en = {
       },
       {
         title: "Laptops & tablets",
-        items: ["MacBook Air", "Windows laptops", "iPad, iPad Pro & iPad mini", "Galaxy Tab"],
+        items: [
+          "MacBook Air & MacBook Neo",
+          "iPad, iPad Pro & iPad mini",
+          "Galaxy Tab S10 FE+ & A9+",
+          "Windows laptops",
+        ],
         alt: "MacBook Air, iPad Pro, iPad and iPad mini boxes in a TIC Wireless Electronic & Repair Center display case",
       },
       {
@@ -230,7 +235,12 @@ const es: LeasingCopy = {
       },
       {
         title: "Laptops y tabletas",
-        items: ["MacBook Air", "Laptops Windows", "iPad, iPad Pro y iPad mini", "Galaxy Tab"],
+        items: [
+          "MacBook Air y MacBook Neo",
+          "iPad, iPad Pro y iPad mini",
+          "Galaxy Tab S10 FE+ y A9+",
+          "Laptops Windows",
+        ],
         alt: "Cajas de MacBook Air, iPad Pro, iPad y iPad mini en una vitrina de TIC Wireless Electronic & Repair Center",
       },
       {

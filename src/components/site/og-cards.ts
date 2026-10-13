@@ -2,6 +2,8 @@
 // Not imported by the app; the page heads point at the files through ogImage().
 import { AREAS, shortName } from "@/components/areas/data";
 import { GUIDES } from "@/components/guides/data";
+import { CATEGORY_PAGES } from "@/components/products/data";
+import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { INTL_LANGS } from "@/components/intl/languages";
 import { SERVICES } from "@/components/services/data";
 import { ogImage } from "@/components/site/og";
@@ -165,6 +167,24 @@ export function ogCards(): OgCard[] {
       page("home", lang, "storefront-3640", T.home[lang]),
       page("leasing", lang, "consoles-wide", T.leasing[lang], "0% 50%"),
       page("location", lang, "storefront-3640", T.location[lang]),
+      ...(["accessories", "consoles", "laptops"] as const).map((key) => {
+        const c = CATEGORY_PAGES[key];
+        const t = c.text[lang];
+        return page(key, lang, PRODUCT_PHOTOS[c.heroPhoto].file, {
+          kicker: t.ogKicker,
+          headline: t.ogHeadline,
+          sub: t.ogSub,
+        });
+      }),
+      page("reviews", lang, "store-counter", {
+        kicker: lang === "en" ? "Customer reviews" : "Reseñas de clientes",
+        headline:
+          lang === "en" ? "4.7★ on Google from 408 customers." : "4.7★ en Google de 408 clientes.",
+        sub:
+          lang === "en"
+            ? "Phone selection · Polite staff · Easy process · Same-day screen repair"
+            : "Variedad de celulares · Personal amable · Proceso fácil · Reparación el mismo día",
+      }),
       page("services", lang, "store-counter", T.services[lang]),
       ...SERVICES.map((s) => {
         const t = s.text[lang];

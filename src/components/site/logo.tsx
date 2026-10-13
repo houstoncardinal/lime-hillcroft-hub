@@ -75,11 +75,12 @@ export function Logo({
         </span>
         <span
           className={cn(
-            "whitespace-nowrap font-sans font-bold uppercase",
+            // The tagline: extra-bold and full-strength so it reads clearly at small sizes.
+            "whitespace-nowrap font-sans font-extrabold uppercase",
             compact
-              ? "mt-1 text-[10px] tracking-[0.08em] min-[400px]:text-[11px] min-[400px]:tracking-[0.12em]"
-              : "mt-1.5 text-xs tracking-[0.14em]",
-            light ? "text-white/90" : "text-ink/75",
+              ? "mt-1 text-[10.5px] tracking-[0.05em] min-[400px]:text-xs min-[400px]:tracking-[0.08em]"
+              : "mt-1.5 text-sm tracking-[0.1em]",
+            light ? "text-white" : "text-ink",
           )}
         >
           Electronic &amp; Repair Center

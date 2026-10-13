@@ -1,5 +1,6 @@
 import { LOCATION_COPY } from "@/components/location/copy";
 import { ogImage } from "@/components/site/og";
+import { clipSchema } from "@/components/site/store-clips";
 import { pageSchema } from "@/components/site/schema";
 import { ALTERNATES, absoluteUrl, pageHead, type Lang } from "@/components/site/seo";
 
@@ -38,6 +39,12 @@ export function locationHead(lang: Lang) {
       ],
       faqs: t.faqs,
       extra: [
+        clipSchema(
+          "storeInterior",
+          t.inside.video,
+          `${t.inside.video} — ${t.meta.description}`,
+          absoluteUrl,
+        ),
         {
           "@type": "ImageGallery",
           "@id": `${url}#photos`,

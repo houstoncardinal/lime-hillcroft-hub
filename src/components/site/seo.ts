@@ -18,6 +18,10 @@ export const ALTERNATES = {
   guides: { en: "/guides", es: "/es/guias" },
   services: { en: "/services", es: "/es/servicios" },
   location: { en: "/location", es: "/es/ubicacion" },
+  accessories: { en: "/accessories", es: "/es/accesorios" },
+  consoles: { en: "/game-consoles", es: "/es/consolas" },
+  laptops: { en: "/laptops-tablets", es: "/es/laptops-y-tabletas" },
+  reviews: { en: "/reviews", es: "/es/resenas" },
 } as const;
 
 /** English and Spanish paths of one page. */

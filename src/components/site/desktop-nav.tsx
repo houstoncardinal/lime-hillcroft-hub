@@ -1,0 +1,154 @@
+import { Link, useRouterState } from "@tanstack/react-router";
+import * as Nav from "@radix-ui/react-navigation-menu";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { useRef, useState, type MouseEvent } from "react";
+
+import { productNav, serviceNav, type NavItem } from "@/components/site/nav";
+import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { servicePath } from "@/components/services/paths";
+import { cn } from "@/lib/utils";
+
+const T = {
+  en: {
+    products: "Products",
+    services: "Services",
+    leasing: "Leasing",
+    prepaid: "Prepaid",
+    location: "Location",
+    allServices: "All services",
+    leasingCta: "Lease-to-own · no credit needed · as low as $40 down",
+  },
+  es: {
+    products: "Productos",
+    services: "Servicios",
+    leasing: "Arrendamiento",
+    prepaid: "Prepago",
+    location: "Ubicación",
+    allServices: "Todos los servicios",
+    leasingCta: "Arrendamiento · sin crédito · desde $40 de enganche",
+  },
+};
+
+const trigger =
+  "group inline-flex h-10 cursor-pointer items-center gap-1 rounded-full px-2.5 text-sm xl:px-3 text-white/75 outline-none transition hover:text-white focus-visible:ring-2 focus-visible:ring-primary data-[state=open]:bg-white/10 data-[state=open]:text-white";
+
+function Panel({
+  items,
+  footer,
+  wide,
+}: {
+  items: NavItem[];
+  footer: { label: string; href: string };
+  wide?: boolean;
+}) {
+  return (
+    <Nav.Content className="absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in-0 data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out-0">
+      <div
+        className={cn(
+          "rounded-3xl border border-white/10 bg-ink p-3 text-white shadow-2xl shadow-black/40",
+          wide ? "w-[40rem]" : "w-[34rem]",
+        )}
+      >
+        <ul className="grid grid-cols-2 gap-1">
+          {items.map((i) => (
+            <li key={i.href}>
+              <Nav.Link asChild>
+                <Link
+                  to={i.href}
+                  className="flex items-start gap-3 rounded-2xl p-3 outline-none transition hover:bg-white/[0.07] focus-visible:bg-white/[0.07]"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-primary">
+                    <i.icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold">{i.label}</span>
+                    <span className="mt-0.5 block text-xs text-white/60">{i.hint}</span>
+                  </span>
+                </Link>
+              </Nav.Link>
+            </li>
+          ))}
+        </ul>
+        <Nav.Link asChild>
+          <Link
+            to={footer.href}
+            className="mt-2 flex items-center justify-between rounded-2xl bg-primary/15 px-4 py-3 text-sm font-semibold text-primary transition hover:bg-primary/25"
+          >
+            {footer.label} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Nav.Link>
+      </div>
+    </Nav.Content>
+  );
+}
+
+/** Main navigation for laptops and desktops (lg+): Products and Services dropdowns + key pages. */
+export function DesktopNav({ lang }: { lang: Lang }) {
+  const t = T[lang];
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  // Hovering opens a menu; the click that usually follows shouldn't immediately close it.
+  const [value, setValue] = useState("");
+  const openedAt = useRef(0);
+  const onValueChange = (v: string) => {
+    if (v) openedAt.current = Date.now();
+    setValue(v);
+  };
+  const keepOpen = (id: string) => (e: MouseEvent) => {
+    if (value === id && Date.now() - openedAt.current < 700) e.preventDefault();
+  };
+  const link = (label: string, href: string) => (
+    <Nav.Item>
+      <Nav.Link asChild active={pathname === href}>
+        <Link
+          to={href}
+          className="inline-flex h-10 items-center rounded-full px-2.5 text-sm text-white/75 xl:px-3 transition hover:text-white data-[active]:text-white"
+        >
+          {label}
+        </Link>
+      </Nav.Link>
+    </Nav.Item>
+  );
+
+  return (
+    <Nav.Root
+      aria-label="Main"
+      delayDuration={80}
+      value={value}
+      onValueChange={onValueChange}
+      className="relative hidden lg:block"
+    >
+      <Nav.List className="flex items-center gap-0.5 xl:gap-1.5">
+        <Nav.Item value="products" className="relative">
+          <Nav.Trigger className={trigger} onClick={keepOpen("products")}>
+            {t.products}
+            <ChevronDown
+              className="h-3.5 w-3.5 transition group-data-[state=open]:rotate-180"
+              aria-hidden="true"
+            />
+          </Nav.Trigger>
+          <Panel
+            items={productNav(lang)}
+            footer={{ label: t.leasingCta, href: ALTERNATES.leasing[lang] }}
+          />
+        </Nav.Item>
+        <Nav.Item value="services" className="relative">
+          <Nav.Trigger className={trigger} onClick={keepOpen("services")}>
+            {t.services}
+            <ChevronDown
+              className="h-3.5 w-3.5 transition group-data-[state=open]:rotate-180"
+              aria-hidden="true"
+            />
+          </Nav.Trigger>
+          <Panel
+            items={serviceNav(lang)}
+            footer={{ label: t.allServices, href: ALTERNATES.services[lang] }}
+            wide
+          />
+        </Nav.Item>
+        {link(t.leasing, ALTERNATES.leasing[lang])}
+        {link(t.prepaid, servicePath(lang, "prepaid-plans"))}
+        {link(t.location, ALTERNATES.location[lang])}
+      </Nav.List>
+    </Nav.Root>
+  );
+}

@@ -14,19 +14,58 @@ const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, 
 // hreflang alternates and share image.
 const pages = await loadPages();
 
-// The location page shows the store photos in public/photos; list them for image search too.
-const LOCATION_PATHS = new Set(["/location", "/es/ubicacion"]);
-const STORE_PHOTOS = fs
-  .readdirSync("public/photos")
+// Store photos (copies in public/photos) shown on each page, listed for image search too.
+const photos = (...names) => names.map((n) => `${SITE}/photos/${n}.jpg`);
+const STORE = photos(
+  "storefront-3640",
+  "plaza",
+  "store-counter",
+  "case-wall",
+  "apple-display",
+  "jbl-display",
+  "phones-display",
+);
+const ACCESSORIES = photos(
+  "accessories-case-wall",
+  "iphone-cases-wall",
+  "samsung-cases-wall",
+  "chargers-wall",
+  "jbl-speakers-case",
+  "airpods-watches-case",
+  "jbl-display-case",
+  "galaxy-watch-tab",
+  "airpods-max-ipads",
+);
+const CONSOLES = photos(
+  "consoles-table",
+  "airpods-max-ipads",
+  "jbl-speakers-case",
+  "airpods-watches-case",
+);
+const LAPTOPS = photos("laptops-tablets", "airpods-max-ipads", "galaxy-watch-tab", "apple-display");
+const DEVICES = fs
+  .readdirSync("public/photos/devices")
   .filter((f) => f.endsWith(".jpg"))
-  .map((f) => `${SITE}/photos/${f}`);
+  .map((f) => `${SITE}/photos/devices/${f}`);
+const PAGE_PHOTOS = {
+  "/location": STORE,
+  "/es/ubicacion": STORE,
+  "/accessories": ACCESSORIES,
+  "/es/accesorios": ACCESSORIES,
+  "/game-consoles": CONSOLES,
+  "/es/consolas": CONSOLES,
+  "/laptops-tablets": [...LAPTOPS, ...DEVICES.filter((d) => d.includes("ipad"))],
+  "/services/unlocked-phones": DEVICES.filter((d) => !d.includes("ipad")),
+  "/es/servicios/unlocked-phones": DEVICES.filter((d) => !d.includes("ipad")),
+  "/es/laptops-y-tabletas": [...LAPTOPS, ...DEVICES.filter((d) => d.includes("ipad"))],
+};
 
 // Google ignores <priority> and <changefreq>, so the sitemap lists what it uses: the URL, its
 // language alternates, its last change and its image.
 const entry = (p) => `  <url>
     <loc>${SITE}${p.path}</loc>
     <lastmod>${today}</lastmod>
-${p.alternates.map(([lang, href]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${xml(href)}"/>\n`).join("")}${[p.image, ...(LOCATION_PATHS.has(p.path) ? STORE_PHOTOS : [])].map((i) => `    <image:image>\n      <image:loc>${xml(i)}</image:loc>\n    </image:image>\n`).join("")}  </url>`;
+${p.alternates.map(([lang, href]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${xml(href)}"/>\n`).join("")}${[p.image, ...(PAGE_PHOTOS[p.path] ?? [])].map((i) => `    <image:image>\n      <image:loc>${xml(i)}</image:loc>\n    </image:image>\n`).join("")}  </url>`;
 
 if (process.argv[2] === "sitemap") {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

@@ -64,7 +64,7 @@ export const SERVICES: Service[] = [
         offersTitle: "What we offer",
         offers: [
           "New unlocked iPhones, including the iPhone 18 Pro Max and iPhone 17 Pro.",
-          "Samsung Galaxy phones and other unlocked Android models.",
+          "Samsung Galaxy phones — including the Galaxy A15 5G, A16 5G, A36 5G and A53 — plus Motorola moto g and other unlocked Androids.",
           "Leasing (lease-to-own) with no credit needed — bad credit is no problem, subject to approval.",
           "Weekly, biweekly or monthly payment options.",
           "Trade in your old phone toward a new one.",
@@ -125,7 +125,7 @@ export const SERVICES: Service[] = [
         offersTitle: "Lo que ofrecemos",
         offers: [
           "iPhone nuevos desbloqueados, incluyendo el iPhone 18 Pro Max y el iPhone 17 Pro.",
-          "Samsung Galaxy y otros modelos Android desbloqueados.",
+          "Samsung Galaxy —incluidos Galaxy A15 5G, A16 5G, A36 5G y A53— además de Motorola moto g y otros Android desbloqueados.",
           "Arrendamiento con opción a compra sin necesidad de crédito; el mal crédito no es problema, sujeto a aprobación.",
           "Opciones de pago semanales, quincenales o mensuales.",
           "Cambia tu celular usado por uno nuevo.",

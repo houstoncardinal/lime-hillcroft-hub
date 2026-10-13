@@ -54,7 +54,7 @@ const PHONE = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" strok
 
 async function html(card) {
   return `<!doctype html><html lang="${esc(card.lang)}"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Saira:wght@500;600;700&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Saira:wght@500;600;700&display=block" rel="stylesheet">
 <style>
 :root{--ink:oklch(0.19 0.03 245);--primary:oklch(0.72 0.17 55);--slate:oklch(0.62 0.035 235)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -67,7 +67,7 @@ body{width:1200px;height:630px;overflow:hidden;background:var(--ink);color:#fff;
 .content{position:absolute;left:68px;top:52px;width:720px;bottom:44px;display:flex;flex-direction:column}
 .brand{display:flex;align-items:center;gap:14px}
 .brand b{display:block;font-family:Saira,sans-serif;font-weight:600;font-size:27px;letter-spacing:.04em;line-height:1}
-.brand small{display:block;margin-top:7px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);font-weight:700}
+.brand small{display:block;margin-top:7px;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:#fff;font-weight:800}
 .text{margin-top:auto;margin-bottom:auto;padding:18px 0}
 .kicker{display:flex;align-items:center;gap:12px;color:var(--primary);font-weight:700;font-size:20px;letter-spacing:.14em;text-transform:uppercase}
 .kicker:before{content:"";width:34px;height:2px;background:var(--primary)}
