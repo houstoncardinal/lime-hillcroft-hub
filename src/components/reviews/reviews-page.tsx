@@ -5,12 +5,12 @@ import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
   GOOGLE_REVIEWS_URL,
-  REVIEWS,
   REVIEWS_IMPORTED,
   REVIEW_TOPICS,
   WRITE_REVIEW_URL,
 } from "@/components/reviews/data";
-import { GoogleMark, ReviewCard } from "@/components/reviews/reviews-carousel";
+import { ReviewList } from "@/components/reviews/review-list";
+import { GoogleMark } from "@/components/reviews/reviews-carousel";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { REVIEWS_COPY } from "@/components/reviews/copy";
@@ -112,16 +112,7 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
           {t.latest}
         </h2>
         {t.original && <p className="mt-1 text-sm text-muted-foreground">{t.original}</p>}
-        <div className="mt-6 gap-4 sm:columns-2 lg:columns-3">
-          {REVIEWS.map((r) => (
-            <ReviewCard
-              key={r.author}
-              review={r}
-              lang={lang}
-              className="mb-4 h-auto break-inside-avoid"
-            />
-          ))}
-        </div>
+        <ReviewList lang={lang} />
         <p className="mt-4 text-xs text-muted-foreground">{t.imported(date)}</p>
       </section>
 

@@ -5,7 +5,7 @@ import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
   GOOGLE_REVIEWS_URL,
-  REVIEWS,
+  FEATURED_REVIEWS,
   type Review,
 } from "@/components/reviews/data";
 import { REVIEW_UI } from "@/components/reviews/copy";
@@ -40,7 +40,7 @@ export function GoogleMark({ className = "h-4 w-4" }: { className?: string }) {
 // Google's relative dates ("4 months ago") in the page's language.
 function when(text: string, lang: Lang) {
   if (lang === "en") return text;
-  const m = /^(a|an|\d+) (month|year|week|day)s? ago$/.exec(text);
+  const m = /^(a|an|\d+) (month|year|week|day|hour)s? ago$/.exec(text);
   if (!m) return text;
   const n = m[1] === "a" || m[1] === "an" ? 1 : Number(m[1]);
   const unit = {
@@ -48,7 +48,8 @@ function when(text: string, lang: Lang) {
     year: ["año", "años"],
     week: ["semana", "semanas"],
     day: ["día", "días"],
-  }[m[2] as "month" | "year" | "week" | "day"];
+    hour: ["hora", "horas"],
+  }[m[2] as "month" | "year" | "week" | "day" | "hour"];
   return `hace ${n} ${n === 1 ? unit[0] : unit[1]}`;
 }
 
@@ -64,10 +65,27 @@ export function ReviewCard({
   const initial = review.author.charAt(0);
   return (
     <figure className={cn("flex h-full flex-col rounded-3xl border bg-card p-5 sm:p-6", className)}>
-      <Quote className="h-6 w-6 text-primary/40" aria-hidden="true" />
-      <blockquote lang="en" className="mt-2 flex-1 text-[15px] leading-relaxed text-ink">
+      <div className="flex items-center justify-between">
+        <span className="flex text-[#FBBC04]" role="img" aria-label={`${review.stars} / 5`}>
+          {Array.from({ length: 5 }, (_, i) => (
+            <Star
+              key={i}
+              className={cn(
+                "h-4 w-4",
+                i < review.stars ? "fill-current" : "text-muted-foreground/30",
+              )}
+              aria-hidden="true"
+            />
+          ))}
+        </span>
+        <Quote className="h-6 w-6 text-primary/30" aria-hidden="true" />
+      </div>
+      <blockquote lang="en" className="mt-3 flex-1 text-[15px] leading-relaxed text-ink">
         {review.text}
       </blockquote>
+      {review.translated && (
+        <p className="mt-2 text-xs text-muted-foreground">{REVIEW_UI[lang].translated}</p>
+      )}
       <figcaption className="mt-5 flex items-center gap-3 border-t pt-4">
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 font-display font-semibold text-primary"
@@ -116,7 +134,7 @@ export function ReviewsCarousel({ lang, className }: { lang: Lang; className?: s
           </div>
         </div>
         <Scroller label={t.title} prevLabel={t.prev} nextLabel={t.next} className="mt-4">
-          {REVIEWS.map((r) => (
+          {FEATURED_REVIEWS.map((r) => (
             <li key={r.author} className="w-[85%] shrink-0 snap-start sm:w-80 lg:w-96">
               <ReviewCard review={r} lang={lang} />
             </li>

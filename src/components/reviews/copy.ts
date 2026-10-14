@@ -16,7 +16,7 @@ export const REVIEWS_COPY = {
     write: "Write a review",
     topics: "What customers mention most",
     topicsNote: "Topics and counts from our Google reviews.",
-    latest: "Recent reviews",
+    latest: "All customer reviews",
     imported: (d: string) =>
       `Copied from Google on ${d}; dates as shown on Google that day. Names shortened to first name and last initial.`,
     original: "",
@@ -39,10 +39,11 @@ export const REVIEWS_COPY = {
     write: "Escribir una reseña",
     topics: "Lo que más mencionan",
     topicsNote: "Temas y cantidades de nuestras reseñas de Google.",
-    latest: "Reseñas recientes",
+    latest: "Todas las reseñas",
     imported: (d: string) =>
       `Copiadas de Google el ${d}; fechas como aparecían ese día. Nombres abreviados a nombre e inicial.`,
-    original: "Las reseñas están en su idioma original (inglés).",
+    original:
+      "Reseñas como aparecen en Google; las escritas en español muestran la traducción al inglés de Google.",
     cta: "Visítanos en Hillcroft",
     ctaBody: "Ven cualquier día, sin cita. We speak English.",
     directions: "Cómo llegar",
@@ -56,6 +57,7 @@ export const REVIEW_UI = {
     title: "What customers say about TIC Wireless.",
     summary: (r: number, n: number) => `${r} out of 5 on Google · ${n} reviews`,
     google: "Google review",
+    translated: "Translated from Spanish by Google",
     all: "See all reviews",
     onGoogle: "Read them on Google",
     original: "",
@@ -67,10 +69,37 @@ export const REVIEW_UI = {
     title: "Lo que dicen nuestros clientes.",
     summary: (r: number, n: number) => `${r} de 5 en Google · ${n} reseñas`,
     google: "Reseña de Google",
+    translated: "Escrita en español; traducción de Google",
     all: "Ver todas las reseñas",
     onGoogle: "Leerlas en Google",
-    original: "Reseñas originales en inglés.",
+    original: "Reseñas como aparecen en Google (en inglés).",
     prev: "Reseñas anteriores",
     next: "Más reseñas",
+  },
+};
+
+// Filters and paging for the full list on the reviews page.
+export const REVIEW_LIST = {
+  en: {
+    filter: "Filter reviews",
+    all: "All",
+    phones: "Buying a phone",
+    leasing: "Leasing & approval",
+    repair: "Repairs",
+    accessories: "Accessories",
+    service: "Customer service",
+    more: (n: number) => `Show ${n} more reviews`,
+    of: (a: number, b: number) => `Showing ${a} of ${b}`,
+  },
+  es: {
+    filter: "Filtrar reseñas",
+    all: "Todas",
+    phones: "Compra de celular",
+    leasing: "Arrendamiento y aprobación",
+    repair: "Reparaciones",
+    accessories: "Accesorios",
+    service: "Atención al cliente",
+    more: (n: number) => `Ver ${n} reseñas más`,
+    of: (a: number, b: number) => `Mostrando ${a} de ${b}`,
   },
 };

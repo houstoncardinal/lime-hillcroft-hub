@@ -290,6 +290,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
+      <ReviewsCarousel lang={lang} />
+
       <LatestDevices devices={LATEST_DEVICES} lang={lang} className="bg-secondary/40" />
 
       {/* Services */}
@@ -595,8 +597,6 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </div>
         </div>
       </section>
-
-      <ReviewsCarousel lang={lang} />
 
       {/* At a glance: a plain, quotable summary for people, search engines and AI answers */}
       <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-24 md:pt-32">
