@@ -11,13 +11,13 @@ export type StoreClip = {
 export const CLIPS = {
   accessoryWall: {
     src: "/media/accessory-wall.mp4",
-    poster: "/media/accessory-wall.jpg",
+    poster: "/media/accessory-wall.webp",
     duration: 12,
   },
-  jblSpeakers: { src: "/media/jbl-speakers.mp4", poster: "/media/jbl-speakers.jpg", duration: 4 },
+  jblSpeakers: { src: "/media/jbl-speakers.mp4", poster: "/media/jbl-speakers.webp", duration: 4 },
   storeInterior: {
     src: "/media/store-interior.mp4",
-    poster: "/media/store-interior.jpg",
+    poster: "/media/store-interior.webp",
     duration: 6,
   },
 } satisfies Record<string, StoreClip>;

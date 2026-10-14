@@ -26,7 +26,7 @@ export type Device = {
   alt: L;
 };
 
-const img = (file: string) => `/photos/devices/${file}.jpg`;
+const img = (file: string) => `/photos/devices/${file}.webp`;
 const box = (model: string): L => ({
   en: `Samsung ${model} box in the TIC Wireless display case`,
   es: `Caja de Samsung ${model} en la vitrina de TIC Wireless`,

@@ -1,12 +1,14 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource-variable/manrope/wght.css";
+@import "@fontsource-variable/saira/wght.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Saira", sans-serif;
-  --font-sans: "Manrope", sans-serif;
+  --font-display: "Saira Variable", "Saira", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -260,6 +262,26 @@ html.menu-open #tidio-chat-iframe {
   }
 }
 
+/* A row of stars drawn with one CSS mask instead of an SVG per star (keeps pages light).
+   Size with font-size; color with text color; --stars sets how many are filled (0–5). */
+@utility star-row {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  width: 5.5em;
+  flex-shrink: 0;
+  background: color-mix(in oklab, currentColor 25%, transparent);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 24'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z'/%3E%3C/svg%3E")
+    0 0 / 1.1em 1em repeat-x;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: calc(var(--stars, 5) * 1.1em);
+    background: currentColor;
+  }
+}
+
 @utility grain {
   background-image: radial-gradient(circle at 1px 1px, oklch(1 0 0 / 7%) 1px, transparent 0);
   background-size: 22px 22px;
@@ -280,7 +302,7 @@ html.menu-open #tidio-chat-iframe {
 }
 @keyframes rise {
   from {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(24px);
   }
   to {
@@ -309,6 +331,29 @@ html.menu-open #tidio-chat-iframe {
 }
 @utility animate-rise {
   animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Brand-orange text is darkened on light backgrounds so it meets WCAG contrast (4.5:1); on the
+   dark navy surfaces it stays bright. Works for every color theme. */
+:root {
+  --primary-text: color-mix(in oklab, var(--primary) 60%, var(--ink));
+}
+@supports (color: oklch(from red l c h)) {
+  :root {
+    /* Same hue, just darker: a saturated burnt orange rather than a muddy mix. */
+    --primary-text: oklch(from var(--primary) min(l, 0.54) calc(c * 1.08) h);
+  }
+}
+[class*="bg-ink"],
+[class*="bg-ink"] *,
+[role="dialog"],
+[role="dialog"] *,
+footer,
+footer * {
+  --primary-text: var(--primary);
+}
+.text-primary {
+  color: var(--primary-text);
 }
 
 @media (prefers-reduced-motion: reduce) {

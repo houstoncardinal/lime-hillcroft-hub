@@ -7,12 +7,12 @@ import { saveSnapshot } from "@/admin/cameras/snapshot";
 import { isConnected } from "@/admin/cameras/sources";
 import type { Camera, CameraPlaceholder } from "@/admin/types";
 import { cn } from "@/lib/utils";
-import storefront from "@/assets/photos/storefront-3640-sm.jpg";
-import counter from "@/assets/photos/store-counter-sm.jpg";
-import caseWall from "@/assets/photos/case-wall-sm.jpg";
-import display from "@/assets/photos/jbl-display-sm.jpg";
-import apple from "@/assets/photos/apple-display-sm.jpg";
-import plaza from "@/assets/photos/plaza-sm.jpg";
+import storefront from "@/assets/photos/storefront-3640-sm.webp";
+import counter from "@/assets/photos/store-counter-sm.webp";
+import caseWall from "@/assets/photos/case-wall-sm.webp";
+import display from "@/assets/photos/jbl-display-sm.webp";
+import apple from "@/assets/photos/apple-display-sm.webp";
+import plaza from "@/assets/photos/plaza-sm.webp";
 
 const PLACEHOLDER_IMAGES: Record<CameraPlaceholder, string> = {
   storefront,

@@ -15,14 +15,14 @@ import {
 
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
-import consoles from "@/assets/photos/consoles-wide.jpg";
-import consolesSm from "@/assets/photos/consoles-wide-sm.jpg";
-import laptops from "@/assets/photos/laptops-tablets.jpg";
-import laptopsSm from "@/assets/photos/laptops-tablets-sm.jpg";
-import iphone17 from "@/assets/photos/iphone-17-pro.jpg";
-import iphone17Sm from "@/assets/photos/iphone-17-pro-sm.jpg";
-import jbl from "@/assets/photos/jbl-display.jpg";
-import jblSm from "@/assets/photos/jbl-display-sm.jpg";
+import consoles from "@/assets/photos/consoles-wide.webp";
+import consolesSm from "@/assets/photos/consoles-wide-sm.webp";
+import laptops from "@/assets/photos/laptops-tablets.webp";
+import laptopsSm from "@/assets/photos/laptops-tablets-sm.webp";
+import iphone17 from "@/assets/photos/iphone-17-pro.webp";
+import iphone17Sm from "@/assets/photos/iphone-17-pro-sm.webp";
+import jbl from "@/assets/photos/jbl-display.webp";
+import jblSm from "@/assets/photos/jbl-display-sm.webp";
 import { LEASING_COPY } from "@/components/pages/leasing-copy";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";

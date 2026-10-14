@@ -18,11 +18,14 @@ export function StoreVideo({
   clip,
   className,
   label,
+  background,
 }: {
   clip: ClipKey;
   className?: string;
   /** Accessible description; leave out for purely decorative backgrounds. */
   label?: string;
+  /** Decorative background: play only on tablets and larger (phones show the poster). */
+  background?: boolean;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [play, setPlay] = useState(false);
@@ -31,6 +34,7 @@ export function StoreVideo({
   useEffect(() => {
     const el = ref.current;
     if (!el || prefersStill()) return;
+    if (background && window.matchMedia("(max-width: 767px)").matches) return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
@@ -44,7 +48,7 @@ export function StoreVideo({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [background]);
 
   return (
     <video

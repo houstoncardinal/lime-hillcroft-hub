@@ -10,8 +10,8 @@ import {
   Star,
 } from "lucide-react";
 
-import storefront from "@/assets/photos/storefront-3640.jpg";
-import storefrontSm from "@/assets/photos/storefront-3640-sm.jpg";
+import storefront from "@/assets/photos/storefront-3640.webp";
+import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
 import { MoneyText } from "@/components/intl/money";
 import type { IntlLang } from "@/components/intl/languages";
 import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";

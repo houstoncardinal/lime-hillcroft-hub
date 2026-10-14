@@ -19,28 +19,28 @@ import {
   Wrench,
 } from "lucide-react";
 
-import iphone18 from "@/assets/photos/iphone-18-pro-max.jpg";
-import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.jpg";
-import counter from "@/assets/photos/store-counter.jpg";
-import counterSm from "@/assets/photos/store-counter-sm.jpg";
-import storefront from "@/assets/photos/storefront-3640.jpg";
-import storefrontSm from "@/assets/photos/storefront-3640-sm.jpg";
-import plaza from "@/assets/photos/plaza.jpg";
-import plazaSm from "@/assets/photos/plaza-sm.jpg";
-import s24 from "@/assets/photos/galaxy-s24-ultra.jpg";
-import s24Sm from "@/assets/photos/galaxy-s24-ultra-sm.jpg";
-import protector from "@/assets/photos/screen-protector.jpg";
-import protectorSm from "@/assets/photos/screen-protector-sm.jpg";
-import caseWall from "@/assets/photos/case-wall.jpg";
-import caseWallSm from "@/assets/photos/case-wall-sm.jpg";
-import jbl from "@/assets/photos/jbl-display.jpg";
-import jblSm from "@/assets/photos/jbl-display-sm.jpg";
-import appleDisplay from "@/assets/photos/apple-display.jpg";
-import appleDisplaySm from "@/assets/photos/apple-display-sm.jpg";
-import otterbox from "@/assets/photos/iphone-otterbox.jpg";
-import otterboxSm from "@/assets/photos/iphone-otterbox-sm.jpg";
-import s22 from "@/assets/photos/galaxy-s22-ultra.jpg";
-import s22Sm from "@/assets/photos/galaxy-s22-ultra-sm.jpg";
+import iphone18 from "@/assets/photos/iphone-18-pro-max.webp";
+import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.webp";
+import counter from "@/assets/photos/store-counter.webp";
+import counterSm from "@/assets/photos/store-counter-sm.webp";
+import storefront from "@/assets/photos/storefront-3640.webp";
+import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
+import plaza from "@/assets/photos/plaza.webp";
+import plazaSm from "@/assets/photos/plaza-sm.webp";
+import s24 from "@/assets/photos/galaxy-s24-ultra.webp";
+import s24Sm from "@/assets/photos/galaxy-s24-ultra-sm.webp";
+import protector from "@/assets/photos/screen-protector.webp";
+import protectorSm from "@/assets/photos/screen-protector-sm.webp";
+import caseWall from "@/assets/photos/case-wall.webp";
+import caseWallSm from "@/assets/photos/case-wall-sm.webp";
+import jbl from "@/assets/photos/jbl-display.webp";
+import jblSm from "@/assets/photos/jbl-display-sm.webp";
+import appleDisplay from "@/assets/photos/apple-display.webp";
+import appleDisplaySm from "@/assets/photos/apple-display-sm.webp";
+import otterbox from "@/assets/photos/iphone-otterbox.webp";
+import otterboxSm from "@/assets/photos/iphone-otterbox-sm.webp";
+import s22 from "@/assets/photos/galaxy-s22-ultra.webp";
+import s22Sm from "@/assets/photos/galaxy-s22-ultra-sm.webp";
 import { AREAS, shortName } from "@/components/areas/data";
 import { areaPath } from "@/components/areas/paths";
 import { GUIDES } from "@/components/guides/data";
@@ -117,7 +117,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       {/* Hero */}
       <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
-        <div className="absolute -right-40 top-1/3 -z-10 h-[46rem] w-[46rem] rounded-full bg-primary/25 blur-[160px]" />
+        <div className="absolute -right-40 top-[18rem] -z-10 h-[46rem] w-[46rem] rounded-full bg-primary/25 blur-[160px]" />
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 lg:min-h-[100svh] lg:grid-cols-[1fr_1.05fr] lg:pb-16 lg:pt-28">
           <div className="animate-rise">
             <h1>
@@ -572,7 +572,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               <span className="font-display text-7xl font-semibold leading-none md:text-9xl">
                 {RATING}
               </span>
-              <Stars className="h-6 w-6 md:h-8 md:w-8" />
+              <Stars className="text-2xl md:text-3xl" />
             </p>
             <p className="mt-4 max-w-md text-lg">{<MoneyText text={t.rating.body} />}</p>
             <a

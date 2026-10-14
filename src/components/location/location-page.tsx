@@ -14,24 +14,24 @@ import {
   Store,
 } from "lucide-react";
 
-import apple from "@/assets/photos/apple-display.jpg";
-import appleSm from "@/assets/photos/apple-display-sm.jpg";
-import caseWall from "@/assets/photos/case-wall.jpg";
-import caseWallSm from "@/assets/photos/case-wall-sm.jpg";
-import consoles from "@/assets/photos/consoles-wide.jpg";
-import consolesSm from "@/assets/photos/consoles-wide-sm.jpg";
-import counter from "@/assets/photos/store-counter.jpg";
-import counterSm from "@/assets/photos/store-counter-sm.jpg";
-import jbl from "@/assets/photos/jbl-display.jpg";
-import jblSm from "@/assets/photos/jbl-display-sm.jpg";
-import laptops from "@/assets/photos/laptops-tablets.jpg";
-import laptopsSm from "@/assets/photos/laptops-tablets-sm.jpg";
-import phones from "@/assets/photos/phones-display.jpg";
-import phonesSm from "@/assets/photos/phones-display-sm.jpg";
-import plaza from "@/assets/photos/plaza.jpg";
-import plazaSm from "@/assets/photos/plaza-sm.jpg";
-import storefront from "@/assets/photos/storefront-3640.jpg";
-import storefrontSm from "@/assets/photos/storefront-3640-sm.jpg";
+import apple from "@/assets/photos/apple-display.webp";
+import appleSm from "@/assets/photos/apple-display-sm.webp";
+import caseWall from "@/assets/photos/case-wall.webp";
+import caseWallSm from "@/assets/photos/case-wall-sm.webp";
+import consoles from "@/assets/photos/consoles-wide.webp";
+import consolesSm from "@/assets/photos/consoles-wide-sm.webp";
+import counter from "@/assets/photos/store-counter.webp";
+import counterSm from "@/assets/photos/store-counter-sm.webp";
+import jbl from "@/assets/photos/jbl-display.webp";
+import jblSm from "@/assets/photos/jbl-display-sm.webp";
+import laptops from "@/assets/photos/laptops-tablets.webp";
+import laptopsSm from "@/assets/photos/laptops-tablets-sm.webp";
+import phones from "@/assets/photos/phones-display.webp";
+import phonesSm from "@/assets/photos/phones-display-sm.webp";
+import plaza from "@/assets/photos/plaza.webp";
+import plazaSm from "@/assets/photos/plaza-sm.webp";
+import storefront from "@/assets/photos/storefront-3640.webp";
+import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
 import { AREAS, areaName } from "@/components/areas/data";
 import { areaPath } from "@/components/areas/paths";
 import { LOCATION_COPY, routeStep, type GalleryPhoto } from "@/components/location/copy";
@@ -172,18 +172,21 @@ export function LocationPage({ lang }: { lang: Lang }) {
       {/* Quick facts + hours */}
       <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-          <dl className="grid content-start gap-3 sm:grid-cols-2">
+          <ul className="grid content-start gap-3 sm:grid-cols-2">
             {t.facts.map(([label, value], i) => {
               const Icon = FACT_ICONS[i] ?? MapPin;
               const body = <span className="whitespace-pre-line font-semibold">{value}</span>;
               return (
-                <div key={label} className="flex gap-4 rounded-2xl border bg-card p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-ink">
+                <li key={label} className="flex gap-4 rounded-2xl border bg-card p-5">
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-ink"
+                    aria-hidden="true"
+                  >
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="min-w-0">
-                    <dt className="text-sm text-muted-foreground">{label}</dt>
-                    <dd className="mt-0.5">
+                    <p className="text-sm text-muted-foreground">{label}</p>
+                    <p className="mt-0.5">
                       {i === 1 ? (
                         <a href={TEL} className="tap font-semibold text-primary">
                           {value}
@@ -191,12 +194,12 @@ export function LocationPage({ lang }: { lang: Lang }) {
                       ) : (
                         body
                       )}
-                    </dd>
+                    </p>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </dl>
+          </ul>
 
           <div className="rounded-3xl bg-ink p-6 text-white sm:p-8">
             <h2 className="flex items-center gap-2 font-display text-2xl font-semibold">
@@ -467,7 +470,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
               className="group rounded-3xl bg-ink p-6 text-white"
             >
               <span className="flex text-primary">
-                <Stars className="h-5 w-5" />
+                <Stars className="text-xl" />
               </span>
               <span className="mt-3 block font-display text-2xl font-semibold">
                 {t.reviews.rating}

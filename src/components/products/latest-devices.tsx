@@ -95,7 +95,7 @@ export function LatestDevices({
                     {d.name}
                   </h3>
                   {d.note && <p className="mt-0.5 text-sm text-muted-foreground">{d.note[lang]}</p>}
-                  <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-emerald-600">
+                  <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-emerald-700">
                     <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
                     {t.inStore}
                   </p>

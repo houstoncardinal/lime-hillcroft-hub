@@ -51,7 +51,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
       <section className="relative isolate overflow-hidden bg-ink text-white">
         {/* Looping store clip behind the hero, darkened so the text stays readable. */}
         <div className="absolute inset-0 -z-20">
-          <StoreVideo clip={page.heroVideo} className="opacity-45" />
+          <StoreVideo clip={page.heroVideo} className="opacity-45" background />
         </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/55" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent" />

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin, PenLine, Phone, Star } from "lucide-react";
+import { ArrowUpRight, MapPin, PenLine, Phone } from "lucide-react";
 
 import {
   GOOGLE_RATING,
@@ -12,7 +12,7 @@ import {
 import { ReviewList } from "@/components/reviews/review-list";
 import { GoogleMark } from "@/components/reviews/reviews-carousel";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { MobileCallBar, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { REVIEWS_COPY } from "@/components/reviews/copy";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -58,11 +58,7 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
               <span className="font-display text-7xl font-semibold leading-none">
                 {GOOGLE_RATING}
               </span>
-              <span className="mb-2 flex text-primary" aria-label={`${GOOGLE_RATING} / 5`}>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-current" />
-                ))}
-              </span>
+              <Stars className="mb-2 text-2xl text-[#FBBC04]" />
             </p>
             <p className="mt-2 text-white/70">{t.reviews(GOOGLE_REVIEW_COUNT)}</p>
             <div className="mt-6 flex flex-col gap-2">

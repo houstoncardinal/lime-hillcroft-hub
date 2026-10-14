@@ -16,10 +16,10 @@ import {
   Wrench,
 } from "lucide-react";
 
-import plaza from "@/assets/photos/plaza.jpg";
-import plazaSm from "@/assets/photos/plaza-sm.jpg";
-import storefront from "@/assets/photos/storefront-3640.jpg";
-import storefrontSm from "@/assets/photos/storefront-3640-sm.jpg";
+import plaza from "@/assets/photos/plaza.webp";
+import plazaSm from "@/assets/photos/plaza-sm.webp";
+import storefront from "@/assets/photos/storefront-3640.webp";
+import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
 import { areaCopy } from "@/components/areas/copy";
 import { AREAS, areaName, shortName, type Area } from "@/components/areas/data";
 import { LOCAL } from "@/components/areas/local";

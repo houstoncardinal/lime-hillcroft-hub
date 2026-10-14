@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Globe, MapPin, Phone, Star } from "lucide-react";
+import { Globe, MapPin, Phone } from "lucide-react";
 
 import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/business";
 import { setLangPref } from "@/components/intl/lang-pref";
@@ -97,13 +97,21 @@ export function OpenBadge({ lang, className = "" }: { lang: Lang; className?: st
   );
 }
 
-export function Stars({ className = "h-4 w-4" }: { className?: string }) {
+/** Star rating row (CSS mask, see the star-row utility). Size with font-size, e.g. text-base. */
+export function Stars({
+  className = "text-base",
+  stars = 5,
+}: {
+  className?: string;
+  stars?: number;
+}) {
   return (
-    <span className="flex" aria-hidden="true">
-      {Array.from({ length: 5 }, (_, i) => (
-        <Star key={i} className={`${className} fill-current`} />
-      ))}
-    </span>
+    <span
+      className={`star-row ${className}`}
+      style={{ "--stars": stars } as React.CSSProperties}
+      role="img"
+      aria-label={`${stars} / 5`}
+    />
   );
 }
 
