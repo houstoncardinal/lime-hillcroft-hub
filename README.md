@@ -4,7 +4,7 @@ research this company: https://www.google.com/maps/place/TIC+Wireless/data=!4m2!
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://www.ticwireless.com
+**Live app**: https://www.ticwirelesstx.com
 
 ## Build with Lovable
 

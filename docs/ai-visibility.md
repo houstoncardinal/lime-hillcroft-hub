@@ -55,10 +55,10 @@ the neighborhood in replies to reviews from customers there.
 
 ## Owner checklist (highest impact first)
 
-1. **Custom domain — done.** The site lives at https://www.ticwireless.com. Canonical URLs,
+1. **Custom domain — done.** The site lives at https://www.ticwirelesstx.com. Canonical URLs,
    schema, the sitemap, robots.txt, the llms files and the Tidio docs all use it. Make sure the
-   old `*.lovable.app` address and `ticwireless.com` (no www) redirect to it, and submit
-   https://www.ticwireless.com/sitemap.xml in Google Search Console and Bing Webmaster Tools.
+   old `*.lovable.app` address and `ticwirelesstx.com` (no www) redirect to it, and submit
+   https://www.ticwirelesstx.com/sitemap.xml in Google Search Console and Bing Webmaster Tools.
 2. **Google Business Profile** (business.google.com) — this feeds AI Overviews and Gemini
    directly:
    - Website field → the site; confirm hours (including Sunday) and holiday hours.

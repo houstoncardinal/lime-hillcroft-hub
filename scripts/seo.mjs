@@ -11,7 +11,7 @@ const override = (process.env.SITE_URL ?? "").replace(/\/$/, "");
 const SITE =
   override && !/\.(lovable|netlify)\.app$/i.test(override)
     ? override
-    : "https://www.ticwireless.com";
+    : "https://www.ticwirelesstx.com";
 const today = new Date().toISOString().slice(0, 10);
 const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 

@@ -1,5 +1,5 @@
 /** The live domain. Every canonical URL, hreflang link, share tag and schema.org id uses it. */
-export const LIVE_ORIGIN = "https://www.ticwireless.com";
+export const LIVE_ORIGIN = "https://www.ticwirelesstx.com";
 
 // VITE_SITE_URL can point a test build at another domain, but a hosting provider's temporary
 // address (*.lovable.app, *.netlify.app) is never used: search engines would index it.

@@ -26,4 +26,4 @@ User-agent: CCBot
 Allow: /
 Disallow: /admin
 
-Sitemap: https://www.ticwireless.com/sitemap.xml
+Sitemap: https://www.ticwirelesstx.com/sitemap.xml
