@@ -26,4 +26,4 @@ User-agent: CCBot
 Allow: /
 Disallow: /admin
 
-Sitemap: https://lime-hillcroft-hub.lovable.app/sitemap.xml
+Sitemap: https://www.ticwireless.com/sitemap.xml

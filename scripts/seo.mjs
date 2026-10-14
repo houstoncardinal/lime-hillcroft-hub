@@ -6,7 +6,12 @@ import fs from "node:fs";
 
 import { loadPages } from "./lib/pages.mjs";
 
-const SITE = (process.env.SITE_URL ?? "https://lime-hillcroft-hub.lovable.app").replace(/\/$/, "");
+// The live domain (same rule as SITE_URL in src/components/site/seo.ts: never a temp host).
+const override = (process.env.SITE_URL ?? "").replace(/\/$/, "");
+const SITE =
+  override && !/\.(lovable|netlify)\.app$/i.test(override)
+    ? override
+    : "https://www.ticwireless.com";
 const today = new Date().toISOString().slice(0, 10);
 const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 

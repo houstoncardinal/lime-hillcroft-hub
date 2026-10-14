@@ -10,9 +10,9 @@ Files in this folder:
 
 Also add the website as a source so Lyro learns from it directly:
 
-- `https://lime-hillcroft-hub.lovable.app/` (English)
-- `https://lime-hillcroft-hub.lovable.app/es` (Spanish)
-- `https://lime-hillcroft-hub.lovable.app/leasing`
+- `https://www.ticwireless.com/` (English)
+- `https://www.ticwireless.com/es` (Spanish)
+- `https://www.ticwireless.com/leasing`
 
 Re-sync the website source whenever the site changes. If the site moves to a custom domain, use
 the new address and update the links inside the knowledge file and CSV.

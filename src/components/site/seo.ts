@@ -1,8 +1,11 @@
-// Public origin used for canonical URLs, hreflang, Open Graph and schema.org ids.
-// Set VITE_SITE_URL when the site moves to a custom domain (and update public/sitemap.xml + robots.txt).
-export const SITE_URL = String(
-  import.meta.env["VITE_SITE_URL"] ?? "https://lime-hillcroft-hub.lovable.app",
-).replace(/\/$/, "");
+/** The live domain. Every canonical URL, hreflang link, share tag and schema.org id uses it. */
+export const LIVE_ORIGIN = "https://www.ticwireless.com";
+
+// VITE_SITE_URL can point a test build at another domain, but a hosting provider's temporary
+// address (*.lovable.app, *.netlify.app) is never used: search engines would index it.
+const override = String(import.meta.env["VITE_SITE_URL"] ?? "").replace(/\/$/, "");
+export const SITE_URL =
+  override && !/\.(lovable|netlify)\.app$/i.test(override) ? override : LIVE_ORIGIN;
 
 export type Lang = "en" | "es";
 

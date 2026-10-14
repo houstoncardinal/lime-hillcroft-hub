@@ -12,8 +12,8 @@ Repair · Unlock." The team speaks English and Spanish (Se habla español).
   Westpark Tollway, in Southwest Houston (Westside / Mid West area), near the Mahatma Gandhi
   District (Harwin / Hillcroft), Gulfton, Sharpstown, Westchase and the Galleria.
 - Phone: (713) 339-9300. Calling is the fastest way to check stock, prices or repair quotes.
-- Website: https://lime-hillcroft-hub.lovable.app (English) and
-  https://lime-hillcroft-hub.lovable.app/es (Spanish).
+- Website: https://www.ticwireless.com (English) and
+  https://www.ticwireless.com/es (Spanish).
 - Facebook: https://www.facebook.com/ticwireless
 - TikTok: @tic.wireless
 - Google Maps: search "TIC Wireless Hillcroft Houston".
@@ -50,7 +50,7 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 - Leasing is also available on game consoles (PlayStation 5, Xbox, Nintendo Switch 2),
   laptops (including MacBook Air and Windows laptops), tablets (iPad, iPad Pro, iPad mini,
   Galaxy Tab), and audio and wearables (AirPods, Galaxy Buds, smartwatches, JBL speakers).
-- Leasing details page: https://lime-hillcroft-hub.lovable.app/leasing
+- Leasing details page: https://www.ticwireless.com/leasing
 - Buy · sell · trade: customers can trade in their old phone toward a new one or sell it.
 
 ## Prepaid plans, internet and payments
@@ -110,7 +110,7 @@ customers should call (713) 339-9300.
 ## Language
 
 - Se habla español. The team helps customers in English and Spanish, in store and on the phone.
-- Spanish website: https://lime-hillcroft-hub.lovable.app/es
+- Spanish website: https://www.ticwireless.com/es
 
 ## What the assistant should not do
 
