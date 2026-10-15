@@ -68,6 +68,7 @@ export function serviceHead(lang: Lang, service: Service | undefined) {
         [t.name, paths[lang]],
       ],
       faqs: t.faq,
+      ...(service.slug === "prepaid-plans" ? { dateModified: PLANS_CHECKED } : {}),
       extra: [
         serviceNode({
           lang,
@@ -107,6 +108,8 @@ function prepaidCatalog(lang: Lang, path: string) {
           priceCurrency: "USD",
           unitCode: "MON",
           validFrom: PLANS_CHECKED,
+          // Carrier prices are before taxes & fees.
+          valueAddedTaxIncluded: false,
         },
       })),
     })),

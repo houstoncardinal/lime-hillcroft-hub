@@ -3,22 +3,24 @@ import { PHONE, STREET } from "@/components/site/business";
 // All visible text on the leasing landing page, in English and Spanish. Keep both in sync.
 const en = {
   meta: {
-    title: "Lease-to-Own PS5, Xbox & Laptops in Houston | TIC Wireless",
+    title: "Lease-to-Own Phones, PS5 & Laptops in Houston — No Credit Needed",
     description:
-      "PS5, Xbox, Switch 2, MacBook, laptop & phone leasing in Houston. Lease-to-own with no credit needed, from $40 down. 3640 Hillcroft St, Suite C.",
+      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. No credit needed, from $40 down, subject to approval. On Hillcroft.",
     imageAlt:
       "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Home", "Leasing"],
   },
   hero: {
     kicker: "Leasing · lease-to-own · Houston",
-    title: ["Play now.", "Pay over time."],
+    // The H1 (keyword line); the slogan is shown under it, outside the H1.
+    title: ["Lease-to-own phones, PS5 & laptops", "— no credit needed."],
+    slogan: "Take it home today. Pay over time.",
     body: [
-      "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or the latest phone today — ",
+      "Take home an iPhone or Samsung Galaxy phone, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad today — ",
       "no credit needed",
       ", starting at ",
       "$40 down",
-      ".",
+      ", subject to approval.",
     ],
     call: "Check your options",
     visit: "Visit the store",
@@ -28,7 +30,7 @@ const en = {
     mainCaption: "PS5 & Switch 2 — in store now",
     tiles: [
       ["MacBook Air and iPads in a display case", "MacBook & iPad"],
-      ["Boxed iPhone 17 Pro phones", "iPhone 17 Pro"],
+      ["iPhone 18 Pro Max at TIC Wireless", "iPhone 18 Pro Max"],
     ],
     cardLabel: "Lease-to-own",
     cardUnit: "to start",
@@ -41,7 +43,7 @@ const en = {
     "MacBook Air",
     "Windows laptops",
     "iPad & iPad Pro",
-    "iPhone 17 Pro",
+    "iPhone 18 Pro Max",
     "Galaxy S series",
     "AirPods Max",
     "Smartwatches",
@@ -51,8 +53,13 @@ const en = {
     kicker: "What you can take home",
     title: "Not just phones. Almost anything we sell.",
     intro:
-      "Consoles for the kids, a laptop for school or work, a new phone for you — one simple plan at one counter.",
+      "A new phone for you, a console for the kids, a laptop for school or work — one simple plan at one counter.",
     items: [
+      {
+        title: "Phones",
+        items: ["iPhone 18 Pro Max", "iPhone 17 Pro", "Samsung Galaxy", "Unlocked Android"],
+        alt: "Boxed iPhone 17 Pro phones with a TIC Wireless Electronic & Repair Center business card",
+      },
       {
         title: "Game consoles",
         items: [
@@ -72,11 +79,6 @@ const en = {
           "Windows laptops",
         ],
         alt: "MacBook Air, iPad Pro, iPad and iPad mini boxes in a TIC Wireless Electronic & Repair Center display case",
-      },
-      {
-        title: "Phones",
-        items: ["iPhone 17 Pro", "Samsung Galaxy", "Unlocked Android", "Any carrier"],
-        alt: "Boxed iPhone 17 Pro phones with a TIC Wireless Electronic & Repair Center business card",
       },
       {
         title: "Audio & wearables",
@@ -107,13 +109,13 @@ const en = {
   },
   perks: {
     kicker: "Why TIC",
-    title: "Bad credit? No problem.",
-    body: "Big-box stores say no. We find a way to get you the console, laptop or phone you need.",
+    title: "Bad credit? You can still apply.",
+    body: "No credit is needed for our lease-to-own options, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed — it takes a few minutes at the counter to find out.",
     quote: "Arrendamiento con opción a compra — sin necesidad de crédito.",
     items: [
       [
         "No credit needed",
-        "Lease-to-own options don't require perfect credit. Bad credit? No problem.",
+        "No credit history is needed to apply, and bad credit is OK. Subject to approval.",
       ],
       ["From $40 down", "Start with a small amount instead of paying the full price on day one."],
       [
@@ -131,6 +133,10 @@ const en = {
     title: "Leasing, explained.",
     items: [
       {
+        q: "Can I get an iPhone or Samsung phone with bad credit?",
+        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones needs no credit, from $40 down, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID and it takes a few minutes in store to find out.",
+      },
+      {
         q: "Can I get a PS5 or Xbox with bad credit?",
         a: "Yes. We offer lease-to-own options where no credit is needed, so bad credit isn't a deal-breaker. Approval isn't guaranteed, but it takes just a few minutes in store to find out.",
       },
@@ -140,7 +146,7 @@ const en = {
       },
       {
         q: "What's the difference between leasing and a loan?",
-        a: "A loan is money you borrow and pay back over time. Leasing works differently: Lease-to-own means you lease the item and make regular payments; once the plan is complete — or you buy it out early — it's yours. Lease-to-own isn't a loan, and the total cost to own can be more than the cash price. We'll walk you through the exact terms before you sign.",
+        a: "A loan is money you borrow and pay back over time. Lease-to-own works differently: you lease the item and make regular payments; once the plan is complete — or you buy it out early — it's yours. Lease-to-own isn't a loan, and the total cost to own is more than the cash price. We'll walk you through the exact terms before you sign.",
       },
       {
         q: "How much do I pay upfront?",
@@ -148,7 +154,7 @@ const en = {
       },
       {
         q: "Can I pay it off early?",
-        a: "Ask us about early-payoff options when you apply — paying it off sooner can lower your total cost.",
+        a: "Ask us about early-payoff options when you apply — we'll explain how they work for your plan before you sign.",
       },
       {
         q: "Do you have the console or laptop I want in stock?",
@@ -166,29 +172,30 @@ const en = {
     directions: "Get directions",
   },
   disclaimer:
-    "Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own may be more than the retail price. Down payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
+    "Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own is more than the cash price. Down payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
 };
 
 export type LeasingCopy = typeof en;
 
 const es: LeasingCopy = {
   meta: {
-    title: "PS5, Xbox y Laptops a Pagos en Houston | TIC Wireless",
+    title: "Celulares, PS5 y Laptops a Pagos en Houston — Sin Crédito",
     description:
-      "PS5, Xbox, Switch 2, MacBook, laptops y celulares a pagos en Houston. Sin necesidad de crédito, desde $40 de enganche. 3640 Hillcroft St, Suite C.",
+      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Sin necesidad de crédito, desde $40 de enganche, sujeto a aprobación. En Hillcroft.",
     imageAlt:
       "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Inicio", "Arrendamiento"],
   },
   hero: {
     kicker: "A pagos con opción a compra · Houston",
-    title: ["Juega hoy.", "Paga poco a poco."],
+    title: ["Celulares, PS5 y laptops a pagos", "— sin necesidad de crédito."],
+    slogan: "Llévatelo hoy. Paga poco a poco.",
     body: [
-      "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o el celular más nuevo — ",
+      "Llévate hoy un iPhone o Samsung Galaxy, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad — ",
       "sin necesidad de crédito",
       ", desde ",
       "$40 de enganche",
-      ".",
+      ", sujeto a aprobación.",
     ],
     call: "Consulta tus opciones",
     visit: "Visita la tienda",
@@ -203,7 +210,7 @@ const es: LeasingCopy = {
     mainCaption: "PS5 y Switch 2 — ya en tienda",
     tiles: [
       ["MacBook Air y iPad en una vitrina", "MacBook y iPad"],
-      ["Cajas de iPhone 17 Pro", "iPhone 17 Pro"],
+      ["iPhone 18 Pro Max en TIC Wireless", "iPhone 18 Pro Max"],
     ],
     cardLabel: "Opción a compra",
     cardUnit: "para empezar",
@@ -216,7 +223,7 @@ const es: LeasingCopy = {
     "MacBook Air",
     "Laptops Windows",
     "iPad y iPad Pro",
-    "iPhone 17 Pro",
+    "iPhone 18 Pro Max",
     "Galaxy serie S",
     "AirPods Max",
     "Relojes inteligentes",
@@ -226,8 +233,13 @@ const es: LeasingCopy = {
     kicker: "Lo que te puedes llevar",
     title: "No solo celulares. Casi todo lo que vendemos.",
     intro:
-      "Una consola para los niños, una laptop para la escuela o el trabajo, un celular nuevo para ti — un solo plan, en un solo mostrador.",
+      "Un celular nuevo para ti, una consola para los niños, una laptop para la escuela o el trabajo — un solo plan, en un solo mostrador.",
     items: [
+      {
+        title: "Celulares",
+        items: ["iPhone 18 Pro Max", "iPhone 17 Pro", "Samsung Galaxy", "Android desbloqueado"],
+        alt: "Cajas de iPhone 17 Pro con una tarjeta de presentación de TIC Wireless Electronic & Repair Center",
+      },
       {
         title: "Consolas de videojuegos",
         items: ["PlayStation 5", "Xbox Series X y S", "Nintendo Switch 2", "Controles y audífonos"],
@@ -242,11 +254,6 @@ const es: LeasingCopy = {
           "Laptops Windows",
         ],
         alt: "Cajas de MacBook Air, iPad Pro, iPad y iPad mini en una vitrina de TIC Wireless Electronic & Repair Center",
-      },
-      {
-        title: "Celulares",
-        items: ["iPhone 17 Pro", "Samsung Galaxy", "Android desbloqueado", "Cualquier compañía"],
-        alt: "Cajas de iPhone 17 Pro con una tarjeta de presentación de TIC Wireless Electronic & Repair Center",
       },
       {
         title: "Audio y relojes",
@@ -283,13 +290,13 @@ const es: LeasingCopy = {
   },
   perks: {
     kicker: "¿Por qué TIC?",
-    title: "¿Mal crédito? No hay problema.",
-    body: "Las tiendas grandes dicen que no. Nosotros buscamos la forma de que te lleves la consola, laptop o celular que necesitas.",
+    title: "¿Mal crédito? Igual puedes aplicar.",
+    body: "Nuestras opciones de arrendamiento con opción a compra no necesitan crédito, así que el mal crédito no es impedimento automático. La aprobación no está garantizada: en unos minutos en el mostrador sabes si calificas.",
     quote: "Lease-to-own — no credit needed.",
     items: [
       [
         "Sin necesidad de crédito",
-        "Las opciones de arrendamiento no requieren crédito perfecto. ¿Mal crédito? No hay problema.",
+        "No necesitas historial de crédito para aplicar, y el mal crédito está bien. Sujeto a aprobación.",
       ],
       [
         "Desde $40 de enganche",
@@ -310,6 +317,10 @@ const es: LeasingCopy = {
     title: "El arrendamiento, explicado.",
     items: [
       {
+        q: "¿Puedo sacar un iPhone o Samsung a pagos con mal crédito?",
+        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados no necesita crédito y empieza desde $40 de enganche, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación con foto y en unos minutos en la tienda sabes si calificas.",
+      },
+      {
         q: "¿Puedo sacar un PS5 o Xbox a pagos con mal crédito?",
         a: "Sí. Tenemos opciones de arrendamiento con opción a compra sin necesidad de crédito, así que el mal crédito no es impedimento. La aprobación no está garantizada, pero en unos minutos en la tienda sabes si calificas.",
       },
@@ -319,7 +330,7 @@ const es: LeasingCopy = {
       },
       {
         q: "¿Cuál es la diferencia entre el arrendamiento y un préstamo?",
-        a: "Un préstamo es dinero que pides y pagas con el tiempo. El arrendamiento funciona distinto: En el arrendamiento con opción a compra rentas el equipo y haces pagos regulares; al terminar el plan — o si lo liquidas antes — es tuyo. No es un préstamo, y el costo total puede ser mayor que el precio de contado. Te explicamos los términos exactos antes de firmar.",
+        a: "Un préstamo es dinero que pides y pagas con el tiempo. El arrendamiento con opción a compra funciona distinto: rentas el equipo y haces pagos regulares; al terminar el plan — o si lo liquidas antes — es tuyo. No es un préstamo, y el costo total es mayor que el precio de contado. Te explicamos los términos exactos antes de firmar.",
       },
       {
         q: "¿Cuánto doy de enganche?",
@@ -327,7 +338,7 @@ const es: LeasingCopy = {
       },
       {
         q: "¿Puedo liquidarlo antes?",
-        a: "Pregúntanos por las opciones de liquidación anticipada al aplicar — pagarlo antes puede bajar tu costo total.",
+        a: "Pregúntanos por las opciones de liquidación anticipada al aplicar; te explicamos cómo funcionan en tu plan antes de firmar.",
       },
       {
         q: "¿Tienen la consola o laptop que busco?",
@@ -345,7 +356,7 @@ const es: LeasingCopy = {
     directions: "Cómo llegar",
   },
   disclaimer:
-    "El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total puede ser mayor que el precio de contado. El enganche, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
+    "El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total es mayor que el precio de contado. El enganche, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
 };
 
 export const LEASING_COPY = { en, es };

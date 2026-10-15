@@ -16,7 +16,17 @@ import { cn } from "@/lib/utils";
 
 /** Google's "G" (public/google-g.svg: one cached file instead of an inline SVG per card). */
 export function GoogleMark({ className = "h-4 w-4" }: { className?: string }) {
-  return <img src="/google-g.svg" alt="" width={16} height={16} className={className} />;
+  return (
+    <img
+      src="/google-g.svg"
+      alt=""
+      width={16}
+      height={16}
+      loading="lazy"
+      decoding="async"
+      className={className}
+    />
+  );
 }
 
 // Google's relative dates ("4 months ago") in the page's language.

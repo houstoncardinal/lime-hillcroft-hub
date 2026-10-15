@@ -141,7 +141,7 @@ const en = {
   },
   reviews: {
     rating: "4.7 on Google",
-    count: "from 400+ reviews",
+    count: "from 408 reviews",
     cta: "Read our reviews",
   },
   faqTitle: "Location questions",
@@ -153,6 +153,10 @@ const en = {
     {
       q: "What are your store hours?",
       a: "Monday to Saturday 9:00 AM – 8:00 PM and Sunday 9:00 AM – 5:00 PM. Holiday hours may vary, so call (713) 339-9300 to confirm.",
+    },
+    {
+      q: "Are you open on Sunday?",
+      a: "Yes. We're open Sunday 9:00 AM – 5:00 PM, and Monday to Saturday 9:00 AM – 8:00 PM. No appointment needed.",
     },
     {
       q: "Is there parking?",
@@ -305,7 +309,7 @@ const es: LocationCopy = {
   },
   reviews: {
     rating: "4.7 en Google",
-    count: "con más de 400 reseñas",
+    count: "con 408 reseñas",
     cta: "Ver reseñas",
   },
   faqTitle: "Preguntas sobre la tienda",
@@ -317,6 +321,10 @@ const es: LocationCopy = {
     {
       q: "¿Cuál es el horario?",
       a: "De lunes a sábado de 9:00 AM a 8:00 PM y el domingo de 9:00 AM a 5:00 PM. En días festivos puede cambiar; llama al (713) 339-9300 para confirmar.",
+    },
+    {
+      q: "¿Abren los domingos?",
+      a: "Sí. Abrimos el domingo de 9:00 AM a 5:00 PM, y de lunes a sábado de 9:00 AM a 8:00 PM. No necesitas cita.",
     },
     {
       q: "¿Hay estacionamiento?",

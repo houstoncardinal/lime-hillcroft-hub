@@ -1,4 +1,7 @@
+import { GOOGLE_REVIEW_COUNT } from "@/components/reviews/data";
 import { PHONE, RATING, STREET } from "@/components/site/business";
+
+const REVIEWS_N = GOOGLE_REVIEW_COUNT;
 
 // All visible text on the home page, in English and Spanish. Keep both in sync.
 const en = {
@@ -11,29 +14,31 @@ const en = {
     breadcrumb: "Home",
   },
   hero: {
-    kicker: "Cell phone store & repair · Hillcroft, Houston",
-    title: ["Your phone,", "sorted."],
+    kicker: "3640 Hillcroft St · Southwest Houston",
+    // The H1 (keyword line); the slogan is shown under it, outside the H1.
+    title: ["Cell phone store & phone repair", "in Houston."],
+    slogan: "Your phone, sorted.",
     body: [
-      "The new iPhone 18 Pro Max and the latest unlocked Androids, with leasing from ",
+      "The new iPhone 18 Pro Max and unlocked Android phones, with leasing from ",
       "$40 down",
-      " — bad credit, no problem. Plus prepaid plans, same-day repairs and every accessory you need.",
+      " — no credit needed, subject to approval. Plus prepaid plans, same-day repairs and the accessories you need.",
     ],
     directions: "Get directions",
-    reviews: "400+ Google reviews",
+    reviews: `${REVIEWS_N} Google reviews`,
     language: "Se habla español",
     imageKicker: "Just in",
     imageTitle: "iPhone 18 Pro Max",
     imageSub: "Unlocked · lease-to-own available",
-    imageCta: "See leasing",
+    imageCta: "See the iPhone 18",
     imageAlt:
       "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless Electronic & Repair Center",
-    leaseLabel: "Leasing",
+    leaseLabel: "iPhone 18 Pro Max leasing",
     leaseUnit: "down",
-    leaseNote: "Weekly, biweekly or monthly options",
+    leaseNote: "Minimum down payment to lease the iPhone 18 Pro Max, subject to approval. Weekly, biweekly or monthly payments.",
   },
   ticker: [
     "Leasing from $40 down",
-    "Bad credit? No problem",
+    "No credit needed",
     "Unlocked iPhones & Androids",
     "Prepaid plans",
     "Xfinity Prepaid internet",
@@ -48,8 +53,8 @@ const en = {
     imageAlt:
       "Inside the new TIC Wireless Electronic & Repair Center store on Hillcroft: glass display counters, accessory walls and service stations",
     stats: [
-      [`${RATING}★`, "400+ Google reviews"],
-      ["12+", "Carriers & recharge brands"],
+      [`${RATING}★`, `${REVIEWS_N} Google reviews`],
+      ["12", "Prepaid carriers"],
       ["Same day", "Most repairs"],
       ["7 days", "Open every week"],
     ],
@@ -62,7 +67,7 @@ const en = {
       "Buying, switching, fixing or paying — skip the mall and the big-box lines. We handle it all on Hillcroft.",
     featured: {
       title: "Unlocked iPhones & Androids",
-      body: "Walk out with a new phone today. Leasing starting at $40 down on the latest iPhone and Galaxy models.",
+      body: "Walk out with a new phone today. Leasing starting at $40 down on iPhone and Galaxy models, subject to approval.",
       chips: ["Bad credit OK", "$40 down", "iPhone & Galaxy", "Take it home today"],
       link: "Leasing on consoles, laptops & more",
       imageAlt:
@@ -71,7 +76,7 @@ const en = {
     items: [
       [
         "Prepaid plans",
-        "Verizon, AT&T, T-Mobile, Cricket, Simple Mobile and more. No contracts, no surprise bills.",
+        "12 carriers, including Verizon, AT&T, T-Mobile, Cricket and Simple Mobile. No contracts, no surprise bills.",
       ],
       [
         "Xfinity Prepaid internet",
@@ -83,7 +88,10 @@ const en = {
       ],
       ["Unlocking", "Unlock your device and take it to the carrier that works best for you."],
       ["Buy · Sell · Trade", "Trade in your old phone toward something new, or sell it for cash."],
-      ["Bill payments", "Pay your phone bill in person for all major carriers. No extra charges."],
+      [
+        "Bill payments",
+        "Pay your phone bill in person for the major prepaid carriers. No extra charges.",
+      ],
       [
         "International recharge",
         "Top up family abroad — Tigo, Digicel, Movistar, Telcel and more.",
@@ -93,7 +101,7 @@ const en = {
   },
   carriers: {
     kicker: "Plans & payments",
-    title: "Every major prepaid carrier, one counter.",
+    title: "12 prepaid carriers, one counter.",
     recharge: "International recharge:",
     more: "& more",
   },
@@ -132,7 +140,7 @@ const en = {
       "Memory cards",
     ],
     photos: [
-      ["Wall of phone cases and screen protectors", "Cases for every model"],
+      ["Wall of phone cases and screen protectors", "Cases for most models"],
       [
         "JBL speakers, smartwatches and wireless chargers in a display case",
         "JBL, watches & chargers",
@@ -143,7 +151,7 @@ const en = {
   },
   rating: {
     kicker: "Trusted on Hillcroft",
-    body: `Rated ${RATING} out of 5 across 400+ Google reviews.`,
+    body: `Rated ${RATING} out of 5 across ${REVIEWS_N} Google reviews.`,
     cta: "See us on Google",
     imageAlt: "Samsung Galaxy S22 Ultra on the counter next to a rugged case",
   },
@@ -151,26 +159,29 @@ const en = {
     kicker: "At a glance",
     title: "TIC Wireless Electronic & Repair Center in 30 seconds.",
     summary:
-      "TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down, prepaid plans for every major carrier and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.",
+      "TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down (subject to approval), prepaid plans from 12 carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.",
     facts: [
       ["Address", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Phone", "(713) 339-9300"],
       ["Hours", "Mon–Sat 9 AM–8 PM · Sun 9 AM–5 PM · no appointment needed"],
-      ["Leasing", "No credit needed · from $40 down · weekly, biweekly or monthly payments"],
+      [
+        "Leasing",
+        "No credit needed · from $40 down · subject to approval · weekly, biweekly or monthly payments",
+      ],
       ["Repairs", "Same-day screen, battery & charging-port repair for iPhone, Samsung & Android"],
       [
         "Prepaid carriers",
-        "Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile",
+        "T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile, GoSmart",
       ],
       ["Languages", "English & Spanish"],
-      ["Rating", "4.7★ on Google · 400+ reviews"],
+      ["Rating", `${RATING}★ on Google · ${REVIEWS_N} reviews`],
     ],
   },
   area: {
     kicker: "Areas we serve",
     title: "Your neighborhood phone store in Southwest Houston.",
     body: [
-      `You'll find us at ${STREET}, on Hillcroft between Richmond Ave and the Westpark Tollway — just north of the Mahatma Gandhi District (Harwin / Hillcroft) and minutes from Gulfton, Sharpstown, Westchase and the Galleria.`,
+      `You'll find us at ${STREET}, near Hillcroft & Windswept, just north of the Westpark Tollway — up Hillcroft from the Mahatma Gandhi District (Harwin / Hillcroft) and minutes from Gulfton, Sharpstown, Westchase and the Galleria.`,
       "Customers come to us from all over Southwest Houston for phones, prepaid plans, repairs and bill payments — in English or Spanish.",
     ],
     places: [
@@ -185,7 +196,7 @@ const en = {
       "Bellaire",
       "Alief",
     ],
-    zips: "Nearby ZIP codes: 77057 · 77036 · 77063 · 77042 · 77081 · 77074 · 77056",
+    zips: "Nearby ZIP codes: 77057 · 77036 · 77081 · 77074 · 77042 · 77056 · 77401",
     cta: "Find your area or ZIP code",
   },
   faq: {
@@ -202,7 +213,7 @@ const en = {
       },
       {
         q: "Can I get a phone with bad credit or no credit?",
-        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones starting at $40 down — bad credit is no problem. Stop by and we'll walk you through the options in a few minutes.",
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones starting at $40 down. No credit is needed, so bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Stop by with a valid photo ID and we'll walk you through the options in a few minutes.",
       },
       {
         q: "Do you fix cracked iPhone and Samsung screens?",
@@ -263,25 +274,26 @@ const es: HomeCopy = {
     breadcrumb: "Inicio",
   },
   hero: {
-    kicker: "Tienda de celulares y reparación · Hillcroft, Houston",
-    title: ["Tu celular,", "resuelto."],
+    kicker: "3640 Hillcroft St · Suroeste de Houston",
+    title: ["Tienda y reparación de celulares", "en Houston."],
+    slogan: "Tu celular, resuelto.",
     body: [
-      "El nuevo iPhone 18 Pro Max y los Android más recientes, desbloqueados y a pagos desde ",
+      "El nuevo iPhone 18 Pro Max y celulares Android, desbloqueados y a pagos desde ",
       "$40 de enganche",
-      " — ¿mal crédito? No hay problema. Además planes prepagados, reparaciones el mismo día y todos los accesorios que necesitas.",
+      " — sin necesidad de crédito, sujeto a aprobación. Además planes prepagados, reparaciones el mismo día y los accesorios que necesitas.",
     ],
     directions: "Cómo llegar",
-    reviews: "400+ reseñas en Google",
+    reviews: `${REVIEWS_N} reseñas en Google`,
     language: "We speak English",
     imageKicker: "Recién llegado",
     imageTitle: "iPhone 18 Pro Max",
     imageSub: "Desbloqueado · con opción a compra",
-    imageCta: "Ver arrendamiento",
+    imageCta: "Ver el iPhone 18",
     imageAlt:
       "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless Electronic & Repair Center",
-    leaseLabel: "A pagos",
+    leaseLabel: "iPhone 18 Pro Max a pagos",
     leaseUnit: "de enganche",
-    leaseNote: "Opciones semanales, quincenales o mensuales",
+    leaseNote: "Enganche mínimo para arrendar el iPhone 18 Pro Max, sujeto a aprobación. Pagos semanales, quincenales o mensuales.",
   },
   ticker: [
     "A pagos desde $40",
@@ -300,8 +312,8 @@ const es: HomeCopy = {
     imageAlt:
       "Interior de la nueva tienda TIC Wireless Electronic & Repair Center en Hillcroft: vitrinas, paredes de accesorios y estaciones de servicio",
     stats: [
-      [`${RATING}★`, "400+ reseñas en Google"],
-      ["12+", "Compañías y recargas"],
+      [`${RATING}★`, `${REVIEWS_N} reseñas en Google`],
+      ["12", "Compañías prepagadas"],
       ["Mismo día", "La mayoría de reparaciones"],
       ["7 días", "Abiertos toda la semana"],
     ],
@@ -314,7 +326,7 @@ const es: HomeCopy = {
       "Comprar, cambiar de compañía, reparar o pagar — sin filas de centro comercial. Lo resolvemos todo en Hillcroft.",
     featured: {
       title: "iPhone y Android desbloqueados",
-      body: "Llévate tu celular nuevo hoy mismo. A pagos desde $40 de enganche en los últimos modelos de iPhone y Galaxy.",
+      body: "Llévate tu celular nuevo hoy mismo. A pagos desde $40 de enganche en modelos de iPhone y Galaxy, sujeto a aprobación.",
       chips: ["Mal crédito OK", "$40 de enganche", "iPhone y Galaxy", "Llévatelo hoy"],
       link: "Consolas, laptops y más a pagos",
       imageAlt:
@@ -323,7 +335,7 @@ const es: HomeCopy = {
     items: [
       [
         "Planes prepagados",
-        "Verizon, AT&T, T-Mobile, Cricket, Simple Mobile y más. Sin contratos, sin sorpresas.",
+        "12 compañías, entre ellas Verizon, AT&T, T-Mobile, Cricket y Simple Mobile. Sin contratos, sin sorpresas.",
       ],
       [
         "Internet prepagado Xfinity",
@@ -343,7 +355,7 @@ const es: HomeCopy = {
       ],
       [
         "Pago de facturas",
-        "Paga tu factura de teléfono en persona para todas las compañías. Sin cargos extra.",
+        "Paga en persona la factura de las principales compañías prepagadas. Sin cargos extra.",
       ],
       [
         "Recargas internacionales",
@@ -354,7 +366,7 @@ const es: HomeCopy = {
   },
   carriers: {
     kicker: "Planes y pagos",
-    title: "Todas las compañías prepagadas, en un solo mostrador.",
+    title: "12 compañías prepagadas, en un solo mostrador.",
     recharge: "Recargas internacionales:",
     more: "y más",
   },
@@ -396,7 +408,7 @@ const es: HomeCopy = {
       "Memorias",
     ],
     photos: [
-      ["Pared de fundas y micas para celular", "Fundas para cada modelo"],
+      ["Pared de fundas y micas para celular", "Fundas para la mayoría de modelos"],
       [
         "Bocinas JBL, relojes inteligentes y cargadores en una vitrina",
         "JBL, relojes y cargadores",
@@ -407,7 +419,7 @@ const es: HomeCopy = {
   },
   rating: {
     kicker: "La confianza de Hillcroft",
-    body: `Calificación de ${RATING} de 5 en más de 400 reseñas de Google.`,
+    body: `Calificación de ${RATING} de 5 en ${REVIEWS_N} reseñas de Google.`,
     cta: "Míranos en Google",
     imageAlt: "Samsung Galaxy S22 Ultra en el mostrador junto a una funda resistente",
   },
@@ -415,14 +427,14 @@ const es: HomeCopy = {
     kicker: "En resumen",
     title: "TIC Wireless Electronic & Repair Center en 30 segundos.",
     summary:
-      "TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche, planes prepagados de todas las compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.",
+      "TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche (sujeto a aprobación), planes prepagados de 12 compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.",
     facts: [
       ["Dirección", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Teléfono", "(713) 339-9300"],
       ["Horario", "Lun–Sáb 9 AM–8 PM · Dom 9 AM–5 PM · sin cita"],
       [
         "Arrendamiento",
-        "Sin necesidad de crédito · desde $40 de enganche · pagos semanales, quincenales o mensuales",
+        "Sin necesidad de crédito · desde $40 de enganche · sujeto a aprobación · pagos semanales, quincenales o mensuales",
       ],
       [
         "Reparaciones",
@@ -430,17 +442,17 @@ const es: HomeCopy = {
       ],
       [
         "Compañías prepagadas",
-        "Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile",
+        "T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile, GoSmart",
       ],
       ["Idiomas", "Español e inglés"],
-      ["Calificación", "4.7★ en Google · más de 400 reseñas"],
+      ["Calificación", `${RATING}★ en Google · ${REVIEWS_N} reseñas`],
     ],
   },
   area: {
     kicker: "Zonas que atendemos",
     title: "Tu tienda de celulares de confianza en el suroeste de Houston.",
     body: [
-      `Estamos en ${STREET}, sobre Hillcroft entre Richmond Ave y el Westpark Tollway — justo al norte del Distrito Mahatma Gandhi (Harwin / Hillcroft) y a minutos de Gulfton, Sharpstown, Westchase y la Galleria.`,
+      `Estamos en ${STREET}, cerca de Hillcroft y Windswept, justo al norte del Westpark Tollway — subiendo por Hillcroft desde el Distrito Mahatma Gandhi (Harwin / Hillcroft) y a minutos de Gulfton, Sharpstown, Westchase y la Galleria.`,
       "Clientes de todo el suroeste de Houston vienen por celulares, planes prepagados, reparaciones y pago de facturas — en español o en inglés.",
     ],
     places: [
@@ -455,7 +467,7 @@ const es: HomeCopy = {
       "Bellaire",
       "Alief",
     ],
-    zips: "Códigos postales cercanos: 77057 · 77036 · 77063 · 77042 · 77081 · 77074 · 77056",
+    zips: "Códigos postales cercanos: 77057 · 77036 · 77081 · 77074 · 77042 · 77056 · 77401",
     cta: "Busca tu zona o código postal",
   },
   faq: {
@@ -472,7 +484,7 @@ const es: HomeCopy = {
       },
       {
         q: "¿Puedo sacar un celular a pagos con mal crédito o sin crédito?",
-        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $40 de enganche — el mal crédito no es problema. Ven y te explicamos las opciones en unos minutos.",
+        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $40 de enganche. No necesitas crédito, así que el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Ven con una identificación con foto y te explicamos las opciones en unos minutos.",
       },
       {
         q: "¿Reparan pantallas rotas de iPhone y Samsung?",
@@ -484,7 +496,7 @@ const es: HomeCopy = {
       },
       {
         q: "¿Puedo pagar mi factura de teléfono en TIC Wireless Electronic & Repair Center?",
-        a: "Sí. Recibimos pagos de todas las compañías prepagadas principales, sin cargos extra. También vendemos internet prepagado Xfinity y recargas internacionales.",
+        a: "Sí. Recibimos pagos de las principales compañías prepagadas, sin cargos extra. También vendemos internet prepagado Xfinity y recargas internacionales.",
       },
       {
         q: "¿Cuál es su horario?",

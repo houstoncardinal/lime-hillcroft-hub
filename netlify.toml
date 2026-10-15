@@ -7,3 +7,33 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# One hop from the bare http domain to the canonical https://www host (otherwise http → https → www).
+[[redirects]]
+  from = "http://ticwirelesstx.com/*"
+  to = "https://www.ticwirelesstx.com/:splat"
+  status = 301
+  force = true
+
+# Browser caching for store photos and share images. Their file names are not content-hashed, so
+# they get one day (not "immutable"); the hashed /assets/* files keep Vite's long cache.
+# Server-rendered HTML gets its edge-cache header in src/server.ts (these rules only reach static files).
+[[headers]]
+  for = "/photos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/og/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/google-g.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

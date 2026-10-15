@@ -45,6 +45,12 @@ describe("App routing", () => {
   it.each([
     ["/services", "/services/"],
     ["/services/phone-repair", "/services/$slug"],
+    ["/services/iphone-repair", "/services/$slug"],
+    ["/services/samsung-repair", "/services/$slug"],
+    ["/es/servicios/iphone-repair", "/es/servicios/$slug"],
+    ["/es/servicios/samsung-repair", "/es/servicios/$slug"],
+    ["/iphone-18", "/iphone-18/"],
+    ["/es/iphone-18", "/es/iphone-18/"],
     ["/es/servicios", "/es/servicios/"],
     ["/es/servicios/prepaid-plans", "/es/servicios/$slug"],
     ["/location", "/location/"],
@@ -57,6 +63,8 @@ describe("App routing", () => {
     ["/es/resenas", "/es/resenas/"],
     ["/es/laptops-y-tabletas", "/es/laptops-y-tabletas/"],
     ["/es/ubicacion", "/es/ubicacion/"],
+    ["/devices/galaxy-s20-ultra", "/devices/$slug"],
+    ["/es/equipos/ipad-mini-5", "/es/equipos/$slug"],
   ])("matches the services page %s", (path, routeId) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 

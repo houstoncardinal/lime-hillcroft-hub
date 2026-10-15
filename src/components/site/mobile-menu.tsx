@@ -137,7 +137,7 @@ export function MobileMenu({
   const listClass =
     "divide-y divide-white/[0.07] overflow-hidden rounded-2xl bg-white/[0.04] ring-1 ring-white/10";
   const rowClass =
-    "flex h-12 items-center gap-3 px-4 text-[15px] font-semibold transition short:h-10 tiny:h-9 micro:h-8 micro:text-sm";
+    "flex h-12 items-center gap-3 px-4 text-[15px] font-semibold transition short:h-10 tiny:h-9 micro:h-8 micro:text-sm nano:h-[30px]";
   const row = ([label, href, Icon]: Item) => {
     const here = isCurrent(href);
     return (

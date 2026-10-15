@@ -1,4 +1,5 @@
-import type { Lang } from "@/components/site/seo";
+import { devicePaths } from "@/components/products/device-paths";
+import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 // Latest devices in the store, from the owner's list (Oct 13, 2026). Images are crops of the
 // store's own display-case photos (public/photos/devices). Shown on the unlocked-phones page,
@@ -24,6 +25,8 @@ export type Device = {
   w: number;
   h: number;
   alt: L;
+  /** The device's own page (the card links to it). Defaults to /devices/<id>. */
+  page?: L;
 };
 
 const img = (file: string) => `/photos/devices/${file}.webp`;
@@ -32,7 +35,7 @@ const box = (model: string): L => ({
   es: `Caja de Samsung ${model} en la vitrina de TIC Wireless`,
 });
 
-export const LATEST_DEVICES: Device[] = [
+const SHELF: Device[] = [
   {
     id: "iphone-18",
     name: "iPhone 18",
@@ -44,6 +47,7 @@ export const LATEST_DEVICES: Device[] = [
     w: 640,
     h: 800,
     alt: { en: "iPhone 18 Pro Max at TIC Wireless", es: "iPhone 18 Pro Max en TIC Wireless" },
+    page: ALTERNATES.iphone18,
   },
   {
     id: "galaxy-s20-ultra",
@@ -197,6 +201,13 @@ export const LATEST_DEVICES: Device[] = [
     },
   },
 ];
+
+// Every device opens a page: the iPhone 18 has its own; the rest use /devices/<id>
+// (src/components/products/devices.ts).
+export const LATEST_DEVICES: (Device & { page: L })[] = SHELF.map((d) => ({
+  ...d,
+  page: d.page ?? devicePaths(d.id),
+}));
 
 export const PHONES = LATEST_DEVICES.filter((d) => d.kind !== "ipad");
 export const TABLETS = LATEST_DEVICES.filter((d) => d.kind === "ipad");

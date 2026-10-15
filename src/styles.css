@@ -222,9 +222,10 @@ html[data-palette="crimson"] {
 
 /* Short screens (e.g. iPhone SE with Safari's toolbars): the mobile menu tightens up to fit
    on one screen. */
-@custom-variant short (@media (max-height: 720px));
-@custom-variant tiny (@media (max-height: 600px));
-@custom-variant micro (@media (max-height: 500px));
+@custom-variant short (@media (max-height: 780px));
+@custom-variant tiny (@media (max-height: 640px));
+@custom-variant micro (@media (max-height: 560px));
+@custom-variant nano (@media (max-height: 480px));
 
 @utility eyebrow {
   font-family: var(--font-display);
@@ -336,13 +337,16 @@ html.menu-open #tidio-chat-iframe {
 /* Brand-orange text is darkened on light backgrounds so it meets WCAG contrast (4.5:1); on the
    dark navy surfaces it stays bright. Works for every color theme. */
 :root {
-  --primary-text: color-mix(in oklab, var(--primary) 60%, var(--ink));
+  --primary-text-dark: color-mix(in oklab, var(--primary) 60%, var(--ink));
 }
 @supports (color: oklch(from red l c h)) {
   :root {
     /* Same hue, just darker: a saturated burnt orange rather than a muddy mix. */
-    --primary-text: oklch(from var(--primary) min(l, 0.54) calc(c * 1.08) h);
+    --primary-text-dark: oklch(from var(--primary) min(l, 0.54) calc(c * 1.08) h);
   }
+}
+:root {
+  --primary-text: var(--primary-text-dark);
 }
 [class*="bg-ink"],
 [class*="bg-ink"] *,
@@ -351,6 +355,11 @@ html.menu-open #tidio-chat-iframe {
 footer,
 footer * {
   --primary-text: var(--primary);
+}
+/* A light panel inside a dark area (e.g. the header's dropdown menus). */
+.surface-light,
+.surface-light * {
+  --primary-text: var(--primary-text-dark);
 }
 .text-primary {
   color: var(--primary-text);

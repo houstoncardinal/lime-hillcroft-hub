@@ -26,12 +26,14 @@ import { Route as AdminShopifyRouteImport } from './routes/admin/shopify'
 import { Route as AdminTimeClockRouteImport } from './routes/admin/time-clock'
 import { Route as AreasIndexRouteImport } from './routes/areas/index'
 import { Route as AreasSlugRouteImport } from './routes/areas/$slug'
+import { Route as DevicesSlugRouteImport } from './routes/devices/$slug'
 import { Route as EsIndexRouteImport } from './routes/es/index'
 import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
 import { Route as GameConsolesIndexRouteImport } from './routes/game-consoles/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
+import { Route as Iphone18IndexRouteImport } from './routes/iphone-18/index'
 import { Route as LaptopsTabletsIndexRouteImport } from './routes/laptops-tablets/index'
 import { Route as LocationIndexRouteImport } from './routes/location/index'
 import { Route as ReviewsIndexRouteImport } from './routes/reviews/index'
@@ -41,8 +43,10 @@ import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
 import { Route as EsAccesoriosIndexRouteImport } from './routes/es/accesorios/index'
 import { Route as EsConsolasIndexRouteImport } from './routes/es/consolas/index'
+import { Route as EsEquiposSlugRouteImport } from './routes/es/equipos/$slug'
 import { Route as EsGuiasIndexRouteImport } from './routes/es/guias/index'
 import { Route as EsGuiasSlugRouteImport } from './routes/es/guias/$slug'
+import { Route as EsIphone18IndexRouteImport } from './routes/es/iphone-18/index'
 import { Route as EsLaptopsYTabletasIndexRouteImport } from './routes/es/laptops-y-tabletas/index'
 import { Route as EsResenasIndexRouteImport } from './routes/es/resenas/index'
 import { Route as EsServiciosIndexRouteImport } from './routes/es/servicios/index'
@@ -138,6 +142,11 @@ const AreasSlugRoute = AreasSlugRouteImport.update({
   path: '/areas/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DevicesSlugRoute = DevicesSlugRouteImport.update({
+  id: '/devices/$slug',
+  path: '/devices/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsIndexRoute = EsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
@@ -166,6 +175,11 @@ const GuidesIndexRoute = GuidesIndexRouteImport.update({
 const GuidesSlugRoute = GuidesSlugRouteImport.update({
   id: '/guides/$slug',
   path: '/guides/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Iphone18IndexRoute = Iphone18IndexRouteImport.update({
+  id: '/iphone-18/',
+  path: '/iphone-18/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LaptopsTabletsIndexRoute = LaptopsTabletsIndexRouteImport.update({
@@ -213,6 +227,11 @@ const EsConsolasIndexRoute = EsConsolasIndexRouteImport.update({
   path: '/es/consolas/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsEquiposSlugRoute = EsEquiposSlugRouteImport.update({
+  id: '/es/equipos/$slug',
+  path: '/es/equipos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsGuiasIndexRoute = EsGuiasIndexRouteImport.update({
   id: '/es/guias/',
   path: '/es/guias/',
@@ -221,6 +240,11 @@ const EsGuiasIndexRoute = EsGuiasIndexRouteImport.update({
 const EsGuiasSlugRoute = EsGuiasSlugRouteImport.update({
   id: '/es/guias/$slug',
   path: '/es/guias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsIphone18IndexRoute = EsIphone18IndexRouteImport.update({
+  id: '/es/iphone-18/',
+  path: '/es/iphone-18/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsLaptopsYTabletasIndexRoute = EsLaptopsYTabletasIndexRouteImport.update({
@@ -284,6 +308,7 @@ export interface FileRoutesByFullPath {
   '/admin/shopify': typeof AdminShopifyRoute
   '/admin/time-clock': typeof AdminTimeClockRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
@@ -295,11 +320,13 @@ export interface FileRoutesByFullPath {
   '/es/': typeof EsIndexRoute
   '/game-consoles/': typeof GameConsolesIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/iphone-18/': typeof Iphone18IndexRoute
   '/laptops-tablets/': typeof LaptopsTabletsIndexRoute
   '/location/': typeof LocationIndexRoute
   '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
+  '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
@@ -307,6 +334,7 @@ export interface FileRoutesByFullPath {
   '/es/accesorios/': typeof EsAccesoriosIndexRoute
   '/es/consolas/': typeof EsConsolasIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
+  '/es/iphone-18/': typeof EsIphone18IndexRoute
   '/es/laptops-y-tabletas/': typeof EsLaptopsYTabletasIndexRoute
   '/es/resenas/': typeof EsResenasIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
@@ -328,6 +356,7 @@ export interface FileRoutesByTo {
   '/admin/shopify': typeof AdminShopifyRoute
   '/admin/time-clock': typeof AdminTimeClockRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
@@ -339,11 +368,13 @@ export interface FileRoutesByTo {
   '/es': typeof EsIndexRoute
   '/game-consoles': typeof GameConsolesIndexRoute
   '/guides': typeof GuidesIndexRoute
+  '/iphone-18': typeof Iphone18IndexRoute
   '/laptops-tablets': typeof LaptopsTabletsIndexRoute
   '/location': typeof LocationIndexRoute
   '/reviews': typeof ReviewsIndexRoute
   '/services': typeof ServicesIndexRoute
   '/shop': typeof ShopIndexRoute
+  '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
@@ -351,6 +382,7 @@ export interface FileRoutesByTo {
   '/es/accesorios': typeof EsAccesoriosIndexRoute
   '/es/consolas': typeof EsConsolasIndexRoute
   '/es/guias': typeof EsGuiasIndexRoute
+  '/es/iphone-18': typeof EsIphone18IndexRoute
   '/es/laptops-y-tabletas': typeof EsLaptopsYTabletasIndexRoute
   '/es/resenas': typeof EsResenasIndexRoute
   '/es/servicios': typeof EsServiciosIndexRoute
@@ -374,6 +406,7 @@ export interface FileRoutesById {
   '/admin/shopify': typeof AdminShopifyRoute
   '/admin/time-clock': typeof AdminTimeClockRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
@@ -385,11 +418,13 @@ export interface FileRoutesById {
   '/es/': typeof EsIndexRoute
   '/game-consoles/': typeof GameConsolesIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/iphone-18/': typeof Iphone18IndexRoute
   '/laptops-tablets/': typeof LaptopsTabletsIndexRoute
   '/location/': typeof LocationIndexRoute
   '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
+  '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
@@ -397,6 +432,7 @@ export interface FileRoutesById {
   '/es/accesorios/': typeof EsAccesoriosIndexRoute
   '/es/consolas/': typeof EsConsolasIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
+  '/es/iphone-18/': typeof EsIphone18IndexRoute
   '/es/laptops-y-tabletas/': typeof EsLaptopsYTabletasIndexRoute
   '/es/resenas/': typeof EsResenasIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
@@ -421,6 +457,7 @@ export interface FileRouteTypes {
     | '/admin/shopify'
     | '/admin/time-clock'
     | '/areas/$slug'
+    | '/devices/$slug'
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
@@ -432,11 +469,13 @@ export interface FileRouteTypes {
     | '/es/'
     | '/game-consoles/'
     | '/guides/'
+    | '/iphone-18/'
     | '/laptops-tablets/'
     | '/location/'
     | '/reviews/'
     | '/services/'
     | '/shop/'
+    | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
@@ -444,6 +483,7 @@ export interface FileRouteTypes {
     | '/es/accesorios/'
     | '/es/consolas/'
     | '/es/guias/'
+    | '/es/iphone-18/'
     | '/es/laptops-y-tabletas/'
     | '/es/resenas/'
     | '/es/servicios/'
@@ -465,6 +505,7 @@ export interface FileRouteTypes {
     | '/admin/shopify'
     | '/admin/time-clock'
     | '/areas/$slug'
+    | '/devices/$slug'
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
@@ -476,11 +517,13 @@ export interface FileRouteTypes {
     | '/es'
     | '/game-consoles'
     | '/guides'
+    | '/iphone-18'
     | '/laptops-tablets'
     | '/location'
     | '/reviews'
     | '/services'
     | '/shop'
+    | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
@@ -488,6 +531,7 @@ export interface FileRouteTypes {
     | '/es/accesorios'
     | '/es/consolas'
     | '/es/guias'
+    | '/es/iphone-18'
     | '/es/laptops-y-tabletas'
     | '/es/resenas'
     | '/es/servicios'
@@ -510,6 +554,7 @@ export interface FileRouteTypes {
     | '/admin/shopify'
     | '/admin/time-clock'
     | '/areas/$slug'
+    | '/devices/$slug'
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
@@ -521,11 +566,13 @@ export interface FileRouteTypes {
     | '/es/'
     | '/game-consoles/'
     | '/guides/'
+    | '/iphone-18/'
     | '/laptops-tablets/'
     | '/location/'
     | '/reviews/'
     | '/services/'
     | '/shop/'
+    | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
@@ -533,6 +580,7 @@ export interface FileRouteTypes {
     | '/es/accesorios/'
     | '/es/consolas/'
     | '/es/guias/'
+    | '/es/iphone-18/'
     | '/es/laptops-y-tabletas/'
     | '/es/resenas/'
     | '/es/servicios/'
@@ -548,6 +596,7 @@ export interface RootRouteChildren {
   FinancingRoute: typeof FinancingRoute
   LeasingRoute: typeof LeasingRoute
   AreasSlugRoute: typeof AreasSlugRoute
+  DevicesSlugRoute: typeof DevicesSlugRoute
   EsArrendamientoRoute: typeof EsArrendamientoRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
@@ -558,11 +607,13 @@ export interface RootRouteChildren {
   EsIndexRoute: typeof EsIndexRoute
   GameConsolesIndexRoute: typeof GameConsolesIndexRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
+  Iphone18IndexRoute: typeof Iphone18IndexRoute
   LaptopsTabletsIndexRoute: typeof LaptopsTabletsIndexRoute
   LocationIndexRoute: typeof LocationIndexRoute
   ReviewsIndexRoute: typeof ReviewsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
+  EsEquiposSlugRoute: typeof EsEquiposSlugRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
   EsServiciosSlugRoute: typeof EsServiciosSlugRoute
   EsTiendaHandleRoute: typeof EsTiendaHandleRoute
@@ -570,6 +621,7 @@ export interface RootRouteChildren {
   EsAccesoriosIndexRoute: typeof EsAccesoriosIndexRoute
   EsConsolasIndexRoute: typeof EsConsolasIndexRoute
   EsGuiasIndexRoute: typeof EsGuiasIndexRoute
+  EsIphone18IndexRoute: typeof EsIphone18IndexRoute
   EsLaptopsYTabletasIndexRoute: typeof EsLaptopsYTabletasIndexRoute
   EsResenasIndexRoute: typeof EsResenasIndexRoute
   EsServiciosIndexRoute: typeof EsServiciosIndexRoute
@@ -699,6 +751,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/devices/$slug': {
+      id: '/devices/$slug'
+      path: '/devices/$slug'
+      fullPath: '/devices/$slug'
+      preLoaderRoute: typeof DevicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/': {
       id: '/es/'
       path: '/es'
@@ -739,6 +798,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/$slug'
       fullPath: '/guides/$slug'
       preLoaderRoute: typeof GuidesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iphone-18/': {
+      id: '/iphone-18/'
+      path: '/iphone-18'
+      fullPath: '/iphone-18/'
+      preLoaderRoute: typeof Iphone18IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/laptops-tablets/': {
@@ -804,6 +870,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsConsolasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/equipos/$slug': {
+      id: '/es/equipos/$slug'
+      path: '/es/equipos/$slug'
+      fullPath: '/es/equipos/$slug'
+      preLoaderRoute: typeof EsEquiposSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/guias/': {
       id: '/es/guias/'
       path: '/es/guias'
@@ -816,6 +889,13 @@ declare module '@tanstack/react-router' {
       path: '/es/guias/$slug'
       fullPath: '/es/guias/$slug'
       preLoaderRoute: typeof EsGuiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/iphone-18/': {
+      id: '/es/iphone-18/'
+      path: '/es/iphone-18'
+      fullPath: '/es/iphone-18/'
+      preLoaderRoute: typeof EsIphone18IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/laptops-y-tabletas/': {
@@ -917,6 +997,7 @@ const rootRouteChildren: RootRouteChildren = {
   FinancingRoute: FinancingRoute,
   LeasingRoute: LeasingRoute,
   AreasSlugRoute: AreasSlugRoute,
+  DevicesSlugRoute: DevicesSlugRoute,
   EsArrendamientoRoute: EsArrendamientoRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
   GuidesSlugRoute: GuidesSlugRoute,
@@ -927,11 +1008,13 @@ const rootRouteChildren: RootRouteChildren = {
   EsIndexRoute: EsIndexRoute,
   GameConsolesIndexRoute: GameConsolesIndexRoute,
   GuidesIndexRoute: GuidesIndexRoute,
+  Iphone18IndexRoute: Iphone18IndexRoute,
   LaptopsTabletsIndexRoute: LaptopsTabletsIndexRoute,
   LocationIndexRoute: LocationIndexRoute,
   ReviewsIndexRoute: ReviewsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
+  EsEquiposSlugRoute: EsEquiposSlugRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
   EsServiciosSlugRoute: EsServiciosSlugRoute,
   EsTiendaHandleRoute: EsTiendaHandleRoute,
@@ -939,6 +1022,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsAccesoriosIndexRoute: EsAccesoriosIndexRoute,
   EsConsolasIndexRoute: EsConsolasIndexRoute,
   EsGuiasIndexRoute: EsGuiasIndexRoute,
+  EsIphone18IndexRoute: EsIphone18IndexRoute,
   EsLaptopsYTabletasIndexRoute: EsLaptopsYTabletasIndexRoute,
   EsResenasIndexRoute: EsResenasIndexRoute,
   EsServiciosIndexRoute: EsServiciosIndexRoute,

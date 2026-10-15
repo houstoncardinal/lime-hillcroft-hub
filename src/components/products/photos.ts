@@ -1,3 +1,7 @@
+import iphone18 from "@/assets/photos/iphone-18-pro-max.webp";
+import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.webp";
+import counter from "@/assets/photos/store-counter.webp";
+import counterSm from "@/assets/photos/store-counter-sm.webp";
 import caseWall from "@/assets/photos/accessories-case-wall.webp";
 import caseWallSm from "@/assets/photos/accessories-case-wall-sm.webp";
 import airpodsWatches from "@/assets/photos/airpods-watches-case.webp";
@@ -61,6 +65,8 @@ export const PRODUCT_PHOTOS: Record<
     h: 1400,
     file: "laptops-tablets",
   },
+  iphone18: { src: iphone18, sm: iphone18Sm, w: 1400, h: 1750, file: "iphone-18-pro-max" },
+  counter: { src: counter, sm: counterSm, w: 2000, h: 1500, file: "store-counter" },
   appleDisplay: { src: appleDisplay, sm: appleDisplaySm, w: 1500, h: 2000, file: "apple-display" },
   airpodsMax: { src: airpodsMax, sm: airpodsMaxSm, w: 1600, h: 1200, file: "airpods-max-ipads" },
 };

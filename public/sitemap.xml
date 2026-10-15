@@ -3,7 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ticwirelesstx.com/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/leasing</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/leasing"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/leasing"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/location</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/location"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/ubicacion"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/location"/>
@@ -63,7 +63,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/accessories</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/accessories"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/accesorios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/accessories"/>
@@ -100,7 +100,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/game-consoles</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/game-consoles"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/consolas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/game-consoles"/>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/laptops-tablets</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/laptops-tablets"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/laptops-y-tabletas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/laptops-tablets"/>
@@ -149,8 +149,166 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.ticwirelesstx.com/iphone-18</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/iphone-18"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/iphone18-en.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/iphone-18-pro-max.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/iphone-cases-wall.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/screen-protector.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/chargers-wall.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/store-counter.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/iphone-18.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-s20-ultra</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-note20-ultra</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a53</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a53"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a36</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a36"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a26</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a26"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a16</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a15</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a14</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a14"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a13</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a20</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a20"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/galaxy-a03s</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/ipad-pro-m2</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-pro-m2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/laptops-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/devices/ipad-mini-5</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/laptops-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ticwirelesstx.com/reviews</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/reviews"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/resenas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/reviews"/>
@@ -160,7 +318,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services"/>
@@ -170,7 +328,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/unlocked-phones</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
@@ -216,7 +374,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/phone-repair</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-repair"/>
@@ -225,8 +383,28 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.ticwirelesstx.com/services/iphone-repair</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/iphone-repair"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-iphone-repair-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/services/samsung-repair</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/samsung-repair"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-samsung-repair-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ticwirelesstx.com/services/prepaid-plans</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
@@ -236,7 +414,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/xfinity-prepaid-internet</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
@@ -246,7 +424,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/phone-unlocking</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
@@ -256,7 +434,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/buy-sell-trade</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/buy-sell-trade"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
@@ -266,7 +444,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/bill-payments</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/bill-payments"/>
@@ -276,7 +454,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/international-recharge</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/international-recharge"/>
@@ -286,7 +464,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas"/>
@@ -296,7 +474,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/mahatma-gandhi-district</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
@@ -306,7 +484,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/gulfton</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/gulfton"/>
@@ -316,7 +494,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/sharpstown</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
@@ -326,7 +504,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/westchase</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/westchase"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/westchase"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/westchase"/>
@@ -336,7 +514,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/galleria-uptown</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
@@ -346,7 +524,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/bellaire</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/bellaire"/>
@@ -356,7 +534,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/alief</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/alief"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/alief"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/alief"/>
@@ -366,7 +544,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/meyerland</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/meyerland"/>
@@ -376,7 +554,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/guides</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides"/>
@@ -386,7 +564,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/guides/cracked-screen-repair-or-replace</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/cracked-screen-repair-or-replace"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/cracked-screen-repair-or-replace"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/cracked-screen-repair-or-replace"/>
@@ -396,7 +574,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/guides/how-lease-to-own-works</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/how-lease-to-own-works"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/how-lease-to-own-works"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/how-lease-to-own-works"/>
@@ -406,7 +584,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/guides/how-to-unlock-your-phone</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/how-to-unlock-your-phone"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/how-to-unlock-your-phone"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/how-to-unlock-your-phone"/>
@@ -416,7 +594,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/guides/choosing-a-prepaid-plan-houston</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/choosing-a-prepaid-plan-houston"/>
@@ -426,7 +604,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -445,7 +623,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/arrendamiento</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/leasing"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/leasing"/>
@@ -455,7 +633,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/ubicacion</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/location"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/ubicacion"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/location"/>
@@ -486,7 +664,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/accesorios</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/accessories"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/accesorios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/accessories"/>
@@ -523,7 +701,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/consolas</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/game-consoles"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/consolas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/game-consoles"/>
@@ -545,7 +723,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/laptops-y-tabletas</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/laptops-tablets"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/laptops-y-tabletas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/laptops-tablets"/>
@@ -572,8 +750,166 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.ticwirelesstx.com/es/iphone-18</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/iphone-18"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/iphone18-es.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/iphone-18-pro-max.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/iphone-cases-wall.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/screen-protector.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/chargers-wall.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/store-counter.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/iphone-18.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s20-ultra</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-note20-ultra</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a53</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a53"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a36</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a36"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a26</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a26"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a16</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a15</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a14</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a14"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a13</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a20</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a20"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a03s</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/ipad-pro-m2</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-pro-m2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/laptops-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/ipad-mini-5</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/laptops-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ticwirelesstx.com/es/resenas</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/reviews"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/resenas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/reviews"/>
@@ -583,7 +919,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services"/>
@@ -593,7 +929,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/unlocked-phones</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
@@ -639,7 +975,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/phone-repair</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-repair"/>
@@ -648,8 +984,28 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.ticwirelesstx.com/es/servicios/iphone-repair</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/iphone-repair"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-iphone-repair-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/servicios/samsung-repair</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/samsung-repair"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-samsung-repair-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/prepaid-plans</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
@@ -659,7 +1015,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/xfinity-prepaid-internet</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
@@ -669,7 +1025,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/phone-unlocking</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
@@ -679,7 +1035,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/buy-sell-trade</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/buy-sell-trade"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
@@ -689,7 +1045,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/bill-payments</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/bill-payments"/>
@@ -699,7 +1055,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/international-recharge</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/international-recharge"/>
@@ -709,7 +1065,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas"/>
@@ -719,7 +1075,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/mahatma-gandhi-district</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
@@ -729,7 +1085,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/gulfton</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/gulfton"/>
@@ -739,7 +1095,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/sharpstown</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
@@ -749,7 +1105,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/westchase</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/westchase"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/westchase"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/westchase"/>
@@ -759,7 +1115,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/galleria-uptown</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
@@ -769,7 +1125,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/bellaire</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/bellaire"/>
@@ -779,7 +1135,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/alief</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/alief"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/alief"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/alief"/>
@@ -789,7 +1145,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/meyerland</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/meyerland"/>
@@ -799,7 +1155,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/guias</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides"/>
@@ -809,7 +1165,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/guias/cracked-screen-repair-or-replace</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/cracked-screen-repair-or-replace"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/cracked-screen-repair-or-replace"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/cracked-screen-repair-or-replace"/>
@@ -819,7 +1175,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/guias/how-lease-to-own-works</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/how-lease-to-own-works"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/how-lease-to-own-works"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/how-lease-to-own-works"/>
@@ -829,7 +1185,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/guias/how-to-unlock-your-phone</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/how-to-unlock-your-phone"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/how-to-unlock-your-phone"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/how-to-unlock-your-phone"/>
@@ -839,7 +1195,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/guias/choosing-a-prepaid-plan-houston</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias/choosing-a-prepaid-plan-houston"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides/choosing-a-prepaid-plan-houston"/>
@@ -849,7 +1205,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/vi</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -868,7 +1224,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/zh</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -887,7 +1243,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/ar</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -906,7 +1262,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/ur</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -925,7 +1281,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/hi</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -944,7 +1300,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/fr</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -963,7 +1319,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/pt</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -982,7 +1338,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/ko</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -1001,7 +1357,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/tl</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>

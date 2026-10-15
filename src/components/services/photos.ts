@@ -16,10 +16,27 @@ import s22 from "@/assets/photos/galaxy-s22-ultra.webp";
 import s22Sm from "@/assets/photos/galaxy-s22-ultra-sm.webp";
 import laptops from "@/assets/photos/laptops-tablets.webp";
 import laptopsSm from "@/assets/photos/laptops-tablets-sm.webp";
+import xfinity from "@/assets/photos/xfinity-prepaid-kit.webp";
+import xfinitySm from "@/assets/photos/xfinity-prepaid-kit-sm.webp";
+import simTray from "@/assets/photos/sim-tray-unlock.webp";
+import simTraySm from "@/assets/photos/sim-tray-unlock-sm.webp";
 
 import type { PhotoKey } from "@/components/services/data";
 
-export const SERVICE_PHOTOS: Record<PhotoKey, { src: string; sm: string; w: number; h: number }> = {
+export type ServicePhoto = {
+  src: string;
+  sm: string;
+  w: number;
+  h: number;
+  /** "contain" shows the whole product shot on white instead of cropping it to fill. */
+  fit?: "contain";
+  /** CSS object-position for the crop. */
+  focus?: string;
+  /** Attribution for photos used under a Creative Commons license. */
+  credit?: { text: string; href: string };
+};
+
+export const SERVICE_PHOTOS: Record<PhotoKey, ServicePhoto> = {
   iphone18: { src: iphone18, sm: iphone18Sm, w: 1400, h: 1750 },
   counter: { src: counter, sm: counterSm, w: 2000, h: 1500 },
   jbl: { src: jbl, sm: jblSm, w: 2000, h: 1500 },
@@ -29,4 +46,17 @@ export const SERVICE_PHOTOS: Record<PhotoKey, { src: string; sm: string; w: numb
   storefront: { src: storefront, sm: storefrontSm, w: 2000, h: 1500 },
   s22: { src: s22, sm: s22Sm, w: 1500, h: 2000 },
   laptops: { src: laptops, sm: laptopsSm, w: 2000, h: 1400 },
+  // Xfinity Prepaid Internet Starter Kit, the retail box we sell.
+  xfinity: { src: xfinity, sm: xfinitySm, w: 1600, h: 1418, fit: "contain" },
+  simTray: {
+    src: simTray,
+    sm: simTraySm,
+    w: 2000,
+    h: 1333,
+    focus: "64% 50%",
+    credit: {
+      text: "Photo: Tony Webster, CC BY 2.0",
+      href: "https://commons.wikimedia.org/wiki/File:Insert_SIM_Card_-_Android_LG_Nexus_5X_-_Project_Fi_(42034815022).jpg",
+    },
+  },
 };

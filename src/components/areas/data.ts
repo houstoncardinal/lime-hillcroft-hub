@@ -121,8 +121,8 @@ export const AREAS: Area[] = [
     minutes: 11,
     route: ["Westpark Tollway east", "Westpark Drive", "Hillcroft Avenue"],
     intro: {
-      en: "Alief is one of the most ethnically diverse communities in Houston. From Alief it's about eleven minutes east on the Westpark Tollway to Hillcroft, where we handle phone repairs, unlocking, prepaid plans for every major carrier and international recharge.",
-      es: "Alief es una de las comunidades más diversas de Houston. Desde Alief son unos once minutos hacia el este por el Westpark Tollway hasta Hillcroft, donde reparamos y liberamos celulares, vendemos planes prepagados de todas las compañías y hacemos recargas internacionales.",
+      en: "Alief is one of the most ethnically diverse communities in Houston. From Alief it's about eleven minutes east on the Westpark Tollway to Hillcroft, where we handle phone repairs, unlocking, prepaid plans from 12 carriers and international recharge.",
+      es: "Alief es una de las comunidades más diversas de Houston. Desde Alief son unos once minutos hacia el este por el Westpark Tollway hasta Hillcroft, donde reparamos y liberamos celulares, vendemos planes prepagados de 12 compañías y hacemos recargas internacionales.",
     },
     lat: 29.71106,
     lon: -95.59633,
@@ -136,8 +136,8 @@ export const AREAS: Area[] = [
     minutes: 11,
     route: ["North Braeswood Blvd", "Hillcroft Avenue north", "Hillcroft St"],
     intro: {
-      en: "Meyerland, home to Meyerland Plaza, is a straight drive up Hillcroft Avenue to our store — about eleven minutes without traffic. Bring in your phone for a same-day screen or battery repair, or upgrade to a new unlocked phone with leasing.",
-      es: "Meyerland, donde está Meyerland Plaza, queda en línea recta subiendo por Hillcroft Avenue hasta la tienda: unos once minutos sin tráfico. Trae tu celular para cambio de pantalla o batería el mismo día, o estrena un celular desbloqueado a pagos.",
+      en: "Meyerland, home to Meyerland Plaza, is about eleven minutes from our store without traffic — North Braeswood Blvd, then north on Hillcroft Avenue. Bring in your phone for a same-day screen or battery repair, or upgrade to a new unlocked phone with leasing.",
+      es: "Meyerland, donde está Meyerland Plaza, está a unos once minutos de la tienda sin tráfico: North Braeswood Blvd y luego al norte por Hillcroft Avenue. Trae tu celular para cambio de pantalla o batería el mismo día, o estrena un celular desbloqueado a pagos.",
     },
     lat: 29.67915,
     lon: -95.46803,

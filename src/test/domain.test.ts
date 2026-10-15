@@ -9,15 +9,15 @@ import { SITE_URL, absoluteUrl } from "@/components/site/seo";
 const TEMP_HOST = /lovable\.app|netlify\.app/i;
 
 describe("Live domain", () => {
-  it("uses https://www.ticwireless.com for every absolute URL", () => {
-    expect(SITE_URL).toBe("https://www.ticwireless.com");
-    expect(absoluteUrl("/es")).toBe("https://www.ticwireless.com/es");
+  it("uses https://www.ticwirelesstx.com for every absolute URL", () => {
+    expect(SITE_URL).toBe("https://www.ticwirelesstx.com");
+    expect(absoluteUrl("/es")).toBe("https://www.ticwirelesstx.com/es");
   });
 
   it("puts the live domain in canonical, share tags and schema", () => {
     const head = JSON.stringify(homeHead("en"));
-    expect(head).toContain('"https://www.ticwireless.com/"');
-    expect(head).toContain("https://www.ticwireless.com/#store");
+    expect(head).toContain('"https://www.ticwirelesstx.com/"');
+    expect(head).toContain("https://www.ticwirelesstx.com/#store");
     expect(head).not.toMatch(TEMP_HOST);
   });
 
@@ -25,7 +25,7 @@ describe("Live domain", () => {
     "%s only references the live domain",
     (file) => {
       const text = readFileSync(file, "utf8");
-      expect(text).toContain("https://www.ticwireless.com");
+      expect(text).toContain("https://www.ticwirelesstx.com");
       expect(text).not.toMatch(TEMP_HOST);
     },
   );

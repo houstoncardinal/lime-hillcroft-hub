@@ -4,6 +4,7 @@ import { Globe, MapPin, Phone } from "lucide-react";
 
 import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/business";
 import { setLangPref } from "@/components/intl/lang-pref";
+import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import { LanguageAuto } from "@/components/intl/language-auto";
 import { LanguageMenu } from "@/components/intl/language-menu";
 import { SHOP_ENABLED } from "@/components/site/features";
@@ -207,6 +208,7 @@ const FOOTER = {
     guides: "Guides",
     allAreas: "All areas",
     allGuides: "All guides",
+    languages: "Other languages",
   },
   es: {
     products: "Productos",
@@ -225,6 +227,7 @@ const FOOTER = {
     guides: "Guías",
     allAreas: "Todas las zonas",
     allGuides: "Todas las guías",
+    languages: "Otros idiomas",
   },
 };
 
@@ -323,7 +326,31 @@ export function SiteFooter({
               />
             </nav>
           </div>
-          <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
+          {/* Plain links so crawlers reach the summary pages in other languages (the header menu is
+              a popover). Native names, each marked with its own language and direction. */}
+          <nav
+            aria-label={f.languages}
+            className="mt-12 flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm text-white/75"
+          >
+            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white/50">
+              {f.languages}
+            </h2>
+            {INTL_LANGS.map((l) => (
+              <a
+                key={l.code}
+                href={intlPath(l.code)}
+                hrefLang={l.tag}
+                lang={l.tag}
+                dir={l.dir}
+                title={l.english}
+                onClick={() => setLangPref(l.code)}
+                className="transition hover:text-white"
+              >
+                {l.native}
+              </a>
+            ))}
+          </nav>
+          <div className="mt-8 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
             <p>
               © {new Date().getFullYear()} TIC Wireless Electronic & Repair Center · Houston, TX
             </p>

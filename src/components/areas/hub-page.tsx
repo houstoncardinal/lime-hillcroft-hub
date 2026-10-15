@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Phone, Search } from "lucide-react";
 
@@ -40,13 +41,23 @@ export function AreasHubPage({ lang }: { lang: Lang }) {
           ]}
         />
         <div className="mx-auto max-w-7xl px-5 pb-16 pt-32 md:pb-24 md:pt-40">
-          <h1>
-            <span className="eyebrow flex items-center gap-3 text-primary">
-              <span className="h-px w-8 bg-primary" /> {t.kicker}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
+          >
+            <Link to={ALTERNATES.home[lang]} className="hover:text-white">
+              {t.breadcrumb[0]}
+            </Link>
+            <span>/</span>
+            <span aria-current="page" className="text-white/85">
+              {t.breadcrumb[1]}
             </span>
-            <span className="mt-6 block max-w-4xl text-[clamp(2.75rem,6.5vw,5.5rem)] font-semibold leading-[0.95]">
-              {t.h1[0]} <span className="text-primary">{t.h1[1]}</span>
-            </span>
+          </nav>
+          <p className="eyebrow flex items-center gap-3 text-primary">
+            <span className="h-px w-8 bg-primary" /> {t.kicker}
+          </p>
+          <h1 className="mt-5 max-w-4xl text-[clamp(2.75rem,6.5vw,5.5rem)] font-semibold leading-[0.95]">
+            {t.h1[0]} <span className="text-primary">{t.h1[1]}</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/70">{t.body}</p>
 

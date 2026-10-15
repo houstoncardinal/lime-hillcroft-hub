@@ -2,9 +2,10 @@ import type { Faq } from "@/components/site/schema";
 import type { Lang } from "@/components/site/seo";
 import type { ClipKey } from "@/components/site/store-clips";
 
-// Product category pages (/accessories, /game-consoles and their Spanish versions). Products are
-// what's on the store's walls and display cases in the photos (October 2026) plus items already
-// confirmed in public/llms-full.txt. No prices: stock and sale tags change daily.
+// Product category pages (/accessories, /game-consoles, /laptops-tablets, /iphone-18 and their
+// Spanish versions). Products are what's on the store's walls and display cases in the photos
+// (October 2026) plus items already confirmed in public/llms-full.txt. No prices: stock and sale
+// tags change daily.
 // Wording rule from the owner: phones and consoles are "leasing" (never "financing");
 // accessories are bought outright.
 
@@ -21,7 +22,9 @@ export type ProductPhoto =
   | "watchTab"
   | "airpodsMax"
   | "laptopsTablets"
-  | "appleDisplay";
+  | "appleDisplay"
+  | "iphone18"
+  | "counter";
 
 type L = Record<Lang, string>;
 const l = (en: string, es: string): L => ({ en, es });
@@ -41,7 +44,7 @@ export type ProductGroup = {
   items: L[];
 };
 
-export type CategoryKey = "accessories" | "consoles" | "laptops";
+export type CategoryKey = "accessories" | "consoles" | "laptops" | "iphone18";
 
 export type CategoryPageData = {
   key: CategoryKey;
@@ -59,6 +62,8 @@ export type CategoryPageData = {
   groups: ProductGroup[];
   /** Leasing section with the online applications (consoles). */
   leasing: boolean;
+  /** What the leasing schema lists; defaults to every item in the groups. */
+  leaseItems?: L[];
   text: Record<
     Lang,
     {
@@ -584,7 +589,7 @@ export const CONSOLES: CategoryPageData = {
       kicker: "Game consoles · Leasing · Houston",
       h1: ["PS5, Xbox & Switch 2.", "Take it home today."],
       intro:
-        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and you don't need credit to take one home. Our leasing programs start as low as $40 down, with weekly, biweekly or monthly payments.",
+        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and you don't need credit to apply. Our leasing programs start as low as $40 down, with weekly, biweekly or monthly payments, subject to approval.",
       chips: ["No credit needed", "As low as $40 down", "Take it home today", "Se habla español"],
       cta: "Call to check stock",
       groupsKicker: "In store now",
@@ -614,7 +619,7 @@ export const CONSOLES: CategoryPageData = {
         },
         {
           q: "What do I need to apply?",
-          a: "A valid photo ID. If you apply online, have your ID and bank details ready — it takes a few minutes, then come to the store to pick up your console.",
+          a: "A valid photo ID at the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your console.",
         },
         {
           q: "How do the payments work?",
@@ -644,7 +649,7 @@ export const CONSOLES: CategoryPageData = {
       kicker: "Consolas · Arrendamiento · Houston",
       h1: ["PS5, Xbox y Switch 2.", "Llévatelo hoy."],
       intro:
-        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y no necesitas crédito para llevarte uno. Nuestros programas de arrendamiento empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales.",
+        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y no necesitas crédito para aplicar. Nuestros programas de arrendamiento empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales, sujeto a aprobación.",
       chips: [
         "Sin necesidad de crédito",
         "Desde $40 de enganche",
@@ -682,7 +687,7 @@ export const CONSOLES: CategoryPageData = {
         },
         {
           q: "¿Qué necesito para solicitar?",
-          a: "Una identificación con foto vigente. Si solicitas en línea, ten a la mano tu ID y tus datos bancarios; toma unos minutos y luego vienes a la tienda por tu consola.",
+          a: "Una identificación con foto vigente en el mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu consola.",
         },
         {
           q: "¿Cómo son los pagos?",
@@ -823,7 +828,7 @@ export const LAPTOPS: CategoryPageData = {
       kicker: "Laptops & tablets · Leasing · Houston",
       h1: ["MacBook, iPad & Galaxy Tab.", "Take it home today."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. No credit? No problem — our leasing programs start as low as $40 down, with weekly, biweekly or monthly payments.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. No credit needed — our leasing programs start as low as $40 down, with weekly, biweekly or monthly payments, subject to approval.",
       chips: ["No credit needed", "As low as $40 down", "Apple & Samsung", "Se habla español"],
       cta: "Call to check stock",
       groupsKicker: "In store now",
@@ -856,7 +861,7 @@ export const LAPTOPS: CategoryPageData = {
         },
         {
           q: "What do I need to apply?",
-          a: "A valid photo ID. If you apply online, have your ID and bank details ready — it takes a few minutes, then come to the store to pick up your device.",
+          a: "A valid photo ID at the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your device.",
         },
         {
           q: "Do you repair laptops and tablets too?",
@@ -882,7 +887,7 @@ export const LAPTOPS: CategoryPageData = {
       kicker: "Laptops y tabletas · Arrendamiento · Houston",
       h1: ["MacBook, iPad y Galaxy Tab.", "Llévatelo hoy."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. ¿Sin crédito? No hay problema: nuestros programas de arrendamiento empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Sin necesidad de crédito: nuestros programas de arrendamiento empiezan desde $40 de enganche, sujeto a aprobación, con pagos semanales, quincenales o mensuales.",
       chips: [
         "Sin necesidad de crédito",
         "Desde $40 de enganche",
@@ -920,7 +925,7 @@ export const LAPTOPS: CategoryPageData = {
         },
         {
           q: "¿Qué necesito para solicitar?",
-          a: "Una identificación con foto vigente. Si solicitas en línea, ten a la mano tu ID y tus datos bancarios; toma unos minutos y luego vienes a la tienda por tu equipo.",
+          a: "Una identificación con foto vigente en el mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu equipo.",
         },
         {
           q: "¿También reparan laptops y tabletas?",
@@ -941,8 +946,291 @@ export const LAPTOPS: CategoryPageData = {
   },
 };
 
+// The iPhone 18 page (/iphone-18, /es/iphone-18). Only what the store has confirmed: the iPhone 18
+// line (including the iPhone 18 Pro Max) is in the Oct 13, 2026 stock list (inventory.ts) and the
+// iPhone 18 Pro Max is sold unlocked. Colors, storage sizes and prices are not stated — they change
+// and haven't been confirmed — so customers are asked to call.
+export const IPHONE_18: CategoryPageData = {
+  key: "iphone18",
+  category: "Mobile phones",
+  heroPhoto: "iphone18",
+  heroVideo: "storeInterior",
+  galleryVideos: [],
+  gallery: [
+    [
+      "iphone18",
+      l(
+        "An iPhone 18 Pro Max in front of its box at TIC Wireless",
+        "Un iPhone 18 Pro Max frente a su caja en TIC Wireless",
+      ),
+    ],
+    [
+      "iphoneCases",
+      l(
+        "iPhone cases — Drop+, mybat Maverick, MagSafe clear and privacy glass",
+        "Fundas para iPhone: Drop+, mybat Maverick, transparentes MagSafe y micas de privacidad",
+      ),
+    ],
+    [
+      "protector",
+      l(
+        "Premium 9H tempered glass screen protector at TIC Wireless",
+        "Mica de vidrio templado 9H en TIC Wireless",
+      ),
+    ],
+    [
+      "chargers",
+      l(
+        "Chargers, cables, power banks and car mounts on the accessory wall",
+        "Cargadores, cables, baterías portátiles y soportes para auto en la pared de accesorios",
+      ),
+    ],
+  ],
+  brands: ["Apple", "Drop+", "mybat"],
+  groups: [
+    {
+      id: "iphone-18",
+      title: l("iPhone 18 in store", "iPhone 18 en la tienda"),
+      body: l(
+        "On our shelves in the Oct 13, 2026 stock list. Stock changes quickly — call to confirm the model, color and storage you want.",
+        "En nuestras vitrinas según el inventario del 13 de octubre de 2026. Cambia rápido: llama para confirmar modelo, color y capacidad.",
+      ),
+      photo: "iphone18",
+      focus: "55% 40%",
+      photoAlt: l(
+        "An iPhone 18 Pro Max held in front of its box",
+        "Un iPhone 18 Pro Max frente a su caja",
+      ),
+      items: [
+        n("iPhone 18 Pro Max"),
+        l(
+          "Other iPhone 18 models — call to check",
+          "Otros modelos de iPhone 18: llama para confirmar",
+        ),
+        l(
+          "Sold unlocked — ask which carriers it works with",
+          "Desbloqueado: pregunta con qué compañías funciona",
+        ),
+        l(
+          "Leasing — no credit needed, iPhone 18 Pro Max from $65 down",
+          "A pagos sin necesidad de crédito, iPhone 18 Pro Max desde $65 de enganche",
+        ),
+      ],
+    },
+    {
+      id: "protection",
+      title: l("Cases & tempered glass", "Fundas y micas"),
+      body: l(
+        "We carry cases and glass for most iPhone models. Ask for a fit for your iPhone 18 and we'll put it on before you leave.",
+        "Tenemos fundas y micas para la mayoría de los iPhone. Pide las de tu iPhone 18 y te las ponemos antes de irte.",
+      ),
+      photo: "iphoneCases",
+      photoAlt: l(
+        "iPhone cases and privacy glass on the wall at TIC Wireless",
+        "Fundas para iPhone y micas de privacidad en la pared de TIC Wireless",
+      ),
+      items: [
+        l("Heavy-duty & Drop+ protective cases", "Fundas resistentes y Drop+"),
+        l("Clear MagSafe-compatible cases", "Transparentes compatibles con MagSafe"),
+        l("Tempered, privacy & full-cover glass", "Vidrio templado, de privacidad y completo"),
+        l("Camera lens protectors", "Protectores para cámara"),
+        l("Apple 20W USB-C chargers & cables", "Cargadores Apple 20W USB-C y cables"),
+      ],
+    },
+    {
+      id: "switch",
+      title: l("Trade-in, plans & unlocking", "Intercambio, planes y liberación"),
+      body: l(
+        "Switch over in one visit: put your old phone toward the new one and get your plan working before you leave.",
+        "Cámbiate en una sola visita: usa tu celular viejo para el nuevo y sal con tu plan funcionando.",
+      ),
+      photo: "counter",
+      photoAlt: l(
+        "The counter at TIC Wireless with carrier displays",
+        "El mostrador de TIC Wireless con exhibidores de compañías",
+      ),
+      items: [
+        l("Trade in your old phone toward it", "Cambia tu celular usado por el nuevo"),
+        l(
+          "Prepaid plans from 12 carriers — usually keep your number",
+          "Planes prepagados de 12 compañías; normalmente conservas tu número",
+        ),
+        l("Unlocking help to switch carriers", "Ayuda para liberar y cambiar de compañía"),
+        l(
+          "Same-day iPhone repair when you need it",
+          "Reparación de iPhone el mismo día cuando la necesites",
+        ),
+      ],
+    },
+  ],
+  leasing: true,
+  leaseItems: [n("iPhone 18 Pro Max"), l("iPhone 18 models", "Modelos de iPhone 18")],
+  text: {
+    en: {
+      title: "iPhone 18 & iPhone 18 Pro Max in Houston — Lease $65 Down",
+      description:
+        "iPhone 18 Pro Max in store on Hillcroft in Houston. Lease-to-own from $65 down, no credit needed, subject to approval. Trade-in, cases & glass.",
+      breadcrumb: "iPhone 18",
+      imageAlt:
+        "A hand holding an iPhone 18 Pro Max in front of its box at TIC Wireless in Houston",
+      kicker: "iPhone 18 · In store · Houston",
+      h1: ["iPhone 18 Pro Max in Houston.", "In store on Hillcroft."],
+      intro:
+        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — no credit needed, from $65 down, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Stock changes quickly, so call to confirm the color and storage you want.",
+      chips: [
+        "No credit needed",
+        "Lease from $65 down",
+        "Trade in your old phone",
+        "Se habla español",
+      ],
+      cta: "Call to check stock",
+      groupsKicker: "In store now",
+      groupsTitle: "Your iPhone 18, set up in one visit.",
+      buyKicker: "How leasing works",
+      buyTitle: "Get the iPhone 18 now. Pay over time.",
+      buyBody:
+        "Leasing (lease-to-own) lets you take your iPhone home today and make regular payments. When the plan is complete — or you pay it off early — it's yours. Subject to approval; the total cost to own is more than the cash price, and we explain every term before you sign.",
+      buySteps: [
+        ["Apply", "Online in a few minutes below, or at the counter with a valid photo ID."],
+        [
+          "Trade in your old phone",
+          "Bring it with its passcode — we check it and make you an offer toward your new iPhone.",
+        ],
+        [
+          "Take it home today",
+          "Start with as little as $65 down on the iPhone 18 Pro Max, then weekly, biweekly or monthly payments.",
+        ],
+        [
+          "Set up and go",
+          "Pick a prepaid plan, move your number and data, and add a case and glass before you leave.",
+        ],
+      ],
+      galleryTitle: "In the store",
+      brandsTitle: "Brands for your iPhone",
+      faq: [
+        {
+          q: "Do you have the iPhone 18 Pro Max in stock?",
+          a: "Yes — the iPhone 18 Pro Max is in our October 13, 2026 stock list. Stock changes quickly, so call (713) 339-9300 to confirm the color and storage you want before you come in.",
+        },
+        {
+          q: "Can I get an iPhone 18 with no credit or bad credit?",
+          a: "You can apply. Leasing (lease-to-own) needs no credit — the iPhone 18 Pro Max starts at $65 down — with weekly, biweekly or monthly payments. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
+        },
+        {
+          q: "What do I need to apply for leasing?",
+          a: "A valid photo ID at the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your phone.",
+        },
+        {
+          q: "Can I trade in my old phone toward the iPhone 18?",
+          a: "Yes. Bring your old phone and its passcode — we check the model and condition and make you an offer you can put toward your new phone.",
+        },
+        {
+          q: "Is the iPhone 18 Pro Max unlocked?",
+          a: "The iPhone 18 Pro Max is available unlocked. Ask us which carriers it works with and we'll set it up on a compatible prepaid plan in store. If your current phone is locked, we can check it and help with unlocking.",
+        },
+        {
+          q: "Do you have cases and screen protectors for the iPhone 18?",
+          a: "We carry cases and tempered glass for most iPhone models. Call (713) 339-9300 to check what fits the iPhone 18 — we can put them on before you leave.",
+        },
+      ],
+      related: [
+        ["Unlocked phones", "/services/unlocked-phones"],
+        ["Leasing — no credit needed", "/leasing"],
+        ["Trade in or sell your phone", "/services/buy-sell-trade"],
+        ["Prepaid plans & prices", "/services/prepaid-plans"],
+        ["iPhone repair", "/services/iphone-repair"],
+      ],
+      ogKicker: "iPhone 18 · Leasing",
+      ogHeadline: "iPhone 18 Pro Max. In store on Hillcroft.",
+      ogSub: "No credit needed · From $65 down · Trade in your old phone",
+    },
+    es: {
+      title: "iPhone 18 y 18 Pro Max en Houston — A Pagos desde $65",
+      description:
+        "iPhone 18 Pro Max en nuestra tienda de Hillcroft, Houston. A pagos desde $65 de enganche, sin necesidad de crédito, sujeto a aprobación. Intercambio y fundas.",
+      breadcrumb: "iPhone 18",
+      imageAlt:
+        "Una mano sosteniendo un iPhone 18 Pro Max frente a su caja en TIC Wireless en Houston",
+      kicker: "iPhone 18 · En tienda · Houston",
+      h1: ["iPhone 18 Pro Max en Houston.", "En la tienda de Hillcroft."],
+      intro:
+        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: sin necesidad de crédito, desde $65 de enganche, sujeto a aprobación. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
+      chips: [
+        "Sin necesidad de crédito",
+        "Desde $65 de enganche",
+        "Cambia tu celular usado",
+        "We speak English",
+      ],
+      cta: "Llama para ver existencias",
+      groupsKicker: "En la tienda",
+      groupsTitle: "Tu iPhone 18, listo en una sola visita.",
+      buyKicker: "Cómo funciona el arrendamiento",
+      buyTitle: "Llévate el iPhone 18 hoy. Paga poco a poco.",
+      buyBody:
+        "El arrendamiento con opción a compra te permite llevarte tu iPhone hoy y hacer pagos regulares. Al completar el plan, o si lo liquidas antes, es tuyo. Sujeto a aprobación; el costo total es mayor que el precio de contado y te explicamos cada término antes de firmar.",
+      buySteps: [
+        [
+          "Solicita",
+          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto.",
+        ],
+        [
+          "Cambia tu celular usado",
+          "Tráelo con su código: lo revisamos y te hacemos una oferta para tu iPhone nuevo.",
+        ],
+        [
+          "Llévatelo hoy",
+          "Empieza desde $65 de enganche en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales.",
+        ],
+        [
+          "Configúralo y listo",
+          "Elige un plan prepagado, pasa tu número y datos, y agrega funda y mica antes de irte.",
+        ],
+      ],
+      galleryTitle: "En la tienda",
+      brandsTitle: "Marcas para tu iPhone",
+      faq: [
+        {
+          q: "¿Tienen el iPhone 18 Pro Max?",
+          a: "Sí, el iPhone 18 Pro Max está en nuestro inventario del 13 de octubre de 2026. Cambia rápido, así que llama al (713) 339-9300 para confirmar el color y la capacidad antes de venir.",
+        },
+        {
+          q: "¿Puedo sacar un iPhone 18 sin crédito o con mal crédito?",
+          a: "Puedes aplicar. El arrendamiento con opción a compra no pide crédito: el iPhone 18 Pro Max empieza desde $65 de enganche, con pagos semanales, quincenales o mensuales. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
+        },
+        {
+          q: "¿Qué necesito para solicitar el arrendamiento?",
+          a: "Una identificación con foto vigente en el mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu celular.",
+        },
+        {
+          q: "¿Puedo dar mi celular usado para el iPhone 18?",
+          a: "Sí. Trae tu celular y su código: revisamos el modelo y el estado y te hacemos una oferta que puedes usar para tu celular nuevo.",
+        },
+        {
+          q: "¿El iPhone 18 Pro Max está desbloqueado?",
+          a: "El iPhone 18 Pro Max está disponible desbloqueado. Pregúntanos con qué compañías funciona y te lo activamos en un plan prepagado compatible en la tienda. Si tu celular actual está bloqueado, lo revisamos y te ayudamos a liberarlo.",
+        },
+        {
+          q: "¿Tienen fundas y micas para el iPhone 18?",
+          a: "Tenemos fundas y micas de vidrio templado para la mayoría de los iPhone. Llama al (713) 339-9300 para confirmar cuáles le quedan al iPhone 18; te las ponemos antes de irte.",
+        },
+      ],
+      related: [
+        ["Celulares desbloqueados", "/es/servicios/unlocked-phones"],
+        ["Arrendamiento sin crédito", "/es/arrendamiento"],
+        ["Vende o cambia tu celular", "/es/servicios/buy-sell-trade"],
+        ["Planes prepagados y precios", "/es/servicios/prepaid-plans"],
+        ["Reparación de iPhone", "/es/servicios/iphone-repair"],
+      ],
+      ogKicker: "iPhone 18 · A pagos",
+      ogHeadline: "iPhone 18 Pro Max. En la tienda de Hillcroft.",
+      ogSub: "Sin necesidad de crédito · Desde $65 de enganche · Cambia tu celular usado",
+    },
+  },
+};
+
 export const CATEGORY_PAGES = {
   accessories: ACCESSORIES,
   consoles: CONSOLES,
   laptops: LAPTOPS,
+  iphone18: IPHONE_18,
 } as const;

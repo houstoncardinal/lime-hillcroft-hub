@@ -39,7 +39,7 @@ export const INTL_LANGS: IntlLang[] = [
       "Điện thoại mở khóa, thuê mua không cần tín dụng từ $40, sửa màn hình trong ngày, mở mạng, gói trả trước và nạp tiền quốc tế. Hillcroft, Houston.",
     h1: "Cửa hàng điện thoại và sửa điện thoại tại Houston",
     intro:
-      "TIC Wireless Electronic & Repair Center là cửa hàng điện thoại độc lập tại 3640 Hillcroft St, Suite C, Houston, TX 77057. Chúng tôi bán điện thoại đã mở khóa, sửa điện thoại trong ngày và hỗ trợ các gói cước trả trước của mọi nhà mạng lớn.",
+      "TIC Wireless Electronic & Repair Center là cửa hàng điện thoại độc lập tại 3640 Hillcroft St, Suite C, Houston, TX 77057. Chúng tôi bán điện thoại đã mở khóa, sửa điện thoại trong ngày và hỗ trợ các gói cước trả trước của 12 nhà mạng.",
     servicesTitle: "Dịch vụ của chúng tôi",
     services: [
       "Điện thoại mới đã mở khóa: iPhone 18 Pro Max, Samsung Galaxy và nhiều dòng Android khác.",
@@ -47,7 +47,7 @@ export const INTL_LANGS: IntlLang[] = [
       "Thuê mua cả PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop và iPad.",
       "Sửa điện thoại trong ngày: màn hình, pin, cổng sạc cho iPhone, Samsung và Android. Báo giá trước khi sửa.",
       "Mở mạng điện thoại để dùng với nhà mạng bạn chọn.",
-      "Gói trả trước: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile; internet trả trước Xfinity.",
+      "Gói trả trước: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Tracfone, H2O Wireless, Lyca, GoSmart, Gen Mobile; internet trả trước Xfinity.",
       "Thanh toán hóa đơn điện thoại tại cửa hàng không tính phí thêm, và nạp tiền điện thoại quốc tế.",
       "Phụ kiện: ốp lưng, kính cường lực, sạc, AirPods, Galaxy Buds, loa JBL.",
     ],
@@ -63,8 +63,8 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Chỉ đường",
     address: "Địa chỉ",
     phone: "Điện thoại",
-    rating: "4,7★ trên Google · hơn 400 đánh giá",
-    leaseNote: "Thuê mua không phải là khoản vay; tổng chi phí có thể cao hơn giá mua trả thẳng.",
+    rating: "4,7★ trên Google · 408 đánh giá",
+    leaseNote: "Thuê mua không phải là khoản vay; tổng chi phí cao hơn giá mua trả thẳng.",
     fullSite: "Xem toàn bộ trang web bằng tiếng Anh",
   },
   {
@@ -78,7 +78,7 @@ export const INTL_LANGS: IntlLang[] = [
       "已解锁手机、免信用租购（首付 $40 起）、当日修屏、手机解锁、预付费套餐及国际充值。地址：3640 Hillcroft St, Suite C, Houston。",
     h1: "休斯顿手机店与手机维修",
     intro:
-      "TIC Wireless Electronic & Repair Center 是位于 3640 Hillcroft St, Suite C, Houston, TX 77057 的独立手机店。我们销售已解锁手机，提供当日手机维修，并支持各大预付费运营商。",
+      "TIC Wireless Electronic & Repair Center 是位于 3640 Hillcroft St, Suite C, Houston, TX 77057 的独立手机店。我们销售已解锁手机，提供当日手机维修，并提供 12 家运营商的预付费套餐。",
     servicesTitle: "我们的服务",
     services: [
       "全新已解锁手机：iPhone 18 Pro Max、Samsung Galaxy 及更多 Android 机型。",
@@ -86,7 +86,7 @@ export const INTL_LANGS: IntlLang[] = [
       "PlayStation 5、Xbox、Nintendo Switch 2、MacBook、笔记本电脑和 iPad 也可租购。",
       "当日维修：iPhone、Samsung 及 Android 的屏幕、电池和充电口，维修前先报价。",
       "手机解锁，可使用您选择的运营商。",
-      "预付费套餐：Verizon、AT&T、T-Mobile、Metro、Cricket、Boost、Simple Mobile、Lyca、GoSmart、Gen Mobile；以及 Xfinity 预付费家庭网络。",
+      "预付费套餐：Verizon、AT&T、T-Mobile、Metro、Cricket、Boost、Simple Mobile、Tracfone、H2O Wireless、Lyca、GoSmart、Gen Mobile；以及 Xfinity 预付费家庭网络。",
       "店内缴纳话费不收额外费用；提供国际手机充值。",
       "配件：手机壳、钢化膜、充电器、AirPods、Galaxy Buds、JBL 音箱。",
     ],
@@ -97,8 +97,8 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "导航",
     address: "地址",
     phone: "电话",
-    rating: "Google 评分 4.7★ · 400 多条评价",
-    leaseNote: "租购不是贷款；总成本可能高于现金价格。",
+    rating: "Google 评分 4.7★ · 408 条评价",
+    leaseNote: "租购不是贷款；总成本高于现金价格。",
     fullSite: "查看完整英文网站",
   },
   {
@@ -112,7 +112,7 @@ export const INTL_LANGS: IntlLang[] = [
       "هواتف مفتوحة، تأجير منتهٍ بالتملك بدون ائتمان يبدأ من $40، إصلاح الشاشات في نفس اليوم، فك قفل الهواتف، باقات مسبقة الدفع وشحن دولي. \u2066Hillcroft, Houston\u2069.",
     h1: "متجر هواتف وإصلاح هواتف في هيوستن",
     intro:
-      "TIC Wireless Electronic & Repair Center متجر هواتف مستقل في \u20663640 Hillcroft St, Suite C, Houston, TX 77057\u2069. نبيع هواتف مفتوحة، ونصلح الهواتف في نفس اليوم، ونوفر باقات جميع شركات الاتصالات الكبرى مسبقة الدفع.",
+      "TIC Wireless Electronic & Repair Center متجر هواتف مستقل في \u20663640 Hillcroft St, Suite C, Houston, TX 77057\u2069. نبيع هواتف مفتوحة، ونصلح الهواتف في نفس اليوم، ونوفر باقات مسبقة الدفع من 12 شركة اتصالات.",
     servicesTitle: "خدماتنا",
     services: [
       "هواتف جديدة مفتوحة: iPhone 18 Pro Max وSamsung Galaxy والمزيد من هواتف Android.",
@@ -120,7 +120,7 @@ export const INTL_LANGS: IntlLang[] = [
       "التأجير متاح أيضًا لأجهزة PlayStation 5 وXbox وNintendo Switch 2 وMacBook وأجهزة اللابتوب وiPad.",
       "إصلاح في نفس اليوم: الشاشات والبطاريات ومنافذ الشحن لأجهزة iPhone وSamsung وAndroid، مع تحديد السعر قبل البدء.",
       "فك قفل الهاتف لاستخدامه مع شركة الاتصالات التي تختارها.",
-      "باقات مسبقة الدفع: Verizon وAT&T وT-Mobile وMetro وCricket وBoost وSimple Mobile وLyca وGoSmart وGen Mobile، وإنترنت Xfinity المنزلي مسبق الدفع.",
+      "باقات مسبقة الدفع: Verizon وAT&T وT-Mobile وMetro وCricket وBoost وSimple Mobile وTracfone وH2O Wireless وLyca وGoSmart وGen Mobile، وإنترنت Xfinity المنزلي مسبق الدفع.",
       "دفع فواتير الهاتف في المتجر دون رسوم إضافية، وشحن رصيد الهواتف دوليًا.",
       "إكسسوارات: أغطية، واقيات شاشة زجاجية، شواحن، AirPods، Galaxy Buds، سماعات JBL.",
     ],
@@ -135,8 +135,8 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "الاتجاهات",
     address: "العنوان",
     phone: "الهاتف",
-    rating: "تقييم 4.7★ على Google · أكثر من 400 مراجعة",
-    leaseNote: "التأجير المنتهي بالتملك ليس قرضًا؛ قد تتجاوز التكلفة الإجمالية سعر الشراء نقدًا.",
+    rating: "تقييم 4.7★ على Google · 408 مراجعات",
+    leaseNote: "التأجير المنتهي بالتملك ليس قرضًا؛ التكلفة الإجمالية أعلى من سعر الشراء نقدًا.",
     fullSite: "عرض الموقع الكامل بالإنجليزية",
   },
   {
@@ -150,7 +150,7 @@ export const INTL_LANGS: IntlLang[] = [
       "ان لاکڈ فون، بغیر کریڈٹ کے لیز ٹو اون $40 سے، اسی دن اسکرین کی مرمت، فون ان لاک، پری پیڈ پلان اور بین الاقوامی ری چارج۔ \u20663640 Hillcroft St, Suite C, Houston\u2069.",
     h1: "ہیوسٹن میں موبائل فون اسٹور اور فون کی مرمت",
     intro:
-      "TIC Wireless Electronic & Repair Center ایک آزاد موبائل فون اسٹور ہے جو \u20663640 Hillcroft St, Suite C, Houston, TX 77057\u2069 پر واقع ہے۔ ہم ان لاکڈ فون فروخت کرتے ہیں، اسی دن فون کی مرمت کرتے ہیں اور تمام بڑی پری پیڈ کمپنیوں کے پلان فراہم کرتے ہیں۔",
+      "TIC Wireless Electronic & Repair Center ایک آزاد موبائل فون اسٹور ہے جو \u20663640 Hillcroft St, Suite C, Houston, TX 77057\u2069 پر واقع ہے۔ ہم ان لاکڈ فون فروخت کرتے ہیں، اسی دن فون کی مرمت کرتے ہیں اور 12 کمپنیوں کے پری پیڈ پلان فراہم کرتے ہیں۔",
     servicesTitle: "ہماری خدمات",
     services: [
       "نئے ان لاکڈ فون: iPhone 18 Pro Max، Samsung Galaxy اور دیگر Android فون۔",
@@ -158,7 +158,7 @@ export const INTL_LANGS: IntlLang[] = [
       "PlayStation 5، Xbox، Nintendo Switch 2، MacBook، لیپ ٹاپ اور iPad بھی لیز پر دستیاب ہیں۔",
       "اسی دن مرمت: iPhone، Samsung اور Android کی اسکرین، بیٹری اور چارجنگ پورٹ؛ کام شروع کرنے سے پہلے قیمت بتائی جاتی ہے۔",
       "فون ان لاک کریں تاکہ آپ اپنی پسند کی کمپنی استعمال کر سکیں۔",
-      "پری پیڈ پلان: Verizon، AT&T، T-Mobile، Metro، Cricket، Boost، Simple Mobile، Lyca، GoSmart، Gen Mobile؛ اور Xfinity پری پیڈ ہوم انٹرنیٹ۔",
+      "پری پیڈ پلان: Verizon، AT&T، T-Mobile، Metro، Cricket، Boost، Simple Mobile، Tracfone، H2O Wireless، Lyca، GoSmart، Gen Mobile؛ اور Xfinity پری پیڈ ہوم انٹرنیٹ۔",
       "اسٹور میں فون بل کی ادائیگی بغیر اضافی فیس کے، اور بین الاقوامی موبائل ری چارج۔",
       "لوازمات: کیس، ٹیمپرڈ گلاس، چارجر، AirPods، Galaxy Buds، JBL اسپیکر۔",
     ],
@@ -173,8 +173,8 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "راستہ",
     address: "پتہ",
     phone: "فون",
-    rating: "Google پر 4.7★ · 400 سے زیادہ ریویوز",
-    leaseNote: "لیز ٹو اون قرض نہیں ہے؛ کل لاگت نقد قیمت سے زیادہ ہو سکتی ہے۔",
+    rating: "Google پر 4.7★ · 408 ریویوز",
+    leaseNote: "لیز ٹو اون قرض نہیں ہے؛ کل لاگت نقد قیمت سے زیادہ ہوتی ہے۔",
     fullSite: "مکمل ویب سائٹ انگریزی میں دیکھیں",
   },
   {
@@ -188,7 +188,7 @@ export const INTL_LANGS: IntlLang[] = [
       "अनलॉक्ड फ़ोन, बिना क्रेडिट के लीज़-टू-ओन $40 से, उसी दिन स्क्रीन रिपेयर, फ़ोन अनलॉक, प्रीपेड प्लान और अंतरराष्ट्रीय रिचार्ज। Hillcroft, Houston.",
     h1: "ह्यूस्टन में मोबाइल फ़ोन स्टोर और फ़ोन रिपेयर",
     intro:
-      "TIC Wireless Electronic & Repair Center एक स्वतंत्र मोबाइल फ़ोन स्टोर है, जो 3640 Hillcroft St, Suite C, Houston, TX 77057 पर है। हम अनलॉक्ड फ़ोन बेचते हैं, उसी दिन फ़ोन रिपेयर करते हैं और सभी बड़ी प्रीपेड कंपनियों के प्लान देते हैं।",
+      "TIC Wireless Electronic & Repair Center एक स्वतंत्र मोबाइल फ़ोन स्टोर है, जो 3640 Hillcroft St, Suite C, Houston, TX 77057 पर है। हम अनलॉक्ड फ़ोन बेचते हैं, उसी दिन फ़ोन रिपेयर करते हैं और 12 कंपनियों के प्रीपेड प्लान देते हैं।",
     servicesTitle: "हमारी सेवाएँ",
     services: [
       "नए अनलॉक्ड फ़ोन: iPhone 18 Pro Max, Samsung Galaxy और अन्य Android फ़ोन।",
@@ -196,7 +196,7 @@ export const INTL_LANGS: IntlLang[] = [
       "PlayStation 5, Xbox, Nintendo Switch 2, MacBook, लैपटॉप और iPad भी लीज़ पर उपलब्ध।",
       "उसी दिन रिपेयर: iPhone, Samsung और Android की स्क्रीन, बैटरी और चार्जिंग पोर्ट; काम शुरू होने से पहले कीमत बताई जाती है।",
       "फ़ोन अनलॉक, ताकि आप अपनी पसंद की कंपनी इस्तेमाल कर सकें।",
-      "प्रीपेड प्लान: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile; और Xfinity प्रीपेड होम इंटरनेट।",
+      "प्रीपेड प्लान: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Tracfone, H2O Wireless, Lyca, GoSmart, Gen Mobile; और Xfinity प्रीपेड होम इंटरनेट।",
       "स्टोर पर फ़ोन बिल का भुगतान बिना अतिरिक्त शुल्क के, और अंतरराष्ट्रीय मोबाइल रिचार्ज।",
       "एक्सेसरीज़: केस, टेम्पर्ड ग्लास, चार्जर, AirPods, Galaxy Buds, JBL स्पीकर।",
     ],
@@ -212,8 +212,8 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "रास्ता देखें",
     address: "पता",
     phone: "फ़ोन",
-    rating: "Google पर 4.7★ · 400+ रिव्यू",
-    leaseNote: "लीज़-टू-ओन ऋण नहीं है; कुल लागत नकद कीमत से अधिक हो सकती है।",
+    rating: "Google पर 4.7★ · 408 रिव्यू",
+    leaseNote: "लीज़-टू-ओन ऋण नहीं है; कुल लागत नकद कीमत से अधिक होती है।",
     fullSite: "पूरी वेबसाइट अंग्रेज़ी में देखें",
   },
   {
@@ -235,7 +235,7 @@ export const INTL_LANGS: IntlLang[] = [
       "Également disponible pour PlayStation 5, Xbox, Nintendo Switch 2, MacBook, ordinateurs portables et iPad.",
       "Réparation le jour même : écrans, batteries et ports de charge pour iPhone, Samsung et Android ; devis avant toute intervention.",
       "Déblocage de téléphone pour utiliser l'opérateur de votre choix.",
-      "Forfaits prépayés : Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile ; et Internet prépayé Xfinity.",
+      "Forfaits prépayés : Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Tracfone, H2O Wireless, Lyca, GoSmart, Gen Mobile ; et Internet prépayé Xfinity.",
       "Paiement de factures en magasin sans frais supplémentaires, et recharge mobile internationale.",
       "Accessoires : coques, verre trempé, chargeurs, AirPods, Galaxy Buds, enceintes JBL.",
     ],
@@ -247,9 +247,9 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Itinéraire",
     address: "Adresse",
     phone: "Téléphone",
-    rating: "4,7★ sur Google · plus de 400 avis",
+    rating: "4,7★ sur Google · 408 avis",
     leaseNote:
-      "La location avec option d'achat n'est pas un prêt ; le coût total peut dépasser le prix comptant.",
+      "La location avec option d'achat n'est pas un prêt ; le coût total dépasse le prix comptant.",
     fullSite: "Voir le site complet en anglais",
   },
   {
@@ -271,7 +271,7 @@ export const INTL_LANGS: IntlLang[] = [
       "Também disponível para PlayStation 5, Xbox, Nintendo Switch 2, MacBook, notebooks e iPad.",
       "Conserto no mesmo dia: telas, baterias e entradas de carregamento de iPhone, Samsung e Android; orçamento antes do serviço.",
       "Desbloqueio de celular para usar a operadora que você escolher.",
-      "Planos pré-pagos: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile; e internet residencial pré-paga Xfinity.",
+      "Planos pré-pagos: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Tracfone, H2O Wireless, Lyca, GoSmart, Gen Mobile; e internet residencial pré-paga Xfinity.",
       "Pagamento de contas na loja sem taxas extras, e recarga internacional de celular.",
       "Acessórios: capinhas, película de vidro temperado, carregadores, AirPods, Galaxy Buds, caixas de som JBL.",
     ],
@@ -283,9 +283,9 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Como chegar",
     address: "Endereço",
     phone: "Telefone",
-    rating: "4,7★ no Google · mais de 400 avaliações",
+    rating: "4,7★ no Google · 408 avaliações",
     leaseNote:
-      "O leasing com opção de compra não é um empréstimo; o custo total pode ser maior que o preço à vista.",
+      "O leasing com opção de compra não é um empréstimo; o custo total é maior que o preço à vista.",
     fullSite: "Ver o site completo em inglês",
   },
   {
@@ -307,7 +307,7 @@ export const INTL_LANGS: IntlLang[] = [
       "PlayStation 5, Xbox, Nintendo Switch 2, MacBook, 노트북, iPad도 리스 가능.",
       "당일 수리: iPhone, Samsung, Android의 액정, 배터리, 충전 포트. 수리 전 가격 안내.",
       "원하는 통신사를 쓸 수 있도록 휴대폰 언락.",
-      "선불 요금제: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile, 그리고 Xfinity 선불 인터넷.",
+      "선불 요금제: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Tracfone, H2O Wireless, Lyca, GoSmart, Gen Mobile, 그리고 Xfinity 선불 인터넷.",
       "매장에서 추가 수수료 없이 휴대폰 요금 납부, 국제 휴대폰 충전.",
       "액세서리: 케이스, 강화유리, 충전기, AirPods, Galaxy Buds, JBL 스피커.",
     ],
@@ -318,8 +318,8 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "길찾기",
     address: "주소",
     phone: "전화",
-    rating: "Google 평점 4.7★ · 리뷰 400개 이상",
-    leaseNote: "리스 후 구매는 대출이 아니며, 총비용이 현금 가격보다 높을 수 있습니다.",
+    rating: "Google 평점 4.7★ · 리뷰 408개",
+    leaseNote: "리스 후 구매는 대출이 아니며, 총비용이 현금 가격보다 높습니다.",
     fullSite: "전체 웹사이트 영어로 보기",
   },
   {
@@ -341,7 +341,7 @@ export const INTL_LANGS: IntlLang[] = [
       "Puwede ring i-lease ang PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop at iPad.",
       "Same-day na pag-aayos: screen, baterya at charging port ng iPhone, Samsung at Android; sinasabi ang presyo bago simulan.",
       "Pag-unlock ng phone para magamit ang carrier na gusto mo.",
-      "Prepaid plans: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart, Gen Mobile; at Xfinity Prepaid home internet.",
+      "Prepaid plans: Verizon, AT&T, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Tracfone, H2O Wireless, Lyca, GoSmart, Gen Mobile; at Xfinity Prepaid home internet.",
       "Pagbabayad ng phone bill sa tindahan nang walang dagdag na bayad, at international mobile recharge.",
       "Accessories: case, tempered glass, charger, AirPods, Galaxy Buds, JBL speaker.",
     ],
@@ -357,9 +357,9 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Direksyon",
     address: "Address",
     phone: "Telepono",
-    rating: "4.7★ sa Google · 400+ na review",
+    rating: "4.7★ sa Google · 408 na review",
     leaseNote:
-      "Ang lease-to-own ay hindi loan; ang kabuuang halaga ay maaaring mas mataas kaysa sa cash price.",
+      "Ang lease-to-own ay hindi loan; ang kabuuang halaga ay mas mataas kaysa sa cash price.",
     fullSite: "Tingnan ang buong website sa English",
   },
 ];

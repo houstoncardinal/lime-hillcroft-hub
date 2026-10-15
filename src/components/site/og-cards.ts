@@ -37,6 +37,8 @@ const PHOTO_FILES: Record<string, string> = {
   storefront: "storefront-3640",
   s22: "galaxy-s22-ultra",
   laptops: "laptops-tablets",
+  xfinity: "xfinity-prepaid-kit",
+  simTray: "sim-tray-unlock",
 };
 
 // One in-store or storefront photo per area, so each area's card looks different.
@@ -54,7 +56,6 @@ const AREA_PHOTOS = [
 // Share-image crops that show the product better than the page photo.
 const SERVICE_OG_PHOTO: Record<string, [string, string]> = {
   "prepaid-plans": ["consoles-wide", "45% 50%"],
-  "xfinity-prepaid-internet": ["consoles-wide", "80% 50%"],
   "international-recharge": ["storefront-3640", "85% 50%"],
 };
 
@@ -167,7 +168,7 @@ export function ogCards(): OgCard[] {
       page("home", lang, "storefront-3640", T.home[lang]),
       page("leasing", lang, "consoles-wide", T.leasing[lang], "0% 50%"),
       page("location", lang, "storefront-3640", T.location[lang]),
-      ...(["accessories", "consoles", "laptops"] as const).map((key) => {
+      ...(["accessories", "consoles", "laptops", "iphone18"] as const).map((key) => {
         const c = CATEGORY_PAGES[key];
         const t = c.text[lang];
         return page(key, lang, PRODUCT_PHOTOS[c.heroPhoto].file, {

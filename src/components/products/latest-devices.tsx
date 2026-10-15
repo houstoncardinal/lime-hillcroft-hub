@@ -9,22 +9,24 @@ import { cn } from "@/lib/utils";
 
 const T = {
   en: {
-    kicker: "New in store",
-    title: "The latest devices on our shelves.",
-    body: "In stock at 3640 Hillcroft St and available with leasing — no credit needed, as low as $40 down. Ask us which carriers each phone works with.",
+    kicker: "In store now",
+    title: "Phones and tablets on our shelves.",
+    body: "In stock at 3640 Hillcroft St on the date shown and available with leasing — no credit needed, as low as $40 down, subject to approval. Stock changes quickly, so call to confirm, and ask us which carriers each phone works with.",
     updated: (d: string) => `Updated ${d}`,
     inStore: "In store now",
+    details: "Details",
     call: "Call to check stock",
     lease: "Apply for leasing",
     prev: "Previous devices",
     next: "More devices",
   },
   es: {
-    kicker: "Nuevo en la tienda",
-    title: "Lo más nuevo en nuestras vitrinas.",
-    body: "Disponibles en 3640 Hillcroft St y con arrendamiento: sin crédito, desde $40 de enganche. Pregúntanos con qué compañías funciona cada celular.",
+    kicker: "Recién llegados",
+    title: "Celulares y tabletas en nuestras vitrinas.",
+    body: "Disponibles en 3640 Hillcroft St en la fecha indicada y con arrendamiento: sin necesidad de crédito, desde $40 de enganche, sujeto a aprobación. El inventario cambia rápido, así que llama para confirmar y pregúntanos con qué compañías funciona cada celular.",
     updated: (d: string) => `Actualizado el ${d}`,
     inStore: "En tienda",
+    details: "Ver más",
     call: "Llama para ver existencias",
     lease: "Solicita arrendamiento",
     prev: "Equipos anteriores",
@@ -70,7 +72,7 @@ export function LatestDevices({
         <Scroller label={title ?? t.title} prevLabel={t.prev} nextLabel={t.next} className="mt-4">
           {devices.map((d) => (
             <li key={d.id} className="w-[72%] shrink-0 snap-start sm:w-60 lg:w-64">
-              <article className="flex h-full flex-col overflow-hidden rounded-3xl border bg-card">
+              <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border bg-card">
                 <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
                   <img
                     src={d.image}
@@ -92,12 +94,27 @@ export function LatestDevices({
                     {d.brand}
                   </p>
                   <h3 className="mt-0.5 font-display text-lg font-semibold leading-snug">
-                    {d.name}
+                    {d.page ? (
+                      // Stretched link: the whole card opens the device's page.
+                      <Link
+                        to={d.page[lang]}
+                        className="after:absolute after:inset-0 after:content-[''] hover:text-primary"
+                      >
+                        {d.name}
+                      </Link>
+                    ) : (
+                      d.name
+                    )}
                   </h3>
                   {d.note && <p className="mt-0.5 text-sm text-muted-foreground">{d.note[lang]}</p>}
                   <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-emerald-700">
                     <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
                     {t.inStore}
+                    {d.page && (
+                      <span className="ml-auto inline-flex items-center gap-1 text-ink">
+                        {t.details} <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                      </span>
+                    )}
                   </p>
                 </div>
               </article>

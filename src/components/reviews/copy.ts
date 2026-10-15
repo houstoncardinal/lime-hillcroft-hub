@@ -2,7 +2,7 @@
 
 export const REVIEWS_COPY = {
   en: {
-    title: "TIC Wireless Reviews — 4.7★ on Google from 408 Customers",
+    title: "TIC Wireless Reviews — 4.7★ on Google from 408 Reviews",
     description:
       "Real Google reviews of TIC Wireless on Hillcroft in Houston: phone sales, same-day screen repair, cases and friendly bilingual staff. 4.7 from 408 reviews.",
     breadcrumb: ["Home", "Reviews"],
@@ -25,7 +25,7 @@ export const REVIEWS_COPY = {
     directions: "Directions",
   },
   es: {
-    title: "Reseñas de TIC Wireless — 4.7★ en Google de 408 Clientes",
+    title: "Reseñas de TIC Wireless — 4.7★ en Google con 408 Reseñas",
     description:
       "Reseñas reales de Google de TIC Wireless en Hillcroft, Houston: celulares, reparación de pantallas el mismo día, fundas y personal bilingüe. 4.7 de 408 reseñas.",
     breadcrumb: ["Inicio", "Reseñas"],

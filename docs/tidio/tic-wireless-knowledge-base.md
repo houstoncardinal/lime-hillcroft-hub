@@ -37,11 +37,11 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 - New unlocked iPhones and Android phones (Samsung Galaxy, Motorola and more), including the
   latest models such as the new iPhone 18 Pro Max (and iPhone 17 Pro).
-- Leasing (lease-to-own) are available: no credit needed, bad credit is OK, options start at
+- Leasing (lease-to-own) is available: no credit needed, bad credit is OK, options start at
   $40 down. The exact down payment and payments depend on the item and the plan the customer is
   approved for. Approval is not guaranteed.
 - Lease-to-own is not a loan: the customer leases the item and makes regular payments; when the
-  plan is complete (or bought out early) the item is theirs. The total cost to own can be more
+  plan is complete (or bought out early) the item is theirs. The total cost to own is more
   than the cash price. Staff explain all terms in store before anything is signed.
 - Payment schedules: weekly, biweekly or monthly payments are available.
 - To apply: come to the store with a valid photo ID. The application takes a few minutes at the
@@ -55,8 +55,9 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 ## Prepaid plans, internet and payments
 
-- Prepaid plans from: Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro by T-Mobile, Cricket,
-  Boost Mobile, Simple Mobile, Lyca Mobile, GoSmart and Gen Mobile. No contracts.
+- Prepaid plans from 12 carriers: T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket,
+  Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile
+  and GoSmart. No contracts.
 - Xfinity Prepaid home internet is sold and set up in store.
 - Bill payments: customers can pay their phone bill in person for the major prepaid carriers,
   with no extra charges.
@@ -105,7 +106,7 @@ customers should call (713) 339-9300.
 
 ## Reviews
 
-- TIC Wireless Electronic & Repair Center is rated 4.7 out of 5 on Google, from 400+ reviews.
+- TIC Wireless Electronic & Repair Center is rated 4.7 out of 5 on Google, from 408 reviews (October 2026).
 
 ## Language
 

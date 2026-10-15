@@ -36,7 +36,9 @@ function Panel({
   items,
   footer,
   wide,
+  pathname,
 }: {
+  pathname: string;
   items: NavItem[];
   footer: { label: string; href: string };
   wide?: boolean;
@@ -45,24 +47,27 @@ function Panel({
     <Nav.Content className="absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in-0 data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out-0">
       <div
         className={cn(
-          "rounded-3xl border border-white/10 bg-ink p-3 text-white shadow-2xl shadow-black/40",
+          "surface-light rounded-3xl border border-ink/10 bg-white p-3 text-ink shadow-2xl shadow-ink/25 ring-1 ring-black/5",
           wide ? "w-[40rem]" : "w-[34rem]",
         )}
       >
         <ul className="grid grid-cols-2 gap-1">
           {items.map((i) => (
             <li key={i.href}>
-              <Nav.Link asChild>
+              <Nav.Link asChild active={pathname === i.href}>
                 <Link
                   to={i.href}
-                  className="flex items-start gap-3 rounded-2xl p-3 outline-none transition hover:bg-white/[0.07] focus-visible:bg-white/[0.07]"
+                  aria-current={pathname === i.href ? "page" : undefined}
+                  className="group/item flex items-start gap-3 rounded-2xl p-3 outline-none transition hover:bg-secondary focus-visible:bg-secondary focus-visible:ring-2 focus-visible:ring-primary data-[active]:bg-secondary"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-primary">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover/item:bg-primary group-hover/item:text-primary-foreground">
                     <i.icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <span>
-                    <span className="block text-sm font-semibold">{i.label}</span>
-                    <span className="mt-0.5 block text-xs text-white/60">{i.hint}</span>
+                    <span className="block text-[15px] font-semibold text-ink">{i.label}</span>
+                    <span className="mt-0.5 block text-[13px] leading-snug text-muted-foreground">
+                      {i.hint}
+                    </span>
                   </span>
                 </Link>
               </Nav.Link>
@@ -72,7 +77,7 @@ function Panel({
         <Nav.Link asChild>
           <Link
             to={footer.href}
-            className="mt-2 flex items-center justify-between rounded-2xl bg-primary/15 px-4 py-3 text-sm font-semibold text-primary transition hover:bg-primary/25"
+            className="mt-2 flex items-center justify-between rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white outline-none transition hover:bg-ink-soft focus-visible:ring-2 focus-visible:ring-primary"
           >
             {footer.label} <ArrowRight className="h-4 w-4" />
           </Link>
@@ -127,6 +132,7 @@ export function DesktopNav({ lang }: { lang: Lang }) {
             />
           </Nav.Trigger>
           <Panel
+            pathname={pathname}
             items={productNav(lang)}
             footer={{ label: t.leasingCta, href: ALTERNATES.leasing[lang] }}
           />
@@ -140,6 +146,7 @@ export function DesktopNav({ lang }: { lang: Lang }) {
             />
           </Nav.Trigger>
           <Panel
+            pathname={pathname}
             items={serviceNav(lang)}
             footer={{ label: t.allServices, href: ALTERNATES.services[lang] }}
             wide

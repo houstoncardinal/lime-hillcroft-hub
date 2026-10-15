@@ -75,7 +75,7 @@ const T = {
   },
 };
 
-function PortalButton({
+export function PortalButton({
   portal,
   lang,
   className,

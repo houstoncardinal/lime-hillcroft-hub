@@ -32,6 +32,7 @@ export type NavItem = {
 const L = {
   en: {
     phones: ["Unlocked phones", "iPhone, Samsung Galaxy & Motorola"],
+    iphone18: ["iPhone 18", "iPhone 18 Pro Max in store, leasing"],
     consoles: ["Game consoles", "PS5, Xbox & Nintendo Switch 2"],
     laptops: ["Laptops & tablets", "MacBook, iPad & Galaxy Tab"],
     accessories: ["Accessories", "Cases, glass, chargers & mounts"],
@@ -39,6 +40,8 @@ const L = {
     shop: ["Shop online", "Order accessories online"],
     prepaid: ["Prepaid plans & prices", "12 carriers, from $10/mo"],
     repair: ["Phone repair", "Same-day screens & batteries"],
+    iphoneRepair: ["iPhone repair", "Screens, batteries & charging ports"],
+    samsungRepair: ["Samsung Galaxy repair", "Galaxy & Android screens, batteries"],
     unlocking: ["Phone unlocking", "Use any carrier"],
     xfinity: ["Xfinity Prepaid internet", "Home internet, set up in store"],
     trade: ["Buy · Sell · Trade", "Trade in or sell your phone"],
@@ -47,6 +50,7 @@ const L = {
   },
   es: {
     phones: ["Celulares desbloqueados", "iPhone, Samsung Galaxy y Motorola"],
+    iphone18: ["iPhone 18", "iPhone 18 Pro Max en tienda, a pagos"],
     consoles: ["Consolas", "PS5, Xbox y Nintendo Switch 2"],
     laptops: ["Laptops y tabletas", "MacBook, iPad y Galaxy Tab"],
     accessories: ["Accesorios", "Fundas, micas, cargadores y soportes"],
@@ -54,6 +58,8 @@ const L = {
     shop: ["Tienda en línea", "Pide accesorios en línea"],
     prepaid: ["Planes prepagados y precios", "12 compañías, desde $10/mes"],
     repair: ["Reparación de celulares", "Pantallas y baterías el mismo día"],
+    iphoneRepair: ["Reparación de iPhone", "Pantallas, baterías y puertos de carga"],
+    samsungRepair: ["Reparación de Samsung", "Pantallas y baterías de Galaxy y Android"],
     unlocking: ["Liberación de celulares", "Usa cualquier compañía"],
     xfinity: ["Internet prepagado Xfinity", "Internet en casa, activado aquí"],
     trade: ["Compra · Venta · Intercambio", "Vende o cambia tu celular"],
@@ -74,6 +80,7 @@ export function productNav(lang: Lang): NavItem[] {
   const t = L[lang];
   return [
     item(t.phones, servicePath(lang, "unlocked-phones"), Smartphone),
+    item(t.iphone18, ALTERNATES.iphone18[lang], Smartphone),
     item(t.consoles, ALTERNATES.consoles[lang], Gamepad2),
     item(t.laptops, ALTERNATES.laptops[lang], Laptop),
     item(t.accessories, ALTERNATES.accessories[lang], Plug),
@@ -88,6 +95,8 @@ export function serviceNav(lang: Lang): NavItem[] {
   return [
     item(t.prepaid, servicePath(lang, "prepaid-plans"), Wallet),
     item(t.repair, servicePath(lang, "phone-repair"), Wrench),
+    item(t.iphoneRepair, servicePath(lang, "iphone-repair"), Wrench),
+    item(t.samsungRepair, servicePath(lang, "samsung-repair"), Wrench),
     item(t.unlocking, servicePath(lang, "phone-unlocking"), KeyRound),
     item(t.xfinity, servicePath(lang, "xfinity-prepaid-internet"), Router),
     item(t.trade, servicePath(lang, "buy-sell-trade"), Repeat),

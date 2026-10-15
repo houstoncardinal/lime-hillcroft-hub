@@ -49,6 +49,8 @@ export function areaHead(lang: Lang, area: Area | undefined) {
   const url = absoluteUrl(paths[lang]);
   const hub = HUB_COPY[lang];
   const image = ogImage(`area-${area.slug}`, lang);
+  const store = { "@id": absoluteUrl("/#store") };
+  const bellaire = area.slug === "bellaire";
   return pageHead({
     paths,
     lang,
@@ -72,24 +74,44 @@ export function areaHead(lang: Lang, area: Area | undefined) {
         {
           "@type": "Service",
           "@id": `${url}#service`,
-          name: t.h1.join(" "),
+          name:
+            lang === "en"
+              ? `Phone repair & cell phone store serving ${shortName(area)}`
+              : `Reparación y tienda de celulares para ${shortName(area)}`,
           serviceType:
             lang === "en" ? "Cell phone repair and sales" : "Reparación y venta de celulares",
-          description: t.distance,
+          // What the service is (the distance stays in the visible copy).
+          description:
+            lang === "en"
+              ? `Same-day phone repair (screens, batteries, charging ports), unlocking, unlocked phones with leasing (no credit needed, subject to approval), prepaid plans and accessories for customers in ${shortName(area)}, at our store on Hillcroft in Southwest Houston.`
+              : `Reparación de celulares el mismo día (pantallas, baterías, puertos de carga), liberación, celulares desbloqueados a pagos (sin necesidad de crédito, sujeto a aprobación), planes prepagados y accesorios para clientes de ${shortName(area)}, en nuestra tienda en Hillcroft, en el suroeste de Houston.`,
           url,
-          provider: { "@id": absoluteUrl("/#store") },
+          inLanguage: lang === "en" ? "en-US" : "es-US",
+          provider: store,
+          availableLanguage: ["English", "Spanish"],
+          availableChannel: {
+            "@type": "ServiceChannel",
+            serviceLocation: store,
+            servicePhone: {
+              "@type": "ContactPoint",
+              telephone: "+1-713-339-9300",
+              contactType: "customer service",
+              availableLanguage: ["English", "Spanish"],
+            },
+          },
           areaServed: {
             "@type": "Place",
             name: shortName(area),
             geo: { "@type": "GeoCoordinates", latitude: area.lat, longitude: area.lon },
             address: {
               "@type": "PostalAddress",
-              addressLocality: area.slug === "bellaire" ? "Bellaire" : "Houston",
+              addressLocality: bellaire ? "Bellaire" : "Houston",
               addressRegion: "TX",
-              postalCode: area.zips[0],
+              postalCode: area.zips,
               addressCountry: "US",
             },
-            containedInPlace: { "@type": "City", name: "Houston" },
+            // Bellaire is its own city, surrounded by Houston, not part of it.
+            ...(bellaire ? {} : { containedInPlace: { "@type": "City", name: "Houston" } }),
           },
         },
       ],

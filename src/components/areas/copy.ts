@@ -1,13 +1,17 @@
+import { GOOGLE_REVIEW_COUNT } from "@/components/reviews/data";
+import { routeStep } from "@/components/location/copy";
+import { servicePath } from "@/components/services/paths";
 import { PHONE } from "@/components/site/business";
-import { SHOP_ENABLED } from "@/components/site/features";
 import type { Faq } from "@/components/site/schema";
-import { withBrand, type Lang } from "@/components/site/seo";
+import { ALTERNATES, withBrand, type Lang } from "@/components/site/seo";
 
 import { areaName, shortName, type Area } from "@/components/areas/data";
 import { LOCAL } from "@/components/areas/local";
 
 const mi = (n: number) => n.toFixed(1);
 const zipList = (a: Area) => a.zips.join(", ");
+/** The area's route in the page's language. */
+export const routeSteps = (a: Area, lang: Lang) => a.route.map((step) => routeStep(step, lang));
 
 // Text for the area hub and each area page. Area-specific numbers are filled in per page.
 export function areaCopy(a: Area, lang: Lang) {
@@ -31,15 +35,23 @@ export function areaCopy(a: Area, lang: Lang) {
       directions: `Cómo llegar desde ${short}`,
       servicesTitle: `Lo que hacemos para ${short}`,
       services: [
-        ["Reparación el mismo día", "Pantallas, baterías y puertos de carga.", "/es#repair"],
-        ["Celulares a pagos", "Sin crédito, desde $40 de enganche.", "/es/arrendamiento"],
-        ["Liberación", "Usa la compañía que quieras.", "/es#services"],
-        ["Planes y pagos", "Prepagados, pago de facturas y recargas.", "/es#services"],
         [
-          "Accesorios",
-          "Fundas, micas, AirPods y JBL.",
-          SHOP_ENABLED ? "/es/tienda" : "/es#accessories",
+          "Reparación el mismo día",
+          "Pantallas, baterías y puertos de carga.",
+          servicePath("es", "phone-repair"),
         ],
+        [
+          "Celulares a pagos",
+          "Sin necesidad de crédito, desde $40 de enganche. Sujeto a aprobación.",
+          ALTERNATES.leasing.es,
+        ],
+        ["Liberación", "Usa la compañía que quieras.", servicePath("es", "phone-unlocking")],
+        [
+          "Planes y pagos",
+          "Prepagados, pago de facturas y recargas.",
+          servicePath("es", "prepaid-plans"),
+        ],
+        ["Accesorios", "Fundas, micas, AirPods y JBL.", ALTERNATES.accessories.es],
       ] as [string, string, string][],
       routeTitle: `Cómo llegar desde ${short}`,
       routeEnd:
@@ -48,7 +60,7 @@ export function areaCopy(a: Area, lang: Lang) {
       faqTitle: `Preguntas de clientes de ${short}`,
       nearbyTitle: "Zonas cercanas",
       allAreas: "Todas las zonas",
-      rating: "4.7★ en Google · más de 400 reseñas",
+      rating: `4.7★ en Google · ${GOOGLE_REVIEW_COUNT} reseñas`,
       whyTitle: `Por qué ${short} elige TIC Wireless Electronic & Repair Center`,
       aboutTitle: `Sobre ${short}`,
       faqs: [
@@ -59,7 +71,7 @@ export function areaCopy(a: Area, lang: Lang) {
         },
         {
           q: `¿Qué tan lejos está TIC Wireless Electronic & Repair Center de ${zipList(a)}?`,
-          a: `Unas ${mi(a.miles)} millas, alrededor de ${a.minutes} minutos en carro sin tráfico, por ${a.route.join(", ")}.`,
+          a: `Unas ${mi(a.miles)} millas, alrededor de ${a.minutes} minutos en carro sin tráfico, por ${routeSteps(a, "es").join(", ")}.`,
         },
         {
           q: `¿Puedo sacar un celular sin crédito cerca de ${short}?`,
@@ -84,11 +96,23 @@ export function areaCopy(a: Area, lang: Lang) {
     directions: `Directions from ${short}`,
     servicesTitle: `What we do for ${short}`,
     services: [
-      ["Same-day repair", "Screens, batteries and charging ports.", "/#repair"],
-      ["Phones with leasing", "No credit needed, from $40 down.", "/leasing"],
-      ["Unlocking", "Use the carrier you choose.", "/#services"],
-      ["Plans & payments", "Prepaid plans, bill pay and recharge.", "/#services"],
-      ["Accessories", "Cases, glass, AirPods and JBL.", SHOP_ENABLED ? "/shop" : "/#accessories"],
+      [
+        "Same-day repair",
+        "Screens, batteries and charging ports.",
+        servicePath("en", "phone-repair"),
+      ],
+      [
+        "Phones with leasing",
+        "No credit needed, from $40 down. Subject to approval.",
+        ALTERNATES.leasing.en,
+      ],
+      ["Unlocking", "Use the carrier you choose.", servicePath("en", "phone-unlocking")],
+      [
+        "Plans & payments",
+        "Prepaid plans, bill pay and recharge.",
+        servicePath("en", "prepaid-plans"),
+      ],
+      ["Accessories", "Cases, glass, AirPods and JBL.", ALTERNATES.accessories.en],
     ] as [string, string, string][],
     routeTitle: `Getting here from ${short}`,
     routeEnd:
@@ -97,7 +121,7 @@ export function areaCopy(a: Area, lang: Lang) {
     faqTitle: `Questions from ${short} customers`,
     nearbyTitle: "Nearby areas",
     allAreas: "All areas we serve",
-    rating: "4.7★ on Google · 400+ reviews",
+    rating: `4.7★ on Google · ${GOOGLE_REVIEW_COUNT} reviews`,
     whyTitle: `Why ${short} chooses TIC Wireless Electronic & Repair Center`,
     aboutTitle: `About ${short}`,
     faqs: [
@@ -108,7 +132,7 @@ export function areaCopy(a: Area, lang: Lang) {
       },
       {
         q: `How far is TIC Wireless Electronic & Repair Center from ${zipList(a)}?`,
-        a: `About ${mi(a.miles)} miles — roughly ${a.minutes} minutes by car without traffic, via ${a.route.join(", ")}.`,
+        a: `About ${mi(a.miles)} miles — roughly ${a.minutes} minutes by car without traffic, via ${routeSteps(a, "en").join(", ")}.`,
       },
       {
         q: `Can I get a phone with no credit near ${short}?`,

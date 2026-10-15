@@ -14,8 +14,23 @@ import { FaqList } from "@/components/site/faq";
 import { LatestDevices } from "@/components/products/latest-devices";
 import { PHONES } from "@/components/products/inventory";
 import { LeasingPortals } from "@/components/site/leasing-portals";
+import { NearYou } from "@/components/site/near-you";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { cn } from "@/lib/utils";
+import { type ReviewPick } from "@/components/reviews/picks";
+import { ReviewQuotes } from "@/components/reviews/review-quotes";
+
+// Which real Google reviews each service page shows (see REVIEW_PICKS).
+const SERVICE_REVIEWS: Record<string, ReviewPick> = {
+  "unlocked-phones": "phones",
+  "phone-repair": "repair",
+  "iphone-repair": "repair",
+  "samsung-repair": "repair",
+  "prepaid-plans": "plans",
+  "bill-payments": "bills",
+  "buy-sell-trade": "trade",
+};
 
 const UI = {
   en: {
@@ -114,7 +129,12 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
               ))}
             </ul>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 lg:aspect-[4/5]">
+          <figure
+            className={cn(
+              "relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10",
+              photo.fit === "contain" && "bg-white",
+            )}
+          >
             <Photo
               src={photo.src}
               srcSm={photo.sm}
@@ -123,11 +143,25 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
               sizes="(min-width: 1024px) 40vw, 100vw"
               alt={t.imageAlt}
               priority
+              {...(photo.fit === "contain" ? { className: "object-contain px-6 pb-24 pt-8" } : {})}
+              {...(photo.focus ? { style: { objectPosition: photo.focus } } : {})}
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-6 pt-20">
               <OpenBadge lang={lang} />
             </div>
-          </div>
+            {photo.credit && (
+              <figcaption className="absolute right-3 top-3 rounded-full bg-ink/60 px-2.5 py-1 text-[11px] text-white/80 backdrop-blur">
+                <a
+                  href={photo.credit.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {photo.credit.text}
+                </a>
+              </figcaption>
+            )}
+          </figure>
         </div>
       </section>
 
@@ -155,6 +189,21 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
                 </li>
               ))}
             </ul>
+            {t.links && (
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {t.links.map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      to={href}
+                      className="group inline-flex min-h-11 items-center gap-1.5 rounded-full border px-5 font-semibold transition hover:border-primary hover:text-primary"
+                    >
+                      {label}
+                      <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-0.5" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </section>
 
           <section aria-labelledby="steps" className="rounded-3xl bg-secondary/70 p-7 md:p-10">
@@ -218,6 +267,13 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
           </dl>
         </aside>
       </div>
+
+      <ReviewQuotes
+        pick={SERVICE_REVIEWS[service.slug] ?? "general"}
+        lang={lang}
+        className="border-t"
+      />
+      <NearYou lang={lang} />
 
       <section className="border-t bg-secondary/60">
         <div className="mx-auto max-w-7xl px-5 py-16">

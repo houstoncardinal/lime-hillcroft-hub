@@ -29,7 +29,15 @@ const neighborhoods = [
   ["Uptown (Galleria)", "https://en.wikipedia.org/wiki/Uptown_Houston"],
   ["Briarmeadow", null],
   ["Alief", "https://en.wikipedia.org/wiki/Alief,_Houston"],
+  ["Meyerland", "https://en.wikipedia.org/wiki/Meyerland,_Houston"],
 ] as const;
+
+// Bellaire is its own city (surrounded by Houston), so it isn't listed as part of Houston.
+const bellaire = {
+  "@type": "City",
+  name: "Bellaire",
+  sameAs: "https://en.wikipedia.org/wiki/Bellaire,_Texas",
+};
 
 const services = {
   en: [
@@ -124,7 +132,9 @@ function store(lang: Lang) {
     alternateName: ["TIC Wireless", "TIC Wireless - Hillcroft", "TIC Wireless Houston"],
     slogan: "Buy · Sell · Repair · Unlock",
     description: DESCRIPTION[lang],
-    url: absoluteUrl(ALTERNATES.home[lang]),
+    // One entity, one url: the same on every page and in every language.
+    url: absoluteUrl("/"),
+    priceRange: "$$",
     logo: {
       "@type": "ImageObject",
       url: absoluteUrl("/logo.jpg"),
@@ -133,9 +143,9 @@ function store(lang: Lang) {
     },
     image: [
       absoluteUrl("/photos/storefront-3640.jpg"),
-      absoluteUrl("/og/home-en.jpg"),
       absoluteUrl("/photos/plaza.jpg"),
       absoluteUrl("/photos/store-counter.jpg"),
+      absoluteUrl("/photos/case-wall.jpg"),
     ],
     telephone: "+1-713-339-9300",
     contactPoint: {
@@ -231,6 +241,7 @@ function store(lang: Lang) {
         containedInPlace: houston,
         ...(sameAs ? { sameAs } : {}),
       })),
+      bellaire,
       {
         "@type": "GeoCircle",
         geoMidpoint: { "@type": "GeoCoordinates", latitude: 29.7262272, longitude: -95.5014118 },
@@ -286,6 +297,8 @@ export function pageSchema({
   faqs,
   extra = [],
   pageType = "WebPage",
+  datePublished,
+  dateModified = SITE_UPDATED,
 }: {
   paths: Paths;
   lang: Lang;
@@ -297,6 +310,10 @@ export function pageSchema({
   extra?: object[];
   /** schema.org page type, e.g. ["WebPage", "ContactPage"] for the location page. */
   pageType?: string | string[];
+  /** When this page's own content was first published (e.g. a guide). */
+  datePublished?: string;
+  /** When this page's own content last changed; defaults to the site-wide business-facts date. */
+  dateModified?: string;
 }) {
   const url = absoluteUrl(paths[lang]);
   return {
@@ -311,7 +328,8 @@ export function pageSchema({
         name,
         description,
         inLanguage: LANGUAGE[lang],
-        dateModified: SITE_UPDATED,
+        ...(datePublished ? { datePublished } : {}),
+        dateModified,
         isPartOf: { "@id": WEBSITE_ID },
         about: { "@id": STORE_ID },
         primaryImageOfPage: {
@@ -396,9 +414,13 @@ export function leasingService(lang: Lang, items: string[]) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: lang === "en" ? "Products available to lease" : "Productos disponibles a pagos",
+      // Typed as Service (the lease), not Product: no online prices, so no Product snippets.
       itemListElement: items.map((item) => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Product", name: item },
+        itemOffered: {
+          "@type": "Service",
+          name: `${lang === "en" ? "Lease-to-own" : "A pagos con opción a compra"}: ${item}`,
+        },
       })),
     },
   };

@@ -164,13 +164,13 @@ export const GUIDES: Guide[] = [
         quick: [
           "Lease-to-own lets you take a phone, console or laptop home today and make regular payments; when the plan is complete — or you buy it out early — it's yours.",
           "It isn't a loan, and no credit history is needed, so bad credit isn't automatically a deal-breaker. Approval still isn't guaranteed.",
-          "The total cost to own is usually more than the cash price, so ask about early-payoff options. At TIC Wireless Electronic & Repair Center options start at $40 down, with weekly, biweekly or monthly payments.",
+          "The total cost to own is more than the cash price, so ask about early-payoff options. At TIC Wireless Electronic & Repair Center options start at $40 down, with weekly, biweekly or monthly payments.",
         ],
         sections: [
           {
             h: "Leasing vs. a loan",
             p: [
-              "A loan works differently: a lender pays for the item and you repay the lender, usually with interest, and the item is yours from the start. Lease-to-own (also called rent-to-own) is a lease: you make regular payments to use the item, and ownership transfers to you when you complete the plan or pay the buyout amount early.",
+              "With a loan, a lender pays for the item and you repay the lender, usually with interest, and the item is yours from the start. Lease-to-own (also called rent-to-own) is a lease: you make regular payments to use the item, and ownership transfers to you when you complete the plan or pay the buyout amount early.",
               "Because lease-to-own isn't a credit product in the same way, it's often available to people with no credit or bad credit — which is why stores like TIC Wireless Electronic & Repair Center offer it alongside cash purchases.",
             ],
           },
@@ -198,7 +198,7 @@ export const GUIDES: Guide[] = [
           {
             h: "When it's a good fit",
             p: [
-              "Lease-to-own is useful when you need a working phone or laptop now — for work, school or staying in touch — and can't or don't want to pay the full price at once or use credit. If you can, paying it off early usually lowers the total cost.",
+              "Lease-to-own is useful when you need a working phone or laptop now — for work, school or staying in touch — and can't or don't want to pay the full price at once or use credit. Ask how early payoff works for your plan before you sign.",
             ],
           },
         ],
@@ -222,13 +222,13 @@ export const GUIDES: Guide[] = [
         quick: [
           "Con el arrendamiento con opción a compra te llevas hoy un celular, consola o laptop y haces pagos regulares; al terminar el plan —o si lo liquidas antes— es tuyo.",
           "No es un préstamo y no necesitas historial de crédito, así que el mal crédito no es impedimento automático. La aprobación no está garantizada.",
-          "El costo total suele ser mayor que el precio de contado, así que pregunta por la liquidación anticipada. En TIC Wireless Electronic & Repair Center las opciones empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales.",
+          "El costo total es mayor que el precio de contado, así que pregunta por la liquidación anticipada. En TIC Wireless Electronic & Repair Center las opciones empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales.",
         ],
         sections: [
           {
             h: "Arrendamiento vs. préstamo",
             p: [
-              "Un préstamo funciona distinto: alguien paga el equipo y tú le pagas a esa empresa, normalmente con intereses, y el equipo es tuyo desde el inicio. El arrendamiento con opción a compra es una renta: haces pagos regulares para usarlo y pasa a ser tuyo al terminar el plan o al pagar la liquidación anticipada.",
+              "Con un préstamo, alguien paga el equipo y tú le pagas a esa empresa, normalmente con intereses, y el equipo es tuyo desde el inicio. El arrendamiento con opción a compra es una renta: haces pagos regulares para usarlo y pasa a ser tuyo al terminar el plan o al pagar la liquidación anticipada.",
               "Como no funciona igual que un crédito, muchas veces está disponible para personas sin crédito o con mal crédito, y por eso tiendas como TIC Wireless Electronic & Repair Center lo ofrecen junto con las compras de contado.",
             ],
           },
@@ -256,7 +256,7 @@ export const GUIDES: Guide[] = [
           {
             h: "Cuándo conviene",
             p: [
-              "Conviene cuando necesitas un celular o laptop que funcione ya —para el trabajo, la escuela o estar en contacto— y no puedes o no quieres pagar todo de una vez ni usar crédito. Si puedes, liquidarlo antes normalmente baja el costo total.",
+              "Conviene cuando necesitas un celular o laptop que funcione ya —para el trabajo, la escuela o estar en contacto— y no puedes o no quieres pagar todo de una vez ni usar crédito. Pregunta cómo funciona la liquidación anticipada en tu plan antes de firmar.",
             ],
           },
         ],

@@ -10,7 +10,9 @@ import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { LeasingPortals } from "@/components/site/leasing-portals";
+import { NearYou } from "@/components/site/near-you";
 import { Photo } from "@/components/site/photo";
+import { ReviewQuotes } from "@/components/reviews/review-quotes";
 import { StoreVideo } from "@/components/site/store-video";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -65,13 +67,11 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
               <span className="mx-2">/</span>
               <span className="text-white">{t.breadcrumb}</span>
             </nav>
-            <h1 className="mt-6">
-              <span className="eyebrow flex items-center gap-3 text-primary">
-                <span className="h-px w-8 bg-primary" /> {t.kicker}
-              </span>
-              <span className="mt-5 block text-[clamp(2.25rem,6vw,4.5rem)] font-semibold leading-[1.02]">
-                {t.h1[0]} <span className="text-primary">{t.h1[1]}</span>
-              </span>
+            <p className="eyebrow mt-6 flex items-center gap-3 text-primary">
+              <span className="h-px w-8 bg-primary" /> {t.kicker}
+            </p>
+            <h1 className="mt-5 text-[clamp(2.25rem,6vw,4.5rem)] font-semibold leading-[1.02]">
+              {t.h1[0]} <span className="text-primary">{t.h1[1]}</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
               <MoneyText text={t.intro} />
@@ -204,7 +204,9 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
           devices={TABLETS}
           lang={lang}
           title={
-            lang === "en" ? "Just in: iPads on our shelves." : "Recién llegados: iPad en vitrina."
+            lang === "en"
+              ? "In store now: iPads on our shelves."
+              : "Recién llegados: iPad en nuestras vitrinas."
           }
           className="pt-0 md:pt-0"
         />
@@ -313,6 +315,12 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
         </div>
       </section>
 
+      <ReviewQuotes
+        pick={category === "iphone18" ? "phones" : category}
+        lang={lang}
+        className="border-t"
+      />
+
       {/* Related + visit */}
       <section className="mx-auto max-w-7xl px-5 pb-16 md:pb-24">
         <div className="grid gap-4 lg:grid-cols-[1fr_1.4fr]">
@@ -352,6 +360,8 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
           </aside>
         </div>
       </section>
+
+      <NearYou lang={lang} />
 
       {/* Consoles have the full apply section above; accessories are bought outright. */}
       <SiteFooter lang={lang} portals={false} />

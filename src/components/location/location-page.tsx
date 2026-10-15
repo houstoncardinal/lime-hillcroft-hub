@@ -124,13 +124,11 @@ export function LocationPage({ lang }: { lang: Lang }) {
               <span className="mx-2">/</span>
               <span className="text-white">{t.meta.breadcrumb[1]}</span>
             </nav>
-            <h1 className="mt-6">
-              <span className="eyebrow flex items-center gap-3 text-primary">
-                <span className="h-px w-8 bg-primary" /> {t.hero.kicker}
-              </span>
-              <span className="mt-5 block text-[clamp(2.1rem,6vw,4.25rem)] font-semibold leading-[1.02]">
-                {t.hero.h1[0]} <span className="text-primary">{t.hero.h1[1]}</span>
-              </span>
+            <p className="eyebrow mt-6 flex items-center gap-3 text-primary">
+              <span className="h-px w-8 bg-primary" /> {t.hero.kicker}
+            </p>
+            <h1 className="mt-5 text-[clamp(2.1rem,6vw,4.25rem)] font-semibold leading-[1.02]">
+              {t.hero.h1[0]} <span className="text-primary">{t.hero.h1[1]}</span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg">{t.hero.body}</p>
             <OpenBadge lang={lang} className="mt-6 text-white/85" />

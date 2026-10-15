@@ -39,12 +39,16 @@ export function locationHead(lang: Lang) {
       ],
       faqs: t.faqs,
       extra: [
-        clipSchema(
-          "storeInterior",
-          t.inside.video,
-          `${t.inside.video} — ${t.meta.description}`,
-          absoluteUrl,
-        ),
+        // Page-scoped @id: the same clip is described differently on other pages.
+        {
+          ...clipSchema(
+            "storeInterior",
+            t.inside.video,
+            `${t.inside.video} — ${t.meta.description}`,
+            absoluteUrl,
+          ),
+          "@id": `${url}#video-storeInterior`,
+        },
         {
           "@type": "ImageGallery",
           "@id": `${url}#photos`,

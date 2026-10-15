@@ -1,9 +1,16 @@
 import { CATEGORY_PAGES, type CategoryKey } from "@/components/products/data";
+import { deviceFaqs } from "@/components/products/device-faqs";
+import { devicePaths } from "@/components/products/device-paths";
+import type { DeviceDetail } from "@/components/products/devices";
+import type { Device } from "@/components/products/inventory";
 import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { ogImage } from "@/components/site/og";
 import { clipSchema } from "@/components/site/store-clips";
 import { leasingService, pageSchema } from "@/components/site/schema";
+import { servicePath } from "@/components/services/paths";
 import { ALTERNATES, absoluteUrl, pageHead, withBrand, type Lang } from "@/components/site/seo";
+
+type DevicePageEntry = { device: Device; detail: DeviceDetail };
 
 export function categoryHead(key: CategoryKey, lang: Lang) {
   const page = CATEGORY_PAGES[key];
@@ -32,25 +39,28 @@ export function categoryHead(key: CategoryKey, lang: Lang) {
       ],
       faqs: t.faq,
       extra: [
-        // Everything on the page, grouped as on the shelves. In-store items, no online prices.
+        // Everything on the page, grouped as on the shelves. A plain list of names, not
+        // Products: in-store items have no online prices, and a Product without offers is a
+        // Search Console "Product snippets" error.
         {
-          "@type": "OfferCatalog",
+          "@type": "ItemList",
           "@id": `${url}#catalog`,
           name: t.groupsTitle,
-          itemListElement: page.groups.map((g) => ({
-            "@type": "OfferCatalog",
+          about: store,
+          itemListElement: page.groups.map((g, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
             name: g.title[lang],
             description: g.body[lang],
-            itemListElement: g.items.map((item) => ({
-              "@type": "Offer",
-              availability: "https://schema.org/InStoreOnly",
-              seller: store,
-              itemOffered: {
-                "@type": "Product",
+            item: {
+              "@type": "ItemList",
+              name: g.title[lang],
+              itemListElement: g.items.map((item, j) => ({
+                "@type": "ListItem",
+                position: j + 1,
                 name: item[lang],
-                category: page.category,
-              },
-            })),
+              })),
+            },
           })),
         },
         {
@@ -64,17 +74,91 @@ export function categoryHead(key: CategoryKey, lang: Lang) {
             caption: caption[lang],
           })),
         },
-        ...page.galleryVideos.map(([clip, caption]) =>
-          clipSchema(clip, caption[lang], `${caption[lang]} — ${t.description}`, absoluteUrl),
-        ),
+        // Page-scoped @id: the same clip is described differently on other pages.
+        ...page.galleryVideos.map(([clip, caption]) => ({
+          ...clipSchema(clip, caption[lang], `${caption[lang]} — ${t.description}`, absoluteUrl),
+          "@id": `${url}#video-${clip}`,
+        })),
         ...(page.leasing
           ? [
               leasingService(
                 lang,
-                page.groups.flatMap((g) => g.items.map((i) => i[lang])),
+                (page.leaseItems ?? page.groups.flatMap((g) => g.items)).map((i) => i[lang]),
               ),
             ]
           : []),
+      ],
+    }),
+  });
+}
+
+export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
+  if (!entry) return { meta: [{ title: withBrand(lang === "en" ? "Devices" : "Equipos") }] };
+  const { device, detail } = entry;
+  const name = `${device.brand === "Samsung" ? "Samsung " : ""}${device.name}`;
+  const paths = devicePaths(device.id);
+  const tablet = device.kind === "ipad";
+  const title =
+    lang === "en"
+      ? `${name} in Houston — Lease-to-Own, No Credit Needed`
+      : `${name} en Houston — A pagos, sin crédito`;
+  const description =
+    lang === "en"
+      ? `${name} in stock at TIC Wireless on Hillcroft in Houston. ${detail.highlights
+          .slice(0, 2)
+          .map((h) => h.en)
+          .join(", ")}. Lease-to-own from $40 down, no credit needed, subject to approval.`
+      : `${name} en existencia en TIC Wireless en Hillcroft, Houston. ${detail.highlights
+          .slice(0, 2)
+          .map((h) => h.es)
+          .join(
+            ", ",
+          )}. A pagos desde $40 de enganche, sin necesidad de crédito, sujeto a aprobación.`;
+  const image = ogImage(tablet ? "laptops" : "service-unlocked-phones", lang);
+  const photo = detail.photo
+    ? absoluteUrl(`/photos/devices/product/${detail.photo.file}.jpg`)
+    : absoluteUrl(device.image.replace(/\.webp$/, ".jpg"));
+  return pageHead({
+    paths,
+    lang,
+    title: withBrand(title),
+    description,
+    image,
+    imageAlt: device.alt[lang],
+    jsonLd: pageSchema({
+      paths,
+      lang,
+      name: title,
+      description,
+      image,
+      pageType: ["WebPage", "ItemPage"],
+      breadcrumb: [
+        [lang === "en" ? "Home" : "Inicio", ALTERNATES.home[lang]],
+        tablet
+          ? [lang === "en" ? "Laptops & tablets" : "Laptops y tabletas", ALTERNATES.laptops[lang]]
+          : [
+              lang === "en" ? "Unlocked phones" : "Celulares desbloqueados",
+              servicePath(lang, "unlocked-phones"),
+            ],
+        [device.name, paths[lang]],
+      ],
+      faqs: deviceFaqs(device, lang),
+      // No Product node: in-store items have no online price, and a Product without offers is
+      // a Search Console error (see categoryHead). The photo and leasing offer are described.
+      extra: [
+        {
+          "@type": "ImageObject",
+          "@id": `${absoluteUrl(paths[lang])}#photo`,
+          contentUrl: photo,
+          caption: detail.photo ? detail.photo.alt[lang] : device.alt[lang],
+          ...(detail.photo
+            ? {
+                creditText: detail.photo.credit.author,
+                license: detail.photo.credit.href,
+              }
+            : {}),
+        },
+        leasingService(lang, [name]),
       ],
     }),
   });

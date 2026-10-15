@@ -13,6 +13,7 @@ import {
   ShoppingBag,
   Smartphone,
   Star,
+  Timer,
   Wrench,
 } from "lucide-react";
 
@@ -20,7 +21,7 @@ import plaza from "@/assets/photos/plaza.webp";
 import plazaSm from "@/assets/photos/plaza-sm.webp";
 import storefront from "@/assets/photos/storefront-3640.webp";
 import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
-import { areaCopy } from "@/components/areas/copy";
+import { areaCopy, routeSteps } from "@/components/areas/copy";
 import { AREAS, areaName, shortName, type Area } from "@/components/areas/data";
 import { LOCAL } from "@/components/areas/local";
 import { areaPath, areaPaths, directionsFrom } from "@/components/areas/paths";
@@ -29,10 +30,11 @@ import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/s
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { Photo } from "@/components/site/photo";
+import { ReviewQuotes } from "@/components/reviews/review-quotes";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 const SERVICE_ICONS = [Wrench, Smartphone, KeyRound, Receipt, ShoppingBag];
-const STAT_ICONS = [Car, Clock, MapPin, Clock];
+const STAT_ICONS = [Car, Timer, MapPin, Clock];
 
 export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
   const t = areaCopy(area, lang);
@@ -57,7 +59,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             { r: 76, count: 22, dot: 2.2, className: "fill-slate" },
           ]}
         />
-        <div className="mx-auto max-w-7xl px-5 pb-16 pt-32 md:pb-20 md:pt-40">
+        <div className="mx-auto max-w-7xl px-5 pb-24 pt-32 md:pb-28 md:pt-40">
           <nav
             aria-label="Breadcrumb"
             className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
@@ -72,14 +74,12 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             <span>/</span>
             <span className="text-white">{short}</span>
           </nav>
-          <h1>
-            <span className="eyebrow flex items-center gap-3 text-primary">
-              <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.kicker} />}
-            </span>
-            <span className="mt-6 block max-w-4xl text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.98]">
-              {<MoneyText text={t.h1[0]} />}{" "}
-              <span className="text-primary">{<MoneyText text={t.h1[1]} />}</span>
-            </span>
+          <p className="eyebrow flex items-center gap-3 text-primary">
+            <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.kicker} />}
+          </p>
+          <h1 className="mt-5 max-w-4xl text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.98]">
+            {<MoneyText text={t.h1[0]} />}{" "}
+            <span className="text-primary">{<MoneyText text={t.h1[1]} />}</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">{area.intro[lang]}</p>
           <p className="mt-4 max-w-2xl text-lg font-medium text-white">
@@ -110,23 +110,37 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="mx-auto -mt-8 max-w-7xl px-5">
-        <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border bg-border shadow-xl shadow-ink/5 md:grid-cols-4">
+      {/* Stats: a card that overlaps the bottom of the hero. It's positioned (z-10) so it paints
+          above the hero instead of being clipped by it. */}
+      <section className="relative z-10 mx-auto -mt-12 max-w-7xl px-4 sm:px-5 md:-mt-14">
+        <ul className="grid grid-cols-2 overflow-hidden rounded-3xl border bg-card shadow-xl shadow-ink/10 lg:grid-cols-4">
           {t.stats.map(([label, value], i) => {
             const Icon = STAT_ICONS[i] ?? MapPin;
             return (
-              <div key={label} className="flex flex-col-reverse bg-card p-5 md:p-6">
-                <dt className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
-                  <Icon className="h-3.5 w-3.5 text-primary" /> {label}
-                </dt>
-                <dd className="font-display text-xl font-semibold md:text-2xl">
-                  {<MoneyText text={value} />}
-                </dd>
-              </div>
+              <li
+                key={label}
+                className="flex flex-col gap-3 border-border p-4 odd:border-r [&:nth-child(-n+2)]:border-b sm:flex-row sm:items-center sm:gap-4 sm:p-6 lg:border-r lg:[&:nth-child(-n+2)]:border-b-0 lg:last:border-r-0"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary sm:h-12 sm:w-12">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
+                    {label}
+                  </span>
+                  <span className="mt-0.5 block font-display text-lg font-semibold leading-snug sm:text-xl">
+                    {/* Hours read better as one line per day range. */}
+                    {value.split(" · ").map((part) => (
+                      <span key={part} className="block break-words">
+                        <MoneyText text={part} />
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </li>
             );
           })}
-        </dl>
+        </ul>
       </section>
 
       {/* Local: why this area chooses TIC + about the area */}
@@ -170,9 +184,9 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
           {t.services.map(([title, body, href], i) => {
             const Icon = SERVICE_ICONS[i] ?? Wrench;
             return (
-              <a
+              <Link
                 key={title}
-                href={href}
+                to={href}
                 className="group flex flex-col rounded-3xl border bg-card p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-ink transition group-hover:bg-primary">
@@ -183,7 +197,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
                   {<MoneyText text={body} />}
                 </p>
                 <ArrowRight className="mt-4 h-4 w-4 text-primary transition group-hover:translate-x-1" />
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -198,7 +212,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             </h2>
             <ol className="mt-8 space-y-4">
               {[
-                ...area.route,
+                ...routeSteps(area, lang),
                 "TIC Wireless Electronic & Repair Center · 3640 Hillcroft St, Suite C",
               ].map((step, i, all) => (
                 <li key={step} className="flex items-start gap-4">
@@ -228,7 +242,11 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
                 width={2000}
                 height={1500}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                alt="The glass storefront of TIC Wireless Electronic & Repair Center at 3640 Hillcroft St, Suite C, Houston"
+                alt={
+                  lang === "es"
+                    ? "Fachada de vidrio de TIC Wireless Electronic & Repair Center en 3640 Hillcroft St, Suite C, Houston"
+                    : "The glass storefront of TIC Wireless Electronic & Repair Center at 3640 Hillcroft St, Suite C, Houston"
+                }
                 className="aspect-[16/10]"
               />
             </div>
@@ -239,12 +257,16 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
                 width={2000}
                 height={1500}
                 sizes="(min-width: 1024px) 25vw, 50vw"
-                alt="The shopping center at 3640 Hillcroft St, Suite C from the parking lot"
+                alt={
+                  lang === "es"
+                    ? "El centro comercial de 3640 Hillcroft St, Suite C visto desde el estacionamiento"
+                    : "The shopping center at 3640 Hillcroft St, Suite C from the parking lot"
+                }
                 className="aspect-[4/3]"
               />
             </div>
             <iframe
-              title={`Map: TIC Wireless Electronic & Repair Center near ${short}`}
+              title={`${lang === "es" ? "Mapa: TIC Wireless Electronic & Repair Center cerca de" : "Map: TIC Wireless Electronic & Repair Center near"} ${short}`}
               loading="lazy"
               className="aspect-[4/3] h-full w-full rounded-3xl border-0"
               src={`https://maps.google.com/maps?q=TIC%20Wireless%2C%203640%20Hillcroft%20St%2C%20Suite%20C%2C%20Houston%2C%20TX%2077057&z=13&hl=${lang}&output=embed`}
@@ -252,6 +274,8 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <ReviewQuotes pick="general" lang={lang} />
 
       {/* FAQ */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:py-28">

@@ -84,18 +84,21 @@ const SERVICE_SLUGS = [
   "international-recharge",
 ];
 
+// The 12 prepaid carriers (src/components/services/data.ts), plus Xfinity Prepaid internet.
 const CARRIERS = [
+  "T-Mobile Prepaid",
   "Verizon Prepaid",
   "AT&T Prepaid",
-  "T-Mobile",
-  "Metro by T-Mobile",
   "Cricket",
-  "Boost Mobile",
   "Simple Mobile",
+  "Tracfone",
+  "H2O Wireless",
   "Lyca Mobile",
-  "GoSmart",
   "Gen Mobile",
-  "Xfinity",
+  "Metro by T-Mobile",
+  "Boost Mobile",
+  "GoSmart",
+  "Xfinity Prepaid",
 ];
 const RECHARGE = ["Tigo", "Digicel", "Movistar", "Telcel"];
 
@@ -120,17 +123,17 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         <div className="absolute -right-40 top-[18rem] -z-10 h-[46rem] w-[46rem] rounded-full bg-primary/25 blur-[160px]" />
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 lg:min-h-[100svh] lg:grid-cols-[1fr_1.05fr] lg:pb-16 lg:pt-28">
           <div className="animate-rise">
-            <h1>
-              <span className="eyebrow flex flex-wrap items-center gap-3 text-primary">
-                <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
-              </span>
-              <span className="mt-6 block text-[clamp(3rem,7.5vw,6.25rem)] font-semibold leading-[0.92]">
-                {<MoneyText text={t.hero.title[0]} />}
-                <br />
-                <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
-              </span>
+            <p className="eyebrow flex flex-wrap items-center gap-3 text-primary">
+              <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
+            </p>
+            <h1 className="mt-6 text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.95]">
+              {<MoneyText text={t.hero.title[0]} />}{" "}
+              <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
             </h1>
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/70">
+            <p className="mt-5 font-display text-2xl font-semibold text-white/85 md:text-3xl">
+              {<MoneyText text={t.hero.slogan} />}
+            </p>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
               {<MoneyText text={t.hero.body[0]} />}
               <strong className="font-semibold text-white">
                 {<MoneyText text={t.hero.body[1]} />}
@@ -214,7 +217,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   </p>
                 </div>
                 <Link
-                  to={ALTERNATES.leasing[lang]}
+                  to={ALTERNATES.iphone18[lang]}
                   className="tap group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                 >
                   {<MoneyText text={t.hero.imageCta} />}
@@ -222,7 +225,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 </Link>
               </div>
             </div>
-            <div className="absolute -left-6 top-8 hidden max-w-[13rem] rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-left-8 xl:-left-24">
+            <div className="absolute -left-6 top-8 hidden max-w-[15rem] rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-left-8 xl:-left-24">
               <p className="eyebrow text-slate">{<MoneyText text={t.hero.leaseLabel} />}</p>
               <p className="mt-1 font-display text-3xl font-semibold">
                 <Money usd={65} stacked />{" "}
@@ -256,43 +259,6 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           ))}
         </div>
       </section>
-
-      {/* Showroom */}
-      <section className="px-3 pt-3 sm:px-5 sm:pt-5">
-        <div className="relative isolate mx-auto max-w-[1600px] overflow-hidden rounded-[2rem] text-white">
-          <Photo
-            src={counter}
-            srcSm={counterSm}
-            width={2000}
-            height={1500}
-            alt={t.showroom.imageAlt}
-            className="absolute inset-0 -z-10"
-          />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent" />
-          <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-end px-6 pb-10 md:min-h-[760px] md:px-10 md:pb-14">
-            <p className="eyebrow text-primary">{<MoneyText text={t.showroom.kicker} />}</p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-7xl">
-              {<MoneyText text={t.showroom.title} />}
-            </h2>
-            <p className="mt-5 max-w-xl text-lg text-white/75">
-              {<MoneyText text={t.showroom.body} />}
-            </p>
-            <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md md:grid-cols-4">
-              {t.showroom.stats.map(([v, l]) => (
-                <div key={l} className="flex flex-col-reverse bg-ink/40 p-5 md:p-6">
-                  <dt className="mt-1 text-sm text-white/60">{l}</dt>
-                  <dd className="font-display text-2xl font-semibold md:text-3xl">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <ReviewsCarousel lang={lang} />
-
-      <LatestDevices devices={LATEST_DEVICES} lang={lang} className="bg-secondary/40" />
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 md:py-32">
@@ -393,6 +359,43 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       <LeasingPortals lang={lang} />
+
+      <LatestDevices devices={LATEST_DEVICES} lang={lang} className="bg-secondary/40" />
+
+      {/* Showroom */}
+      <section className="px-3 pt-3 sm:px-5 sm:pt-5">
+        <div className="relative isolate mx-auto max-w-[1600px] overflow-hidden rounded-[2rem] text-white">
+          <Photo
+            src={counter}
+            srcSm={counterSm}
+            width={2000}
+            height={1500}
+            alt={t.showroom.imageAlt}
+            className="absolute inset-0 -z-10"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent" />
+          <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-end px-6 pb-10 md:min-h-[760px] md:px-10 md:pb-14">
+            <p className="eyebrow text-primary">{<MoneyText text={t.showroom.kicker} />}</p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-7xl">
+              {<MoneyText text={t.showroom.title} />}
+            </h2>
+            <p className="mt-5 max-w-xl text-lg text-white/75">
+              {<MoneyText text={t.showroom.body} />}
+            </p>
+            <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md md:grid-cols-4">
+              {t.showroom.stats.map(([v, l]) => (
+                <div key={l} className="flex flex-col-reverse bg-ink/40 p-5 md:p-6">
+                  <dt className="mt-1 text-sm text-white/60">{l}</dt>
+                  <dd className="font-display text-2xl font-semibold md:text-3xl">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <ReviewsCarousel lang={lang} />
 
       {/* Carriers */}
       <section className="border-y bg-secondary/60">

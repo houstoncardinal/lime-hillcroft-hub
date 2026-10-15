@@ -21,6 +21,8 @@ import laptops from "@/assets/photos/laptops-tablets.webp";
 import laptopsSm from "@/assets/photos/laptops-tablets-sm.webp";
 import iphone17 from "@/assets/photos/iphone-17-pro.webp";
 import iphone17Sm from "@/assets/photos/iphone-17-pro-sm.webp";
+import iphone18 from "@/assets/photos/iphone-18-pro-max.webp";
+import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.webp";
 import jbl from "@/assets/photos/jbl-display.webp";
 import jblSm from "@/assets/photos/jbl-display-sm.webp";
 import { LEASING_COPY } from "@/components/pages/leasing-copy";
@@ -29,25 +31,26 @@ import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/s
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { Photo } from "@/components/site/photo";
+import { ReviewQuotes } from "@/components/reviews/review-quotes";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 // Where each "What you can take home" card leads (same order as the cards).
 const CATEGORY_LINKS: Record<Lang, string>[] = [
+  { en: "/services/unlocked-phones", es: "/es/servicios/unlocked-phones" },
   ALTERNATES.consoles,
   ALTERNATES.laptops,
-  { en: "/services/unlocked-phones", es: "/es/servicios/unlocked-phones" },
   { en: "/accessories#audio", es: "/es/accesorios#audio" },
 ];
 
 const CATEGORY_MEDIA = [
+  { icon: Smartphone, src: iphone17, sm: iphone17Sm, w: 2000, h: 1206 },
   { icon: Gamepad2, src: consoles, sm: consolesSm, w: 1240, h: 720 },
   { icon: Laptop, src: laptops, sm: laptopsSm, w: 2000, h: 1400 },
-  { icon: Smartphone, src: iphone17, sm: iphone17Sm, w: 2000, h: 1206 },
   { icon: Headphones, src: jbl, sm: jblSm, w: 2000, h: 1500 },
 ];
-const TILE_MEDIA = [
+const TILE_MEDIA: { src: string; sm: string; w: number; h: number; focus?: string }[] = [
   { src: laptops, sm: laptopsSm, w: 2000, h: 1400 },
-  { src: iphone17, sm: iphone17Sm, w: 2000, h: 1206 },
+  { src: iphone18, sm: iphone18Sm, w: 1400, h: 1750, focus: "55% 40%" },
 ];
 const PERK_ICONS = [BadgeCheck, Wallet, CalendarClock, ShieldCheck];
 
@@ -63,17 +66,17 @@ export function LeasingPage({ lang }: { lang: Lang }) {
         <div className="absolute -left-40 top-1/2 -z-10 h-[40rem] w-[40rem] rounded-full bg-primary/20 blur-[160px]" />
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 lg:min-h-[100svh] lg:grid-cols-[1fr_1.1fr] lg:pb-16 lg:pt-28">
           <div className="animate-rise">
-            <h1>
-              <span className="eyebrow flex items-center gap-3 text-primary">
-                <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
-              </span>
-              <span className="mt-6 block text-[clamp(3rem,7.5vw,6.25rem)] font-semibold leading-[0.92]">
-                {<MoneyText text={t.hero.title[0]} />}
-                <br />
-                <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
-              </span>
+            <p className="eyebrow flex items-center gap-3 text-primary">
+              <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
+            </p>
+            <h1 className="mt-6 text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.95]">
+              {<MoneyText text={t.hero.title[0]} />}{" "}
+              <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
             </h1>
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/70">
+            <p className="mt-5 font-display text-2xl font-semibold text-white/85 md:text-3xl">
+              {<MoneyText text={t.hero.slogan} />}
+            </p>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
               {<MoneyText text={t.hero.body[0]} />}
               <strong className="font-semibold text-white">
                 {<MoneyText text={t.hero.body[1]} />}
@@ -151,6 +154,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                     sizes="(min-width: 1024px) 25vw, 50vw"
                     alt={alt}
                     className="aspect-[4/3]"
+                    {...(g.focus ? { style: { objectPosition: g.focus } } : {})}
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-4 pb-3 pt-10 text-sm font-semibold">
                     {caption}
@@ -318,6 +322,8 @@ export function LeasingPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <ReviewQuotes pick="leasing" lang={lang} className="border-t" />
 
       {/* FAQ */}
       <section id="faq" className="border-t bg-secondary/60">

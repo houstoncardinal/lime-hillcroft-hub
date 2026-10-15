@@ -57,6 +57,21 @@ export function intlHead(l: IntlLang | undefined) {
               inLanguage: l.tag,
               isPartOf: { "@id": absoluteUrl("/#website") },
               about: { "@id": absoluteUrl("/#store") },
+              primaryImageOfPage: { "@type": "ImageObject", url: img, width: 1200, height: 630 },
+              breadcrumb: { "@id": `${url}#breadcrumb` },
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": `${url}#breadcrumb`,
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "TIC Wireless",
+                  item: absoluteUrl(ALTERNATES.home.en),
+                },
+                { "@type": "ListItem", position: 2, name: l.native, item: url },
+              ],
             },
           ],
         }),

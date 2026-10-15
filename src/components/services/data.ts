@@ -14,7 +14,9 @@ export type PhotoKey =
   | "s24"
   | "storefront"
   | "s22"
-  | "laptops";
+  | "laptops"
+  | "xfinity"
+  | "simTray";
 
 type ServiceText = {
   name: string;
@@ -24,6 +26,8 @@ type ServiceText = {
   intro: string;
   offersTitle: string;
   offers: string[];
+  /** Contextual links shown under the offers list: [label, path]. */
+  links?: [string, string][];
   stepsTitle: string;
   steps: [string, string][];
   why: string[];
@@ -57,19 +61,20 @@ export const SERVICES: Service[] = [
         name: "Unlocked iPhones & Androids",
         metaTitle: "Unlocked iPhones & Androids in Houston — iPhone 18 Pro Max",
         metaDescription:
-          "Buy a new unlocked iPhone 18 Pro Max, Samsung Galaxy or Android phone on Hillcroft in Houston. Leasing with no credit needed. Use any carrier.",
+          "Buy a new unlocked iPhone 18 Pro Max, Samsung Galaxy or Android phone on Hillcroft in Houston. Leasing with no credit needed, subject to approval.",
         h1: "Unlocked iPhones & Android phones in Houston",
         intro:
-          "Walk out with a new phone the same day. We carry new unlocked iPhones — including the iPhone 18 Pro Max — plus Samsung Galaxy and other Android phones, and every phone works with the carrier you choose.",
+          "Walk out with a new phone the same day. We carry unlocked iPhones — including the iPhone 18 Pro Max — plus Samsung Galaxy and other Android phones. Ask us which carriers each model works with, and we'll set it up on a compatible plan in store.",
         offersTitle: "What we offer",
         offers: [
           "New unlocked iPhones, including the iPhone 18 Pro Max and iPhone 17 Pro.",
           "Samsung Galaxy phones — including the Galaxy A15 5G, A16 5G, A36 5G and A53 — plus Motorola moto g and other unlocked Androids.",
-          "Leasing (lease-to-own) with no credit needed — bad credit is no problem, subject to approval.",
+          "Leasing (lease-to-own) with no credit needed — bad credit is OK, subject to approval.",
           "Weekly, biweekly or monthly payment options.",
           "Trade in your old phone toward a new one.",
           "Cases, tempered glass and chargers fitted before you leave.",
         ],
+        links: [["iPhone 18 & iPhone 18 Pro Max in Houston", "/iphone-18"]],
         stepsTitle: "How it works",
         steps: [
           [
@@ -93,7 +98,7 @@ export const SERVICES: Service[] = [
           "Unlocked phones — no carrier lock-in",
           "No credit needed for leasing",
           "Same-day setup in store",
-          "4.7★ on Google, 400+ reviews",
+          "4.7★ on Google, 408 reviews",
         ],
         faq: [
           {
@@ -101,8 +106,8 @@ export const SERVICES: Service[] = [
             a: "Yes, the iPhone 18 Pro Max is available unlocked. Stock changes often, so call (713) 339-9300 to confirm the color and storage you want.",
           },
           {
-            q: "Can I get a phone with bad credit?",
-            a: "Yes. We offer leasing (lease-to-own) with no credit needed — bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. It takes a few minutes in store to find out.",
+            q: "Can I get an iPhone with bad credit?",
+            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones with no credit needed, from $40 down. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID; it takes a few minutes in store to find out.",
           },
           {
             q: "Will an unlocked phone work with my carrier?",
@@ -118,19 +123,20 @@ export const SERVICES: Service[] = [
         name: "iPhone y Android desbloqueados",
         metaTitle: "iPhone y Android Desbloqueados en Houston — iPhone 18 Pro Max",
         metaDescription:
-          "Compra un iPhone 18 Pro Max, Samsung Galaxy o Android desbloqueado en Hillcroft, Houston. Arrendamiento sin necesidad de crédito. Usa cualquier compañía.",
+          "Compra un iPhone 18 Pro Max, Samsung Galaxy o Android desbloqueado en Hillcroft, Houston. A pagos sin necesidad de crédito, sujeto a aprobación.",
         h1: "iPhone y celulares Android desbloqueados en Houston",
         intro:
-          "Llévate tu celular nuevo el mismo día. Tenemos iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— además de Samsung Galaxy y otros Android, y todos funcionan con la compañía que elijas.",
+          "Llévate tu celular nuevo el mismo día. Tenemos iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— además de Samsung Galaxy y otros Android. Pregúntanos con qué compañías funciona cada modelo y te lo activamos en un plan compatible en la tienda.",
         offersTitle: "Lo que ofrecemos",
         offers: [
           "iPhone nuevos desbloqueados, incluyendo el iPhone 18 Pro Max y el iPhone 17 Pro.",
           "Samsung Galaxy —incluidos Galaxy A15 5G, A16 5G, A36 5G y A53— además de Motorola moto g y otros Android desbloqueados.",
-          "Arrendamiento con opción a compra sin necesidad de crédito; el mal crédito no es problema, sujeto a aprobación.",
+          "Arrendamiento con opción a compra sin necesidad de crédito; con mal crédito también puedes aplicar, sujeto a aprobación.",
           "Opciones de pago semanales, quincenales o mensuales.",
           "Cambia tu celular usado por uno nuevo.",
           "Fundas, micas y cargadores instalados antes de irte.",
         ],
+        links: [["iPhone 18 y iPhone 18 Pro Max en Houston", "/es/iphone-18"]],
         stepsTitle: "Cómo funciona",
         steps: [
           [
@@ -142,7 +148,7 @@ export const SERVICES: Service[] = [
             "Compara modelos en persona y pregunta lo que quieras. Te atendemos en español o inglés.",
           ],
           [
-            "Paga o arrienda",
+            "Paga de contado o a pagos",
             "Paga de contado o aplica al arrendamiento en el mostrador con una identificación con foto; toma minutos.",
           ],
           [
@@ -151,10 +157,10 @@ export const SERVICES: Service[] = [
           ],
         ],
         why: [
-          "Celulares desbloqueados, sin amarres",
+          "Celulares desbloqueados, sin plazo forzoso",
           "Arrendamiento sin necesidad de crédito",
           "Configuración el mismo día",
-          "4.7★ en Google, más de 400 reseñas",
+          "4.7★ en Google, 408 reseñas",
         ],
         faq: [
           {
@@ -162,8 +168,8 @@ export const SERVICES: Service[] = [
             a: "Sí, el iPhone 18 Pro Max está disponible desbloqueado. El inventario cambia seguido; llama al (713) 339-9300 para confirmar color y capacidad.",
           },
           {
-            q: "¿Puedo sacar un celular con mal crédito?",
-            a: "Sí. Tenemos arrendamiento con opción a compra sin necesidad de crédito; el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. En unos minutos en la tienda sabes si calificas.",
+            q: "¿Puedo sacar un iPhone con mal crédito?",
+            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, sin necesidad de crédito y desde $40 de enganche. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación con foto; en unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",
@@ -186,12 +192,12 @@ export const SERVICES: Service[] = [
     text: {
       en: {
         name: "Same-day phone repair",
-        metaTitle: "Same-Day Phone Repair in Houston — iPhone & Samsung Screens",
+        metaTitle: "Same-Day Phone & Screen Repair on Hillcroft in Houston",
         metaDescription:
           "Cracked screen, dead battery or bad charging port? Same-day iPhone, Samsung & Android repair on Hillcroft in Houston. Walk in — quote before work starts.",
         h1: "Same-day phone repair in Houston",
         intro:
-          "Cracked screen, battery that won't last, phone that won't charge? Bring it to our store on Hillcroft — no appointment needed. We check it in front of you, quote the price before any work starts, and most phone repairs are done the same day.",
+          "Cracked iPhone or Samsung screen, a battery that won't last, or a phone that won't charge? Bring it to our store on Hillcroft in Houston — no appointment needed. We check it in front of you, quote the price before any work starts, and most phone repairs are done the same day.",
         offersTitle: "What we repair",
         offers: [
           "Cracked or broken screens on iPhone, Samsung and other Android phones.",
@@ -200,6 +206,10 @@ export const SERVICES: Service[] = [
           "Software problems and setup help.",
           "Tablet, laptop and computer repairs.",
           "Tempered glass and cases fitted after the repair.",
+        ],
+        links: [
+          ["iPhone repair", "/services/iphone-repair"],
+          ["Samsung Galaxy repair", "/services/samsung-repair"],
         ],
         stepsTitle: "How repairs work",
         steps: [
@@ -240,6 +250,22 @@ export const SERVICES: Service[] = [
             a: "No — just walk in during store hours: Monday–Saturday 9 AM–8 PM and Sunday 9 AM–5 PM.",
           },
           {
+            q: "Do you fix Samsung Galaxy screens?",
+            a: "Yes. We repair cracked or broken screens on Samsung Galaxy and other Android phones, as well as iPhone. Most screen repairs are done the same day — call (713) 339-9300 with your model for a quote.",
+          },
+          {
+            q: "Can you fix my iPhone the same day?",
+            a: "Most iPhone screen, battery and charging-port repairs are done the same day. We check the phone in front of you and give you the price and a time estimate before we start.",
+          },
+          {
+            q: "Can you replace my phone's battery?",
+            a: "Yes. We replace batteries on iPhone, Samsung and other Android phones that drain fast or shut off, usually the same day, and we quote the price before any work starts.",
+          },
+          {
+            q: "My phone won't charge. Can you fix it?",
+            a: "Yes, we repair charging ports and replace batteries. Walk in — no appointment needed — and we'll check it in front of you and quote the price first.",
+          },
+          {
             q: "Should I back up my phone first?",
             a: "If the screen still lets you, yes — back up to iCloud or Google before any repair, and bring your passcode so we can test the phone afterwards.",
           },
@@ -250,12 +276,12 @@ export const SERVICES: Service[] = [
       },
       es: {
         name: "Reparación de celulares el mismo día",
-        metaTitle: "Reparación de Celulares el Mismo Día en Houston — Pantallas",
+        metaTitle: "Reparación de Celulares el Mismo Día en Hillcroft, Houston",
         metaDescription:
           "¿Pantalla rota, batería que no dura o no carga? Reparamos iPhone, Samsung y Android el mismo día en Hillcroft, Houston. Precio antes de empezar.",
         h1: "Reparación de celulares el mismo día en Houston",
         intro:
-          "¿Pantalla rota, batería que no aguanta o celular que no carga? Tráelo a nuestra tienda en Hillcroft, sin cita. Lo revisamos frente a ti, te damos el precio antes de empezar y la mayoría de reparaciones quedan el mismo día.",
+          "¿Pantalla rota de iPhone o Samsung, batería que no aguanta o celular que no carga? Tráelo a nuestra tienda en Hillcroft, Houston, sin cita. Lo revisamos frente a ti, te damos el precio antes de empezar y la mayoría de reparaciones quedan el mismo día.",
         offersTitle: "Lo que reparamos",
         offers: [
           "Pantallas rotas de iPhone, Samsung y otros Android.",
@@ -264,6 +290,10 @@ export const SERVICES: Service[] = [
           "Problemas de software y ayuda con la configuración.",
           "Reparación de tabletas, laptops y computadoras.",
           "Micas de vidrio templado y fundas después de la reparación.",
+        ],
+        links: [
+          ["Reparación de iPhone", "/es/servicios/iphone-repair"],
+          ["Reparación de Samsung Galaxy", "/es/servicios/samsung-repair"],
         ],
         stepsTitle: "Cómo funcionan las reparaciones",
         steps: [
@@ -304,6 +334,22 @@ export const SERVICES: Service[] = [
             a: "No, solo ven en horario de tienda: lunes a sábado de 9 AM a 8 PM y domingo de 9 AM a 5 PM.",
           },
           {
+            q: "¿Reparan pantallas de Samsung Galaxy?",
+            a: "Sí. Reparamos pantallas rotas de Samsung Galaxy y otros Android, además de iPhone. La mayoría quedan el mismo día; llama al (713) 339-9300 con tu modelo para cotizar.",
+          },
+          {
+            q: "¿Pueden reparar mi iPhone el mismo día?",
+            a: "La mayoría de reparaciones de pantalla, batería y puerto de carga de iPhone quedan el mismo día. Revisamos el celular frente a ti y te damos el precio y el tiempo estimado antes de empezar.",
+          },
+          {
+            q: "¿Pueden cambiar la batería de mi celular?",
+            a: "Sí. Cambiamos baterías de iPhone, Samsung y otros Android que se descargan rápido o se apagan, normalmente el mismo día, y te damos el precio antes de empezar.",
+          },
+          {
+            q: "Mi celular no carga. ¿Lo pueden arreglar?",
+            a: "Sí, reparamos puertos de carga y cambiamos baterías. Ven sin cita: lo revisamos frente a ti y te damos el precio primero.",
+          },
+          {
             q: "¿Debo respaldar mi celular antes?",
             a: "Si la pantalla todavía te deja, sí: respalda en iCloud o Google antes de cualquier reparación y trae tu código para probar el celular al final.",
           },
@@ -311,6 +357,346 @@ export const SERVICES: Service[] = [
         cta: "Llamar para cotizar",
         ogKicker: "Reparaciones",
         imageAlt: "Mica de vidrio templado 9H junto a una caja de Samsung Galaxy",
+      },
+    },
+  },
+  {
+    slug: "iphone-repair",
+    icon: "repair",
+    photo: "otterbox",
+    related: ["phone-repair", "samsung-repair", "unlocked-phones"],
+    serviceType: "iPhone repair",
+    text: {
+      en: {
+        name: "iPhone repair",
+        metaTitle: "iPhone Screen & Battery Repair in Houston — Same Day",
+        metaDescription:
+          "Cracked iPhone screen, weak battery or won't charge? iPhone repair on Hillcroft in Houston — most done the same day, price quoted before work. Walk in.",
+        h1: "iPhone repair in Houston, on Hillcroft",
+        intro:
+          "Cracked iPhone screen, a battery that won't last the day, or an iPhone that won't charge? Walk in to our store at 3640 Hillcroft St — no appointment needed. We check your iPhone in front of you, quote the price before any work starts, and most screen, battery and charging-port repairs are done the same day.",
+        offersTitle: "iPhone repairs we do",
+        offers: [
+          "Cracked or broken iPhone screens.",
+          "iPhone battery replacement when it drains fast or shuts off.",
+          "Charging port repair when your iPhone won't charge or connect.",
+          "Software problems and setup help.",
+          "Tell us your model — for example an iPhone 14 Pro Max, iPhone 17 Pro or iPhone 18 Pro Max — and we'll confirm the repair and the price before we start.",
+          "Tempered glass and a case fitted after the repair.",
+        ],
+        links: [
+          ["All phone repairs", "/services/phone-repair"],
+          ["Samsung Galaxy repair", "/services/samsung-repair"],
+        ],
+        stepsTitle: "How iPhone repair works",
+        steps: [
+          [
+            "Walk in",
+            "No appointment needed during store hours. Call (713) 339-9300 with your iPhone model if you want a quote first.",
+          ],
+          [
+            "Checked in front of you",
+            "We look at your iPhone with you there and explain what's wrong in plain language.",
+          ],
+          [
+            "Price before work",
+            "You get the price and a time estimate before we start — no surprises.",
+          ],
+          [
+            "Fixed, usually same day",
+            "Most iPhone screen, battery and charging-port repairs are finished the same day.",
+          ],
+        ],
+        why: [
+          "Most repairs same day",
+          "Price quoted before work starts",
+          "Walk in, no appointment",
+          "English & Spanish",
+        ],
+        faq: [
+          {
+            q: "How much does an iPhone screen repair cost?",
+            a: "It depends on your exact iPhone model. Call (713) 339-9300 with your model or stop by — we quote the price before any work starts.",
+          },
+          {
+            q: "Can you fix my iPhone the same day?",
+            a: "Most iPhone screen, battery and charging-port repairs are done the same day. We check the phone in front of you and give you the price and a time estimate before we start.",
+          },
+          {
+            q: "Can you fix my iPhone model?",
+            a: "Call (713) 339-9300 with your exact model or bring the iPhone in. We'll check it and tell you whether we can do the repair, and the price, before any work starts.",
+          },
+          {
+            q: "Can you replace my iPhone battery?",
+            a: "Yes. We replace iPhone batteries that drain fast or shut off, usually the same day, and we quote the price before any work starts.",
+          },
+          {
+            q: "My iPhone won't charge. Can you fix it?",
+            a: "We repair charging ports and replace batteries. Walk in — no appointment needed — and we'll check it in front of you and quote the price first.",
+          },
+          {
+            q: "Do I need an appointment?",
+            a: "No — just walk in during store hours: Monday–Saturday 9 AM–8 PM and Sunday 9 AM–5 PM.",
+          },
+          {
+            q: "Should I back up my iPhone first?",
+            a: "If the screen still lets you, yes — back up to iCloud before any repair, and bring your passcode so we can test the iPhone afterwards.",
+          },
+        ],
+        cta: "Call for an iPhone repair quote",
+        ogKicker: "iPhone repair",
+        imageAlt: "A boxed iPhone and a Drop+ MagSafe case on the display case at TIC Wireless",
+      },
+      es: {
+        name: "Reparación de iPhone",
+        metaTitle: "Reparación de iPhone en Houston — Pantalla y Batería",
+        metaDescription:
+          "¿Pantalla de iPhone rota, batería que no dura o no carga? Reparamos iPhone en Hillcroft, Houston; la mayoría el mismo día y con precio antes de empezar.",
+        h1: "Reparación de iPhone en Houston, en Hillcroft",
+        intro:
+          "¿Pantalla de iPhone rota, batería que no aguanta el día o un iPhone que no carga? Ven a nuestra tienda en 3640 Hillcroft St, sin cita. Revisamos tu iPhone frente a ti, te damos el precio antes de empezar y la mayoría de reparaciones de pantalla, batería y puerto de carga quedan el mismo día.",
+        offersTitle: "Reparaciones de iPhone",
+        offers: [
+          "Pantallas de iPhone rotas o estrelladas.",
+          "Cambio de batería de iPhone cuando se descarga rápido o se apaga.",
+          "Reparación del puerto de carga cuando tu iPhone no carga o no conecta.",
+          "Problemas de software y ayuda con la configuración.",
+          "Dinos tu modelo —por ejemplo iPhone 14 Pro Max, iPhone 17 Pro o iPhone 18 Pro Max— y te confirmamos la reparación y el precio antes de empezar.",
+          "Mica de vidrio templado y funda después de la reparación.",
+        ],
+        links: [
+          ["Todas las reparaciones", "/es/servicios/phone-repair"],
+          ["Reparación de Samsung Galaxy", "/es/servicios/samsung-repair"],
+        ],
+        stepsTitle: "Cómo funciona la reparación de iPhone",
+        steps: [
+          [
+            "Ven sin cita",
+            "No necesitas cita en horario de tienda. Llama al (713) 339-9300 con el modelo de tu iPhone si quieres una cotización antes.",
+          ],
+          [
+            "Revisión frente a ti",
+            "Revisamos tu iPhone contigo presente y te explicamos la falla en palabras claras.",
+          ],
+          [
+            "Precio antes de empezar",
+            "Te damos el precio y el tiempo estimado antes de empezar, sin sorpresas.",
+          ],
+          [
+            "Listo, casi siempre el mismo día",
+            "La mayoría de reparaciones de pantalla, batería y puerto de carga de iPhone quedan el mismo día.",
+          ],
+        ],
+        why: [
+          "La mayoría, el mismo día",
+          "Precio antes de empezar",
+          "Ven sin cita",
+          "Español e inglés",
+        ],
+        faq: [
+          {
+            q: "¿Cuánto cuesta cambiar la pantalla de un iPhone?",
+            a: "Depende del modelo exacto de tu iPhone. Llama al (713) 339-9300 con tu modelo o ven a la tienda; te damos el precio antes de empezar.",
+          },
+          {
+            q: "¿Pueden reparar mi iPhone el mismo día?",
+            a: "La mayoría de reparaciones de pantalla, batería y puerto de carga de iPhone quedan el mismo día. Revisamos el celular frente a ti y te damos el precio y el tiempo estimado antes de empezar.",
+          },
+          {
+            q: "¿Reparan mi modelo de iPhone?",
+            a: "Llama al (713) 339-9300 con tu modelo exacto o trae el iPhone. Lo revisamos y te decimos si podemos hacer la reparación, y el precio, antes de empezar.",
+          },
+          {
+            q: "¿Pueden cambiar la batería de mi iPhone?",
+            a: "Sí. Cambiamos baterías de iPhone que se descargan rápido o se apagan, normalmente el mismo día, y te damos el precio antes de empezar.",
+          },
+          {
+            q: "Mi iPhone no carga. ¿Lo pueden arreglar?",
+            a: "Reparamos puertos de carga y cambiamos baterías. Ven sin cita: lo revisamos frente a ti y te damos el precio primero.",
+          },
+          {
+            q: "¿Necesito cita?",
+            a: "No, solo ven en horario de tienda: lunes a sábado de 9 AM a 8 PM y domingo de 9 AM a 5 PM.",
+          },
+          {
+            q: "¿Debo respaldar mi iPhone antes?",
+            a: "Si la pantalla todavía te deja, sí: respalda en iCloud antes de cualquier reparación y trae tu código para probar el iPhone al final.",
+          },
+        ],
+        cta: "Llamar para cotizar",
+        ogKicker: "Reparación de iPhone",
+        imageAlt: "Un iPhone en caja y una funda Drop+ MagSafe en la vitrina de TIC Wireless",
+      },
+    },
+  },
+  {
+    slug: "samsung-repair",
+    icon: "repair",
+    photo: "s22",
+    related: ["phone-repair", "iphone-repair", "unlocked-phones"],
+    serviceType: "Samsung Galaxy and Android phone repair",
+    text: {
+      en: {
+        name: "Samsung Galaxy repair",
+        metaTitle: "Samsung Galaxy Screen Repair in Houston — Same Day",
+        metaDescription:
+          "Cracked Galaxy screen, weak battery or bad charging port? Samsung & Android repair on Hillcroft in Houston, most done same day. Price quoted before work.",
+        h1: "Samsung Galaxy & Android repair in Houston",
+        intro:
+          "Cracked Samsung Galaxy screen, a battery that drains fast, or a phone that won't charge? Walk in to our store at 3640 Hillcroft St — no appointment needed. We repair Samsung Galaxy and other Android phones: we check yours in front of you, quote the price before any work starts, and most screen, battery and charging-port repairs are done the same day.",
+        offersTitle: "Galaxy & Android repairs we do",
+        offers: [
+          "Cracked or broken Samsung Galaxy screens.",
+          "Battery replacement for Galaxy and other Android phones that drain fast or shut off.",
+          "Charging port repair when your phone won't charge or connect.",
+          "Software problems and setup help.",
+          "Tell us your model — Galaxy S, A, Note or Z Flip, or another Android phone — and we'll confirm the repair and the price before we start.",
+          "Tempered glass and a case fitted after the repair.",
+        ],
+        links: [
+          ["All phone repairs", "/services/phone-repair"],
+          ["iPhone repair", "/services/iphone-repair"],
+        ],
+        stepsTitle: "How Galaxy repair works",
+        steps: [
+          [
+            "Walk in",
+            "No appointment needed during store hours. Call (713) 339-9300 with your Galaxy model if you want a quote first.",
+          ],
+          [
+            "Checked in front of you",
+            "We look at your phone with you there and explain what's wrong in plain language.",
+          ],
+          [
+            "Price before work",
+            "You get the price and a time estimate before we start — no surprises.",
+          ],
+          [
+            "Fixed, usually same day",
+            "Most Galaxy screen, battery and charging-port repairs are finished the same day.",
+          ],
+        ],
+        why: [
+          "Most repairs same day",
+          "Price quoted before work starts",
+          "Samsung Galaxy & Android",
+          "English & Spanish",
+        ],
+        faq: [
+          {
+            q: "How much does a Samsung screen repair cost?",
+            a: "It depends on your exact Galaxy model. Call (713) 339-9300 with your model or stop by — we quote the price before any work starts.",
+          },
+          {
+            q: "Do you fix Samsung Galaxy screens the same day?",
+            a: "Most Galaxy screen, battery and charging-port repairs are done the same day. We check the phone in front of you and give you the price and a time estimate before we start.",
+          },
+          {
+            q: "Can you fix my Galaxy model?",
+            a: "Call (713) 339-9300 with your exact model — Galaxy S, A, Note, Z Flip or another Android phone — or bring it in. We'll check it and tell you whether we can do the repair, and the price, before any work starts.",
+          },
+          {
+            q: "Can you replace my Samsung battery?",
+            a: "Yes. We replace batteries on Samsung Galaxy and other Android phones that drain fast or shut off, usually the same day, and we quote the price before any work starts.",
+          },
+          {
+            q: "My Galaxy won't charge. Can you fix it?",
+            a: "We repair charging ports and replace batteries. Walk in — no appointment needed — and we'll check it in front of you and quote the price first.",
+          },
+          {
+            q: "Do I need an appointment?",
+            a: "No — just walk in during store hours: Monday–Saturday 9 AM–8 PM and Sunday 9 AM–5 PM.",
+          },
+          {
+            q: "Should I back up my phone first?",
+            a: "If the screen still lets you, yes — back up to your Google or Samsung account before any repair, and bring your PIN or pattern so we can test the phone afterwards.",
+          },
+        ],
+        cta: "Call for a Galaxy repair quote",
+        ogKicker: "Samsung repair",
+        imageAlt:
+          "A Samsung Galaxy S22 Ultra in its box next to a rugged ring-stand case at TIC Wireless",
+      },
+      es: {
+        name: "Reparación de Samsung Galaxy",
+        metaTitle: "Reparación de Samsung Galaxy en Houston — Mismo Día",
+        metaDescription:
+          "¿Pantalla de Galaxy rota, batería que no dura o no carga? Reparamos Samsung y Android en Hillcroft, Houston, casi siempre el mismo día. Precio antes de empezar.",
+        h1: "Reparación de Samsung Galaxy y Android en Houston",
+        intro:
+          "¿Pantalla de Samsung Galaxy rota, batería que se descarga rápido o un celular que no carga? Ven a nuestra tienda en 3640 Hillcroft St, sin cita. Reparamos Samsung Galaxy y otros Android: revisamos el tuyo frente a ti, te damos el precio antes de empezar y la mayoría de reparaciones de pantalla, batería y puerto de carga quedan el mismo día.",
+        offersTitle: "Reparaciones de Galaxy y Android",
+        offers: [
+          "Pantallas de Samsung Galaxy rotas o estrelladas.",
+          "Cambio de batería para Galaxy y otros Android que se descargan rápido o se apagan.",
+          "Reparación del puerto de carga cuando el celular no carga o no conecta.",
+          "Problemas de software y ayuda con la configuración.",
+          "Dinos tu modelo —Galaxy S, A, Note o Z Flip, u otro Android— y te confirmamos la reparación y el precio antes de empezar.",
+          "Mica de vidrio templado y funda después de la reparación.",
+        ],
+        links: [
+          ["Todas las reparaciones", "/es/servicios/phone-repair"],
+          ["Reparación de iPhone", "/es/servicios/iphone-repair"],
+        ],
+        stepsTitle: "Cómo funciona la reparación de Galaxy",
+        steps: [
+          [
+            "Ven sin cita",
+            "No necesitas cita en horario de tienda. Llama al (713) 339-9300 con el modelo de tu Galaxy si quieres una cotización antes.",
+          ],
+          [
+            "Revisión frente a ti",
+            "Revisamos tu celular contigo presente y te explicamos la falla en palabras claras.",
+          ],
+          [
+            "Precio antes de empezar",
+            "Te damos el precio y el tiempo estimado antes de empezar, sin sorpresas.",
+          ],
+          [
+            "Listo, casi siempre el mismo día",
+            "La mayoría de reparaciones de pantalla, batería y puerto de carga de Galaxy quedan el mismo día.",
+          ],
+        ],
+        why: [
+          "La mayoría, el mismo día",
+          "Precio antes de empezar",
+          "Samsung Galaxy y Android",
+          "Español e inglés",
+        ],
+        faq: [
+          {
+            q: "¿Cuánto cuesta cambiar la pantalla de un Samsung?",
+            a: "Depende del modelo exacto de tu Galaxy. Llama al (713) 339-9300 con tu modelo o ven a la tienda; te damos el precio antes de empezar.",
+          },
+          {
+            q: "¿Reparan pantallas de Samsung Galaxy el mismo día?",
+            a: "La mayoría de reparaciones de pantalla, batería y puerto de carga de Galaxy quedan el mismo día. Revisamos el celular frente a ti y te damos el precio y el tiempo estimado antes de empezar.",
+          },
+          {
+            q: "¿Reparan mi modelo de Galaxy?",
+            a: "Llama al (713) 339-9300 con tu modelo exacto —Galaxy S, A, Note, Z Flip u otro Android— o tráelo. Lo revisamos y te decimos si podemos hacer la reparación, y el precio, antes de empezar.",
+          },
+          {
+            q: "¿Pueden cambiar la batería de mi Samsung?",
+            a: "Sí. Cambiamos baterías de Samsung Galaxy y otros Android que se descargan rápido o se apagan, normalmente el mismo día, y te damos el precio antes de empezar.",
+          },
+          {
+            q: "Mi Galaxy no carga. ¿Lo pueden arreglar?",
+            a: "Reparamos puertos de carga y cambiamos baterías. Ven sin cita: lo revisamos frente a ti y te damos el precio primero.",
+          },
+          {
+            q: "¿Necesito cita?",
+            a: "No, solo ven en horario de tienda: lunes a sábado de 9 AM a 8 PM y domingo de 9 AM a 5 PM.",
+          },
+          {
+            q: "¿Debo respaldar mi celular antes?",
+            a: "Si la pantalla todavía te deja, sí: respalda en tu cuenta de Google o Samsung antes de cualquier reparación y trae tu PIN o patrón para probar el celular al final.",
+          },
+        ],
+        cta: "Llamar para cotizar",
+        ogKicker: "Reparación de Samsung",
+        imageAlt:
+          "Un Samsung Galaxy S22 Ultra en su caja junto a una funda resistente con anillo en TIC Wireless",
       },
     },
   },
@@ -326,7 +712,7 @@ export const SERVICES: Service[] = [
         metaTitle: "Prepaid Plans in Houston — Compare 12 Carriers from $10/mo",
         metaDescription:
           "Compare T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca & Gen Mobile prepaid plans and prices. Unlimited from $35/mo. On Hillcroft.",
-        h1: "Prepaid phone plans in Houston — every major carrier",
+        h1: "Prepaid phone plans in Houston — 12 carriers",
         intro:
           "Compare prepaid plans from the major carriers at one counter, get set up in store, and keep your number. Prepaid means no contract, no credit check and no surprise bills.",
         offersTitle: "Carriers we offer",
@@ -373,6 +759,10 @@ export const SERVICES: Service[] = [
             a: "Plans start at $10/mo (Gen Mobile, 2GB). Unlimited data starts at $35/mo with AutoPay (Cricket Select Unlimited), and most unlimited plans with hotspot run $45–$60/mo. See every plan above — prices change, so we confirm today's price before you pay.",
           },
           {
+            q: "Is there a Cricket, Metro or Boost store near me?",
+            a: "We carry Cricket, Metro by T-Mobile and Boost Mobile prepaid plans, plus nine other carriers, at 3640 Hillcroft St, Suite C, Houston, TX 77057 — near Hillcroft & Windswept in Southwest Houston. Walk in during store hours; no appointment needed.",
+          },
+          {
             q: "Can I keep my phone number?",
             a: "Usually, yes. Keep your old line active until the transfer is done and bring your account number and transfer PIN. Your phone also needs to be unlocked for a different network.",
           },
@@ -386,7 +776,7 @@ export const SERVICES: Service[] = [
         metaTitle: "Planes Prepagados en Houston — 12 Compañías desde $10/mes",
         metaDescription:
           "Compara planes y precios de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca y Gen Mobile. Ilimitados desde $35/mes. En Hillcroft.",
-        h1: "Planes prepagados en Houston — todas las compañías",
+        h1: "Planes prepagados en Houston — 12 compañías",
         intro:
           "Compara planes prepagados de las principales compañías en un solo mostrador, actívalo en la tienda y conserva tu número. Prepagado significa sin contrato, sin revisión de crédito y sin sorpresas.",
         offersTitle: "Compañías que manejamos",
@@ -433,6 +823,10 @@ export const SERVICES: Service[] = [
             a: "Hay planes desde $10/mes (Gen Mobile, 2GB). Los datos ilimitados empiezan en $35/mes con AutoPay (Cricket Select Unlimited) y la mayoría de los ilimitados con hotspot cuestan entre $45 y $60/mes. Mira todos los planes arriba; los precios cambian, así que confirmamos el precio del día antes de que pagues.",
           },
           {
+            q: "¿Hay una tienda de Cricket, Metro o Boost cerca de mí?",
+            a: "Manejamos planes prepagados de Cricket, Metro by T-Mobile y Boost Mobile, además de otras nueve compañías, en 3640 Hillcroft St, Suite C, Houston, TX 77057, cerca de Hillcroft y Windswept en el suroeste de Houston. Ven en horario de tienda, sin cita.",
+          },
+          {
             q: "¿Puedo conservar mi número?",
             a: "Normalmente sí. Mantén activa tu línea vieja hasta terminar la transferencia y trae tu número de cuenta y PIN. Tu celular también debe estar liberado para otra red.",
           },
@@ -447,7 +841,7 @@ export const SERVICES: Service[] = [
   {
     slug: "xfinity-prepaid-internet",
     icon: "internet",
-    photo: "jbl",
+    photo: "xfinity",
     related: ["prepaid-plans", "bill-payments", "unlocked-phones"],
     serviceType: "Prepaid home internet",
     text: {
@@ -495,7 +889,8 @@ export const SERVICES: Service[] = [
         ],
         cta: "Ask about Xfinity Prepaid",
         ogKicker: "Home internet",
-        imageAlt: "Display case with JBL speakers, smartwatches and an Xfinity Prepaid box",
+        imageAlt:
+          "Xfinity Prepaid Internet Starter Kit box with the Wi-Fi gateway that comes in it",
       },
       es: {
         name: "Internet prepagado Xfinity",
@@ -547,20 +942,21 @@ export const SERVICES: Service[] = [
         ],
         cta: "Preguntar por Xfinity Prepaid",
         ogKicker: "Internet en casa",
-        imageAlt: "Vitrina con bocinas JBL, relojes inteligentes y una caja de Xfinity Prepaid",
+        imageAlt:
+          "Caja del kit de inicio de Xfinity Prepaid Internet con el módem Wi-Fi que incluye",
       },
     },
   },
   {
     slug: "phone-unlocking",
     icon: "unlock",
-    photo: "otterbox",
+    photo: "simTray",
     related: ["prepaid-plans", "phone-repair", "unlocked-phones"],
     serviceType: "Mobile phone unlocking",
     text: {
       en: {
         name: "Phone unlocking",
-        metaTitle: "Phone Unlocking in Houston — Use Any Carrier",
+        metaTitle: "Phone Unlocking in Houston — Switch to the Carrier You Want",
         metaDescription:
           "Unlock your iPhone or Android phone on Hillcroft in Houston and switch to the carrier you want. We check your phone first. Walk in, no appointment.",
         h1: "Phone unlocking in Houston",
@@ -603,11 +999,11 @@ export const SERVICES: Service[] = [
         ],
         cta: "Ask about unlocking",
         ogKicker: "Unlocking",
-        imageAlt: "Boxed iPhone with an OtterBox case on the store counter",
+        imageAlt: "A phone showing the Insert SIM card screen with its SIM tray ejected",
       },
       es: {
         name: "Liberación de celulares",
-        metaTitle: "Liberación de Celulares en Houston — Usa Cualquier Compañía",
+        metaTitle: "Liberación de Celulares en Houston — Cámbiate de Compañía",
         metaDescription:
           "Libera tu iPhone o Android en Hillcroft, Houston, y cámbiate a la compañía que quieras. Primero revisamos tu celular. Ven sin cita.",
         h1: "Liberación de celulares en Houston",
@@ -650,7 +1046,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Preguntar por liberación",
         ogKicker: "Liberación",
-        imageAlt: "iPhone en caja con funda OtterBox en el mostrador",
+        imageAlt: "Un celular con la pantalla para insertar la SIM y la bandeja de la SIM afuera",
       },
     },
   },
@@ -753,13 +1149,13 @@ export const SERVICES: Service[] = [
         name: "Phone bill payments",
         metaTitle: "Pay Your Phone Bill in Person in Houston — No Extra Charges",
         metaDescription:
-          "Pay your Metro, Cricket, Boost, AT&T Prepaid, Verizon Prepaid and other prepaid phone bills in person on Hillcroft in Houston — no extra charges.",
+          "Pay your prepaid phone bill in person at our Hillcroft store in Houston — the major prepaid carriers, no extra charges. Open 7 days. Se habla español.",
         h1: "Pay your phone bill in person in Houston",
         intro:
           "Prefer to pay in person? Pay your prepaid phone bill at our store on Hillcroft, with no extra charges. Open 7 days a week.",
         offersTitle: "What you can pay",
         offers: [
-          `Prepaid phone bills for the major carriers: ${CARRIERS}.`,
+          "Prepaid phone bills for the major prepaid carriers — ask us about yours.",
           "No extra charges for paying in store.",
           "Help changing or renewing your prepaid plan.",
           "International recharge while you're here.",
@@ -771,11 +1167,11 @@ export const SERVICES: Service[] = [
           ["Pay", "Pay at the counter — no extra charges."],
           ["Done", "Your payment is applied and you're good to go."],
         ],
-        why: ["No extra charges", "All major prepaid carriers", "Open 7 days", "Se habla español"],
+        why: ["No extra charges", "Major prepaid carriers", "Open 7 days", "Se habla español"],
         faq: [
           {
             q: "Which bills can I pay at TIC Wireless?",
-            a: `Prepaid phone bills for the major carriers, including ${CARRIERS}.`,
+            a: "Prepaid phone bills for the major prepaid carriers. Call (713) 339-9300 or ask at the counter to check yours.",
           },
           {
             q: "Is there a fee to pay my bill in store?",
@@ -791,13 +1187,13 @@ export const SERVICES: Service[] = [
         name: "Pago de facturas",
         metaTitle: "Paga tu Factura de Celular en Persona en Houston — Sin Cargos",
         metaDescription:
-          "Paga tu factura prepagada de Metro, Cricket, Boost, AT&T Prepaid, Verizon Prepaid y otras compañías en persona en Hillcroft, Houston, sin cargos extra.",
+          "Paga en persona tu factura prepagada en nuestra tienda de Hillcroft, Houston: las principales compañías prepagadas, sin cargos extra. Abiertos 7 días.",
         h1: "Paga tu factura de celular en persona en Houston",
         intro:
           "¿Prefieres pagar en persona? Paga tu factura prepagada en nuestra tienda de Hillcroft, sin cargos extra. Abiertos los 7 días.",
         offersTitle: "Lo que puedes pagar",
         offers: [
-          `Facturas prepagadas de las principales compañías: ${CARRIERS.replace(" and ", " y ")}.`,
+          "Facturas de las principales compañías prepagadas; pregúntanos por la tuya.",
           "Sin cargos extra por pagar en la tienda.",
           "Ayuda para cambiar o renovar tu plan prepagado.",
           "Recargas internacionales en la misma visita.",
@@ -811,14 +1207,14 @@ export const SERVICES: Service[] = [
         ],
         why: [
           "Sin cargos extra",
-          "Todas las compañías prepagadas",
+          "Principales compañías prepagadas",
           "Abiertos 7 días",
           "We speak English",
         ],
         faq: [
           {
             q: "¿Qué facturas puedo pagar en TIC Wireless?",
-            a: `Facturas prepagadas de las principales compañías, incluyendo ${CARRIERS.replace(" and ", " y ")}.`,
+            a: "Facturas de las principales compañías prepagadas. Llama al (713) 339-9300 o pregunta en el mostrador por la tuya.",
           },
           {
             q: "¿Cobran comisión por pagar en la tienda?",

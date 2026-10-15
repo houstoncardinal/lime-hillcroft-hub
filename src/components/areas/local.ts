@@ -19,7 +19,7 @@ export const LOCAL: Record<string, Local> = {
     highlights: {
       en: [
         [
-          "Closest phone shop up Hillcroft",
+          "A short drive up Hillcroft",
           "About a mile from Harwin — quicker than a trip to a mall store.",
         ],
         [
@@ -33,7 +33,7 @@ export const LOCAL: Record<string, Local> = {
       ],
       es: [
         [
-          "La tienda más cercana subiendo por Hillcroft",
+          "A un trayecto corto subiendo por Hillcroft",
           "A una milla de Harwin, más rápido que ir a una tienda del mall.",
         ],
         [
@@ -316,14 +316,14 @@ export const LOCAL: Record<string, Local> = {
     },
     highlights: {
       en: [
-        ["One road, no turns to remember", "North on Hillcroft Avenue nearly the whole way."],
+        ["An easy drive to remember", "North Braeswood Blvd, then north on Hillcroft Avenue."],
         ["Screen, battery & charging port", "Same-day repair for most iPhone and Samsung models."],
         ["Prepaid internet at home", "Xfinity Prepaid internet, sold and set up in store."],
       ],
       es: [
         [
-          "Una sola calle, sin complicaciones",
-          "Al norte por Hillcroft Avenue casi todo el camino.",
+          "Un camino fácil de recordar",
+          "North Braeswood Blvd y luego al norte por Hillcroft Avenue.",
         ],
         [
           "Pantalla, batería y puerto de carga",

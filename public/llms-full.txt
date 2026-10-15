@@ -3,7 +3,7 @@
 TIC Wireless Electronic & Repair Center (also known as "TIC Wireless" and listed on Google as "TIC Wireless - Hillcroft") is an independent cell phone store in
 Houston, Texas. It sells new unlocked phones, game consoles (PS5, Xbox, Nintendo
 Switch 2), laptops and tablets (MacBook, iPad, Galaxy Tab) with no-credit-needed leasing from $40
-down, prepaid plans from 12 carriers, Xfinity Prepaid internet and accessories, and does
+down (subject to approval), prepaid plans from 12 carriers, Xfinity Prepaid internet and accessories, and does
 same-day phone repair, unlocking, bill payments, trade-ins and international recharge. Slogan: "Buy · Sell ·
 Repair · Unlock." The team speaks English and Spanish (Se habla español).
 
@@ -39,11 +39,11 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 - New unlocked iPhones and Android phones (Samsung Galaxy, Motorola and more), including the
   latest models such as the new iPhone 18 Pro Max (and iPhone 17 Pro).
-- Leasing (lease-to-own) are available: no credit needed, bad credit is OK, options start at
+- Leasing (lease-to-own) is available: no credit needed, bad credit is OK, options start at
   $40 down. The exact down payment and payments depend on the item and the plan the customer is
   approved for. Approval is not guaranteed.
 - Lease-to-own is not a loan: the customer leases the item and makes regular payments; when the
-  plan is complete (or bought out early) the item is theirs. The total cost to own can be more
+  plan is complete (or bought out early) the item is theirs. The total cost to own is more
   than the cash price. Staff explain all terms in store before anything is signed.
 - Payment schedules: weekly, biweekly or monthly payments are available.
 - To apply: come to the store with a valid photo ID. The application takes a few minutes at the
@@ -86,6 +86,9 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 - Repair prices depend on the exact model and the problem, so prices are quoted in store or by
   phone at (713) 339-9300.
 - After a repair, the store can fit tempered glass and a case to protect the device.
+- Repair pages: https://www.ticwirelesstx.com/services/phone-repair (all repairs),
+  https://www.ticwirelesstx.com/services/iphone-repair (iPhone) and
+  https://www.ticwirelesstx.com/services/samsung-repair (Samsung Galaxy & Android).
 
 ## Unlocking
 
@@ -104,7 +107,7 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
   Payvantage https://payvan.me/3RM885c — or apply at the counter with a valid photo ID.
 - Page: https://www.ticwirelesstx.com/game-consoles
 
-## Latest devices in store (updated October 13, 2026)
+## Devices in store now (updated October 13, 2026)
 
 Phones:
 - iPhone 18 (including iPhone 18 Pro Max)
@@ -171,10 +174,6 @@ customers should call (713) 339-9300.
 
 - Online shopping is temporarily unavailable and coming back soon. To buy accessories, call (713) 339-9300 or visit the store.
 
-## Reviews
-
-- TIC Wireless Electronic & Repair Center is rated 4.7 out of 5 on Google, from 400+ reviews.
-
 ## Language
 
 - Se habla español. The team helps customers in English and Spanish, in store and on the phone.
@@ -232,11 +231,14 @@ internacionales Houston · recarga Telcel / Tigo / Movistar · vender mi celular
 - Game consoles: https://www.ticwirelesstx.com/game-consoles (Spanish: /es/consolas)
 - Laptops & tablets: https://www.ticwirelesstx.com/laptops-tablets (Spanish: /es/laptops-y-tabletas)
 - Accessories: https://www.ticwirelesstx.com/accessories (Spanish: /es/accesorios)
+- iPhone 18 (iPhone 18 Pro Max in store, leasing, trade-in): https://www.ticwirelesstx.com/iphone-18 (Spanish: /es/iphone-18)
 - Leasing & lease-to-own: https://www.ticwirelesstx.com/leasing (Spanish: /es/arrendamiento)
 - Location, hours, parking & directions: https://www.ticwirelesstx.com/location (Spanish: /es/ubicacion)
 - Services overview: https://www.ticwirelesstx.com/services (Spanish: /es/servicios)
 - Unlocked phones: https://www.ticwirelesstx.com/services/unlocked-phones
 - Same-day phone repair: https://www.ticwirelesstx.com/services/phone-repair
+- iPhone repair: https://www.ticwirelesstx.com/services/iphone-repair (Spanish: /es/servicios/iphone-repair)
+- Samsung Galaxy & Android repair: https://www.ticwirelesstx.com/services/samsung-repair (Spanish: /es/servicios/samsung-repair)
 - Prepaid plans & prices: https://www.ticwirelesstx.com/services/prepaid-plans
 - Xfinity Prepaid internet: https://www.ticwirelesstx.com/services/xfinity-prepaid-internet
 - Phone unlocking: https://www.ticwirelesstx.com/services/phone-unlocking

@@ -50,7 +50,12 @@ export function guideHead(lang: Lang, guide: Guide | undefined) {
   const paths = guidePaths(guide.slug);
   const url = absoluteUrl(paths[lang]);
   const hub = GUIDES_HUB[lang];
-  const store = { "@id": absoluteUrl("/#store") };
+  const store = {
+    "@type": "Organization",
+    "@id": absoluteUrl("/#store"),
+    name: "TIC Wireless Electronic & Repair Center",
+    url: absoluteUrl("/"),
+  };
   const image = ogImage(`guide-${guide.slug}`, lang);
   return pageHead({
     paths,
@@ -71,6 +76,9 @@ export function guideHead(lang: Lang, guide: Guide | undefined) {
         [t.title, paths[lang]],
       ],
       faqs: t.faq,
+      // The WebPage and Article give the same dates.
+      datePublished: guide.published,
+      dateModified: guide.updated,
       extra: [
         {
           "@type": "Article",
@@ -81,6 +89,7 @@ export function guideHead(lang: Lang, guide: Guide | undefined) {
           inLanguage: LANGUAGE[lang],
           datePublished: guide.published,
           dateModified: guide.updated,
+          // Inline name + url so the author resolves even when a parser doesn't follow @id.
           author: store,
           publisher: store,
           image: absoluteUrl(image),
