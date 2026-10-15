@@ -115,7 +115,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -left-40 -top-20 -z-10 h-[30rem] w-[30rem] rounded-full bg-primary/20 blur-[150px]" />
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-14 pt-28 sm:pt-32 md:pb-20 md:pt-40 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 pb-10 pt-28 sm:pt-28 md:pb-14 md:pt-32 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
             <nav aria-label="Breadcrumb" className="text-sm text-white/60">
               <Link to={ALTERNATES.home[lang]} className="hover:text-white">
@@ -168,7 +168,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Quick facts + hours */}
-      <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
+      <section className="mx-auto max-w-7xl px-5 py-10 md:py-14">
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <ul className="grid content-start gap-3 sm:grid-cols-2">
             {t.facts.map(([label, value], i) => {
@@ -234,9 +234,9 @@ export function LocationPage({ lang }: { lang: Lang }) {
 
       {/* How to find us */}
       <section className="bg-secondary/50">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-24">
+        <div className="mx-auto max-w-7xl px-5 py-10 md:py-16">
           <SectionTitle kicker={t.find.kicker} title={t.find.title} />
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:items-start">
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:items-start">
             <ol className="space-y-6">
               {t.find.steps.map(([title, body], i) => (
                 <li key={title} className="flex gap-4">
@@ -297,10 +297,10 @@ export function LocationPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Driving times + map */}
-      <section className="mx-auto max-w-7xl px-5 py-14 md:py-24">
+      <section className="mx-auto max-w-7xl px-5 py-10 md:py-16">
         <SectionTitle kicker={t.drive.kicker} title={t.drive.title} />
         <p className="mt-4 max-w-2xl text-muted-foreground">{t.drive.body}</p>
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_1fr]">
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_1fr]">
           <ul className="divide-y overflow-hidden rounded-3xl border bg-card">
             {areas.map((a) => (
               <li key={a.slug}>
@@ -372,13 +372,13 @@ export function LocationPage({ lang }: { lang: Lang }) {
 
       {/* Inside the store */}
       <section className="bg-ink text-white">
-        <div className="mx-auto max-w-7xl py-14 md:py-24">
+        <div className="mx-auto max-w-7xl py-10 md:py-16">
           <div className="px-5">
             <SectionTitle kicker={t.inside.kicker} title={t.inside.title} light />
             <p className="mt-4 max-w-2xl text-white/70">{t.inside.body}</p>
           </div>
           {/* Swipeable row on phones, grid from tablets up. */}
-          <ul className="mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3">
+          <ul className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3">
             <li className="w-[82%] shrink-0 snap-start sm:col-span-2 sm:w-auto lg:col-span-2 lg:row-span-2">
               <figure className="flex h-full flex-col overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10">
                 <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto sm:min-h-[18rem] sm:flex-1">
@@ -419,9 +419,9 @@ export function LocationPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Services at this location */}
-      <section className="mx-auto max-w-7xl px-5 py-14 md:py-24">
+      <section className="mx-auto max-w-7xl px-5 py-10 md:py-16">
         <SectionTitle kicker={t.offer.kicker} title={t.offer.title} />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {SERVICES.map((s) => (
             <ServiceCard key={s.slug} service={s} lang={lang} />
           ))}
@@ -444,7 +444,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
 
       {/* What to bring + we moved + reviews */}
       <section className="bg-secondary/50">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:py-24 lg:grid-cols-[1.4fr_1fr]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:py-16 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <SectionTitle kicker={t.bring.kicker} title={t.bring.title} />
             <dl className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -456,7 +456,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
               ))}
             </dl>
           </div>
-          <div className="flex flex-col gap-4 lg:pt-16">
+          <div className="flex flex-col gap-4 lg:pt-12">
             <div className="rounded-3xl border-2 border-primary/40 bg-card p-6">
               <h2 className="font-display text-xl font-semibold">{t.moved.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.moved.body}</p>
@@ -486,7 +486,7 @@ export function LocationPage({ lang }: { lang: Lang }) {
       <ReviewsCarousel lang={lang} className="bg-secondary/40" />
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-5 py-14 md:py-24">
+      <section className="mx-auto max-w-3xl px-5 py-10 md:py-16">
         <h2 className="text-3xl font-semibold sm:text-4xl">{t.faqTitle}</h2>
         <div className="mt-8">
           <FaqList items={t.faqs} />
@@ -494,8 +494,8 @@ export function LocationPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* CTA */}
-      <section className="px-3 pb-16 sm:px-5 md:pb-24">
-        <div className="mx-auto max-w-7xl rounded-3xl bg-ink px-6 py-12 text-center text-white sm:px-10 md:py-16">
+      <section className="px-3 pb-12 sm:px-5 md:pb-16">
+        <div className="mx-auto max-w-7xl rounded-3xl bg-ink px-6 py-8 text-center text-white sm:px-10 md:py-12">
           <h2 className="text-3xl font-semibold sm:text-5xl">{t.cta.title}</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">{t.cta.body}</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

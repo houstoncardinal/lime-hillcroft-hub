@@ -112,9 +112,9 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
     <section
       id="apply"
       aria-labelledby="apply-title"
-      className={cn("scroll-mt-24 px-3 py-14 sm:px-5 md:py-20", className)}
+      className={cn("scroll-mt-24 px-3 py-10 sm:px-5 md:py-14", className)}
     >
-      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-ink px-5 py-10 text-white sm:px-10 md:py-14">
+      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-ink px-5 py-8 text-white sm:px-10 md:py-10">
         <div className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-primary/30 blur-[120px]" />
         <div className="grain absolute inset-0 -z-10 opacity-50" />
         <p className="eyebrow flex items-center gap-3 text-primary">

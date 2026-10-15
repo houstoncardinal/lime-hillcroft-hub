@@ -262,8 +262,8 @@ export function SiteFooter({
     <>
       {portals && <LeasingPortalsBanner lang={lang} />}
       <footer lang={lang} dir="ltr" className="border-t border-white/10 bg-ink text-white">
-        <div className="mx-auto max-w-7xl px-5 pb-28 pt-14 md:pb-14 md:pt-20">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_3fr]">
+        <div className="mx-auto max-w-7xl px-5 pb-28 pt-10 md:pb-10 md:pt-14">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_3fr]">
             <div>
               <Logo light />
               <p className="mt-4 max-w-xs text-sm text-white/60">{t.tagline}</p>
@@ -288,7 +288,7 @@ export function SiteFooter({
                 </a>
               </div>
             </div>
-            <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+            <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4">
               <FooterColumn
                 title={f.products}
                 links={[
@@ -330,7 +330,7 @@ export function SiteFooter({
               a popover). Native names, each marked with its own language and direction. */}
           <nav
             aria-label={f.languages}
-            className="mt-12 flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm text-white/75"
+            className="mt-8 flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm text-white/75"
           >
             <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white/50">
               {f.languages}

@@ -23,7 +23,7 @@ export function ReviewQuotes({
   const reviews = pickedReviews(pick);
   if (!reviews.length) return null;
   return (
-    <section aria-labelledby={`reviews-${pick}`} className={cn("py-14 md:py-20", className)}>
+    <section aria-labelledby={`reviews-${pick}`} className={cn("py-10 md:py-14", className)}>
       <div className="mx-auto max-w-7xl px-5">
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
           <div className="max-w-2xl">

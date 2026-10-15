@@ -79,7 +79,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -left-40 -top-20 -z-10 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[150px]" />
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-32 md:pb-24 md:pt-40 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 pb-12 pt-28 md:pb-16 md:pt-32 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <nav
               aria-label="Breadcrumb"
@@ -121,7 +121,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
                 <MapPin className="h-4 w-4" /> {ui.directions}
               </a>
             </div>
-            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {t.why.map((w) => (
                 <li key={w} className="flex items-center gap-2 text-white/85">
                   <CircleCheck className="h-5 w-5 shrink-0 text-primary" /> {w}
@@ -143,10 +143,10 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
               sizes="(min-width: 1024px) 40vw, 100vw"
               alt={t.imageAlt}
               priority
-              {...(photo.fit === "contain" ? { className: "object-contain px-6 pb-24 pt-8" } : {})}
+              {...(photo.fit === "contain" ? { className: "object-contain px-6 pb-16 pt-8" } : {})}
               {...(photo.focus ? { style: { objectPosition: photo.focus } } : {})}
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-6 pt-20">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-6 pt-14">
               <OpenBadge lang={lang} />
             </div>
             {photo.credit && (
@@ -173,8 +173,8 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
         </>
       )}
 
-      <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
-        <div className="grid gap-12 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-5 py-12 md:py-16">
+        <div className="grid gap-8 lg:grid-cols-2">
           <section aria-labelledby="offers">
             <h2 id="offers" className="text-3xl font-semibold md:text-4xl">
               {t.offersTitle}
@@ -226,7 +226,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
           </section>
         </div>
 
-        <section className="mt-20 max-w-4xl">
+        <section className="mt-14 max-w-4xl">
           <h2 className="flex items-center gap-2 text-3xl font-semibold md:text-4xl">
             <MessageCircleQuestion className="h-7 w-7 text-primary" /> {ui.faq}
           </h2>
@@ -235,7 +235,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
           </div>
         </section>
 
-        <aside className="mt-20 grid gap-8 rounded-3xl bg-ink p-8 text-white md:grid-cols-[1.4fr_1fr] md:p-12">
+        <aside className="mt-14 grid gap-8 rounded-3xl bg-ink p-8 text-white md:grid-cols-[1.4fr_1fr] md:p-12">
           <div>
             <h2 className="text-3xl font-semibold">{ui.visit}</h2>
             <p className="mt-2 text-white/70">{ui.visitBody}</p>
@@ -276,9 +276,9 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       <NearYou lang={lang} />
 
       <section className="border-t bg-secondary/60">
-        <div className="mx-auto max-w-7xl px-5 py-16">
+        <div className="mx-auto max-w-7xl px-5 py-12">
           <h2 className="text-2xl font-semibold md:text-3xl">{ui.related}</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {related.map((s) => (
               <ServiceCard key={s.slug} service={s} lang={lang} />
             ))}
@@ -305,18 +305,18 @@ export function ServiceCard({ service, lang }: { service: Service; lang: Lang })
   return (
     <Link
       to={servicePath(lang, service.slug)}
-      className="group flex flex-col rounded-3xl border bg-card p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
+      className="group flex flex-col rounded-3xl border bg-card p-4 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5 sm:p-6"
     >
       <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-ink transition group-hover:bg-primary">
         <Icon className="h-5 w-5" />
       </span>
-      <span className="mt-5 font-display text-lg font-semibold leading-snug group-hover:text-primary">
+      <span className="mt-3 font-display font-semibold leading-snug group-hover:text-primary sm:mt-5 sm:text-lg">
         {t.name}
       </span>
-      <span className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+      <span className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:text-sm sm:leading-relaxed">
         {t.metaDescription}
       </span>
-      <span className="mt-auto flex items-center gap-1 pt-5 text-sm font-semibold text-ink">
+      <span className="mt-auto flex items-center gap-1 pt-3 text-sm font-semibold text-ink sm:pt-5">
         {SERVICES_HUB[lang].more}
         <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-1" />
       </span>

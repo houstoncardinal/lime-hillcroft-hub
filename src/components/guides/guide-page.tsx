@@ -75,7 +75,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
         <header className="relative isolate overflow-hidden bg-ink text-white">
           <div className="grain absolute inset-0 -z-10 opacity-60" />
           <div className="absolute -right-40 -top-20 -z-10 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[150px]" />
-          <div className="mx-auto max-w-4xl px-5 pb-14 pt-32 md:pb-20 md:pt-40">
+          <div className="mx-auto max-w-4xl px-5 pb-10 pt-28 md:pb-14 md:pt-32">
             <nav
               aria-label="Breadcrumb"
               className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
@@ -110,7 +110,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
           </div>
         </header>
 
-        <div className="mx-auto max-w-4xl px-5 py-14 md:py-20">
+        <div className="mx-auto max-w-4xl px-5 py-10 md:py-14">
           {/* Quick answer: the summary search engines and AI assistants quote */}
           <section
             aria-labelledby="quick"
@@ -130,7 +130,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
           </section>
 
           {t.sections.map((s) => (
-            <section key={s.h} className="mt-14">
+            <section key={s.h} className="mt-10">
               <h2 className="text-2xl font-semibold leading-tight md:text-3xl">
                 {<MoneyText text={s.h} />}
               </h2>
@@ -154,7 +154,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
             </section>
           ))}
 
-          <section className="mt-16">
+          <section className="mt-12">
             <h2 className="flex items-center gap-2 text-2xl font-semibold md:text-3xl">
               <MessageCircleQuestion className="h-6 w-6 text-primary" />{" "}
               {<MoneyText text={ui.faq} />}
@@ -164,7 +164,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
             </div>
           </section>
 
-          <aside className="mt-16 flex flex-col gap-6 rounded-3xl bg-ink p-8 text-white md:flex-row md:items-center md:justify-between">
+          <aside className="mt-12 flex flex-col gap-6 rounded-3xl bg-ink p-8 text-white md:flex-row md:items-center md:justify-between">
             <div>
               <p className="font-display text-xl font-semibold">{<MoneyText text={ui.help} />}</p>
               <p className="mt-1 text-white/65">{<MoneyText text={ui.helpBody} />}</p>
@@ -188,7 +188,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
       </article>
 
       <section className="border-t bg-secondary/60">
-        <div className="mx-auto max-w-7xl px-5 py-16">
+        <div className="mx-auto max-w-7xl px-5 py-12">
           <h2 className="text-2xl font-semibold md:text-3xl">{<MoneyText text={ui.more} />}</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {others.map((g) => (

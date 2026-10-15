@@ -1,7 +1,7 @@
 import { CATEGORY_PAGES, type CategoryKey } from "@/components/products/data";
 import { deviceFaqs } from "@/components/products/device-faqs";
 import { devicePaths } from "@/components/products/device-paths";
-import type { DeviceDetail } from "@/components/products/devices";
+import { deviceTitle, type DeviceDetail } from "@/components/products/devices";
 import type { Device } from "@/components/products/inventory";
 import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { ogImage } from "@/components/site/og";
@@ -95,7 +95,8 @@ export function categoryHead(key: CategoryKey, lang: Lang) {
 export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
   if (!entry) return { meta: [{ title: withBrand(lang === "en" ? "Devices" : "Equipos") }] };
   const { device, detail } = entry;
-  const name = `${device.brand === "Samsung" ? "Samsung " : ""}${device.name}`;
+  const name = deviceTitle(device, detail);
+  const leaseFrom = detail.leaseFrom ?? 40;
   const paths = devicePaths(device.id);
   const tablet = device.kind === "ipad";
   const title =
@@ -107,16 +108,18 @@ export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
       ? `${name} in stock at TIC Wireless on Hillcroft in Houston. ${detail.highlights
           .slice(0, 2)
           .map((h) => h.en)
-          .join(", ")}. Lease-to-own from $40 down, no credit needed, subject to approval.`
+          .join(
+            ", ",
+          )}. Lease-to-own from $${leaseFrom} down, no credit needed, subject to approval.`
       : `${name} en existencia en TIC Wireless en Hillcroft, Houston. ${detail.highlights
           .slice(0, 2)
           .map((h) => h.es)
           .join(
             ", ",
-          )}. A pagos desde $40 de enganche, sin necesidad de crédito, sujeto a aprobación.`;
+          )}. A pagos desde $${leaseFrom} de enganche, sin necesidad de crédito, sujeto a aprobación.`;
   const image = ogImage(tablet ? "laptops" : "service-unlocked-phones", lang);
   const photo = detail.photo
-    ? absoluteUrl(`/photos/devices/product/${detail.photo.file}.jpg`)
+    ? absoluteUrl(detail.photo.jpg)
     : absoluteUrl(device.image.replace(/\.webp$/, ".jpg"));
   return pageHead({
     paths,
@@ -142,7 +145,7 @@ export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
             ],
         [device.name, paths[lang]],
       ],
-      faqs: deviceFaqs(device, lang),
+      faqs: deviceFaqs(device, lang, name, leaseFrom),
       // No Product node: in-store items have no online price, and a Product without offers is
       // a Search Console error (see categoryHead). The photo and leasing offer are described.
       extra: [
@@ -151,7 +154,7 @@ export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
           "@id": `${absoluteUrl(paths[lang])}#photo`,
           contentUrl: photo,
           caption: detail.photo ? detail.photo.alt[lang] : device.alt[lang],
-          ...(detail.photo
+          ...(detail.photo?.credit
             ? {
                 creditText: detail.photo.credit.author,
                 license: detail.photo.credit.href,

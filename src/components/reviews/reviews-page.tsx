@@ -29,7 +29,7 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -right-40 -top-10 -z-10 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[150px]" />
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-14 pt-28 sm:pt-32 md:pb-20 md:pt-40 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 pb-10 pt-28 sm:pt-28 md:pb-14 md:pt-32 lg:grid-cols-[1.3fr_1fr] lg:items-end">
           <div>
             <nav aria-label="Breadcrumb" className="text-sm text-white/60">
               <Link to={ALTERNATES.home[lang]} className="hover:text-white">
@@ -81,7 +81,7 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section aria-labelledby="topics-title" className="mx-auto max-w-7xl px-5 pt-12 md:pt-16">
+      <section aria-labelledby="topics-title" className="mx-auto max-w-7xl px-5 pt-8 md:pt-12">
         <h2 id="topics-title" className="text-2xl font-semibold sm:text-3xl">
           {t.topics}
         </h2>
@@ -101,7 +101,7 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
         </ul>
       </section>
 
-      <section aria-labelledby="list-title" className="mx-auto max-w-7xl px-5 py-12 md:py-16">
+      <section aria-labelledby="list-title" className="mx-auto max-w-7xl px-5 py-8 md:py-12">
         <h2 id="list-title" className="text-2xl font-semibold sm:text-3xl">
           {t.latest}
         </h2>
@@ -110,8 +110,8 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
         <p className="mt-4 text-xs text-muted-foreground">{t.imported(date)}</p>
       </section>
 
-      <section className="px-3 pb-16 sm:px-5 md:pb-24">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 rounded-3xl bg-ink px-6 py-10 text-white sm:px-10 md:flex-row md:items-center md:justify-between">
+      <section className="px-3 pb-12 sm:px-5 md:pb-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 rounded-3xl bg-ink px-6 py-8 text-white sm:px-10 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-3xl font-semibold">{t.cta}</h2>
             <p className="mt-1 text-white/70">{t.ctaBody}</p>

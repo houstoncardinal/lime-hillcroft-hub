@@ -53,7 +53,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             { r: 76, count: 22, dot: 2.2, className: "fill-slate" },
           ]}
         />
-        <div className="mx-auto max-w-7xl px-5 pb-14 pt-32 md:pb-20 md:pt-40">
+        <div className="mx-auto max-w-7xl px-5 pb-10 pt-28 md:pb-14 md:pt-32">
           <h1>
             <span className="eyebrow flex items-center gap-3 text-primary">
               <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
@@ -70,7 +70,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               {<MoneyText text={t.hero.preview} />}
             </p>
           )}
-          <div className="relative mt-10 max-w-xl">
+          <div className="relative mt-8 max-w-xl">
             <Search className="pointer-events-none absolute left-5 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-white/70" />
             <input
               type="search"
@@ -121,11 +121,11 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </div>
 
       {/* Grid */}
-      <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
+      <section className="mx-auto max-w-7xl px-5 py-8 md:py-12">
         <h2 className="sr-only">{<MoneyText text={t.categories[category]} />}</h2>
         <p className="mb-8 text-sm text-muted-foreground">{t.results(products.length)}</p>
         {products.length === 0 ? (
-          <div className="rounded-3xl border border-dashed py-20 text-center">
+          <div className="rounded-3xl border border-dashed py-14 text-center">
             <p className="text-muted-foreground">{<MoneyText text={t.empty} />}</p>
             <button
               type="button"
@@ -139,7 +139,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6">
             {products.map((p, i) => (
               <ProductCard key={p.id} product={p} lang={lang} priority={i < 4} />
             ))}
@@ -148,7 +148,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* Trust + leasing */}
-      <section className="mx-auto max-w-7xl px-5 pb-24">
+      <section className="mx-auto max-w-7xl px-5 pb-16">
         <div className="grid gap-4 md:grid-cols-4">
           {t.trust.map(([title, body], i) => {
             const Icon = TRUST_ICONS[i] ?? Store;

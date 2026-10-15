@@ -177,6 +177,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.ticwirelesstx.com/devices/iphone-18</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ticwirelesstx.com/devices/galaxy-s20-ultra</loc>
     <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
@@ -775,6 +785,16 @@
     </image:image>
     <image:image>
       <image:loc>https://www.ticwirelesstx.com/photos/devices/iphone-18.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-18</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-18"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
     </image:image>
   </url>
   <url>

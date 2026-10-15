@@ -58,7 +58,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/55" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent" />
         <div className="grain absolute inset-0 -z-10 opacity-40" />
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-14 pt-28 sm:pt-32 md:pb-20 md:pt-40 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 pb-10 pt-28 sm:pt-28 md:pb-14 md:pt-32 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
             <nav aria-label="Breadcrumb" className="text-sm text-white/60">
               <Link to={ALTERNATES.home[lang]} className="hover:text-white">
@@ -134,7 +134,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
                 className="absolute inset-0"
               />
             )}
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-5 pt-16">
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-5 pt-12">
               <OpenBadge lang={lang} />
             </figcaption>
           </figure>
@@ -142,7 +142,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
       </section>
 
       {/* Product groups */}
-      <section aria-labelledby="groups-title" className="mx-auto max-w-7xl px-5 py-14 md:py-24">
+      <section aria-labelledby="groups-title" className="mx-auto max-w-7xl px-5 py-10 md:py-16">
         <p className="eyebrow text-ink/60">{t.groupsKicker}</p>
         <h2
           id="groups-title"
@@ -150,7 +150,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
         >
           {t.groupsTitle}
         </h2>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {page.groups.map((g) => {
             const p = PRODUCT_PHOTOS[g.photo];
             return (
@@ -214,7 +214,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
 
       {/* How buying / leasing works */}
       <section aria-labelledby="buy-title" className="bg-secondary/50">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:py-20 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:py-14 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
             <p className="eyebrow text-ink/60">{t.buyKicker}</p>
             <h2
@@ -249,7 +249,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
 
       {/* Gallery: swipe on phones, grid from tablets up */}
       <section aria-labelledby="gallery-title" className="bg-ink text-white">
-        <div className="mx-auto max-w-7xl py-14 md:py-20">
+        <div className="mx-auto max-w-7xl py-10 md:py-14">
           <h2 id="gallery-title" className="px-5 text-3xl font-semibold sm:text-4xl">
             {t.galleryTitle}
           </h2>
@@ -290,7 +290,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
               );
             })}
           </ul>
-          <div className="mt-10 px-5">
+          <div className="mt-8 px-5">
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white/50">
               {t.brandsTitle}
             </h3>
@@ -306,7 +306,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-5 py-14 md:py-20">
+      <section className="mx-auto max-w-3xl px-5 py-10 md:py-14">
         <h2 className="flex items-center gap-2 text-3xl font-semibold sm:text-4xl">
           <MessageCircleQuestion className="h-7 w-7 text-primary" /> {ui.faq}
         </h2>
@@ -322,7 +322,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
       />
 
       {/* Related + visit */}
-      <section className="mx-auto max-w-7xl px-5 pb-16 md:pb-24">
+      <section className="mx-auto max-w-7xl px-5 pb-12 md:pb-16">
         <div className="grid gap-4 lg:grid-cols-[1fr_1.4fr]">
           <nav aria-label={ui.related} className="rounded-3xl border bg-card p-6">
             <h2 className="font-display text-xl font-semibold">{ui.related}</h2>

@@ -64,7 +64,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -left-40 top-1/2 -z-10 h-[40rem] w-[40rem] rounded-full bg-primary/20 blur-[160px]" />
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 lg:min-h-[100svh] lg:grid-cols-[1fr_1.1fr] lg:pb-16 lg:pt-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-14 pt-28 lg:grid-cols-[1fr_1.1fr] lg:pb-12 lg:pt-28">
           <div className="animate-rise">
             <p className="eyebrow flex items-center gap-3 text-primary">
               <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
@@ -104,7 +104,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                 <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             </div>
-            <ul className="mt-12 flex flex-wrap gap-2 border-t border-white/10 pt-8">
+            <ul className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-8">
               {t.hero.chips.map((chip) => (
                 <li
                   key={chip}
@@ -135,7 +135,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                 alt={t.hero.mainAlt}
                 className="aspect-[16/9]"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-5 pb-4 pt-12 font-display text-lg font-semibold">
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-5 pb-4 pt-8 font-display text-lg font-semibold">
                 {<MoneyText text={t.hero.mainCaption} />}
               </figcaption>
             </figure>
@@ -156,7 +156,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                     className="aspect-[4/3]"
                     {...(g.focus ? { style: { objectPosition: g.focus } } : {})}
                   />
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-4 pb-3 pt-10 text-sm font-semibold">
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-4 pb-3 pt-8 text-sm font-semibold">
                     {caption}
                   </figcaption>
                 </figure>
@@ -200,11 +200,11 @@ export function LeasingPage({ lang }: { lang: Lang }) {
       <LeasingPortals lang={lang} />
 
       {/* Categories */}
-      <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+      <section className="mx-auto max-w-7xl px-5 py-16 md:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.categories.kicker} />}</p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.categories.title} />}
             </h2>
           </div>
@@ -213,7 +213,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
           {t.categories.items.map(({ title, items, alt }, i) => {
             const m = CATEGORY_MEDIA[i];
             if (!m) return null;
@@ -269,12 +269,12 @@ export function LeasingPage({ lang }: { lang: Lang }) {
 
       {/* How it works */}
       <section className="bg-ink text-white">
-        <div className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
           <p className="eyebrow text-primary">{<MoneyText text={t.steps.kicker} />}</p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-6xl">
+          <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-5xl">
             {<MoneyText text={t.steps.title} />}
           </h2>
-          <ol className="mt-16 grid gap-px overflow-hidden rounded-3xl bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-white/10 md:grid-cols-2 lg:grid-cols-4">
             {t.steps.items.map(([title, body], i) => (
               <li key={title} className="flex flex-col bg-ink p-8">
                 <span className="font-display text-6xl font-semibold text-primary">0{i + 1}</span>
@@ -287,11 +287,11 @@ export function LeasingPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Perks */}
-      <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <section className="mx-auto max-w-7xl px-5 py-16 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.perks.kicker} />}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.perks.title} />}
             </h2>
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-muted-foreground">
@@ -327,10 +327,10 @@ export function LeasingPage({ lang }: { lang: Lang }) {
 
       {/* FAQ */}
       <section id="faq" className="border-t bg-secondary/60">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 md:py-32 lg:grid-cols-[1fr_1.6fr]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:py-20 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.faq.kicker} />}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.faq.title} />}
             </h2>
           </div>
@@ -339,8 +339,8 @@ export function LeasingPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* CTA */}
-      <section className="px-5 py-24 md:py-32">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-primary px-8 py-16 text-primary-foreground md:px-16 md:py-24">
+      <section className="px-5 py-16 md:py-20">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-primary px-8 py-12 text-primary-foreground md:px-16 md:py-16">
           <DotRing
             className="absolute -right-16 -top-16 h-80 w-80 opacity-40"
             rings={[
@@ -349,7 +349,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
             ]}
           />
           <div className="relative max-w-2xl">
-            <h2 className="text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.cta.title} />}
             </h2>
             <p className="mt-5 text-lg">{<MoneyText text={t.cta.body} />}</p>

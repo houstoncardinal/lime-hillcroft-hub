@@ -13,8 +13,7 @@ export const inventoryDate = (lang: Lang) =>
     year: "numeric",
   });
 
-export function deviceFaqs(device: Device, lang: Lang): Faq[] {
-  const name = `${device.brand === "Samsung" ? "Samsung " : ""}${device.name}`;
+export function deviceFaqs(device: Device, lang: Lang, name: string, leaseFrom: number): Faq[] {
   const date = inventoryDate(lang);
   const tablet = device.kind === "ipad";
   if (lang === "es") {
@@ -25,7 +24,7 @@ export function deviceFaqs(device: Device, lang: Lang): Faq[] {
       },
       {
         q: `¿Puedo sacar el ${name} a pagos sin crédito?`,
-        a: `Sí, puedes solicitarlo. Ofrecemos arrendamiento con opción a compra sin necesidad de crédito, desde $40 de enganche, sujeto a aprobación. Solicita en línea con ${PORTALS.map((p) => p.name).join(", ")}, o en la tienda con una identificación con foto.`,
+        a: `Sí, puedes solicitarlo. Ofrecemos arrendamiento con opción a compra sin necesidad de crédito, desde $${leaseFrom} de enganche, sujeto a aprobación. Solicita en línea con ${PORTALS.map((p) => p.name).join(", ")}, o en la tienda con una identificación con foto.`,
       },
       tablet
         ? {
@@ -49,7 +48,7 @@ export function deviceFaqs(device: Device, lang: Lang): Faq[] {
     },
     {
       q: `Can I lease the ${name} with no credit?`,
-      a: `Yes, you can apply. We offer lease-to-own with no credit needed, from $40 down, subject to approval. Apply online with ${PORTALS.map((p) => p.name).join(", ")}, or in store with a valid photo ID.`,
+      a: `Yes, you can apply. We offer lease-to-own with no credit needed, from $${leaseFrom} down, subject to approval. Apply online with ${PORTALS.map((p) => p.name).join(", ")}, or in store with a valid photo ID.`,
     },
     tablet
       ? {

@@ -37,7 +37,7 @@ export function IntlPage({ l }: { l: IntlLang }) {
               { r: 76, count: 22, dot: 2.2, className: "fill-slate" },
             ]}
           />
-          <div className="mx-auto max-w-5xl px-5 pb-16 pt-32 md:pb-20 md:pt-40">
+          <div className="mx-auto max-w-5xl px-5 pb-12 pt-28 md:pb-14 md:pt-32">
             <p className="eyebrow flex items-center gap-2 text-primary">
               <Languages className="h-4 w-4" /> {l.native}
             </p>
@@ -67,8 +67,8 @@ export function IntlPage({ l }: { l: IntlLang }) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-5xl px-5 py-16 md:py-24">
-          <p className="mb-10 flex items-start gap-3 rounded-2xl border bg-card p-5 text-muted-foreground">
+        <section className="mx-auto max-w-5xl px-5 py-12 md:py-16">
+          <p className="mb-8 flex items-start gap-3 rounded-2xl border bg-card p-5 text-muted-foreground">
             <Languages className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {l.langNote}
           </p>
           <h2 className="text-3xl font-semibold md:text-4xl">{l.servicesTitle}</h2>
@@ -89,7 +89,7 @@ export function IntlPage({ l }: { l: IntlLang }) {
         </section>
 
         <section className="bg-ink text-white">
-          <div className="mx-auto grid max-w-5xl gap-8 px-5 py-16 md:grid-cols-2 md:py-24">
+          <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 md:grid-cols-2 md:py-16">
             <div className="space-y-8">
               <div>
                 <h2 className="flex items-center gap-2 text-2xl font-semibold">

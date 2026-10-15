@@ -59,7 +59,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             { r: 76, count: 22, dot: 2.2, className: "fill-slate" },
           ]}
         />
-        <div className="mx-auto max-w-7xl px-5 pb-24 pt-32 md:pb-28 md:pt-40">
+        <div className="mx-auto max-w-7xl px-5 pb-16 pt-28 md:pb-20 md:pt-32">
           <nav
             aria-label="Breadcrumb"
             className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
@@ -101,7 +101,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
               <Navigation className="h-4 w-4" /> {<MoneyText text={t.directions} />}
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-sm text-white/70">
+          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-sm text-white/70">
             <span className="flex items-center gap-1.5">
               <Star className="h-4 w-4 fill-primary text-primary" /> {<MoneyText text={t.rating} />}
             </span>
@@ -145,8 +145,8 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
 
       {/* Local: why this area chooses TIC + about the area */}
       {local && (
-        <section className="mx-auto max-w-7xl px-5 pt-20 md:pt-28">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+        <section className="mx-auto max-w-7xl px-5 pt-14 md:pt-20">
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
             <div>
               <h2 className="text-3xl font-semibold leading-tight md:text-5xl">
                 {<MoneyText text={t.whyTitle} />}
@@ -176,24 +176,26 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
       )}
 
       {/* Services */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
         <h2 className="text-3xl font-semibold leading-tight md:text-5xl">
           {<MoneyText text={t.servicesTitle} />}
         </h2>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
           {t.services.map(([title, body, href], i) => {
             const Icon = SERVICE_ICONS[i] ?? Wrench;
             return (
               <Link
                 key={title}
                 to={href}
-                className="group flex flex-col rounded-3xl border bg-card p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
+                className="group flex flex-col rounded-3xl border bg-card p-4 transition sm:p-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-ink transition group-hover:bg-primary">
                   <Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-5 font-semibold">{<MoneyText text={title} />}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <h3 className="mt-3 font-semibold leading-snug sm:mt-5">
+                  {<MoneyText text={title} />}
+                </h3>
+                <p className="mt-1.5 flex-1 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:text-sm sm:leading-relaxed">
                   {<MoneyText text={body} />}
                 </p>
                 <ArrowRight className="mt-4 h-4 w-4 text-primary transition group-hover:translate-x-1" />
@@ -205,7 +207,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
 
       {/* Route */}
       <section className="bg-ink text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:py-28 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-14 md:py-20 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <h2 className="text-3xl font-semibold leading-tight md:text-5xl">
               {<MoneyText text={t.routeTitle} />}
@@ -278,8 +280,8 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
       <ReviewQuotes pick="general" lang={lang} />
 
       {/* FAQ */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.6fr]">
           <h2 className="text-3xl font-semibold leading-tight md:text-5xl">
             {<MoneyText text={t.faqTitle} />}
           </h2>
@@ -289,7 +291,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
 
       {/* Nearby */}
       <section className="border-t bg-secondary/60">
-        <div className="mx-auto max-w-7xl px-5 py-16">
+        <div className="mx-auto max-w-7xl px-5 py-12">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold md:text-3xl">
               {<MoneyText text={t.nearbyTitle} />}

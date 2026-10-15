@@ -40,7 +40,7 @@ export function AreasHubPage({ lang }: { lang: Lang }) {
             { r: 76, count: 22, dot: 2.2, className: "fill-slate" },
           ]}
         />
-        <div className="mx-auto max-w-7xl px-5 pb-16 pt-32 md:pb-24 md:pt-40">
+        <div className="mx-auto max-w-7xl px-5 pb-12 pt-28 md:pb-16 md:pt-32">
           <nav
             aria-label="Breadcrumb"
             className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
@@ -61,7 +61,7 @@ export function AreasHubPage({ lang }: { lang: Lang }) {
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/70">{t.body}</p>
 
-          <form onSubmit={lookup} className="mt-10 max-w-xl">
+          <form onSubmit={lookup} className="mt-8 max-w-xl">
             <label htmlFor="zip" className="mb-2 block text-sm font-medium text-white/80">
               {t.zipLabel}
             </label>
@@ -118,7 +118,7 @@ export function AreasHubPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
         <h2 className="sr-only">{t.kicker}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {sorted.map((a) => (

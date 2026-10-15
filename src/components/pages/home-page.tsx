@@ -121,7 +121,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -right-40 top-[18rem] -z-10 h-[46rem] w-[46rem] rounded-full bg-primary/25 blur-[160px]" />
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 lg:min-h-[100svh] lg:grid-cols-[1fr_1.05fr] lg:pb-16 lg:pt-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-14 pt-28 lg:grid-cols-[1fr_1.05fr] lg:pb-12 lg:pt-28">
           <div className="animate-rise">
             <p className="eyebrow flex flex-wrap items-center gap-3 text-primary">
               <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
@@ -157,7 +157,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 <Phone className="h-4 w-4" /> {PHONE}
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/10 pt-8 text-white/70">
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/10 pt-8 text-white/70">
               <a
                 href={MAPS}
                 target="_blank"
@@ -197,7 +197,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 sizes="(min-width: 1024px) 480px, 100vw"
                 priority
                 alt={t.hero.imageAlt}
-                className="aspect-[4/5] object-[55%_50%]"
+                className="aspect-[4/3] object-[55%_40%] sm:aspect-[4/5] sm:object-[55%_50%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
               <span className="absolute right-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink backdrop-blur">
@@ -261,19 +261,19 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 md:py-32">
+      <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 md:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.services.kicker} />}</p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.services.title} />}
             </h2>
           </div>
           <p className="max-w-sm text-muted-foreground">{<MoneyText text={t.services.intro} />}</p>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <article className="relative isolate flex min-h-[460px] flex-col justify-between overflow-hidden rounded-3xl bg-ink p-8 text-white sm:col-span-2 md:p-10 lg:row-span-2">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          <article className="relative isolate col-span-2 flex min-h-[340px] flex-col justify-between overflow-hidden rounded-3xl bg-ink p-6 text-white sm:min-h-[400px] sm:p-8 md:p-10 lg:row-span-2">
             <Photo
               src={s24}
               srcSm={s24Sm}
@@ -324,18 +324,18 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               <Link
                 key={title}
                 to={servicePath(lang, SERVICE_SLUGS[i] ?? "")}
-                className="group flex flex-col rounded-3xl border bg-card p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
+                className="group flex flex-col rounded-3xl border bg-card p-4 transition sm:p-7 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-ink transition group-hover:bg-primary">
-                  <Icon className="h-5 w-5" />
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-ink transition group-hover:bg-primary sm:h-11 sm:w-11 sm:rounded-2xl">
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </span>
-                <h3 className="mt-6 text-lg font-semibold group-hover:text-primary">
+                <h3 className="mt-3 font-semibold leading-snug group-hover:text-primary sm:mt-6 sm:text-lg">
                   {<MoneyText text={title} />}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:line-clamp-none sm:text-sm sm:leading-relaxed">
                   {<MoneyText text={body} />}
                 </p>
-                <span className="mt-auto flex items-center gap-1 pt-5 text-sm font-semibold">
+                <span className="mt-auto flex items-center gap-1 pt-3 text-sm font-semibold sm:pt-5">
                   {t.services.more}
                   <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-1" />
                 </span>
@@ -345,12 +345,12 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
           <a
             href={TEL}
-            className="group flex flex-col justify-between gap-8 rounded-3xl bg-primary p-7 text-primary-foreground transition hover:-translate-y-1"
+            className="group flex flex-col justify-between gap-4 rounded-3xl bg-primary p-4 text-primary-foreground sm:gap-8 sm:p-7 transition hover:-translate-y-1"
           >
-            <p className="font-display text-2xl font-semibold leading-tight">
+            <p className="font-display text-lg font-semibold leading-tight sm:text-2xl">
               {<MoneyText text={t.services.cta} />}
             </p>
-            <span className="inline-flex items-center gap-2 font-semibold">
+            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold sm:text-base">
               <Phone className="h-4 w-4" /> {PHONE}
               <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </span>
@@ -375,15 +375,15 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent" />
-          <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-end px-6 pb-10 md:min-h-[760px] md:px-10 md:pb-14">
+          <div className="mx-auto flex min-h-[480px] max-w-7xl flex-col justify-end px-6 pb-8 md:min-h-[560px] md:px-10 md:pb-10">
             <p className="eyebrow text-primary">{<MoneyText text={t.showroom.kicker} />}</p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-7xl">
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.showroom.title} />}
             </h2>
             <p className="mt-5 max-w-xl text-lg text-white/75">
               {<MoneyText text={t.showroom.body} />}
             </p>
-            <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md md:grid-cols-4">
+            <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md md:grid-cols-4">
               {t.showroom.stats.map(([v, l]) => (
                 <div key={l} className="flex flex-col-reverse bg-ink/40 p-5 md:p-6">
                   <dt className="mt-1 text-sm text-white/60">{l}</dt>
@@ -399,8 +399,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       {/* Carriers */}
       <section className="border-y bg-secondary/60">
-        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
-          <div className="grid gap-10 lg:grid-cols-[1fr_2fr] lg:items-center">
+        <div className="mx-auto max-w-7xl px-5 py-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[1fr_2fr] lg:items-center">
             <div>
               <p className="eyebrow text-slate">{<MoneyText text={t.carriers.kicker} />}</p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
@@ -434,7 +434,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       {/* Repair */}
       <section id="repair" className="scroll-mt-24 bg-ink text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-24 md:py-32 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:py-20 lg:grid-cols-2">
           <div className="relative">
             <div className="overflow-hidden rounded-3xl">
               <Photo
@@ -456,13 +456,13 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </div>
           <div>
             <p className="eyebrow text-primary">{<MoneyText text={t.repair.kicker} />}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.repair.title} />}
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
               {<MoneyText text={t.repair.body} />}
             </p>
-            <ol className="mt-10 space-y-6">
+            <ol className="mt-8 space-y-6">
               {t.repair.steps.map(([title, body], i) => (
                 <li key={title} className="flex gap-5 border-t border-white/10 pt-6">
                   <span className="font-display text-sm font-semibold text-primary">0{i + 1}</span>
@@ -475,7 +475,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             </ol>
             <a
               href={TEL}
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition hover:brightness-110"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition hover:brightness-110"
             >
               <Phone className="h-4 w-4" /> {<MoneyText text={t.repair.cta} />}
             </a>
@@ -484,11 +484,11 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* Accessories */}
-      <section id="accessories" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-end">
+      <section id="accessories" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr] lg:items-end">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.accessories.kicker} />}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.accessories.title} />}
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
@@ -513,7 +513,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </div>
         </div>
 
-        <div className="mt-12 grid auto-rows-[240px] gap-4 sm:grid-cols-2 md:auto-rows-[280px] lg:grid-cols-4">
+        <div className="mt-8 grid auto-rows-[240px] gap-4 sm:grid-cols-2 md:auto-rows-[280px] lg:grid-cols-4">
           {ACCESSORY_PHOTOS.map((g, i) => {
             const [alt = "", caption = ""] = t.accessories.photos[i] ?? [];
             return (
@@ -530,7 +530,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   alt={alt}
                   className="transition duration-700 group-hover:scale-105"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-5 pb-4 pt-12 text-sm font-semibold text-white">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-5 pb-4 pt-8 text-sm font-semibold text-white">
                   {caption}
                 </figcaption>
               </figure>
@@ -541,11 +541,11 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       {/* Shop teaser */}
       {SHOP_ENABLED && featured.length > 0 && (
-        <section className="mx-auto max-w-7xl px-5 pb-24 md:pb-32">
+        <section className="mx-auto max-w-7xl px-5 pb-16 md:pb-20">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="eyebrow text-slate">{shop.homeTeaser.kicker}</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+              <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
                 {shop.homeTeaser.title}
               </h2>
               <p className="mt-4 max-w-md text-muted-foreground">{shop.homeTeaser.body}</p>
@@ -558,7 +558,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </Link>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6">
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-6">
             {featured.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}
@@ -569,10 +569,10 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       {/* Rating band */}
       <section className="px-5">
         <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-primary text-primary-foreground md:grid-cols-[1.4fr_1fr]">
-          <div className="relative px-8 py-14 md:px-14 md:py-20">
+          <div className="relative px-8 py-10 md:px-14 md:py-14">
             <p className="eyebrow">{<MoneyText text={t.rating.kicker} />}</p>
             <p className="mt-4 flex flex-wrap items-baseline gap-4">
-              <span className="font-display text-7xl font-semibold leading-none md:text-9xl">
+              <span className="font-display text-7xl font-semibold leading-none md:text-8xl">
                 {RATING}
               </span>
               <Stars className="text-2xl md:text-3xl" />
@@ -602,8 +602,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* At a glance: a plain, quotable summary for people, search engines and AI answers */}
-      <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-24 md:pt-32">
-        <div className="grid gap-10 rounded-[2rem] border bg-card p-8 md:p-12 lg:grid-cols-[1fr_1.3fr]">
+      <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-16 md:pt-20">
+        <div className="grid gap-8 rounded-[2rem] border bg-card p-8 md:p-12 lg:grid-cols-[1fr_1.3fr]">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.glance.kicker} />}</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
@@ -627,8 +627,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* Areas served */}
-      <section id="areas" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-24 md:pt-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+      <section id="areas" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-16 md:pt-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.area.kicker} />}</p>
             <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
@@ -666,11 +666,11 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <section id="faq" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <p className="eyebrow text-slate">{<MoneyText text={t.faq.kicker} />}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
               {<MoneyText text={t.faq.title} />}
             </h2>
             <p className="mt-6 max-w-sm text-muted-foreground">
@@ -689,7 +689,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* Guides */}
-      <section className="mx-auto max-w-7xl px-5 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:pb-20">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="text-2xl font-semibold md:text-3xl">
             {<MoneyText text={t.faq.guides} />}
@@ -710,13 +710,13 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       {/* Visit */}
       <section id="visit" className="scroll-mt-24 bg-ink text-white">
-        <div className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
           <p className="eyebrow text-primary">{<MoneyText text={t.visit.kicker} />}</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-6xl">
+          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
             {<MoneyText text={t.visit.title} />}
           </h2>
 
-          <div className="mt-14 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
+          <div className="mt-10 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
             <figure className="relative min-h-[360px] overflow-hidden rounded-3xl">
               <Photo
                 src={storefront}

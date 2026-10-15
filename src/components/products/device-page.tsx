@@ -14,6 +14,7 @@ import { useState } from "react";
 import { MoneyText } from "@/components/intl/money";
 import { devicePaths } from "@/components/products/device-paths";
 import {
+  deviceTitle,
   SPEC_LABELS,
   SPECS_NOTE,
   specValue,
@@ -38,8 +39,8 @@ const UI = {
     inStore: "In store now",
     updated: (d: string) => `On our shelves ${d}`,
     leaseTitle: "Lease-to-own · no credit needed",
-    leaseBody:
-      "As low as $40 down, subject to approval. Apply online in minutes, then pick it up in store.",
+    leaseBody: (usd: number) =>
+      `As low as $${usd} down, subject to approval. Apply online in minutes, then pick it up in store.`,
     call: "Call to check stock",
     directions: "Directions",
     product: "Product photo",
@@ -71,8 +72,8 @@ const UI = {
     inStore: "En tienda",
     updated: (d: string) => `En vitrina el ${d}`,
     leaseTitle: "Arrendamiento · sin necesidad de crédito",
-    leaseBody:
-      "Desde $40 de enganche, sujeto a aprobación. Solicita en línea en minutos y recoge en la tienda.",
+    leaseBody: (usd: number) =>
+      `Desde $${usd} de enganche, sujeto a aprobación. Solicita en línea en minutos y recoge en la tienda.`,
     call: "Llama para ver existencias",
     directions: "Cómo llegar",
     product: "Foto del producto",
@@ -110,12 +111,12 @@ function slides(device: Device, detail: DeviceDetail, lang: Lang): Slide[] {
   const list: Slide[] = [];
   if (detail.photo) {
     list.push({
-      src: `/photos/devices/product/${detail.photo.file}.webp`,
+      src: detail.photo.src,
       w: detail.photo.w,
       h: detail.photo.h,
       alt: detail.photo.alt[lang],
-      label: t.product,
-      contain: true,
+      label: detail.photo.credit ? t.product : t.shelf,
+      contain: !detail.photo.cover,
     });
   }
   list.push({
@@ -159,7 +160,7 @@ function Gallery({ device, detail, lang }: { device: Device; detail: DeviceDetai
   const [active, setActive] = useState(0);
   const current = items[active] ?? items[0];
   if (!current) return null;
-  const credit = active === 0 && detail.photo ? detail.photo.credit : undefined;
+  const credit = active === 0 ? detail.photo?.credit : undefined;
   return (
     <figure>
       <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-white ring-1 ring-white/10">
@@ -251,7 +252,7 @@ export function DevicePage({
   const others = LATEST_DEVICES.filter((d) => d.id !== device.id);
   // Same kind first, so a Galaxy A page suggests other Galaxy A phones.
   others.sort((a, b) => Number(b.kind === device.kind) - Number(a.kind === device.kind));
-  const faqs = deviceFaqs(device, lang);
+  const faqs = deviceFaqs(device, lang, deviceTitle(device, detail), detail.leaseFrom ?? 40);
 
   return (
     <main className="overflow-x-hidden">
@@ -261,7 +262,7 @@ export function DevicePage({
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -right-40 top-10 -z-10 h-[34rem] w-[34rem] rounded-full bg-primary/20 blur-[150px]" />
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 pb-16 pt-28 md:pt-36 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:pb-24">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 pb-12 pt-28 md:pt-32 lg:grid-cols-[1fr_1.05fr] lg:gap-10 lg:pb-16">
           <div className="lg:col-start-2 lg:row-start-1">
             <nav
               aria-label="Breadcrumb"
@@ -281,8 +282,7 @@ export function DevicePage({
               <span className="h-px w-8 bg-primary" /> {device.brand} · {t.released(detail.year)}
             </p>
             <h1 className="mt-4 text-[clamp(2.25rem,5.5vw,4rem)] font-semibold leading-[1.02]">
-              {device.brand === "Samsung" ? "Samsung " : ""}
-              {device.name}
+              {deviceTitle(device, detail)}
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/75">
               {detail.tagline[lang]}
@@ -308,7 +308,7 @@ export function DevicePage({
           <div className="rounded-[2rem] bg-white/[0.06] p-5 ring-1 ring-white/10 sm:p-7 lg:col-start-2 lg:row-start-2 lg:self-start">
             <p className="font-display text-xl font-semibold">{t.leaseTitle}</p>
             <p className="mt-1 text-sm leading-relaxed text-white/70">
-              <MoneyText text={t.leaseBody} />
+              <MoneyText text={t.leaseBody(detail.leaseFrom ?? 40)} />
             </p>
             <div className="mt-5 grid gap-2">
               {PORTALS.map((p) => (
@@ -347,7 +347,7 @@ export function DevicePage({
       </section>
 
       {/* Highlights */}
-      <section className="mx-auto max-w-7xl px-5 pt-16 md:pt-24" aria-labelledby="highlights">
+      <section className="mx-auto max-w-7xl px-5 pt-12 md:pt-16" aria-labelledby="highlights">
         <h2 id="highlights" className="text-3xl font-semibold md:text-4xl">
           {t.highlightsTitle}
         </h2>
@@ -362,13 +362,13 @@ export function DevicePage({
       </section>
 
       {/* Overview + specs */}
-      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:py-24 lg:grid-cols-[1fr_1.2fr]">
+      <section className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:py-16 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <h2 className="text-3xl font-semibold md:text-4xl">{t.overviewTitle}</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
             {detail.summary[lang]}
           </p>
-          <h3 className="mt-10 text-xl font-semibold">{t.stepsTitle}</h3>
+          <h3 className="mt-8 text-xl font-semibold">{t.stepsTitle}</h3>
           <ol className="mt-5 space-y-4">
             {t.steps.map(([Icon, title, body]) => (
               <li key={title} className="flex gap-4">
@@ -415,8 +415,8 @@ export function DevicePage({
       <LeasingPortals lang={lang} />
 
       {/* FAQ */}
-      <section className="mx-auto max-w-7xl px-5 py-16 md:py-24">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+      <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.6fr]">
           <h2 className="text-3xl font-semibold leading-tight md:text-4xl">{t.faqTitle}</h2>
           <FaqList items={faqs} />
         </div>

@@ -45,7 +45,7 @@ export function ProductPage({
       <SiteHeader lang={lang} paths={productPaths(product.handle)} />
       <div className="h-24 bg-ink" />
 
-      <section className="mx-auto max-w-7xl px-5 py-10 md:py-14">
+      <section className="mx-auto max-w-7xl px-5 py-8 md:py-10">
         <nav
           aria-label="Breadcrumb"
           className="mb-8 flex flex-wrap items-center gap-1 text-sm text-muted-foreground"
@@ -61,7 +61,7 @@ export function ProductPage({
           <span className="text-foreground">{product.title}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
           {/* Gallery */}
           <div className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative">
@@ -189,7 +189,7 @@ export function ProductPage({
             )}
 
             {product.features.length > 0 && (
-              <div className="mt-10 border-t pt-8">
+              <div className="mt-8 border-t pt-8">
                 <h2 className="font-display text-lg font-semibold">
                   {<MoneyText text={t.features} />}
                 </h2>
@@ -203,7 +203,7 @@ export function ProductPage({
               </div>
             )}
 
-            <div className="mt-10 rounded-3xl bg-ink p-6 text-white">
+            <div className="mt-8 rounded-3xl bg-ink p-6 text-white">
               <p className="font-semibold">{<MoneyText text={t.questions} />}</p>
               <p className="mt-1 text-sm text-white/65">{<MoneyText text={t.trust[2]?.[1]} />}</p>
               <a
@@ -218,9 +218,9 @@ export function ProductPage({
       </section>
 
       {related.length > 0 && (
-        <section className="mx-auto max-w-7xl px-5 pb-24">
+        <section className="mx-auto max-w-7xl px-5 pb-16">
           <h2 className="font-display text-3xl font-semibold">{<MoneyText text={t.related} />}</h2>
-          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 lg:gap-x-6">
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 lg:gap-x-6">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}

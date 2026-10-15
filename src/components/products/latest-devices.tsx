@@ -55,7 +55,7 @@ export function LatestDevices({
     <section
       id="latest"
       aria-labelledby="latest-title"
-      className={cn("scroll-mt-24 py-14 md:py-20", className)}
+      className={cn("scroll-mt-24 py-10 md:py-14", className)}
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2 px-5">

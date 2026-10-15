@@ -31,7 +31,7 @@ export function NearYou({ lang, className }: { lang: Lang; className?: string })
   const t = T[lang];
   return (
     <section aria-labelledby="near-you" className={cn("border-t bg-secondary/40", className)}>
-      <div className="mx-auto max-w-7xl px-5 py-14 md:py-16">
+      <div className="mx-auto max-w-7xl px-5 py-10 md:py-12">
         <p className="eyebrow flex items-center gap-2 text-slate">
           <MapPin className="h-4 w-4 text-primary" /> {t.kicker}
         </p>

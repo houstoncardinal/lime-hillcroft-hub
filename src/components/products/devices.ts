@@ -3,10 +3,13 @@ import type { Lang } from "@/components/site/seo";
 
 // Details for each device's own page (/devices/<id>). Specs are the manufacturer's published
 // specs for the US model at launch; the unit on our shelf may differ in storage, color and
-// condition, so every page tells people to call to confirm. The iPhone 18 has its own page
-// (/iphone-18) and isn't listed here.
+// condition, so every page tells people to call to confirm. The iPhone 18 page covers the
+// iPhone 18 Pro Max with only what Apple's spec sheet and launch announcement state
+// (support.apple.com/en-us/148591, Sept 2026); storage sizes and prices aren't listed. The
+// broader /iphone-18 landing page (cases, trade-in) stays as it is.
 //
-// Product photos are from Wikimedia Commons under the license shown; each page credits them.
+// Product photos are the store's own or from Wikimedia Commons under the license shown; each
+// Commons photo is credited on its page.
 
 type L = Record<Lang, string>;
 /** A spec value: one string when it reads the same in both languages. */
@@ -41,6 +44,10 @@ export const SPEC_LABELS: Record<SpecKey, L> = {
 
 export type DeviceDetail = {
   id: string;
+  /** Page title when it should be more specific than the shelf card's name. */
+  title?: string;
+  /** Lowest lease-to-own down payment in USD when it isn't the store-wide $40. */
+  leaseFrom?: number;
   /** Year the model came out. */
   year: number;
   tagline: L;
@@ -52,11 +59,17 @@ export type DeviceDetail = {
 };
 
 type ProductPhoto = {
-  file: string;
+  /** Shown on the page (.webp). */
+  src: string;
+  /** Same photo as .jpg, for schema and the sitemap. */
+  jpg: string;
   w: number;
   h: number;
   alt: L;
-  credit: { author: string; license: string; href: string };
+  /** Fill the frame instead of showing the whole photo on white (store photos). */
+  cover?: true;
+  /** Attribution for freely licensed photos; none for the store's own photos. */
+  credit?: { author: string; license: string; href: string };
 };
 
 const product = (
@@ -68,7 +81,8 @@ const product = (
   license: string,
   commonsFile: string,
 ): ProductPhoto => ({
-  file,
+  src: `/photos/devices/product/${file}.webp`,
+  jpg: `/photos/devices/product/${file}.jpg`,
   w,
   h,
   alt,
@@ -76,6 +90,92 @@ const product = (
 });
 
 const DETAILS: DeviceDetail[] = [
+  {
+    id: "iphone-18",
+    title: "iPhone 18 Pro Max",
+    // Same figure as the /iphone-18 page and the home page hero card.
+    leaseFrom: 65,
+    year: 2026,
+    tagline: {
+      en: "Apple's newest and biggest iPhone: a 6.9-inch display, A20 Pro and a variable-aperture camera.",
+      es: "El iPhone más nuevo y más grande de Apple: pantalla de 6.9 pulgadas, A20 Pro y cámara con apertura variable.",
+    },
+    summary: {
+      en: "The iPhone 18 Pro Max is Apple's 2026 flagship. It has a 6.9-inch ProMotion display, the A20 Pro chip, three 48 MP cameras — including the first iPhone main camera with variable aperture and a telephoto with up to 8x optical-quality zoom — and, in Apple's words, the largest increase in battery life ever on iPhone. Sold unlocked in our store, in black, silver, glacier or burgundy; call to confirm the color and storage on the shelf.",
+      es: "El iPhone 18 Pro Max es el modelo insignia de Apple de 2026. Tiene pantalla ProMotion de 6.9 pulgadas, chip A20 Pro, tres cámaras de 48 MP —incluida la primera cámara principal de iPhone con apertura variable y un teleobjetivo con zoom de calidad óptica de hasta 8x— y, según Apple, el mayor aumento de batería en la historia del iPhone. Lo vendemos desbloqueado, en negro, plata, glaciar o vino; llama para confirmar el color y la capacidad en vitrina.",
+    },
+    highlights: [
+      { en: "6.9″ ProMotion display, up to 120 Hz", es: "Pantalla ProMotion de 6.9″ hasta 120 Hz" },
+      { en: "A20 Pro chip", es: "Chip A20 Pro" },
+      {
+        en: "48 MP main camera with variable aperture",
+        es: "Cámara principal de 48 MP con apertura variable",
+      },
+      { en: "Up to 45 hours of video playback", es: "Hasta 45 horas de reproducción de video" },
+    ],
+    specs: [
+      [
+        "display",
+        {
+          en: "6.9″ Super Retina XDR OLED, ProMotion up to 120 Hz, Always-On, Dynamic Island",
+          es: "6.9″ Super Retina XDR OLED, ProMotion hasta 120 Hz, siempre activa, Dynamic Island",
+        },
+      ],
+      [
+        "chip",
+        {
+          en: "Apple A20 Pro (6-core CPU, 7-core GPU)",
+          es: "Apple A20 Pro (CPU de 6 núcleos, GPU de 7 núcleos)",
+        },
+      ],
+      [
+        "rear",
+        {
+          en: "48 MP Fusion Main with variable aperture (ƒ/1.48–ƒ/4) · 48 MP Ultra Wide · 48 MP 4x Telephoto (8x optical-quality zoom)",
+          es: "48 MP Fusion principal con apertura variable (ƒ/1.48–ƒ/4) · 48 MP ultra gran angular · 48 MP teleobjetivo 4x (zoom de calidad óptica 8x)",
+        },
+      ],
+      [
+        "battery",
+        {
+          en: "Up to 45 hours of video playback (eSIM-only US model)",
+          es: "Hasta 45 horas de reproducción de video (modelo de EE. UU. solo eSIM)",
+        },
+      ],
+      [
+        "charging",
+        {
+          en: "USB-C; 5 minutes of wired charging gives about 7 hours of video playback",
+          es: "USB-C; 5 minutos de carga por cable dan unas 7 horas de video",
+        },
+      ],
+      [
+        "network",
+        {
+          en: "5G (including mmWave) with Apple's C2 modem; Wi-Fi 7 and Bluetooth 6",
+          es: "5G (incluye mmWave) con el módem C2 de Apple; Wi-Fi 7 y Bluetooth 6",
+        },
+      ],
+      [
+        "extras",
+        {
+          en: "Face ID, eSIM, iOS 27 with Apple Intelligence; black, silver, glacier or burgundy",
+          es: "Face ID, eSIM, iOS 27 con Apple Intelligence; negro, plata, glaciar o vino",
+        },
+      ],
+    ],
+    photo: {
+      src: "/photos/iphone-18-pro-max.jpg",
+      jpg: "/photos/iphone-18-pro-max.jpg",
+      w: 800,
+      h: 1000,
+      cover: true,
+      alt: {
+        en: "An iPhone 18 Pro Max held in front of its box at TIC Wireless",
+        es: "Un iPhone 18 Pro Max frente a su caja en TIC Wireless",
+      },
+    },
+  },
   {
     id: "galaxy-s20-ultra",
     year: 2020,
@@ -871,6 +971,10 @@ export const DEVICE_PAGES: { device: Device; detail: DeviceDetail }[] = DETAILS.
     return device ? [{ device, detail }] : [];
   },
 );
+
+/** Full name for headings and titles, e.g. "Samsung Galaxy A16 5G" or "iPhone 18 Pro Max". */
+export const deviceTitle = (device: Device, detail: DeviceDetail) =>
+  detail.title ?? `${device.brand === "Samsung" ? "Samsung " : ""}${device.name}`;
 
 export const findDevice = (id: string) => DEVICE_PAGES.find((p) => p.device.id === id);
 

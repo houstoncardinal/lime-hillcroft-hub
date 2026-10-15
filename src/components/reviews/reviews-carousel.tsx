@@ -92,7 +92,7 @@ export function ReviewCard({
 export function ReviewsCarousel({ lang, className }: { lang: Lang; className?: string }) {
   const t = REVIEW_UI[lang];
   return (
-    <section aria-labelledby="reviews-title" className={cn("py-14 md:py-20", className)}>
+    <section aria-labelledby="reviews-title" className={cn("py-10 md:py-14", className)}>
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 px-5">
           <div className="max-w-2xl">

@@ -105,7 +105,7 @@ export function PrepaidPlans({ lang }: { lang: Lang }) {
 
   return (
     <section id="plans" aria-labelledby="plans-title" className="scroll-mt-20 bg-secondary/50">
-      <div className="mx-auto max-w-7xl px-5 pb-6 pt-10 md:pt-14">
+      <div className="mx-auto max-w-7xl px-5 pb-6 pt-8 md:pt-10">
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
           <div className="max-w-2xl">
             <p className="eyebrow text-ink/60">{t.kicker}</p>

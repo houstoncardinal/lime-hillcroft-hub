@@ -14,7 +14,7 @@ export function GuidesHubPage({ lang }: { lang: Lang }) {
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
         <div className="absolute -right-40 -top-10 -z-10 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[150px]" />
-        <div className="mx-auto max-w-7xl px-5 pb-16 pt-32 md:pb-20 md:pt-40">
+        <div className="mx-auto max-w-7xl px-5 pb-12 pt-28 md:pb-14 md:pt-32">
           <nav
             aria-label="Breadcrumb"
             className="mb-8 flex flex-wrap items-center gap-1.5 text-sm text-white/60"
@@ -36,7 +36,7 @@ export function GuidesHubPage({ lang }: { lang: Lang }) {
           <p className="mt-6 max-w-xl text-lg text-white/70">{t.body}</p>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-5 py-16 md:py-24">
+      <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
         <h2 className="sr-only">{t.kicker}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {GUIDES.map((g) => (
