@@ -28,7 +28,9 @@ export const adminLogin = createServerFn({ method: "POST" })
     const email = (process.env["ADMIN_LOGIN_EMAIL"] ?? "").trim().toLowerCase();
     const password = (process.env["ADMIN_LOGIN_PASSWORD"] ?? "").trim();
     if (!email || !password) throw new Error("Admin login is not configured");
-    const ok = same(data.email, email) & Number(same(data.password, password)) ? true : false;
+    const emailOk = same(data.email, email);
+    const passOk = same(data.password, password);
+    const ok = emailOk && passOk;
     if (!ok) return { ok: false as const };
     const session = await useSession<AdminSession>(sessionConfig());
     await session.update({ email });
