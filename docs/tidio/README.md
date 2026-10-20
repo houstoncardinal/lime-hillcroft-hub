@@ -62,7 +62,8 @@ These came from older signs, the old website or a business card and should be do
       GoSmart.
 - [ ] **Accepted payment methods** (cash, cards, Zelle?) — not included yet; add a Q&A once known.
 - [ ] **Warranty on repairs / return policy** — not included; add if the store has one.
-- [ ] **Online checkout** is described as "launching soon" — update once Shopify checkout is live.
+- [x] **Online checkout** is live: the shop sells the store's Shopify catalog and pays through
+      Shopify's secure checkout.
 - [ ] **Holiday hours** — add as Q&A before each holiday.
 
 ## Test questions

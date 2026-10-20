@@ -102,7 +102,11 @@ customers should call (713) 339-9300.
 
 ## Online shop
 
-- Online shopping is temporarily unavailable and coming back soon. To buy accessories, call (713) 339-9300 or visit the store.
+- Yes — accessories can be bought online at https://www.ticwirelesstx.com/shop (Spanish:
+  https://www.ticwirelesstx.com/es/tienda): cases, tempered glass, AirPods and Galaxy Buds, JBL
+  speakers, smartwatches, chargers and gaming gear, at the store's real prices with stock shown on
+  each product. Payment is handled by Shopify's secure checkout. To check stock or set an item
+  aside, call (713) 339-9300.
 
 ## Reviews
 

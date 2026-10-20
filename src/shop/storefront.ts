@@ -328,10 +328,13 @@ export const updateCartLines = createServerFn({ method: "POST" })
 
 /** Take lines out of the Shopify cart. */
 export const removeCartLines = createServerFn({ method: "POST" })
-  .validator((d: unknown) => ({
-    cartId: asCartId(d),
-    lineIds: ((d as { lineIds?: unknown }).lineIds ?? []).map(String),
-  }))
+  .validator((d: unknown) => {
+    const raw = (d as { lineIds?: unknown }).lineIds;
+    return {
+      cartId: asCartId(d),
+      lineIds: Array.isArray(raw) ? raw.map(String) : [],
+    };
+  })
   .handler(async ({ data }): Promise<CartResult> => {
     if (!isLive() || data.lineIds.length === 0) return { mode: "preview" };
     try {
