@@ -81,9 +81,11 @@ describe("payroll", () => {
   });
 
   it("aligns biweekly periods to a fixed anchor", () => {
-    const a = payPeriodFor(new Date(2026, 9, 8), "biweekly");
+    const a = payPeriodFor(new Date(2026, 9, 12), "biweekly");
     const b = payPeriodFor(new Date(2026, 9, 14), "biweekly");
     expect(a.start).toEqual(b.start);
+    // Anchor Sunday: Jan 4 2026 + 40 workweeks = Oct 11 2026.
+    expect(a.start).toEqual(new Date(2026, 9, 11));
     expect(a.end.getTime() - a.start.getTime()).toBeGreaterThanOrEqual(14 * 86_400_000 - 3_600_000);
     expect(a.start.getDay()).toBe(0);
   });
