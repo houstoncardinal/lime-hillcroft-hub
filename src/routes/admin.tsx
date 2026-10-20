@@ -16,7 +16,9 @@ import {
   X,
 } from "lucide-react";
 
-import { settings, useAdminData } from "@/admin/store";
+import { useServerFn } from "@tanstack/react-start";
+import { adminLogin, adminLogout, adminStatus } from "@/admin/auth.functions";
+import { useAdminData } from "@/admin/store";
 import { Button, Field, Input } from "@/admin/ui";
 import { DotRing } from "@/components/site/logo";
 import { ThemeSwitcher } from "@/components/site/theme-switcher";
@@ -48,17 +50,17 @@ const NAV = [
   { to: "/admin/settings", label: "Settings", icon: Settings },
 ] as const;
 
-const UNLOCK_KEY = "tic-admin-unlocked";
-
 function AdminLayout() {
   const data = useAdminData();
-  const [unlocked, setUnlocked] = useState(() => {
-    try {
-      return sessionStorage.getItem(UNLOCK_KEY) === "1";
-    } catch {
-      return false;
-    }
-  });
+  const [signedIn, setSignedIn] = useState<boolean | null>(null);
+  const status = useServerFn(adminStatus);
+  const logout = useServerFn(adminLogout);
+
+  useEffect(() => {
+    status()
+      .then((r) => setSignedIn(Boolean(r.email)))
+      .catch(() => setSignedIn(false));
+  }, [status]);
 
   // Dark glass theme on <html> so portalled dialogs and toasts match.
   // The dashboard has its own color theme; restore the website's when leaving.
@@ -71,30 +73,18 @@ function AdminLayout() {
     };
   }, []);
 
-  const unlock = () => {
-    try {
-      sessionStorage.setItem(UNLOCK_KEY, "1");
-    } catch {
-      // ignore
-    }
-    setUnlocked(true);
-  };
-  const lock = () => {
-    try {
-      sessionStorage.removeItem(UNLOCK_KEY);
-    } catch {
-      // ignore
-    }
-    setUnlocked(false);
+  const lock = async () => {
+    await logout().catch(() => undefined);
+    setSignedIn(false);
   };
 
   return (
     <div className="relative min-h-svh overflow-x-hidden text-foreground">
       <Backdrop />
-      {unlocked && data.settings.passcodeHash ? (
-        <Shell onLock={lock} demo={data.settings.demo} />
+      {signedIn === null ? null : signedIn ? (
+        <Shell onLock={() => void lock()} demo={data.settings.demo} />
       ) : (
-        <Gate hasPasscode={Boolean(data.settings.passcodeHash)} onUnlock={unlock} />
+        <Gate onUnlock={() => setSignedIn(true)} />
       )}
       <Toaster position="bottom-right" theme="dark" />
     </div>
@@ -113,26 +103,24 @@ function Backdrop() {
   );
 }
 
-function Gate({ hasPasscode, onUnlock }: { hasPasscode: boolean; onUnlock: () => void }) {
-  const [code, setCode] = useState("");
-  const [confirm, setConfirm] = useState("");
+function Gate({ onUnlock }: { onUnlock: () => void }) {
+  const login = useServerFn(adminLogin);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
-    if (!hasPasscode) {
-      if (code.length < 6) return setError("Use at least 6 characters.");
-      if (code !== confirm) return setError("Passcodes don't match.");
-      setBusy(true);
-      await settings.setPasscode(code);
-      onUnlock();
-      return;
-    }
     setBusy(true);
-    if (await settings.checkPasscode(code)) onUnlock();
-    else setError("Incorrect passcode.");
+    try {
+      const r = await login({ data: { email, password } });
+      if (r.ok) onUnlock();
+      else setError("Incorrect email or password.");
+    } catch {
+      setError("Sign-in is unavailable right now. Try again.");
+    }
     setBusy(false);
   };
 
@@ -146,42 +134,33 @@ function Gate({ hasPasscode, onUnlock }: { hasPasscode: boolean; onUnlock: () =>
             { r: 52, count: 10, dot: 6.5, className: "fill-slate" },
           ]}
         />
-        <h1 className="mt-5 text-center text-2xl font-semibold">
-          {hasPasscode ? "Welcome back" : "Set up your dashboard"}
-        </h1>
+        <h1 className="mt-5 text-center text-2xl font-semibold">Admin sign in</h1>
         <p className="mt-1 text-center text-sm text-muted-foreground">
-          {hasPasscode
-            ? "Enter the dashboard passcode."
-            : "Create a passcode to lock the TIC Wireless Electronic & Repair Center dashboard on this device."}
+          TIC Wireless Electronic & Repair Center dashboard
         </p>
         <div className="mt-6 space-y-3">
-          <Field label="Passcode">
+          <Field label="Email">
             <Input
-              type="password"
+              type="email"
               autoFocus
-              autoComplete={hasPasscode ? "current-password" : "new-password"}
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
+              autoComplete="username"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Field>
-          {!hasPasscode && (
-            <Field label="Confirm passcode">
-              <Input
-                type="password"
-                autoComplete="new-password"
-                value={confirm}
-                onChange={(e) => setConfirm(e.target.value)}
-              />
-            </Field>
-          )}
+          <Field label="Password">
+            <Input
+              type="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Field>
           {error && <p className="text-sm text-red-300">{error}</p>}
           <Button tone="primary" size="lg" className="w-full" type="submit" disabled={busy}>
-            <Lock className="h-4 w-4" /> {hasPasscode ? "Unlock" : "Create passcode"}
+            <Lock className="h-4 w-4" /> Sign in
           </Button>
         </div>
-        <p className="mt-5 text-center text-xs text-muted-foreground">
-          Local mode — data is stored on this device only.
-        </p>
       </form>
     </main>
   );
