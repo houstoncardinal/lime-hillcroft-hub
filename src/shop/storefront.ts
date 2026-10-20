@@ -206,7 +206,7 @@ type RawCart = {
 };
 
 /** Shopify's checkout needs the channel marked, or it can ask for a store password. */
-function formatCheckoutUrl(url: string) {
+export function formatCheckoutUrl(url: string) {
   try {
     const next = new URL(url);
     next.searchParams.set("channel", "online_store");
