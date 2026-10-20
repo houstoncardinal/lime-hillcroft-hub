@@ -6,10 +6,16 @@ import { toast } from "sonner";
 import { Money } from "@/components/intl/money";
 import { PHONE, TEL } from "@/components/site/business";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
-import { cart, cartCount, cartSubtotal, money, useCart } from "@/shop/cart";
+import {
+  cartCount,
+  cartSubtotal,
+  money,
+  useCartStore,
+  useCartSync,
+  useMounted,
+} from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPath } from "@/shop/paths";
-import { createCheckout } from "@/shop/storefront";
 import type { ShopImage, ShopProduct } from "@/shop/types";
 import {
   Dialog,
@@ -101,6 +107,14 @@ export function ProductCard({
   const t = SHOP_COPY[lang];
   const first = product.variants.find((v) => v.available) ?? product.variants[0];
   const single = product.variants.length === 1;
+  const addItem = useCartStore((s) => s.addItem);
+
+  const quickAdd = async () => {
+    if (!first) return;
+    await addItem(product, first);
+    toast.success(t.added, { description: product.title });
+  };
+
   return (
     <article className="group relative flex flex-col">
       <Link
@@ -134,7 +148,7 @@ export function ProductCard({
             <button
               type="button"
               disabled={!first.available}
-              onClick={() => cart.add(product, first)}
+              onClick={() => void quickAdd()}
               className="inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-ink px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-primary hover:text-primary-foreground disabled:opacity-40"
             >
               <Plus className="h-3.5 w-3.5" /> {first.available ? t.quickAdd : t.soldOut}
@@ -154,12 +168,13 @@ export function ProductCard({
 }
 
 export function CartButton({ lang }: { lang: Lang }) {
-  const state = useCart();
-  const count = cartCount(state);
+  const mounted = useMounted();
+  const count = useCartStore((s) => (mounted ? cartCount(s.items) : 0));
+  const setOpen = useCartStore((s) => s.setOpen);
   return (
     <button
       type="button"
-      onClick={() => cart.setOpen(true)}
+      onClick={() => setOpen(true)}
       aria-label={`${SHOP_COPY[lang].cart.open} (${SHOP_COPY[lang].cart.items(count)})`}
       className="relative inline-flex cursor-pointer items-center rounded-full p-2 text-white/80 transition hover:bg-white/10 hover:text-white"
     >
@@ -175,29 +190,43 @@ export function CartButton({ lang }: { lang: Lang }) {
 
 export function CartDrawer({ lang }: { lang: Lang }) {
   const t = SHOP_COPY[lang];
-  const state = useCart();
-  const [busy, setBusy] = useState(false);
+  const items = useCartStore((s) => s.items);
+  const busy = useCartStore((s) => s.busy);
+  const syncing = useCartStore((s) => s.syncing);
+  const open = useCartStore((s) => s.open);
+  const setOpen = useCartStore((s) => s.setOpen);
+  const setQuantity = useCartStore((s) => s.setQuantity);
+  const removeItem = useCartStore((s) => s.removeItem);
+  const syncCart = useCartStore((s) => s.syncCart);
+  const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
   const [preview, setPreview] = useState(false);
-  const count = cartCount(state);
 
-  const checkout = async () => {
-    setBusy(true);
-    try {
-      const res = await createCheckout({
-        data: { lines: state.lines.map((l) => ({ variantId: l.variantId, quantity: l.quantity })) },
-      });
-      if (res.mode === "shopify") window.location.href = res.url;
-      else setPreview(true);
-    } catch {
-      toast.error(t.checkoutError);
-    } finally {
-      setBusy(false);
+  // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
+  useCartSync();
+
+  const count = cartCount(items);
+
+  const checkout = () => {
+    // Shopify's own checkout URL, handed to us when the cart was created.
+    const url = getCheckoutUrl();
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+      setOpen(false);
+      return;
     }
+    // Nothing on the store side (preview items): point the shopper at the counter instead.
+    setPreview(true);
   };
 
   return (
     <>
-      <Sheet open={state.open} onOpenChange={cart.setOpen}>
+      <Sheet
+        open={open}
+        onOpenChange={(next) => {
+          setOpen(next);
+          if (next) void syncCart();
+        }}
+      >
         <SheetContent side="right" className="flex w-full flex-col gap-0 p-0 sm:max-w-md">
           <SheetHeader className="border-b px-6 py-5">
             <SheetTitle className="font-display text-xl">
@@ -210,7 +239,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
             </SheetTitle>
           </SheetHeader>
 
-          {state.lines.length === 0 ? (
+          {items.length === 0 ? (
             <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary">
                 <ShoppingBag className="h-6 w-6 text-muted-foreground" />
@@ -218,7 +247,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
               <p className="text-muted-foreground">{t.cart.empty}</p>
               <Link
                 to={ALTERNATES.shop[lang]}
-                onClick={() => cart.setOpen(false)}
+                onClick={() => setOpen(false)}
                 className="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground"
               >
                 {t.cart.browse}
@@ -227,7 +256,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
           ) : (
             <>
               <ul className="flex-1 divide-y overflow-y-auto px-6">
-                {state.lines.map((l) => (
+                {items.map((l) => (
                   <li key={l.variantId} className="flex gap-4 py-5">
                     <ProductTile
                       image={l.image ?? undefined}
@@ -239,7 +268,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                         <div className="min-w-0">
                           <Link
                             to={productPath(lang, l.handle)}
-                            onClick={() => cart.setOpen(false)}
+                            onClick={() => setOpen(false)}
                             className="block truncate font-semibold hover:text-primary"
                           >
                             {l.title}
@@ -257,7 +286,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                           <button
                             type="button"
                             aria-label="−1"
-                            onClick={() => cart.setQuantity(l.variantId, l.quantity - 1)}
+                            onClick={() => void setQuantity(l.variantId, l.quantity - 1)}
                             className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full hover:bg-secondary"
                           >
                             <Minus className="h-3.5 w-3.5" />
@@ -268,7 +297,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                           <button
                             type="button"
                             aria-label="+1"
-                            onClick={() => cart.setQuantity(l.variantId, l.quantity + 1)}
+                            onClick={() => void setQuantity(l.variantId, l.quantity + 1)}
                             className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full hover:bg-secondary"
                           >
                             <Plus className="h-3.5 w-3.5" />
@@ -276,7 +305,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                         </div>
                         <button
                           type="button"
-                          onClick={() => cart.setQuantity(l.variantId, 0)}
+                          onClick={() => void removeItem(l.variantId)}
                           className="inline-flex cursor-pointer items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
                         >
                           <Trash2 className="h-3.5 w-3.5" /> {t.cart.remove}
@@ -290,21 +319,22 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 <div className="flex items-baseline justify-between">
                   <span className="text-muted-foreground">{t.cart.subtotal}</span>
                   <span className="tabular-nums font-display text-2xl font-semibold">
-                    <Money usd={cartSubtotal(state) / 100} />
+                    <Money usd={cartSubtotal(items) / 100} />
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
                 <button
                   type="button"
-                  onClick={() => void checkout()}
-                  disabled={busy}
+                  onClick={checkout}
+                  disabled={busy || syncing}
                   className="mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-60"
                 >
-                  {busy && <Loader2 className="h-4 w-4 animate-spin" />} {t.cart.checkout}
+                  {(busy || syncing) && <Loader2 className="h-4 w-4 animate-spin" />}{" "}
+                  {t.cart.checkout}
                 </button>
                 <button
                   type="button"
-                  onClick={() => cart.setOpen(false)}
+                  onClick={() => setOpen(false)}
                   className="mt-2 w-full cursor-pointer py-2 text-sm text-muted-foreground hover:text-foreground"
                 >
                   {t.cart.continue}
