@@ -6,7 +6,14 @@ import { toast } from "sonner";
 import { Money } from "@/components/intl/money";
 import { PHONE, TEL } from "@/components/site/business";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
-import { cartCount, cartSubtotal, money, useCartStore, useMounted } from "@/shop/cart";
+import {
+  cartCount,
+  cartSubtotal,
+  money,
+  useCartStore,
+  useCartSync,
+  useMounted,
+} from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPath } from "@/shop/paths";
 import type { ShopImage, ShopProduct } from "@/shop/types";
@@ -193,6 +200,9 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   const syncCart = useCartStore((s) => s.syncCart);
   const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
   const [preview, setPreview] = useState(false);
+
+  // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
+  useCartSync();
 
   const count = cartCount(items);
 
