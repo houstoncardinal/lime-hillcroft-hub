@@ -2,6 +2,6 @@
 
 /**
  * Online shop (product pages, cart, "Shop" menu link, home-page product row).
- * Temporarily off: set back to true to restore everything — the shop code is unchanged.
+ * On: the shop sells the real Shopify catalog (see docs/shop.md).
  */
-export const SHOP_ENABLED = false;
+export const SHOP_ENABLED = true;

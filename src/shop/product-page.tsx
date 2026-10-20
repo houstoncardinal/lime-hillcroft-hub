@@ -6,7 +6,7 @@ import { Check, ChevronRight, Minus, Phone, Plus, ShoppingBag } from "lucide-rea
 import { PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
-import { cart, money } from "@/shop/cart";
+import { money, useCartStore } from "@/shop/cart";
 import { Badge, ProductCard, ProductTile } from "@/shop/components";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
@@ -32,10 +32,12 @@ export function ProductPage({
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
   const image =
     (imageIndex === 0 ? variant?.image : null) ?? product.images[imageIndex] ?? product.images[0];
+  const addItem = useCartStore((s) => s.addItem);
+  const busy = useCartStore((s) => s.busy);
 
-  const add = () => {
+  const add = async () => {
     if (!variant) return;
-    cart.add(product, variant, quantity);
+    await addItem(product, variant, quantity);
     setAdded(true);
     setTimeout(() => setAdded(false), 1800);
   };
