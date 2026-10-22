@@ -43,6 +43,7 @@ import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
+import { Route as ApiPublicSitemapRouteImport } from './routes/api/public/sitemap'
 import { Route as EsAccesoriosIndexRouteImport } from './routes/es/accesorios/index'
 import { Route as EsConsolasIndexRouteImport } from './routes/es/consolas/index'
 import { Route as EsEquiposIndexRouteImport } from './routes/es/equipos/index'
@@ -231,6 +232,11 @@ const ShopHandleRoute = ShopHandleRouteImport.update({
   path: '/shop/$handle',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicSitemapRoute = ApiPublicSitemapRouteImport.update({
+  id: '/api/public/sitemap',
+  path: '/api/public/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsAccesoriosIndexRoute = EsAccesoriosIndexRouteImport.update({
   id: '/es/accesorios/',
   path: '/es/accesorios/',
@@ -352,6 +358,7 @@ export interface FileRoutesByFullPath {
   '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
+  '/api/public/sitemap': typeof ApiPublicSitemapRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
@@ -404,6 +411,7 @@ export interface FileRoutesByTo {
   '/reviews': typeof ReviewsIndexRoute
   '/services': typeof ServicesIndexRoute
   '/shop': typeof ShopIndexRoute
+  '/api/public/sitemap': typeof ApiPublicSitemapRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
@@ -458,6 +466,7 @@ export interface FileRoutesById {
   '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
+  '/api/public/sitemap': typeof ApiPublicSitemapRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
@@ -513,6 +522,7 @@ export interface FileRouteTypes {
     | '/reviews/'
     | '/services/'
     | '/shop/'
+    | '/api/public/sitemap'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/politicas/$policy'
@@ -565,6 +575,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/services'
     | '/shop'
+    | '/api/public/sitemap'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/politicas/$policy'
@@ -618,6 +629,7 @@ export interface FileRouteTypes {
     | '/reviews/'
     | '/services/'
     | '/shop/'
+    | '/api/public/sitemap'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/politicas/$policy'
@@ -663,6 +675,7 @@ export interface RootRouteChildren {
   ReviewsIndexRoute: typeof ReviewsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
+  ApiPublicSitemapRoute: typeof ApiPublicSitemapRoute
   EsEquiposSlugRoute: typeof EsEquiposSlugRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
   EsPoliticasPolicyRoute: typeof EsPoliticasPolicyRoute
@@ -922,6 +935,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopHandleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/sitemap': {
+      id: '/api/public/sitemap'
+      path: '/api/public/sitemap'
+      fullPath: '/api/public/sitemap'
+      preLoaderRoute: typeof ApiPublicSitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/accesorios/': {
       id: '/es/accesorios/'
       path: '/es/accesorios'
@@ -1096,6 +1116,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewsIndexRoute: ReviewsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
+  ApiPublicSitemapRoute: ApiPublicSitemapRoute,
   EsEquiposSlugRoute: EsEquiposSlugRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
   EsPoliticasPolicyRoute: EsPoliticasPolicyRoute,
