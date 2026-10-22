@@ -57,7 +57,7 @@ const L = {
     laptops: ["Laptops y tabletas", "MacBook, iPad y Galaxy Tab"],
     accessories: ["Accesorios", "Fundas, micas, cargadores y soportes"],
     audio: ["Audio y relojes", "JBL, AirPods, Galaxy Buds y Watch"],
-    shop: ["Tienda en línea", "Pide accesorios en línea"],
+    shop: ["Tienda en línea", "Celulares, tabletas y accesorios"],
     prepaid: ["Planes prepagados y precios", "12 compañías, desde $10/mes"],
     repair: ["Reparación de celulares", "Pantallas y baterías el mismo día"],
     iphoneRepair: ["Reparación de iPhone", "Pantallas, baterías y puertos de carga"],
