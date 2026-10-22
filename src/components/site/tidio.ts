@@ -46,12 +46,17 @@ export function syncTidio(pathname: string) {
 }
 
 /**
- * Hide the chat launcher while a full-screen panel (the mobile menu) is open, so it can't cover
- * the menu's links or close button, and bring it back afterwards.
+ * Hide the chat launcher while a full-screen overlay (the mobile menu or the cart drawer) is
+ * open, so it can't cover its controls, and bring it back afterwards. Counts overlapping
+ * overlays, so closing one keeps the chat hidden while another is still open.
  */
+let hiddenRequests = 0;
+
 export function setChatHidden(hidden: boolean) {
+  hiddenRequests = Math.max(0, hiddenRequests + (hidden ? 1 : -1));
+  const hiddenNow = hiddenRequests > 0;
   const w = window as TidioWindow;
-  document.documentElement.classList.toggle("menu-open", hidden);
-  if (hidden) w.tidioChatApi?.hide();
+  document.documentElement.classList.toggle("overlay-open", hiddenNow);
+  if (hiddenNow) w.tidioChatApi?.hide();
   else if (!location.pathname.startsWith("/admin")) w.tidioChatApi?.show();
 }

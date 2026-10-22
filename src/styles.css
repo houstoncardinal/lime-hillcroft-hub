@@ -252,9 +252,10 @@ html[data-palette="crimson"] {
   }
 }
 
-/* The chat widget stays out of the way while the mobile menu is open (see setChatHidden). */
-html.menu-open #tidio-chat,
-html.menu-open #tidio-chat-iframe {
+/* The chat widget stays out of the way while the mobile menu or the cart drawer is open
+   (see setChatHidden). */
+html.overlay-open #tidio-chat,
+html.overlay-open #tidio-chat-iframe {
   display: none !important;
 }
 
