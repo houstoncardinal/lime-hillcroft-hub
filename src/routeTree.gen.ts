@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as FinancingRouteImport } from './routes/financing'
 import { Route as LeasingRouteImport } from './routes/leasing'
 import { Route as AccessoriesIndexRouteImport } from './routes/accessories/index'
@@ -75,6 +76,11 @@ const LangRoute = LangRouteImport.update({
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FinancingRoute = FinancingRouteImport.update({
@@ -327,6 +333,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRoute
   '/admin': typeof AdminRouteWithChildren
+  '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -380,6 +387,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$lang': typeof LangRoute
+  '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -435,6 +443,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$lang': typeof LangRoute
   '/admin': typeof AdminRouteWithChildren
+  '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -491,6 +500,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$lang'
     | '/admin'
+    | '/auth'
     | '/financing'
     | '/leasing'
     | '/admin/analytics'
@@ -544,6 +554,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$lang'
+    | '/auth'
     | '/financing'
     | '/leasing'
     | '/admin/analytics'
@@ -598,6 +609,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$lang'
     | '/admin'
+    | '/auth'
     | '/financing'
     | '/leasing'
     | '/admin/analytics'
@@ -653,6 +665,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LangRoute: typeof LangRoute
   AdminRoute: typeof AdminRouteWithChildren
+  AuthRoute: typeof AuthRoute
   FinancingRoute: typeof FinancingRoute
   LeasingRoute: typeof LeasingRoute
   AreasSlugRoute: typeof AreasSlugRoute
@@ -716,6 +729,13 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/financing': {
@@ -1094,6 +1114,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LangRoute: LangRoute,
   AdminRoute: AdminRouteWithChildren,
+  AuthRoute: AuthRoute,
   FinancingRoute: FinancingRoute,
   LeasingRoute: LeasingRoute,
   AreasSlugRoute: AreasSlugRoute,
