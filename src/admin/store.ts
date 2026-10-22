@@ -295,8 +295,9 @@ export const inventory = {
           }
           Object.assign(p, metadata, { name: r.name, brand: r.brand, shopifyBaseline: baseline,
             shopifySyncedQuantity: r.quantity, updatedAt: nowIso() });
-          p.syncStatus = productChanges(p).length ? (conflicts.length ? "error" : "pending") : "synced";
-          p.shopifySyncError = conflicts.length ? `Shopify changed ${conflicts.join(", ")}. Your edits are preserved; review the current Shopify values before pushing.` : null;
+          const conflictError = conflicts.length ? `Shopify changed ${conflicts.join(", ")}. Your edits are preserved; review the current Shopify values before pushing.` : p.shopifySyncError;
+          p.shopifySyncError = productChanges(p).length ? (conflictError ?? null) : null;
+          p.syncStatus = productChanges(p).length ? (p.shopifySyncError ? "error" : "pending") : "synced";
           if (dirty.length) preserved++;
           const delta = p.quantity - before;
           if (delta)
@@ -343,6 +344,9 @@ export const inventory = {
       const p = d.products.find(x => x.id === item.id && x.shopifyVariantId === item.variantId);
       if (!p) return;
       if (row) {
+        for (const key of ["price", "quantity", "sku", "barcode"] as const) {
+          if (item.values[key] === item.expected[key] && p[key] === item.values[key]) Object.assign(p, { [key]: row[key] });
+        }
         p.shopifyBaseline = { price: row.price, quantity: row.quantity, sku: row.sku, barcode: row.barcode };
         p.shopifySyncedQuantity = row.quantity;
         // Baselines advance from Shopify readback, never from potentially newer local edits.

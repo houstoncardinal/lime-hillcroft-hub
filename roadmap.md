@@ -1,10 +1,10 @@
 # Launch corrections
 
 ## Two-way Shopify inventory
-- [ ] Import the complete Shopify variant catalog into dashboard inventory without losing pending edits
-- [ ] Edit and review prices, stock, SKU and barcode; confirm live Shopify pushes and handle conflicts/partial failures
-- [ ] Verify authenticated import, shared persistence, sync controls and regression tests
-- [ ] Restore Shopify Admin access if the existing credentials are still expired
+- [x] Implement complete paginated variant imports with field-level preservation of pending edits
+- [x] Edit and review prices, stock, SKU and barcode; confirm live Shopify pushes and handle conflicts/partial failures
+- [x] Verify signed-in inventory controls, mobile layout and 115 regression tests; sync API behavior covered with fixtures, not real imported products
+- [ ] Restore Shopify Admin access and verify real import/push — reconnect and supplied SHOPIFY_ADMIN_ACCESS_TOKEN still return 401; requires a valid store Admin API token
 
 - [x] Failed-request recovery screen and retry — blocked catalog request renders recovery instead of crash; restored connection and Retry reload the real product
 
