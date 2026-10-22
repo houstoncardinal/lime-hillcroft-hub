@@ -318,7 +318,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                             <p className="text-sm text-muted-foreground">{l.variantTitle}</p>
                           )}
                           {l.lease && (
-                            <p className="mt-1 inline-block rounded-full bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary">
+                            <p className="mt-1.5 inline-block rounded-full bg-shoppay/10 px-2 py-0.5 text-[11px] font-semibold text-shoppay ring-1 ring-inset ring-shoppay/20">
                               {t.lease.lineBadge}
                             </p>
                           )}
@@ -381,7 +381,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
                 {leaseItems.length > 0 ? (
-                  <div className="mt-3 rounded-xl border border-primary/40 bg-primary/10 px-3 py-2.5 text-xs leading-relaxed">
+                  <div className="mt-3 rounded-2xl border border-shoppay/25 bg-shoppay/8 px-4 py-3 text-xs leading-relaxed">
                     <p className="flex justify-between font-semibold">
                       <span>{t.lease.dueToday}</span>
                       <span className="tabular-nums text-base">
@@ -392,7 +392,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </div>
                 ) : (
                   cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
-                    <p className="mt-3 rounded-xl border bg-card px-3 py-2.5 text-xs leading-relaxed">
+                    <p className="mt-3 rounded-2xl border border-shoppay/20 bg-card px-4 py-3 text-xs leading-relaxed">
                       <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
                       {t.lease.cardLine} <Money usd={payInFour(cartSubtotal(items)) / 100} />
                       {t.lease.cardSuffix}. {t.lease.howTo}
