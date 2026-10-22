@@ -8,6 +8,13 @@
       "when": 1792705637244,
       "tag": "0000_protected_store_state",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792706730469,
+      "tag": "0001_bound_telemetry_ingestion",
+      "breakpoints": true
     }
   ]
 }
