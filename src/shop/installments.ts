@@ -1,10 +1,16 @@
 import type { ShopCategory } from "@/shop/types";
 
-// Shop Pay Installments are offered by Shopify at checkout. The site only advertises them on
-// bigger-ticket items; small accessories don't show the message.
+// "Leasing" online = Shop Pay Installments, offered by Shopify at checkout (subject to approval).
+// The site advertises it on phones and other devices; small accessories don't show it.
 const SMALL_ACCESSORIES: ShopCategory[] = ["cases", "screen-protection", "earbuds", "speakers", "power"];
 export const INSTALLMENTS_MIN_CENTS = 5000;
+export const PAY_IN_FOUR = 4;
 
 export function showsInstallments(category: ShopCategory, priceCents: number) {
   return !SMALL_ACCESSORIES.includes(category) && priceCents >= INSTALLMENTS_MIN_CENTS;
+}
+
+/** Each of Shop Pay's 4 interest-free payments, every 2 weeks, in cents (rounded up). */
+export function payInFour(totalCents: number) {
+  return Math.ceil(totalCents / PAY_IN_FOUR);
 }

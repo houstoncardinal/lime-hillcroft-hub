@@ -9,12 +9,12 @@ import { ALTERNATES, type Lang } from "@/components/site/seo";
 import {
   cartCount,
   cartSubtotal,
-  money,
   useCartStore,
   useCartSync,
   useMounted,
 } from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
+import { INSTALLMENTS_MIN_CENTS, payInFour, showsInstallments } from "@/shop/installments";
 import { productPath } from "@/shop/paths";
 import type { ShopImage, ShopProduct } from "@/shop/types";
 import {
@@ -67,15 +67,17 @@ export function Price({ product, lang }: { product: ShopProduct; lang: Lang }) {
   const prices = product.variants.map((v) => v.price);
   const min = Math.min(...prices);
   const varies = prices.some((p) => p !== min);
-  const compare = product.variants.find((v) => v.price === min)?.compareAtPrice;
   return (
     <span className="tabular-nums">
       {varies && <span className="mr-1 text-sm font-normal text-muted-foreground">{t.from}</span>}
       <span className="font-semibold">
         <Money usd={min / 100} />
       </span>
-      {compare && compare > min && (
-        <span className="ml-2 text-sm text-muted-foreground line-through">{money(compare)}</span>
+      {showsInstallments(product.category, min) && (
+        <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
+          {t.lease.cardLine} <Money usd={payInFour(min) / 100} />
+          {t.lease.cardSuffix}
+        </span>
       )}
     </span>
   );
@@ -323,6 +325,13 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
+                {cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
+                  <p className="mt-3 rounded-xl border bg-card px-3 py-2.5 text-xs leading-relaxed">
+                    <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
+                    {t.lease.cardLine} <Money usd={payInFour(cartSubtotal(items)) / 100} />
+                    {t.lease.cardSuffix}. {t.lease.howTo}
+                  </p>
+                )}
                 <button
                   type="button"
                   onClick={checkout}

@@ -1,3 +1,5 @@
+import { SHOP_COPY } from "@/shop/copy";
+import { payInFour, showsInstallments } from "@/shop/installments";
 import { Link } from "@tanstack/react-router";
 import { Check, ShoppingBag } from "lucide-react";
 import { useState } from "react";
@@ -39,6 +41,7 @@ export function DeviceBuy({ product, lang }: { product: ShopProduct; lang: Lang 
     (product.variants.find((v) => v.available) ?? product.variants[0])?.id,
   );
   const [added, setAdded] = useState(false);
+  const lease = SHOP_COPY[lang].lease;
   const addItem = useCartStore((s) => s.addItem);
   const setOpen = useCartStore((s) => s.setOpen);
   const busy = useCartStore((s) => s.busy);
@@ -65,6 +68,12 @@ export function DeviceBuy({ product, lang }: { product: ShopProduct; lang: Lang 
           )}
         </p>
       </div>
+      {showsInstallments(product.category, variant.price) && (
+        <p className="mt-1 text-sm text-white/80">
+          {lease.cardLine} <Money usd={payInFour(variant.price) / 100} />
+          {lease.cardSuffix} · {lease.howTo}
+        </p>
+      )}
       <p className="mt-1 text-sm leading-relaxed text-white/70">{t.body}</p>
 
       {product.optionName && product.variants.length > 1 && (
