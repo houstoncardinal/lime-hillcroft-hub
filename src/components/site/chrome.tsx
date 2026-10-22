@@ -18,6 +18,7 @@ import { areaPath } from "@/components/areas/paths";
 import { GUIDES } from "@/components/guides/data";
 import { guidePath } from "@/components/guides/paths";
 import { Toaster } from "@/components/ui/sonner";
+import { AccountButton } from "@/shop/account-button";
 import { CartButton, CartDrawer } from "@/shop/components";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 
@@ -183,6 +184,7 @@ export function SiteHeader({
             <ShoppingBag className="h-[18px] w-[18px]" aria-hidden="true" />
             <span className="hidden sm:inline">{T[lang].shop}</span>
           </Link>
+          {SHOP_ENABLED && <AccountButton lang={lang} />}
           {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
             href={TEL}

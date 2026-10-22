@@ -32,4 +32,4 @@
 
 ## New tasks
 - [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
-- [ ] Add customer authentication (sign up / sign in)
+- [x] Add customer authentication (sign up / sign in) — email+password at /auth, cart saved to account across devices

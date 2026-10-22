@@ -12,6 +12,7 @@ import {
   Phone,
   ShoppingBag,
   Smartphone,
+  UserRound,
   Wallet,
   X,
 } from "lucide-react";
@@ -27,6 +28,7 @@ import { serviceNav } from "@/components/site/nav";
 import { Logo } from "@/components/site/logo";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 import { setChatHidden } from "@/components/site/tidio";
+import { signOutCustomer, useSession } from "@/shop/use-session";
 import { cn } from "@/lib/utils";
 
 const T = {
@@ -55,6 +57,8 @@ const T = {
     apply: "Apply for leasing online",
     currency: "Currency",
     newTab: "opens in a new tab",
+    signIn: "Sign in · save your cart",
+    signOut: "Sign out",
   },
   es: {
     open: "Abrir menú",
@@ -81,6 +85,8 @@ const T = {
     apply: "Solicita arrendamiento en línea",
     currency: "Moneda",
     newTab: "se abre en una pestaña nueva",
+    signIn: "Entrar · guarda tu carrito",
+    signOut: "Cerrar sesión",
   },
 };
 
@@ -113,6 +119,7 @@ export function MobileMenu({
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
   const { code } = useCurrency();
+  const session = useSession();
   const active = current ?? lang;
   const intlActive = INTL_LANGS.find((l) => l.code === active);
 
@@ -302,6 +309,36 @@ export function MobileMenu({
                     </button>
                   </li>
                   {items.map((it) => row(it))}
+                  {session.ready && (
+                    <li>
+                      {session.email ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setOpen(false);
+                            void signOutCustomer();
+                          }}
+                          className={cn(rowClass, "w-full cursor-pointer text-left hover:bg-white/[0.06]")}
+                        >
+                          <UserRound className="h-[18px] w-[18px] shrink-0 text-primary" aria-hidden="true" />
+                          <span className="min-w-0 flex-1 truncate">{session.email}</span>
+                          <span className="shrink-0 text-xs font-bold text-white/60">{t.signOut}</span>
+                        </button>
+                      ) : (
+                        <Dialog.Close asChild>
+                          <Link
+                            to="/auth"
+                            search={{ lang: lang === "es" ? "es" : undefined, redirect: pathname }}
+                            className={cn(rowClass, "hover:bg-white/[0.06]")}
+                          >
+                            <UserRound className="h-[18px] w-[18px] shrink-0 text-primary" aria-hidden="true" />
+                            <span className="min-w-0 flex-1 truncate">{t.signIn}</span>
+                            <ChevronRight className="h-4 w-4 shrink-0 opacity-40" aria-hidden="true" />
+                          </Link>
+                        </Dialog.Close>
+                      )}
+                    </li>
+                  )}
                 </ul>
               ) : (
                 <ul className={listClass}>
