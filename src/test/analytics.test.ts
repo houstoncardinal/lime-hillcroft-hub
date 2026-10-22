@@ -33,7 +33,7 @@ describe("Google Analytics", () => {
     click('<a href="/leasing">Leasing</a>');
 
     expect(events().map((e) => e[1])).toEqual(["phone_call", "leasing_apply", "get_directions"]);
-    expect(events()[1]?.[2]).toMatchObject({ provider: "approve-me" });
+    expect(events()[1]?.[2]).toMatchObject({ provider: "progressive-leasing" });
   });
 
   it("switches GA off on the private dashboard", () => {
