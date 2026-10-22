@@ -50,7 +50,8 @@ export const writeAdminData = createServerFn({ method: "POST" })
 const eventSchema = z.object({ id: z.string().uuid(), type: z.enum(["pageview", "call", "directions", "language"]), path: z.string().max(200).startsWith("/"), lang: z.enum(["en", "es"]), referrer: z.string().max(200), device: z.enum(["mobile", "desktop"]), sessionId: z.string().max(64), at: z.string().datetime() });
 export const recordSiteEvent = createServerFn({ method: "POST" }).validator((input: unknown) => eventSchema.parse(input)).handler(async ({ data }) => {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-  const { error } = await supabaseAdmin.from("site_events").upsert({ id: data.id, data: { ...data, path: data.path.split("?")[0] ?? "/" }, at: new Date().toISOString() }, { onConflict: "id", ignoreDuplicates: true });
+  const at = new Date().toISOString();
+  const { error } = await supabaseAdmin.from("site_events").upsert({ id: data.id, data: { ...data, at, path: data.path.split(/[?#]/)[0] ?? "/" }, at }, { onConflict: "id", ignoreDuplicates: true });
   if (error) throw new Error("Could not record visit");
   return { ok: true };
 });

@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { validateStockInput } from "@/admin/stock-input";
 
 // Shopify Admin API bridge. Runs only on the server: the access token is read from server
 // environment variables and never reaches the browser. Every call validates the admin cookie.
