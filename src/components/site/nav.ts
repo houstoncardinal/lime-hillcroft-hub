@@ -31,6 +31,7 @@ export type NavItem = {
 
 const L = {
   en: {
+    allDevices: ["All phones & tablets", "iPhone 11–18, Galaxy S20–S26 & iPad"],
     phones: ["Unlocked phones", "iPhone, Samsung Galaxy & Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max in store, leasing"],
     consoles: ["Game consoles", "PS5, Xbox & Nintendo Switch 2"],
@@ -49,6 +50,7 @@ const L = {
     recharge: ["International recharge", "Top up phones abroad"],
   },
   es: {
+    allDevices: ["Todos los celulares y tabletas", "iPhone 11–18, Galaxy S20–S26 y iPad"],
     phones: ["Celulares desbloqueados", "iPhone, Samsung Galaxy y Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max en tienda, a pagos"],
     consoles: ["Consolas", "PS5, Xbox y Nintendo Switch 2"],
@@ -79,6 +81,7 @@ const item = ([label, hint]: string[], href: string, icon: typeof Smartphone): N
 export function productNav(lang: Lang): NavItem[] {
   const t = L[lang];
   return [
+    item(t.allDevices, ALTERNATES.devices[lang], Smartphone),
     item(t.phones, servicePath(lang, "unlocked-phones"), Smartphone),
     item(t.iphone18, ALTERNATES.iphone18[lang], Smartphone),
     item(t.consoles, ALTERNATES.consoles[lang], Gamepad2),

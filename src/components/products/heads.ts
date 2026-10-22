@@ -1,7 +1,8 @@
 import { CATEGORY_PAGES, type CategoryKey } from "@/components/products/data";
 import { deviceFaqs } from "@/components/products/device-faqs";
 import { devicePaths } from "@/components/products/device-paths";
-import { deviceTitle, type DeviceDetail } from "@/components/products/devices";
+import { DEVICE_PAGES, deviceTitle, type DeviceDetail } from "@/components/products/devices";
+import { DEVICES_HUB_COPY } from "@/components/products/devices-hub-copy";
 import type { Device } from "@/components/products/inventory";
 import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { ogImage } from "@/components/site/og";
@@ -162,6 +163,52 @@ export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
             : {}),
         },
         leasingService(lang, [name]),
+      ],
+    }),
+  });
+}
+
+export function devicesHubHead(lang: Lang) {
+  const t = DEVICES_HUB_COPY[lang];
+  const paths = ALTERNATES.devices;
+  const url = absoluteUrl(paths[lang]);
+  const image = ogImage("service-unlocked-phones", lang);
+  return pageHead({
+    paths,
+    lang,
+    title: withBrand(t.metaTitle),
+    description: t.metaDescription,
+    image,
+    imageAlt: t.metaTitle,
+    jsonLd: pageSchema({
+      paths,
+      lang,
+      name: t.metaTitle,
+      description: t.metaDescription,
+      image,
+      pageType: ["WebPage", "CollectionPage"],
+      breadcrumb: [
+        [t.home, ALTERNATES.home[lang]],
+        [t.crumb, paths[lang]],
+      ],
+      faqs: t.faqs,
+      extra: [
+        // A list of names and links, not Products: in-store items have no online prices.
+        {
+          "@type": "ItemList",
+          "@id": `${url}#devices`,
+          name: t.crumb,
+          itemListElement: DEVICE_PAGES.map(({ device, detail }, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: deviceTitle(device, detail),
+            url: absoluteUrl(devicePaths(device.id)[lang]),
+          })),
+        },
+        leasingService(
+          lang,
+          DEVICE_PAGES.map(({ device, detail }) => deviceTitle(device, detail)),
+        ),
       ],
     }),
   });

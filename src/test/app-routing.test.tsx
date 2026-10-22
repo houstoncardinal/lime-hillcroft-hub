@@ -65,6 +65,10 @@ describe("App routing", () => {
     ["/es/ubicacion", "/es/ubicacion/"],
     ["/devices/galaxy-s20-ultra", "/devices/$slug"],
     ["/devices/iphone-18", "/devices/$slug"],
+    ["/devices/galaxy-s26-ultra", "/devices/$slug"],
+    ["/devices/iphone-11", "/devices/$slug"],
+    ["/devices", "/devices/"],
+    ["/es/equipos", "/es/equipos/"],
     ["/es/equipos/ipad-mini-5", "/es/equipos/$slug"],
   ])("matches the services page %s", (path, routeId) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });

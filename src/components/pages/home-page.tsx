@@ -360,7 +360,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       <LeasingPortals lang={lang} />
 
-      <LatestDevices devices={LATEST_DEVICES} lang={lang} className="bg-secondary/40" />
+      <LatestDevices devices={LATEST_DEVICES} lang={lang} limit={16} className="bg-secondary/40" />
 
       {/* Showroom */}
       <section className="px-3 pt-3 sm:px-5 sm:pt-5">

@@ -5,7 +5,7 @@ Files in this folder:
 | File | What it is | How to add it in Tidio |
 |---|---|---|
 | `tic-wireless-knowledge-base.md` | Everything about the business in plain text | **Upload file** (Plus plan and up; save as .txt or .pdf if the uploader rejects .md), or copy each section into a Q&A / knowledge entry |
-| `tic-wireless-qa.csv` | 64 ready-made questions and answers (English + Spanish) | Add as **Q&A** entries (open the CSV in Excel/Google Sheets and copy each row in), or import if your plan offers CSV import |
+| `tic-wireless-qa.csv` | 72 ready-made questions and answers (English + Spanish) | Add as **Q&A** entries (open the CSV in Excel/Google Sheets and copy each row in), or import if your plan offers CSV import |
 | This README | Instructions + things to confirm | Don't upload this file |
 
 Also add the website as a source so Lyro learns from it directly:
@@ -13,6 +13,11 @@ Also add the website as a source so Lyro learns from it directly:
 - `https://www.ticwirelesstx.com/` (English)
 - `https://www.ticwirelesstx.com/es` (Spanish)
 - `https://www.ticwirelesstx.com/leasing`
+- `https://www.ticwirelesstx.com/devices` (every phone and tablet in store, each with its own page)
+
+When the stock list changes, update the device data (src/components/products) and run
+`npm run inventory` — it rewrites the "Devices in store now" section of the knowledge base and
+of llms.txt / llms-full.txt. Then re-upload the knowledge file and re-sync the website source.
 
 Re-sync the website source whenever the site changes. If the site moves to a custom domain, use
 the new address and update the links inside the knowledge file and CSV.

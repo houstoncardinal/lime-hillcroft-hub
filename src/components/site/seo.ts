@@ -25,6 +25,7 @@ export const ALTERNATES = {
   consoles: { en: "/game-consoles", es: "/es/consolas" },
   laptops: { en: "/laptops-tablets", es: "/es/laptops-y-tabletas" },
   iphone18: { en: "/iphone-18", es: "/es/iphone-18" },
+  devices: { en: "/devices", es: "/es/equipos" },
   reviews: { en: "/reviews", es: "/es/resenas" },
 } as const;
 

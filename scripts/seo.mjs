@@ -117,9 +117,13 @@ const LASTMOD_SOURCES = [
     ],
   ],
   [
-    /^\/(devices|es\/equipos)\/[^/]+$/,
+    /^\/(devices|es\/equipos)(\/[^/]+)?$/,
     [
       "products/device-page.tsx",
+      "products/devices-hub.tsx",
+      "products/devices-hub-copy.ts",
+      "products/catalog.ts",
+      "products/catalog-photos.ts",
       "products/devices.ts",
       "products/inventory.ts",
       "products/heads.ts",

@@ -1,3 +1,4 @@
+import { CATALOG_DETAILS } from "@/components/products/catalog";
 import { LATEST_DEVICES, type Device } from "@/components/products/inventory";
 import type { Lang } from "@/components/site/seo";
 
@@ -54,11 +55,13 @@ export type DeviceDetail = {
   summary: L;
   highlights: L[];
   specs: [SpecKey, V][];
-  /** Freely licensed product photo (public/photos/devices/product). */
+  /** Main product photo (public/photos/devices/product), or the store's own. */
   photo?: ProductPhoto;
+  /** More photos for the gallery. */
+  morePhotos?: ProductPhoto[];
 };
 
-type ProductPhoto = {
+export type ProductPhoto = {
   /** Shown on the page (.webp). */
   src: string;
   /** Same photo as .jpg, for schema and the sitemap. */
@@ -964,11 +967,13 @@ const DETAILS: DeviceDetail[] = [
   },
 ];
 
-/** Devices with their own /devices page, in shelf order. */
-export const DEVICE_PAGES: { device: Device; detail: DeviceDetail }[] = DETAILS.flatMap(
-  (detail) => {
-    const device = LATEST_DEVICES.find((d) => d.id === detail.id);
-    return device ? [{ device, detail }] : [];
+const ALL_DETAILS = [...DETAILS, ...CATALOG_DETAILS];
+
+/** Devices with their own /devices page, newest first (the order of LATEST_DEVICES). */
+export const DEVICE_PAGES: { device: Device; detail: DeviceDetail }[] = LATEST_DEVICES.flatMap(
+  (device) => {
+    const detail = ALL_DETAILS.find((d) => d.id === device.id);
+    return detail ? [{ device, detail }] : [];
   },
 );
 

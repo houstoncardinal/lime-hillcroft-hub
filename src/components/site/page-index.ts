@@ -11,7 +11,7 @@ import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import { locationHead } from "@/components/location/heads";
 import { devicePath } from "@/components/products/device-paths";
 import { DEVICE_PAGES } from "@/components/products/devices";
-import { categoryHead, deviceHead } from "@/components/products/heads";
+import { categoryHead, deviceHead, devicesHubHead } from "@/components/products/heads";
 import { reviewsHead } from "@/components/reviews/heads";
 import { homeHead, leasingHead } from "@/components/pages/heads";
 import { SERVICES } from "@/components/services/data";
@@ -36,6 +36,7 @@ function pages(): [string, Head][] {
       [ALTERNATES.consoles[l], categoryHead("consoles", l)],
       [ALTERNATES.laptops[l], categoryHead("laptops", l)],
       [ALTERNATES.iphone18[l], categoryHead("iphone18", l)],
+      [ALTERNATES.devices[l], devicesHubHead(l)],
       ...DEVICE_PAGES.map((d): [string, Head] => [devicePath(l, d.device.id), deviceHead(l, d)]),
       [ALTERNATES.reviews[l], reviewsHead(l)],
       [ALTERNATES.services[l], servicesHubHead(l)],

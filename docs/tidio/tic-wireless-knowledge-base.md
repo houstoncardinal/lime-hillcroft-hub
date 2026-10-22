@@ -35,8 +35,10 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 ## Phones and leasing
 
-- New unlocked iPhones and Android phones (Samsung Galaxy, Motorola and more), including the
-  latest models such as the new iPhone 18 Pro Max (and iPhone 17 Pro).
+- Unlocked iPhones and Android phones: every iPhone from the iPhone 11 to the new iPhone 18 Pro
+  and 18 Pro Max, Samsung Galaxy S phones from the S20 Ultra to the S26 Ultra, Galaxy A phones,
+  Motorola and more. A phone may be new or pre-owned depending on the unit; staff confirm
+  condition, storage and color. Full list with specs: https://www.ticwirelesstx.com/devices
 - Leasing (lease-to-own) is available: no credit needed, bad credit is OK, options start at
   $40 down. The exact down payment and payments depend on the item and the plan the customer is
   approved for. Approval is not guaranteed.
@@ -82,6 +84,73 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 - TIC Wireless Electronic & Repair Center unlocks phones so customers can use them with the carrier they choose.
 - Customers should bring the phone in so staff can check it.
+
+## Devices in store now (updated October 16, 2026)
+
+53 models on the shelves at 3640 Hillcroft St, Suite C, sold unlocked. A phone may be new or
+pre-owned depending on the unit — staff confirm condition, storage, color and price. Specs are the
+manufacturer's US launch specs. Stock changes quickly — call (713) 339-9300 to confirm a model before visiting.
+Leasing (lease-to-own) on every device: no credit needed, as low as $40 down (iPhone 18 Pro Max from $65 down), subject to approval.
+All devices, with photos and filters: https://www.ticwirelesstx.com/devices (Spanish: https://www.ticwirelesstx.com/es/equipos)
+
+iPhones:
+- iPhone 18 Pro Max (2026, 5G) — 6.9″ Super Retina XDR OLED, ProMotion up to 120 Hz, Always-On, Dynamic Island; Apple A20 Pro (6-core CPU, 7-core GPU); 48 MP Fusion Main with variable aperture (ƒ/1.48–ƒ/4) · 48 MP Ultra Wide · 48 MP 4x Telephoto (8x optical-quality zoom); Up to 45 hours of video playback (eSIM-only US model). https://www.ticwirelesstx.com/devices/iphone-18
+- iPhone 18 Pro (2026, 5G) — 6.3″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A20 Pro; 48 MP main · 48 MP ultra-wide · 48 MP 4x telephoto; Up to 36 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-18-pro
+- iPhone 17 Pro Max (2025, 5G) — 6.9″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A19 Pro; 48 MP main · 48 MP ultra-wide · 48 MP 4x telephoto; Up to 39 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-17-pro-max
+- iPhone 17 Pro (2025, 5G) — 6.3″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A19 Pro; 48 MP main · 48 MP ultra-wide · 48 MP 4x telephoto; Up to 33 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-17-pro
+- iPhone 17 (2025, 5G) — 6.3″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A19; 48 MP main · 48 MP ultra-wide; Up to 30 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-17
+- iPhone 16 Pro Max (2024, 5G) — 6.9″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A18 Pro; 48 MP main · 48 MP ultra-wide · 12 MP 5x telephoto; Up to 33 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-16-pro-max
+- iPhone 16 Plus (2024, 5G) — 6.7″ Super Retina XDR OLED, Dynamic Island; A18; 48 MP main · 12 MP ultra-wide; Up to 27 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-16-plus
+- iPhone 16 Pro (2024, 5G) — 6.3″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A18 Pro; 48 MP main · 48 MP ultra-wide · 12 MP 5x telephoto; Up to 27 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-16-pro
+- iPhone 16 (2024, 5G) — 6.1″ Super Retina XDR OLED, Dynamic Island; A18; 48 MP main · 12 MP ultra-wide; Up to 22 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-16
+- iPhone 15 Pro Max (2023, 5G) — 6.7″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A17 Pro; 48 MP main · 12 MP ultra-wide · 12 MP 5x telephoto; Up to 29 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-15-pro-max
+- iPhone 15 Plus (2023, 5G) — 6.7″ Super Retina XDR OLED, Dynamic Island; A16 Bionic; 48 MP main · 12 MP ultra-wide; Up to 26 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-15-plus
+- iPhone 15 (2023, 5G) — 6.1″ Super Retina XDR OLED, Dynamic Island; A16 Bionic; 48 MP main · 12 MP ultra-wide; Up to 20 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-15
+- iPhone 14 Pro Max (2022, 5G) — 6.7″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A16 Bionic; 48 MP main · 12 MP ultra-wide · 12 MP 3x telephoto · LiDAR scanner; Up to 29 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-14-pro-max
+- iPhone 14 Plus (2022, 5G) — 6.7″ Super Retina XDR OLED; A15 Bionic; 12 MP main · 12 MP ultra-wide; Up to 26 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-14-plus
+- iPhone 14 Pro (2022, 5G) — 6.1″ Super Retina XDR OLED, up to 120 Hz, Always-On, Dynamic Island; A16 Bionic; 48 MP main · 12 MP ultra-wide · 12 MP 3x telephoto · LiDAR scanner; Up to 23 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-14-pro
+- iPhone 14 (2022, 5G) — 6.1″ Super Retina XDR OLED; A15 Bionic; 12 MP main · 12 MP ultra-wide; Up to 20 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-14
+- iPhone 13 Pro Max (2021, 5G) — 6.7″ Super Retina XDR OLED, up to 120 Hz; A15 Bionic; 12 MP wide · 12 MP ultra-wide · 12 MP 3x telephoto · LiDAR scanner; Up to 28 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-13-pro-max
+- iPhone 13 (2021, 5G) — 6.1″ Super Retina XDR OLED; A15 Bionic; 12 MP wide · 12 MP ultra-wide; Up to 19 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-13
+- iPhone 12 Pro Max (2020, 5G) — 6.7″ Super Retina XDR OLED; A14 Bionic; 12 MP wide · 12 MP ultra-wide · 12 MP 2.5x telephoto · LiDAR scanner; Up to 20 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-12-pro-max
+- iPhone 12 (2020, 5G) — 6.1″ Super Retina XDR OLED; A14 Bionic; 12 MP wide · 12 MP ultra-wide; Up to 17 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-12
+- iPhone 11 Pro Max (2019) — 6.5″ Super Retina XDR OLED; A13 Bionic; 12 MP wide · 12 MP ultra-wide · 12 MP 2x telephoto; Up to 20 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-11-pro-max
+- iPhone 11 (2019) — 6.1″ Liquid Retina HD LCD; A13 Bionic; 12 MP wide · 12 MP ultra-wide; Up to 17 hours of video playback. https://www.ticwirelesstx.com/devices/iphone-11
+
+Samsung Galaxy phones:
+- Samsung Galaxy S26 Ultra (2026, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Elite Gen 5 for Galaxy; 200 MP wide · 50 MP ultra-wide · 50 MP 5x telephoto · 10 MP 3x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s26-ultra
+- Samsung Galaxy S26+ (2026, 5G) — 6.7″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Samsung Exynos 2600; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s26-plus
+- Samsung Galaxy S26 (2026, 5G) — 6.3″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Samsung Exynos 2600; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,300 mAh. https://www.ticwirelesstx.com/devices/galaxy-s26
+- Samsung Galaxy S25 Ultra (2025, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Elite for Galaxy; 200 MP wide · 50 MP ultra-wide · 50 MP 5x telephoto · 10 MP 3x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s25-ultra
+- Samsung Galaxy S25+ (2025, 5G) — 6.7″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Elite for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s25-plus
+- Samsung Galaxy S25 (2025, 5G) — 6.2″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Elite for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s25
+- Samsung Galaxy A36 5G (2025, 5G) — 6.7″ Super AMOLED, FHD+, 120 Hz; Qualcomm Snapdragon 6 Gen 3; 50 MP wide (OIS) · 8 MP ultra-wide · 5 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a36
+- Samsung Galaxy A26 5G (2025, 5G) — 6.7″ Super AMOLED, FHD+, 120 Hz; Samsung Exynos 1380; 50 MP wide (OIS) · 8 MP ultra-wide · 2 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a26
+- Samsung Galaxy S24 Ultra (2024, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 3 for Galaxy; 200 MP wide · 12 MP ultra-wide · 50 MP 5x telephoto · 10 MP 3x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s24-ultra
+- Samsung Galaxy S24+ (2024, 5G) — 6.7″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 3 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s24-plus
+- Samsung Galaxy S24 (2024, 5G) — 6.2″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 3 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s24
+- Samsung Galaxy A16 5G (2024, 5G) — 6.7″ Super AMOLED, FHD+, 90 Hz; MediaTek Dimensity 6300 (US model); 50 MP wide · 5 MP ultra-wide · 2 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a16
+- Samsung Galaxy S23 Ultra (2023, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 2 for Galaxy; 200 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto · 10 MP 10x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s23-ultra
+- Samsung Galaxy S23+ (2023, 5G) — 6.6″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 2 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,700 mAh. https://www.ticwirelesstx.com/devices/galaxy-s23-plus
+- Samsung Galaxy S23 (2023, 5G) — 6.1″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 2 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 3,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s23
+- Samsung Galaxy A15 5G (2023, 5G) — 6.5″ Super AMOLED, FHD+, 90 Hz; MediaTek Dimensity 6100+; 50 MP wide · 5 MP ultra-wide · 2 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a15
+- Samsung Galaxy A14 5G (2023, 5G) — 6.6″ LCD, FHD+, 90 Hz; MediaTek Dimensity 700 (US model); 50 MP wide · 2 MP macro · 2 MP depth; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a14
+- Samsung Galaxy S22 Ultra (2022, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 1; 108 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto · 10 MP 10x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s22-ultra
+- Samsung Galaxy S22+ (2022, 5G) — 6.6″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 1; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,500 mAh. https://www.ticwirelesstx.com/devices/galaxy-s22-plus
+- Samsung Galaxy S22 (2022, 5G) — 6.1″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 1; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 3,700 mAh. https://www.ticwirelesstx.com/devices/galaxy-s22
+- Samsung Galaxy A53 5G (2022, 5G) — 6.5″ Super AMOLED, FHD+, 120 Hz; Samsung Exynos 1280; 64 MP wide (OIS) · 12 MP ultra-wide · 5 MP macro · 5 MP depth; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a53
+- Samsung Galaxy S21 Ultra (2021, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 888; 108 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto · 10 MP 10x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s21-ultra
+- Samsung Galaxy S21+ (2021, 5G) — 6.7″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 888; 12 MP wide · 12 MP ultra-wide · 64 MP 3x telephoto (up to 30x Space Zoom); 4,800 mAh. https://www.ticwirelesstx.com/devices/galaxy-s21-plus
+- Samsung Galaxy S21 (2021, 5G) — 6.2″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 888; 12 MP wide · 12 MP ultra-wide · 64 MP 3x telephoto (up to 30x Space Zoom); 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s21
+- Samsung Galaxy A13 5G (2021, 5G) — 6.5″ LCD, HD+, 90 Hz; MediaTek Dimensity 700; 50 MP wide · 2 MP macro · 2 MP depth; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a13
+- Samsung Galaxy A03s (2021) — 6.5″ LCD, HD+; MediaTek Helio P35; 13 MP wide · 2 MP macro · 2 MP depth; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a03s
+- Samsung Galaxy S20 Ultra (2020, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Qualcomm Snapdragon 865; 108 MP wide · 48 MP telephoto (up to 100x Space Zoom) · 12 MP ultra-wide · depth sensor; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s20-ultra
+- Samsung Galaxy Note 20 Ultra (2020, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Qualcomm Snapdragon 865+; 108 MP wide · 12 MP 5x telephoto (up to 50x Space Zoom) · 12 MP ultra-wide · laser autofocus; 4,500 mAh. https://www.ticwirelesstx.com/devices/galaxy-note20-ultra
+- Samsung Galaxy A20 (2019) — 6.4″ Super AMOLED, HD+; Samsung Exynos 7884; 13 MP wide · 5 MP ultra-wide; 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a20
+
+Tablets:
+- iPad Pro (M2) (2022) — 11″ Liquid Retina or 12.9″ Liquid Retina XDR, ProMotion up to 120 Hz; Apple M2; 12 MP wide · 10 MP ultra-wide · LiDAR scanner; Up to 10 hours of web browsing or video. https://www.ticwirelesstx.com/devices/ipad-pro-m2
+- iPad mini (5th gen) (2019) — 7.9″ Retina, True Tone; Apple A12 Bionic; 8 MP; Up to 10 hours of web browsing or video. https://www.ticwirelesstx.com/devices/ipad-mini-5
 
 ## Accessories
 

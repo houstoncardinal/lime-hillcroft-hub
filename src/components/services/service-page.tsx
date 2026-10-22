@@ -168,7 +168,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       {service.slug === "prepaid-plans" && <PrepaidPlans lang={lang} />}
       {service.slug === "unlocked-phones" && (
         <>
-          <LatestDevices devices={PHONES} lang={lang} className="bg-secondary/40" />
+          <LatestDevices devices={PHONES} lang={lang} limit={16} className="bg-secondary/40" />
           <LeasingPortals lang={lang} />
         </>
       )}

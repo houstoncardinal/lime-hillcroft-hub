@@ -26,6 +26,7 @@ import { Route as AdminShopifyRouteImport } from './routes/admin/shopify'
 import { Route as AdminTimeClockRouteImport } from './routes/admin/time-clock'
 import { Route as AreasIndexRouteImport } from './routes/areas/index'
 import { Route as AreasSlugRouteImport } from './routes/areas/$slug'
+import { Route as DevicesIndexRouteImport } from './routes/devices/index'
 import { Route as DevicesSlugRouteImport } from './routes/devices/$slug'
 import { Route as EsIndexRouteImport } from './routes/es/index'
 import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
@@ -43,6 +44,7 @@ import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
 import { Route as EsAccesoriosIndexRouteImport } from './routes/es/accesorios/index'
 import { Route as EsConsolasIndexRouteImport } from './routes/es/consolas/index'
+import { Route as EsEquiposIndexRouteImport } from './routes/es/equipos/index'
 import { Route as EsEquiposSlugRouteImport } from './routes/es/equipos/$slug'
 import { Route as EsGuiasIndexRouteImport } from './routes/es/guias/index'
 import { Route as EsGuiasSlugRouteImport } from './routes/es/guias/$slug'
@@ -142,6 +144,11 @@ const AreasSlugRoute = AreasSlugRouteImport.update({
   path: '/areas/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DevicesIndexRoute = DevicesIndexRouteImport.update({
+  id: '/devices/',
+  path: '/devices/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DevicesSlugRoute = DevicesSlugRouteImport.update({
   id: '/devices/$slug',
   path: '/devices/$slug',
@@ -225,6 +232,11 @@ const EsAccesoriosIndexRoute = EsAccesoriosIndexRouteImport.update({
 const EsConsolasIndexRoute = EsConsolasIndexRouteImport.update({
   id: '/es/consolas/',
   path: '/es/consolas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsEquiposIndexRoute = EsEquiposIndexRouteImport.update({
+  id: '/es/equipos/',
+  path: '/es/equipos/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsEquiposSlugRoute = EsEquiposSlugRouteImport.update({
@@ -317,6 +329,7 @@ export interface FileRoutesByFullPath {
   '/accessories/': typeof AccessoriesIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
+  '/devices/': typeof DevicesIndexRoute
   '/es/': typeof EsIndexRoute
   '/game-consoles/': typeof GameConsolesIndexRoute
   '/guides/': typeof GuidesIndexRoute
@@ -333,6 +346,7 @@ export interface FileRoutesByFullPath {
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/accesorios/': typeof EsAccesoriosIndexRoute
   '/es/consolas/': typeof EsConsolasIndexRoute
+  '/es/equipos/': typeof EsEquiposIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
   '/es/iphone-18/': typeof EsIphone18IndexRoute
   '/es/laptops-y-tabletas/': typeof EsLaptopsYTabletasIndexRoute
@@ -365,6 +379,7 @@ export interface FileRoutesByTo {
   '/accessories': typeof AccessoriesIndexRoute
   '/admin': typeof AdminIndexRoute
   '/areas': typeof AreasIndexRoute
+  '/devices': typeof DevicesIndexRoute
   '/es': typeof EsIndexRoute
   '/game-consoles': typeof GameConsolesIndexRoute
   '/guides': typeof GuidesIndexRoute
@@ -381,6 +396,7 @@ export interface FileRoutesByTo {
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/accesorios': typeof EsAccesoriosIndexRoute
   '/es/consolas': typeof EsConsolasIndexRoute
+  '/es/equipos': typeof EsEquiposIndexRoute
   '/es/guias': typeof EsGuiasIndexRoute
   '/es/iphone-18': typeof EsIphone18IndexRoute
   '/es/laptops-y-tabletas': typeof EsLaptopsYTabletasIndexRoute
@@ -415,6 +431,7 @@ export interface FileRoutesById {
   '/accessories/': typeof AccessoriesIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
+  '/devices/': typeof DevicesIndexRoute
   '/es/': typeof EsIndexRoute
   '/game-consoles/': typeof GameConsolesIndexRoute
   '/guides/': typeof GuidesIndexRoute
@@ -431,6 +448,7 @@ export interface FileRoutesById {
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/accesorios/': typeof EsAccesoriosIndexRoute
   '/es/consolas/': typeof EsConsolasIndexRoute
+  '/es/equipos/': typeof EsEquiposIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
   '/es/iphone-18/': typeof EsIphone18IndexRoute
   '/es/laptops-y-tabletas/': typeof EsLaptopsYTabletasIndexRoute
@@ -466,6 +484,7 @@ export interface FileRouteTypes {
     | '/accessories/'
     | '/admin/'
     | '/areas/'
+    | '/devices/'
     | '/es/'
     | '/game-consoles/'
     | '/guides/'
@@ -482,6 +501,7 @@ export interface FileRouteTypes {
     | '/es/zonas/$slug'
     | '/es/accesorios/'
     | '/es/consolas/'
+    | '/es/equipos/'
     | '/es/guias/'
     | '/es/iphone-18/'
     | '/es/laptops-y-tabletas/'
@@ -514,6 +534,7 @@ export interface FileRouteTypes {
     | '/accessories'
     | '/admin'
     | '/areas'
+    | '/devices'
     | '/es'
     | '/game-consoles'
     | '/guides'
@@ -530,6 +551,7 @@ export interface FileRouteTypes {
     | '/es/zonas/$slug'
     | '/es/accesorios'
     | '/es/consolas'
+    | '/es/equipos'
     | '/es/guias'
     | '/es/iphone-18'
     | '/es/laptops-y-tabletas'
@@ -563,6 +585,7 @@ export interface FileRouteTypes {
     | '/accessories/'
     | '/admin/'
     | '/areas/'
+    | '/devices/'
     | '/es/'
     | '/game-consoles/'
     | '/guides/'
@@ -579,6 +602,7 @@ export interface FileRouteTypes {
     | '/es/zonas/$slug'
     | '/es/accesorios/'
     | '/es/consolas/'
+    | '/es/equipos/'
     | '/es/guias/'
     | '/es/iphone-18/'
     | '/es/laptops-y-tabletas/'
@@ -604,6 +628,7 @@ export interface RootRouteChildren {
   ShopHandleRoute: typeof ShopHandleRoute
   AccessoriesIndexRoute: typeof AccessoriesIndexRoute
   AreasIndexRoute: typeof AreasIndexRoute
+  DevicesIndexRoute: typeof DevicesIndexRoute
   EsIndexRoute: typeof EsIndexRoute
   GameConsolesIndexRoute: typeof GameConsolesIndexRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
@@ -620,6 +645,7 @@ export interface RootRouteChildren {
   EsZonasSlugRoute: typeof EsZonasSlugRoute
   EsAccesoriosIndexRoute: typeof EsAccesoriosIndexRoute
   EsConsolasIndexRoute: typeof EsConsolasIndexRoute
+  EsEquiposIndexRoute: typeof EsEquiposIndexRoute
   EsGuiasIndexRoute: typeof EsGuiasIndexRoute
   EsIphone18IndexRoute: typeof EsIphone18IndexRoute
   EsLaptopsYTabletasIndexRoute: typeof EsLaptopsYTabletasIndexRoute
@@ -751,6 +777,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/devices/': {
+      id: '/devices/'
+      path: '/devices'
+      fullPath: '/devices/'
+      preLoaderRoute: typeof DevicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/devices/$slug': {
       id: '/devices/$slug'
       path: '/devices/$slug'
@@ -868,6 +901,13 @@ declare module '@tanstack/react-router' {
       path: '/es/consolas'
       fullPath: '/es/consolas/'
       preLoaderRoute: typeof EsConsolasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/equipos/': {
+      id: '/es/equipos/'
+      path: '/es/equipos'
+      fullPath: '/es/equipos/'
+      preLoaderRoute: typeof EsEquiposIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/equipos/$slug': {
@@ -1005,6 +1045,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShopHandleRoute: ShopHandleRoute,
   AccessoriesIndexRoute: AccessoriesIndexRoute,
   AreasIndexRoute: AreasIndexRoute,
+  DevicesIndexRoute: DevicesIndexRoute,
   EsIndexRoute: EsIndexRoute,
   GameConsolesIndexRoute: GameConsolesIndexRoute,
   GuidesIndexRoute: GuidesIndexRoute,
@@ -1021,6 +1062,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsZonasSlugRoute: EsZonasSlugRoute,
   EsAccesoriosIndexRoute: EsAccesoriosIndexRoute,
   EsConsolasIndexRoute: EsConsolasIndexRoute,
+  EsEquiposIndexRoute: EsEquiposIndexRoute,
   EsGuiasIndexRoute: EsGuiasIndexRoute,
   EsIphone18IndexRoute: EsIphone18IndexRoute,
   EsLaptopsYTabletasIndexRoute: EsLaptopsYTabletasIndexRoute,

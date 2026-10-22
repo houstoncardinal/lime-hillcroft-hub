@@ -104,29 +104,43 @@ const UI = {
   },
 };
 
-type Slide = { src: string; w: number; h: number; alt: string; label: string; contain?: boolean };
+type Slide = {
+  src: string;
+  w: number;
+  h: number;
+  alt: string;
+  label: string;
+  contain?: boolean;
+  credit?: { author: string; license: string; href: string } | undefined;
+};
 
 function slides(device: Device, detail: DeviceDetail, lang: Lang): Slide[] {
   const t = UI[lang];
-  const list: Slide[] = [];
-  if (detail.photo) {
+  const list: Slide[] = [detail.photo, ...(detail.morePhotos ?? [])].flatMap((p) =>
+    p
+      ? [
+          {
+            src: p.src,
+            w: p.w,
+            h: p.h,
+            alt: p.alt[lang],
+            label: p.credit ? t.product : t.shelf,
+            contain: !p.cover,
+            credit: p.credit,
+          },
+        ]
+      : [],
+  );
+  // Catalog devices use their web photo as the card image; don't show it twice.
+  if (!list.some((sl) => sl.src === device.image))
     list.push({
-      src: detail.photo.src,
-      w: detail.photo.w,
-      h: detail.photo.h,
-      alt: detail.photo.alt[lang],
-      label: detail.photo.credit ? t.product : t.shelf,
-      contain: !detail.photo.cover,
+      src: device.image,
+      w: device.w,
+      h: device.h,
+      alt: device.alt[lang],
+      label: t.shelf,
+      contain: true,
     });
-  }
-  list.push({
-    src: device.image,
-    w: device.w,
-    h: device.h,
-    alt: device.alt[lang],
-    label: t.shelf,
-    contain: true,
-  });
   if (device.kind === "galaxy-a" && !device.image.includes("galaxy-a-row")) {
     list.push({
       src: "/photos/devices/galaxy-a-row.webp",
@@ -160,7 +174,7 @@ function Gallery({ device, detail, lang }: { device: Device; detail: DeviceDetai
   const [active, setActive] = useState(0);
   const current = items[active] ?? items[0];
   if (!current) return null;
-  const credit = active === 0 ? detail.photo?.credit : undefined;
+  const credit = current.credit;
   return (
     <figure>
       <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-white ring-1 ring-white/10">
@@ -250,8 +264,11 @@ export function DevicePage({
     ? [t.tablets, ALTERNATES.laptops[lang]]
     : [t.phones, servicePath(lang, "unlocked-phones")];
   const others = LATEST_DEVICES.filter((d) => d.id !== device.id);
+  // Same model family first (other iPhone 16s on an iPhone 16 page), then the same kind.
+  const rank = (d: Device) =>
+    d.family && d.family === device.family ? 0 : d.kind === device.kind ? 1 : 2;
   // Same kind first, so a Galaxy A page suggests other Galaxy A phones.
-  others.sort((a, b) => Number(b.kind === device.kind) - Number(a.kind === device.kind));
+  others.sort((a, b) => rank(a) - rank(b));
   const faqs = deviceFaqs(device, lang, deviceTitle(device, detail), detail.leaseFrom ?? 40);
 
   return (
@@ -426,6 +443,7 @@ export function DevicePage({
         devices={others}
         lang={lang}
         title={t.more}
+        limit={12}
         className="border-t bg-secondary/40"
       />
 
