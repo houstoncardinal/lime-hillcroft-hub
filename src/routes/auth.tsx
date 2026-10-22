@@ -55,7 +55,7 @@ const T = {
   },
 };
 
-type Search = { redirect?: string; lang?: "es" };
+type Search = { redirect?: string | undefined; lang?: "es" | undefined };
 
 /** Only same-origin paths may be redirect targets — never an external URL. */
 function safeRedirect(value: string | undefined): string | null {
