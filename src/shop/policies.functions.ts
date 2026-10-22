@@ -13,6 +13,6 @@ export const getStorePolicies = createServerFn({ method: "GET" }).handler(async 
   const result = await response.json() as { data?: { shop: { privacyPolicy: Policy; refundPolicy: Policy; shippingPolicy: Policy; termsOfService: Policy } } };
   const policies = result.data?.shop;
   if (!policies) return null;
-  const text = (p: Policy) => p ? { url: p.url, paragraphs: p.body.replace(/<\/(p|div|li|h\d)>/gi, "\n").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').split(/\n/).map((s) => s.trim()).filter(Boolean) } : null;
+  const text = (p: Policy) => p && !/My Store|\[INSERT|\[enter|example\.com/i.test(p.body) ? { url: p.url, paragraphs: p.body.replace(/<\/(p|div|li|h\d)>/gi, "\n").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').split(/\n/).map((s) => s.trim()).filter(Boolean) } : null;
   return { privacy: text(policies.privacyPolicy), returns: text(policies.refundPolicy), shipping: text(policies.shippingPolicy), terms: text(policies.termsOfService), warranty: null };
 });

@@ -149,7 +149,7 @@ function Settings() {
                 onClick={() => {
                   if (
                     !confirm(
-                      "Remove all sample products, staff, shifts, payroll and traffic? Your passcode and payroll rules stay.",
+                      "Remove all sample products, staff, shifts, payroll and traffic? Payroll rules stay.",
                     )
                   )
                     return;
@@ -166,20 +166,7 @@ function Settings() {
                 <RotateCcw className="h-4 w-4" /> Load sample data
               </Button>
             )}
-            <Button
-              tone="danger"
-              onClick={() => {
-                if (!confirm("Clear website visits recorded in this browser?")) return;
-                clearTrackedEvents();
-                toast.success("Tracked visits cleared");
-              }}
-            >
-              <Trash2 className="h-4 w-4" /> Clear tracked visits
-            </Button>
           </div>
-          <p className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
-            <KeyRound className="h-3.5 w-3.5" /> Sample time-clock PINs: 1234, 2468, 1357, 8080.
-          </p>
         </GlassCard>
       </div>
     </>

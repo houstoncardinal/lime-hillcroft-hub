@@ -1,13 +1,11 @@
 import { createServerFn } from "@tanstack/react-start";
 
 // Shopify Admin API bridge. Runs only on the server: the access token is read from server
-// environment variables and never reaches the browser. Every call also requires ADMIN_API_KEY,
-// which the dashboard sends from Settings, so these endpoints can't be used anonymously.
+// environment variables and never reaches the browser. Every call validates the admin cookie.
 //
 // Required env (see docs/admin.md):
 //   SHOPIFY_STORE_DOMAIN        e.g. tic-wireless.myshopify.com
 //   SHOPIFY_ADMIN_ACCESS_TOKEN  Admin API token from a custom app (read/write products + inventory)
-//   ADMIN_API_KEY               any long random string; enter the same value in /admin/settings
 // Optional: SHOPIFY_API_VERSION (default below), SHOPIFY_LOCATION_ID (default: first location)
 
 const DEFAULT_API_VERSION = "2026-10";
@@ -39,6 +37,7 @@ async function gql<T>(query: string, variables: Record<string, unknown> = {}): P
     headers: { "Content-Type": "application/json", "X-Shopify-Access-Token": token },
     body: JSON.stringify({ query, variables }),
   });
+  if (res.status === 401) throw new Error("Shopify stock access has expired. Reconnect Shopify before importing or pushing inventory. Online shopping is unaffected.");
   if (!res.ok) throw new Error(`Shopify responded ${res.status} ${res.statusText}`);
   const json = (await res.json()) as { data?: T; errors?: { message: string }[] };
   if (json.errors?.length) throw new Error(json.errors.map((e) => e.message).join("; "));
@@ -59,8 +58,7 @@ async function locationId() {
 
 const validateKey = (d: unknown) => {
   const adminKey = (d as Partial<KeyInput> | null)?.adminKey;
-  if (typeof adminKey !== "string") throw new Error("adminKey is required");
-  return { adminKey };
+  return { adminKey: typeof adminKey === "string" ? adminKey : "" };
 };
 
 export const shopifyStatus = createServerFn({ method: "POST" })
@@ -166,9 +164,7 @@ export const shopifyPushQuantities = createServerFn({ method: "POST" })
     return {
       adminKey,
       items: items.map((i) => ({
-        inventoryItemId: String((i as { inventoryItemId: unknown }).inventoryItemId),
-        quantity: Math.max(0, Math.floor(Number((i as { quantity: unknown }).quantity))),
-        compareQuantity: Number((i as { compareQuantity?: unknown }).compareQuantity),
+        ...validateStockInput(i),
       })),
     };
   })
