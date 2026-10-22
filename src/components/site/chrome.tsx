@@ -27,6 +27,8 @@ const T = {
     areas: "Areas we serve",
     guides: "Guides",
     directions: "Directions",
+    shop: "Shop",
+    shopAria: "Shop online — phones, tablets & electronics",
     home: "TIC Wireless Electronic & Repair Center home",
     tagline: "Buy · Sell · Repair · Unlock. Your one-stop phone shop in Houston. Se habla español.",
     trademarks:
