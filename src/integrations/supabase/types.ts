@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      customer_carts: {
+        Row: {
+          cart_id: string | null
+          checkout_url: string | null
+          items: Json
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cart_id?: string | null
+          checkout_url?: string | null
+          items?: Json
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cart_id?: string | null
+          checkout_url?: string | null
+          items?: Json
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       site_events: {
         Row: {
           at: string
