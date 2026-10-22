@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Globe, MapPin, Phone } from "lucide-react";
+import { Globe, MapPin, Phone, ShoppingBag } from "lucide-react";
 
 import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/business";
 import { setLangPref } from "@/components/intl/lang-pref";
@@ -170,6 +170,15 @@ export function SiteHeader({
           </div>
           {/* Phones: one tap to switch English ⇄ Spanish (more languages in the menu). */}
           <HeaderLangToggle lang={lang} paths={paths} {...(current ? { current } : {})} />
+          {/* Phones & tablets: a one-tap shop button next to the cart (desktop uses the nav link). */}
+          <Link
+            to={ALTERNATES.shop[lang]}
+            aria-label={T[lang].shopAria}
+            className="hidden h-11 min-w-11 items-center justify-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground min-[400px]:inline-flex lg:hidden"
+          >
+            <ShoppingBag className="h-[18px] w-[18px]" aria-hidden="true" />
+            <span className="hidden sm:inline">{T[lang].shop}</span>
+          </Link>
           {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
             href={TEL}
