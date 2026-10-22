@@ -18,6 +18,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { isRequestConnectionError } from "@/lib/request-errors";
 import { Button } from "@/components/ui/button";
 import { conversionFor, track } from "@/admin/tracker";
+import { supabase } from "@/integrations/supabase/client";
+import { wireCartCloudSync } from "@/shop/cart-cloud";
 import { THEME_INIT_SCRIPT } from "@/components/site/themes";
 import { findIntl } from "@/components/intl/languages";
 import { syncAnalytics } from "@/components/site/analytics";
@@ -158,6 +160,18 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const router = useRouter();
+
+  // Customer session: refresh routes on identity changes only (not token refreshes), and keep
+  // the shopper's cart mirrored to their account while signed in.
+  useEffect(() => {
+    wireCartCloudSync();
+    const { data: sub } = supabase.auth.onAuthStateChange((event) => {
+      if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
+      void router.invalidate();
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [router]);
 
   // Website statistics for /admin/analytics: page views plus call/directions/language clicks.
   useEffect(() => {
