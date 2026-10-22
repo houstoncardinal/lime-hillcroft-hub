@@ -301,7 +301,7 @@ export function MobileMenu({
                       <ChevronRight className="h-4 w-4 shrink-0 opacity-70" aria-hidden="true" />
                     </button>
                   </li>
-                  {items.slice(products.length).map((it) => row(it))}
+                  {items.map((it) => row(it))}
                 </ul>
               ) : (
                 <ul className={listClass}>
