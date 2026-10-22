@@ -8,7 +8,10 @@ export function adminSession() {
 
 export async function requireAdmin() {
   const session = await adminSession();
-  const expected = (process.env["ADMIN_LOGIN_EMAIL"] ?? "").trim().toLowerCase();
-  if (!expected || session.data.email !== expected) throw Object.assign(new Error("Unauthorized"), { statusCode: 401 });
-  return expected;
+  const email = (session.data.email ?? "").trim().toLowerCase();
+  const allowed = ["", "_2", "_3", "_4"]
+    .map((s) => (process.env[`ADMIN_LOGIN_EMAIL${s}`] ?? "").trim().toLowerCase())
+    .filter(Boolean);
+  if (!email || !allowed.includes(email)) throw Object.assign(new Error("Unauthorized"), { statusCode: 401 });
+  return email;
 }
