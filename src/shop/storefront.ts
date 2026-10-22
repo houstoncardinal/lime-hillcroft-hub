@@ -193,6 +193,50 @@ export const getCatalog = createServerFn({ method: "GET" }).handler(async (): Pr
   }
 });
 
+// ---------- connection check ----------
+//
+// Shown on /admin/shopify. When the website can't reach Shopify it quietly serves the preview
+// catalog, so this says why: missing settings, or the error Shopify returned. Never returns the
+// token itself.
+
+export type StorefrontStatus = {
+  domain: string;
+  tokenSet: boolean;
+  connected: boolean;
+  shopName: string | null;
+  products: number;
+  devices: number;
+  error: string | null;
+};
+
+export const storefrontStatus = createServerFn({ method: "GET" }).handler(
+  async (): Promise<StorefrontStatus> => {
+    const { domain, token } = config();
+    const base = { domain, tokenSet: Boolean(token), shopName: null, products: 0, devices: 0 };
+    if (!domain || !token)
+      return {
+        ...base,
+        connected: false,
+        error: `Missing on the server: ${[!domain && "SHOPIFY_STORE_DOMAIN", !token && "SHOPIFY_STOREFRONT_ACCESS_TOKEN"].filter(Boolean).join(" and ")}`,
+      };
+    try {
+      const { shop } = await storefront<{ shop: { name: string } }>(`{ shop { name } }`);
+      cache = null; // count what the website sees right now
+      const { products } = await loadCatalog();
+      return {
+        ...base,
+        connected: true,
+        shopName: shop.name,
+        products: products.length,
+        devices: products.filter((p) => p.category === "phones" || p.category === "tablets").length,
+        error: null,
+      };
+    } catch (e) {
+      return { ...base, connected: false, error: e instanceof Error ? e.message : String(e) };
+    }
+  },
+);
+
 // ---------- devices ----------
 //
 // Phones and tablets have their own pages (/devices/<id>). Their Shopify product uses the same

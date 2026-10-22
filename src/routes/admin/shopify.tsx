@@ -15,6 +15,7 @@ import { toast } from "sonner";
 
 import { useAdminKey } from "@/admin/hooks";
 import { shopifyPullProducts, shopifyPushQuantities, shopifyStatus } from "@/admin/shopify";
+import { storefrontStatus, type StorefrontStatus } from "@/shop/storefront";
 import { inventory, useAdminData } from "@/admin/store";
 import {
   Badge,
@@ -39,11 +40,25 @@ function Shopify() {
   const [adminKey, setAdminKey] = useAdminKey();
   const [keyDraft, setKeyDraft] = useState(adminKey);
   const [status, setStatus] = useState<Status | null>(null);
+  const [site, setSite] = useState<StorefrontStatus | null>(null);
   const [checking, setChecking] = useState(false);
   const [busy, setBusy] = useState<"pull" | "push" | null>(null);
 
   const check = async () => {
     setChecking(true);
+    storefrontStatus()
+      .then(setSite)
+      .catch((e: Error) =>
+        setSite({
+          domain: "",
+          tokenSet: false,
+          connected: false,
+          shopName: null,
+          products: 0,
+          devices: 0,
+          error: e.message,
+        }),
+      );
     try {
       setStatus(await shopifyStatus({ data: { adminKey } }));
     } catch (e) {
@@ -171,6 +186,40 @@ function Shopify() {
           hint="Changed here since the last sync"
         />
       </div>
+
+      <GlassCard className="mt-6">
+        <CardTitle
+          title="Website shop"
+          description={
+            site?.connected
+              ? `The website shows ${site.products} products from ${site.shopName} (${site.devices} phones & tablets).`
+              : "The website is showing its built-in preview catalog, not your Shopify products."
+          }
+          actions={
+            site?.connected ? (
+              <Badge tone="good">Live</Badge>
+            ) : (
+              <Badge tone="warning">Preview only</Badge>
+            )
+          }
+        />
+        {site?.error && (
+          <p className="mb-4 rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-200">
+            {site.error}
+          </p>
+        )}
+        <ul className="space-y-2 text-sm text-white/70">
+          <li>
+            Store: <span className="text-white">{site?.domain || "not set"}</span> · Storefront
+            token: <span className="text-white">{site?.tokenSet ? "set" : "not set"}</span>
+          </li>
+          <li>
+            The website only receives products that are <strong>Active</strong> and published to the
+            sales channel the Storefront token belongs to (Online Store or Headless). Drafts never
+            show.
+          </li>
+        </ul>
+      </GlassCard>
 
       <div className="mt-6 grid gap-6 xl:grid-cols-[1.2fr_1fr]">
         <GlassCard>
