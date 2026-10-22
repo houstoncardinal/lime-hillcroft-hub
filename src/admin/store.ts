@@ -343,6 +343,9 @@ export const inventory = {
       const p = d.products.find(x => x.id === item.id && x.shopifyVariantId === item.variantId);
       if (!p) return;
       if (row) {
+        for (const key of ["price", "quantity", "sku", "barcode"] as const) {
+          if (item.values[key] === item.expected[key] && p[key] === item.values[key]) Object.assign(p, { [key]: row[key] });
+        }
         p.shopifyBaseline = { price: row.price, quantity: row.quantity, sku: row.sku, barcode: row.barcode };
         p.shopifySyncedQuantity = row.quantity;
         // Baselines advance from Shopify readback, never from potentially newer local edits.
