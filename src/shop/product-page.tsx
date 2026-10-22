@@ -11,6 +11,7 @@ import { Badge, ProductCard, ProductTile } from "@/shop/components";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
 import type { ShopProduct } from "@/shop/types";
+import { showsInstallments } from "@/shop/installments";
 import { cn } from "@/lib/utils";
 
 export function ProductPage({
@@ -115,6 +116,13 @@ export function ProductPage({
                 </span>
               )}
             </p>
+            {variant && showsInstallments(product.category, variant.price) && (
+              <p className="mt-3 rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm">
+                {lang === "es"
+                  ? "Paga a plazos con Shop Pay Installments al finalizar la compra (sujeto a aprobación)."
+                  : "Pay over time with Shop Pay Installments at checkout (subject to approval)."}
+              </p>
+            )}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               {product.description}
             </p>
