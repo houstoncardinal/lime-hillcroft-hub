@@ -31,14 +31,26 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
   const t = SHOP_COPY[lang];
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<ShopCategory | "all">("all");
+  const [brand, setBrand] = useState<string>("all");
   const [sort, setSort] = useState<Sort>("featured");
 
   const available = SHOP_CATEGORIES.filter((c) => catalog.products.some((p) => p.category === c));
+  // How many products sit in each category, shown on the chips so browsing is predictable.
+  const counts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const p of catalog.products) m.set(p.category, (m.get(p.category) ?? 0) + 1);
+    return m;
+  }, [catalog.products]);
+  const brands = useMemo(
+    () => [...new Set(catalog.products.map((p) => p.vendor))].sort((a, b) => a.localeCompare(b)),
+    [catalog.products],
+  );
   const products = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = catalog.products.filter(
       (p) =>
         (category === "all" || p.category === category) &&
+        (brand === "all" || p.vendor === brand) &&
         (!q ||
           `${p.title} ${p.vendor} ${t.categories[p.category]}`
             .toLowerCase()
