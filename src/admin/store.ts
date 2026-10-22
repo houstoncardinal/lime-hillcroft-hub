@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 
-import { readTrackedEvents } from "@/admin/tracker";
+import { toast } from "sonner";
+import { readAdminData, writeAdminData, readSiteEvents } from "@/admin/data.functions";
 import type {
   AdminData,
   Camera,
@@ -77,32 +78,57 @@ function defaultCameras(): Camera[] {
 let cache: AdminData | null = null;
 const listeners = new Set<() => void>();
 
-function load(): AdminData {
-  if (cache) return cache;
+let revision = 0;
+let ready = false;
+let saving = 0;
+let syncError: string | null = null;
+let writeQueue = Promise.resolve();
+let generation = 0;
+let liveEvents: AdminData["events"] = [];
+let status = { ready, saving, error: syncError };
+const emit = () => { status = { ready, saving, error: syncError }; listeners.forEach((l) => l()); };
+const load = (): AdminData => cache ?? (cache = empty());
+
+export const adminStorageStatus = {
+  subscribe: (l: () => void) => { listeners.add(l); return () => { listeners.delete(l); }; },
+  snapshot: () => status,
+};
+
+export async function initializeAdminData() {
+  ready = false; syncError = null; emit();
   try {
-    const raw = localStorage.getItem(KEY);
-    if (raw) return (cache = { ...empty(), ...(JSON.parse(raw) as AdminData) });
+    const result = await readAdminData();
+    cache = result?.data ?? empty(); revision = result?.revision ?? 0;
+    liveEvents = await readSiteEvents();
+    ready = true; emit();
   } catch {
-    // Unreadable or blocked storage: fall through to fresh sample data.
+    syncError = "Shared store data could not load. Retry before making changes."; emit();
+    throw new Error(syncError);
   }
-  // First visit: start with sample data so every screen has something to show.
-  cache = seedDemo(empty());
-  try {
-    localStorage.setItem(KEY, JSON.stringify(cache));
-  } catch {
-    // Blocked storage: the dashboard still works in memory for this session.
-  }
-  return cache;
+}
+export function resetAdminData() {
+  generation++; cache = empty(); liveEvents = []; ready = false; revision = 0; emit();
 }
 
 function commit(next: AdminData) {
-  cache = next;
-  try {
-    localStorage.setItem(KEY, JSON.stringify(next));
-  } catch {
-    // Storage full or blocked: keep working in memory for this session.
-  }
-  listeners.forEach((l) => l());
+  if (!ready) { toast.error("Wait for shared store data to load."); return; }
+  cache = next; saving++; syncError = null; emit();
+  const currentGeneration = generation;
+  writeQueue = writeQueue.then(async () => {
+    if (generation !== currentGeneration) return;
+    try {
+      const result = await writeAdminData({ data: { revision, data: next } });
+      if (result.conflict) throw new Error("Another device changed these records. Reload and retry your change.");
+      revision = result.revision;
+    } catch (error) {
+      generation++;
+      syncError = error instanceof Error ? error.message : "Changes could not be saved.";
+      toast.error(syncError);
+      const remote = await readAdminData().catch(() => null);
+      if (remote) { cache = remote.data; revision = remote.revision; }
+      ready = false;
+    } finally { saving = Math.max(0, saving - 1); emit(); }
+  });
 }
 
 function update(fn: (draft: AdminData) => void) {
@@ -135,7 +161,7 @@ export function useAdminData() {
 /** Sample events plus real visits tracked in this browser by the public-site tracker. */
 export function useAnalyticsEvents() {
   const data = useAdminData();
-  return [...data.events, ...readTrackedEvents()];
+  return data.settings.demo ? data.events : liveEvents;
 }
 
 // ---------- Inventory ----------
@@ -189,7 +215,8 @@ export const inventory = {
     update((d) => {
       const p = d.products.find((x) => x.id === productId);
       if (!p || delta === 0) return;
-      p.quantity = Math.max(0, p.quantity + delta);
+      delta = Math.max(0, p.quantity + delta) - p.quantity;
+      p.quantity += delta;
       p.updatedAt = nowIso();
       if (p.shopifyVariantId && reason !== "Shopify sync") p.syncStatus = "pending";
       d.movements.unshift({ id: uid(), productId, delta, reason, note, by, at: nowIso() });
@@ -249,7 +276,8 @@ export const inventory = {
     let created = 0;
     update((d) => {
       for (const r of rows) {
-        const p = r.sku ? d.products.find((x) => x.sku === r.sku) : undefined;
+        const p = d.products.find((x) => x.shopifyVariantId === r.variantId) ?? (r.sku ? d.products.find((x) => x.sku === r.sku) : undefined);
+        if (p?.syncStatus === "pending") continue;
         if (p) {
           const delta = r.quantity - p.quantity;
           Object.assign(p, {
@@ -316,6 +344,8 @@ export const staff = {
     const { pin: _pin, ...rest } = input;
     update((d) => {
       const existing = input.id ? d.employees.find((e) => e.id === input.id) : undefined;
+      const wantedPin = pinHash ?? existing?.pinHash;
+      if (rest.active && wantedPin && d.employees.some((e) => e.id !== input.id && e.active && e.pinHash === wantedPin)) throw new Error("This PIN is already assigned to active staff.");
       if (existing) Object.assign(existing, rest, pinHash ? { pinHash } : {});
       else d.employees.push({ ...rest, id: uid(), pinHash: pinHash ?? "" });
     });
@@ -323,6 +353,7 @@ export const staff = {
   setActive(id: string, active: boolean) {
     update((d) => {
       const e = d.employees.find((x) => x.id === id);
+      if (e && active && e.pinHash && d.employees.some((other) => other.id !== id && other.active && other.pinHash === e.pinHash)) { toast.error("Assign a different PIN before reactivating this employee."); return; }
       if (e) e.active = active;
     });
   },
@@ -456,10 +487,7 @@ export const settings = {
     const { settings: s, cameras } = load();
     commit({ ...empty(), cameras, settings: { ...s, demo: false } });
   },
-  loadDemo() {
-    const { settings: s, cameras } = load();
-    commit(seedDemo({ ...empty(), cameras, settings: { ...s } }));
-  },
+  loadDemo() { toast.error("Sample data is disabled in the shared dashboard."); },
   exportJson() {
     return JSON.stringify(load(), null, 2);
   },

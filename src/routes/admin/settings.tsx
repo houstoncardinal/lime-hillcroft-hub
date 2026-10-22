@@ -28,20 +28,7 @@ function Settings() {
   const data = useAdminData();
   const s = data.settings;
   const fileRef = useRef<HTMLInputElement>(null);
-  const [current, setCurrent] = useState("");
-  const [next, setNext] = useState("");
   const [theme, setTheme] = useTheme(ADMIN_THEME_KEY);
-
-  const changePasscode = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!(await settings.checkPasscode(current)))
-      return void toast.error("Current passcode is incorrect");
-    if (next.length < 6) return void toast.error("Use at least 6 characters");
-    await settings.setPasscode(next);
-    setCurrent("");
-    setNext("");
-    toast.success("Passcode changed");
-  };
 
   return (
     <>
@@ -93,37 +80,13 @@ function Settings() {
         </GlassCard>
 
         <GlassCard>
-          <CardTitle title="Dashboard passcode" description="Locks the dashboard on this device." />
-          <form
-            onSubmit={(e) => void changePasscode(e)}
-            className="grid gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end"
-          >
-            <Field label="Current passcode">
-              <Input
-                type="password"
-                autoComplete="current-password"
-                value={current}
-                onChange={(e) => setCurrent(e.target.value)}
-              />
-            </Field>
-            <Field label="New passcode">
-              <Input
-                type="password"
-                autoComplete="new-password"
-                value={next}
-                onChange={(e) => setNext(e.target.value)}
-              />
-            </Field>
-            <Button tone="primary" type="submit">
-              <Lock className="h-4 w-4" /> Change
-            </Button>
-          </form>
+          <CardTitle title="Admin access" description="Sign in with your configured email and password. Lock dashboard signs you out on this device." />
         </GlassCard>
 
         <GlassCard>
           <CardTitle
             title="Backup"
-            description="Local mode keeps everything in this browser. Download a backup regularly, or move to a database (docs/admin.md)."
+            description="Store records are shared through Lovable Cloud. Download a backup before restoring or replacing records."
           />
           <div className="flex flex-wrap gap-2">
             <Button
@@ -149,7 +112,7 @@ function Settings() {
                 const f = e.target.files?.[0];
                 e.target.value = "";
                 if (!f) return;
-                if (!confirm("Replace everything on this device with the backup?")) return;
+                if (!confirm("Replace the shared store records with this backup?")) return;
                 try {
                   settings.importJson(await f.text());
                   toast.success("Backup restored");
@@ -194,16 +157,7 @@ function Settings() {
               </Button>
             ) : (
               <Button
-                onClick={() => {
-                  if (
-                    !confirm(
-                      "Replace your data on this device with sample data? Download a backup first if you need it.",
-                    )
-                  )
-                    return;
-                  settings.loadDemo();
-                  toast.success("Sample data loaded");
-                }}
+                disabled
               >
                 <RotateCcw className="h-4 w-4" /> Load sample data
               </Button>

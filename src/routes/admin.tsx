@@ -1,5 +1,5 @@
 import { Link, Outlet, createFileRoute, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, useSyncExternalStore, type FormEvent } from "react";
 import {
   BarChart3,
   Banknote,
@@ -18,7 +18,7 @@ import {
 
 import { useServerFn } from "@tanstack/react-start";
 import { adminLogin, adminLogout, adminStatus } from "@/admin/auth.functions";
-import { useAdminData } from "@/admin/store";
+import { useAdminData, initializeAdminData, resetAdminData, adminStorageStatus } from "@/admin/store";
 import { Button, Field, Input } from "@/admin/ui";
 import { DotRing } from "@/components/site/logo";
 import { ThemeSwitcher } from "@/components/site/theme-switcher";
@@ -52,6 +52,7 @@ const NAV = [
 
 function AdminLayout() {
   const data = useAdminData();
+  const storage = useSyncExternalStore(adminStorageStatus.subscribe, adminStorageStatus.snapshot, adminStorageStatus.snapshot);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
   const status = useServerFn(adminStatus);
   const logout = useServerFn(adminLogout);
@@ -61,6 +62,8 @@ function AdminLayout() {
       .then((r) => setSignedIn(Boolean(r.email)))
       .catch(() => setSignedIn(false));
   }, [status]);
+
+  useEffect(() => { if (signedIn) void initializeAdminData().catch(() => undefined); }, [signedIn]);
 
   // Dark glass theme on <html> so portalled dialogs and toasts match.
   // The dashboard has its own color theme; restore the website's when leaving.
@@ -75,6 +78,7 @@ function AdminLayout() {
 
   const lock = async () => {
     await logout().catch(() => undefined);
+    resetAdminData();
     setSignedIn(false);
   };
 
@@ -82,7 +86,10 @@ function AdminLayout() {
     <div className="relative min-h-svh overflow-x-hidden text-foreground">
       <Backdrop />
       {signedIn === null ? null : signedIn ? (
-        <Shell onLock={() => void lock()} demo={data.settings.demo} />
+        <>
+          {storage.ready ? <Shell onLock={() => void lock()} demo={data.settings.demo} /> : <div role="status" className="p-8 text-center">{storage.error ?? "Loading shared store records…"}{storage.error && <Button onClick={() => void initializeAdminData().catch(() => undefined)}>Retry</Button>}</div>}
+          {storage.saving > 0 && <div role="status" className="fixed bottom-4 left-4 z-50 rounded-md bg-card px-4 py-2 text-sm">Saving changes…</div>}
+        </>
       ) : (
         <Gate onUnlock={() => setSignedIn(true)} />
       )}

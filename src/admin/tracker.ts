@@ -1,3 +1,4 @@
+import { recordSiteEvent } from "@/admin/data.functions";
 import type { AnalyticsEvent, AnalyticsEventType } from "@/admin/types";
 
 // First-party, cookie-free website statistics for the public pages.
@@ -64,6 +65,7 @@ export function track(type: AnalyticsEventType, path = location.pathname) {
   } catch {
     // Storage blocked: skip local copy.
   }
+  void recordSiteEvent({ data: event }).catch(() => undefined);
   if (ENDPOINT) navigator.sendBeacon?.(ENDPOINT, JSON.stringify(event));
 }
 

@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Dashboard state is persisted through cookie-authorized server functions with revision-checked Cloud writes; browser roles cannot access private tables, preventing cross-device lost updates.
+- Shopify cart mutations are serialized and confirmed before local state changes; checkout is disabled after failed reconciliation.
+- Public telemetry is validated server-side and dashboard reads are admin-only; sample visits are never mixed with live totals.
