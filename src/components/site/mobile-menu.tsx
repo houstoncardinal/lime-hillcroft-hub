@@ -125,13 +125,9 @@ export function MobileMenu({
 
   const isCurrent = (href: string) => pathname === href || pathname === `${href}/`;
 
-  // Main list: the online store first, then what we sell, then services (a second list),
-  // prepaid, leasing and the store page.
-  const allProducts = productNav(lang).filter((p) => !p.href.includes("#"));
-  const shopItem = allProducts.find((p) => p.href === ALTERNATES.shop[lang]);
-  const products = allProducts.filter((p) => p !== shopItem);
+  // Main list: the online store ("Products") first, then services (a second list),
+  // prepaid, leasing and the store page. Product categories live inside the shop.
   const items: Item[] = [
-    ...products.map((p): Item => [p.label, p.href, p.icon]),
     [t.prepaid, servicePath(lang, "prepaid-plans"), Smartphone],
     [t.leasing, ALTERNATES.leasing[lang], Wallet],
     [t.location, ALTERNATES.location[lang], MapPin],
