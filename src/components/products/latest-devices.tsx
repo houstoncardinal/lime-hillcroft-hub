@@ -5,6 +5,8 @@ import { INVENTORY_UPDATED, LATEST_DEVICES, type Device } from "@/components/pro
 import { TEL } from "@/components/site/business";
 import { Scroller } from "@/components/site/scroller";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { Money } from "@/components/intl/money";
+import { shopHandle, useDevicePrices } from "@/shop/device-shop";
 import { cn } from "@/lib/utils";
 
 const T = {
@@ -20,6 +22,7 @@ const T = {
     prev: "Previous devices",
     next: "More devices",
     seeAll: (n: number) => `See all ${n} devices`,
+    from: "From",
     seeAllBody: "Every iPhone, Galaxy and iPad we have, by model.",
   },
   es: {
@@ -34,6 +37,7 @@ const T = {
     prev: "Equipos anteriores",
     next: "Más equipos",
     seeAll: (n: number) => `Ver los ${n} equipos`,
+    from: "Desde",
     seeAllBody: "Todos los iPhone, Galaxy y iPad que tenemos, por modelo.",
   },
 };
@@ -42,6 +46,7 @@ const T = {
 export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) {
   const t = T[lang];
   const href = d.page?.[lang];
+  const price = useDevicePrices()[shopHandle(d.id)];
   return (
     <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border bg-card transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/5">
       <div
@@ -87,6 +92,14 @@ export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) 
           )}
         </h3>
         {d.note && <p className="mt-0.5 text-sm text-muted-foreground">{d.note[lang]}</p>}
+        {price && (
+          <p className="mt-1 text-sm tabular-nums">
+            <span className="text-muted-foreground">{t.from} </span>
+            <span className="font-semibold">
+              <Money usd={price.from / 100} />
+            </span>
+          </p>
+        )}
         <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-emerald-700">
           <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
           {t.inStore}

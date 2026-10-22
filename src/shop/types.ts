@@ -2,6 +2,8 @@
 // the live Shopify catalog render through the same components.
 
 export const SHOP_CATEGORIES = [
+  "phones",
+  "tablets",
   "cases",
   "screen-protection",
   "earbuds",

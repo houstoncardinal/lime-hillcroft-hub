@@ -53,7 +53,12 @@ async function storefront<T>(query: string, variables: Record<string, unknown> =
 
 // ---------- catalog ----------
 
-function categoryFor(productType: string, tags: string[]): ShopCategory {
+export function categoryFor(productType: string, tags: string[]): ShopCategory {
+  // Phones and tablets go by product type alone ("Smartphone", "Tablet"), so a "Phone case" or
+  // an "iPad charger" still lands with the accessories.
+  const type = productType.trim().toLowerCase();
+  if (/^(smart ?phones?|(cell|mobile) ?phones?|phones?)$/.test(type)) return "phones";
+  if (/^tablets?$/.test(type)) return "tablets";
   const text = `${productType} ${tags.join(" ")}`.toLowerCase();
   if (/case|cover/.test(text)) return "cases";
   if (/glass|screen|protector/.test(text)) return "screen-protection";
@@ -86,6 +91,7 @@ const toText = (html: string) =>
 
 type ProductsQuery = {
   products: {
+    pageInfo: { hasNextPage: boolean; endCursor: string | null };
     nodes: {
       id: string;
       handle: string;
@@ -115,19 +121,34 @@ let cache: { at: number; catalog: Catalog } | null = null;
 async function loadCatalog(): Promise<Catalog> {
   if (!isLive()) return { source: "preview", products: PREVIEW_PRODUCTS };
   if (cache && Date.now() - cache.at < CACHE_MS) return cache.catalog;
-  const data = await storefront<ProductsQuery>(`{
-    products(first: 100, sortKey: BEST_SELLING) {
-      nodes {
-        id handle title vendor productType tags descriptionHtml
-        images(first: 6) { nodes { url altText } }
-        options { name }
-        variants(first: 50) {
-          nodes { id title availableForSale price { amount } compareAtPrice { amount } image { url altText } }
+  // Page through the whole catalog (phones, tablets and accessories), up to 1,000 products.
+  const nodes: ProductsQuery["products"]["nodes"] = [];
+  let after: string | null = null;
+  for (let page = 0; page < 4; page++) {
+    const data: ProductsQuery = await storefront<ProductsQuery>(
+      `query Products($after: String) {
+        products(first: 250, after: $after, sortKey: BEST_SELLING) {
+          pageInfo { hasNextPage endCursor }
+          nodes {
+            id handle title vendor productType tags descriptionHtml
+            images(first: 6) { nodes { url altText } }
+            options { name }
+            variants(first: 50) {
+              nodes { id title availableForSale price { amount } compareAtPrice { amount } image { url altText } }
+            }
+          }
         }
-      }
-    }
-  }`);
-  const products: ShopProduct[] = data.products.nodes.map((p, i) => {
+      }`,
+      { after },
+    );
+    nodes.push(...data.products.nodes);
+    if (!data.products.pageInfo.hasNextPage) break;
+    after = data.products.pageInfo.endCursor;
+  }
+  // Automatic "best seller" / featured picks are for accessories; phones and tablets have their
+  // own pages (/devices) and show up there and under their shop category.
+  let rank = 0;
+  const products: ShopProduct[] = nodes.map((p) => {
     const vs = p.variants.nodes.map((v) => ({
       id: v.id,
       title: v.title,
@@ -138,12 +159,14 @@ async function loadCatalog(): Promise<Catalog> {
     }));
     const onSale = vs.some((v) => v.compareAtPrice && v.compareAtPrice > v.price);
     const tags = p.tags.map((t) => t.toLowerCase());
+    const category = categoryFor(p.productType, tags);
+    const i = category === "phones" || category === "tablets" ? Infinity : rank++;
     return {
       id: p.id,
       handle: p.handle,
       title: p.title,
       vendor: p.vendor || "TIC Wireless",
-      category: categoryFor(p.productType, tags),
+      category,
       description: toText(p.descriptionHtml),
       features: [],
       images: p.images.nodes.map((im) => ({ url: im.url, alt: im.altText ?? p.title })),
@@ -168,6 +191,54 @@ export const getCatalog = createServerFn({ method: "GET" }).handler(async (): Pr
     return { source: "preview", products: PREVIEW_PRODUCTS };
   }
 });
+
+// ---------- devices ----------
+//
+// Phones and tablets have their own pages (/devices/<id>). Their Shopify product uses the same
+// handle (docs/shopify/tic-wireless-devices-shopify.csv), so a device page can show the live price,
+// stock and an add-to-cart button. These return nothing when the store isn't connected.
+
+export type DevicePrice = { from: number; available: boolean };
+
+const asHandle = (d: unknown) => String(d ?? "").slice(0, 120);
+
+/** One device's Shopify product, or null when it isn't in the store (or the store is offline). */
+export const getShopDevice = createServerFn({ method: "GET" })
+  .validator(asHandle)
+  .handler(async ({ data }): Promise<ShopProduct | null> => {
+    if (!isLive() || !data) return null;
+    try {
+      return (await loadCatalog()).products.find((p) => p.handle === data) ?? null;
+    } catch (e) {
+      console.error("Shopify device lookup failed:", e);
+      return null;
+    }
+  });
+
+/** Lowest price (cents) and availability for every phone and tablet in the store, by handle. */
+export const getDevicePrices = createServerFn({ method: "GET" }).handler(
+  async (): Promise<Record<string, DevicePrice>> => {
+    if (!isLive()) return {};
+    try {
+      const { products } = await loadCatalog();
+      return Object.fromEntries(
+        products
+          .filter((p) => p.category === "phones" || p.category === "tablets")
+          .map((p) => {
+            const open = p.variants.filter((v) => v.available);
+            const pool = open.length ? open : p.variants;
+            return [
+              p.handle,
+              { from: Math.min(...pool.map((v) => v.price)), available: open.length > 0 },
+            ];
+          }),
+      );
+    } catch (e) {
+      console.error("Shopify device prices failed:", e);
+      return {};
+    }
+  },
+);
 
 // ---------- cart ----------
 //
@@ -302,7 +373,10 @@ export const updateCartLines = createServerFn({ method: "POST" })
       cartId: asCartId(d),
       lines: lines.map((l) => ({
         id: String((l as { lineId: unknown }).lineId),
-        quantity: Math.min(99, Math.max(1, Math.floor(Number((l as { quantity: unknown }).quantity)))),
+        quantity: Math.min(
+          99,
+          Math.max(1, Math.floor(Number((l as { quantity: unknown }).quantity))),
+        ),
       })),
     };
   })

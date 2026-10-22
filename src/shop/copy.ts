@@ -18,6 +18,8 @@ const en = {
   },
   categories: {
     all: "All",
+    phones: "Phones",
+    tablets: "Tablets",
     cases: "Cases",
     "screen-protection": "Screen protection",
     earbuds: "Earbuds & headphones",
@@ -105,6 +107,8 @@ const es: ShopCopy = {
   },
   categories: {
     all: "Todo",
+    phones: "Celulares",
+    tablets: "Tabletas",
     cases: "Fundas",
     "screen-protection": "Micas y protectores",
     earbuds: "Audífonos",

@@ -23,6 +23,8 @@ import {
 import { deviceFaqs, inventoryDate } from "@/components/products/device-faqs";
 import { LATEST_DEVICES, type Device } from "@/components/products/inventory";
 import { LatestDevices } from "@/components/products/latest-devices";
+import { DeviceBuy } from "@/shop/device-buy";
+import type { ShopProduct } from "@/shop/types";
 import { servicePath } from "@/components/services/paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
 import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
@@ -253,10 +255,13 @@ export function DevicePage({
   device,
   detail,
   lang,
+  shop,
 }: {
   device: Device;
   detail: DeviceDetail;
   lang: Lang;
+  /** The device's Shopify product (live price, stock, add to cart), when the store has it. */
+  shop?: ShopProduct | null;
 }) {
   const t = UI[lang];
   const tablet = device.kind === "ipad";
@@ -323,6 +328,7 @@ export function DevicePage({
 
           {/* Buy box */}
           <div className="rounded-[2rem] bg-white/[0.06] p-5 ring-1 ring-white/10 sm:p-7 lg:col-start-2 lg:row-start-2 lg:self-start">
+            {shop && <DeviceBuy product={shop} lang={lang} />}
             <p className="font-display text-xl font-semibold">{t.leaseTitle}</p>
             <p className="mt-1 text-sm leading-relaxed text-white/70">
               <MoneyText text={t.leaseBody(detail.leaseFrom ?? 40)} />
