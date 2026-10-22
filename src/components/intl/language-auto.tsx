@@ -57,7 +57,7 @@ export function LanguageAuto({
     if (isBot()) return;
     const go = (to: string) => {
       const { search, hash } = window.location;
-      void navigate({ to: `${to}${search}${hash}`, replace: true });
+      void navigate({ to: `${to}${search}${hash}`, replace: true }).catch(() => undefined);
     };
 
     // 1. The visitor already chose: follow it on full-site pages.

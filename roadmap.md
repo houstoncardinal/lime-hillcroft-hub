@@ -1,5 +1,7 @@
 # Launch corrections
 
+- [ ] Failed-request recovery screen and retry — reproduce blocked catalog request, then verify recovery without clearing the cart
+
 - [x] Reliable Shopify cart, exact prices, honest installment estimates and no sample-product fallback
 - [x] Shared protected staff storage, payroll boundaries, comparison-checked stock updates and scanner corrections
 - [x] Public metadata, current product sitemap, bilingual error handling and purchase policy navigation

@@ -89,9 +89,11 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
+      if (request.headers.get("x-tsr-serverfn") === "true" || new URL(request.url).pathname.startsWith("/_serverFn/")) return response;
       return withEdgeCache(request, await normalizeCatastrophicSsrResponse(response, new URL(request.url).pathname));
     } catch (error) {
       console.error(error);
+      if (request.headers.get("x-tsr-serverfn") === "true" || new URL(request.url).pathname.startsWith("/_serverFn/")) throw error;
       return new Response(renderErrorPage(new URL(request.url).pathname), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },

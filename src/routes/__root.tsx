@@ -9,12 +9,14 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import manropeLatin from "@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url";
 import sairaLatin from "@fontsource-variable/saira/files/saira-latin-wght-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { isRequestConnectionError } from "@/lib/request-errors";
+import { Button } from "@/components/ui/button";
 import { conversionFor, track } from "@/admin/tracker";
 import { THEME_INIT_SCRIPT } from "@/components/site/themes";
 import { findIntl } from "@/components/intl/languages";
@@ -45,32 +47,37 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
-  console.error(error);
+  const connectionError = isRequestConnectionError(error);
+  const [retrying, setRetrying] = useState(false);
   const router = useRouter();
   const es = useRouterState({ select: (s) => /^\/es(\/|$)/.test(s.location.pathname) });
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+    if (!connectionError) reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error, connectionError]);
+
+  const retry = async () => {
+    setRetrying(true);
+    try { await router.invalidate(); reset(); }
+    catch { /* Keep the recovery screen visible while the connection is unavailable. */ }
+    finally { setRetrying(false); }
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-{es ? "Esta página no se pudo cargar" : "This page didn’t load"}
+{connectionError ? (es ? "No pudimos conectar" : "We couldn’t connect") : es ? "Esta página no se pudo cargar" : "This page didn’t load"}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-{es ? "Ocurrió un error. Intenta de nuevo o vuelve al inicio." : "Something went wrong. Try again or head back home."}
+{connectionError ? (es ? "Comprueba tu conexión e intenta de nuevo. Tu carrito guardado no se ha borrado." : "Check your connection and try again. Your saved cart has not been cleared.") : es ? "Ocurrió un error. Intenta de nuevo o vuelve al inicio." : "Something went wrong. Try again or head back home."}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          <Button
+            disabled={retrying}
+            onClick={() => void retry()}
           >
             {es ? "Reintentar" : "Try again"}
-          </button>
+          </Button>
           <a
             href={es ? "/es" : "/"}
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
