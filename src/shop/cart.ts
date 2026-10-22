@@ -16,7 +16,7 @@ import type { CartLine, ShopProduct, ShopVariant } from "@/shop/types";
 // Shopify cart so checkout can use Shopify's own secure URL. Preview items (no store connected)
 // stay local only.
 
-export type CartItem = CartLine & { lineId: string | null };
+export type CartItem = CartLine & { lineId: string | null; lease?: boolean };
 
 const isPreviewLine = (variantId: string) => variantId.startsWith("preview:");
 
@@ -34,7 +34,12 @@ type CartStore = {
   open: boolean;
   busy: boolean;
   syncing: boolean;
-  addItem: (product: ShopProduct, variant: ShopVariant, quantity?: number) => Promise<void>;
+  addItem: (
+    product: ShopProduct,
+    variant: ShopVariant,
+    quantity?: number,
+    lease?: boolean,
+  ) => Promise<void>;
   setQuantity: (variantId: string, quantity: number) => Promise<void>;
   removeItem: (variantId: string) => Promise<void>;
   clearCart: () => void;
@@ -87,7 +92,7 @@ export const useCartStore = create<CartStore>()(
         busy: false,
         syncing: false,
 
-        addItem: async (product, variant, quantity = 1) => {
+        addItem: async (product, variant, quantity = 1, lease = false) => {
           const { items, cartId } = get();
           const existing = items.find((i) => i.variantId === variant.id);
           const wanted = Math.min(99, (existing?.quantity ?? 0) + quantity);
@@ -100,6 +105,7 @@ export const useCartStore = create<CartStore>()(
             image: variant.image ?? product.images[0] ?? null,
             quantity: wanted,
             lineId: existing?.lineId ?? null,
+            lease: lease || existing?.lease || false,
           };
           set({
             items: existing
@@ -111,13 +117,13 @@ export const useCartStore = create<CartStore>()(
 
           await run(() => {
             if (!cartId)
-              return createCart({ data: { lines: [{ variantId: variant.id, quantity: wanted }] } });
+              return createCart({ data: { lines: [{ variantId: variant.id, quantity: wanted, lease }] } });
             if (existing?.lineId)
               return updateCartLines({
                 data: { cartId, lines: [{ lineId: existing.lineId, quantity: wanted }] },
               });
             return addCartLines({
-              data: { cartId, lines: [{ variantId: variant.id, quantity: wanted }] },
+              data: { cartId, lines: [{ variantId: variant.id, quantity: wanted, lease }] },
             });
           });
         },

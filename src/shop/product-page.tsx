@@ -41,7 +41,7 @@ export function ProductPage({
 
   const add = async () => {
     if (!variant) return;
-    await addItem(product, variant, quantity);
+    await addItem(product, variant, quantity, canLease && payMode === "plan");
     // Lease choice: open the cart so the customer goes straight to Shopify checkout → Shop Pay.
     if (canLease && payMode === "plan") setCartOpen(true);
     setAdded(true);
