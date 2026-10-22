@@ -3,7 +3,7 @@ import * as Nav from "@radix-ui/react-navigation-menu";
 import { ArrowRight, ChevronDown, ShoppingBag } from "lucide-react";
 import { useRef, useState, type MouseEvent } from "react";
 
-import { productNav, serviceNav, type NavItem } from "@/components/site/nav";
+import { serviceNav, type NavItem } from "@/components/site/nav";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { servicePath } from "@/components/services/paths";
 import { cn } from "@/lib/utils";
@@ -15,9 +15,7 @@ const T = {
     leasing: "Leasing",
     prepaid: "Prepaid",
     location: "Location",
-    shop: "Shop",
     allServices: "All services",
-    leasingCta: "Lease-to-own · no credit needed · as low as $40 down",
   },
   es: {
     products: "Productos",
@@ -25,9 +23,7 @@ const T = {
     leasing: "Arrendamiento",
     prepaid: "Prepago",
     location: "Ubicación",
-    shop: "Tienda",
     allServices: "Todos los servicios",
-    leasingCta: "Arrendamiento · sin crédito · desde $40 de enganche",
   },
 };
 
