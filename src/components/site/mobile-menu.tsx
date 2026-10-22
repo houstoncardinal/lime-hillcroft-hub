@@ -23,7 +23,7 @@ import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import { servicePath } from "@/components/services/paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
 import { PORTALS } from "@/components/site/leasing-portals";
-import { productNav, serviceNav } from "@/components/site/nav";
+import { serviceNav } from "@/components/site/nav";
 import { Logo } from "@/components/site/logo";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 import { setChatHidden } from "@/components/site/tidio";
@@ -42,6 +42,7 @@ const T = {
     call: "Call",
     directions: "Directions",
     home: "Home",
+    products: "Products",
     services: "All services",
     servicesMenu: "Services",
     back: "Back",
@@ -67,6 +68,7 @@ const T = {
     call: "Llamar",
     directions: "Cómo llegar",
     home: "Inicio",
+    products: "Productos",
     services: "Todos los servicios",
     servicesMenu: "Servicios",
     back: "Atrás",
@@ -123,13 +125,9 @@ export function MobileMenu({
 
   const isCurrent = (href: string) => pathname === href || pathname === `${href}/`;
 
-  // Main list: the online store first, then what we sell, then services (a second list),
-  // prepaid, leasing and the store page.
-  const allProducts = productNav(lang).filter((p) => !p.href.includes("#"));
-  const shopItem = allProducts.find((p) => p.href === ALTERNATES.shop[lang]);
-  const products = allProducts.filter((p) => p !== shopItem);
+  // Main list: the online store ("Products") first, then services (a second list),
+  // prepaid, leasing and the store page. Product categories live inside the shop.
   const items: Item[] = [
-    ...products.map((p): Item => [p.label, p.href, p.icon]),
     [t.prepaid, servicePath(lang, "prepaid-plans"), Smartphone],
     [t.leasing, ALTERNATES.leasing[lang], Wallet],
     [t.location, ALTERNATES.location[lang], MapPin],
@@ -272,22 +270,19 @@ export function MobileMenu({
             <nav aria-label={t.title} className="mt-3 short:mt-2">
               {panel === "main" ? (
                 <ul className={listClass}>
-                  {shopItem && (
-                    <li>
-                      <Dialog.Close asChild>
-                        <Link
-                          to={shopItem.href}
-                          aria-current={isCurrent(shopItem.href) ? "page" : undefined}
-                          className="flex h-12 items-center gap-3 rounded-t-2xl bg-primary px-4 text-[15px] font-bold text-primary-foreground transition short:h-10 tiny:h-9 micro:h-8 micro:text-sm nano:h-[30px] hover:brightness-105"
-                        >
-                          <ShoppingBag className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
-                          <span className="min-w-0 flex-1 truncate">{shopItem.label}</span>
-                          <ChevronRight className="h-4 w-4 shrink-0 opacity-80" aria-hidden="true" />
-                        </Link>
-                      </Dialog.Close>
-                    </li>
-                  )}
-                  {items.slice(0, products.length).map((it) => row(it))}
+                  <li>
+                    <Dialog.Close asChild>
+                      <Link
+                        to={ALTERNATES.shop[lang]}
+                        aria-current={isCurrent(ALTERNATES.shop[lang]) ? "page" : undefined}
+                        className="flex h-12 items-center gap-3 rounded-t-2xl bg-primary px-4 text-[15px] font-bold text-primary-foreground transition short:h-10 tiny:h-9 micro:h-8 micro:text-sm nano:h-[30px] hover:brightness-105"
+                      >
+                        <ShoppingBag className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+                        <span className="min-w-0 flex-1 truncate">{t.products}</span>
+                        <ChevronRight className="h-4 w-4 shrink-0 opacity-80" aria-hidden="true" />
+                      </Link>
+                    </Dialog.Close>
+                  </li>
                   <li>
                     <button
                       type="button"
@@ -306,7 +301,7 @@ export function MobileMenu({
                       <ChevronRight className="h-4 w-4 shrink-0 opacity-70" aria-hidden="true" />
                     </button>
                   </li>
-                  {items.slice(products.length).map((it) => row(it))}
+                  {items.map((it) => row(it))}
                 </ul>
               ) : (
                 <ul className={listClass}>

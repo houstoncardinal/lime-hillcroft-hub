@@ -3,7 +3,7 @@ import * as Nav from "@radix-ui/react-navigation-menu";
 import { ArrowRight, ChevronDown, ShoppingBag } from "lucide-react";
 import { useRef, useState, type MouseEvent } from "react";
 
-import { productNav, serviceNav, type NavItem } from "@/components/site/nav";
+import { serviceNav, type NavItem } from "@/components/site/nav";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { servicePath } from "@/components/services/paths";
 import { cn } from "@/lib/utils";
@@ -15,9 +15,7 @@ const T = {
     leasing: "Leasing",
     prepaid: "Prepaid",
     location: "Location",
-    shop: "Shop",
     allServices: "All services",
-    leasingCta: "Lease-to-own · no credit needed · as low as $40 down",
   },
   es: {
     products: "Productos",
@@ -25,9 +23,7 @@ const T = {
     leasing: "Arrendamiento",
     prepaid: "Prepago",
     location: "Ubicación",
-    shop: "Tienda",
     allServices: "Todos los servicios",
-    leasingCta: "Arrendamiento · sin crédito · desde $40 de enganche",
   },
 };
 
@@ -125,19 +121,22 @@ export function DesktopNav({ lang }: { lang: Lang }) {
       className="relative hidden lg:block"
     >
       <Nav.List className="flex items-center gap-0.5 xl:gap-1.5">
-        <Nav.Item value="products" className="relative">
-          <Nav.Trigger className={trigger} onClick={keepOpen("products")}>
-            {t.products}
-            <ChevronDown
-              className="h-3.5 w-3.5 transition group-data-[state=open]:rotate-180"
-              aria-hidden="true"
-            />
-          </Nav.Trigger>
-          <Panel
-            pathname={pathname}
-            items={productNav(lang)}
-            footer={{ label: t.leasingCta, href: ALTERNATES.leasing[lang] }}
-          />
+        {/** Products = the online store: one tap, no dropdown, always visible. */}
+        <Nav.Item>
+          <Nav.Link asChild active={pathname === ALTERNATES.shop[lang]}>
+            <Link
+              to={ALTERNATES.shop[lang]}
+              aria-current={pathname === ALTERNATES.shop[lang] ? "page" : undefined}
+              className={
+                pathname === ALTERNATES.shop[lang]
+                  ? "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary px-2.5 text-sm font-semibold !text-primary-foreground transition xl:px-3"
+                  : "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3"
+              }
+            >
+              <ShoppingBag className="h-4 w-4" aria-hidden="true" />
+              {t.products}
+            </Link>
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item value="services" className="relative">
           <Nav.Trigger className={trigger} onClick={keepOpen("services")}>
@@ -153,23 +152,6 @@ export function DesktopNav({ lang }: { lang: Lang }) {
             footer={{ label: t.allServices, href: ALTERNATES.services[lang] }}
             wide
           />
-        </Nav.Item>
-        {/** The online store is the main commercial page — always one tap away. */}
-        <Nav.Item>
-          <Nav.Link asChild active={pathname === ALTERNATES.shop[lang]}>
-            <Link
-              to={ALTERNATES.shop[lang]}
-              aria-current={pathname === ALTERNATES.shop[lang] ? "page" : undefined}
-              className={
-                pathname === ALTERNATES.shop[lang]
-                  ? "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary px-2.5 text-sm font-semibold !text-primary-foreground transition xl:px-3"
-                  : "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3"
-              }
-            >
-              <ShoppingBag className="h-4 w-4" aria-hidden="true" />
-              {t.shop}
-            </Link>
-          </Nav.Link>
         </Nav.Item>
         {link(t.leasing, ALTERNATES.leasing[lang])}
         {link(t.prepaid, servicePath(lang, "prepaid-plans"))}

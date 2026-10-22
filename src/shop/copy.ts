@@ -29,6 +29,7 @@ const en = {
     gaming: "Gaming",
     more: "More",
   } satisfies Record<ShopCategory | "all", string>,
+  brands: { label: "Brand", all: "All brands" },
   sort: {
     label: "Sort",
     featured: "Featured",
@@ -147,6 +148,7 @@ const es: ShopCopy = {
     gaming: "Gaming",
     more: "Más",
   },
+  brands: { label: "Marca", all: "Todas las marcas" },
   sort: {
     label: "Ordenar",
     featured: "Destacados",

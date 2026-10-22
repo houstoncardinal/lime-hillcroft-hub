@@ -31,14 +31,26 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
   const t = SHOP_COPY[lang];
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<ShopCategory | "all">("all");
+  const [brand, setBrand] = useState<string>("all");
   const [sort, setSort] = useState<Sort>("featured");
 
   const available = SHOP_CATEGORIES.filter((c) => catalog.products.some((p) => p.category === c));
+  // How many products sit in each category, shown on the chips so browsing is predictable.
+  const counts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const p of catalog.products) m.set(p.category, (m.get(p.category) ?? 0) + 1);
+    return m;
+  }, [catalog.products]);
+  const brands = useMemo(
+    () => [...new Set(catalog.products.map((p) => p.vendor))].sort((a, b) => a.localeCompare(b)),
+    [catalog.products],
+  );
   const products = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = catalog.products.filter(
       (p) =>
         (category === "all" || p.category === category) &&
+        (brand === "all" || p.vendor === brand) &&
         (!q ||
           `${p.title} ${p.vendor} ${t.categories[p.category]}`
             .toLowerCase()
@@ -48,7 +60,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
     if (sort === "price-desc") return [...list].sort((a, b) => minPrice(b) - minPrice(a));
     if (sort === "name") return [...list].sort((a, b) => a.title.localeCompare(b.title));
     return [...list].sort((a, b) => Number(b.featured) - Number(a.featured));
-  }, [catalog.products, query, category, sort, t]);
+  }, [catalog.products, query, category, brand, sort, t]);
 
   return (
     <main className="overflow-x-hidden">
@@ -136,40 +148,72 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
-      {/* Filters */}
+      {/* Filters: category chips with counts, then a brand row, then sort. */}
       <div className="sticky top-[76px] z-30 border-b bg-background/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center gap-3 px-5 py-3">
-          <div className="-mx-1 flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 py-1 [scrollbar-width:none]">
-            {(["all", ...available] as const).map((c) => (
-              <button
-                key={c}
-                type="button"
-                onClick={() => setCategory(c)}
-                aria-pressed={category === c}
-                className={cn(
-                  "shrink-0 cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition",
-                  category === c ? "border-ink bg-ink text-white" : "bg-card hover:border-ink/40",
-                )}
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-3">
+          <div className="flex items-center gap-3">
+            <div className="-mx-1 flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 py-1 [scrollbar-width:none]">
+              {(["all", ...available] as const).map((c) => {
+                const n = c === "all" ? catalog.products.length : (counts.get(c) ?? 0);
+                return (
+                  <button
+                    key={c}
+                    type="button"
+                    onClick={() => setCategory(c)}
+                    aria-pressed={category === c}
+                    className={cn(
+                      "shrink-0 cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition",
+                      category === c
+                        ? "border-ink bg-ink text-white"
+                        : "bg-card hover:border-ink/40",
+                    )}
+                  >
+                    {<MoneyText text={`${t.categories[c]} (${n})`} />}
+                  </button>
+                );
+              })}
+            </div>
+            <label className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">
+              <span className="hidden md:inline">{<MoneyText text={t.sort.label} />}</span>
+              <select
+                value={sort}
+                aria-label={t.sort.label}
+                onChange={(e) => setSort(e.target.value as Sort)}
+                className="max-w-[8.5rem] cursor-pointer rounded-full border bg-card px-3 py-2 text-sm text-foreground md:max-w-none"
               >
-                {<MoneyText text={t.categories[c]} />}
-              </button>
-            ))}
+                {(["featured", "price-asc", "price-desc", "name"] as const).map((s) => (
+                  <option key={s} value={s}>
+                    {t.sort[s]}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
-          <label className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">
-            <span className="hidden md:inline">{<MoneyText text={t.sort.label} />}</span>
-            <select
-              value={sort}
-              aria-label={t.sort.label}
-              onChange={(e) => setSort(e.target.value as Sort)}
-              className="max-w-[8.5rem] cursor-pointer rounded-full border bg-card px-3 py-2 text-sm text-foreground md:max-w-none"
-            >
-              {(["featured", "price-asc", "price-desc", "name"] as const).map((s) => (
-                <option key={s} value={s}>
-                  {t.sort[s]}
-                </option>
-              ))}
-            </select>
-          </label>
+          {brands.length > 1 && (
+            <div className="flex items-center gap-2">
+              <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {t.brands.label}
+              </span>
+              <div className="-mx-1 flex min-w-0 flex-1 gap-1.5 overflow-x-auto px-1 py-0.5 [scrollbar-width:none]">
+                {["all", ...brands].map((b) => (
+                  <button
+                    key={b}
+                    type="button"
+                    onClick={() => setBrand(b)}
+                    aria-pressed={brand === b}
+                    className={cn(
+                      "shrink-0 cursor-pointer rounded-full border px-3 py-1.5 text-xs font-medium transition",
+                      brand === b
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "bg-card text-muted-foreground hover:border-primary/50 hover:text-foreground",
+                    )}
+                  >
+                    {b === "all" ? t.brands.all : b}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -190,6 +234,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               onClick={() => {
                 setQuery("");
                 setCategory("all");
+                setBrand("all");
               }}
               className="mt-4 cursor-pointer rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white"
             >
