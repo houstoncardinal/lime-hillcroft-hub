@@ -50,6 +50,7 @@ import {
   type Tone,
 } from "@/admin/ui";
 import { cn } from "@/lib/utils";
+import { ShopifySyncPanel } from "@/admin/shopify-sync-panel";
 
 export const Route = createFileRoute("/admin/inventory")({
   head: () => adminHead("Inventory"),
@@ -264,6 +265,8 @@ function Inventory() {
         />
       </div>
 
+      <div className="mt-6"><ShopifySyncPanel /></div>
+
       <GlassCard className="mt-6">
         <div className="mb-5 flex flex-wrap items-center gap-3">
           <div className="relative min-w-[220px] flex-1">
@@ -320,7 +323,7 @@ function Inventory() {
               tone="danger"
               size="sm"
               onClick={() => {
-                if (!confirm(`Delete ${selected.length} products? This can't be undone.`)) return;
+                if (!confirm(`Remove ${selected.length} products from this inventory list only? Shopify products will not be deleted and linked items return on refresh.`)) return;
                 inventory.remove(selected);
                 setSelected([]);
                 toast.success("Products deleted");
@@ -391,6 +394,7 @@ function Inventory() {
                       />
                     </td>
                     <td className="min-w-72">
+                      {p.shopifyImage && <img src={p.shopifyImage} alt="" className="mb-2 h-12 w-12 rounded-lg object-contain bg-muted" />}
                       <button
                         type="button"
                         className="cursor-pointer text-left"
@@ -442,6 +446,8 @@ function Inventory() {
                     </td>
                     <td>
                       <Badge tone={SYNC[p.syncStatus].tone}>{SYNC[p.syncStatus].label}</Badge>
+                      {p.shopifyProductStatus && <span className="mt-1 block text-xs text-muted-foreground">{p.shopifyProductStatus.toLowerCase()}</span>}
+                      {p.shopifySyncError && <span className="mt-1 block max-w-60 text-xs text-destructive">{p.shopifySyncError}</span>}
                     </td>
                     <td>
                       <div className="flex justify-end gap-1">
@@ -557,6 +563,7 @@ function ProductEditor({
   const submit = (e: FormEvent) => {
     e.preventDefault();
     if (!form.name.trim()) return void toast.error("Give the product a name");
+    if (![form.price, form.cost, form.quantity, form.reorderPoint].every(value => Number.isSafeInteger(value) && value >= 0)) return void toast.error("Prices must be valid cents and stock must be a nonnegative whole number.");
     inventory.save({ ...form, ...(product ? { id: product.id } : {}) }, BY);
     toast.success(product ? "Product updated" : "Product added");
     onClose();
@@ -575,9 +582,11 @@ function ProductEditor({
       wide
     >
       <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
+        {product?.shopifyVariantId && <div className="border-b border-border pb-4 sm:col-span-2"><Badge tone={SYNC[product.syncStatus].tone}>{SYNC[product.syncStatus].label}</Badge><p className="mt-2 text-sm text-muted-foreground">Price, stock, SKU and barcode changes await your review before updating Shopify. Store cost, notes and shelf location stay internal.</p>{product.shopifyBaseline && <p className="mt-2 text-sm text-muted-foreground">Shopify: {money(product.shopifyBaseline.price)} · {product.shopifyBaseline.quantity} available · {product.shopifyLocationName}</p>}{product.shopifySyncError && <p className="mt-2 text-sm text-destructive">{product.shopifySyncError}</p>}</div>}
         <Field label="Product name" className="sm:col-span-2">
           <Input
             autoFocus
+            readOnly={Boolean(product?.shopifyVariantId)}
             value={form.name}
             onChange={(e) => set("name", e.target.value)}
             placeholder="iPhone 17 Pro 256GB Cosmic Orange"
@@ -585,6 +594,7 @@ function ProductEditor({
         </Field>
         <Field label="Brand">
           <Input
+            readOnly={Boolean(product?.shopifyVariantId)}
             value={form.brand}
             onChange={(e) => set("brand", e.target.value)}
             placeholder="Apple"
@@ -615,6 +625,7 @@ function ProductEditor({
         </Field>
         <Field label="Cost (what you paid)">
           <Input
+            type="number" min={0} step="0.01"
             inputMode="decimal"
             defaultValue={dollars(form.cost)}
             onChange={(e) => set("cost", toCents(e.target.value))}
@@ -623,6 +634,7 @@ function ProductEditor({
         </Field>
         <Field label="Retail price">
           <Input
+            type="number" min={0} step="0.01"
             inputMode="decimal"
             defaultValue={dollars(form.price)}
             onChange={(e) => set("price", toCents(e.target.value))}
@@ -635,6 +647,7 @@ function ProductEditor({
         >
           <Input
             type="number"
+            step={1}
             min={0}
             value={form.quantity}
             onChange={(e) => set("quantity", Math.max(0, Number(e.target.value) || 0))}
@@ -684,7 +697,7 @@ function ProductEditor({
         <div className="flex justify-end gap-2 sm:col-span-2">
           <Button onClick={onClose}>Cancel</Button>
           <Button tone="primary" type="submit">
-            {product ? "Save changes" : "Add product"}
+            {product?.shopifyVariantId ? "Save for review" : product ? "Save changes" : "Add product"}
           </Button>
         </div>
       </form>

@@ -13,6 +13,9 @@
 - Shopify cart mutations are serialized and confirmed before local state changes; checkout is disabled after failed reconciliation.
 - Public telemetry is validated server-side and dashboard reads are admin-only; sample visits are never mixed with live totals.
 - Public telemetry must claim an atomic fixed-size Cloud quota before storing events, failing closed when the quota is exhausted or unavailable to bound automated write abuse.
+- Shopify inventory rows link by variant ID, with unique unlinked SKU matching only; import preserves dirty variant fields, and confirmed push readbacks advance baselines without marking newer edits synced.
+- Shopify stock writes use the pinned API version’s changeFromQuantity comparison; price/SKU/barcode updates use best-effort preflight checks and post-write readback, not a claimed atomic price lock.
+- Shopify inventory auto-refreshes while the inventory or sync screen is open; all outbound pushes require an explicit live-store confirmation and run in bounded sequential chunks.
 - Admin initialization and save responses are generation-guarded so logout or newer loads cannot restore stale state.
 - Payroll and weekly staff totals clip overlapping shifts at calendar boundaries; open overlapping shifts block payroll finalization.
 - Purchase policy pages show configured Shopify text only when it is not an unfinished template; unconfigured terms remain explicitly unavailable.
