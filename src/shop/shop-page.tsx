@@ -1,7 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { MoneyText } from "@/components/intl/money";
 import { useMemo, useState } from "react";
-import { ArrowRight, MapPin, Phone, Search, Sparkles, Store } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarClock,
+  CreditCard,
+  KeyRound,
+  Lock,
+  MapPin,
+  Phone,
+  Search,
+  Sparkles,
+  Store,
+} from "lucide-react";
+const PAY_ICONS = [CreditCard, CalendarClock, KeyRound];
 
 import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { DotRing } from "@/components/site/logo";
@@ -84,10 +96,50 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
+      {/* Ways to pay */}
+      <section className="border-b bg-card">
+        <div className="mx-auto max-w-7xl px-5 py-8 md:py-10">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:items-center">
+            <div className="min-w-0">
+              <p className="eyebrow text-shoppay">{t.lease.waysTitle}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.lease.waysBody}</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {t.lease.ways.map(([title, body], i) => {
+                const Icon = PAY_ICONS[i] ?? CreditCard;
+                const featured = i === 1;
+                return (
+                  <div
+                    key={title}
+                    className={cn(
+                      "flex gap-3 rounded-2xl border p-4",
+                      featured ? "border-shoppay/30 bg-shoppay/6" : "bg-background",
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl",
+                        featured ? "bg-shoppay text-shoppay-foreground" : "bg-ink text-primary",
+                      )}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className={cn("text-sm font-semibold", featured && "text-shoppay")}>{title}</p>
+                      <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{body}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Filters */}
       <div className="sticky top-[76px] z-30 border-b bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-5 py-3">
-          <div className="-mx-1 flex flex-1 gap-2 overflow-x-auto px-1 py-1 [scrollbar-width:none]">
+          <div className="-mx-1 flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 py-1 [scrollbar-width:none]">
             {(["all", ...available] as const).map((c) => (
               <button
                 key={c}
@@ -103,16 +155,17 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               </button>
             ))}
           </div>
-          <label className="hidden shrink-0 items-center gap-2 text-sm text-muted-foreground md:flex">
-            {<MoneyText text={t.sort.label} />}
+          <label className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">
+            <span className="hidden md:inline">{<MoneyText text={t.sort.label} />}</span>
             <select
               value={sort}
+              aria-label={t.sort.label}
               onChange={(e) => setSort(e.target.value as Sort)}
-              className="cursor-pointer rounded-full border bg-card px-3 py-2 text-sm text-foreground"
+              className="max-w-[8.5rem] cursor-pointer rounded-full border bg-card px-3 py-2 text-sm text-foreground md:max-w-none"
             >
               {(["featured", "price-asc", "price-desc", "name"] as const).map((s) => (
                 <option key={s} value={s}>
-                  {<MoneyText text={t.sort[s]} />}
+                  {t.sort[s]}
                 </option>
               ))}
             </select>
@@ -121,9 +174,14 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </div>
 
       {/* Grid */}
-      <section className="mx-auto max-w-7xl px-5 py-8 md:py-12">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:py-12">
         <h2 className="sr-only">{<MoneyText text={t.categories[category]} />}</h2>
-        <p className="mb-8 text-sm text-muted-foreground">{t.results(products.length)}</p>
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm font-medium text-muted-foreground">{t.results(products.length)}</p>
+          <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <Lock className="h-3.5 w-3.5 text-success" /> {t.lease.secure}
+          </p>
+        </div>
         {products.length === 0 ? (
           <div className="rounded-3xl border border-dashed py-14 text-center">
             <p className="text-muted-foreground">{<MoneyText text={t.empty} />}</p>
