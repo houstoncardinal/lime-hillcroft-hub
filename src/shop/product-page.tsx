@@ -11,7 +11,7 @@ import { Badge, InstallmentChip, ProductCard, ProductTile } from "@/shop/compone
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
 import type { ShopProduct } from "@/shop/types";
-import { payInFour, showsInstallments } from "@/shop/installments";
+import { installmentSchedule, payInFour, showsInstallments } from "@/shop/installments";
 import { cn } from "@/lib/utils";
 
 export function ProductPage({
@@ -38,10 +38,11 @@ export function ProductPage({
   const setCartOpen = useCartStore((s) => s.setOpen);
   const canLease = Boolean(variant && showsInstallments(product.category, variant.price));
   const busy = useCartStore((s) => s.busy);
+  const error = useCartStore((s) => s.error);
 
   const add = async () => {
     if (!variant) return;
-    await addItem(product, variant, quantity, canLease && payMode === "plan");
+    if (!(await addItem(product, variant, quantity, canLease && payMode === "plan"))) return;
     // Lease choice: open the cart so the customer goes straight to Shopify checkout → Shop Pay.
     if (canLease && payMode === "plan") setCartOpen(true);
     setAdded(true);
@@ -211,7 +212,7 @@ export function ProductPage({
                             </span>
                           </span>
                           <span className="tabular-nums mt-2 block text-xs font-semibold sm:text-sm">
-                            <Money usd={payInFour(variant.price * quantity) / 100} />
+                            <Money usd={(installmentSchedule(variant.price * quantity)[i] ?? 0) / 100} />
                           </span>
                           <span className="block text-[11px] text-muted-foreground">{s}</span>
                         </li>
@@ -286,7 +287,7 @@ export function ProductPage({
               <button
                 type="button"
                 onClick={add}
-                disabled={!variant?.available}
+                disabled={busy || !variant?.available}
                 className={cn("inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-8 font-semibold shadow-lg transition hover:brightness-110 disabled:opacity-50 sm:flex-none", canLease && payMode === "plan" ? "bg-shoppay text-shoppay-foreground shadow-shoppay/30" : "bg-primary text-primary-foreground shadow-primary/30")}
               >
                 {added ? <Check className="h-5 w-5" /> : <ShoppingBag className="h-5 w-5" />}
@@ -299,6 +300,7 @@ export function ProductPage({
                       : t.add}
               </button>
             </div>
+            {error && <p role="alert" className="mt-3 text-sm text-destructive">{t.checkoutError}</p>}
             {variant?.available && (
               <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="h-2 w-2 rounded-full bg-success" />{" "}

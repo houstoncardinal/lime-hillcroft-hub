@@ -34,14 +34,15 @@ type CartStore = {
   open: boolean;
   busy: boolean;
   syncing: boolean;
+  error: string | null;
   addItem: (
     product: ShopProduct,
     variant: ShopVariant,
     quantity?: number,
     lease?: boolean,
-  ) => Promise<void>;
-  setQuantity: (variantId: string, quantity: number) => Promise<void>;
-  removeItem: (variantId: string) => Promise<void>;
+  ) => Promise<boolean>;
+  setQuantity: (variantId: string, quantity: number) => Promise<boolean>;
+  removeItem: (variantId: string) => Promise<boolean>;
   clearCart: () => void;
   setOpen: (open: boolean) => void;
   syncCart: () => Promise<void>;
@@ -49,144 +50,84 @@ type CartStore = {
 };
 
 export const useCartStore = create<CartStore>()(
-  persist(
-    (set, get) => {
-      /** Copy Shopify's cart back over the local lines: line ids, quantities, checkout URL. */
-      const apply = (res: CartResult) => {
-        if (res.mode === "shopify") {
-          const byVariant = new Map(res.cart.lines.map((l) => [l.variantId, l]));
-          set({
-            cartId: res.cart.cartId,
-            checkoutUrl: res.cart.checkoutUrl,
-            busy: false,
-            items: get()
-              .items.map((i) => {
-                const line = byVariant.get(i.variantId);
-                return line ? { ...i, lineId: line.lineId, quantity: line.quantity } : i;
-              })
-              .filter((i) => !i.lineId || byVariant.has(i.variantId)),
-          });
-        } else if (res.mode === "gone") {
-          // Shopify dropped the cart — the order is paid, or the cart expired. Start clean.
-          set({ items: [], cartId: null, checkoutUrl: null, busy: false });
-        } else {
-          set({ busy: false });
-        }
-      };
-
-      const run = async (call: () => Promise<CartResult>) => {
-        set({ busy: true });
-        try {
-          apply(await call());
-        } catch (e) {
-          console.error("Shopify cart call failed:", e);
-          set({ busy: false });
-        }
-      };
-
-      return {
-        items: [],
-        cartId: null,
-        checkoutUrl: null,
-        open: false,
-        busy: false,
-        syncing: false,
-
-        addItem: async (product, variant, quantity = 1, lease = false) => {
-          const { items, cartId } = get();
-          const existing = items.find((i) => i.variantId === variant.id);
-          const wanted = Math.min(99, (existing?.quantity ?? 0) + quantity);
-          const local: CartItem = {
-            variantId: variant.id,
-            handle: product.handle,
-            title: product.title,
-            variantTitle: product.optionName ? variant.title : null,
-            price: variant.price,
-            image: variant.image ?? product.images[0] ?? null,
-            quantity: wanted,
-            lineId: existing?.lineId ?? null,
-            lease: lease || existing?.lease || false,
-          };
-          set({
-            items: existing
-              ? items.map((i) => (i.variantId === variant.id ? local : i))
-              : [...items, local],
-          });
-
-          if (isPreviewLine(variant.id)) return;
-
-          await run(() => {
-            if (!cartId)
-              return createCart({ data: { lines: [{ variantId: variant.id, quantity: wanted, lease }] } });
-            if (existing?.lineId)
-              return updateCartLines({
-                data: { cartId, lines: [{ lineId: existing.lineId, quantity: wanted }] },
-              });
-            return addCartLines({
-              data: { cartId, lines: [{ variantId: variant.id, quantity: wanted, lease }] },
-            });
-          });
-        },
-
-        setQuantity: async (variantId, quantity) => {
+  persist((set, get) => {
+    let queue = Promise.resolve();
+    const apply = (res: CartResult, candidates: CartItem[]) => {
+      if (res.mode === "gone") {
+        set({ items: [], cartId: null, checkoutUrl: null, error: null });
+        return true;
+      }
+      if (res.mode !== "shopify") {
+        set({ error: res.mode === "error" ? res.message : "Online shopping is temporarily unavailable. Please try again." });
+        return false;
+      }
+      const items = res.cart.lines.flatMap((line) => {
+        const item = candidates.find((i) => i.lineId === line.lineId) ?? candidates.find((i) => i.variantId === line.variantId);
+        return item ? [{ ...item, ...line }] : [];
+      });
+      set({ items, cartId: res.cart.cartId, checkoutUrl: res.cart.checkoutUrl, error: null });
+      return true;
+    };
+    const enqueue = (task: () => Promise<boolean>) => {
+      set({ busy: true });
+      const result = queue.then(async () => {
+        try { return await task(); }
+        catch { set({ error: "Couldn't update your cart. Please try again." }); return false; }
+      });
+      queue = result.then(() => undefined);
+      void queue.then(() => { if (queue === last) set({ busy: false }); });
+      const last = queue;
+      return result;
+    };
+    return {
+      items: [], cartId: null, checkoutUrl: null, error: null, open: false, busy: false, syncing: false,
+      addItem: (product, variant, quantity = 1, lease = false) => enqueue(async () => {
+        if (isPreviewLine(variant.id) || !variant.available) { set({ error: "This product is not available for online checkout." }); return false; }
+        const { items, cartId } = get();
+        const clean = items.filter((i) => !isPreviewLine(i.variantId));
+        const existing = clean.find((i) => i.variantId === variant.id);
+        const wanted = Math.min(99, (existing?.quantity ?? 0) + Math.max(1, Math.floor(quantity)));
+        const local: CartItem = { variantId: variant.id, handle: product.handle, title: product.title, variantTitle: product.optionName ? variant.title : null, price: variant.price, image: variant.image ?? product.images[0] ?? null, quantity: wanted, lineId: existing?.lineId ?? null, lease };
+        const candidates = existing ? clean.map((i) => i.variantId === variant.id ? local : i) : [...clean, local];
+        const result = !cartId
+          ? await createCart({ data: { lines: candidates.map((i) => ({ variantId: i.variantId, quantity: i.quantity, lease: i.lease })) } })
+          : existing?.lineId
+            ? await updateCartLines({ data: { cartId, lines: [{ lineId: existing.lineId, quantity: wanted, lease }] } })
+            : await addCartLines({ data: { cartId, lines: [{ variantId: variant.id, quantity: wanted, lease }] } });
+        return apply(result, candidates) && result.mode === "shopify";
+      }),
+      setQuantity: (variantId, quantity) => {
+        if (quantity <= 0) return get().removeItem(variantId);
+        return enqueue(async () => {
           const { items, cartId } = get();
           const item = items.find((i) => i.variantId === variantId);
-          if (!item) return;
-          if (quantity <= 0) return get().removeItem(variantId);
-
-          const wanted = Math.min(99, quantity);
-          set({
-            items: items.map((i) => (i.variantId === variantId ? { ...i, quantity: wanted } : i)),
-          });
-          if (!item.lineId || !cartId || isPreviewLine(variantId)) return;
-
-          await run(() =>
-            updateCartLines({ data: { cartId, lines: [{ lineId: item.lineId!, quantity: wanted }] } }),
-          );
-        },
-
-        removeItem: async (variantId) => {
-          const { items, cartId } = get();
-          const item = items.find((i) => i.variantId === variantId);
-          if (!item) return;
-          const rest = items.filter((i) => i.variantId !== variantId);
-          set({ items: rest });
-          if (rest.length === 0) return get().clearCart();
-          if (!item.lineId || !cartId || isPreviewLine(variantId)) return;
-
-          await run(() => removeCartLines({ data: { cartId, lineIds: [item.lineId!] } }));
-        },
-
-        clearCart: () => set({ items: [], cartId: null, checkoutUrl: null, busy: false }),
-
-        setOpen: (open) => set({ open }),
-
-        getCheckoutUrl: () => get().checkoutUrl,
-
-        syncCart: async () => {
-          const { cartId, items, syncing } = get();
-          if (!cartId || syncing || items.some((i) => isPreviewLine(i.variantId))) return;
+          if (!item?.lineId || !cartId) return false;
+          return apply(await updateCartLines({ data: { cartId, lines: [{ lineId: item.lineId, quantity: Math.min(99, Math.max(1, Math.floor(quantity))) }] } }), items);
+        });
+      },
+      removeItem: (variantId) => enqueue(async () => {
+        const { items, cartId } = get();
+        const item = items.find((i) => i.variantId === variantId);
+        if (!item?.lineId || !cartId) { set({ items: items.filter((i) => i.variantId !== variantId) }); return true; }
+        return apply(await removeCartLines({ data: { cartId, lineIds: [item.lineId] } }), items);
+      }),
+      clearCart: () => set({ items: [], cartId: null, checkoutUrl: null, error: null }),
+      setOpen: (open) => set({ open }),
+      getCheckoutUrl: () => get().error || get().busy || get().syncing ? null : get().checkoutUrl,
+      syncCart: async () => {
+        await enqueue(async () => {
+          const { cartId, items } = get();
+          if (!cartId) { set({ items: [], checkoutUrl: null }); return true; }
           set({ syncing: true });
-          try {
-            const res = await readCart({ data: cartId });
-            if (res.mode === "gone") {
-              set({ items: [], cartId: null, checkoutUrl: null });
-            } else if (res.mode === "shopify") {
-              apply(res);
-            }
-          } finally {
-            set({ syncing: false });
-          }
-        },
-      };
-    },
-    {
-      name: "tic-cart-v1",
-      storage: createJSONStorage(() => localStorage),
-      // Only the cart itself is remembered — never the busy/syncing flags or the open drawer.
-      partialize: (s) => ({ items: s.items, cartId: s.cartId, checkoutUrl: s.checkoutUrl }),
-    },
-  ),
+          try { return apply(await readCart({ data: { cartId } }), items); }
+          finally { set({ syncing: false }); }
+        });
+      },
+    };
+  }, {
+    name: "tic-cart-v1", storage: createJSONStorage(() => localStorage),
+    partialize: (s) => ({ items: s.items, cartId: s.cartId, checkoutUrl: s.checkoutUrl }),
+  }),
 );
 
 /** True once the page is in the browser, so remembered cart counts never break server rendering. */

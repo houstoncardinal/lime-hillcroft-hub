@@ -141,7 +141,7 @@ export function ProductCard({
 
   const quickAdd = async () => {
     if (!first) return;
-    await addItem(product, first);
+    if (!(await addItem(product, first))) return;
     toast.success(t.added, { description: product.title });
   };
 
@@ -226,6 +226,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   const t = SHOP_COPY[lang];
   const items = useCartStore((s) => s.items);
   const busy = useCartStore((s) => s.busy);
+  const error = useCartStore((s) => s.error);
   const syncing = useCartStore((s) => s.syncing);
   const open = useCartStore((s) => s.open);
   const setOpen = useCartStore((s) => s.setOpen);
@@ -326,7 +327,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                         {l.lease ? (
                           <p className="tabular-nums text-right">
                             <span className="block font-semibold">
-                              <Money usd={payInFour(l.price * l.quantity) / 100} /> × 4
+                              ≈ <Money usd={payInFour(l.price * l.quantity) / 100} /> × 4
                             </span>
                             <span className="block text-xs text-muted-foreground">
                               {t.lease.total} <Money usd={(l.price * l.quantity) / 100} />
@@ -373,6 +374,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 ))}
               </ul>
               <div className="border-t bg-secondary/50 px-6 py-5">
+                {error && <div role="alert" className="mb-3 text-sm text-destructive">{t.checkoutError}<button type="button" className="ml-2 underline" onClick={() => void syncCart()}>{lang === "es" ? "Reintentar" : "Retry"}</button></div>}
                 <div className="flex items-baseline justify-between">
                   <span className="text-muted-foreground">{t.cart.subtotal}</span>
                   <span className="tabular-nums font-display text-2xl font-semibold">
@@ -402,7 +404,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 <button
                   type="button"
                   onClick={checkout}
-                  disabled={busy || syncing}
+                  disabled={busy || syncing || Boolean(error) || !getCheckoutUrl()}
                   className="mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-60"
                 >
                   {(busy || syncing) && <Loader2 className="h-4 w-4 animate-spin" />}{" "}
