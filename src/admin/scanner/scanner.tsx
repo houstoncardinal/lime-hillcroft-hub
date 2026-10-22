@@ -184,6 +184,7 @@ export function ScannerModal({
     setMode("lookup");
     setResult(null);
     setLog([]);
+    setCounts({});
     setLinking(false);
     lastRef.current = { code: "", at: 0 };
     setCamera("starting");
@@ -610,14 +611,20 @@ export function ScannerModal({
                     tone="primary"
                     size="sm"
                     onClick={() => {
+                      const applied: LogEntry[] = countedIds.flatMap((id) => {
+                        const p = data.products.find((item) => item.id === id);
+                        const delta = (counts[id] ?? 0) - (p?.quantity ?? 0);
+                        return p && delta ? [{ id: crypto.randomUUID(), productId: id, name: p.name, delta, mode: "receive" as const, at: Date.now(), undone: false }] : [];
+                      });
                       inventory.applyCounts(counts, BY);
+                      setLog((l) => [...applied, ...l.filter((entry) => entry.mode !== "count")]);
                       toast.success(`Stock count applied to ${countedIds.length} products`);
                       setCounts({});
                     }}
                   >
                     <ClipboardCheck className="h-3.5 w-3.5" /> Apply count
                   </Button>
-                  <Button size="sm" tone="ghost" onClick={() => setCounts({})}>
+                  <Button size="sm" tone="ghost" onClick={() => { setCounts({}); setLog((l) => l.filter((entry) => entry.mode !== "count")); }}>
                     Discard
                   </Button>
                 </div>

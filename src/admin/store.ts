@@ -277,6 +277,7 @@ export const inventory = {
             shopifyVariantId: r.variantId,
             shopifyInventoryItemId: r.inventoryItemId,
             quantity: r.quantity,
+            shopifySyncedQuantity: r.quantity,
             syncStatus: "synced",
             updatedAt: nowIso(),
           });
@@ -303,6 +304,7 @@ export const inventory = {
             cost: 0,
             price: r.price,
             quantity: r.quantity,
+            shopifySyncedQuantity: r.quantity,
             reorderPoint: 2,
             barcode: "",
             notes: "Imported from Shopify",
@@ -321,7 +323,7 @@ export const inventory = {
   },
   markSynced(ids: string[], status: Product["syncStatus"]) {
     update((d) => {
-      for (const p of d.products) if (ids.includes(p.id)) p.syncStatus = status;
+      for (const p of d.products) if (ids.includes(p.id)) { p.syncStatus = status; if (status === "synced") p.shopifySyncedQuantity = p.quantity; }
     });
   },
 };

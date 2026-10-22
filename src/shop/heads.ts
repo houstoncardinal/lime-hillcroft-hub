@@ -49,7 +49,14 @@ export function productHead(
   source: Catalog["source"] | undefined,
 ) {
   const t = SHOP_COPY[lang];
-  if (!product) return { meta: [{ title: t.meta.title }] };
+  if (!product) return { meta: [
+    { title: lang === "es" ? "Producto no disponible | TIC Wireless" : "Product unavailable | TIC Wireless" },
+    { name: "description", content: t.checkoutError },
+    { property: "og:title", content: lang === "es" ? "Producto no disponible | TIC Wireless" : "Product unavailable | TIC Wireless" },
+    { property: "og:description", content: t.checkoutError },
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
+    { name: "robots", content: "noindex, follow" },
+  ] };
   const paths = productPaths(product.handle);
   const url = absoluteUrl(paths[lang]);
   const image = product.images[0]?.url ?? ogImage("home", lang);

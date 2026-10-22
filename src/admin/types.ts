@@ -42,6 +42,8 @@ export type Product = {
   shopifyProductId: string | null;
   shopifyVariantId: string | null;
   shopifyInventoryItemId: string | null;
+  /** Last confirmed available quantity at the configured Shopify location. */
+  shopifySyncedQuantity?: number;
   syncStatus: SyncStatus;
   updatedAt: string;
 };
