@@ -36,10 +36,17 @@
   --color-ink-soft: var(--ink-soft);
   --color-slate: var(--slate);
   --color-paper: var(--paper);
+  --color-shoppay: var(--shoppay);
+  --color-shoppay-foreground: var(--shoppay-foreground);
+  --color-success: var(--success);
 }
 
 /* Brand palette taken from the TIC Wireless Electronic & Repair Center logo: orange + slate dots on deep navy type. */
 :root {
+  /* Shop Pay brand purple, used only for installment / pay-over-time accents. */
+  --shoppay: oklch(0.5 0.24 280);
+  --shoppay-foreground: oklch(0.99 0 0);
+  --success: oklch(0.62 0.15 155);
   --radius: 1rem;
   --background: oklch(0.985 0.004 80);
   --foreground: oklch(0.2 0.03 245);
