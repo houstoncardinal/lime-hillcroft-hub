@@ -120,7 +120,7 @@ let cache: { at: number; catalog: Catalog } | null = null;
 async function loadCatalog(): Promise<Catalog> {
   if (!isLive()) return { source: "preview", products: [] };
   if (cache && Date.now() - cache.at < CACHE_MS) return cache.catalog;
-  // Page through the whole catalog (phones, tablets and accessories), up to 1,000 products.
+  // Page through the whole catalog (phones, tablets and accessories).
   const nodes: ProductsQuery["products"]["nodes"] = [];
   let after: string | null = null;
   while (true) {
@@ -305,7 +305,7 @@ type UserError = { field: string[] | null; message: string };
 const CART_FIELDS = `
   id
   checkoutUrl
-  lines(first: 100) {
+  lines(first: 250) {
     nodes {
       id
       quantity

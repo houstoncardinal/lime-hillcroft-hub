@@ -148,7 +148,7 @@ function Shopify() {
         <StatTile
           label="Connection"
           value={
-            status?.connected ? "Connected" : status?.configured ? "Configured" : "Not connected"
+            status?.connected ? "Connected" : status?.error ? "Reconnect required" : status?.configured ? "Configured" : "Not connected"
           }
           icon={ShoppingBag}
           hint={status?.shopName ?? (status?.domain || "Waiting for credentials")}
