@@ -160,7 +160,11 @@ export function DesktopNav({ lang }: { lang: Lang }) {
             <Link
               to={ALTERNATES.shop[lang]}
               aria-current={pathname === ALTERNATES.shop[lang] ? "page" : undefined}
-              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3 data-[active]:bg-primary data-[active]:text-primary-foreground"
+              className={
+                pathname === ALTERNATES.shop[lang]
+                  ? "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary px-2.5 text-sm font-semibold !text-primary-foreground transition xl:px-3"
+                  : "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3"
+              }
             >
               <ShoppingBag className="h-4 w-4" aria-hidden="true" />
               {t.shop}
