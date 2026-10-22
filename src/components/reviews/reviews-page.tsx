@@ -12,7 +12,7 @@ import {
 import { ReviewList } from "@/components/reviews/review-list";
 import { GoogleMark } from "@/components/reviews/reviews-carousel";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { REVIEWS_COPY } from "@/components/reviews/copy";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -136,7 +136,6 @@ export function ReviewsPage({ lang }: { lang: Lang }) {
       </section>
 
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

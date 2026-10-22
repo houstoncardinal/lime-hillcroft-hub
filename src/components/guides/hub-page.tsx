@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { GUIDES } from "@/components/guides/data";
 import { GuideCard } from "@/components/guides/guide-page";
 import { GUIDES_HUB } from "@/components/guides/hub-copy";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 export function GuidesHubPage({ lang }: { lang: Lang }) {
@@ -45,7 +45,6 @@ export function GuidesHubPage({ lang }: { lang: Lang }) {
         </div>
       </section>
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

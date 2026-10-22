@@ -38,7 +38,7 @@ import { LOCATION_COPY, routeStep, type GalleryPhoto } from "@/components/locati
 import { SERVICES } from "@/components/services/data";
 import { ServiceCard } from "@/components/services/service-page";
 import { DIRECTIONS, MAPS, PHONE, TEL, hoursOn } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { Photo } from "@/components/site/photo";
 import { StoreVideo } from "@/components/site/store-video";
@@ -518,7 +518,6 @@ export function LocationPage({ lang }: { lang: Lang }) {
       </section>
 
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

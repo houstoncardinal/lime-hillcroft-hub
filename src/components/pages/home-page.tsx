@@ -62,7 +62,7 @@ import {
   STREET,
   TEL,
 } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { LATEST_DEVICES } from "@/components/products/inventory";
@@ -819,7 +819,6 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       <SiteFooter lang={lang} portals={false} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

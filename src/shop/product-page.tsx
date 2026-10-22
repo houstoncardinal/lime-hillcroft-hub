@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Check, ChevronRight, Minus, Phone, Plus, ShieldCheck, ShoppingBag } from "lucide-react";
 
 import { PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { money, useCartStore } from "@/shop/cart";
 import { Badge, InstallmentChip, ProductCard, ProductTile } from "@/shop/components";
@@ -349,7 +349,6 @@ export function ProductPage({
       )}
 
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

@@ -27,7 +27,7 @@ import jbl from "@/assets/photos/jbl-display.webp";
 import jblSm from "@/assets/photos/jbl-display-sm.webp";
 import { LEASING_COPY } from "@/components/pages/leasing-copy";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { Photo } from "@/components/site/photo";
@@ -378,7 +378,6 @@ export function LeasingPage({ lang }: { lang: Lang }) {
       </section>
 
       <SiteFooter lang={lang} portals={false} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

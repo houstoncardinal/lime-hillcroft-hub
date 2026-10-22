@@ -17,7 +17,7 @@ import {
 import { GUIDES, type Guide } from "@/components/guides/data";
 import { guidePath, guidePaths } from "@/components/guides/paths";
 import { PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -200,7 +200,6 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
 
       {guide.slug === "how-lease-to-own-works" && <LeasingPortals lang={lang} />}
       <SiteFooter lang={lang} portals={guide.slug !== "how-lease-to-own-works"} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { SERVICES } from "@/components/services/data";
 import { SERVICES_HUB } from "@/components/services/hub-copy";
 import { ServiceCard } from "@/components/services/service-page";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 export function ServicesHubPage({ lang }: { lang: Lang }) {
@@ -60,7 +60,6 @@ export function ServicesHubPage({ lang }: { lang: Lang }) {
         </div>
       </section>
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

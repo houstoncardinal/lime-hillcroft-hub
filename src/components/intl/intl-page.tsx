@@ -15,7 +15,7 @@ import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
 import { MoneyText } from "@/components/intl/money";
 import type { IntlLang } from "@/components/intl/languages";
 import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { DotRing } from "@/components/site/logo";
 import { Photo } from "@/components/site/photo";
 import { ALTERNATES } from "@/components/site/seo";
@@ -140,7 +140,6 @@ export function IntlPage({ l }: { l: IntlLang }) {
       </div>
 
       <SiteFooter lang="en" />
-      <MobileCallBar lang="en" />
     </main>
   );
 }

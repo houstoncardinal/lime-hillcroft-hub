@@ -7,7 +7,7 @@ import { TABLETS } from "@/components/products/inventory";
 import { LatestDevices } from "@/components/products/latest-devices";
 import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { NearYou } from "@/components/site/near-you";
@@ -365,7 +365,6 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
 
       {/* Consoles have the full apply section above; accessories are bought outright. */}
       <SiteFooter lang={lang} portals={false} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }
