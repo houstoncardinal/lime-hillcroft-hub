@@ -160,9 +160,9 @@ export const shopifyPushProducts = createServerFn({ method: "POST" })
         if (conflicts.length) throw new Error(`Shopify changed ${conflicts.join(", ")} since the last import. Review the new values and retry.`);
         if (changes.includes("quantity") && (!row.tracked || !row.stocked)) throw new Error("Stock is not tracked at this location. Enable tracking and stock this item in Shopify first.");
         const fields: Record<string, unknown> = { id: item.variantId };
-        if (changes.includes("price")) fields.price = (item.values.price / 100).toFixed(2);
-        if (changes.includes("barcode")) fields.barcode = item.values.barcode;
-        if (changes.includes("sku")) fields.inventoryItem = { sku: item.values.sku };
+        if (changes.includes("price")) fields["price"] = (item.values.price / 100).toFixed(2);
+        if (changes.includes("barcode")) fields["barcode"] = item.values.barcode;
+        if (changes.includes("sku")) fields["inventoryItem"] = { sku: item.values.sku };
         if (Object.keys(fields).length > 1) {
           const mutation = await gql<{ productVariantsBulkUpdate: { userErrors: { message: string }[] } }>(
             `mutation Update($product: ID!, $variants: [ProductVariantsBulkInput!]!) {

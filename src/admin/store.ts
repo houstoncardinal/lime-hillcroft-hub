@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 
 import { toast } from "sonner";
 import { readAdminData, writeAdminData, readSiteEvents } from "@/admin/data.functions";
-import { changedFields, inferCategory, productChanges, valuesOf, type ShopifyVariantRow, type ShopifyPushItem } from "@/admin/shopify-sync";
+import { inferCategory, productChanges, type ShopifyVariantRow, type ShopifyPushItem } from "@/admin/shopify-sync";
 import type {
   AdminData,
   Camera,
@@ -328,9 +328,6 @@ export const inventory = {
             barcode: r.barcode,
             notes: "Imported from Shopify",
             financeable: false,
-            shopifyProductId: r.productId,
-            shopifyVariantId: r.variantId,
-            shopifyInventoryItemId: r.inventoryItemId,
             ...metadata,
             syncStatus: "synced",
             updatedAt: nowIso(),
