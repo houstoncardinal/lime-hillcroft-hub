@@ -4,16 +4,16 @@ import type { ShopCategory } from "@/shop/types";
 const en = {
   meta: {
     title:
-      "Shop Phone Accessories Online — Cases, AirPods & JBL | TIC Wireless Electronic & Repair Center",
+      "Shop Phones, Tablets & Electronics Online | TIC Wireless Electronic & Repair Center",
     description:
-      "Shop phone cases, tempered glass, AirPods, Galaxy Buds, JBL speakers, smartwatches and chargers from TIC Wireless Electronic & Repair Center on Hillcroft in Houston.",
+      "Shop unlocked iPhones, Samsung Galaxy phones, iPads, tablets, smartwatches, gaming, audio and accessories from TIC Wireless Electronic & Repair Center on Hillcroft in Houston — secure Shopify checkout.",
     breadcrumb: ["Home", "Shop"],
   },
   hero: {
     kicker: "TIC Wireless Electronic & Repair Center online shop",
-    title: ["The accessory wall,", "now online."],
-    body: "Cases, glass, AirPods, Galaxy Buds, JBL speakers, smartwatches and chargers — the same gear we stock on Hillcroft.",
-    search: "Search cases, AirPods, JBL…",
+    title: ["Our whole store,", "now online."],
+    body: "Phones, tablets, smartwatches, gaming, audio and accessories — the same products we stock on Hillcroft, with secure checkout.",
+    search: "Search iPhone, Galaxy, iPad, AirPods…",
     preview: "Preview store · online checkout coming soon",
   },
   categories: {
@@ -64,7 +64,7 @@ const en = {
   cart: {
     title: "Your cart",
     empty: "Your cart is empty.",
-    browse: "Browse accessories",
+    browse: "Browse the shop",
     subtotal: "Subtotal",
     note: "Taxes and shipping are calculated at checkout.",
     checkout: "Checkout",
@@ -82,9 +82,9 @@ const en = {
   checkoutError: "Couldn't start checkout. Please try again or call us.",
   homeTeaser: {
     kicker: "Shop online",
-    title: "Accessories, a tap away.",
-    body: "Cases, AirPods, Galaxy Buds, JBL and more from our shelves to your cart.",
-    cta: "Shop all accessories",
+    title: "Phones, tablets & more, a tap away.",
+    body: "Unlocked phones, iPads, smartwatches, gaming, audio and accessories — from our shelves to your cart.",
+    cta: "Shop all products",
   },
 };
 
@@ -93,16 +93,16 @@ export type ShopCopy = typeof en;
 const es: ShopCopy = {
   meta: {
     title:
-      "Accesorios para Celular en Línea — Fundas, AirPods y JBL | TIC Wireless Electronic & Repair Center",
+      "Compra Celulares, Tabletas y Electrónicos en Línea | TIC Wireless Electronic & Repair Center",
     description:
-      "Compra fundas, micas de vidrio templado, AirPods, Galaxy Buds, bocinas JBL, relojes inteligentes y cargadores de TIC Wireless Electronic & Repair Center en Hillcroft, Houston.",
+      "Compra iPhones y Samsung Galaxy desbloqueados, iPads, tabletas, relojes inteligentes, gaming, audio y accesorios de TIC Wireless Electronic & Repair Center en Hillcroft, Houston — pago seguro con Shopify.",
     breadcrumb: ["Inicio", "Tienda"],
   },
   hero: {
     kicker: "Tienda en línea de TIC Wireless Electronic & Repair Center",
-    title: ["La pared de accesorios,", "ahora en línea."],
-    body: "Fundas, micas, AirPods, Galaxy Buds, bocinas JBL, relojes inteligentes y cargadores — lo mismo que tenemos en Hillcroft.",
-    search: "Busca fundas, AirPods, JBL…",
+    title: ["Toda nuestra tienda,", "ahora en línea."],
+    body: "Celulares, tabletas, relojes inteligentes, gaming, audio y accesorios — lo mismo que tenemos en Hillcroft, con pago seguro.",
+    search: "Busca iPhone, Galaxy, iPad, AirPods…",
     preview: "Tienda en vista previa · pago en línea muy pronto",
   },
   categories: {
@@ -153,7 +153,7 @@ const es: ShopCopy = {
   cart: {
     title: "Tu carrito",
     empty: "Tu carrito está vacío.",
-    browse: "Ver accesorios",
+    browse: "Ver la tienda",
     subtotal: "Subtotal",
     note: "Impuestos y envío se calculan al pagar.",
     checkout: "Pagar",
@@ -171,9 +171,9 @@ const es: ShopCopy = {
   checkoutError: "No pudimos iniciar el pago. Intenta de nuevo o llámanos.",
   homeTeaser: {
     kicker: "Compra en línea",
-    title: "Accesorios a un toque.",
-    body: "Fundas, AirPods, Galaxy Buds, JBL y más, de nuestros estantes a tu carrito.",
-    cta: "Ver todos los accesorios",
+    title: "Celulares, tabletas y más, a un toque.",
+    body: "Celulares desbloqueados, iPads, relojes, gaming, audio y accesorios — de nuestros estantes a tu carrito.",
+    cta: "Ver todos los productos",
   },
 };
 

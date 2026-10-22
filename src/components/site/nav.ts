@@ -38,7 +38,7 @@ const L = {
     laptops: ["Laptops & tablets", "MacBook, iPad & Galaxy Tab"],
     accessories: ["Accessories", "Cases, glass, chargers & mounts"],
     audio: ["Audio & smartwatches", "JBL, AirPods, Galaxy Buds & Watch"],
-    shop: ["Shop online", "Order accessories online"],
+    shop: ["Shop online", "Phones, tablets & accessories"],
     prepaid: ["Prepaid plans & prices", "12 carriers, from $10/mo"],
     repair: ["Phone repair", "Same-day screens & batteries"],
     iphoneRepair: ["iPhone repair", "Screens, batteries & charging ports"],
