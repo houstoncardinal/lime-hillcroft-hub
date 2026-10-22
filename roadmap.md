@@ -29,3 +29,6 @@
 - [x] Switch the shop back on in the site (menu, cart button, home row, /shop and /es/tienda)
 - [x] Tell search engines and the chat agent the shop is open again (llms.txt, llms-full.txt, Tidio)
 - [x] Refresh the sitemap and check the whole flow end to end
+
+## New tasks
+- [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
