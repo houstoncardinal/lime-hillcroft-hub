@@ -17,7 +17,7 @@ function watchLauncher() {
     const f = document.getElementById("tidio-chat-iframe");
     const r = f?.getBoundingClientRect();
     const visible = Boolean(
-      r && r.width > 0 && r.height > 0 && getComputedStyle(f!).display !== "none",
+      r && r.width > 0 && r.height > 0 && (f ? getComputedStyle(f).display : "none") !== "none",
     );
     document.documentElement.classList.toggle("has-chat", visible);
   }, 1000);
@@ -26,6 +26,7 @@ function watchLauncher() {
 /** Load the chat once and show it on public pages; hide it inside the dashboard. */
 export function syncTidio(pathname: string) {
   const w = window as TidioWindow;
+  (document as TidioDocument).tidioChatLang = /^\/es(\/|$)/.test(pathname) ? "es" : "en";
   const onAdmin = pathname.startsWith("/admin");
   if (onAdmin) {
     w.tidioChatApi?.hide();

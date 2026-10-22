@@ -54,7 +54,7 @@ export function productHead(
   const url = absoluteUrl(paths[lang]);
   const image = product.images[0]?.url ?? ogImage("home", lang);
   const description = product.description.slice(0, 155);
-  const title = `${product.title} — ${product.vendor} | TIC Wireless Electronic & Repair Center Houston`;
+  const title = `${product.title} | ${lang === "es" ? "Compra" : "Shop"} TIC Wireless`;
   return pageHead({
     paths,
     lang,
