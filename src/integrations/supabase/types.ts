@@ -53,12 +53,30 @@ export type Database = {
         }
         Relationships: []
       }
+      telemetry_quota: {
+        Row: {
+          id: boolean
+          requests: number
+          window_start: string
+        }
+        Insert: {
+          id?: boolean
+          requests: number
+          window_start: string
+        }
+        Update: {
+          id?: boolean
+          requests?: number
+          window_start?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_telemetry_slot: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
