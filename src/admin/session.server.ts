@@ -9,6 +9,6 @@ export function adminSession() {
 export async function requireAdmin() {
   const session = await adminSession();
   const expected = (process.env["ADMIN_LOGIN_EMAIL"] ?? "").trim().toLowerCase();
-  if (!expected || session.data.email !== expected) throw new Response("Unauthorized", { status: 401 });
+  if (!expected || session.data.email !== expected) throw new Error("Unauthorized");
   return expected;
 }

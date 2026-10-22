@@ -35,7 +35,7 @@ export const writeAdminData = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("@/admin/session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const payload = JSON.parse(JSON.stringify(input.data));
+  const payload = JSON.parse(JSON.stringify(input.data));
     if (input.revision === 0) {
       const { error } = await supabaseAdmin.from("store_state").insert({ id: "main", data: payload, revision: 1 });
       if (error?.code === "23505") return { conflict: true, revision: 0 };
