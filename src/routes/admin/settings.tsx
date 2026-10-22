@@ -89,6 +89,10 @@ function Settings() {
             description="Store records are shared through Lovable Cloud. Download a backup before restoring or replacing records."
           />
           <div className="flex flex-wrap gap-2">
+            <Button onClick={() => {
+              try { download("tic-previous-browser-records.json", settings.previousLocalBackup(), "application/json"); }
+              catch { toast.error("No previous browser records were found."); }
+            }}><Download className="h-4 w-4" /> Download previous browser records</Button>
             <Button
               onClick={() =>
                 download(

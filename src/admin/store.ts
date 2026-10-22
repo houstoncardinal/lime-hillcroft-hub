@@ -462,6 +462,11 @@ export const cameras = {
 // ---------- Settings & data management ----------
 
 export const settings = {
+  previousLocalBackup() {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) throw new Error("No previous browser records were found.");
+    return raw;
+  },
   save(patch: Partial<Settings>) {
     update((d) => {
       Object.assign(d.settings, patch);
