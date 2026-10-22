@@ -2,6 +2,7 @@ import { useSyncExternalStore } from "react";
 
 import { toast } from "sonner";
 import { readAdminData, writeAdminData, readSiteEvents } from "@/admin/data.functions";
+import { changedFields, inferCategory, productChanges, valuesOf, type ShopifyVariantRow, type ShopifyPushItem } from "@/admin/shopify-sync";
 import type {
   AdminData,
   Camera,
@@ -94,6 +95,11 @@ export const adminStorageStatus = {
   subscribe: (l: () => void) => { listeners.add(l); return () => { listeners.delete(l); }; },
   snapshot: () => status,
 };
+export const adminGeneration = () => generation;
+export async function waitForAdminWrites() {
+  await writeQueue;
+  if (!ready || syncError) throw new Error(syncError ?? "Wait for shared inventory to load.");
+}
 
 export async function initializeAdminData() {
   const request = ++initialization;
@@ -179,10 +185,12 @@ export const inventory = {
       const existing = input.id ? d.products.find((p) => p.id === input.id) : undefined;
       if (existing) {
         const delta = input.quantity - existing.quantity;
+        const baseline = existing.shopifyBaseline;
         Object.assign(existing, input, {
           updatedAt: nowIso(),
-          syncStatus: existing.shopifyVariantId ? "pending" : existing.syncStatus,
+          shopifyBaseline: baseline,
         });
+        if (existing.shopifyVariantId) existing.syncStatus = baseline ? (productChanges(existing).length ? "pending" : "synced") : "pending";
         if (delta !== 0)
           d.movements.unshift({
             id: uid(),
@@ -232,6 +240,7 @@ export const inventory = {
       if (!p) return;
       p.barcode = barcode;
       p.updatedAt = nowIso();
+      if (p.shopifyVariantId) p.syncStatus = "pending";
     });
   },
   /** Stock count: set each counted product to its counted quantity in one step. */
@@ -262,36 +271,34 @@ export const inventory = {
       d.products = d.products.filter((p) => !ids.includes(p.id));
     });
   },
-  /** Apply Shopify product data: link by SKU, create missing products, take Shopify's quantity. */
-  mergeShopify(
-    rows: {
-      sku: string;
-      name: string;
-      brand: string;
-      price: number;
-      quantity: number;
-      productId: string;
-      variantId: string;
-      inventoryItemId: string;
-    }[],
-  ) {
+  /** Refresh clean fields; retain unsent edits and surface changed remote baselines. */
+  mergeShopify(rows: ShopifyVariantRow[]) {
     let linked = 0;
     let created = 0;
+    let preserved = 0;
     update((d) => {
       for (const r of rows) {
-        const p = d.products.find((x) => x.shopifyVariantId === r.variantId) ?? (r.sku ? d.products.find((x) => x.sku === r.sku) : undefined);
-        if (p?.syncStatus === "pending") continue;
+        const skuMatches = r.sku ? d.products.filter(x => !x.shopifyVariantId && x.sku === r.sku) : [];
+        const uniqueRemoteSku = r.sku && rows.filter(x => x.sku === r.sku).length === 1;
+        const p = d.products.find((x) => x.shopifyVariantId === r.variantId) ?? (uniqueRemoteSku && skuMatches.length === 1 ? skuMatches[0] : undefined);
+        const baseline = { price: r.price, quantity: r.quantity, sku: r.sku, barcode: r.barcode };
+        const metadata = { shopifyProductId: r.productId, shopifyVariantId: r.variantId,
+          shopifyInventoryItemId: r.inventoryItemId, shopifyLocationId: r.locationId,
+          shopifyLocationName: r.locationName, shopifyTracked: r.tracked, shopifyStocked: r.stocked,
+          shopifyProductStatus: r.status, shopifyImage: r.image, shopifyLastSyncedAt: nowIso() };
         if (p) {
-          const delta = r.quantity - p.quantity;
-          Object.assign(p, {
-            shopifyProductId: r.productId,
-            shopifyVariantId: r.variantId,
-            shopifyInventoryItemId: r.inventoryItemId,
-            quantity: r.quantity,
-            shopifySyncedQuantity: r.quantity,
-            syncStatus: "synced",
-            updatedAt: nowIso(),
-          });
+          const dirty = p.shopifyBaseline ? productChanges(p) : (p.syncStatus === "pending" || p.syncStatus === "error" ? ["price", "quantity", "sku", "barcode"] as const : []);
+          const conflicts = p.shopifyBaseline ? dirty.filter(key => p.shopifyBaseline?.[key] !== baseline[key] && p[key] !== baseline[key]) : [];
+          const before = p.quantity;
+          for (const key of ["price", "quantity", "sku", "barcode"] as const) {
+            if (!dirty.includes(key)) Object.assign(p, { [key]: baseline[key] });
+          }
+          Object.assign(p, metadata, { name: r.name, brand: r.brand, shopifyBaseline: baseline,
+            shopifySyncedQuantity: r.quantity, updatedAt: nowIso() });
+          p.syncStatus = productChanges(p).length ? (conflicts.length ? "error" : "pending") : "synced";
+          p.shopifySyncError = conflicts.length ? `Shopify changed ${conflicts.join(", ")}. Your edits are preserved; review the current Shopify values before pushing.` : null;
+          if (dirty.length) preserved++;
+          const delta = p.quantity - before;
           if (delta)
             d.movements.unshift({
               id: uid(),
@@ -306,23 +313,25 @@ export const inventory = {
         } else {
           d.products.unshift({
             id: uid(),
-            sku: r.sku || `SHOP-${r.variantId.split("/").pop()}`,
+            sku: r.sku,
             name: r.name,
             brand: r.brand,
-            category: "Accessories",
+            category: inferCategory(r.name, r.productType),
             condition: "New",
             location: "Back stock",
             cost: 0,
             price: r.price,
             quantity: r.quantity,
             shopifySyncedQuantity: r.quantity,
+            shopifyBaseline: baseline,
             reorderPoint: 2,
-            barcode: "",
+            barcode: r.barcode,
             notes: "Imported from Shopify",
             financeable: false,
             shopifyProductId: r.productId,
             shopifyVariantId: r.variantId,
             shopifyInventoryItemId: r.inventoryItemId,
+            ...metadata,
             syncStatus: "synced",
             updatedAt: nowIso(),
           });
@@ -330,7 +339,21 @@ export const inventory = {
         }
       }
     });
-    return { linked, created };
+    return { linked, created, preserved };
+  },
+  applyPushResult(item: ShopifyPushItem, row: ShopifyVariantRow | null, error: string | null) {
+    update(d => {
+      const p = d.products.find(x => x.id === item.id && x.shopifyVariantId === item.variantId);
+      if (!p) return;
+      if (row) {
+        p.shopifyBaseline = { price: row.price, quantity: row.quantity, sku: row.sku, barcode: row.barcode };
+        p.shopifySyncedQuantity = row.quantity;
+        // Baselines advance from Shopify readback, never from potentially newer local edits.
+        p.shopifyLastSyncedAt = nowIso();
+      }
+      p.shopifySyncError = error;
+      p.syncStatus = error ? "error" : productChanges(p).length ? "pending" : "synced";
+    });
   },
   markSynced(ids: string[], status: Product["syncStatus"]) {
     update((d) => {
