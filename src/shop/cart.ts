@@ -16,7 +16,7 @@ import type { CartLine, ShopProduct, ShopVariant } from "@/shop/types";
 // Shopify cart so checkout can use Shopify's own secure URL. Preview items (no store connected)
 // stay local only.
 
-export type CartItem = CartLine & { lineId: string | null; lease?: boolean };
+export type CartItem = CartLine & { lineId: string | null; lease?: boolean | undefined };
 
 const isPreviewLine = (variantId: string) => variantId.startsWith("preview:");
 

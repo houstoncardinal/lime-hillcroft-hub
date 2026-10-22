@@ -12,7 +12,7 @@ const itemSchema = z.object({
   title: z.string().max(300),
   variantTitle: z.string().max(300).nullable(),
   price: z.number().int().min(0).max(100_000_000),
-  image: z.string().max(1000).nullable(),
+  image: z.object({ url: z.string().max(1000), alt: z.string().max(300) }).nullable(),
   quantity: z.number().int().min(1).max(99),
   lineId: z.string().max(200).nullable(),
   lease: z.boolean().optional(),
