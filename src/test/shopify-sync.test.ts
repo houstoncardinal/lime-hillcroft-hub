@@ -41,6 +41,9 @@ it("advances successful price readback after stock failure and retries only rema
   const result = data().products[0]; if (!result) throw new Error("Missing row");
   expect(productChanges(result)).toEqual(["quantity"]); expect(result.quantity).toBe(5);
 });
-it("rejects fractional stock and missing confirmed baselines", () => {
-  expect(pushItemSchema.safeParse({ values: { ...row, quantity: 1.5 } }).success).toBe(false);
+it("rejects fractional stock in an otherwise valid update", () => {
+  inventory.mergeShopify([row]); const p = data().products[0]; if (!p) throw new Error("Missing row");
+  const valid = buildPushItem(p);
+  expect(pushItemSchema.safeParse(valid).success).toBe(true);
+  expect(pushItemSchema.safeParse({ ...valid, values: { ...valid.values, quantity: 1.5 } }).success).toBe(false);
 });

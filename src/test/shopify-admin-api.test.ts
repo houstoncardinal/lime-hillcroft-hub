@@ -33,3 +33,21 @@ it("uses the API quantity comparison and rereads confirmed stock", async () => {
   expect(result[0]?.row?.quantity).toBe(5); expect(result[0]?.error).toBeNull();
   expect(JSON.parse(fetchMock.mock.calls[2]?.[1].body).variables.input.quantities[0]).toMatchObject({ quantity: 5, changeFromQuantity: 4 });
 });
+it("updates only edited variant fields and confirms exact price cents", async () => {
+  fetchMock.mockResolvedValueOnce(answer({ locations: { nodes: [location] } }))
+    .mockResolvedValueOnce(answer({ productVariant: remote }))
+    .mockResolvedValueOnce(answer({ productVariantsBulkUpdate: { userErrors: [] } }))
+    .mockResolvedValueOnce(answer({ productVariant: { ...remote, price: "850.25" } }));
+  const expected = { price: 82900, quantity: 4, sku: "PHONE", barcode: "123" };
+  const result = await shopifyPushProducts({ data: { confirmed: true, items: [{ id: "bb1fdc0c-15b8-4b7c-99a2-1acf6c269657", productId: remote.product.id, variantId: remote.id, inventoryItemId: remote.inventoryItem.id, locationId: location.id, expected, values: { ...expected, price: 85025 } }] } });
+  expect(result[0]?.row?.price).toBe(85025);
+  expect(JSON.parse(fetchMock.mock.calls[2]?.[1].body).variables.variants).toEqual([{ id: remote.id, price: "850.25" }]);
+});
+it("rejects a stale price without sending a mutation", async () => {
+  fetchMock.mockResolvedValueOnce(answer({ locations: { nodes: [location] } }))
+    .mockResolvedValue(answer({ productVariant: { ...remote, price: "840.00" } }));
+  const expected = { price: 82900, quantity: 4, sku: "PHONE", barcode: "123" };
+  const result = await shopifyPushProducts({ data: { confirmed: true, items: [{ id: "bb1fdc0c-15b8-4b7c-99a2-1acf6c269657", productId: remote.product.id, variantId: remote.id, inventoryItemId: remote.inventoryItem.id, locationId: location.id, expected, values: { ...expected, price: 85000 } }] } });
+  expect(result[0]?.error).toContain("Shopify changed price");
+  expect(fetchMock.mock.calls.every(call => !JSON.parse(call[1].body).query.includes("mutation"))).toBe(true);
+});
