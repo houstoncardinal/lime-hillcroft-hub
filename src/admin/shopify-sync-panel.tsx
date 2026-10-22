@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowDownToLine, ArrowUpFromLine, Loader2, RefreshCw, ShoppingBag } from "lucide-react";
+import { ArrowUpFromLine, Loader2, RefreshCw, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
 import { adminGeneration, adminStorageStatus, inventory, useAdminData, waitForAdminWrites } from "@/admin/store";
@@ -18,12 +18,14 @@ export function ShopifySyncPanel() {
   const [review, setReview] = useState<ShopifyPushItem[] | null>(null);
   const lock = useRef(false);
   const mounted = useRef(true);
+  const reviewing = useRef(false);
+  reviewing.current = review !== null;
   const importRef = useRef<(quiet?: boolean) => Promise<void>>(async () => undefined);
   const linked = data.products.filter(p => p.shopifyVariantId);
   const pending = linked.filter(p => productChanges(p).length || p.syncStatus === "pending" || p.syncStatus === "error");
 
   const pull = async (quiet = false) => {
-    if (lock.current || !adminStorageStatus.snapshot().ready || adminStorageStatus.snapshot().saving) return;
+    if (lock.current || reviewing.current || !adminStorageStatus.snapshot().ready || adminStorageStatus.snapshot().saving) return;
     lock.current = true;
     setBusy("pull");
     const generation = adminGeneration();

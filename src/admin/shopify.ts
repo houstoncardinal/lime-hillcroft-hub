@@ -39,17 +39,8 @@ async function gql<T>(query: string, variables: Record<string, unknown> = {}): P
     headers: { "Content-Type": "application/json", "X-Shopify-Access-Token": accessToken },
     body: JSON.stringify({ query, variables }),
   });
-  let res = await request(token);
-  // A unique managed online authorization can renew access temporarily. Never
-  // pick an arbitrary account when multiple user authorizations are present.
-  if (res.status === 401 && !env("SHOPIFY_ADMIN_ACCESS_TOKEN")) {
-    const onlineNames = Object.keys(process.env).filter(name => name.startsWith("SHOPIFY_ONLINE_ACCESS_TOKEN:user:") && env(name));
-    if (onlineNames.length === 1) {
-      const name = onlineNames[0];
-      if (name) { await res.body?.cancel(); res = await request(env(name)); }
-    }
-  }
-  if (res.status === 401) throw new Error("Shopify stock access has expired. Reconnect Shopify before importing or pushing inventory. Online shopping is unaffected.");
+  const res = await request(token);
+  if (res.status === 401) throw new Error("Shopify rejected inventory authorization. A valid Admin API token for this store is required. Online shopping is unaffected.");
   if (!res.ok) throw new Error(`Shopify responded ${res.status} ${res.statusText}`);
   const json = (await res.json()) as { data?: T; errors?: { message: string }[] };
   if (json.errors?.length) throw new Error(json.errors.map((e) => e.message).join("; "));
