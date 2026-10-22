@@ -315,6 +315,10 @@ const asLines = (d: unknown) => {
   return lines.map((l) => ({
     merchandiseId: String((l as { variantId: unknown }).variantId),
     quantity: Math.min(99, Math.max(1, Math.floor(Number((l as { quantity: unknown }).quantity)))),
+    // Shown on the Shopify order so staff can see the customer chose leasing.
+    ...((l as { lease?: unknown }).lease === true
+      ? { attributes: [{ key: "Payment option", value: "Lease — Shop Pay Installments" }] }
+      : {}),
   }));
 };
 

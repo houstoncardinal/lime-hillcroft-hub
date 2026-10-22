@@ -202,6 +202,13 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   const syncCart = useCartStore((s) => s.syncCart);
   const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
   const [preview, setPreview] = useState(false);
+  const leaseItems = items.filter((i) => i.lease);
+  // Shop Pay Installments: the first of 4 payments is due at checkout on leased items;
+  // anything paid in full is due today too.
+  const dueToday = items.reduce(
+    (n, i) => n + (i.lease ? payInFour(i.price * i.quantity) : i.price * i.quantity),
+    0,
+  );
 
   // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
   useCartSync();
@@ -278,10 +285,26 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                           {l.variantTitle && (
                             <p className="text-sm text-muted-foreground">{l.variantTitle}</p>
                           )}
+                          {l.lease && (
+                            <p className="mt-1 inline-block rounded-full bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary">
+                              {t.lease.lineBadge}
+                            </p>
+                          )}
                         </div>
-                        <p className="tabular-nums font-semibold">
-                          <Money usd={(l.price * l.quantity) / 100} />
-                        </p>
+                        {l.lease ? (
+                          <p className="tabular-nums text-right">
+                            <span className="block font-semibold">
+                              <Money usd={payInFour(l.price * l.quantity) / 100} /> × 4
+                            </span>
+                            <span className="block text-xs text-muted-foreground">
+                              {t.lease.total} <Money usd={(l.price * l.quantity) / 100} />
+                            </span>
+                          </p>
+                        ) : (
+                          <p className="tabular-nums font-semibold">
+                            <Money usd={(l.price * l.quantity) / 100} />
+                          </p>
+                        )}
                       </div>
                       <div className="mt-auto flex items-center justify-between pt-3">
                         <div className="flex items-center rounded-full border">
@@ -325,12 +348,24 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
-                {cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
-                  <p className="mt-3 rounded-xl border bg-card px-3 py-2.5 text-xs leading-relaxed">
-                    <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
-                    {t.lease.cardLine} <Money usd={payInFour(cartSubtotal(items)) / 100} />
-                    {t.lease.cardSuffix}. {t.lease.howTo}
-                  </p>
+                {leaseItems.length > 0 ? (
+                  <div className="mt-3 rounded-xl border border-primary/40 bg-primary/10 px-3 py-2.5 text-xs leading-relaxed">
+                    <p className="flex justify-between font-semibold">
+                      <span>{t.lease.dueToday}</span>
+                      <span className="tabular-nums text-base">
+                        <Money usd={dueToday / 100} />
+                      </span>
+                    </p>
+                    <p className="mt-1 text-muted-foreground">{t.lease.howTo}</p>
+                  </div>
+                ) : (
+                  cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
+                    <p className="mt-3 rounded-xl border bg-card px-3 py-2.5 text-xs leading-relaxed">
+                      <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
+                      {t.lease.cardLine} <Money usd={payInFour(cartSubtotal(items)) / 100} />
+                      {t.lease.cardSuffix}. {t.lease.howTo}
+                    </p>
+                  )
                 )}
                 <button
                   type="button"
@@ -339,7 +374,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   className="mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-60"
                 >
                   {(busy || syncing) && <Loader2 className="h-4 w-4 animate-spin" />}{" "}
-                  {t.cart.checkout}
+                  {leaseItems.length > 0 ? t.lease.checkout : t.cart.checkout}
                 </button>
                 <button
                   type="button"
