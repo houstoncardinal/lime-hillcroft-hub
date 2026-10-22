@@ -23,7 +23,7 @@ import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import { servicePath } from "@/components/services/paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
 import { PORTALS } from "@/components/site/leasing-portals";
-import { productNav, serviceNav } from "@/components/site/nav";
+import { serviceNav } from "@/components/site/nav";
 import { Logo } from "@/components/site/logo";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 import { setChatHidden } from "@/components/site/tidio";
@@ -42,6 +42,7 @@ const T = {
     call: "Call",
     directions: "Directions",
     home: "Home",
+    products: "Products",
     services: "All services",
     servicesMenu: "Services",
     back: "Back",
@@ -67,6 +68,7 @@ const T = {
     call: "Llamar",
     directions: "Cómo llegar",
     home: "Inicio",
+    products: "Productos",
     services: "Todos los servicios",
     servicesMenu: "Servicios",
     back: "Atrás",
