@@ -338,7 +338,7 @@ export function ProductPage({
       {related.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 pb-16">
           <h2 className="font-display text-3xl font-semibold">{<MoneyText text={t.related} />}</h2>
-          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 lg:gap-x-6">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}

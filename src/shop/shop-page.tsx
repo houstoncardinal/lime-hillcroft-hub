@@ -197,7 +197,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
             {products.map((p, i) => (
               <ProductCard key={p.id} product={p} lang={lang} priority={i < 4} />
             ))}
