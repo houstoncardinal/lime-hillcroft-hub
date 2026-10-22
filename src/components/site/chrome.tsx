@@ -43,6 +43,8 @@ const T = {
     areas: "Zonas que atendemos",
     guides: "Guías",
     directions: "Cómo llegar",
+    shop: "Tienda",
+    shopAria: "Tienda en línea — celulares, tabletas y electrónicos",
     home: "Inicio de TIC Wireless Electronic & Repair Center",
     tagline:
       "Compra · Venta · Reparación · Liberación. Tu tienda de celulares en Houston. We speak English.",
