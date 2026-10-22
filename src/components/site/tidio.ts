@@ -5,23 +5,8 @@ type TidioApi = { show: () => void; hide: () => void };
 type TidioWindow = Window & { tidioChatApi?: TidioApi };
 type TidioDocument = Document & { tidioChatLang?: string };
 
-let watching = false;
 let scheduled = false;
 
-// Adds "has-chat" to <html> while Tidio's launcher is on screen, so the mobile Call/Directions
-// bar can leave room for it (and use the full width when the widget is hidden).
-function watchLauncher() {
-  if (watching) return;
-  watching = true;
-  setInterval(() => {
-    const f = document.getElementById("tidio-chat-iframe");
-    const r = f?.getBoundingClientRect();
-    const visible = Boolean(
-      r && r.width > 0 && r.height > 0 && (f ? getComputedStyle(f).display : "none") !== "none",
-    );
-    document.documentElement.classList.toggle("has-chat", visible);
-  }, 1000);
-}
 
 /** Load the chat once and show it on public pages; hide it inside the dashboard. */
 export function syncTidio(pathname: string) {
@@ -49,7 +34,6 @@ export function syncTidio(pathname: string) {
       s.src = TIDIO_SRC;
       s.async = true;
       document.body.appendChild(s);
-      watchLauncher();
       document.addEventListener("tidioChat-ready", () => {
         if (location.pathname.startsWith("/admin")) w.tidioChatApi?.hide();
       });
