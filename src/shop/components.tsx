@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Loader2, Minus, Phone, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { Money } from "@/components/intl/money";
 import { PHONE, TEL } from "@/components/site/business";
+import { setChatHidden } from "@/components/site/tidio";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import {
   cartCount,
@@ -245,6 +246,11 @@ export function CartDrawer({ lang }: { lang: Lang }) {
 
   // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
   useCartSync();
+
+  // The live chat button must never sit on top of the open cart drawer.
+  useEffect(() => {
+    setChatHidden(open);
+  }, [open]);
 
   const count = cartCount(items);
 
