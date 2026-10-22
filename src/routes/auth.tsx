@@ -65,33 +65,26 @@ function safeRedirect(value: string | undefined): string | null {
 
 export const Route = createFileRoute("/auth")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
-    lang: search.lang === "es" ? "es" : undefined,
+    redirect: typeof search["redirect"] === "string" ? (search["redirect"] as string) : undefined,
+    lang: search["lang"] === "es" ? "es" : undefined,
   }),
-  head: ({ search }) => {
-    const es = (search as Search).lang === "es";
-    return {
-      meta: [
-        { title: es ? "Iniciar sesión — TIC Wireless" : "Sign in — TIC Wireless" },
-        {
-          name: "description",
-          content: es
-            ? "Inicia sesión o crea tu cuenta de TIC Wireless para guardar tu carrito en todos tus dispositivos."
-            : "Sign in or create your TIC Wireless account to keep your cart on every device.",
-        },
-        { property: "og:title", content: es ? "Iniciar sesión — TIC Wireless" : "Sign in — TIC Wireless" },
-        {
-          property: "og:description",
-          content: es
-            ? "Inicia sesión o crea tu cuenta de TIC Wireless para guardar tu carrito en todos tus dispositivos."
-            : "Sign in or create your TIC Wireless account to keep your cart on every device.",
-        },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary" },
-        { name: "robots", content: "noindex" },
-      ],
-    };
-  },
+  head: () => ({
+    meta: [
+      { title: "Sign in — TIC Wireless" },
+      {
+        name: "description",
+        content: "Sign in or create your TIC Wireless account to keep your cart on every device.",
+      },
+      { property: "og:title", content: "Sign in — TIC Wireless" },
+      {
+        property: "og:description",
+        content: "Sign in or create your TIC Wireless account to keep your cart on every device.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "robots", content: "noindex" },
+    ],
+  }),
   component: AuthPage,
 });
 
