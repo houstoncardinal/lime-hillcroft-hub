@@ -1,6 +1,6 @@
 # Launch corrections
 
-- [ ] Failed-request recovery screen and retry — reproduce blocked catalog request, then verify recovery without clearing the cart
+- [x] Failed-request recovery screen and retry — blocked catalog request renders recovery instead of crash; restored connection and Retry reload the real product
 
 - [x] Reliable Shopify cart, exact prices, honest installment estimates and no sample-product fallback
 - [x] Shared protected staff storage, payroll boundaries, comparison-checked stock updates and scanner corrections
