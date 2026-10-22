@@ -27,6 +27,7 @@ import { serviceNav } from "@/components/site/nav";
 import { Logo } from "@/components/site/logo";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 import { setChatHidden } from "@/components/site/tidio";
+import { signOutCustomer, useSession } from "@/shop/use-session";
 import { cn } from "@/lib/utils";
 
 const T = {
@@ -55,6 +56,8 @@ const T = {
     apply: "Apply for leasing online",
     currency: "Currency",
     newTab: "opens in a new tab",
+    signIn: "Sign in · save your cart",
+    signOut: "Sign out",
   },
   es: {
     open: "Abrir menú",
@@ -81,6 +84,8 @@ const T = {
     apply: "Solicita arrendamiento en línea",
     currency: "Moneda",
     newTab: "se abre en una pestaña nueva",
+    signIn: "Entrar · guarda tu carrito",
+    signOut: "Cerrar sesión",
   },
 };
 
