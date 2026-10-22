@@ -84,6 +84,7 @@ let saving = 0;
 let syncError: string | null = null;
 let writeQueue = Promise.resolve();
 let generation = 0;
+let initialization = 0;
 let liveEvents: AdminData["events"] = [];
 let status: { ready: boolean; saving: number; error: string | null } = { ready, saving, error: syncError };
 const emit = () => { status = { ready, saving, error: syncError }; listeners.forEach((l) => l()); };
@@ -95,19 +96,25 @@ export const adminStorageStatus = {
 };
 
 export async function initializeAdminData() {
+  const request = ++initialization;
+  const currentGeneration = generation;
   ready = false; syncError = null; emit();
   try {
     const result = await readAdminData();
+    if (request !== initialization || currentGeneration !== generation) return;
+    const events = await readSiteEvents();
+    if (request !== initialization || currentGeneration !== generation) return;
     cache = result?.data ?? empty(); revision = result?.revision ?? 0;
-    liveEvents = await readSiteEvents();
+    liveEvents = events;
     ready = true; emit();
   } catch {
+    if (request !== initialization || currentGeneration !== generation) return;
     syncError = "Shared store data could not load. Retry before making changes."; emit();
     throw new Error(syncError);
   }
 }
 export function resetAdminData() {
-  generation++; cache = empty(); liveEvents = []; ready = false; revision = 0; emit();
+  generation++; initialization++; cache = empty(); liveEvents = []; ready = false; revision = 0; emit();
 }
 
 function commit(next: AdminData) {
@@ -118,13 +125,17 @@ function commit(next: AdminData) {
     if (generation !== currentGeneration) { saving = Math.max(0, saving - 1); emit(); return; }
     try {
       const result = await writeAdminData({ data: { revision, data: next } });
+      if (generation !== currentGeneration) return;
       if (result.conflict) throw new Error("Another device changed these records. Reload and retry your change.");
       revision = result.revision;
     } catch (error) {
+      if (generation !== currentGeneration) return;
       generation++;
+      const recoveryGeneration = generation;
       syncError = error instanceof Error ? error.message : "Changes could not be saved.";
       toast.error(syncError);
       const remote = await readAdminData().catch(() => null);
+      if (generation !== recoveryGeneration) return;
       if (remote) { cache = remote.data; revision = remote.revision; }
       ready = false;
     } finally { saving = Math.max(0, saving - 1); emit(); }

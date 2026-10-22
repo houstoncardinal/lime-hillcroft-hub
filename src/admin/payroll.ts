@@ -11,6 +11,21 @@ export function entryMinutes(entry: TimeEntry, now = Date.now()) {
   return Math.max(0, Math.round(raw - entry.breakMinutes));
 }
 
+export function entryMinutesWithin(entry: TimeEntry, start: Date, end: Date, now = Date.now()) {
+  const from = Date.parse(entry.clockIn);
+  const to = entry.clockOut ? Date.parse(entry.clockOut) : now;
+  if (to <= from) return 0;
+  const a = Math.max(from, start.getTime());
+  const b = Math.min(to, end.getTime());
+  if (b <= a) return 0;
+  const worked = entryMinutes(entry, now);
+  return Math.round(worked * (b - from) / (to - from)) - Math.round(worked * (a - from) / (to - from));
+}
+
+export function hasOpenShiftWithin(entry: TimeEntry, start: Date, end: Date, now = Date.now()) {
+  return !entry.clockOut && Date.parse(entry.clockIn) < end.getTime() && now > start.getTime();
+}
+
 /** Midnight on the Sunday that starts the workweek containing `date` (local time). */
 export function weekStart(date: Date) {
   const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());

@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { StackedBars } from "@/admin/charts";
 import { download, toCsv } from "@/admin/csv";
 import { useNow } from "@/admin/hooks";
-import { computePayroll, fmtDuration, fmtHours, payPeriodFor } from "@/admin/payroll";
+import { computePayroll, fmtDuration, fmtHours, hasOpenShiftWithin, payPeriodFor } from "@/admin/payroll";
 import { payroll, useAdminData } from "@/admin/store";
 import type { PayrollLine, PayrollRun } from "@/admin/types";
 import { money } from "@/admin/format";
@@ -81,9 +81,7 @@ function Payroll() {
   const isCurrent = period.end.getTime() > now;
   const openShifts = data.timeEntries.filter(
     (t) =>
-      !t.clockOut &&
-      Date.parse(t.clockIn) >= period.start.getTime() &&
-      Date.parse(t.clockIn) < period.end.getTime(),
+      hasOpenShiftWithin(t, period.start, period.end, now),
   ).length;
   const existing = data.payrollRuns.find((r) => r.periodStart === period.start.toISOString());
 

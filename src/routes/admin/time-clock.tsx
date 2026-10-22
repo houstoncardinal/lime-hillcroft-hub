@@ -4,7 +4,7 @@ import { Delete, LogIn, LogOut, Pencil, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { useNow } from "@/admin/hooks";
-import { entryMinutes, fmtDuration, weekStart } from "@/admin/payroll";
+import { entryMinutes, entryMinutesWithin, fmtDuration, weekStart } from "@/admin/payroll";
 import { staff, useAdminData } from "@/admin/store";
 import type { Employee, TimeEntry } from "@/admin/types";
 import {
@@ -46,10 +46,11 @@ function TimeClock() {
 
   const entries = data.timeEntries.filter((t) => {
     const ts = Date.parse(t.clockIn);
-    if (ts < week.start.getTime() || ts >= week.end.getTime()) return false;
+    const until = t.clockOut ? Date.parse(t.clockOut) : now;
+    if (until <= week.start.getTime() || ts >= week.end.getTime()) return false;
     return employeeFilter === "all" || t.employeeId === employeeFilter;
   });
-  const total = entries.reduce((s, t) => s + entryMinutes(t, now), 0);
+  const total = entries.reduce((s, t) => s + entryMinutesWithin(t, week.start, week.end, now), 0);
   const employee = (id: string) => data.employees.find((e) => e.id === id);
 
   return (

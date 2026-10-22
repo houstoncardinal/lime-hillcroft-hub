@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { parseCsv, toCsv } from "@/admin/csv";
-import { computePayroll, entryMinutes, payPeriodFor, weekStart } from "@/admin/payroll";
+import { computePayroll, entryMinutes, entryMinutesWithin, hasOpenShiftWithin, payPeriodFor, weekStart } from "@/admin/payroll";
 import type { Employee, TimeEntry } from "@/admin/types";
 
 const emp = (id: string, rate: number): Employee => ({
@@ -34,6 +34,14 @@ const shift = (employeeId: string, y: number, m: number, d: number, hours: numbe
 const RULES = { overtimeThreshold: 40, overtimeMultiplier: 1.5 };
 
 describe("payroll", () => {
+  it("clips weekly badges and totals to the same boundary as payroll", () => {
+    const e = { ...shift("a", 2026, 10, 10, 4), clockIn: new Date(2026, 9, 10, 22).toISOString(), clockOut: new Date(2026, 9, 11, 2).toISOString(), breakMinutes: 0 };
+    expect(entryMinutesWithin(e, new Date(2026, 9, 11), new Date(2026, 9, 18))).toBe(120);
+  });
+  it("blocks payroll for an open shift carried into the period", () => {
+    const e = { ...shift("a", 2026, 10, 10, 4), clockOut: null };
+    expect(hasOpenShiftWithin(e, new Date(2026, 9, 11), new Date(2026, 9, 18), new Date(2026, 9, 12).getTime())).toBe(true);
+  });
   it("splits a Saturday-to-Sunday shift across pay periods", () => {
     const e = { ...shift("a", 2026, 10, 10, 4), clockIn: new Date(2026, 9, 10, 22).toISOString(), clockOut: new Date(2026, 9, 11, 2).toISOString(), breakMinutes: 0 };
     const [first] = computePayroll([emp("a", 2000)], [e], new Date(2026, 9, 4), new Date(2026, 9, 11), RULES);
