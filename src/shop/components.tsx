@@ -62,24 +62,52 @@ export function ProductTile({
   );
 }
 
+/** Shop Pay accent chip: "or 4 × $X with Shop Pay". */
+export function InstallmentChip({
+  cents,
+  lang,
+  className,
+}: {
+  cents: number;
+  lang: Lang;
+  className?: string;
+}) {
+  const t = SHOP_COPY[lang];
+  return (
+    <span
+      className={cn(
+        "inline-flex max-w-full items-center gap-1.5 rounded-full bg-shoppay/10 px-2.5 py-1 text-[11px] font-medium leading-tight text-shoppay ring-1 ring-inset ring-shoppay/20",
+        className,
+      )}
+    >
+      <span className="shrink-0 rounded-full bg-shoppay px-1.5 py-px text-[9px] font-bold uppercase tracking-wide text-shoppay-foreground">
+        Pay
+      </span>
+      <span className="min-w-0 truncate">
+        {t.lease.cardLine}{" "}
+        <span className="tabular-nums font-semibold">
+          <Money usd={payInFour(cents) / 100} />
+        </span>
+      </span>
+    </span>
+  );
+}
+
 export function Price({ product, lang }: { product: ShopProduct; lang: Lang }) {
   const t = SHOP_COPY[lang];
   const prices = product.variants.map((v) => v.price);
   const min = Math.min(...prices);
   const varies = prices.some((p) => p !== min);
   return (
-    <span className="tabular-nums">
-      {varies && <span className="mr-1 text-sm font-normal text-muted-foreground">{t.from}</span>}
-      <span className="font-semibold">
-        <Money usd={min / 100} />
-      </span>
-      {showsInstallments(product.category, min) && (
-        <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-          {t.lease.cardLine} <Money usd={payInFour(min) / 100} />
-          {t.lease.cardSuffix}
+    <div className="flex min-w-0 flex-col gap-1.5">
+      <span className="tabular-nums">
+        {varies && <span className="mr-1 text-xs font-normal text-muted-foreground">{t.from}</span>}
+        <span className="font-display text-lg font-semibold">
+          <Money usd={min / 100} />
         </span>
-      )}
-    </span>
+      </span>
+      {showsInstallments(product.category, min) && <InstallmentChip cents={min} lang={lang} />}
+    </div>
   );
 }
 
@@ -118,47 +146,51 @@ export function ProductCard({
   };
 
   return (
-    <article className="group relative flex flex-col">
+    <article className="group relative flex flex-col rounded-[1.75rem] border bg-card p-2.5 transition duration-300 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-[0_24px_50px_-28px_color-mix(in_oklab,var(--ink)_45%,transparent)] sm:p-3">
       <Link
         to={productPath(lang, product.handle)}
         className="block focus-visible:outline-none"
         aria-label={product.title}
       >
-        <ProductTile image={product.images[0]} className="aspect-square" priority={priority} />
+        <ProductTile
+          image={product.images[0]}
+          className="aspect-square rounded-[1.35rem]"
+          priority={priority}
+        />
       </Link>
-      <div className="absolute left-3 top-3">
+      <div className="absolute left-5 top-5">
         <Badge product={product} lang={lang} />
       </div>
-      <div className="mt-4 flex flex-1 flex-col">
-        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <div className="flex flex-1 flex-col px-1.5 pb-1.5 pt-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
           {product.vendor}
         </p>
-        <h3 className="mt-1 font-display text-lg font-semibold leading-snug">
+        <h3 className="mt-1 line-clamp-2 font-display text-base font-semibold leading-snug sm:text-lg">
           <Link to={productPath(lang, product.handle)} className="hover:text-primary">
             {product.title}
           </Link>
         </h3>
-        {product.optionName && (
+        {product.optionName && product.variants.length > 1 && (
           <p className="mt-1 text-xs text-muted-foreground">
             {product.variants.length} {product.optionName.toLowerCase()}
-            {lang === "en" && product.variants.length > 1 ? "s" : ""}
+            {lang === "en" ? "s" : ""}
           </p>
         )}
-        <div className="mt-3 flex items-center justify-between gap-3">
+        <div className="mt-auto pt-3">
           <Price product={product} lang={lang} />
           {single && first ? (
             <button
               type="button"
               disabled={!first.available}
               onClick={() => void quickAdd()}
-              className="inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-ink px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-primary hover:text-primary-foreground disabled:opacity-40"
+              className="mt-3 inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-full bg-ink py-2.5 text-xs font-semibold text-white transition hover:bg-primary hover:text-primary-foreground disabled:opacity-40"
             >
               <Plus className="h-3.5 w-3.5" /> {first.available ? t.quickAdd : t.soldOut}
             </button>
           ) : (
             <Link
               to={productPath(lang, product.handle)}
-              className="inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-xs font-semibold transition hover:border-ink"
+              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border py-2.5 text-xs font-semibold transition hover:border-ink hover:bg-ink hover:text-white"
             >
               {t.choose}
             </Link>
@@ -286,7 +318,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                             <p className="text-sm text-muted-foreground">{l.variantTitle}</p>
                           )}
                           {l.lease && (
-                            <p className="mt-1 inline-block rounded-full bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary">
+                            <p className="mt-1.5 inline-block rounded-full bg-shoppay/10 px-2 py-0.5 text-[11px] font-semibold text-shoppay ring-1 ring-inset ring-shoppay/20">
                               {t.lease.lineBadge}
                             </p>
                           )}
@@ -349,7 +381,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
                 {leaseItems.length > 0 ? (
-                  <div className="mt-3 rounded-xl border border-primary/40 bg-primary/10 px-3 py-2.5 text-xs leading-relaxed">
+                  <div className="mt-3 rounded-2xl border border-shoppay/25 bg-shoppay/8 px-4 py-3 text-xs leading-relaxed">
                     <p className="flex justify-between font-semibold">
                       <span>{t.lease.dueToday}</span>
                       <span className="tabular-nums text-base">
@@ -360,7 +392,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </div>
                 ) : (
                   cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
-                    <p className="mt-3 rounded-xl border bg-card px-3 py-2.5 text-xs leading-relaxed">
+                    <p className="mt-3 rounded-2xl border border-shoppay/20 bg-card px-4 py-3 text-xs leading-relaxed">
                       <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
                       {t.lease.cardLine} <Money usd={payInFour(cartSubtotal(items)) / 100} />
                       {t.lease.cardSuffix}. {t.lease.howTo}

@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Money, MoneyText } from "@/components/intl/money";
 import { useState } from "react";
-import { Check, ChevronRight, Minus, Phone, Plus, ShoppingBag } from "lucide-react";
+import { Check, ChevronRight, Minus, Phone, Plus, ShieldCheck, ShoppingBag } from "lucide-react";
 
 import { PHONE, TEL } from "@/components/site/business";
 import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { money, useCartStore } from "@/shop/cart";
-import { Badge, ProductCard, ProductTile } from "@/shop/components";
+import { Badge, InstallmentChip, ProductCard, ProductTile } from "@/shop/components";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
 import type { ShopProduct } from "@/shop/types";
@@ -111,51 +111,118 @@ export function ProductPage({
             <h1 className="mt-2 text-4xl font-semibold leading-tight md:text-5xl">
               {product.title}
             </h1>
-            <p className="mt-5 flex items-baseline gap-3">
-              <span className="tabular-nums font-display text-3xl font-semibold">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <span className="tabular-nums font-display text-3xl font-semibold md:text-4xl">
                 {variant ? <Money usd={variant.price / 100} /> : ""}
               </span>
-              </p>
+              {canLease && variant && <InstallmentChip cents={variant.price} lang={lang} className="text-xs" />}
+            </div>
             {canLease && variant && (
-              <fieldset className="mt-8">
-                <legend className="mb-3 text-sm font-semibold">{t.lease.title}</legend>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {(["full", "plan"] as const).map((m) => (
-                    <label
-                      key={m}
-                      className={cn(
-                        "cursor-pointer rounded-2xl border bg-card p-4 transition",
-                        payMode === m ? "border-primary ring-2 ring-primary/30" : "hover:border-foreground/30",
-                      )}
-                    >
-                      <input
-                        type="radio"
-                        name="pay-mode"
-                        value={m}
-                        checked={payMode === m}
-                        onChange={() => setPayMode(m)}
-                        className="sr-only"
-                      />
-                      <span className="block font-semibold">{m === "full" ? t.lease.full : t.lease.plan}</span>
-                      <span className="tabular-nums mt-1 block font-display text-xl font-semibold">
-                        {m === "full" ? (
-                          <Money usd={(variant.price * quantity) / 100} />
-                        ) : (
-                          <>
-                            <Money usd={payInFour(variant.price * quantity) / 100} />
-                            <span className="text-sm font-normal text-muted-foreground"> × 4</span>
-                          </>
+              <fieldset className="mt-8 rounded-[1.75rem] border bg-card p-3 shadow-[0_20px_50px_-35px_color-mix(in_oklab,var(--ink)_50%,transparent)] sm:p-4">
+                <legend className="sr-only">{t.lease.title}</legend>
+                <p className="px-1 pb-3 pt-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  {t.lease.title}
+                </p>
+                <div className="grid gap-2.5">
+                  {(["full", "plan"] as const).map((m) => {
+                    const on = payMode === m;
+                    const plan = m === "plan";
+                    return (
+                      <label
+                        key={m}
+                        className={cn(
+                          "relative grid cursor-pointer grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border p-4 transition",
+                          on
+                            ? plan
+                              ? "border-shoppay bg-shoppay/6 ring-2 ring-shoppay/20"
+                              : "border-ink bg-secondary/60 ring-2 ring-ink/10"
+                            : "hover:border-foreground/30",
                         )}
-                      </span>
-                      <span className="mt-1 block text-xs text-muted-foreground">
-                        {m === "full"
-                          ? t.lease.fullNote
-                          : t.lease.planNote(money(payInFour(variant.price * quantity)))}
-                      </span>
-                    </label>
-                  ))}
+                      >
+                        <input
+                          type="radio"
+                          name="pay-mode"
+                          value={m}
+                          checked={on}
+                          onChange={() => setPayMode(m)}
+                          className="sr-only"
+                        />
+                        <span
+                          aria-hidden
+                          className={cn(
+                            "flex h-5 w-5 items-center justify-center rounded-full border-2 transition",
+                            on ? (plan ? "border-shoppay" : "border-ink") : "border-muted-foreground/40",
+                          )}
+                        >
+                          {on && <span className={cn("h-2.5 w-2.5 rounded-full", plan ? "bg-shoppay" : "bg-ink")} />}
+                        </span>
+                        <span className="min-w-0">
+                          <span className="flex flex-wrap items-center gap-2 font-semibold">
+                            {plan ? t.lease.plan : t.lease.full}
+                            {plan && (
+                              <span className="rounded-full bg-shoppay px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-shoppay-foreground">
+                                {t.lease.popular}
+                              </span>
+                            )}
+                          </span>
+                          <span className="mt-0.5 block text-xs leading-relaxed text-muted-foreground">
+                            {plan
+                              ? t.lease.planNote(money(payInFour(variant.price * quantity)))
+                              : t.lease.fullNote}
+                          </span>
+                        </span>
+                        <span className="tabular-nums text-right font-display text-lg font-semibold sm:text-xl">
+                          {plan ? (
+                            <>
+                              <Money usd={payInFour(variant.price * quantity) / 100} />
+                              <span className="block text-[11px] font-normal text-muted-foreground">
+                                × 4 {t.lease.perPay}
+                              </span>
+                            </>
+                          ) : (
+                            <Money usd={(variant.price * quantity) / 100} />
+                          )}
+                        </span>
+                      </label>
+                    );
+                  })}
                 </div>
-                <p className="mt-2 text-xs text-muted-foreground">{t.lease.fine}</p>
+                {payMode === "plan" && (
+                  <div className="mt-3 rounded-2xl bg-secondary/60 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                      {t.lease.schedule}
+                    </p>
+                    <ol className="mt-3 grid grid-cols-4 gap-2">
+                      {t.lease.steps.map((s, i) => (
+                        <li key={s} className="text-center">
+                          <span className="relative flex items-center justify-center">
+                            {i > 0 && (
+                              <span className="absolute right-1/2 top-1/2 h-0.5 w-full -translate-y-1/2 bg-shoppay/25" />
+                            )}
+                            <span
+                              className={cn(
+                                "relative flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold",
+                                i === 0
+                                  ? "bg-shoppay text-shoppay-foreground"
+                                  : "border-2 border-shoppay/40 bg-card text-shoppay",
+                              )}
+                            >
+                              {i + 1}
+                            </span>
+                          </span>
+                          <span className="tabular-nums mt-2 block text-xs font-semibold sm:text-sm">
+                            <Money usd={payInFour(variant.price * quantity) / 100} />
+                          </span>
+                          <span className="block text-[11px] text-muted-foreground">{s}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+                <p className="mt-3 flex items-start gap-2 px-1 text-[11px] leading-relaxed text-muted-foreground">
+                  <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-success" />
+                  {t.lease.fine}
+                </p>
               </fieldset>
             )}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -220,7 +287,7 @@ export function ProductPage({
                 type="button"
                 onClick={add}
                 disabled={!variant?.available}
-                className="inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-8 font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:brightness-110 disabled:opacity-50 sm:flex-none"
+                className={cn("inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-8 font-semibold shadow-lg transition hover:brightness-110 disabled:opacity-50 sm:flex-none", canLease && payMode === "plan" ? "bg-shoppay text-shoppay-foreground shadow-shoppay/30" : "bg-primary text-primary-foreground shadow-primary/30")}
               >
                 {added ? <Check className="h-5 w-5" /> : <ShoppingBag className="h-5 w-5" />}
                 {!variant?.available
@@ -234,7 +301,7 @@ export function ProductPage({
             </div>
             {variant?.available && (
               <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />{" "}
+                <span className="h-2 w-2 rounded-full bg-success" />{" "}
                 {<MoneyText text={t.inStock} />}
               </p>
             )}
@@ -271,7 +338,7 @@ export function ProductPage({
       {related.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 pb-16">
           <h2 className="font-display text-3xl font-semibold">{<MoneyText text={t.related} />}</h2>
-          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 lg:gap-x-6">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}
