@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { payInFour, showsInstallments } from "@/shop/installments";
+import { installmentSchedule, payInFour, showsInstallments } from "@/shop/installments";
 
 describe("Shop Pay Installments message", () => {
   it("shows for phones", () => expect(showsInstallments("phones", 59900)).toBe(true));
@@ -10,6 +10,10 @@ describe("Shop Pay Installments message", () => {
 });
 
 describe("pay in 4", () => {
+  it("preserves the full total with uneven cents", () => {
+    expect(installmentSchedule(10001)).toEqual([2501, 2500, 2500, 2500]);
+    expect(installmentSchedule(10001).reduce((a, b) => a + b, 0)).toBe(10001);
+  });
   it("splits $599 into 4 payments of $149.75", () => expect(payInFour(59900)).toBe(14975));
   it("rounds up odd cents", () => expect(payInFour(10001)).toBe(2501));
 });

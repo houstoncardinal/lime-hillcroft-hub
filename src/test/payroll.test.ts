@@ -34,6 +34,16 @@ const shift = (employeeId: string, y: number, m: number, d: number, hours: numbe
 const RULES = { overtimeThreshold: 40, overtimeMultiplier: 1.5 };
 
 describe("payroll", () => {
+  it("splits a Saturday-to-Sunday shift across pay periods", () => {
+    const e = { ...shift("a", 2026, 10, 10, 4), clockIn: new Date(2026, 9, 10, 22).toISOString(), clockOut: new Date(2026, 9, 11, 2).toISOString(), breakMinutes: 0 };
+    const [first] = computePayroll([emp("a", 2000)], [e], new Date(2026, 9, 4), new Date(2026, 9, 11), RULES);
+    const [second] = computePayroll([emp("a", 2000)], [e], new Date(2026, 9, 11), new Date(2026, 9, 18), RULES);
+    expect(first?.regularMinutes).toBe(120);
+    expect(second?.regularMinutes).toBe(120);
+  });
+  it("keeps biweekly calendar alignment through daylight saving", () => {
+    expect(payPeriodFor(new Date(2026, 6, 6), "biweekly").start).toEqual(new Date(2026, 6, 5));
+  });
   it("subtracts unpaid breaks", () => {
     expect(entryMinutes(shift("a", 2026, 10, 5, 8))).toBe(480);
   });
