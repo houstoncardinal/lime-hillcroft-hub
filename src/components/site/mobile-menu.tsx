@@ -10,6 +10,7 @@ import {
   Menu,
   Navigation,
   Phone,
+  ShoppingBag,
   Smartphone,
   Wallet,
   X,
@@ -122,8 +123,11 @@ export function MobileMenu({
 
   const isCurrent = (href: string) => pathname === href || pathname === `${href}/`;
 
-  // Main list: what we sell, then services (a second list), prepaid, leasing and the store.
-  const products = productNav(lang).filter((p) => !p.href.includes("#"));
+  // Main list: the online store first, then what we sell, then services (a second list),
+  // prepaid, leasing and the store page.
+  const allProducts = productNav(lang).filter((p) => !p.href.includes("#"));
+  const shopItem = allProducts.find((p) => p.href === ALTERNATES.shop[lang]);
+  const products = allProducts.filter((p) => p !== shopItem);
   const items: Item[] = [
     ...products.map((p): Item => [p.label, p.href, p.icon]),
     [t.prepaid, servicePath(lang, "prepaid-plans"), Smartphone],
@@ -268,6 +272,21 @@ export function MobileMenu({
             <nav aria-label={t.title} className="mt-3 short:mt-2">
               {panel === "main" ? (
                 <ul className={listClass}>
+                  {shopItem && (
+                    <li>
+                      <Dialog.Close asChild>
+                        <Link
+                          to={shopItem.href}
+                          aria-current={isCurrent(shopItem.href) ? "page" : undefined}
+                          className="flex h-12 items-center gap-3 rounded-t-2xl bg-primary px-4 text-[15px] font-bold text-primary-foreground transition short:h-10 tiny:h-9 micro:h-8 micro:text-sm nano:h-[30px] hover:brightness-105"
+                        >
+                          <ShoppingBag className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+                          <span className="min-w-0 flex-1 truncate">{shopItem.label}</span>
+                          <ChevronRight className="h-4 w-4 shrink-0 opacity-80" aria-hidden="true" />
+                        </Link>
+                      </Dialog.Close>
+                    </li>
+                  )}
                   {items.slice(0, products.length).map((it) => row(it))}
                   <li>
                     <button
