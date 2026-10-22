@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792705637244,
+      "tag": "0000_protected_store_state",
+      "breakpoints": true
+    }
+  ]
 }

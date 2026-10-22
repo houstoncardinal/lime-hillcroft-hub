@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
@@ -26,6 +27,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/cameras")({
+  head: () => adminHead("Cameras"),
   component: Cameras,
 });
 

@@ -3,10 +3,11 @@ import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/r
 import { renderErrorPage } from "./lib/error-page";
 import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 
-const errorMiddleware = createMiddleware().server(async ({ next }) => {
+const errorMiddleware = createMiddleware().server(async ({ next, ...context }) => {
   try {
     return await next();
   } catch (error) {
+    if ("handlerType" in context && context.handlerType === "serverFn") throw error;
     if (error != null && typeof error === "object" && "statusCode" in error) {
       throw error;
     }

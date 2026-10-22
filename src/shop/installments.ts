@@ -14,3 +14,9 @@ export function showsInstallments(category: ShopCategory, priceCents: number) {
 export function payInFour(totalCents: number) {
   return Math.ceil(totalCents / PAY_IN_FOUR);
 }
+
+/** Illustrative cent-exact schedule; Shopify determines the actual financing terms. */
+export function installmentSchedule(totalCents: number) {
+  const base = Math.floor(totalCents / PAY_IN_FOUR);
+  return Array.from({ length: PAY_IN_FOUR }, (_, i) => base + (i < totalCents % PAY_IN_FOUR ? 1 : 0));
+}

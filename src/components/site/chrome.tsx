@@ -320,6 +320,11 @@ export function SiteFooter({
                 title={f.store}
                 links={[
                   [f.home, ALTERNATES.home[lang]],
+                  [lang === "es" ? "Privacidad" : "Privacy", lang === "es" ? "/es/politicas/privacy" : "/policies/privacy"],
+                  [lang === "es" ? "Devoluciones" : "Returns", lang === "es" ? "/es/politicas/returns" : "/policies/returns"],
+                  [lang === "es" ? "Envíos" : "Shipping", lang === "es" ? "/es/politicas/shipping" : "/policies/shipping"],
+                  [lang === "es" ? "Términos" : "Terms", lang === "es" ? "/es/politicas/terms" : "/policies/terms"],
+                  [lang === "es" ? "Garantía" : "Warranty", lang === "es" ? "/es/politicas/warranty" : "/policies/warranty"],
                   [f.location, ALTERNATES.location[lang]],
                   [f.reviews, ALTERNATES.reviews[lang]],
                   [f.areas, ALTERNATES.areas[lang]],

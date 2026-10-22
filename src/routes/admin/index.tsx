@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useMemo } from "react";
 import {
@@ -21,6 +22,7 @@ import { compact, money } from "@/admin/format";
 import { Badge, Button, CardTitle, GlassCard, PageHeader, StatTile } from "@/admin/ui";
 
 export const Route = createFileRoute("/admin/")({
+  head: () => adminHead("Overview"),
   component: Overview,
 });
 

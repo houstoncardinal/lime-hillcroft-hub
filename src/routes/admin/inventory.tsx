@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import {
@@ -51,6 +52,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/inventory")({
+  head: () => adminHead("Inventory"),
   component: Inventory,
 });
 

@@ -2,13 +2,28 @@ import type { Employee, PayrollLine, Settings, TimeEntry } from "@/admin/types";
 
 const DAY = 86_400_000;
 // Biweekly pay periods are anchored to this Sunday so every period lines up with FLSA workweeks.
-const BIWEEKLY_ANCHOR = new Date(2026, 0, 4).getTime();
+const BIWEEKLY_ANCHOR = Date.UTC(2026, 0, 4);
 
 /** Worked minutes for one entry, minus unpaid break. Open entries count up to `now`. */
 export function entryMinutes(entry: TimeEntry, now = Date.now()) {
   const end = entry.clockOut ? Date.parse(entry.clockOut) : now;
   const raw = Math.max(0, (end - Date.parse(entry.clockIn)) / 60_000);
   return Math.max(0, Math.round(raw - entry.breakMinutes));
+}
+
+export function entryMinutesWithin(entry: TimeEntry, start: Date, end: Date, now = Date.now()) {
+  const from = Date.parse(entry.clockIn);
+  const to = entry.clockOut ? Date.parse(entry.clockOut) : now;
+  if (to <= from) return 0;
+  const a = Math.max(from, start.getTime());
+  const b = Math.min(to, end.getTime());
+  if (b <= a) return 0;
+  const worked = entryMinutes(entry, now);
+  return Math.round(worked * (b - from) / (to - from)) - Math.round(worked * (a - from) / (to - from));
+}
+
+export function hasOpenShiftWithin(entry: TimeEntry, start: Date, end: Date, now = Date.now()) {
+  return !entry.clockOut && Date.parse(entry.clockIn) < end.getTime() && now > start.getTime();
 }
 
 /** Midnight on the Sunday that starts the workweek containing `date` (local time). */
@@ -22,7 +37,7 @@ export function weekStart(date: Date) {
 export function payPeriodFor(date: Date, period: Settings["payPeriod"]) {
   const start = weekStart(date);
   if (period === "biweekly") {
-    const weeks = Math.floor((start.getTime() - BIWEEKLY_ANCHOR) / (7 * DAY));
+    const weeks = Math.floor((Date.UTC(start.getFullYear(), start.getMonth(), start.getDate()) - BIWEEKLY_ANCHOR) / (7 * DAY));
     if (((weeks % 2) + 2) % 2 === 1) start.setDate(start.getDate() - 7);
   }
   const end = new Date(start);
@@ -47,10 +62,23 @@ export function computePayroll(
       const byWeek = new Map<number, number>();
       for (const e of entries) {
         if (e.employeeId !== emp.id || !e.clockOut) continue;
-        const t = Date.parse(e.clockIn);
-        if (t < start.getTime() || t >= end.getTime()) continue;
-        const wk = weekStart(new Date(t)).getTime();
-        byWeek.set(wk, (byWeek.get(wk) ?? 0) + entryMinutes(e));
+        const shiftStart = Date.parse(e.clockIn);
+        const shiftEnd = Date.parse(e.clockOut);
+        const duration = shiftEnd - shiftStart;
+        if (duration <= 0) continue;
+        let cursor = Math.max(shiftStart, start.getTime());
+        const finish = Math.min(shiftEnd, end.getTime());
+        const worked = entryMinutes(e);
+        while (cursor < finish) {
+          const wk = weekStart(new Date(cursor));
+          const boundary = new Date(wk);
+          boundary.setDate(boundary.getDate() + 7);
+          const sliceEnd = Math.min(finish, boundary.getTime());
+          // Allocate unpaid breaks proportionally; cumulative rounding preserves exact minutes.
+          const sliceMinutes = Math.round(worked * (sliceEnd - shiftStart) / duration) - Math.round(worked * (cursor - shiftStart) / duration);
+          byWeek.set(wk.getTime(), (byWeek.get(wk.getTime()) ?? 0) + sliceMinutes);
+          cursor = sliceEnd;
+        }
       }
       let regularMinutes = 0;
       let overtimeMinutes = 0;

@@ -1,10 +1,11 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Mail, Pencil, Phone, Plus, UserPlus, Users } from "lucide-react";
 import { toast } from "sonner";
 
 import { useNow } from "@/admin/hooks";
-import { entryMinutes, fmtDuration, weekStart } from "@/admin/payroll";
+import { entryMinutesWithin, fmtDuration, weekStart } from "@/admin/payroll";
 import { staff, useAdminData, type EmployeeInput } from "@/admin/store";
 import { ROLES, type Employee } from "@/admin/types";
 import { money } from "@/admin/format";
@@ -22,6 +23,7 @@ import {
 } from "@/admin/ui";
 
 export const Route = createFileRoute("/admin/employees")({
+  head: () => adminHead("Employees"),
   component: Employees,
 });
 
@@ -32,7 +34,8 @@ function Employees() {
   const now = useNow(60_000);
   const [editing, setEditing] = useState<Employee | "new" | null>(null);
   const [showInactive, setShowInactive] = useState(false);
-  const week = weekStart(new Date(now)).getTime();
+  const week = weekStart(new Date(now));
+  const weekEnd = new Date(week); weekEnd.setDate(weekEnd.getDate() + 7);
 
   const list = data.employees.filter((e) => showInactive || e.active);
 
@@ -71,8 +74,8 @@ function Employees() {
           {list.map((e) => {
             const open = data.timeEntries.find((t) => t.employeeId === e.id && !t.clockOut);
             const weekMinutes = data.timeEntries
-              .filter((t) => t.employeeId === e.id && Date.parse(t.clockIn) >= week)
-              .reduce((s, t) => s + entryMinutes(t, now), 0);
+              .filter((t) => t.employeeId === e.id)
+              .reduce((s, t) => s + entryMinutesWithin(t, week, weekEnd, now), 0);
             const ot = Math.max(0, weekMinutes - data.settings.overtimeThreshold * 60);
             return (
               <GlassCard key={e.id} className={e.active ? "" : "opacity-60"}>

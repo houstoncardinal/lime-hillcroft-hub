@@ -1,17 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { useSession } from "@tanstack/react-start/server";
 import { createHash, timingSafeEqual } from "node:crypto";
-
-type AdminSession = { email?: string };
-
-function sessionConfig() {
-  return {
-    password: process.env["ADMIN_SESSION_SECRET"]!,
-    name: "tic-admin",
-    maxAge: 60 * 60 * 12, // 12 hours
-    cookie: { httpOnly: true, secure: true, sameSite: "lax" as const, path: "/" },
-  };
-}
 
 function same(a: string, b: string) {
   const x = createHash("sha256").update(a, "utf8").digest();
@@ -20,7 +8,7 @@ function same(a: string, b: string) {
 }
 
 export const adminLogin = createServerFn({ method: "POST" })
-  .inputValidator((d: { email: string; password: string }) => ({
+  .validator((d: { email: string; password: string }) => ({
     email: String(d?.email ?? "").trim().toLowerCase(),
     password: String(d?.password ?? "").trim(),
   }))
@@ -32,18 +20,21 @@ export const adminLogin = createServerFn({ method: "POST" })
     const passOk = same(data.password, password);
     const ok = emailOk && passOk;
     if (!ok) return { ok: false as const };
-    const session = await useSession<AdminSession>(sessionConfig());
+    const { adminSession } = await import("@/admin/session.server");
+    const session = await adminSession();
     await session.update({ email });
     return { ok: true as const };
   });
 
 export const adminStatus = createServerFn({ method: "GET" }).handler(async () => {
-  const session = await useSession<AdminSession>(sessionConfig());
+  const { adminSession } = await import("@/admin/session.server");
+  const session = await adminSession();
   return { email: session.data.email ?? null };
 });
 
 export const adminLogout = createServerFn({ method: "POST" }).handler(async () => {
-  const session = await useSession<AdminSession>(sessionConfig());
+  const { adminSession } = await import("@/admin/session.server");
+  const session = await adminSession();
   await session.clear();
   return { ok: true as const };
 });

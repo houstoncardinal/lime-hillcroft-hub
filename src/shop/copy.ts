@@ -4,9 +4,9 @@ import type { ShopCategory } from "@/shop/types";
 const en = {
   meta: {
     title:
-      "Shop Phones, Tablets & Electronics Online | TIC Wireless Electronic & Repair Center",
+      "Shop Phones, Tablets & Electronics | TIC Wireless Houston",
     description:
-      "Shop unlocked iPhones, Samsung Galaxy phones, iPads, tablets, smartwatches, gaming, audio and accessories from TIC Wireless Electronic & Repair Center on Hillcroft in Houston — secure Shopify checkout.",
+      "Shop unlocked iPhones, Samsung phones, tablets, watches, gaming and accessories from TIC Wireless in Houston, with secure Shopify checkout.",
     breadcrumb: ["Home", "Shop"],
   },
   hero: {
@@ -14,7 +14,7 @@ const en = {
     title: ["Our whole store,", "now online."],
     body: "Phones, tablets, smartwatches, gaming, audio and accessories — the same products we stock on Hillcroft, with secure checkout.",
     search: "Search iPhone, Galaxy, iPad, AirPods…",
-    preview: "Preview store · online checkout coming soon",
+    preview: "Online shop temporarily unavailable — please try again.",
   },
   categories: {
     all: "All",
@@ -80,27 +80,27 @@ const en = {
     close: "Keep shopping",
   },
   lease: {
-    cardLine: "or 4 payments of",
+    cardLine: "or approximately 4 payments of",
     cardSuffix: " with Shop Pay",
     title: "How do you want to pay?",
     full: "Pay in full",
     fullNote: "One payment at checkout",
     plan: "Lease with Shop Pay Installments",
-    planNote: (each: string) => `4 interest-free payments of ${each} every 2 weeks, or monthly plans — chosen at checkout`,
+    planNote: (each: string) => `Approximately 4 payments of ${each} every 2 weeks, or monthly plans — chosen at checkout`,
     addPlan: "Add to cart — pay over time",
     cartTitle: "Leasing available:",
     lineBadge: "Leasing · Shop Pay Installments",
     total: "Total",
-    dueToday: "Estimated due today (1st payment)",
+    dueToday: "Illustrative first payment",
     checkout: "Checkout with Shop Pay Installments",
-    howTo: "At checkout, choose Shop Pay, then \"Pay in installments\".",
-    fine: "Shop Pay Installments are offered by Shopify and its lending partners, subject to approval and eligibility. Monthly plans may include interest. Final terms are shown at checkout.",
+    howTo: "Estimates exclude taxes and shipping and are not a financing offer. At checkout, choose Shop Pay, then \"Pay in installments\".",
+    fine: "Shop Pay Installments are offered by Shopify and its lending partners, subject to approval and eligibility. Monthly plans may include interest. This selection does not activate financing. Shopify determines eligibility, the amount due today and final terms at checkout.",
     popular: "Most flexible",
-    schedule: "Payment schedule",
+    schedule: "Illustrative payment schedule",
     steps: ["Today", "2 weeks", "4 weeks", "6 weeks"],
     perPay: "/ payment",
     waysTitle: "Flexible ways to pay",
-    waysBody: "Every phone, tablet and device in our store can be paid in full or split over time.",
+    waysBody: "Pay in full, or explore installment offers for eligible purchases at Shopify checkout.",
     ways: [
       ["Pay in full", "Card, Apple Pay, Google Pay or Shop Pay — one secure payment."],
       ["Shop Pay Installments", "4 interest-free payments every 2 weeks, or monthly plans, on items $50+."],
@@ -122,9 +122,9 @@ export type ShopCopy = typeof en;
 const es: ShopCopy = {
   meta: {
     title:
-      "Compra Celulares, Tabletas y Electrónicos en Línea | TIC Wireless Electronic & Repair Center",
+      "Celulares, Tabletas y Electrónicos | TIC Wireless Houston",
     description:
-      "Compra iPhones y Samsung Galaxy desbloqueados, iPads, tabletas, relojes inteligentes, gaming, audio y accesorios de TIC Wireless Electronic & Repair Center en Hillcroft, Houston — pago seguro con Shopify.",
+      "Compra iPhones, Samsung, tabletas, relojes, gaming y accesorios en TIC Wireless de Houston, con pago seguro mediante Shopify.",
     breadcrumb: ["Inicio", "Tienda"],
   },
   hero: {
@@ -132,7 +132,7 @@ const es: ShopCopy = {
     title: ["Toda nuestra tienda,", "ahora en línea."],
     body: "Celulares, tabletas, relojes inteligentes, gaming, audio y accesorios — lo mismo que tenemos en Hillcroft, con pago seguro.",
     search: "Busca iPhone, Galaxy, iPad, AirPods…",
-    preview: "Tienda en vista previa · pago en línea muy pronto",
+    preview: "La tienda no está disponible temporalmente — intenta de nuevo.",
   },
   categories: {
     all: "Todo",
@@ -198,27 +198,27 @@ const es: ShopCopy = {
     close: "Seguir comprando",
   },
   lease: {
-    cardLine: "o 4 pagos de",
+    cardLine: "o aproximadamente 4 pagos de",
     cardSuffix: " con Shop Pay",
     title: "¿Cómo quieres pagar?",
     full: "Pago completo",
     fullNote: "Un solo pago al finalizar la compra",
     plan: "Arrendamiento con Shop Pay Installments",
-    planNote: (each: string) => `4 pagos sin intereses de ${each} cada 2 semanas, o planes mensuales — se eligen al pagar`,
+    planNote: (each: string) => `Aproximadamente 4 pagos de ${each} cada 2 semanas, o planes mensuales — se eligen al pagar`,
     addPlan: "Agregar al carrito — paga a plazos",
     cartTitle: "Arrendamiento disponible:",
     lineBadge: "Arrendamiento · Shop Pay Installments",
     total: "Total",
-    dueToday: "Pago estimado hoy (1er pago)",
+    dueToday: "Primer pago ilustrativo",
     checkout: "Pagar con Shop Pay Installments",
-    howTo: "Al pagar, elige Shop Pay y luego \"Pagar a plazos\".",
-    fine: "Shop Pay Installments lo ofrecen Shopify y sus socios financieros, sujeto a aprobación y elegibilidad. Los planes mensuales pueden incluir intereses. Los términos finales se muestran al pagar.",
+    howTo: "Las estimaciones excluyen impuestos y envío y no son una oferta financiera. Al pagar, elige Shop Pay y luego \"Pagar a plazos\".",
+    fine: "Shop Pay Installments lo ofrecen Shopify y sus socios financieros, sujeto a aprobación y elegibilidad. Los planes mensuales pueden incluir intereses. Esta selección no activa el financiamiento. Shopify determina la elegibilidad, el pago inicial y los términos finales al pagar.",
     popular: "Más flexible",
-    schedule: "Calendario de pagos",
+    schedule: "Ejemplo de calendario de pagos",
     steps: ["Hoy", "2 semanas", "4 semanas", "6 semanas"],
     perPay: "/ pago",
     waysTitle: "Formas flexibles de pagar",
-    waysBody: "Todos los celulares, tabletas y equipos de la tienda se pueden pagar completos o a plazos.",
+    waysBody: "Paga completo o consulta las opciones a plazos para compras elegibles al pagar con Shopify.",
     ways: [
       ["Pago completo", "Tarjeta, Apple Pay, Google Pay o Shop Pay — un pago seguro."],
       ["Shop Pay Installments", "4 pagos sin intereses cada 2 semanas, o planes mensuales, en artículos de $50+."],

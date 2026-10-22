@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
@@ -30,6 +31,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/shopify")({
+  head: () => adminHead("Shopify connection"),
   component: Shopify,
 });
 
@@ -37,8 +39,7 @@ type Status = Awaited<ReturnType<typeof shopifyStatus>>;
 
 function Shopify() {
   const data = useAdminData();
-  const [adminKey, setAdminKey] = useAdminKey();
-  const [keyDraft, setKeyDraft] = useState(adminKey);
+  const adminKey = "";
   const [status, setStatus] = useState<Status | null>(null);
   const [site, setSite] = useState<StorefrontStatus | null>(null);
   const [checking, setChecking] = useState(false);
@@ -104,12 +105,14 @@ function Shopify() {
     setBusy("push");
     const items = pending.filter((p) => p.shopifyInventoryItemId);
     try {
+      if (items.some((p) => p.shopifySyncedQuantity === undefined)) throw new Error("Import current Shopify stock before pushing these products.");
       await shopifyPushQuantities({
         data: {
           adminKey,
           items: items.map((p) => ({
             inventoryItemId: p.shopifyInventoryItemId ?? "",
             quantity: p.quantity,
+            compareQuantity: p.shopifySyncedQuantity,
           })),
         },
       });
@@ -129,29 +132,6 @@ function Shopify() {
     }
   };
 
-  const steps = [
-    {
-      done: Boolean(status?.configured),
-      title: "Create a Shopify custom app",
-      body: "Shopify admin → Settings → Apps and sales channels → Develop apps. Give it read & write access to Products and Inventory, then install it and copy the Admin API access token.",
-    },
-    {
-      done: Boolean(status?.configured),
-      title: "Add the server environment variables",
-      body: "SHOPIFY_STORE_DOMAIN (your-store.myshopify.com) and SHOPIFY_ADMIN_ACCESS_TOKEN. Add them as secrets in your hosting — never in the code.",
-    },
-    {
-      done: Boolean(status?.serverKeySet),
-      title: "Set ADMIN_API_KEY on the server",
-      body: "Any long random string. It stops anyone else from calling the Shopify sync endpoints.",
-    },
-    {
-      done: Boolean(status?.connected),
-      title: "Enter the same admin key below",
-      body: "It's kept for this browser tab only.",
-    },
-  ];
-
   return (
     <>
       <PageHeader
@@ -168,7 +148,7 @@ function Shopify() {
         <StatTile
           label="Connection"
           value={
-            status?.connected ? "Connected" : status?.configured ? "Configured" : "Not connected"
+            status?.connected ? "Connected" : status?.error ? "Reconnect required" : status?.configured ? "Configured" : "Not connected"
           }
           icon={ShoppingBag}
           hint={status?.shopName ?? (status?.domain || "Waiting for credentials")}
@@ -193,13 +173,13 @@ function Shopify() {
           description={
             site?.connected
               ? `The website shows ${site.products} products from ${site.shopName} (${site.devices} phones & tablets).`
-              : "The website is showing its built-in preview catalog, not your Shopify products."
+              : "The website cannot reach Shopify. No sample merchandise is shown."
           }
           actions={
             site?.connected ? (
               <Badge tone="good">Live</Badge>
             ) : (
-              <Badge tone="warning">Preview only</Badge>
+              <Badge tone="warning">Unavailable</Badge>
             )
           }
         />
@@ -291,50 +271,7 @@ function Shopify() {
         </GlassCard>
 
         <GlassCard>
-          <CardTitle title="Setup" description="One-time, about 10 minutes" />
-          <ol className="space-y-4">
-            {steps.map((s, i) => (
-              <li key={s.title} className="flex gap-3">
-                {s.done ? (
-                  <CheckCircle2
-                    className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300"
-                    aria-label="Done"
-                  />
-                ) : (
-                  <Circle
-                    className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground"
-                    aria-label="To do"
-                  />
-                )}
-                <div>
-                  <p className="text-sm font-medium">
-                    {i + 1}. {s.title}
-                  </p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">{s.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <form
-            className="mt-6 flex items-end gap-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setAdminKey(keyDraft.trim());
-              toast.success(keyDraft.trim() ? "Admin key saved for this tab" : "Admin key cleared");
-            }}
-          >
-            <Field label="Admin API key" className="flex-1">
-              <Input
-                type="password"
-                autoComplete="off"
-                value={keyDraft}
-                onChange={(e) => setKeyDraft(e.target.value)}
-              />
-            </Field>
-            <Button tone="primary" type="submit">
-              <KeyRound className="h-4 w-4" /> Save
-            </Button>
-          </form>
+          <CardTitle title="Store access" description="Your admin sign-in authorizes stock synchronization. Shopify stock changes are checked against the last confirmed count." />
         </GlassCard>
       </div>
     </>

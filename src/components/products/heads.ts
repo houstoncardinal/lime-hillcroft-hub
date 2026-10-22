@@ -102,22 +102,11 @@ export function deviceHead(lang: Lang, entry: DevicePageEntry | undefined) {
   const tablet = device.kind === "ipad";
   const title =
     lang === "en"
-      ? `${name} in Houston — Lease-to-Own, No Credit Needed`
-      : `${name} en Houston — A pagos, sin crédito`;
-  const description =
-    lang === "en"
-      ? `${name} in stock at TIC Wireless on Hillcroft in Houston. ${detail.highlights
-          .slice(0, 2)
-          .map((h) => h.en)
-          .join(
-            ", ",
-          )}. Lease-to-own from $${leaseFrom} down, no credit needed, subject to approval.`
-      : `${name} en existencia en TIC Wireless en Hillcroft, Houston. ${detail.highlights
-          .slice(0, 2)
-          .map((h) => h.es)
-          .join(
-            ", ",
-          )}. A pagos desde $${leaseFrom} de enganche, sin necesidad de crédito, sujeto a aprobación.`;
+      ? `${name} in Houston | TIC Wireless`
+      : `${name} en Houston | TIC Wireless`;
+  const description = lang === "en"
+    ? `${name} at TIC Wireless in Houston. Explore features and lease-to-own options on Hillcroft. Financing subject to approval.`
+    : `${name} en TIC Wireless, Houston. Consulta características y opciones de arrendamiento en Hillcroft. Sujeto a aprobación.`;
   const image = ogImage(tablet ? "laptops" : "service-unlocked-phones", lang);
   const photo = detail.photo
     ? absoluteUrl(detail.photo.jpg)

@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, type FormEvent } from "react";
 import {
@@ -21,6 +22,7 @@ import { useTheme } from "@/components/site/use-theme";
 import { ADMIN_THEME_KEY } from "@/components/site/themes";
 
 export const Route = createFileRoute("/admin/settings")({
+  head: () => adminHead("Settings"),
   component: Settings,
 });
 
@@ -28,20 +30,7 @@ function Settings() {
   const data = useAdminData();
   const s = data.settings;
   const fileRef = useRef<HTMLInputElement>(null);
-  const [current, setCurrent] = useState("");
-  const [next, setNext] = useState("");
   const [theme, setTheme] = useTheme(ADMIN_THEME_KEY);
-
-  const changePasscode = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!(await settings.checkPasscode(current)))
-      return void toast.error("Current passcode is incorrect");
-    if (next.length < 6) return void toast.error("Use at least 6 characters");
-    await settings.setPasscode(next);
-    setCurrent("");
-    setNext("");
-    toast.success("Passcode changed");
-  };
 
   return (
     <>
@@ -93,39 +82,19 @@ function Settings() {
         </GlassCard>
 
         <GlassCard>
-          <CardTitle title="Dashboard passcode" description="Locks the dashboard on this device." />
-          <form
-            onSubmit={(e) => void changePasscode(e)}
-            className="grid gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end"
-          >
-            <Field label="Current passcode">
-              <Input
-                type="password"
-                autoComplete="current-password"
-                value={current}
-                onChange={(e) => setCurrent(e.target.value)}
-              />
-            </Field>
-            <Field label="New passcode">
-              <Input
-                type="password"
-                autoComplete="new-password"
-                value={next}
-                onChange={(e) => setNext(e.target.value)}
-              />
-            </Field>
-            <Button tone="primary" type="submit">
-              <Lock className="h-4 w-4" /> Change
-            </Button>
-          </form>
+          <CardTitle title="Admin access" description="Sign in with your configured email and password. Lock dashboard signs you out on this device." />
         </GlassCard>
 
         <GlassCard>
           <CardTitle
             title="Backup"
-            description="Local mode keeps everything in this browser. Download a backup regularly, or move to a database (docs/admin.md)."
+            description="Store records are shared through Lovable Cloud. Download a backup before restoring or replacing records."
           />
           <div className="flex flex-wrap gap-2">
+            <Button onClick={() => {
+              try { download("tic-previous-browser-records.json", settings.previousLocalBackup(), "application/json"); }
+              catch { toast.error("No previous browser records were found."); }
+            }}><Download className="h-4 w-4" /> Download previous browser records</Button>
             <Button
               onClick={() =>
                 download(
@@ -149,7 +118,7 @@ function Settings() {
                 const f = e.target.files?.[0];
                 e.target.value = "";
                 if (!f) return;
-                if (!confirm("Replace everything on this device with the backup?")) return;
+                if (!confirm("Replace the shared store records with this backup?")) return;
                 try {
                   settings.importJson(await f.text());
                   toast.success("Backup restored");
@@ -182,7 +151,7 @@ function Settings() {
                 onClick={() => {
                   if (
                     !confirm(
-                      "Remove all sample products, staff, shifts, payroll and traffic? Your passcode and payroll rules stay.",
+                      "Remove all sample products, staff, shifts, payroll and traffic? Payroll rules stay.",
                     )
                   )
                     return;
@@ -194,34 +163,12 @@ function Settings() {
               </Button>
             ) : (
               <Button
-                onClick={() => {
-                  if (
-                    !confirm(
-                      "Replace your data on this device with sample data? Download a backup first if you need it.",
-                    )
-                  )
-                    return;
-                  settings.loadDemo();
-                  toast.success("Sample data loaded");
-                }}
+                disabled
               >
                 <RotateCcw className="h-4 w-4" /> Load sample data
               </Button>
             )}
-            <Button
-              tone="danger"
-              onClick={() => {
-                if (!confirm("Clear website visits recorded in this browser?")) return;
-                clearTrackedEvents();
-                toast.success("Tracked visits cleared");
-              }}
-            >
-              <Trash2 className="h-4 w-4" /> Clear tracked visits
-            </Button>
           </div>
-          <p className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
-            <KeyRound className="h-3.5 w-3.5" /> Sample time-clock PINs: 1234, 2468, 1357, 8080.
-          </p>
         </GlassCard>
       </div>
     </>

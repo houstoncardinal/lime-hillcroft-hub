@@ -32,6 +32,11 @@ function pages(): [string, Head][] {
       [ALTERNATES.leasing[l], leasingHead(l)],
       ...(SHOP_ENABLED ? [[ALTERNATES.shop[l], shopHead(l, undefined)] as [string, Head]] : []),
       [ALTERNATES.location[l], locationHead(l)],
+      ...["privacy", "returns", "shipping", "terms", "warranty"].map((key): [string, Head] => {
+        const path = `${l === "es" ? "/es/politicas" : "/policies"}/${key}`;
+        const title = `${key} | TIC Wireless ${l === "es" ? "Políticas" : "Policies"}`;
+        return [path, { meta: [{ title }, { name: "description", content: "TIC Wireless purchase policies and store contact information in Houston, Texas." }] }];
+      }),
       [ALTERNATES.accessories[l], categoryHead("accessories", l)],
       [ALTERNATES.consoles[l], categoryHead("consoles", l)],
       [ALTERNATES.laptops[l], categoryHead("laptops", l)],

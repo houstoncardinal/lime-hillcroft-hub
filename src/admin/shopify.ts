@@ -1,16 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
+import { validateStockInput } from "@/admin/stock-input";
 
 // Shopify Admin API bridge. Runs only on the server: the access token is read from server
-// environment variables and never reaches the browser. Every call also requires ADMIN_API_KEY,
-// which the dashboard sends from Settings, so these endpoints can't be used anonymously.
+// environment variables and never reaches the browser. Every call validates the admin cookie.
 //
 // Required env (see docs/admin.md):
 //   SHOPIFY_STORE_DOMAIN        e.g. tic-wireless.myshopify.com
 //   SHOPIFY_ADMIN_ACCESS_TOKEN  Admin API token from a custom app (read/write products + inventory)
-//   ADMIN_API_KEY               any long random string; enter the same value in /admin/settings
 // Optional: SHOPIFY_API_VERSION (default below), SHOPIFY_LOCATION_ID (default: first location)
 
-const DEFAULT_API_VERSION = "2026-07";
+const DEFAULT_API_VERSION = "2026-10";
 
 type KeyInput = { adminKey: string };
 
@@ -18,24 +17,16 @@ function env(name: string) {
   return (process.env[name] ?? "").trim();
 }
 
-function timingSafeEqual(a: string, b: string) {
-  if (!a || !b || a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
-}
-
-function authorize(adminKey: string) {
-  const expected = env("ADMIN_API_KEY");
-  if (!expected) throw new Error("ADMIN_API_KEY is not set on the server.");
-  if (!timingSafeEqual(adminKey, expected)) throw new Error("Admin API key is incorrect.");
+async function authorize(_adminKey: string) {
+  const { requireAdmin } = await import("@/admin/session.server");
+  await requireAdmin();
 }
 
 function shopifyConfig() {
   const domain = env("SHOPIFY_STORE_DOMAIN")
     .replace(/^https?:\/\//, "")
     .replace(/\/$/, "");
-  const token = env("SHOPIFY_ADMIN_ACCESS_TOKEN");
+  const token = env("SHOPIFY_ACCESS_TOKEN") || env("SHOPIFY_ADMIN_ACCESS_TOKEN");
   return { domain, token, version: env("SHOPIFY_API_VERSION") || DEFAULT_API_VERSION };
 }
 
@@ -47,6 +38,7 @@ async function gql<T>(query: string, variables: Record<string, unknown> = {}): P
     headers: { "Content-Type": "application/json", "X-Shopify-Access-Token": token },
     body: JSON.stringify({ query, variables }),
   });
+  if (res.status === 401) throw new Error("Shopify stock access has expired. Reconnect Shopify before importing or pushing inventory. Online shopping is unaffected.");
   if (!res.ok) throw new Error(`Shopify responded ${res.status} ${res.statusText}`);
   const json = (await res.json()) as { data?: T; errors?: { message: string }[] };
   if (json.errors?.length) throw new Error(json.errors.map((e) => e.message).join("; "));
@@ -67,23 +59,23 @@ async function locationId() {
 
 const validateKey = (d: unknown) => {
   const adminKey = (d as Partial<KeyInput> | null)?.adminKey;
-  if (typeof adminKey !== "string") throw new Error("adminKey is required");
-  return { adminKey };
+  return { adminKey: typeof adminKey === "string" ? adminKey : "" };
 };
 
 export const shopifyStatus = createServerFn({ method: "POST" })
   .validator(validateKey)
   .handler(async ({ data }) => {
+    await authorize(data.adminKey);
     const { domain, token, version } = shopifyConfig();
     const base = {
-      serverKeySet: Boolean(env("ADMIN_API_KEY")),
+      serverKeySet: true,
       configured: Boolean(domain && token),
       domain,
       version,
     };
     if (!base.configured) return { ...base, connected: false, shopName: null, error: null };
     try {
-      authorize(data.adminKey);
+      await authorize(data.adminKey);
       const shop = await gql<{ shop: { name: string; currencyCode: string } }>(
         `{ shop { name currencyCode } }`,
       );
@@ -118,7 +110,7 @@ type ProductsPage = {
           sku: string | null;
           price: string;
           inventoryQuantity: number | null;
-          inventoryItem: { id: string };
+          inventoryItem: { id: string; inventoryLevel: { quantities: { name: string; quantity: number }[] } | null };
         }[];
       };
     }[];
@@ -128,23 +120,24 @@ type ProductsPage = {
 export const shopifyPullProducts = createServerFn({ method: "POST" })
   .validator(validateKey)
   .handler(async ({ data }): Promise<ShopifyVariantRow[]> => {
-    authorize(data.adminKey);
+    await authorize(data.adminKey);
+    const location = await locationId();
     const rows: ShopifyVariantRow[] = [];
     let after: string | null = null;
-    for (let page = 0; page < 20; page++) {
+    while (true) {
       const res: ProductsPage = await gql<ProductsPage>(
-        `query Products($after: String) {
+        `query Products($after: String, $location: ID!) {
           products(first: 100, after: $after) {
             pageInfo { hasNextPage endCursor }
             nodes {
               id title vendor
               variants(first: 100) {
-                nodes { id title sku price inventoryQuantity inventoryItem { id } }
+                nodes { id title sku price inventoryQuantity inventoryItem { id inventoryLevel(locationId: $location) { quantities(names: ["available"]) { name quantity } } } }
               }
             }
           }
         }`,
-        { after },
+        { after, location },
       );
       for (const p of res.products.nodes)
         for (const v of p.variants.nodes)
@@ -153,7 +146,7 @@ export const shopifyPullProducts = createServerFn({ method: "POST" })
             name: v.title === "Default Title" ? p.title : `${p.title} — ${v.title}`,
             brand: p.vendor,
             price: Math.round(Number(v.price) * 100),
-            quantity: v.inventoryQuantity ?? 0,
+            quantity: v.inventoryItem.inventoryLevel?.quantities.find((q) => q.name === "available")?.quantity ?? 0,
             productId: p.id,
             variantId: v.id,
             inventoryItemId: v.inventoryItem.id,
@@ -172,13 +165,12 @@ export const shopifyPushQuantities = createServerFn({ method: "POST" })
     return {
       adminKey,
       items: items.map((i) => ({
-        inventoryItemId: String((i as { inventoryItemId: unknown }).inventoryItemId),
-        quantity: Math.max(0, Math.floor(Number((i as { quantity: unknown }).quantity))),
+        ...validateStockInput(i),
       })),
     };
   })
   .handler(async ({ data }) => {
-    authorize(data.adminKey);
+    await authorize(data.adminKey);
     const location = await locationId();
     const res = await gql<{
       inventorySetQuantities: { userErrors: { field: string[] | null; message: string }[] };
@@ -190,11 +182,12 @@ export const shopifyPushQuantities = createServerFn({ method: "POST" })
         input: {
           name: "available",
           reason: "correction",
-          ignoreCompareQuantity: true,
+          ignoreCompareQuantity: false,
           quantities: data.items.map((i) => ({
             inventoryItemId: i.inventoryItemId,
             locationId: location,
             quantity: i.quantity,
+            compareQuantity: i.compareQuantity,
           })),
         },
       },
