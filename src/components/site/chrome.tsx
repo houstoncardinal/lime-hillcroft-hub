@@ -27,8 +27,8 @@ const T = {
     areas: "Areas we serve",
     guides: "Guides",
     directions: "Directions",
-    shop: "Shop",
-    shopAria: "Shop online — phones, tablets & electronics",
+    shop: "Products",
+    shopAria: "Shop all products — phones, tablets & electronics",
     home: "TIC Wireless Electronic & Repair Center home",
     tagline: "Buy · Sell · Repair · Unlock. Your one-stop phone shop in Houston. Se habla español.",
     trademarks:
@@ -43,8 +43,8 @@ const T = {
     areas: "Zonas que atendemos",
     guides: "Guías",
     directions: "Cómo llegar",
-    shop: "Tienda",
-    shopAria: "Tienda en línea — celulares, tabletas y electrónicos",
+    shop: "Productos",
+    shopAria: "Compra todos los productos — celulares, tabletas y electrónicos",
     home: "Inicio de TIC Wireless Electronic & Repair Center",
     tagline:
       "Compra · Venta · Reparación · Liberación. Tu tienda de celulares en Houston. We speak English.",
