@@ -151,11 +151,11 @@ export function setCurrency(code: string) {
 // (e.g. MX$736, CA$55, ₹3,879) instead of a bare "$" that could be confused with US dollars.
 export function formatMoney(amount: number, code: string, locale = "en-US") {
   // Whole units are plenty for an approximate figure; keep cents only for small amounts.
-  const big = amount >= 10;
+  const exact = code === "USD";
   return new Intl.NumberFormat(locale, {
     style: "currency",
     currency: code,
-    maximumFractionDigits: big ? 0 : 2,
-    minimumFractionDigits: 0,
+    maximumFractionDigits: exact ? 2 : 0,
+    minimumFractionDigits: exact ? 2 : 0,
   }).format(amount);
 }

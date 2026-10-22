@@ -1,6 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
 
-import { PREVIEW_PRODUCTS } from "@/shop/preview-catalog";
 import type { Catalog, ShopCategory, ShopProduct } from "@/shop/types";
 
 // Shopify Storefront API bridge for the public shop. Runs on the server: the Storefront token is
@@ -119,12 +118,12 @@ type ProductsQuery = {
 let cache: { at: number; catalog: Catalog } | null = null;
 
 async function loadCatalog(): Promise<Catalog> {
-  if (!isLive()) return { source: "preview", products: PREVIEW_PRODUCTS };
+  if (!isLive()) return { source: "preview", products: [] };
   if (cache && Date.now() - cache.at < CACHE_MS) return cache.catalog;
   // Page through the whole catalog (phones, tablets and accessories), up to 1,000 products.
   const nodes: ProductsQuery["products"]["nodes"] = [];
   let after: string | null = null;
-  for (let page = 0; page < 4; page++) {
+  while (true) {
     const data: ProductsQuery = await storefront<ProductsQuery>(
       `query Products($after: String) {
         products(first: 250, after: $after, sortKey: BEST_SELLING) {
@@ -133,7 +132,7 @@ async function loadCatalog(): Promise<Catalog> {
             id handle title vendor productType tags descriptionHtml
             images(first: 6) { nodes { url altText } }
             options { name }
-            variants(first: 50) {
+            variants(first: 250) {
               nodes { id title availableForSale price { amount } compareAtPrice { amount } image { url altText } }
             }
           }
@@ -188,8 +187,8 @@ export const getCatalog = createServerFn({ method: "GET" }).handler(async (): Pr
     return await loadCatalog();
   } catch (e) {
     // Never take the shop down: fall back to the preview catalog if Shopify is unreachable.
-    console.error("Shopify catalog failed, serving preview:", e);
-    return { source: "preview", products: PREVIEW_PRODUCTS };
+    console.error("Shopify catalog failed, store unavailable:", e);
+    return { source: "preview", products: [] };
   }
 });
 
@@ -291,7 +290,7 @@ export const getDevicePrices = createServerFn({ method: "GET" }).handler(
 // cart, so checkout always uses Shopify's own cart and its own secure checkout URL. Nothing here
 // builds a checkout link by hand.
 
-export type CartLineResult = { lineId: string; variantId: string; quantity: number };
+export type CartLineResult = { lineId: string; variantId: string; quantity: number; price: number; lease: boolean };
 
 export type ShopifyCart = { cartId: string; checkoutUrl: string; lines: CartLineResult[] };
 
@@ -310,7 +309,8 @@ const CART_FIELDS = `
     nodes {
       id
       quantity
-      merchandise { ... on ProductVariant { id } }
+      attributes { key value }
+      merchandise { ... on ProductVariant { id price { amount } } }
     }
   }
 `;
@@ -318,7 +318,7 @@ const CART_FIELDS = `
 type RawCart = {
   id: string;
   checkoutUrl: string;
-  lines: { nodes: { id: string; quantity: number; merchandise: { id: string } }[] };
+  lines: { nodes: { id: string; quantity: number; attributes: { key: string; value: string }[]; merchandise: { id: string; price: { amount: string } } }[] };
 };
 
 /** Shopify's checkout needs the channel marked, or it can ask for a store password. */
@@ -340,6 +340,8 @@ function toCart(cart: RawCart): ShopifyCart {
       lineId: n.id,
       variantId: n.merchandise.id,
       quantity: n.quantity,
+      price: cents(n.merchandise.price.amount) ?? 0,
+      lease: n.attributes.some((a) => a.key === "Payment option" && a.value.includes("Installments")),
     })),
   };
 }
@@ -383,7 +385,7 @@ export const createCart = createServerFn({ method: "POST" })
         { input: { lines: data } },
       );
       const { cart, userErrors } = res.cartCreate;
-      if (!cart) return { mode: "error", message: errorMessage(userErrors) };
+      if (userErrors.length || !cart) return { mode: "error", message: errorMessage(userErrors) };
       return { mode: "shopify", cart: toCart(cart) };
     } catch (e) {
       return { mode: "error", message: e instanceof Error ? e.message : String(e) };
@@ -406,7 +408,7 @@ export const addCartLines = createServerFn({ method: "POST" })
       );
       const { cart, userErrors } = res.cartLinesAdd;
       if (isGone(userErrors)) return { mode: "gone" };
-      if (!cart) return { mode: "error", message: errorMessage(userErrors) };
+      if (userErrors.length || !cart) return { mode: "error", message: errorMessage(userErrors) };
       return { mode: "shopify", cart: toCart(cart) };
     } catch (e) {
       return { mode: "error", message: e instanceof Error ? e.message : String(e) };
@@ -422,6 +424,7 @@ export const updateCartLines = createServerFn({ method: "POST" })
       cartId: asCartId(d),
       lines: lines.map((l) => ({
         id: String((l as { lineId: unknown }).lineId),
+        ...((l as { lease?: unknown }).lease !== undefined ? { attributes: (l as { lease?: unknown }).lease === true ? [{ key: "Payment option", value: "Lease — Shop Pay Installments" }] : [] } : {}),
         quantity: Math.min(
           99,
           Math.max(1, Math.floor(Number((l as { quantity: unknown }).quantity))),
@@ -442,7 +445,7 @@ export const updateCartLines = createServerFn({ method: "POST" })
       );
       const { cart, userErrors } = res.cartLinesUpdate;
       if (isGone(userErrors)) return { mode: "gone" };
-      if (!cart) return { mode: "error", message: errorMessage(userErrors) };
+      if (userErrors.length || !cart) return { mode: "error", message: errorMessage(userErrors) };
       return { mode: "shopify", cart: toCart(cart) };
     } catch (e) {
       return { mode: "error", message: e instanceof Error ? e.message : String(e) };
@@ -471,7 +474,7 @@ export const removeCartLines = createServerFn({ method: "POST" })
       );
       const { cart, userErrors } = res.cartLinesRemove;
       if (isGone(userErrors)) return { mode: "gone" };
-      if (!cart) return { mode: "error", message: errorMessage(userErrors) };
+      if (userErrors.length || !cart) return { mode: "error", message: errorMessage(userErrors) };
       return { mode: "shopify", cart: toCart(cart) };
     } catch (e) {
       return { mode: "error", message: e instanceof Error ? e.message : String(e) };
@@ -488,7 +491,7 @@ export const readCart = createServerFn({ method: "POST" })
         `query Cart($id: ID!) { cart(id: $id) { ${CART_FIELDS} } }`,
         { id: data },
       );
-      if (!res.cart) return { mode: "gone" };
+      if (!res.cart || !res.cart.lines.nodes.length) return { mode: "gone" };
       return { mode: "shopify", cart: toCart(res.cart) };
     } catch (e) {
       return { mode: "error", message: e instanceof Error ? e.message : String(e) };
