@@ -153,7 +153,8 @@ async function loadCatalog(): Promise<Catalog> {
       id: v.id,
       title: v.title,
       price: cents(v.price.amount) ?? 0,
-      compareAtPrice: cents(v.compareAtPrice?.amount),
+      // Full prices only: Shopify compare-at prices are not shown as crossed-out prices.
+      compareAtPrice: null,
       available: v.availableForSale,
       image: v.image ? { url: v.image.url, alt: v.image.altText ?? p.title } : null,
     }));
