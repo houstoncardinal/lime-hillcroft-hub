@@ -10,6 +10,7 @@ import {
   Menu,
   Navigation,
   Phone,
+  ShoppingBag,
   Smartphone,
   Wallet,
   X,
@@ -122,8 +123,11 @@ export function MobileMenu({
 
   const isCurrent = (href: string) => pathname === href || pathname === `${href}/`;
 
-  // Main list: what we sell, then services (a second list), prepaid, leasing and the store.
-  const products = productNav(lang).filter((p) => !p.href.includes("#"));
+  // Main list: the online store first, then what we sell, then services (a second list),
+  // prepaid, leasing and the store page.
+  const allProducts = productNav(lang).filter((p) => !p.href.includes("#"));
+  const shopItem = allProducts.find((p) => p.href === ALTERNATES.shop[lang]);
+  const products = allProducts.filter((p) => p !== shopItem);
   const items: Item[] = [
     ...products.map((p): Item => [p.label, p.href, p.icon]),
     [t.prepaid, servicePath(lang, "prepaid-plans"), Smartphone],
