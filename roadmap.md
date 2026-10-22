@@ -7,6 +7,8 @@
 - [ ] Restore Shopify Admin access and verify real import/push — reconnect and supplied SHOPIFY_ADMIN_ACCESS_TOKEN still return 401; requires a valid store Admin API token
 
 - [x] Failed-request recovery screen and retry — blocked catalog request renders recovery instead of crash; restored connection and Retry reload the real product
+- [x] Remove the sticky phone/tablet Call & Directions bar — nothing pinned to the bottom on any device; footer spacing and the chat-room helper cleaned up
+
 
 - [x] Reliable Shopify cart, exact prices, honest installment estimates and no sample-product fallback
 - [x] Shared protected staff storage, payroll boundaries, comparison-checked stock updates and scanner corrections
