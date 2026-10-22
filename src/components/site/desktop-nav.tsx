@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import * as Nav from "@radix-ui/react-navigation-menu";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, ShoppingBag } from "lucide-react";
 import { useRef, useState, type MouseEvent } from "react";
 
 import { productNav, serviceNav, type NavItem } from "@/components/site/nav";
@@ -15,6 +15,7 @@ const T = {
     leasing: "Leasing",
     prepaid: "Prepaid",
     location: "Location",
+    shop: "Shop",
     allServices: "All services",
     leasingCta: "Lease-to-own · no credit needed · as low as $40 down",
   },
@@ -24,6 +25,7 @@ const T = {
     leasing: "Arrendamiento",
     prepaid: "Prepago",
     location: "Ubicación",
+    shop: "Tienda",
     allServices: "Todos los servicios",
     leasingCta: "Arrendamiento · sin crédito · desde $40 de enganche",
   },
@@ -151,6 +153,19 @@ export function DesktopNav({ lang }: { lang: Lang }) {
             footer={{ label: t.allServices, href: ALTERNATES.services[lang] }}
             wide
           />
+        </Nav.Item>
+        {/** The online store is the main commercial page — always one tap away. */}
+        <Nav.Item>
+          <Nav.Link asChild active={pathname === ALTERNATES.shop[lang]}>
+            <Link
+              to={ALTERNATES.shop[lang]}
+              aria-current={pathname === ALTERNATES.shop[lang] ? "page" : undefined}
+              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3 data-[active]:bg-primary data-[active]:text-primary-foreground"
+            >
+              <ShoppingBag className="h-4 w-4" aria-hidden="true" />
+              {t.shop}
+            </Link>
+          </Nav.Link>
         </Nav.Item>
         {link(t.leasing, ALTERNATES.leasing[lang])}
         {link(t.prepaid, servicePath(lang, "prepaid-plans"))}
