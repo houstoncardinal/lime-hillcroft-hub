@@ -9,12 +9,12 @@ import { ALTERNATES, type Lang } from "@/components/site/seo";
 import {
   cartCount,
   cartSubtotal,
-  money,
   useCartStore,
   useCartSync,
   useMounted,
 } from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
+import { INSTALLMENTS_MIN_CENTS, payInFour, showsInstallments } from "@/shop/installments";
 import { productPath } from "@/shop/paths";
 import type { ShopImage, ShopProduct } from "@/shop/types";
 import {

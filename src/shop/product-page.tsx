@@ -11,7 +11,7 @@ import { Badge, ProductCard, ProductTile } from "@/shop/components";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
 import type { ShopProduct } from "@/shop/types";
-import { showsInstallments } from "@/shop/installments";
+import { payInFour, showsInstallments } from "@/shop/installments";
 import { cn } from "@/lib/utils";
 
 export function ProductPage({
@@ -28,17 +28,22 @@ export function ProductPage({
     (product.variants.find((v) => v.available) ?? product.variants[0])?.id,
   );
   const [quantity, setQuantity] = useState(1);
+  const [payMode, setPayMode] = useState<"full" | "plan">("full");
   const [imageIndex, setImageIndex] = useState(0);
   const [added, setAdded] = useState(false);
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
   const image =
     (imageIndex === 0 ? variant?.image : null) ?? product.images[imageIndex] ?? product.images[0];
   const addItem = useCartStore((s) => s.addItem);
+  const setCartOpen = useCartStore((s) => s.setOpen);
+  const canLease = Boolean(variant && showsInstallments(product.category, variant.price));
   const busy = useCartStore((s) => s.busy);
 
   const add = async () => {
     if (!variant) return;
     await addItem(product, variant, quantity);
+    // Lease choice: open the cart so the customer goes straight to Shopify checkout → Shop Pay.
+    if (canLease && payMode === "plan") setCartOpen(true);
     setAdded(true);
     setTimeout(() => setAdded(false), 1800);
   };
@@ -110,18 +115,48 @@ export function ProductPage({
               <span className="tabular-nums font-display text-3xl font-semibold">
                 {variant ? <Money usd={variant.price / 100} /> : ""}
               </span>
-              {variant?.compareAtPrice && variant.compareAtPrice > variant.price && (
-                <span className="tabular-nums text-lg text-muted-foreground line-through">
-                  {money(variant.compareAtPrice)}
-                </span>
-              )}
-            </p>
-            {variant && showsInstallments(product.category, variant.price) && (
-              <p className="mt-3 rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm">
-                {lang === "es"
-                  ? "Paga a plazos con Shop Pay Installments al finalizar la compra (sujeto a aprobación)."
-                  : "Pay over time with Shop Pay Installments at checkout (subject to approval)."}
               </p>
+            {canLease && variant && (
+              <fieldset className="mt-8">
+                <legend className="mb-3 text-sm font-semibold">{t.lease.title}</legend>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {(["full", "plan"] as const).map((m) => (
+                    <label
+                      key={m}
+                      className={cn(
+                        "cursor-pointer rounded-2xl border bg-card p-4 transition",
+                        payMode === m ? "border-primary ring-2 ring-primary/30" : "hover:border-foreground/30",
+                      )}
+                    >
+                      <input
+                        type="radio"
+                        name="pay-mode"
+                        value={m}
+                        checked={payMode === m}
+                        onChange={() => setPayMode(m)}
+                        className="sr-only"
+                      />
+                      <span className="block font-semibold">{m === "full" ? t.lease.full : t.lease.plan}</span>
+                      <span className="tabular-nums mt-1 block font-display text-xl font-semibold">
+                        {m === "full" ? (
+                          <Money usd={(variant.price * quantity) / 100} />
+                        ) : (
+                          <>
+                            <Money usd={payInFour(variant.price * quantity) / 100} />
+                            <span className="text-sm font-normal text-muted-foreground"> × 4</span>
+                          </>
+                        )}
+                      </span>
+                      <span className="mt-1 block text-xs text-muted-foreground">
+                        {m === "full"
+                          ? t.lease.fullNote
+                          : t.lease.planNote(money(payInFour(variant.price * quantity)))}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground">{t.lease.fine}</p>
+              </fieldset>
             )}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               {product.description}
@@ -188,7 +223,13 @@ export function ProductPage({
                 className="inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-8 font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:brightness-110 disabled:opacity-50 sm:flex-none"
               >
                 {added ? <Check className="h-5 w-5" /> : <ShoppingBag className="h-5 w-5" />}
-                {!variant?.available ? t.soldOut : added ? t.added : t.add}
+                {!variant?.available
+                  ? t.soldOut
+                  : added
+                    ? t.added
+                    : canLease && payMode === "plan"
+                      ? t.lease.addPlan
+                      : t.add}
               </button>
             </div>
             {variant?.available && (
