@@ -37,7 +37,7 @@ address → **Test connection** → **Save**.
 Browsers can't play `rtsp://` directly — publish RTSP cameras through the recorder or a bridge.
 The dashboard runs on https, so camera addresses must be https too. For snapshots and HLS, the
 camera server must allow cross-origin requests (CORS); otherwise video plays but snapshots are
-refused. Addresses are stored on this device only; use a view-only camera account.
+refused. Addresses are shared in the dashboard; use a view-only camera account.
 
 Also on the page: layout switcher (1/2/3 per row, remembered), filter by area, live/offline
 status per tile, focus view with previous/next, full screen, PNG snapshots, and an
@@ -63,53 +63,31 @@ Inventory → **Scan** (or Overview → **Scan item**, or `/admin/inventory?scan
 
 Payroll shows **gross pay only**. Taxes, withholdings and filings stay with your payroll provider.
 
-## Local mode (today)
+## Shared Cloud storage
 
-All dashboard data is saved in the browser of the device you use (`localStorage`), protected by
-a passcode on that device. This means:
+The dashboard retains the configured email/password admin login in a 12-hour HTTP-only cookie.
+All shared data reads and writes validate that session server-side. The private `store_state`
+table grants access only to the server role; browser roles have no read or write privileges.
+Each save checks the previous revision. Conflicting edits are rejected and reloaded, rather
+than silently replacing changes made on another device. Failed saves show an error.
 
-- Use **one device** (e.g. the store tablet or office computer) as the dashboard.
-- Download a **backup** regularly from Settings.
-- Website stats only include visits made in that browser, plus sample traffic.
-- The passcode is a convenience lock, not server-side security — anyone with that device and
-  browser profile could read the stored data. Don't store anything more sensitive than
-  names, rates and hours until you move to the database.
+New dashboards start empty, never with sample inventory, payroll or traffic. Old browser-local
+records are not automatically uploaded: export the old backup or use the previous-record import
+control in Settings. Review sample data before importing. Public events are stored separately in
+`site_events`; the dashboard reads the most recent 90 days without mixing local/sample visits.
 
-The first visit loads sample data (marked with a banner). Sample time-clock PINs are
-1234, 2468, 1357 and 8080. Clear it in Settings → "Clear sample data & go live".
-
-## Moving to a database (recommended before real payroll)
-
-1. In Lovable, enable **Cloud** (Supabase) for the project.
-2. Apply `supabase/migrations/20261009000000_admin.sql`. It creates every table with
-   row-level security: only users listed in `admin_users` can read or change data, and the
-   public site can only *insert* analytics events.
-3. Add yourself: sign up once, then `insert into admin_users (user_id) values ('<your auth user id>');`
-4. Replace the internals of `src/admin/store.ts` with Supabase queries (the screens only use
-   its hook and action functions), swap the passcode gate in `src/routes/admin.tsx` for
-   Supabase email login, and set `VITE_ANALYTICS_ENDPOINT` (or insert from the tracker in
-   `src/admin/tracker.ts`) so every visitor is counted.
+The earlier SQL file in `supabase/migrations` describes an unused alternative Auth-backed schema;
+it is not the active storage model. The applied schema is managed under `drizzle/migrations`.
+Camera configurations are shared; browser-specific camera device IDs still only work on the device
+that supplied them. Use view-only camera addresses, never embedded private passwords.
 
 ## Shopify
 
-Runs server-side in `src/admin/shopify.ts`; the access token never reaches the browser.
+The current admin session authorizes every sync call. No separate browser API key is needed.
+The existing Shopify connection supplies `SHOPIFY_ACCESS_TOKEN` and `SHOPIFY_STORE_DOMAIN`.
+API version is 2026-10. The configured `SHOPIFY_LOCATION_ID` is used, or the first location.
+Imports read that location's **available** quantity, not the total across locations. Pending local
+changes are retained. Pushes compare against the last confirmed Shopify quantity to reject stale
+updates. Existing records without a comparison baseline must be imported before pushing.
 
-1. Shopify admin → Settings → Apps and sales channels → **Develop apps** → create an app.
-2. Admin API scopes: `read_products`, `write_products`, `read_inventory`, `write_inventory`,
-   `read_locations`. Install it and copy the **Admin API access token**.
-3. Add these server environment variables (secrets) in your hosting:
-
-   | Variable | Value |
-   |---|---|
-   | `SHOPIFY_STORE_DOMAIN` | `your-store.myshopify.com` |
-   | `SHOPIFY_ADMIN_ACCESS_TOKEN` | the token from step 2 |
-   | `ADMIN_API_KEY` | a long random string you make up |
-   | `SHOPIFY_API_VERSION` | optional, defaults to `2026-07` |
-   | `SHOPIFY_LOCATION_ID` | optional, defaults to the first location |
-
-4. Open `/admin/shopify`, enter the same `ADMIN_API_KEY`, and press **Import from Shopify**.
-   Products link by **SKU** — give in-store items the same SKU as on Shopify.
-5. After you sell or receive stock in the dashboard, linked products show **Needs push**;
-   press **Push quantities** to update Shopify.
-
-Test the first import and push on a couple of products before relying on it.
+Payroll remains gross pay only; tax withholding and filings belong to the payroll provider.
