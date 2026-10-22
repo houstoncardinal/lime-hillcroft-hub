@@ -85,7 +85,7 @@ let syncError: string | null = null;
 let writeQueue = Promise.resolve();
 let generation = 0;
 let liveEvents: AdminData["events"] = [];
-let status = { ready, saving, error: syncError };
+let status: { ready: boolean; saving: number; error: string | null } = { ready, saving, error: syncError };
 const emit = () => { status = { ready, saving, error: syncError }; listeners.forEach((l) => l()); };
 const load = (): AdminData => cache ?? (cache = empty());
 
@@ -115,7 +115,7 @@ function commit(next: AdminData) {
   cache = next; saving++; syncError = null; emit();
   const currentGeneration = generation;
   writeQueue = writeQueue.then(async () => {
-    if (generation !== currentGeneration) return;
+    if (generation !== currentGeneration) { saving = Math.max(0, saving - 1); emit(); return; }
     try {
       const result = await writeAdminData({ data: { revision, data: next } });
       if (result.conflict) throw new Error("Another device changed these records. Reload and retry your change.");
@@ -139,16 +139,8 @@ function update(fn: (draft: AdminData) => void) {
 
 const subscribe = (l: () => void) => {
   listeners.add(l);
-  const onStorage = (e: StorageEvent) => {
-    if (e.key === KEY) {
-      cache = null;
-      l();
-    }
-  };
-  window.addEventListener("storage", onStorage);
   return () => {
     listeners.delete(l);
-    window.removeEventListener("storage", onStorage);
   };
 };
 
