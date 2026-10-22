@@ -1,5 +1,11 @@
 # Launch corrections
 
+## Two-way Shopify inventory
+- [ ] Import the complete Shopify variant catalog into dashboard inventory without losing pending edits
+- [ ] Edit and review prices, stock, SKU and barcode; confirm live Shopify pushes and handle conflicts/partial failures
+- [ ] Verify authenticated import, shared persistence, sync controls and regression tests
+- [ ] Restore Shopify Admin access if the existing credentials are still expired
+
 - [x] Failed-request recovery screen and retry — blocked catalog request renders recovery instead of crash; restored connection and Retry reload the real product
 
 - [x] Reliable Shopify cart, exact prices, honest installment estimates and no sample-product fallback

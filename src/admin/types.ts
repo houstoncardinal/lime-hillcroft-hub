@@ -44,6 +44,15 @@ export type Product = {
   shopifyInventoryItemId: string | null;
   /** Last confirmed available quantity at the configured Shopify location. */
   shopifySyncedQuantity?: number;
+  shopifyBaseline?: { price: number; quantity: number; sku: string; barcode: string };
+  shopifyLocationId?: string;
+  shopifyLocationName?: string;
+  shopifyTracked?: boolean;
+  shopifyStocked?: boolean;
+  shopifyProductStatus?: string;
+  shopifyImage?: string | null;
+  shopifySyncError?: string | null;
+  shopifyLastSyncedAt?: string;
   syncStatus: SyncStatus;
   updatedAt: string;
 };
