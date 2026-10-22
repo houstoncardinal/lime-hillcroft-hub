@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Eye, Info, MapPin, Phone, Users } from "lucide-react";
@@ -11,6 +12,7 @@ import { CardTitle, GlassCard, PageHeader, StatTile } from "@/admin/ui";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/analytics")({
+  head: () => adminHead("Website analytics"),
   component: Analytics,
 });
 

@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Mail, Pencil, Phone, Plus, UserPlus, Users } from "lucide-react";
@@ -22,6 +23,7 @@ import {
 } from "@/admin/ui";
 
 export const Route = createFileRoute("/admin/employees")({
+  head: () => adminHead("Employees"),
   component: Employees,
 });
 

@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { Delete, LogIn, LogOut, Pencil, Plus, Trash2 } from "lucide-react";
@@ -23,6 +24,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/time-clock")({
+  head: () => adminHead("Time clock"),
   component: TimeClock,
 });
 

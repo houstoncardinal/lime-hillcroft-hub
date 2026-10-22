@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, type FormEvent } from "react";
 import {
@@ -21,6 +22,7 @@ import { useTheme } from "@/components/site/use-theme";
 import { ADMIN_THEME_KEY } from "@/components/site/themes";
 
 export const Route = createFileRoute("/admin/settings")({
+  head: () => adminHead("Settings"),
   component: Settings,
 });
 

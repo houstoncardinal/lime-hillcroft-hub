@@ -1,3 +1,4 @@
+import { adminHead } from "@/admin/heads";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Banknote, CheckCircle2, Clock, Download, FileCheck2, Timer, Trash2 } from "lucide-react";
@@ -22,6 +23,7 @@ import {
 } from "@/admin/ui";
 
 export const Route = createFileRoute("/admin/payroll")({
+  head: () => adminHead("Payroll"),
   component: Payroll,
 });
 
