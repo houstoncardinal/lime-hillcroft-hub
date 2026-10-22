@@ -275,7 +275,7 @@ export function SiteFooter({
     <>
       {portals && <LeasingPortalsBanner lang={lang} />}
       <footer lang={lang} dir="ltr" className="border-t border-white/10 bg-ink text-white">
-        <div className="mx-auto max-w-7xl px-5 pb-28 pt-10 md:pb-10 md:pt-14">
+        <div className="mx-auto max-w-7xl px-5 pb-12 pt-10 md:pb-14 md:pt-14">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_3fr]">
             <div>
               <Logo light />
@@ -380,23 +380,3 @@ export function SiteFooter({
   );
 }
 
-export function MobileCallBar({ lang }: { lang: Lang }) {
-  return (
-    <div className="fixed inset-x-3 bottom-3 z-50 flex gap-2 transition-[right] md:hidden in-[.has-chat]:right-[92px]">
-      <a
-        href={TEL}
-        className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-semibold text-primary-foreground shadow-2xl"
-      >
-        <Phone className="h-4 w-4" /> {T[lang].call}
-      </a>
-      <a
-        href={DIRECTIONS}
-        target="_blank"
-        rel="noreferrer"
-        className="flex flex-1 items-center justify-center gap-2 rounded-full bg-ink py-3.5 font-semibold text-white shadow-2xl ring-1 ring-white/15"
-      >
-        <MapPin className="h-4 w-4" /> {T[lang].directions}
-      </a>
-    </div>
-  );
-}
