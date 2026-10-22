@@ -44,7 +44,7 @@ export const DEVICES_HUB_COPY = {
       },
       {
         q: "Can I get a phone with no credit?",
-        a: "Yes, you can apply. Leasing (lease-to-own) needs no credit, starts at $40 down (iPhone 18 Pro Max from $65 down) and is subject to approval. Apply online with Approve.me, American First Finance or Payvantage, or in store with a valid photo ID.",
+        a: "Yes, you can apply. Leasing (lease-to-own) needs no credit, starts at $40 down (iPhone 18 Pro Max from $65 down) and is subject to approval. Apply online with Progressive Leasing, American First Finance or Payvantage, or in store with a valid photo ID.",
       },
       {
         q: "Is everything on this page in stock right now?",
@@ -83,7 +83,7 @@ export const DEVICES_HUB_COPY = {
       },
       {
         q: "¿Puedo sacar un celular sin crédito?",
-        a: "Sí, puedes solicitarlo. El arrendamiento con opción a compra no necesita crédito, empieza desde $40 de enganche (iPhone 18 Pro Max desde $65) y está sujeto a aprobación. Solicita en línea con Approve.me, American First Finance o Payvantage, o en la tienda con una identificación con foto.",
+        a: "Sí, puedes solicitarlo. El arrendamiento con opción a compra no necesita crédito, empieza desde $40 de enganche (iPhone 18 Pro Max desde $65) y está sujeto a aprobación. Solicita en línea con Progressive Leasing, American First Finance o Payvantage, o en la tienda con una identificación con foto.",
       },
       {
         q: "¿Todo lo de esta página está en existencia?",

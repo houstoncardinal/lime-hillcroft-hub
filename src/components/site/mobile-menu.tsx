@@ -84,7 +84,7 @@ const T = {
 
 // Short labels for the apply buttons, so all three fit on one row.
 const PORTAL_LABEL: Record<string, string> = {
-  "approve-me": "Approve.me",
+  "progressive-leasing": "Progressive Leasing",
   "american-first-finance": "American First",
   payvantage: "Payvantage",
 };

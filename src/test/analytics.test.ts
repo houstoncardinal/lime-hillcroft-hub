@@ -28,7 +28,7 @@ describe("Google Analytics", () => {
     ).not.toBeNull();
 
     click('<a href="tel:+17133399300">Call</a>');
-    click('<a href="https://approve.me/s/x" data-portal="approve-me">Apply</a>');
+    click('<a href="https://example.test/apply" data-portal="progressive-leasing">Apply</a>');
     click('<a href="https://www.google.com/maps/dir/?api=1&destination=TIC">Directions</a>');
     click('<a href="/leasing">Leasing</a>');
 

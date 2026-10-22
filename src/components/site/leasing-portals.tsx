@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 // the provider's own secure site in a new tab; approval and terms come from the provider.
 export const PORTALS = [
   {
-    id: "approve-me",
-    name: "Approve.me",
-    initials: "A",
+    id: "progressive-leasing",
+    name: "Progressive Leasing",
+    initials: "PL",
     href: "https://approve.me/s/ticwireless/69977#/marketing",
     blurb: {
       en: "Lease-to-own application — no credit needed.",
