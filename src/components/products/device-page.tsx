@@ -27,7 +27,7 @@ import { DeviceBuy } from "@/shop/device-buy";
 import type { ShopProduct } from "@/shop/types";
 import { servicePath } from "@/components/services/paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { LeasingPortals, PORTALS, PortalButton } from "@/components/site/leasing-portals";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
@@ -454,7 +454,6 @@ export function DevicePage({
       />
 
       <SiteFooter lang={lang} portals={false} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

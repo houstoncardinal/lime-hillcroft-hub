@@ -26,7 +26,7 @@ import { AREAS, areaName, shortName, type Area } from "@/components/areas/data";
 import { LOCAL } from "@/components/areas/local";
 import { areaPath, areaPaths, directionsFrom } from "@/components/areas/paths";
 import { PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { Photo } from "@/components/site/photo";
@@ -312,7 +312,6 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
       </section>
 
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

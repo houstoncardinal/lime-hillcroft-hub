@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 const PAY_ICONS = [CreditCard, CalendarClock, KeyRound];
 
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { DotRing } from "@/components/site/logo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { ProductCard } from "@/shop/components";
@@ -284,7 +284,6 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

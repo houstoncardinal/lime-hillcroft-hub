@@ -9,7 +9,7 @@ import { SERVICE_ICONS } from "@/components/services/icons";
 import { SERVICE_PHOTOS } from "@/components/services/photos";
 import { PrepaidPlans } from "@/components/services/prepaid-section";
 import { ADDRESS, DIRECTIONS, HOURS, PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { LatestDevices } from "@/components/products/latest-devices";
 import { PHONES } from "@/components/products/inventory";
@@ -294,7 +294,6 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       </section>
 
       <SiteFooter lang={lang} portals={service.slug !== "unlocked-phones"} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

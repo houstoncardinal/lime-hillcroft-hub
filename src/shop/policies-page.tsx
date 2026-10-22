@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { SiteHeader, SiteFooter, MobileCallBar } from "@/components/site/chrome";
+import { SiteHeader, SiteFooter } from "@/components/site/chrome";
 import { TEL, PHONE } from "@/components/site/business";
 import type { Lang } from "@/components/site/seo";
 import type { getStorePolicies } from "@/shop/policies.functions";
@@ -38,6 +38,5 @@ export function PolicyPage({ lang, policy, policies }: { lang: Lang; policy: Pol
       </div> : <p className="text-muted-foreground">{lang === "es" ? "La tienda aún no ha publicado estos términos. Llámanos para confirmar las condiciones aplicables a tu compra antes de ordenar." : "The store has not published these terms yet. Please call to confirm the conditions for your purchase before ordering."}</p>}
       <a href={TEL} className="mt-8 inline-block font-semibold text-primary">{PHONE}</a>
     </section>
-    <SiteFooter lang={lang} portals={false} /><MobileCallBar lang={lang} />
   </main>;
 }

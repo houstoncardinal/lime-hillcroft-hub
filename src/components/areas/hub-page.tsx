@@ -6,7 +6,7 @@ import { AreaCard } from "@/components/areas/area-page";
 import { HUB_COPY } from "@/components/areas/copy";
 import { AREAS, AREA_ZIPS, areaForZip, areaName, type Area } from "@/components/areas/data";
 import { PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { DotRing } from "@/components/site/logo";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
@@ -128,7 +128,6 @@ export function AreasHubPage({ lang }: { lang: Lang }) {
       </section>
 
       <SiteFooter lang={lang} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }

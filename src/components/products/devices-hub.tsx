@@ -12,7 +12,7 @@ import {
 } from "@/components/products/devices-hub-copy";
 import { DeviceCard } from "@/components/products/latest-devices";
 import { PHONE, TEL } from "@/components/site/business";
-import { MobileCallBar, SiteFooter, SiteHeader } from "@/components/site/chrome";
+import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
@@ -188,7 +188,6 @@ export function DevicesHubPage({ lang }: { lang: Lang }) {
       </section>
 
       <SiteFooter lang={lang} portals={false} />
-      <MobileCallBar lang={lang} />
     </main>
   );
 }
