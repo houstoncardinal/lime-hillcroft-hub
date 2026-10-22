@@ -27,7 +27,7 @@ export const adminLogin = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const accounts = adminAccounts();
     if (!accounts.length) throw new Error("Admin login is not configured");
-    // Compare against every account so the response time doesn't reveal which emails exist.
+    // Failed logins compare against every account, so timing doesn't reveal which emails exist.
     const match = accounts.find((a) => same(data.email, a.email) && same(data.password, a.password));
     if (!match) return { ok: false as const };
     const { adminSession } = await import("@/admin/session.server");
