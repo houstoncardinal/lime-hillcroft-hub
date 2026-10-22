@@ -11,7 +11,7 @@
 - [ ] Progressive Leasing online application — blocked by missing dealer URL; old link replaced with call-store action
 - [ ] Shopify checkout branding — merchant must replace “My Store” in Shopify settings
 - [ ] Final paid order, delivery/taxes/refunds/email/financing approval and cameras — require merchant-approved transaction and live camera sources
-- [ ] Deep code-security review — unavailable through the current basic scan tool; basic checks report no issues
+- [x] Focused security code review and basic scan — added an atomic telemetry ingestion quota; no other concrete issue found in reviewed shopping/admin/public handlers (not a penetration test)
 
 ## Completed shop connection
 
