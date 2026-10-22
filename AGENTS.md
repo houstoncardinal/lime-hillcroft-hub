@@ -14,3 +14,5 @@
 - Public telemetry is validated server-side and dashboard reads are admin-only; sample visits are never mixed with live totals.
 - Admin initialization and save responses are generation-guarded so logout or newer loads cannot restore stale state.
 - Payroll and weekly staff totals clip overlapping shifts at calendar boundaries; open overlapping shifts block payroll finalization.
+- Purchase policy pages show configured Shopify text only when it is not an unfinished template; unconfigured terms remain explicitly unavailable.
+- The public product sitemap reads published handles directly from Shopify without session-dependent data or nested server-function calls.
