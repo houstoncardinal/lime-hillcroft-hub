@@ -250,9 +250,6 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   // The live chat button must never sit on top of the open cart drawer.
   useEffect(() => {
     setChatHidden(open);
-    return () => {
-      if (open) setChatHidden(false);
-    };
   }, [open]);
 
   const count = cartCount(items);
