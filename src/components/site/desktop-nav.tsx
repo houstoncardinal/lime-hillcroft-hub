@@ -121,19 +121,22 @@ export function DesktopNav({ lang }: { lang: Lang }) {
       className="relative hidden lg:block"
     >
       <Nav.List className="flex items-center gap-0.5 xl:gap-1.5">
-        <Nav.Item value="products" className="relative">
-          <Nav.Trigger className={trigger} onClick={keepOpen("products")}>
-            {t.products}
-            <ChevronDown
-              className="h-3.5 w-3.5 transition group-data-[state=open]:rotate-180"
-              aria-hidden="true"
-            />
-          </Nav.Trigger>
-          <Panel
-            pathname={pathname}
-            items={productNav(lang)}
-            footer={{ label: t.leasingCta, href: ALTERNATES.leasing[lang] }}
-          />
+        {/** Products = the online store: one tap, no dropdown, always visible. */}
+        <Nav.Item>
+          <Nav.Link asChild active={pathname === ALTERNATES.shop[lang]}>
+            <Link
+              to={ALTERNATES.shop[lang]}
+              aria-current={pathname === ALTERNATES.shop[lang] ? "page" : undefined}
+              className={
+                pathname === ALTERNATES.shop[lang]
+                  ? "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary px-2.5 text-sm font-semibold !text-primary-foreground transition xl:px-3"
+                  : "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3"
+              }
+            >
+              <ShoppingBag className="h-4 w-4" aria-hidden="true" />
+              {t.products}
+            </Link>
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item value="services" className="relative">
           <Nav.Trigger className={trigger} onClick={keepOpen("services")}>
