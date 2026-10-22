@@ -50,6 +50,8 @@ import {
   type Tone,
 } from "@/admin/ui";
 import { cn } from "@/lib/utils";
+import { ShopifySyncPanel } from "@/admin/shopify-sync-panel";
+import { productChanges } from "@/admin/shopify-sync";
 
 export const Route = createFileRoute("/admin/inventory")({
   head: () => adminHead("Inventory"),
@@ -264,6 +266,8 @@ function Inventory() {
         />
       </div>
 
+      <div className="mt-6"><ShopifySyncPanel /></div>
+
       <GlassCard className="mt-6">
         <div className="mb-5 flex flex-wrap items-center gap-3">
           <div className="relative min-w-[220px] flex-1">
@@ -320,7 +324,7 @@ function Inventory() {
               tone="danger"
               size="sm"
               onClick={() => {
-                if (!confirm(`Delete ${selected.length} products? This can't be undone.`)) return;
+                if (!confirm(`Remove ${selected.length} products from this inventory list only? Shopify products will not be deleted and linked items return on refresh.`)) return;
                 inventory.remove(selected);
                 setSelected([]);
                 toast.success("Products deleted");
@@ -391,6 +395,7 @@ function Inventory() {
                       />
                     </td>
                     <td className="min-w-72">
+                      {p.shopifyImage && <img src={p.shopifyImage} alt="" className="mb-2 h-12 w-12 rounded-lg object-contain bg-muted" />}
                       <button
                         type="button"
                         className="cursor-pointer text-left"
@@ -442,6 +447,8 @@ function Inventory() {
                     </td>
                     <td>
                       <Badge tone={SYNC[p.syncStatus].tone}>{SYNC[p.syncStatus].label}</Badge>
+                      {p.shopifyProductStatus && <span className="mt-1 block text-xs text-muted-foreground">{p.shopifyProductStatus.toLowerCase()}</span>}
+                      {p.shopifySyncError && <span className="mt-1 block max-w-60 text-xs text-destructive">{p.shopifySyncError}</span>}
                     </td>
                     <td>
                       <div className="flex justify-end gap-1">
