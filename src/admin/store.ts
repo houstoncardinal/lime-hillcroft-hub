@@ -296,7 +296,7 @@ export const inventory = {
           Object.assign(p, metadata, { name: r.name, brand: r.brand, shopifyBaseline: baseline,
             shopifySyncedQuantity: r.quantity, updatedAt: nowIso() });
           const conflictError = conflicts.length ? `Shopify changed ${conflicts.join(", ")}. Your edits are preserved; review the current Shopify values before pushing.` : p.shopifySyncError;
-          p.shopifySyncError = productChanges(p).length ? conflictError : null;
+          p.shopifySyncError = productChanges(p).length ? (conflictError ?? null) : null;
           p.syncStatus = productChanges(p).length ? (p.shopifySyncError ? "error" : "pending") : "synced";
           if (dirty.length) preserved++;
           const delta = p.quantity - before;
