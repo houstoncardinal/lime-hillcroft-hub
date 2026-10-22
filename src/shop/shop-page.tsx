@@ -28,7 +28,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       (p) =>
         (category === "all" || p.category === category) &&
         (!q ||
-          `${p.title} ${p.vendor} ${(<MoneyText text={t.categories[p.category]} />)}`
+          `${p.title} ${p.vendor} ${t.categories[p.category]}`
             .toLowerCase()
             .includes(q)),
     );

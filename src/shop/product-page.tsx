@@ -287,7 +287,7 @@ export function ProductPage({
                 type="button"
                 onClick={add}
                 disabled={!variant?.available}
-                className="inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-8 font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:brightness-110 disabled:opacity-50 sm:flex-none"
+                className={cn("inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-8 font-semibold shadow-lg transition hover:brightness-110 disabled:opacity-50 sm:flex-none", canLease && payMode === "plan" ? "bg-shoppay text-shoppay-foreground shadow-shoppay/30" : "bg-primary text-primary-foreground shadow-primary/30")}
               >
                 {added ? <Check className="h-5 w-5" /> : <ShoppingBag className="h-5 w-5" />}
                 {!variant?.available
@@ -301,7 +301,7 @@ export function ProductPage({
             </div>
             {variant?.available && (
               <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />{" "}
+                <span className="h-2 w-2 rounded-full bg-success" />{" "}
                 {<MoneyText text={t.inStock} />}
               </p>
             )}
