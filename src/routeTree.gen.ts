@@ -37,6 +37,7 @@ import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
 import { Route as Iphone18IndexRouteImport } from './routes/iphone-18/index'
 import { Route as LaptopsTabletsIndexRouteImport } from './routes/laptops-tablets/index'
 import { Route as LocationIndexRouteImport } from './routes/location/index'
+import { Route as PoliciesPolicyRouteImport } from './routes/policies/$policy'
 import { Route as ReviewsIndexRouteImport } from './routes/reviews/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
@@ -50,6 +51,7 @@ import { Route as EsGuiasIndexRouteImport } from './routes/es/guias/index'
 import { Route as EsGuiasSlugRouteImport } from './routes/es/guias/$slug'
 import { Route as EsIphone18IndexRouteImport } from './routes/es/iphone-18/index'
 import { Route as EsLaptopsYTabletasIndexRouteImport } from './routes/es/laptops-y-tabletas/index'
+import { Route as EsPoliticasPolicyRouteImport } from './routes/es/politicas/$policy'
 import { Route as EsResenasIndexRouteImport } from './routes/es/resenas/index'
 import { Route as EsServiciosIndexRouteImport } from './routes/es/servicios/index'
 import { Route as EsServiciosSlugRouteImport } from './routes/es/servicios/$slug'
@@ -199,6 +201,11 @@ const LocationIndexRoute = LocationIndexRouteImport.update({
   path: '/location/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliciesPolicyRoute = PoliciesPolicyRouteImport.update({
+  id: '/policies/$policy',
+  path: '/policies/$policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewsIndexRoute = ReviewsIndexRouteImport.update({
   id: '/reviews/',
   path: '/reviews/',
@@ -264,6 +271,11 @@ const EsLaptopsYTabletasIndexRoute = EsLaptopsYTabletasIndexRouteImport.update({
   path: '/es/laptops-y-tabletas/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsPoliticasPolicyRoute = EsPoliticasPolicyRouteImport.update({
+  id: '/es/politicas/$policy',
+  path: '/es/politicas/$policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsResenasIndexRoute = EsResenasIndexRouteImport.update({
   id: '/es/resenas/',
   path: '/es/resenas/',
@@ -324,6 +336,7 @@ export interface FileRoutesByFullPath {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/policies/$policy': typeof PoliciesPolicyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/accessories/': typeof AccessoriesIndexRoute
@@ -341,6 +354,7 @@ export interface FileRoutesByFullPath {
   '/shop/': typeof ShopIndexRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
+  '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
@@ -374,6 +388,7 @@ export interface FileRoutesByTo {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/policies/$policy': typeof PoliciesPolicyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/accessories': typeof AccessoriesIndexRoute
@@ -391,6 +406,7 @@ export interface FileRoutesByTo {
   '/shop': typeof ShopIndexRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
+  '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
@@ -426,6 +442,7 @@ export interface FileRoutesById {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/policies/$policy': typeof PoliciesPolicyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/accessories/': typeof AccessoriesIndexRoute
@@ -443,6 +460,7 @@ export interface FileRoutesById {
   '/shop/': typeof ShopIndexRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
+  '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
   '/es/servicios/$slug': typeof EsServiciosSlugRoute
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
@@ -479,6 +497,7 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/policies/$policy'
     | '/services/$slug'
     | '/shop/$handle'
     | '/accessories/'
@@ -496,6 +515,7 @@ export interface FileRouteTypes {
     | '/shop/'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
+    | '/es/politicas/$policy'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
@@ -529,6 +549,7 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/policies/$policy'
     | '/services/$slug'
     | '/shop/$handle'
     | '/accessories'
@@ -546,6 +567,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
+    | '/es/politicas/$policy'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
@@ -580,6 +602,7 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/policies/$policy'
     | '/services/$slug'
     | '/shop/$handle'
     | '/accessories/'
@@ -597,6 +620,7 @@ export interface FileRouteTypes {
     | '/shop/'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
+    | '/es/politicas/$policy'
     | '/es/servicios/$slug'
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
@@ -624,6 +648,7 @@ export interface RootRouteChildren {
   EsArrendamientoRoute: typeof EsArrendamientoRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
+  PoliciesPolicyRoute: typeof PoliciesPolicyRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ShopHandleRoute: typeof ShopHandleRoute
   AccessoriesIndexRoute: typeof AccessoriesIndexRoute
@@ -640,6 +665,7 @@ export interface RootRouteChildren {
   ShopIndexRoute: typeof ShopIndexRoute
   EsEquiposSlugRoute: typeof EsEquiposSlugRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
+  EsPoliticasPolicyRoute: typeof EsPoliticasPolicyRoute
   EsServiciosSlugRoute: typeof EsServiciosSlugRoute
   EsTiendaHandleRoute: typeof EsTiendaHandleRoute
   EsZonasSlugRoute: typeof EsZonasSlugRoute
@@ -854,6 +880,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocationIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/policies/$policy': {
+      id: '/policies/$policy'
+      path: '/policies/$policy'
+      fullPath: '/policies/$policy'
+      preLoaderRoute: typeof PoliciesPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews/': {
       id: '/reviews/'
       path: '/reviews'
@@ -943,6 +976,13 @@ declare module '@tanstack/react-router' {
       path: '/es/laptops-y-tabletas'
       fullPath: '/es/laptops-y-tabletas/'
       preLoaderRoute: typeof EsLaptopsYTabletasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/politicas/$policy': {
+      id: '/es/politicas/$policy'
+      path: '/es/politicas/$policy'
+      fullPath: '/es/politicas/$policy'
+      preLoaderRoute: typeof EsPoliticasPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/resenas/': {
@@ -1041,6 +1081,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsArrendamientoRoute: EsArrendamientoRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
   GuidesSlugRoute: GuidesSlugRoute,
+  PoliciesPolicyRoute: PoliciesPolicyRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ShopHandleRoute: ShopHandleRoute,
   AccessoriesIndexRoute: AccessoriesIndexRoute,
@@ -1057,6 +1098,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShopIndexRoute: ShopIndexRoute,
   EsEquiposSlugRoute: EsEquiposSlugRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
+  EsPoliticasPolicyRoute: EsPoliticasPolicyRoute,
   EsServiciosSlugRoute: EsServiciosSlugRoute,
   EsTiendaHandleRoute: EsTiendaHandleRoute,
   EsZonasSlugRoute: EsZonasSlugRoute,
