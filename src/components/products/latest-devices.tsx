@@ -27,6 +27,8 @@ const T = {
     next: "More devices",
     seeAll: (n: number) => `See all ${n} devices`,
     from: "From",
+    pay4: "or 4 payments of",
+    pay4With: "with Shop Pay Installments",
     seeAllBody: "Every iPhone, Galaxy and iPad we have, by model.",
   },
   es: {
@@ -45,6 +47,8 @@ const T = {
     next: "Más equipos",
     seeAll: (n: number) => `Ver los ${n} equipos`,
     from: "Desde",
+    pay4: "o 4 pagos de",
+    pay4With: "con Shop Pay Installments",
     seeAllBody: "Todos los iPhone, Galaxy y iPad que tenemos, por modelo.",
   },
 };
