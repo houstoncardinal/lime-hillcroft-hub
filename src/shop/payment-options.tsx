@@ -5,6 +5,7 @@ import type { Lang } from "@/components/site/seo";
 import { SHOP_COPY } from "@/shop/copy";
 import { installmentSchedule, payInFour } from "@/shop/installments";
 import { cn } from "@/lib/utils";
+import { InstallmentSteps } from "@/shop/installment-steps";
 
 export type PaymentMode = "full" | "plan";
 
@@ -38,8 +39,9 @@ export function PaymentOptions({ cents, lang, value, onChange }: {
                   {plan && <span className="ml-2 text-xs font-normal text-muted-foreground">× 4 {t.perPay}</span>}
                 </span>
                 <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-                  {plan ? (lang === "en" ? "Illustrative payments · final offers at checkout" : "Pagos ilustrativos · ofertas finales al pagar") : t.fullNote}
+                  {plan ? t.estimateNote : t.fullNote}
                 </span>
+                {plan && <span className="mt-1 block text-xs font-medium text-shoppay">{t.provider}</span>}
               </span>
             </label>
           );
@@ -57,6 +59,7 @@ export function PaymentOptions({ cents, lang, value, onChange }: {
             ))}
           </ol>
           <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{t.howTo}</p>
+          <InstallmentSteps lang={lang} />
         </div>
       )}
       <p className="mt-3 flex items-start gap-2 text-[11px] leading-relaxed text-muted-foreground">

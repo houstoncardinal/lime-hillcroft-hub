@@ -14,7 +14,7 @@ afterEach(cleanup);
 describe("device-page payment intent", () => {
   it("sends the selected installment option with the real variant and full price", async () => {
     render(<DeviceBuy product={product} lang="en" />);
-    fireEvent.click(screen.getByRole("radio", { name: /Lease with Shop Pay/ }));
+    fireEvent.click(screen.getByRole("radio", { name: /Shop Pay Installments/ }));
     fireEvent.click(screen.getByRole("button", { name: "Add to cart — pay over time" }));
     await waitFor(() => expect(state.addItem).toHaveBeenCalledWith(product, product.variants[0], 1, true));
     expect(product.variants[0]?.price).toBe(104900);
