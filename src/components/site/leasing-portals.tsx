@@ -1,7 +1,6 @@
 import { ArrowUpRight, BadgeCheck, Clock, IdCard, ShieldCheck } from "lucide-react";
 
 import type { Lang } from "@/components/site/seo";
-import { TEL } from "@/components/site/business";
 import { cn } from "@/lib/utils";
 
 // TIC Wireless's online lease-to-own applications (dealer links from each provider). Each opens
@@ -11,7 +10,7 @@ export const PORTALS = [
     id: "progressive-leasing",
     name: "Progressive Leasing",
     initials: "PL",
-    href: TEL,
+    href: "https://approve.me/s/ticwireless/69977#/marketing",
     blurb: {
       en: "Lease-to-own application — no credit needed.",
       es: "Solicitud de arrendamiento — sin necesidad de crédito.",
@@ -91,16 +90,16 @@ export function PortalButton({
   return (
     <a
       href={portal.href}
-      target={portal.id === "progressive-leasing" ? undefined : "_blank"}
+      target="_blank"
       rel="noopener"
       data-portal={portal.id}
-      aria-label={portal.id === "progressive-leasing" ? (lang === "es" ? "Llamar sobre Progressive Leasing" : "Call about Progressive Leasing") : `${T[lang].apply(portal.name)} ${T[lang].newTab}`}
+      aria-label={`${T[lang].apply(portal.name)} ${T[lang].newTab}`}
       className={cn(
         "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold transition",
         className,
       )}
     >
-      {portal.id === "progressive-leasing" ? (lang === "es" ? "Llamar sobre Progressive Leasing" : "Call about Progressive Leasing") : short ? T[lang].applyNow : T[lang].apply(portal.name)}
+      {short ? T[lang].applyNow : T[lang].apply(portal.name)}
       <ArrowUpRight className="h-4 w-4 shrink-0" />
     </a>
   );
