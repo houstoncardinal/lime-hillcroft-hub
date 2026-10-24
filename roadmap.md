@@ -16,7 +16,7 @@
 - [x] Verify checkout, remembered cart, signed-in shared saves, conflict rejection and signed-out data denial; 101 tests pass
 - [ ] Shopify stock import/push — blocked by expired Shopify Admin access (401); storefront shopping remains working
 - [ ] Merchant policies — blocked by missing approved privacy, returns, shipping, terms and warranty text; unfinished template is not shown
-- [ ] Progressive Leasing online application — blocked by missing dealer URL; old link replaced with call-store action
+- [x] Progressive Leasing online application — use the merchant-approved dealer URL everywhere
 - [ ] Shopify checkout branding — merchant must replace “My Store” in Shopify settings
 - [ ] Final paid order, delivery/taxes/refunds/email/financing approval and cameras — require merchant-approved transaction and live camera sources
 - [x] Focused security code review and basic scan — added an atomic telemetry ingestion quota; no other concrete issue found in reviewed shopping/admin/public handlers (not a penetration test)
@@ -31,5 +31,6 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
+- [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish
 - [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
 - [x] Add customer authentication (sign up / sign in) — email+password at /auth, cart saved to account across devices

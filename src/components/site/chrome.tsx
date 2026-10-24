@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Globe, MapPin, Phone, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, ShoppingBag } from "lucide-react";
 
 import { ADDRESS, DIRECTIONS, PHONE, TEL, hoursOn } from "@/components/site/business";
 import { setLangPref } from "@/components/intl/lang-pref";
@@ -18,7 +18,6 @@ import { areaPath } from "@/components/areas/paths";
 import { GUIDES } from "@/components/guides/data";
 import { guidePath } from "@/components/guides/paths";
 import { Toaster } from "@/components/ui/sonner";
-import { AccountButton } from "@/shop/account-button";
 import { CartButton, CartDrawer } from "@/shop/components";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
 
@@ -121,32 +120,6 @@ export function Stars({
   );
 }
 
-function HeaderLangToggle({
-  lang,
-  paths,
-  current,
-}: {
-  lang: Lang;
-  paths: Paths;
-  current?: string;
-}) {
-  // On an English (or summary-language) page offer Spanish; on a Spanish page offer English.
-  const to: Lang = lang === "es" || current ? "en" : "es";
-  return (
-    <a
-      href={paths[to]}
-      hrefLang={to}
-      lang={to}
-      onClick={() => setLangPref(to)}
-      aria-label={to === "es" ? "Ver en español" : "View in English"}
-      className="hidden h-11 items-center gap-1 rounded-full px-2.5 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/10 min-[375px]:inline-flex sm:hidden"
-    >
-      <Globe className="h-4 w-4 text-primary" aria-hidden="true" />
-      {to.toUpperCase()}
-    </a>
-  );
-}
-
 export function SiteHeader({
   lang,
   paths,
@@ -163,7 +136,7 @@ export function SiteHeader({
         <Link
           to={ALTERNATES.home[lang]}
           aria-label={T[lang].home}
-          className="min-w-0 overflow-hidden"
+          className="shrink-0"
         >
           <Logo light compact />
         </Link>
@@ -173,23 +146,20 @@ export function SiteHeader({
           <div className="hidden sm:block">
             <LanguageMenu lang={lang} paths={paths} {...(current ? { current } : {})} />
           </div>
-          {/* Phones: one tap to switch English ⇄ Spanish (more languages in the menu). */}
-          <HeaderLangToggle lang={lang} paths={paths} {...(current ? { current } : {})} />
-          {/* Phones & tablets: a one-tap shop button next to the cart (desktop uses the nav link). */}
+          {/* Tablets: Products shortcut. Phones use the first row of the menu. */}
           <Link
             to={ALTERNATES.shop[lang]}
             aria-label={T[lang].shopAria}
-            className="hidden h-11 min-w-11 items-center justify-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground min-[400px]:inline-flex lg:hidden"
+            className="hidden h-11 min-w-11 items-center justify-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground sm:inline-flex lg:hidden"
           >
             <ShoppingBag className="h-[18px] w-[18px]" aria-hidden="true" />
             <span className="hidden sm:inline">{T[lang].shop}</span>
           </Link>
-          {SHOP_ENABLED && <AccountButton lang={lang} />}
           {SHOP_ENABLED && <CartButton lang={lang} />}
           <a
             href={TEL}
             aria-label={PHONE}
-            className="hidden h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:inline-flex lg:w-11 lg:justify-center lg:px-0 xl:w-auto xl:px-4"
+            className="hidden h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 lg:inline-flex lg:w-11 lg:justify-center lg:px-0 xl:w-auto xl:px-4"
           >
             <Phone className="h-4 w-4 shrink-0" />
             {/* Number shows on tablets and wide screens; laptops get the icon so the menu fits. */}

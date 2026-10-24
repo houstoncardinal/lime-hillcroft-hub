@@ -66,7 +66,7 @@ export function Logo({
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "whitespace-nowrap font-display font-semibold tracking-[0.04em]",
+            "whitespace-nowrap font-display font-semibold tracking-normal",
             compact ? "text-base sm:text-lg" : "text-xl",
             light ? "text-white" : "text-ink",
           )}
@@ -76,10 +76,10 @@ export function Logo({
         <span
           className={cn(
             // The tagline: extra-bold and full-strength so it reads clearly at small sizes.
-            "whitespace-nowrap font-sans font-extrabold uppercase",
+            "font-sans font-extrabold uppercase tracking-normal",
             compact
-              ? "mt-1 text-[10.5px] tracking-[0.05em] min-[400px]:text-xs min-[400px]:tracking-[0.08em]"
-              : "mt-1.5 text-sm tracking-[0.1em]",
+               ? "mt-1 max-w-[8.75rem] whitespace-normal text-[10.5px] leading-tight min-[360px]:max-w-[10rem] sm:max-w-none sm:whitespace-nowrap sm:text-xs"
+               : "mt-1.5 whitespace-nowrap text-sm",
             light ? "text-white" : "text-ink",
           )}
         >
