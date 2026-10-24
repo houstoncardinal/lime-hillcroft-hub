@@ -31,6 +31,8 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
+- [ ] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in
+- [ ] Improve homepage shopping entry points and shelf-device browsing; verify real device-to-checkout flow
 - [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish
 - [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
 - [x] Add customer authentication (sign up / sign in) — email+password at /auth, cart saved to account across devices
