@@ -21,3 +21,4 @@
 - Purchase policy pages show configured Shopify text only when it is not an unfinished template; unconfigured terms remain explicitly unavailable.
 - The public product sitemap reads published handles directly from Shopify without session-dependent data or nested server-function calls.
 - Connection failures render a retryable bilingual recovery state, not a crash report; server RPC responses must never be rewritten into HTML error documents.
+- Leasing destinations are centralized in PORTALS and shared by page, banner, and mobile menu links so updates remain consistent across languages.
