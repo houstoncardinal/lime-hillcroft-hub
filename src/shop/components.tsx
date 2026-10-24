@@ -328,7 +328,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                         </div>
                         {l.lease ? (
                           <p className="tabular-nums text-right">
-                            <span className="block font-semibold">
+                            <span className="block whitespace-nowrap text-sm font-semibold">
                               ≈ <Money usd={payInFour(l.price * l.quantity) / 100} /> × 4
                             </span>
                             <span className="block text-xs text-muted-foreground">
