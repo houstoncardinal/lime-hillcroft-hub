@@ -31,6 +31,7 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
+- [ ] Clarify estimated installment amounts and Affirm checkout steps; verify signed-out Shopify ordering and report merchant activation limits
 - [x] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in; shared selector carries installment intent and opens cart only after confirmation
 - [x] Improve homepage shopping entry points and shelf-device browsing; 51 of 53 shelf models matched the published Shopify catalog, Galaxy S26+ and iPad mini 5 have no published match; real signed-out installment checkout and English/Spanish layouts verified, 119 tests pass
 - [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish
