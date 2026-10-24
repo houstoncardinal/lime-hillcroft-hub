@@ -7,6 +7,7 @@ import { Scroller } from "@/components/site/scroller";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { Money } from "@/components/intl/money";
 import { shopHandle, useDevicePrices } from "@/shop/device-shop";
+import { payInFour } from "@/shop/installments";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -104,12 +105,21 @@ export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) 
         </h3>
         {d.note && <p className="mt-0.5 text-sm text-muted-foreground">{d.note[lang]}</p>}
         {price && (
-          <p className="mt-1 text-sm tabular-nums">
-            <span className="text-muted-foreground">{t.from} </span>
-            <span className="font-semibold">
-              <Money usd={price.from / 100} />
-            </span>
-          </p>
+          <div className="mt-1">
+            <p className="text-sm tabular-nums">
+              <span className="text-muted-foreground">{t.from} </span>
+              <span className="font-semibold">
+                <Money usd={price.from / 100} />
+              </span>
+            </p>
+            <p className="mt-1 text-xs leading-snug tabular-nums">
+              <span className="text-muted-foreground">{t.pay4} </span>
+              <span className="font-semibold text-shoppay">
+                <Money usd={payInFour(price.from) / 100} />
+              </span>{" "}
+              <span className="text-muted-foreground">{t.pay4With}</span>
+            </p>
+          </div>
         )}
         <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-muted-foreground">
           <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
