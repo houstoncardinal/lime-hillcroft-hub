@@ -31,6 +31,6 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
-- [ ] Update leasing application buttons and simplify header/mobile navigation; verify full logo visibility
+- [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish
 - [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
 - [x] Add customer authentication (sign up / sign in) — email+password at /auth, cart saved to account across devices
