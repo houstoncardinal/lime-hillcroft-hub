@@ -15,6 +15,7 @@ import {
   Repeat,
   Router,
   Smartphone,
+  ShoppingBag,
   Wallet,
   Wrench,
 } from "lucide-react";
@@ -47,6 +48,7 @@ import { GUIDES } from "@/components/guides/data";
 import { GuideCard } from "@/components/guides/guide-page";
 import { servicePath } from "@/components/services/paths";
 import { HOME_COPY } from "@/components/pages/home-copy";
+import { Button } from "@/components/ui/button";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { ProductCard } from "@/shop/components";
 import { SHOP_COPY } from "@/shop/copy";
@@ -141,11 +143,12 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               {<MoneyText text={t.hero.body[2]} />}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
+              {SHOP_ENABLED && <Button asChild className="h-auto min-h-12 rounded-full px-7 py-3.5 text-base font-semibold"><Link to={ALTERNATES.shop[lang]}><ShoppingBag />{lang === "en" ? "Shop all products" : "Ver todos los productos"}<ArrowRight /></Link></Button>}
               <a
                 href={DIRECTIONS}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition hover:brightness-110"
+                className="group inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 font-semibold text-primary transition hover:border-primary"
               >
                 {<MoneyText text={t.hero.directions} />}
                 <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -260,6 +263,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
+      <LatestDevices devices={LATEST_DEVICES} lang={lang} limit={16} className="bg-secondary/40" />
+
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 md:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -359,8 +364,6 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       <LeasingPortals lang={lang} />
-
-      <LatestDevices devices={LATEST_DEVICES} lang={lang} limit={16} className="bg-secondary/40" />
 
       {/* Showroom */}
       <section className="px-3 pt-3 sm:px-5 sm:pt-5">

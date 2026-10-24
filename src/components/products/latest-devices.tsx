@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, ShoppingBag } from "lucide-react";
 
 import { INVENTORY_UPDATED, LATEST_DEVICES, type Device } from "@/components/products/inventory";
 import { TEL } from "@/components/site/business";
@@ -7,6 +7,7 @@ import { Scroller } from "@/components/site/scroller";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { Money } from "@/components/intl/money";
 import { shopHandle, useDevicePrices } from "@/shop/device-shop";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const T = {
@@ -17,6 +18,9 @@ const T = {
     updated: (d: string) => `Updated ${d}`,
     inStore: "In store now",
     details: "Details",
+    online: "Buy online",
+    soldOut: "Sold out online",
+    browse: "Shop all products",
     call: "Call to check stock",
     lease: "Apply for leasing",
     prev: "Previous devices",
@@ -32,6 +36,9 @@ const T = {
     updated: (d: string) => `Actualizado el ${d}`,
     inStore: "En tienda",
     details: "Ver más",
+    online: "Comprar en línea",
+    soldOut: "Agotado en línea",
+    browse: "Ver todos los productos",
     call: "Llama para ver existencias",
     lease: "Solicita arrendamiento",
     prev: "Equipos anteriores",
@@ -100,9 +107,9 @@ export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) 
             </span>
           </p>
         )}
-        <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-emerald-700">
-          <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
-          {t.inStore}
+        <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-muted-foreground">
+          <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
+          {price ? price.available ? t.online : t.soldOut : t.inStore}
           {href && (
             <span className="ml-auto inline-flex items-center gap-1 text-ink">
               {t.details} <ArrowRight className="h-3.5 w-3.5 text-primary" />
@@ -191,7 +198,8 @@ export function LatestDevices({
           )}
         </Scroller>
 
-        <div className="mt-4 flex flex-col gap-2 px-5 sm:flex-row">
+        <div className="mt-4 flex flex-col gap-2 px-5 sm:flex-row sm:flex-wrap">
+          <Button asChild className="h-auto min-h-12 rounded-full px-6 py-3 font-semibold"><Link to={ALTERNATES.shop[lang]}><ShoppingBag />{t.browse}<ArrowRight /></Link></Button>
           <a
             href={TEL}
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 font-semibold text-white"

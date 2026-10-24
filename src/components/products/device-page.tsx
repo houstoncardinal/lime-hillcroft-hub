@@ -327,10 +327,10 @@ export function DevicePage({
           </div>
 
           {/* Buy box */}
-          <div className="rounded-[2rem] bg-white/[0.06] p-5 ring-1 ring-white/10 sm:p-7 lg:col-start-2 lg:row-start-2 lg:self-start">
+          <div className="rounded-lg bg-card p-5 text-card-foreground ring-1 ring-border sm:p-7 lg:col-start-2 lg:row-start-2 lg:self-start">
             {shop && <DeviceBuy product={shop} lang={lang} />}
             <p className="font-display text-xl font-semibold">{t.leaseTitle}</p>
-            <p className="mt-1 text-sm leading-relaxed text-white/70">
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               <MoneyText text={t.leaseBody(detail.leaseFrom ?? 40)} />
             </p>
             <div className="mt-5 grid gap-2">
@@ -346,7 +346,7 @@ export function DevicePage({
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               <a
                 href={TEL}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-ink transition hover:bg-white/90"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-secondary px-5 text-sm font-bold text-ink transition hover:bg-secondary/80"
               >
                 <Phone className="h-4 w-4" /> {t.call}
               </a>
@@ -354,12 +354,12 @@ export function DevicePage({
                 href={DIRECTIONS}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-sm font-bold transition hover:border-white/60"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border px-5 text-sm font-bold transition hover:border-primary"
               >
                 <MapPin className="h-4 w-4" /> {t.directions}
               </a>
             </div>
-            <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-white/55">
+            <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
               <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               {lang === "en"
                 ? "Each application opens on the provider's own secure site. Lease-to-own is not a loan."

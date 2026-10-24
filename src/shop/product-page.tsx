@@ -6,13 +6,14 @@ import { Check, ChevronRight, Minus, Phone, Plus, ShieldCheck, ShoppingBag } fro
 import { PHONE, TEL } from "@/components/site/business";
 import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
-import { money, useCartStore } from "@/shop/cart";
+import { useCartStore } from "@/shop/cart";
 import { Badge, InstallmentChip, ProductCard, ProductTile } from "@/shop/components";
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
 import type { ShopProduct } from "@/shop/types";
-import { installmentSchedule, payInFour, showsInstallments } from "@/shop/installments";
+import { showsInstallments } from "@/shop/installments";
 import { cn } from "@/lib/utils";
+import { PaymentOptions } from "@/shop/payment-options";
 
 export function ProductPage({
   lang,
@@ -119,112 +120,7 @@ export function ProductPage({
               {canLease && variant && <InstallmentChip cents={variant.price} lang={lang} className="text-xs" />}
             </div>
             {canLease && variant && (
-              <fieldset className="mt-8 rounded-[1.75rem] border bg-card p-3 shadow-[0_20px_50px_-35px_color-mix(in_oklab,var(--ink)_50%,transparent)] sm:p-4">
-                <legend className="sr-only">{t.lease.title}</legend>
-                <p className="px-1 pb-3 pt-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  {t.lease.title}
-                </p>
-                <div className="grid gap-2.5">
-                  {(["full", "plan"] as const).map((m) => {
-                    const on = payMode === m;
-                    const plan = m === "plan";
-                    return (
-                      <label
-                        key={m}
-                        className={cn(
-                          "relative grid cursor-pointer grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border p-4 transition",
-                          on
-                            ? plan
-                              ? "border-shoppay bg-shoppay/6 ring-2 ring-shoppay/20"
-                              : "border-ink bg-secondary/60 ring-2 ring-ink/10"
-                            : "hover:border-foreground/30",
-                        )}
-                      >
-                        <input
-                          type="radio"
-                          name="pay-mode"
-                          value={m}
-                          checked={on}
-                          onChange={() => setPayMode(m)}
-                          className="sr-only"
-                        />
-                        <span
-                          aria-hidden
-                          className={cn(
-                            "flex h-5 w-5 items-center justify-center rounded-full border-2 transition",
-                            on ? (plan ? "border-shoppay" : "border-ink") : "border-muted-foreground/40",
-                          )}
-                        >
-                          {on && <span className={cn("h-2.5 w-2.5 rounded-full", plan ? "bg-shoppay" : "bg-ink")} />}
-                        </span>
-                        <span className="min-w-0">
-                          <span className="flex flex-wrap items-center gap-2 font-semibold">
-                            {plan ? t.lease.plan : t.lease.full}
-                            {plan && (
-                              <span className="rounded-full bg-shoppay px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-shoppay-foreground">
-                                {t.lease.popular}
-                              </span>
-                            )}
-                          </span>
-                          <span className="mt-0.5 block text-xs leading-relaxed text-muted-foreground">
-                            {plan
-                              ? t.lease.planNote(money(payInFour(variant.price * quantity)))
-                              : t.lease.fullNote}
-                          </span>
-                        </span>
-                        <span className="tabular-nums text-right font-display text-lg font-semibold sm:text-xl">
-                          {plan ? (
-                            <>
-                              <Money usd={payInFour(variant.price * quantity) / 100} />
-                              <span className="block text-[11px] font-normal text-muted-foreground">
-                                × 4 {t.lease.perPay}
-                              </span>
-                            </>
-                          ) : (
-                            <Money usd={(variant.price * quantity) / 100} />
-                          )}
-                        </span>
-                      </label>
-                    );
-                  })}
-                </div>
-                {payMode === "plan" && (
-                  <div className="mt-3 rounded-2xl bg-secondary/60 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                      {t.lease.schedule}
-                    </p>
-                    <ol className="mt-3 grid grid-cols-4 gap-2">
-                      {t.lease.steps.map((s, i) => (
-                        <li key={s} className="text-center">
-                          <span className="relative flex items-center justify-center">
-                            {i > 0 && (
-                              <span className="absolute right-1/2 top-1/2 h-0.5 w-full -translate-y-1/2 bg-shoppay/25" />
-                            )}
-                            <span
-                              className={cn(
-                                "relative flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold",
-                                i === 0
-                                  ? "bg-shoppay text-shoppay-foreground"
-                                  : "border-2 border-shoppay/40 bg-card text-shoppay",
-                              )}
-                            >
-                              {i + 1}
-                            </span>
-                          </span>
-                          <span className="tabular-nums mt-2 block text-xs font-semibold sm:text-sm">
-                            <Money usd={(installmentSchedule(variant.price * quantity)[i] ?? 0) / 100} />
-                          </span>
-                          <span className="block text-[11px] text-muted-foreground">{s}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                )}
-                <p className="mt-3 flex items-start gap-2 px-1 text-[11px] leading-relaxed text-muted-foreground">
-                  <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-success" />
-                  {t.lease.fine}
-                </p>
-              </fieldset>
+              <PaymentOptions cents={variant.price * quantity} lang={lang} value={payMode} onChange={setPayMode} />
             )}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               {product.description}
