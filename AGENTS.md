@@ -24,3 +24,4 @@
 - Leasing destinations are centralized in PORTALS and shared by page, banner, and mobile menu links so updates remain consistent across languages.
 
 - Shelf-device and shop product pages share the payment selector and confirmed cart action so installment intent remains consistent without requiring customer sign-in.
+- Product selectors and cart share expandable installment checkout instructions; the cart never labels a calculated amount as actually due today because Shopify/Affirm determines the approved plan.

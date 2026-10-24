@@ -31,6 +31,7 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
+- [x] Clarify estimated installment amounts and Affirm checkout steps; signed-out device selection opens real checkout showing “Shop Pay · Pay in full or in installments”; cart checked at 393/768/1030px, 119 tests pass. Final Affirm approval/paid-order completion remains merchant/customer-dependent; checkout still says “My Store”.
 - [x] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in; shared selector carries installment intent and opens cart only after confirmation
 - [x] Improve homepage shopping entry points and shelf-device browsing; 51 of 53 shelf models matched the published Shopify catalog, Galaxy S26+ and iPad mini 5 have no published match; real signed-out installment checkout and English/Spanish layouts verified, 119 tests pass
 - [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish

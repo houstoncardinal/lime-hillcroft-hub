@@ -15,8 +15,10 @@ import {
   useMounted,
 } from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
-import { INSTALLMENTS_MIN_CENTS, payInFour, showsInstallments } from "@/shop/installments";
+import { payInFour, showsInstallments } from "@/shop/installments";
 import { productPath } from "@/shop/paths";
+import { InstallmentSteps } from "@/shop/installment-steps";
+import { Button } from "@/components/ui/button";
 import type { ShopImage, ShopProduct } from "@/shop/types";
 import {
   Dialog,
@@ -237,12 +239,6 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
   const [preview, setPreview] = useState(false);
   const leaseItems = items.filter((i) => i.lease);
-  // Shop Pay Installments: the first of 4 payments is due at checkout on leased items;
-  // anything paid in full is due today too.
-  const dueToday = items.reduce(
-    (n, i) => n + (i.lease ? payInFour(i.price * i.quantity) : i.price * i.quantity),
-    0,
-  );
 
   // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
   useCartSync();
@@ -332,7 +328,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                         </div>
                         {l.lease ? (
                           <p className="tabular-nums text-right">
-                            <span className="block font-semibold">
+                            <span className="block whitespace-nowrap text-sm font-semibold">
                               ≈ <Money usd={payInFour(l.price * l.quantity) / 100} /> × 4
                             </span>
                             <span className="block text-xs text-muted-foreground">
@@ -379,7 +375,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </li>
                 ))}
               </ul>
-              <div className="border-t bg-secondary/50 px-6 py-5">
+              <div className="max-h-[60dvh] shrink-0 overflow-y-auto border-t bg-secondary/50 px-6 py-5">
                 {error && <div role="alert" className="mb-3 text-sm text-destructive">{t.checkoutError}<button type="button" className="ml-2 underline" onClick={() => void syncCart()}>{lang === "es" ? "Reintentar" : "Retry"}</button></div>}
                 <div className="flex items-baseline justify-between">
                   <span className="text-muted-foreground">{t.cart.subtotal}</span>
@@ -388,26 +384,15 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
-                {leaseItems.length > 0 ? (
-                  <div className="mt-3 rounded-2xl border border-shoppay/25 bg-shoppay/8 px-4 py-3 text-xs leading-relaxed">
-                    <p className="flex justify-between font-semibold">
-                      <span>{t.lease.dueToday}</span>
-                      <span className="tabular-nums text-base">
-                        <Money usd={dueToday / 100} />
-                      </span>
-                    </p>
+                {leaseItems.length > 0 && (
+                  <div className="mt-3 rounded-lg border border-shoppay/25 bg-shoppay/8 px-4 py-3 text-xs leading-relaxed">
+                    <p className="font-semibold text-shoppay">{t.lease.dueToday}</p>
+                    <p className="text-muted-foreground">Shop Pay Installments · {t.lease.provider}</p>
                     <p className="mt-1 text-muted-foreground">{t.lease.howTo}</p>
+                    <InstallmentSteps lang={lang} />
                   </div>
-                ) : (
-                  cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
-                    <p className="mt-3 rounded-2xl border border-shoppay/20 bg-card px-4 py-3 text-xs leading-relaxed">
-                      <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
-                      {t.lease.cardLine} <Money usd={payInFour(cartSubtotal(items)) / 100} />
-                      {t.lease.cardSuffix}. {t.lease.howTo}
-                    </p>
-                  )
                 )}
-                <button
+                <Button
                   type="button"
                   onClick={checkout}
                   disabled={busy || syncing || Boolean(error) || !getCheckoutUrl()}
@@ -415,7 +400,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                 >
                   {(busy || syncing) && <Loader2 className="h-4 w-4 animate-spin" />}{" "}
                   {leaseItems.length > 0 ? t.lease.checkout : t.cart.checkout}
-                </button>
+                </Button>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
