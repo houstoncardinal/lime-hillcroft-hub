@@ -35,5 +35,6 @@
 - [x] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in; shared selector carries installment intent and opens cart only after confirmation
 - [x] Improve homepage shopping entry points and shelf-device browsing; 51 of 53 shelf models matched the published Shopify catalog, Galaxy S26+ and iPad mini 5 have no published match; real signed-out installment checkout and English/Spanish layouts verified, 119 tests pass
 - [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish
-- [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
+- [x] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
 - [x] Add customer authentication (sign up / sign in) — email+password at /auth, cart saved to account across devices
+- [x] Show the pay-in-4 installment estimate on every shelf device card ("or 4 payments of $X with Shop Pay Installments", amount in Shop Pay purple); verified on 15 cards at 393px and 1280px, 121 tests pass
