@@ -31,8 +31,8 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
-- [ ] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in
-- [ ] Improve homepage shopping entry points and shelf-device browsing; verify real device-to-checkout flow
+- [x] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in; shared selector carries installment intent and opens cart only after confirmation
+- [x] Improve homepage shopping entry points and shelf-device browsing; 51 of 53 shelf models matched the published Shopify catalog, Galaxy S26+ and iPad mini 5 have no published match; real signed-out installment checkout and English/Spanish layouts verified, 119 tests pass
 - [x] Update leasing application buttons and simplify header/mobile navigation; full logo verified from 320px phones through desktop, application links checked in English and Spanish
 - [ ] Add second admin super user (ticwirelesstx@gmail.com) to /admin login
 - [x] Add customer authentication (sign up / sign in) — email+password at /auth, cart saved to account across devices
