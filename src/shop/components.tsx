@@ -15,7 +15,7 @@ import {
   useMounted,
 } from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
-import { INSTALLMENTS_MIN_CENTS, payInFour, showsInstallments } from "@/shop/installments";
+import { payInFour, showsInstallments } from "@/shop/installments";
 import { productPath } from "@/shop/paths";
 import { InstallmentSteps } from "@/shop/installment-steps";
 import { Button } from "@/components/ui/button";
@@ -239,7 +239,6 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
   const [preview, setPreview] = useState(false);
   const leaseItems = items.filter((i) => i.lease);
-  const hasEligibleDevice = items.some((i) => showsInstallments(i.category, i.price));
 
   // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
   useCartSync();
@@ -385,20 +384,13 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
-                {leaseItems.length > 0 ? (
+                {leaseItems.length > 0 && (
                   <div className="mt-3 rounded-lg border border-shoppay/25 bg-shoppay/8 px-4 py-3 text-xs leading-relaxed">
                     <p className="font-semibold text-shoppay">{t.lease.dueToday}</p>
                     <p className="text-muted-foreground">Shop Pay Installments · {t.lease.provider}</p>
                     <p className="mt-1 text-muted-foreground">{t.lease.howTo}</p>
                     <InstallmentSteps lang={lang} />
                   </div>
-                ) : (
-                  hasEligibleDevice && cartSubtotal(items) >= INSTALLMENTS_MIN_CENTS && (
-                    <p className="mt-3 rounded-2xl border border-shoppay/20 bg-card px-4 py-3 text-xs leading-relaxed">
-                      <span className="font-semibold">{t.lease.cartTitle}</span>{" "}
-                      Shop Pay Installments · {t.lease.provider}. {t.lease.howTo}
-                    </p>
-                  )
                 )}
                 <Button
                   type="button"
