@@ -1,0 +1,130 @@
+Handle,Title,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant Price
+iphone-11,Apple iPhone 11 (Unlocked),Storage,64GB,Color,Purple,279.00
+iphone-11,,,64GB,,Black,279.00
+iphone-11-pro-max,Apple iPhone 11 Pro Max (Unlocked),Storage,64GB,,,369.00
+iphone-11-pro-max,,,256GB,,,425.00
+iphone-11-pro-max,,,512GB,,,475.00
+iphone-12,Apple iPhone 12 (Unlocked),Storage,64GB,Color,Purple,275.00
+iphone-12,,,64GB,,Black,275.00
+iphone-12-pro-max,Apple iPhone 12 Pro Max (Unlocked),Storage,128GB,Color,Gold,599.00
+iphone-13,Apple iPhone 13 (Unlocked),Storage,128GB,,,475.00
+iphone-13,,,256GB,,,899.00
+iphone-13,,,512GB,,,1099.00
+iphone-13-pro-max,Apple iPhone 13 Pro Max (Unlocked),Storage,128GB,Color,Graphite,599.00
+iphone-13-pro-max,,,128GB,,Sierra Blue,599.00
+iphone-14,Apple iPhone 14 (Unlocked),Storage,128GB,Color,Purple,549.00
+iphone-14-plus,Apple iPhone 14 Plus (Unlocked),Storage,128GB,Color,(PRODUCT)RED,544.00
+iphone-14-pro,Apple iPhone 14 Pro (Unlocked),Storage,256GB,Color,Gold,675.00
+iphone-14-pro-max,Apple iPhone 14 Pro Max (Unlocked),Storage,128GB,Color,Deep Purple,799.00
+iphone-14-pro-max,,,128GB,,Space Black,799.00
+iphone-15,Apple iPhone 15 (Unlocked),Storage,128GB,Color,Black,699.00
+iphone-15-plus,Apple iPhone 15 Plus (Unlocked),Storage,128GB,Color,Pink,799.00
+iphone-15-plus,,,128GB,,Black,799.00
+iphone-15-pro-max,Apple iPhone 15 Pro Max (Unlocked),Storage,256GB,Color,White Titanium,899.00
+iphone-15-pro-max,,,256GB,,Black Titanium,899.00
+iphone-15-pro-max,,,256GB,,Blue Titanium,899.00
+iphone-16,Apple iPhone 16 (Unlocked),Storage,128GB,Color,Pink,799.00
+iphone-16-128gb-ultramarine-pre-owned,Apple iPhone 16 128GB Ultramarine (Pre-owned),Storage,128GB,Color,Ultramarine,600.00
+iphone-16-plus,Apple iPhone 16 Plus (Unlocked),Storage,128GB,,,899.00
+iphone-16-plus,,,256GB,,,999.00
+iphone-16-plus,,,512GB,,,1199.00
+iphone-16-pro,Apple iPhone 16 Pro (Unlocked),Storage,128GB,,,899.00
+iphone-16-pro,,,256GB,,,1099.00
+iphone-16-pro,,,512GB,,,1299.00
+iphone-16-pro,,,1TB,,,1499.00
+iphone-16-pro-max,Apple iPhone 16 Pro Max (Unlocked),Storage,256GB,Color,White Titanium,1149.00
+iphone-16-pro-max,,,256GB,,Desert Titanium,1149.00
+iphone-16-pro-max,,,256GB,,Black Titanium,1149.00
+iphone-17,Apple iPhone 17 (Unlocked),Storage,256GB,Color,Mist Blue,1049.00
+iphone-17,,,256GB,,Lavender,1049.00
+iphone-17-pro,Apple iPhone 17 Pro (Unlocked),Storage,256GB,Color,Cosmic Orange,1329.00
+iphone-17-pro-max,Apple iPhone 17 Pro Max (Unlocked),Storage,256GB,Color,Silver,1399.00
+iphone-17-pro-max,,,256GB,,Cosmic Orange,1399.00
+iphone-17-pro-max,,,256GB,,Deep Blue,1399.00
+iphone-18-pro,Apple iPhone 18 Pro (Unlocked),Storage,256GB,Color,Black,1650.00
+iphone-18-pro,,,256GB,,Burgundy,1650.00
+iphone-18-pro,,,256GB,,Glacier,1650.00
+iphone-18-pro-max,Apple iPhone 18 Pro Max (Unlocked),Storage,256GB,Color,Burgundy,1850.00
+iphone-18-pro-max,,,256GB,,Black,1850.00
+iphone-18-pro-max,,,256GB,,Glacier,1850.00
+iphone-18-pro-max,,,512GB,,Silver,1950.00
+iphone-18-pro-max,,,512GB,,Glacier,1950.00
+galaxy-a03s,Samsung Galaxy A03s (Unlocked),Storage,32GB,,,139.00
+galaxy-a13,Samsung Galaxy A13 5G (Unlocked),Storage,64GB,,,179.00
+galaxy-a14,Samsung Galaxy A14 5G (Unlocked),Storage,64GB,,,199.00
+galaxy-a15,Samsung Galaxy A15 5G (Unlocked),Storage,64GB,,,229.00
+galaxy-a16,Samsung Galaxy A16 5G (Unlocked),Storage,128GB,,,259.00
+galaxy-a20,Samsung Galaxy A20 (Unlocked),Storage,32GB,,,249.99
+galaxy-a26,Samsung Galaxy A26 5G (Unlocked),Storage,128GB,,,299.00
+galaxy-a36,Samsung Galaxy A36 5G (Unlocked),Storage,128GB,,,329.00
+galaxy-a53,Samsung Galaxy A53 5G (Unlocked),Storage,128GB,,,359.00
+galaxy-note20-ultra,Samsung Galaxy Note 20 Ultra (Unlocked),Storage,128GB,,,529.00
+galaxy-note20-ultra,,,512GB,,,529.00
+galaxy-s20-ultra,Samsung Galaxy S20 Ultra (Unlocked),Storage,128GB,,,499.00
+galaxy-s20-ultra,,,512GB,,,599.00
+galaxy-s21,Samsung Galaxy S21 (Unlocked),Storage,128GB,,,329.00
+galaxy-s21,,,256GB,,,429.00
+galaxy-s21-ultra,Samsung Galaxy S21 Ultra (Unlocked),Storage,128GB,,,529.00
+galaxy-s21-ultra,,,256GB,,,1249.99
+galaxy-s21-ultra,,,512GB,,,1379.99
+galaxy-s21-plus,Samsung Galaxy S21+ (Unlocked),Storage,128GB,,,399.00
+galaxy-s21-plus,,,256GB,,,489.00
+galaxy-s22,Samsung Galaxy S22 (Unlocked),Storage,128GB,,,399.00
+galaxy-s22,,,256GB,,,499.00
+galaxy-s22-ultra,Samsung Galaxy S22 Ultra (Unlocked),Storage,128GB,,,599.00
+galaxy-s22-ultra,,,256GB,,,599.00
+galaxy-s22-ultra,,,512GB,,,649.00
+galaxy-s22-ultra,,,1TB,,,749.00
+galaxy-s22-plus,Samsung Galaxy S22+ (Unlocked),Storage,128GB,,,450.00
+galaxy-s22-plus,,,256GB,,,1049.99
+galaxy-s23,Samsung Galaxy S23 (Unlocked),Storage,128GB,,,599.00
+galaxy-s23,,,256GB,,,859.99
+galaxy-s23-ultra,Samsung Galaxy S23 Ultra (Unlocked),Storage,256GB,,,729.00
+galaxy-s23-ultra,,,512GB,,,1379.99
+galaxy-s23-ultra,,,1TB,,,1619.99
+galaxy-s23-plus,Samsung Galaxy S23+ (Unlocked),Storage,256GB,,,999.99
+galaxy-s23-plus,,,512GB,,,1119.99
+galaxy-s24,Samsung Galaxy S24 (Unlocked),Storage,128GB,,,649.00
+galaxy-s24,,,256GB,,,859.99
+galaxy-s24-ultra,Samsung Galaxy S24 Ultra (Unlocked),Storage,256GB,,,949.00
+galaxy-s24-ultra,,,512GB,,,1419.99
+galaxy-s24-ultra,,,1TB,,,1659.99
+galaxy-s24-plus,Samsung Galaxy S24+ (Unlocked),Storage,256GB,,,999.99
+galaxy-s24-plus,,,512GB,,,1119.99
+galaxy-s25,Samsung Galaxy S25 (Unlocked),Storage,128GB,,,799.99
+galaxy-s25,,,256GB,,,859.99
+galaxy-s25-ultra,Samsung Galaxy S25 Ultra (Unlocked),Storage,256GB,,,1050.00
+galaxy-s25-ultra,,,512GB,,,1419.99
+galaxy-s25-ultra,,,1TB,,,1659.99
+galaxy-s25-plus,Samsung Galaxy S25 plus,Storage,256GB,,,999.99
+galaxy-s25-plus,,,512GB,,,1119.99
+galaxy-s26,Samsung Galaxy S26 (Unlocked),Storage,256GB,,,1249.00
+galaxy-s26,,,512GB,,,1349.00
+galaxy-s26-ultra,Samsung Galaxy S26 Ultra (Unlocked),Storage,256GB,,,1249.00
+galaxy-s26-ultra,,,512GB,,,1599.99
+galaxy-s26-ultra,,,1TB,,,1999.99
+galaxy-z-flip7,Samsung Galaxy Z Flip7 (Unlocked),Storage,256GB,,,1099.00
+galaxy-z-fold3,Samsung Galaxy Z Fold3 (Unlocked),Storage,256GB,,,899.00
+galaxy-z-fold6,Samsung Galaxy Z Fold6 (Unlocked),Storage,256GB,,,1049.00
+galaxy-z-fold7,Samsung Galaxy Z Fold7 (Unlocked),Storage,256GB,,,1349.00
+galaxy-z-fold8-ultra,Samsung Galaxy Z Fold8 Ultra (Unlocked),Storage,256GB,,,2099.00
+apple-ipad-11th-gen-wifi-cellular-128gb,Apple iPad 11th Generation WiFi + Cellular 128GB,Title,Default Title,,,750.00
+apple-ipad-11th-gen-wifi-cellular-256gb,Apple iPad 11th Generation WiFi + Cellular 256GB,Title,Default Title,,,550.00
+apple-ipad-11th-gen-wifi-128gb,Apple iPad 11th Generation WiFi 128GB,Color,Silver,,,599.00
+apple-ipad-11th-gen-wifi-128gb,,,Yellow,,,599.00
+apple-ipad-11th-gen-wifi-128gb,,,Blue,,,599.00
+apple-ipad-11th-gen-wifi-128gb,,,Pink,,,599.00
+apple-ipad-9th-gen-wifi-cellular-64gb,Apple iPad 9th Generation WiFi + Cellular 64GB,Title,Default Title,,,299.00
+ipad-pro-m2,"Apple iPad Pro 11-inch (4th Gen, M2)",Size,11-inch,Storage,128GB,650.00
+ipad-pro-m2,,,11-inch,,256GB,899.00
+ipad-pro-m2,,,11-inch,,512GB,1099.00
+ipad-pro-m2,,,11-inch,,1TB,1499.00
+ipad-pro-m2,,,11-inch,,2TB,1899.00
+ipad-pro-m2,,,12.9-inch,,128GB,1099.00
+ipad-pro-m2,,,12.9-inch,,256GB,1199.00
+ipad-pro-m2,,,12.9-inch,,512GB,1399.00
+ipad-pro-m2,,,12.9-inch,,1TB,1799.00
+ipad-pro-m2,,,12.9-inch,,2TB,2199.00
+ipad-mini-5,Apple iPad mini (5th gen),Storage,64GB,,,399.00
+ipad-mini-5,,,256GB,,,549.00
+ipad-pro-11-4th-gen-m2-256gb,"iPad Pro 11"" 4th Generation M2 256GB",Title,Default Title,,,650.00
