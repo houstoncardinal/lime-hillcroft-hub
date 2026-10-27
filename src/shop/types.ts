@@ -41,6 +41,8 @@ export type ShopProduct = {
   variants: ShopVariant[];
   badge: "best-seller" | "new" | "sale" | null;
   featured: boolean;
+  /** Tagged "Lease to own" in Shopify: always shows the leasing applications. */
+  leaseToOwn?: boolean;
 };
 
 export type Catalog = {

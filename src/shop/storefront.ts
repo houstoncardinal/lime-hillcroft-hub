@@ -196,6 +196,7 @@ async function loadCatalog(): Promise<Catalog> {
       variants: vs,
       badge: tags.includes("new") ? "new" : onSale ? "sale" : i < 4 ? "best-seller" : null,
       featured: tags.includes("featured") || i < 6,
+      leaseToOwn: tags.includes("lease to own"),
     };
   });
   const catalog: Catalog = { source: "shopify", products };

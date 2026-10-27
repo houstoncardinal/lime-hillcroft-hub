@@ -55,6 +55,10 @@ const T = {
     secure: "Each application opens on the provider's own secure site.",
     fine: "Subject to approval. Lease-to-own is not a loan; the total cost to own is more than the cash price. Terms are set by each provider.",
     newTab: "(opens in a new tab)",
+    optionKicker: "Or lease-to-own",
+    optionTitle: "No credit needed. Apply online, pick it up today.",
+    optionBody:
+      "Not ready to pay online? Get approved with one of our leasing partners in minutes, then take this home from our Hillcroft store.",
   },
   es: {
     kicker: "Solicita en línea",
@@ -72,6 +76,10 @@ const T = {
     secure: "Cada solicitud se abre en el sitio seguro del proveedor.",
     fine: "Sujeto a aprobación. El arrendamiento no es un préstamo; el costo total es mayor que el precio de contado. Los términos los fija cada proveedor.",
     newTab: "(se abre en una pestaña nueva)",
+    optionKicker: "O arrendamiento con opción a compra",
+    optionTitle: "Sin necesidad de crédito. Solicita en línea y llévatelo hoy.",
+    optionBody:
+      "¿Prefieres no pagar en línea? Aprueba con uno de nuestros socios de arrendamiento en minutos y recógelo en nuestra tienda de Hillcroft.",
   },
 };
 
@@ -163,6 +171,69 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
           </span>
         </p>
       </div>
+    </section>
+  );
+}
+
+/** Buy-box card: the lease-to-own alternative to checking out online, beside a product's price. */
+export function LeasingOptions({ lang, className }: { lang: Lang; className?: string }) {
+  const t = T[lang];
+  return (
+    <section
+      aria-labelledby="lease-options-title"
+      className={cn(
+        "relative isolate overflow-hidden rounded-3xl bg-ink p-5 text-white sm:p-6",
+        className,
+      )}
+    >
+      <div className="absolute -right-16 -top-16 -z-10 h-48 w-48 rounded-full bg-primary/30 blur-[80px]" />
+      <p className="eyebrow flex items-center gap-3 text-primary">
+        <span className="h-px w-6 bg-primary" /> {t.optionKicker}
+      </p>
+      <h2
+        id="lease-options-title"
+        className="mt-3 font-display text-xl font-semibold leading-snug sm:text-2xl"
+      >
+        {t.optionTitle}
+      </h2>
+      <p className="mt-2 text-sm leading-relaxed text-white/70">{t.optionBody}</p>
+      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
+        {t.steps.map(([Icon, label]) => (
+          <li key={label} className="flex items-center gap-1.5">
+            <Icon className="h-4 w-4 text-primary" /> {label}
+          </li>
+        ))}
+      </ul>
+      <ul className="mt-5 grid gap-2">
+        {PORTALS.map((p) => (
+          <li
+            key={p.id}
+            className="flex flex-col gap-3 rounded-2xl bg-white/[0.06] p-3 ring-1 ring-white/10 sm:flex-row sm:items-center"
+          >
+            <span className="flex min-w-0 flex-1 items-center gap-3">
+              <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-xl bg-primary px-2 font-display text-xs font-bold text-primary-foreground">
+                {p.initials}
+              </span>
+              <span className="min-w-0">
+                <span className="block font-semibold leading-tight">{p.name}</span>
+                <span className="block text-xs leading-snug text-white/60">{p.blurb[lang]}</span>
+              </span>
+            </span>
+            <PortalButton
+              portal={p}
+              lang={lang}
+              short
+              className="min-h-11 w-full shrink-0 bg-primary text-primary-foreground hover:brightness-110 sm:w-auto"
+            />
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 flex items-start gap-2 text-[11px] leading-relaxed text-white/55">
+        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+        <span>
+          {t.secure} {t.fine}
+        </span>
+      </p>
     </section>
   );
 }

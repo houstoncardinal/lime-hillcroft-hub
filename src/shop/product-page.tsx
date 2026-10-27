@@ -11,7 +11,8 @@ import { Badge, InstallmentChip, ProductCard, ProductTile } from "@/shop/compone
 import { SHOP_COPY } from "@/shop/copy";
 import { productPaths } from "@/shop/paths";
 import type { ShopProduct } from "@/shop/types";
-import { showsInstallments } from "@/shop/installments";
+import { showsInstallments, showsLeasing } from "@/shop/installments";
+import { LeasingOptions } from "@/components/site/leasing-portals";
 import { cn } from "@/lib/utils";
 import { PaymentOptions } from "@/shop/payment-options";
 
@@ -38,6 +39,9 @@ export function ProductPage({
   const addItem = useCartStore((s) => s.addItem);
   const setCartOpen = useCartStore((s) => s.setOpen);
   const canLease = Boolean(variant && showsInstallments(product.category, variant.price));
+  const canLeaseToOwn = Boolean(
+    variant && showsLeasing(product.category, variant.price, product.leaseToOwn),
+  );
   const busy = useCartStore((s) => s.busy);
   const error = useCartStore((s) => s.error);
 
@@ -217,6 +221,8 @@ export function ProductPage({
               </p>
             )}
 
+            {canLeaseToOwn && <LeasingOptions lang={lang} className="mt-8" />}
+
             {/* Below the buy controls, so "Add to cart" stays near the top on phones. */}
             {product.description && (
               <p className="mt-8 whitespace-pre-line border-t pt-8 leading-relaxed text-muted-foreground">
@@ -264,7 +270,8 @@ export function ProductPage({
         </section>
       )}
 
-      <SiteFooter lang={lang} />
+      {/* The buy box already has the leasing applications; no second band at the bottom. */}
+      <SiteFooter lang={lang} portals={!canLeaseToOwn} />
     </main>
   );
 }
