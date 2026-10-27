@@ -4,13 +4,14 @@
 export const SHOP_CATEGORIES = [
   "phones",
   "tablets",
-  "cases",
-  "screen-protection",
+  "laptops",
+  "gaming",
   "earbuds",
   "speakers",
   "wearables",
   "power",
-  "gaming",
+  "cases",
+  "screen-protection",
   "more",
 ] as const;
 export type ShopCategory = (typeof SHOP_CATEGORIES)[number];

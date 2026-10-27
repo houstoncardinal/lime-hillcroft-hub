@@ -52,20 +52,35 @@ async function storefront<T>(query: string, variables: Record<string, unknown> =
 
 // ---------- catalog ----------
 
-export function categoryFor(productType: string, tags: string[]): ShopCategory {
-  // Phones and tablets go by product type alone ("Smartphone", "Tablet"), so a "Phone case" or
-  // an "iPad charger" still lands with the accessories.
+export function categoryFor(productType: string, tags: string[], title = ""): ShopCategory {
+  // 1. Devices go by their Shopify product type, so their tags ("Touchscreen", "Battery") and
+  //    names never file them as accessories.
   const type = productType.trim().toLowerCase();
   if (/^(smart ?phones?|(cell|mobile) ?phones?|phones?)$/.test(type)) return "phones";
   if (/^tablets?$/.test(type)) return "tablets";
-  const text = `${productType} ${tags.join(" ")}`.toLowerCase();
-  if (/case|cover/.test(text)) return "cases";
-  if (/glass|screen|protector/.test(text)) return "screen-protection";
-  if (/airpod|bud|earbud|headphone|earphone/.test(text)) return "earbuds";
-  if (/speaker/.test(text)) return "speakers";
-  if (/watch|wear|band|fitbit/.test(text)) return "wearables";
-  if (/charg|cable|power|battery|adapter/.test(text)) return "power";
-  if (/gam|controller|playstation|xbox/.test(text)) return "gaming";
+  if (/^(laptops?|notebooks?|computers?|chromebooks?)$/.test(type)) return "laptops";
+  // 2. Everything else by whole words in its type, tags and title. Accessories first, so an
+  //    "iPhone 16 case" is a case and a "MacBook charger" is power, not a phone or laptop.
+  //    Speakers before power: JBL Charge speakers are also power banks.
+  const text = ` ${productType} ${tags.join(" ")} ${title} `.toLowerCase();
+  const has = (re: RegExp) => re.test(text);
+  if (
+    has(
+      /\b(screen protectors?|tempered glass|privacy glass|glass protectors?|screen guards?|camera lens protectors?)\b/,
+    )
+  )
+    return "screen-protection";
+  if (has(/\b(cases?|covers?|folios?|sleeves?|skins?)\b/)) return "cases";
+  if (has(/\bspeakers?\b/)) return "speakers";
+  if (has(/\b(chargers?|charging|cables?|power ?banks?|adapters?|wall plugs?|charging pads?)\b/))
+    return "power";
+  if (has(/\b(smart ?watch(es)?|watch(es)?|fitbit|fitness trackers?)\b/)) return "wearables";
+  if (has(/\b(airpods?|buds|earbuds?|headphones?|headsets?|earphones?|neckbands?)\b/))
+    return "earbuds";
+  if (has(/\b(playstation|ps5|ps4|xbox|nintendo|game consoles?|consoles?|controllers?|gaming)\b/))
+    return "gaming";
+  if (has(/\b(laptops?|macbook|notebooks?|chromebooks?)\b/)) return "laptops";
+  if (has(/\b(ipad|tablets?|galaxy tab)\b/)) return "tablets";
   return "more";
 }
 
@@ -165,7 +180,7 @@ async function loadCatalog(): Promise<Catalog> {
     }));
     const onSale = vs.some((v) => v.compareAtPrice && v.compareAtPrice > v.price);
     const tags = p.tags.map((t) => t.toLowerCase());
-    const category = categoryFor(p.productType, tags);
+    const category = categoryFor(p.productType, tags, p.title);
     const i = category === "phones" || category === "tablets" ? Infinity : rank++;
     return {
       id: p.id,
