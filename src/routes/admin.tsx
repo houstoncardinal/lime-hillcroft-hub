@@ -25,13 +25,20 @@ import { ThemeSwitcher } from "@/components/site/theme-switcher";
 import { ADMIN_THEME_KEY, DEFAULT_THEME, applyTheme, storedTheme } from "@/components/site/themes";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { useQueryClient } from "@tanstack/react-query";
 
 export const Route = createFileRoute("/admin")({
-  // Data lives in the browser (local mode), so the dashboard renders client-side only.
+  // The dashboard checks server-authorized access before loading shared records.
   ssr: false,
   head: () => ({
     meta: [
       { title: "Dashboard · TIC Wireless Electronic & Repair Center" },
+      { name: "description", content: "TIC Wireless administration for inventory, staff, payroll and store settings." },
+      { property: "og:title", content: "TIC Wireless Admin Dashboard" },
+      { property: "og:description", content: "Secure TIC Wireless store administration." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -51,6 +58,7 @@ const NAV = [
 ] as const;
 
 function AdminLayout() {
+  const queryClient = useQueryClient();
   const data = useAdminData();
   const storage = useSyncExternalStore(adminStorageStatus.subscribe, adminStorageStatus.snapshot, adminStorageStatus.snapshot);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
@@ -77,7 +85,10 @@ function AdminLayout() {
   }, []);
 
   const lock = async () => {
+    await queryClient.cancelQueries();
+    queryClient.clear();
     await logout().catch(() => undefined);
+    await supabase.auth.signOut();
     resetAdminData();
     setSignedIn(false);
   };
