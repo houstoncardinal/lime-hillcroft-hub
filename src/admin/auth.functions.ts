@@ -34,7 +34,8 @@ export const adminLogin = createServerFn({ method: "POST" })
     const { adminSession } = await import("@/admin/session.server");
     const session = await adminSession();
     await session.clear();
-    await session.update({ email: match?.email ?? cloud?.email, userId: cloud?.userId, accessToken: cloud?.accessToken });
+    if (match) await session.update({ email: match.email });
+    else if (cloud) await session.update(cloud);
     return { ok: true as const };
   });
 
