@@ -16,7 +16,8 @@
     "seo:indexnow": "node scripts/seo.mjs indexnow",
     "seo:og": "node scripts/og.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
-    "inventory": "node scripts/inventory.mjs"
+    "inventory": "node scripts/inventory.mjs",
+    "shopify:policies": "node scripts/shopify-policies.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1"

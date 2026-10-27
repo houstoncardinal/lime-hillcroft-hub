@@ -43,20 +43,60 @@ export function shopHead(lang: Lang, catalog: Catalog | undefined) {
   });
 }
 
+/**
+ * The Returns policy (src/shop/policy-content.ts) in the form Google reads: 14 days on phones and
+ * tablets, with a 15% restocking fee once opened; accessories are final sale.
+ */
+function returnPolicy(product: ShopProduct, lang: Lang) {
+  const url = absoluteUrl(lang === "es" ? "/es/politicas/returns" : "/policies/returns");
+  if (product.category !== "phones" && product.category !== "tablets")
+    return {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "US",
+      returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+      merchantReturnLink: url,
+    };
+  return {
+    "@type": "MerchantReturnPolicy",
+    applicableCountry: "US",
+    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: 14,
+    returnMethod: ["https://schema.org/ReturnInStore", "https://schema.org/ReturnByMail"],
+    returnFees: "https://schema.org/RestockingFees",
+    restockingFee: 15,
+    merchantReturnLink: url,
+  };
+}
+
 export function productHead(
   lang: Lang,
   product: ShopProduct | undefined,
   source: Catalog["source"] | undefined,
 ) {
   const t = SHOP_COPY[lang];
-  if (!product) return { meta: [
-    { title: lang === "es" ? "Producto no disponible | TIC Wireless" : "Product unavailable | TIC Wireless" },
-    { name: "description", content: t.checkoutError },
-    { property: "og:title", content: lang === "es" ? "Producto no disponible | TIC Wireless" : "Product unavailable | TIC Wireless" },
-    { property: "og:description", content: t.checkoutError },
-    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
-    { name: "robots", content: "noindex, follow" },
-  ] };
+  if (!product)
+    return {
+      meta: [
+        {
+          title:
+            lang === "es"
+              ? "Producto no disponible | TIC Wireless"
+              : "Product unavailable | TIC Wireless",
+        },
+        { name: "description", content: t.checkoutError },
+        {
+          property: "og:title",
+          content:
+            lang === "es"
+              ? "Producto no disponible | TIC Wireless"
+              : "Product unavailable | TIC Wireless",
+        },
+        { property: "og:description", content: t.checkoutError },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary" },
+        { name: "robots", content: "noindex, follow" },
+      ],
+    };
   const paths = productPaths(product.handle);
   const url = absoluteUrl(paths[lang]);
   const image = product.images[0]?.url ?? ogImage("home", lang);
@@ -104,6 +144,7 @@ export function productHead(
                     : "https://schema.org/OutOfStock",
                   url,
                   seller: { "@id": absoluteUrl("/#store") },
+                  hasMerchantReturnPolicy: returnPolicy(product, lang),
                 })),
               }
             : {}),
