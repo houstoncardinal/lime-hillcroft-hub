@@ -117,14 +117,18 @@ export function ProductPage({
               <span className="tabular-nums font-display text-3xl font-semibold md:text-4xl">
                 {variant ? <Money usd={variant.price / 100} /> : ""}
               </span>
-              {canLease && variant && <InstallmentChip cents={variant.price} lang={lang} className="text-xs" />}
+              {canLease && variant && (
+                <InstallmentChip cents={variant.price} lang={lang} className="text-xs" />
+              )}
             </div>
             {canLease && variant && (
-              <PaymentOptions cents={variant.price * quantity} lang={lang} value={payMode} onChange={setPayMode} />
+              <PaymentOptions
+                cents={variant.price * quantity}
+                lang={lang}
+                value={payMode}
+                onChange={setPayMode}
+              />
             )}
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              {product.description}
-            </p>
 
             {product.optionName && (
               <fieldset className="mt-8">
@@ -184,7 +188,12 @@ export function ProductPage({
                 type="button"
                 onClick={add}
                 disabled={busy || !variant?.available}
-                className={cn("inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-8 font-semibold shadow-lg transition hover:brightness-110 disabled:opacity-50 sm:flex-none", canLease && payMode === "plan" ? "bg-shoppay text-shoppay-foreground shadow-shoppay/30" : "bg-primary text-primary-foreground shadow-primary/30")}
+                className={cn(
+                  "inline-flex h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-8 font-semibold shadow-lg transition hover:brightness-110 disabled:opacity-50 sm:flex-none",
+                  canLease && payMode === "plan"
+                    ? "bg-shoppay text-shoppay-foreground shadow-shoppay/30"
+                    : "bg-primary text-primary-foreground shadow-primary/30",
+                )}
               >
                 {added ? <Check className="h-5 w-5" /> : <ShoppingBag className="h-5 w-5" />}
                 {!variant?.available
@@ -196,11 +205,22 @@ export function ProductPage({
                       : t.add}
               </button>
             </div>
-            {error && <p role="alert" className="mt-3 text-sm text-destructive">{t.checkoutError}</p>}
+            {error && (
+              <p role="alert" className="mt-3 text-sm text-destructive">
+                {t.checkoutError}
+              </p>
+            )}
             {variant?.available && (
               <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="h-2 w-2 rounded-full bg-success" />{" "}
                 {<MoneyText text={t.inStock} />}
+              </p>
+            )}
+
+            {/* Below the buy controls, so "Add to cart" stays near the top on phones. */}
+            {product.description && (
+              <p className="mt-8 whitespace-pre-line border-t pt-8 leading-relaxed text-muted-foreground">
+                {product.description}
               </p>
             )}
 

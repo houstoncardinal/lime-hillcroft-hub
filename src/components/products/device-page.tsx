@@ -23,6 +23,7 @@ import {
 import { deviceFaqs, inventoryDate } from "@/components/products/device-faqs";
 import { LATEST_DEVICES, type Device } from "@/components/products/inventory";
 import { LatestDevices } from "@/components/products/latest-devices";
+import { photoSrcSet } from "@/components/products/photo-src";
 import { DeviceBuy } from "@/shop/device-buy";
 import type { ShopProduct } from "@/shop/types";
 import { servicePath } from "@/components/services/paths";
@@ -183,6 +184,8 @@ function Gallery({ device, detail, lang }: { device: Device; detail: DeviceDetai
         <img
           key={current.src}
           src={current.src}
+          srcSet={photoSrcSet(current.src, current.w)}
+          sizes="(min-width: 1024px) 600px, 100vw"
           alt={current.alt}
           width={current.w}
           height={current.h}
@@ -222,6 +225,8 @@ function Gallery({ device, detail, lang }: { device: Device; detail: DeviceDetai
             >
               <img
                 src={s.src}
+                srcSet={photoSrcSet(s.src, s.w)}
+                sizes="80px"
                 alt=""
                 width={s.w}
                 height={s.h}

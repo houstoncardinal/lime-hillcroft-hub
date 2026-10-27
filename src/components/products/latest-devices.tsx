@@ -6,6 +6,7 @@ import { TEL } from "@/components/site/business";
 import { Scroller } from "@/components/site/scroller";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { Money } from "@/components/intl/money";
+import { photoSrcSet } from "@/components/products/photo-src";
 import { shopHandle, useDevicePrices } from "@/shop/device-shop";
 import { payInFour } from "@/shop/installments";
 import { Button } from "@/components/ui/button";
@@ -69,6 +70,8 @@ export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) 
       >
         <img
           src={d.image}
+          srcSet={photoSrcSet(d.image, d.w)}
+          sizes="(min-width: 1024px) 256px, (min-width: 640px) 240px, 72vw"
           alt={d.alt[lang]}
           width={d.w}
           height={d.h}
@@ -123,7 +126,7 @@ export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) 
         )}
         <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-muted-foreground">
           <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
-          {price ? price.available ? t.online : t.soldOut : t.inStore}
+          {price ? (price.available ? t.online : t.soldOut) : t.inStore}
           {href && (
             <span className="ml-auto inline-flex items-center gap-1 text-ink">
               {t.details} <ArrowRight className="h-3.5 w-3.5 text-primary" />
@@ -213,7 +216,13 @@ export function LatestDevices({
         </Scroller>
 
         <div className="mt-4 flex flex-col gap-2 px-5 sm:flex-row sm:flex-wrap">
-          <Button asChild className="h-auto min-h-12 rounded-full px-6 py-3 font-semibold"><Link to={ALTERNATES.shop[lang]}><ShoppingBag />{t.browse}<ArrowRight /></Link></Button>
+          <Button asChild className="h-auto min-h-12 rounded-full px-6 py-3 font-semibold">
+            <Link to={ALTERNATES.shop[lang]}>
+              <ShoppingBag />
+              {t.browse}
+              <ArrowRight />
+            </Link>
+          </Button>
           <a
             href={TEL}
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 font-semibold text-white"

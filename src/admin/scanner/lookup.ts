@@ -12,6 +12,9 @@ export const lookupBarcode = createServerFn({ method: "POST" })
     return { code };
   })
   .handler(async ({ data }): Promise<UpcInfo> => {
+    // Admin-only: the free lookup service allows ~100 calls a day, so strangers can't use them up.
+    const { requireAdmin } = await import("@/admin/session.server");
+    await requireAdmin();
     try {
       const res = await fetch(
         `https://api.upcitemdb.com/prod/trial/lookup?upc=${encodeURIComponent(data.code)}`,

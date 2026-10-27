@@ -73,10 +73,14 @@ const cents = (amount: string | undefined | null) =>
   amount == null ? null : Math.round(Number(amount) * 100);
 
 /** Shopify returns descriptions as HTML; the site shows plain text. */
-const toText = (html: string) =>
+/** Keeps the structure as lines: headings and paragraphs, "• " list items, "Label: value" rows. */
+export const toText = (html: string) =>
   html
     .replace(/<br\s*\/?>(\r?\n)?/gi, "\n")
-    .replace(/<\/(p|div|li|h\d|tr)>/gi, "\n")
+    .replace(/<h\d[^>]*>/gi, "\n\n")
+    .replace(/<li[^>]*>/gi, "\n• ")
+    .replace(/<\/th>/gi, ": ")
+    .replace(/<\/(p|div|h\d|tr|ul|ol|table)>/gi, "\n")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&quot;/g, '"')
@@ -85,6 +89,8 @@ const toText = (html: string) =>
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/[ \t]+/g, " ")
+    .replace(/ *\n */g, "\n")
+    .replace(/\n{2,}• /g, "\n• ")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 
@@ -290,7 +296,13 @@ export const getDevicePrices = createServerFn({ method: "GET" }).handler(
 // cart, so checkout always uses Shopify's own cart and its own secure checkout URL. Nothing here
 // builds a checkout link by hand.
 
-export type CartLineResult = { lineId: string; variantId: string; quantity: number; price: number; lease: boolean };
+export type CartLineResult = {
+  lineId: string;
+  variantId: string;
+  quantity: number;
+  price: number;
+  lease: boolean;
+};
 
 export type ShopifyCart = { cartId: string; checkoutUrl: string; lines: CartLineResult[] };
 
@@ -318,7 +330,14 @@ const CART_FIELDS = `
 type RawCart = {
   id: string;
   checkoutUrl: string;
-  lines: { nodes: { id: string; quantity: number; attributes: { key: string; value: string }[]; merchandise: { id: string; price: { amount: string } } }[] };
+  lines: {
+    nodes: {
+      id: string;
+      quantity: number;
+      attributes: { key: string; value: string }[];
+      merchandise: { id: string; price: { amount: string } };
+    }[];
+  };
 };
 
 /** Shopify's checkout needs the channel marked, or it can ask for a store password. */
@@ -341,7 +360,9 @@ function toCart(cart: RawCart): ShopifyCart {
       variantId: n.merchandise.id,
       quantity: n.quantity,
       price: cents(n.merchandise.price.amount) ?? 0,
-      lease: n.attributes.some((a) => a.key === "Payment option" && a.value.includes("Installments")),
+      lease: n.attributes.some(
+        (a) => a.key === "Payment option" && a.value.includes("Installments"),
+      ),
     })),
   };
 }
@@ -424,7 +445,14 @@ export const updateCartLines = createServerFn({ method: "POST" })
       cartId: asCartId(d),
       lines: lines.map((l) => ({
         id: String((l as { lineId: unknown }).lineId),
-        ...((l as { lease?: unknown }).lease !== undefined ? { attributes: (l as { lease?: unknown }).lease === true ? [{ key: "Payment option", value: "Lease — Shop Pay Installments" }] : [] } : {}),
+        ...((l as { lease?: unknown }).lease !== undefined
+          ? {
+              attributes:
+                (l as { lease?: unknown }).lease === true
+                  ? [{ key: "Payment option", value: "Lease — Shop Pay Installments" }]
+                  : [],
+            }
+          : {}),
         quantity: Math.min(
           99,
           Math.max(1, Math.floor(Number((l as { quantity: unknown }).quantity))),
