@@ -22,24 +22,29 @@ function adminAccounts(): { email: string; password: string }[] {
 export const adminLogin = createServerFn({ method: "POST" })
   .validator((d: { email: string; password: string }) => ({
     email: String(d?.email ?? "").trim().toLowerCase(),
-    password: String(d?.password ?? "").trim(),
+    password: String(d?.password ?? ""),
   }))
   .handler(async ({ data }) => {
     const accounts = adminAccounts();
-    if (!accounts.length) throw new Error("Admin login is not configured");
     // Failed logins compare against every account, so timing doesn't reveal which emails exist.
-    const match = accounts.find((a) => same(data.email, a.email) && same(data.password, a.password));
-    if (!match) return { ok: false as const };
+    const match = accounts.find((a) => same(data.email, a.email) && same(data.password.trim(), a.password));
+    const { cloudAdminLogin } = await import("@/admin/cloud-access.server");
+    const cloud = match ? null : await cloudAdminLogin(data.email, data.password);
+    if (!match && !cloud) return { ok: false as const };
     const { adminSession } = await import("@/admin/session.server");
     const session = await adminSession();
-    await session.update({ email: match.email });
+    await session.clear();
+    await session.update({ email: match?.email ?? cloud?.email, userId: cloud?.userId, accessToken: cloud?.accessToken });
     return { ok: true as const };
   });
 
 export const adminStatus = createServerFn({ method: "GET" }).handler(async () => {
-  const { adminSession } = await import("@/admin/session.server");
-  const session = await adminSession();
-  return { email: session.data.email ?? null };
+  const { requireAdmin } = await import("@/admin/session.server");
+  try {
+    return { email: await requireAdmin() };
+  } catch {
+    return { email: null };
+  }
 });
 
 export const adminLogout = createServerFn({ method: "POST" }).handler(async () => {
