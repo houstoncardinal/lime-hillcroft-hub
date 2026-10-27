@@ -837,8 +837,8 @@ const DETAILS: DeviceDetail[] = [
       es: "Chip M2 de Apple, pantalla ProMotion y Apple Pencil con detección al pasar.",
     },
     summary: {
-      en: "The iPad Pro with M2 is a laptop-class tablet: a 120 Hz ProMotion Liquid Retina display, Face ID, Thunderbolt USB-C, pro cameras with LiDAR, and support for Apple Pencil (2nd generation) and Magic Keyboard. It came in 11-inch and 12.9-inch sizes — ask which one is on our shelf.",
-      es: "El iPad Pro con M2 es una tableta con potencia de laptop: pantalla Liquid Retina ProMotion a 120 Hz, Face ID, USB-C Thunderbolt, cámaras profesionales con LiDAR y compatibilidad con Apple Pencil (2.ª generación) y Magic Keyboard. Salió en 11 y 12.9 pulgadas; pregunta cuál tenemos en vitrina.",
+      en: "The 11-inch iPad Pro (4th generation) with M2 is a laptop-class tablet: a 120 Hz ProMotion Liquid Retina display, Face ID, Thunderbolt USB-C, pro cameras with LiDAR, and support for Apple Pencil (2nd generation) and Magic Keyboard.",
+      es: "El iPad Pro de 11 pulgadas (4.ª generación) con M2 es una tableta con potencia de laptop: pantalla Liquid Retina ProMotion a 120 Hz, Face ID, USB-C Thunderbolt, cámaras profesionales con LiDAR y compatibilidad con Apple Pencil (2.ª generación) y Magic Keyboard.",
     },
     highlights: [
       { en: "Apple M2 chip", es: "Chip Apple M2" },
@@ -850,8 +850,8 @@ const DETAILS: DeviceDetail[] = [
       [
         "display",
         {
-          en: "11″ Liquid Retina or 12.9″ Liquid Retina XDR, ProMotion up to 120 Hz",
-          es: "11″ Liquid Retina o 12.9″ Liquid Retina XDR, ProMotion hasta 120 Hz",
+          en: "11″ Liquid Retina, 2388 × 1668, ProMotion up to 120 Hz",
+          es: "11″ Liquid Retina, 2388 × 1668, ProMotion hasta 120 Hz",
         },
       ],
       ["chip", "Apple M2"],

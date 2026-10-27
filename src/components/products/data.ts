@@ -778,7 +778,7 @@ export const LAPTOPS: CategoryPageData = {
       zoom: 1.6,
       photoAlt: l("iPad Pro, iPad and iPad mini boxes", "Cajas de iPad Pro, iPad y iPad mini"),
       items: [
-        n("iPad Pro (M2)"),
+        n("iPad Pro 11-inch (4th gen, M2)"),
         n("iPad Pro"),
         n("iPad"),
         n("iPad mini (5th gen)"),

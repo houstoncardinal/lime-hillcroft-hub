@@ -212,13 +212,16 @@ const SHELF: Device[] = [
     id: "ipad-pro-m2",
     family: "iPad",
     year: 2022,
-    name: "iPad Pro (M2)",
+    name: "iPad Pro 11-inch (4th gen, M2)",
     brand: "Apple",
     kind: "ipad",
     image: img("ipad-pro"),
     w: 800,
     h: 676,
-    alt: { en: "iPad Pro with M2 at TIC Wireless", es: "iPad Pro con M2 en TIC Wireless" },
+    alt: {
+      en: "11-inch iPad Pro (4th generation, M2) at TIC Wireless",
+      es: "iPad Pro de 11 pulgadas (4.ª generación, M2) en TIC Wireless",
+    },
   },
   {
     id: "ipad-mini-5",
