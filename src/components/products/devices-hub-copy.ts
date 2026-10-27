@@ -1,15 +1,25 @@
-import type { Device } from "@/components/products/inventory";
+import type { Device, DeviceKind } from "@/components/products/inventory";
 import { PHONE } from "@/components/site/business";
 
 // Text for the all-devices page (/devices, /es/equipos), shared by the page and its <head>.
 
-export type Filter = "all" | "iphone" | "galaxy" | "ipad";
+/** The page's sections, in order: one per company and product line. */
+export const DEVICE_SECTIONS = [
+  { id: "iphone", brand: "Apple", kind: "iphone" },
+  { id: "galaxy-s", brand: "Samsung", kind: "galaxy-flagship" },
+  { id: "galaxy-z", brand: "Samsung", kind: "galaxy-fold" },
+  { id: "galaxy-a", brand: "Samsung", kind: "galaxy-a" },
+  { id: "ipad", brand: "Apple", kind: "ipad" },
+] as const satisfies readonly { id: string; brand: string; kind: DeviceKind }[];
+
+export type SectionId = (typeof DEVICE_SECTIONS)[number]["id"];
+export type Filter = "all" | SectionId;
 
 export const DEVICE_FILTERS: Record<Filter, (d: Device) => boolean> = {
   all: () => true,
-  iphone: (d) => d.kind === "iphone",
-  galaxy: (d) => d.brand === "Samsung",
-  ipad: (d) => d.kind === "ipad",
+  ...(Object.fromEntries(
+    DEVICE_SECTIONS.map((s) => [s.id, (d: Device) => d.kind === s.kind]),
+  ) as Record<SectionId, (d: Device) => boolean>),
 };
 
 export const DEVICES_HUB_COPY = {
@@ -18,16 +28,28 @@ export const DEVICES_HUB_COPY = {
     crumb: "All devices",
     kicker: (date: string) => `In store · updated ${date}`,
     title: ["Every phone & tablet", "in our store."],
-    body: "iPhone 11 through iPhone 18 Pro Max, Samsung Galaxy S20 through S26 Ultra, Galaxy A phones and iPads — sold unlocked at 3640 Hillcroft St, with leasing from $40 down, no credit needed, subject to approval. Stock changes quickly, so call to confirm the model, storage and color you want.",
+    body: "iPhone 11 through iPhone 18 Pro Max, Samsung Galaxy S20 through S26 Ultra, Galaxy Z Fold and Flip foldables, Galaxy A phones and iPads — sold unlocked at 3640 Hillcroft St, with leasing from $40 down, no credit needed, subject to approval. Stock changes quickly, so call to confirm the model, storage and color you want.",
     call: "Call to check stock",
     apply: "Apply for leasing",
     metaTitle: "Unlocked iPhones & Samsung Galaxy Phones in Houston — All Models",
     metaDescription:
       "iPhone 11 to iPhone 18 Pro Max and Galaxy S20 to S26 Ultra in stock on Hillcroft in Houston. Unlocked, with leasing from $40 down, no credit needed.",
-    filters: { all: "All", iphone: "iPhone", galaxy: "Samsung Galaxy", ipad: "iPad" } as Record<
-      Filter,
-      string
-    >,
+    sections: {
+      iphone: "iPhone",
+      "galaxy-s": "Galaxy S & Note",
+      "galaxy-z": "Galaxy Z Fold & Flip",
+      "galaxy-a": "Galaxy A",
+      ipad: "iPad",
+    } as Record<SectionId, string>,
+    jump: "Jump to",
+    filters: {
+      all: "All",
+      iphone: "iPhone",
+      "galaxy-s": "Galaxy S",
+      "galaxy-z": "Galaxy Z",
+      "galaxy-a": "Galaxy A",
+      ipad: "iPad",
+    } as Record<Filter, string>,
     search: "Search a model, e.g. 15 Pro Max",
     clear: "Clear search",
     models: (n: number) => `${n} ${n === 1 ? "model" : "models"}`,
@@ -57,16 +79,28 @@ export const DEVICES_HUB_COPY = {
     crumb: "Todos los equipos",
     kicker: (date: string) => `En tienda · actualizado el ${date}`,
     title: ["Todos los celulares y tabletas", "de nuestra tienda."],
-    body: "Del iPhone 11 al iPhone 18 Pro Max, del Samsung Galaxy S20 al S26 Ultra, celulares Galaxy A y iPads, desbloqueados en 3640 Hillcroft St y a pagos desde $40 de enganche, sin necesidad de crédito, sujeto a aprobación. El inventario cambia rápido: llama para confirmar el modelo, la capacidad y el color.",
+    body: "Del iPhone 11 al iPhone 18 Pro Max, del Samsung Galaxy S20 al S26 Ultra, plegables Galaxy Z Fold y Flip, celulares Galaxy A y iPads, desbloqueados en 3640 Hillcroft St y a pagos desde $40 de enganche, sin necesidad de crédito, sujeto a aprobación. El inventario cambia rápido: llama para confirmar el modelo, la capacidad y el color.",
     call: "Llama para ver existencias",
     apply: "Solicita arrendamiento",
     metaTitle: "iPhone y Samsung Galaxy desbloqueados en Houston — Todos los modelos",
     metaDescription:
       "Del iPhone 11 al iPhone 18 Pro Max y del Galaxy S20 al S26 Ultra en Hillcroft, Houston. Desbloqueados y a pagos desde $40 de enganche, sin crédito.",
-    filters: { all: "Todos", iphone: "iPhone", galaxy: "Samsung Galaxy", ipad: "iPad" } as Record<
-      Filter,
-      string
-    >,
+    sections: {
+      iphone: "iPhone",
+      "galaxy-s": "Galaxy S y Note",
+      "galaxy-z": "Galaxy Z Fold y Flip",
+      "galaxy-a": "Galaxy A",
+      ipad: "iPad",
+    } as Record<SectionId, string>,
+    jump: "Ir a",
+    filters: {
+      all: "Todos",
+      iphone: "iPhone",
+      "galaxy-s": "Galaxy S",
+      "galaxy-z": "Galaxy Z",
+      "galaxy-a": "Galaxy A",
+      ipad: "iPad",
+    } as Record<Filter, string>,
     search: "Busca un modelo, p. ej. 15 Pro Max",
     clear: "Borrar búsqueda",
     models: (n: number) => `${n} ${n === 1 ? "modelo" : "modelos"}`,

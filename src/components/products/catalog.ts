@@ -1,6 +1,6 @@
 import { CATALOG_PHOTOS } from "@/components/products/catalog-photos";
 import type { DeviceDetail, ProductPhoto, SpecKey } from "@/components/products/devices";
-import type { Device } from "@/components/products/inventory";
+import type { Device, DeviceKind } from "@/components/products/inventory";
 import type { Lang } from "@/components/site/seo";
 
 // iPhones and Galaxy S phones from the owner's stock list (Oct 16, 2026): Galaxy S21–S26 and
@@ -19,6 +19,8 @@ type Cam = [mp: number, role: "wide" | "main" | "uw" | "tele" | "lidar", zoom?: 
 
 type Model = {
   id: string;
+  /** Defaults to "iphone" for Apple and "galaxy-flagship" for Samsung. */
+  kind?: DeviceKind;
   name: string;
   brand: "Apple" | "Samsung";
   family: string;
@@ -35,15 +37,17 @@ type Model = {
     hz?: number;
     aod?: boolean;
     island?: boolean;
+    /** Foldables: the outside (cover) screen, in inches. */
+    cover?: number;
   };
   chip: string;
-  ram?: string;
+  ram?: V;
   /** Storage sizes ("1 TB" style), or "from:128 GB" when the full list isn't confirmed. */
   storage?: string[] | `from:${string}`;
   cams: Cam[];
   /** Samsung Space Zoom, e.g. 30 or 100. */
   spaceZoom?: number;
-  front: string;
+  front: V;
   battery: { mah?: number; videoHours?: number };
   charging: L;
   network: V;
@@ -68,6 +72,11 @@ function displaySpec(d: Model["display"]): L {
       d.hz ? (lang === "en" ? `up to ${d.hz} Hz` : `hasta ${d.hz} Hz`) : "",
       d.aod ? (lang === "en" ? "Always-On" : "siempre activa") : "",
       d.island ? "Dynamic Island" : "",
+      d.cover
+        ? lang === "en"
+          ? `${d.cover}″ cover screen`
+          : `pantalla exterior de ${d.cover}″`
+        : "",
     ]
       .filter(Boolean)
       .join(", ");
@@ -169,7 +178,7 @@ function toDevice(m: Model, photo: ProductPhoto | undefined): Device {
     id: m.id,
     name: m.name,
     brand: m.brand,
-    kind: m.brand === "Apple" ? "iphone" : "galaxy-flagship",
+    kind: m.kind ?? (m.brand === "Apple" ? "iphone" : "galaxy-flagship"),
     family: m.family,
     year: m.year,
     fiveG: m.fiveG,
@@ -182,7 +191,7 @@ function toDevice(m: Model, photo: ProductPhoto | undefined): Device {
 }
 
 // ---------------------------------------------------------------------------------------------
-// Samsung Galaxy S. US models: Snapdragon in the S21–S25 lines; Exynos 2600 in the S26 and S26+
+// Samsung Galaxy S. US models: Snapdragon in the S21–S25 lines; Exynos 2600 in the S26
 // (Samsung US FAQ). S26 specs from samsung.com/us (compare page and S26 page, 2026).
 
 const SAMSUNG_25W = bi(
@@ -702,32 +711,6 @@ const SAMSUNG: Model[] = [
     spaceZoom: 30,
     front: "12 MP",
     battery: { mah: 4300 },
-    charging: bi("Fast charging, wireless charging", "Carga rápida, carga inalámbrica"),
-    network: "5G",
-    extras: bi("Galaxy AI, 8K video recording", "Galaxy AI, grabación de video 8K"),
-  },
-  {
-    id: "galaxy-s26-plus",
-    name: "Galaxy S26+",
-    brand: "Samsung",
-    family: "Galaxy S26",
-    year: 2026,
-    fiveG: true,
-    pitch: bi(
-      "A 6.7-inch QHD+ Galaxy with a 4,900 mAh battery and Galaxy AI.",
-      "Un Galaxy QHD+ de 6.7 pulgadas con batería de 4,900 mAh y Galaxy AI.",
-    ),
-    feature: galaxyAi,
-    display: { size: 6.7, panel: AMOLED, res: "QHD+", hz: 120 },
-    chip: "Samsung Exynos 2600",
-    cams: [
-      [50, "wide"],
-      [12, "uw"],
-      [10, "tele", 3],
-    ],
-    spaceZoom: 30,
-    front: "12 MP",
-    battery: { mah: 4900 },
     charging: bi("Fast charging, wireless charging", "Carga rápida, carga inalámbrica"),
     network: "5G",
     extras: bi("Galaxy AI, 8K video recording", "Galaxy AI, grabación de video 8K"),
@@ -1413,7 +1396,217 @@ const IPHONE: Model[] = [
   },
 ];
 
-const MODELS = [...IPHONE, ...SAMSUNG];
+// ---------------------------------------------------------------------------------------------
+// Samsung Galaxy Z foldables (owner's list, Oct 27, 2026). Z Fold8 Ultra, Z Fold7 and Z Flip7
+// specs checked against GSMArena's spec pages (Oct 2026); Z Fold6 and Z Fold3 are Samsung's US
+// launch specs.
+
+const FOLD_EXTRAS = bi(
+  "Galaxy AI, multitasking with up to three apps side by side",
+  "Galaxy AI, multitarea con hasta tres apps lado a lado",
+);
+
+const GALAXY_Z: Model[] = [
+  {
+    id: "galaxy-z-fold8-ultra",
+    kind: "galaxy-fold",
+    name: "Galaxy Z Fold8 Ultra",
+    brand: "Samsung",
+    family: "Galaxy Z",
+    year: 2026,
+    fiveG: true,
+    pitch: bi(
+      "Samsung's biggest foldable: an 8-inch inner screen, a 200 MP camera and a 5,000 mAh battery.",
+      "El plegable más grande de Samsung: pantalla interior de 8 pulgadas, cámara de 200 MP y batería de 5,000 mAh.",
+    ),
+    feature: bi("8″ inner screen, 6.5″ cover screen", "Pantalla interior de 8″ y exterior de 6.5″"),
+    display: { size: 8, panel: AMOLED, res: "2256 × 2504", hz: 120, cover: 6.5 },
+    chip: "Snapdragon 8 Elite Gen 5 for Galaxy",
+    ram: "12 GB or 16 GB",
+    storage: ["256 GB", "512 GB", "1 TB"],
+    cams: [
+      [200, "wide"],
+      [50, "uw"],
+      [10, "tele", 3],
+    ],
+    front: bi("10 MP inner · 10 MP cover", "10 MP interior · 10 MP exterior"),
+    battery: { mah: 5000 },
+    charging: bi(
+      "45 W wired, 20 W Qi2.2 wireless, reverse wireless charging",
+      "Carga de 45 W por cable, inalámbrica Qi2.2 de 20 W, carga inversa",
+    ),
+    network: "5G",
+    water: "IP48",
+    extras: bi(
+      "Android 17 with One UI 9, 215 g, 8.9 mm folded",
+      "Android 17 con One UI 9, 215 g, 8.9 mm cerrado",
+    ),
+  },
+  {
+    id: "galaxy-z-fold7",
+    kind: "galaxy-fold",
+    name: "Galaxy Z Fold7",
+    brand: "Samsung",
+    family: "Galaxy Z",
+    year: 2025,
+    fiveG: true,
+    pitch: bi(
+      "A thin, light Fold with an 8-inch inner screen and a 200 MP camera.",
+      "Un Fold delgado y ligero con pantalla interior de 8 pulgadas y cámara de 200 MP.",
+    ),
+    feature: bi("8.9 mm thin when folded, 215 g", "Solo 8.9 mm cerrado y 215 g"),
+    display: { size: 8, panel: AMOLED, res: "1968 × 2184", hz: 120, cover: 6.5 },
+    chip: "Snapdragon 8 Elite for Galaxy",
+    ram: bi("12 GB (16 GB with 1 TB)", "12 GB (16 GB con 1 TB)"),
+    storage: ["256 GB", "512 GB", "1 TB"],
+    cams: [
+      [200, "wide"],
+      [12, "uw"],
+      [10, "tele", 3],
+    ],
+    front: bi("10 MP inner · 10 MP cover", "10 MP interior · 10 MP exterior"),
+    battery: { mah: 4400 },
+    charging: bi(
+      "25 W wired, 15 W wireless, reverse wireless charging",
+      "Carga de 25 W por cable, inalámbrica de 15 W, carga inversa",
+    ),
+    network: "5G",
+    water: "IP48",
+    extras: FOLD_EXTRAS,
+  },
+  {
+    id: "galaxy-z-flip7",
+    kind: "galaxy-fold",
+    name: "Galaxy Z Flip7",
+    brand: "Samsung",
+    family: "Galaxy Z",
+    year: 2025,
+    fiveG: true,
+    pitch: bi(
+      "A pocket-size flip phone with a 4.1-inch FlexWindow cover screen and a 50 MP camera.",
+      "Un plegable de bolsillo con pantalla exterior FlexWindow de 4.1 pulgadas y cámara de 50 MP.",
+    ),
+    feature: bi("4.1″ FlexWindow cover screen", "Pantalla exterior FlexWindow de 4.1″"),
+    display: { size: 6.9, panel: AMOLED, hz: 120, cover: 4.1 },
+    chip: "Samsung Exynos 2500",
+    ram: "12 GB",
+    storage: ["256 GB", "512 GB"],
+    cams: [
+      [50, "wide"],
+      [12, "uw"],
+    ],
+    front: "10 MP",
+    battery: { mah: 4300 },
+    charging: bi(
+      "25 W wired, 15 W wireless, reverse wireless charging",
+      "Carga de 25 W por cable, inalámbrica de 15 W, carga inversa",
+    ),
+    network: "5G",
+    water: "IP48",
+    extras: bi("Galaxy AI, hands-free FlexCam", "Galaxy AI, FlexCam con manos libres"),
+  },
+  {
+    id: "galaxy-z-fold6",
+    kind: "galaxy-fold",
+    name: "Galaxy Z Fold6",
+    brand: "Samsung",
+    family: "Galaxy Z",
+    year: 2024,
+    fiveG: true,
+    pitch: bi(
+      "A 7.6-inch foldable with Galaxy AI and S Pen support.",
+      "Un plegable de 7.6 pulgadas con Galaxy AI y compatibilidad con S Pen.",
+    ),
+    feature: bi("Works with S Pen Fold Edition", "Compatible con S Pen Fold Edition"),
+    display: { size: 7.6, panel: AMOLED, res: "2160 × 1856", hz: 120, cover: 6.3 },
+    chip: "Snapdragon 8 Gen 3 for Galaxy",
+    ram: "12 GB",
+    storage: ["256 GB", "512 GB", "1 TB"],
+    cams: [
+      [50, "wide"],
+      [12, "uw"],
+      [10, "tele", 3],
+    ],
+    front: bi("10 MP cover · 4 MP under-display", "10 MP exterior · 4 MP bajo la pantalla"),
+    battery: { mah: 4400 },
+    charging: SAMSUNG_25W,
+    network: "5G",
+    water: "IP48",
+    extras: bi(
+      "Galaxy AI, S Pen Fold Edition support (sold separately)",
+      "Galaxy AI, compatible con S Pen Fold Edition (se vende por separado)",
+    ),
+  },
+  {
+    id: "galaxy-z-fold3",
+    kind: "galaxy-fold",
+    name: "Galaxy Z Fold3",
+    brand: "Samsung",
+    family: "Galaxy Z",
+    year: 2021,
+    fiveG: true,
+    pitch: bi(
+      "The first water-resistant Fold, with S Pen support and a 7.6-inch inner screen.",
+      "El primer Fold resistente al agua, compatible con S Pen y con pantalla interior de 7.6 pulgadas.",
+    ),
+    feature: bi("IPX8 water resistance", "Resistencia al agua IPX8"),
+    display: { size: 7.6, panel: AMOLED, res: "2208 × 1768", hz: 120, cover: 6.2 },
+    chip: "Snapdragon 888",
+    ram: "12 GB",
+    storage: ["256 GB", "512 GB"],
+    cams: [
+      [12, "wide"],
+      [12, "uw"],
+      [12, "tele", 2],
+    ],
+    front: bi("10 MP cover · 4 MP under-display", "10 MP exterior · 4 MP bajo la pantalla"),
+    battery: { mah: 4400 },
+    charging: SAMSUNG_25W,
+    network: "5G",
+    water: "IPX8",
+    extras: bi(
+      "S Pen Fold Edition support (sold separately)",
+      "Compatible con S Pen Fold Edition (se vende por separado)",
+    ),
+  },
+];
+
+// ---------------------------------------------------------------------------------------------
+// iPad (A16), 11th generation, 2025. Apple tech specs (support.apple.com/122240).
+
+const IPAD: Model[] = [
+  {
+    id: "ipad-11",
+    kind: "ipad",
+    name: "iPad (11th gen, A16)",
+    brand: "Apple",
+    family: "iPad",
+    year: 2025,
+    fiveG: false,
+    pitch: bi(
+      "Apple's everyday iPad with the A16 chip, an 11-inch display and Touch ID.",
+      "El iPad para todos los días de Apple, con chip A16, pantalla de 11 pulgadas y Touch ID.",
+    ),
+    feature: bi("Touch ID in the top button", "Touch ID en el botón superior"),
+    display: { size: 11, panel: "Liquid Retina", res: "2360 × 1640" },
+    chip: "A16",
+    storage: ["128 GB", "256 GB", "512 GB"],
+    cams: [[12, "wide"]],
+    front: bi("12 MP landscape Center Stage", "12 MP horizontal con Encuadre centrado"),
+    battery: { videoHours: 10 },
+    charging: bi("USB-C", "USB-C"),
+    network: bi(
+      "Wi-Fi 6; 5G on Wi-Fi + Cellular models",
+      "Wi-Fi 6; 5G en modelos Wi-Fi + Cellular",
+    ),
+    extras: bi(
+      "Works with Apple Pencil (USB-C), Apple Pencil (1st generation) and Magic Keyboard Folio; Blue, Pink, Yellow or Silver",
+      "Compatible con Apple Pencil (USB-C), Apple Pencil (1.ª generación) y Magic Keyboard Folio; azul, rosa, amarillo o plata",
+    ),
+  },
+];
+
+const MODELS = [...IPHONE, ...SAMSUNG, ...GALAXY_Z, ...IPAD];
 
 export const CATALOG_DEVICES: Device[] = MODELS.map((m) => toDevice(m, CATALOG_PHOTOS[m.id]?.[0]));
 export const CATALOG_DETAILS: DeviceDetail[] = MODELS.map((m) =>

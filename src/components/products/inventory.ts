@@ -15,7 +15,7 @@ export const INVENTORY_UPDATED = "2026-10-16";
 
 type L = Record<Lang, string>;
 
-export type DeviceKind = "iphone" | "galaxy-flagship" | "galaxy-a" | "ipad";
+export type DeviceKind = "iphone" | "galaxy-flagship" | "galaxy-fold" | "galaxy-a" | "ipad";
 
 export type Device = {
   id: string;
@@ -242,7 +242,7 @@ const SHELF: Device[] = [
 
 // Biggest models first within a year: Pro Max / Ultra, then Pro / Plus, then the rest.
 const tier = (d: Device) => (/Pro Max|Ultra/.test(d.name) ? 0 : /Pro|\+|Plus/.test(d.name) ? 1 : 2);
-const KIND_ORDER: DeviceKind[] = ["iphone", "galaxy-flagship", "galaxy-a", "ipad"];
+const KIND_ORDER: DeviceKind[] = ["iphone", "galaxy-flagship", "galaxy-fold", "galaxy-a", "ipad"];
 
 // Every device opens its own page at /devices/<id> (src/components/products/devices.ts).
 // Newest first, so the scrollers lead with the latest phones.

@@ -8,6 +8,7 @@ import { LATEST_DEVICES, type Device } from "@/components/products/inventory";
 import {
   DEVICES_HUB_COPY,
   DEVICE_FILTERS,
+  DEVICE_SECTIONS,
   type Filter,
 } from "@/components/products/devices-hub-copy";
 import { DeviceCard } from "@/components/products/latest-devices";
@@ -20,15 +21,36 @@ import { cn } from "@/lib/utils";
 
 const match = DEVICE_FILTERS;
 
-/** Devices grouped by model family, newest family first. */
-function groups(devices: Device[]) {
+// Ordering inside a family, the way the makers list them: base, Plus/+, Pro, Pro Max/Ultra.
+const tier = (name: string) =>
+  /Pro Max|Ultra/.test(name) ? 3 : /\bPro\b/.test(name) ? 2 : /Plus|\+/.test(name) ? 1 : 0;
+// Galaxy A by model number (A53, A36 … A03s); iPads as Pro, iPad, mini; foldables newest first.
+const aNumber = (name: string) => Number(/A(\d+)/.exec(name)?.[1] ?? 0);
+const ipadRank = (name: string) => (/Pro/.test(name) ? 0 : /mini/.test(name) ? 2 : 1);
+const byModel = (a: Device, b: Device) => {
+  if (a.kind === "galaxy-a") return aNumber(b.name) - aNumber(a.name);
+  if (a.kind === "ipad") return ipadRank(a.name) - ipadRank(b.name);
+  if (a.kind === "galaxy-fold")
+    return (
+      (b.year ?? 0) - (a.year ?? 0) || Number(/Flip/.test(a.name)) - Number(/Flip/.test(b.name))
+    );
+  return tier(a.name) - tier(b.name);
+};
+
+/** Devices grouped by model family: newest family first, models in the makers' order. */
+function families(devices: Device[]) {
   const map = new Map<string, Device[]>();
   for (const d of devices) {
     const key = d.family ?? d.name;
     map.set(key, [...(map.get(key) ?? []), d]);
   }
-  return [...map.entries()];
+  const year = (list: Device[]) => Math.max(...list.map((d) => d.year ?? 0));
+  return [...map.entries()]
+    .map(([family, list]) => [family, [...list].sort(byModel)] as const)
+    .sort(([fa, a], [fb, b]) => year(b) - year(a) || fb.localeCompare(fa, "en", { numeric: true }));
 }
+
+const familyId = (family: string) => `family-${family.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
 export function DevicesHubPage({ lang }: { lang: Lang }) {
   const t = DEVICES_HUB_COPY[lang];
@@ -156,24 +178,71 @@ export function DevicesHubPage({ lang }: { lang: Lang }) {
             </a>
           </p>
         ) : (
-          <div className="space-y-10">
-            {groups(shown).map(([family, list]) => (
-              <section key={family} aria-labelledby={`family-${family}`}>
-                <div className="flex items-baseline justify-between gap-4 border-b pb-3">
-                  <h2 id={`family-${family}`} className="text-2xl font-semibold md:text-3xl">
-                    {family}
-                  </h2>
-                  <span className="text-sm text-muted-foreground">{t.models(list.length)}</span>
-                </div>
-                <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
-                  {list.map((d) => (
-                    <li key={d.id}>
-                      <DeviceCard device={d} lang={lang} />
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
+          <div className="space-y-14">
+            {DEVICE_SECTIONS.map((section) => {
+              const list = shown.filter((d) => d.kind === section.kind);
+              if (!list.length) return null;
+              const fams = families(list);
+              const split = fams.length > 1;
+              return (
+                <section
+                  key={section.id}
+                  id={section.id}
+                  aria-labelledby={`${section.id}-title`}
+                  className="scroll-mt-44"
+                >
+                  <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2 border-b-2 border-ink pb-3">
+                    <div>
+                      <p className="eyebrow text-primary">{section.brand}</p>
+                      <h2
+                        id={`${section.id}-title`}
+                        className="mt-1 text-3xl font-semibold md:text-4xl"
+                      >
+                        {t.sections[section.id]}
+                      </h2>
+                    </div>
+                    <span className="text-sm text-muted-foreground">{t.models(list.length)}</span>
+                  </div>
+                  {split && (
+                    <nav
+                      aria-label={`${t.jump}: ${t.sections[section.id]}`}
+                      className="-mx-5 mt-4 flex gap-2 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:px-0"
+                    >
+                      {fams.map(([family]) => (
+                        <a
+                          key={family}
+                          href={`#${familyId(family)}`}
+                          className="inline-flex min-h-9 shrink-0 items-center rounded-full border bg-card px-3.5 text-sm font-medium hover:border-primary hover:text-primary"
+                        >
+                          {family}
+                        </a>
+                      ))}
+                    </nav>
+                  )}
+                  <div className="mt-6 space-y-8">
+                    {fams.map(([family, devices]) => (
+                      <div key={family} id={familyId(family)} className="scroll-mt-44">
+                        {split && (
+                          <div className="flex items-baseline justify-between gap-4 pb-3">
+                            <h3 className="text-xl font-semibold md:text-2xl">{family}</h3>
+                            <span className="text-sm text-muted-foreground">
+                              {t.models(devices.length)}
+                            </span>
+                          </div>
+                        )}
+                        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
+                          {devices.map((d) => (
+                            <li key={d.id}>
+                              <DeviceCard device={d} lang={lang} />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         )}
       </section>

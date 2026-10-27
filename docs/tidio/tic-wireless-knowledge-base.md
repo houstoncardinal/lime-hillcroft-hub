@@ -87,7 +87,7 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 ## Devices in store now (updated October 16, 2026)
 
-53 models on the shelves at 3640 Hillcroft St, Suite C, sold unlocked. A phone may be new or
+58 models on the shelves at 3640 Hillcroft St, Suite C, sold unlocked. A phone may be new or
 pre-owned depending on the unit — staff confirm condition, storage, color and price. Specs are the
 manufacturer's US launch specs. Stock changes quickly — call (713) 339-9300 to confirm a model before visiting.
 Leasing (lease-to-own) on every device: no credit needed, as low as $40 down (iPhone 18 Pro Max from $65 down), subject to approval.
@@ -119,16 +119,19 @@ iPhones:
 
 Samsung Galaxy phones:
 - Samsung Galaxy S26 Ultra (2026, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Elite Gen 5 for Galaxy; 200 MP wide · 50 MP ultra-wide · 50 MP 5x telephoto · 10 MP 3x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s26-ultra
-- Samsung Galaxy S26+ (2026, 5G) — 6.7″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Samsung Exynos 2600; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s26-plus
 - Samsung Galaxy S26 (2026, 5G) — 6.3″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Samsung Exynos 2600; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,300 mAh. https://www.ticwirelesstx.com/devices/galaxy-s26
+- Samsung Galaxy Z Fold8 Ultra (2026, 5G) — 8″ Dynamic AMOLED 2X, 2256 × 2504, up to 120 Hz, 6.5″ cover screen; Snapdragon 8 Elite Gen 5 for Galaxy; 200 MP wide · 50 MP ultra-wide · 10 MP 3x telephoto; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-z-fold8-ultra
 - Samsung Galaxy S25 Ultra (2025, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Elite for Galaxy; 200 MP wide · 50 MP ultra-wide · 50 MP 5x telephoto · 10 MP 3x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s25-ultra
 - Samsung Galaxy S25+ (2025, 5G) — 6.7″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Elite for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s25-plus
 - Samsung Galaxy S25 (2025, 5G) — 6.2″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Elite for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s25
+- Samsung Galaxy Z Fold7 (2025, 5G) — 8″ Dynamic AMOLED 2X, 1968 × 2184, up to 120 Hz, 6.5″ cover screen; Snapdragon 8 Elite for Galaxy; 200 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto; 4,400 mAh. https://www.ticwirelesstx.com/devices/galaxy-z-fold7
+- Samsung Galaxy Z Flip7 (2025, 5G) — 6.9″ Dynamic AMOLED 2X, up to 120 Hz, 4.1″ cover screen; Samsung Exynos 2500; 50 MP wide · 12 MP ultra-wide; 4,300 mAh. https://www.ticwirelesstx.com/devices/galaxy-z-flip7
 - Samsung Galaxy A36 5G (2025, 5G) — 6.7″ Super AMOLED, FHD+, 120 Hz; Qualcomm Snapdragon 6 Gen 3; 50 MP wide (OIS) · 8 MP ultra-wide · 5 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a36
 - Samsung Galaxy A26 5G (2025, 5G) — 6.7″ Super AMOLED, FHD+, 120 Hz; Samsung Exynos 1380; 50 MP wide (OIS) · 8 MP ultra-wide · 2 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a26
 - Samsung Galaxy S24 Ultra (2024, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 3 for Galaxy; 200 MP wide · 12 MP ultra-wide · 50 MP 5x telephoto · 10 MP 3x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s24-ultra
 - Samsung Galaxy S24+ (2024, 5G) — 6.7″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 3 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,900 mAh. https://www.ticwirelesstx.com/devices/galaxy-s24-plus
 - Samsung Galaxy S24 (2024, 5G) — 6.2″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 3 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s24
+- Samsung Galaxy Z Fold6 (2024, 5G) — 7.6″ Dynamic AMOLED 2X, 2160 × 1856, up to 120 Hz, 6.3″ cover screen; Snapdragon 8 Gen 3 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto; 4,400 mAh. https://www.ticwirelesstx.com/devices/galaxy-z-fold6
 - Samsung Galaxy A16 5G (2024, 5G) — 6.7″ Super AMOLED, FHD+, 90 Hz; MediaTek Dimensity 6300 (US model); 50 MP wide · 5 MP ultra-wide · 2 MP macro; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a16
 - Samsung Galaxy S23 Ultra (2023, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 8 Gen 2 for Galaxy; 200 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto · 10 MP 10x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s23-ultra
 - Samsung Galaxy S23+ (2023, 5G) — 6.6″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 8 Gen 2 for Galaxy; 50 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto (up to 30x Space Zoom); 4,700 mAh. https://www.ticwirelesstx.com/devices/galaxy-s23-plus
@@ -142,6 +145,7 @@ Samsung Galaxy phones:
 - Samsung Galaxy S21 Ultra (2021, 5G) — 6.8″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Snapdragon 888; 108 MP wide · 12 MP ultra-wide · 10 MP 3x telephoto · 10 MP 10x telephoto (up to 100x Space Zoom); 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s21-ultra
 - Samsung Galaxy S21+ (2021, 5G) — 6.7″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 888; 12 MP wide · 12 MP ultra-wide · 64 MP 3x telephoto (up to 30x Space Zoom); 4,800 mAh. https://www.ticwirelesstx.com/devices/galaxy-s21-plus
 - Samsung Galaxy S21 (2021, 5G) — 6.2″ Dynamic AMOLED 2X, FHD+, up to 120 Hz; Snapdragon 888; 12 MP wide · 12 MP ultra-wide · 64 MP 3x telephoto (up to 30x Space Zoom); 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s21
+- Samsung Galaxy Z Fold3 (2021, 5G) — 7.6″ Dynamic AMOLED 2X, 2208 × 1768, up to 120 Hz, 6.2″ cover screen; Snapdragon 888; 12 MP wide · 12 MP ultra-wide · 12 MP 2x telephoto; 4,400 mAh. https://www.ticwirelesstx.com/devices/galaxy-z-fold3
 - Samsung Galaxy A13 5G (2021, 5G) — 6.5″ LCD, HD+, 90 Hz; MediaTek Dimensity 700; 50 MP wide · 2 MP macro · 2 MP depth; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a13
 - Samsung Galaxy A03s (2021) — 6.5″ LCD, HD+; MediaTek Helio P35; 13 MP wide · 2 MP macro · 2 MP depth; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a03s
 - Samsung Galaxy S20 Ultra (2020, 5G) — 6.9″ Dynamic AMOLED 2X, QHD+, up to 120 Hz; Qualcomm Snapdragon 865; 108 MP wide · 48 MP telephoto (up to 100x Space Zoom) · 12 MP ultra-wide · depth sensor; 5,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-s20-ultra
@@ -149,6 +153,7 @@ Samsung Galaxy phones:
 - Samsung Galaxy A20 (2019) — 6.4″ Super AMOLED, HD+; Samsung Exynos 7884; 13 MP wide · 5 MP ultra-wide; 4,000 mAh. https://www.ticwirelesstx.com/devices/galaxy-a20
 
 Tablets:
+- iPad (11th gen, A16) (2025) — 11″ Liquid Retina, 2360 × 1640; A16; 12 MP wide; Up to 10 hours of video playback. https://www.ticwirelesstx.com/devices/ipad-11
 - iPad Pro 11-inch (4th gen, M2) (2022) — 11″ Liquid Retina, 2388 × 1668, ProMotion up to 120 Hz; Apple M2; 12 MP wide · 10 MP ultra-wide · LiDAR scanner; Up to 10 hours of web browsing or video. https://www.ticwirelesstx.com/devices/ipad-pro-m2
 - iPad mini (5th gen) (2019) — 7.9″ Retina, True Tone; Apple A12 Bionic; 8 MP; Up to 10 hours of web browsing or video. https://www.ticwirelesstx.com/devices/ipad-mini-5
 

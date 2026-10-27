@@ -4,7 +4,11 @@ import { getDevicePrices, type DevicePrice } from "@/shop/storefront";
 
 // Links /devices pages to their Shopify products. The Shopify handle is the device id, except
 // where the site's id predates the Shopify import (docs/shopify/tic-wireless-devices-shopify.csv).
-const HANDLES: Record<string, string> = { "iphone-18": "iphone-18-pro-max" };
+const HANDLES: Record<string, string> = {
+  "iphone-18": "iphone-18-pro-max",
+  // The store's own iPad (A16) listing; the Wi-Fi + Cellular models are separate products.
+  "ipad-11": "apple-ipad-11th-gen-wifi-128gb",
+};
 
 export const shopHandle = (deviceId: string) => HANDLES[deviceId] ?? deviceId;
 

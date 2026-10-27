@@ -8,11 +8,13 @@ import { categoryFor, toText } from "@/shop/storefront";
 // Device pages find their Shopify product by handle. The import file in docs/shopify is what the
 // store was loaded from, so every device page must point at a handle that file creates.
 describe("device pages ↔ Shopify products", () => {
-  const csv = fs.readFileSync("docs/shopify/tic-wireless-devices-shopify.csv", "utf8");
+  // Every import file in docs/shopify: the full product imports and the price updates that
+  // reference products the store already had (such as its own iPad (A16) listing).
   const handles = new Set(
-    csv
-      .split("\n")
-      .slice(1)
+    fs
+      .readdirSync("docs/shopify")
+      .filter((f) => f.endsWith(".csv"))
+      .flatMap((f) => fs.readFileSync(`docs/shopify/${f}`, "utf8").split("\n").slice(1))
       .map((line) => line.split(",")[0])
       .filter(Boolean),
   );
