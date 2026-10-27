@@ -1,0 +1,37 @@
+Handle,Title,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Requires Shipping,Variant Taxable,Variant Weight Unit
+iphone-18-pro-max,Apple iPhone 18 Pro Max (Unlocked),Storage,256GB,Color,Burgundy,TIC-IP-18-PRO-MAX-256GB-BURGUNDY,0,shopify,3,deny,manual,1850.00,TRUE,TRUE,g
+iphone-18-pro-max,,,256GB,,Black,TIC-IP-18-PRO-MAX-256GB-BLACK,0,shopify,1,deny,manual,1850.00,TRUE,TRUE,g
+iphone-18-pro-max,,,256GB,,Glacier,TIC-IP-18-PRO-MAX-256GB-GLACIER,0,shopify,1,deny,manual,1850.00,TRUE,TRUE,g
+iphone-18-pro-max,,,512GB,,Silver,TIC-IP-18-PRO-MAX-512GB-SILVER,0,shopify,1,deny,manual,1950.00,TRUE,TRUE,g
+iphone-18-pro-max,,,512GB,,Glacier,TIC-IP-18-PRO-MAX-512GB-GLACIER,0,shopify,1,deny,manual,1950.00,TRUE,TRUE,g
+iphone-18-pro,Apple iPhone 18 Pro (Unlocked),Storage,256GB,Color,Black,TIC-IP-18-PRO-256GB-BLACK,0,shopify,1,deny,manual,1650.00,TRUE,TRUE,g
+iphone-18-pro,,,256GB,,Burgundy,TIC-IP-18-PRO-256GB-BURGUNDY,0,shopify,1,deny,manual,1650.00,TRUE,TRUE,g
+iphone-18-pro,,,256GB,,Glacier,TIC-IP-18-PRO-256GB-GLACIER,0,shopify,1,deny,manual,1650.00,TRUE,TRUE,g
+iphone-17-pro-max,Apple iPhone 17 Pro Max (Unlocked),Storage,256GB,Color,Silver,TIC-IP-17-PRO-MAX-256GB-SILVER,0,shopify,1,deny,manual,1399.00,TRUE,TRUE,g
+iphone-17-pro-max,,,256GB,,Cosmic Orange,TIC-IP-17-PRO-MAX-256GB-COSMIC-ORANGE,0,shopify,1,deny,manual,1399.00,TRUE,TRUE,g
+iphone-17-pro-max,,,256GB,,Deep Blue,TIC-IP-17-PRO-MAX-256GB-DEEP-BLUE,0,shopify,1,deny,manual,1399.00,TRUE,TRUE,g
+iphone-17-pro,Apple iPhone 17 Pro (Unlocked),Storage,256GB,Color,Cosmic Orange,TIC-IP-17-PRO-256GB-COSMIC-ORANGE,0,shopify,1,deny,manual,1329.00,TRUE,TRUE,g
+iphone-17,Apple iPhone 17 (Unlocked),Storage,256GB,Color,Mist Blue,TIC-IP-17-256GB-MIST-BLUE,0,shopify,1,deny,manual,1049.00,TRUE,TRUE,g
+iphone-17,,,256GB,,Lavender,TIC-IP-17-256GB-LAVENDER,0,shopify,1,deny,manual,1049.00,TRUE,TRUE,g
+iphone-16-pro-max,Apple iPhone 16 Pro Max (Unlocked),Storage,256GB,Color,White Titanium,TIC-IP-16-PRO-MAX-256GB-WHITE-TITANIUM,0,shopify,1,deny,manual,1149.00,TRUE,TRUE,g
+iphone-16-pro-max,,,256GB,,Desert Titanium,TIC-IP-16-PRO-MAX-256GB-DESERT-TITANIUM,0,shopify,1,deny,manual,1149.00,TRUE,TRUE,g
+iphone-16-pro-max,,,256GB,,Black Titanium,TIC-IP-16-PRO-MAX-256GB-BLACK-TITANIUM,0,shopify,1,deny,manual,1149.00,TRUE,TRUE,g
+iphone-16,Apple iPhone 16 (Unlocked),Storage,128GB,Color,Pink,TIC-IP-16-128GB-PINK,0,shopify,1,deny,manual,799.00,TRUE,TRUE,g
+iphone-15-pro-max,Apple iPhone 15 Pro Max (Unlocked),Storage,256GB,Color,White Titanium,TIC-IP-15-PRO-MAX-256GB-WHITE-TITANIUM,0,shopify,2,deny,manual,899.00,TRUE,TRUE,g
+iphone-15-pro-max,,,256GB,,Black Titanium,TIC-IP-15-PRO-MAX-256GB-BLACK-TITANIUM,0,shopify,1,deny,manual,899.00,TRUE,TRUE,g
+iphone-15-pro-max,,,256GB,,Blue Titanium,TIC-IP-15-PRO-MAX-256GB-BLUE-TITANIUM,0,shopify,1,deny,manual,899.00,TRUE,TRUE,g
+iphone-15-plus,Apple iPhone 15 Plus (Unlocked),Storage,128GB,Color,Pink,TIC-IP-15-PLUS-128GB-PINK,0,shopify,1,deny,manual,799.00,TRUE,TRUE,g
+iphone-15-plus,,,128GB,,Black,TIC-IP-15-PLUS-128GB-BLACK,0,shopify,1,deny,manual,799.00,TRUE,TRUE,g
+iphone-15,Apple iPhone 15 (Unlocked),Storage,128GB,Color,Black,TIC-IP-15-128GB-BLACK,0,shopify,1,deny,manual,699.00,TRUE,TRUE,g
+iphone-14-pro-max,Apple iPhone 14 Pro Max (Unlocked),Storage,128GB,Color,Deep Purple,TIC-IP-14-PRO-MAX-128GB-DEEP-PURPLE,0,shopify,1,deny,manual,799.00,TRUE,TRUE,g
+iphone-14-pro-max,,,128GB,,Space Black,TIC-IP-14-PRO-MAX-128GB-SPACE-BLACK,0,shopify,1,deny,manual,799.00,TRUE,TRUE,g
+iphone-14-pro,Apple iPhone 14 Pro (Unlocked),Storage,256GB,Color,Gold,TIC-IP-14-PRO-256GB-GOLD,0,shopify,1,deny,manual,675.00,TRUE,TRUE,g
+iphone-14-plus,Apple iPhone 14 Plus (Unlocked),Storage,128GB,Color,(PRODUCT)RED,TIC-IP-14-PLUS-128GB-PRODUCT-RED,0,shopify,1,deny,manual,544.00,TRUE,TRUE,g
+iphone-14,Apple iPhone 14 (Unlocked),Storage,128GB,Color,Purple,TIC-IP-14-128GB-PURPLE,0,shopify,2,deny,manual,549.00,TRUE,TRUE,g
+iphone-13-pro-max,Apple iPhone 13 Pro Max (Unlocked),Storage,128GB,Color,Graphite,TIC-IP-13-PRO-MAX-128GB-GRAPHITE,0,shopify,1,deny,manual,599.00,TRUE,TRUE,g
+iphone-13-pro-max,,,128GB,,Sierra Blue,TIC-IP-13-PRO-MAX-128GB-SIERRA-BLUE,0,shopify,1,deny,manual,599.00,TRUE,TRUE,g
+iphone-12-pro-max,Apple iPhone 12 Pro Max (Unlocked),Storage,128GB,Color,Gold,TIC-IP-12-PRO-MAX-128GB-GOLD,0,shopify,1,deny,manual,599.00,TRUE,TRUE,g
+iphone-12,Apple iPhone 12 (Unlocked),Storage,64GB,Color,Purple,TIC-IP-12-64GB-PURPLE,0,shopify,1,deny,manual,275.00,TRUE,TRUE,g
+iphone-12,,,64GB,,Black,TIC-IP-12-64GB-BLACK,0,shopify,1,deny,manual,275.00,TRUE,TRUE,g
+iphone-11,Apple iPhone 11 (Unlocked),Storage,64GB,Color,Purple,TIC-IP-11-64GB-PURPLE,0,shopify,2,deny,manual,279.00,TRUE,TRUE,g
+iphone-11,,,64GB,,Black,TIC-IP-11-64GB-BLACK,0,shopify,1,deny,manual,279.00,TRUE,TRUE,g
