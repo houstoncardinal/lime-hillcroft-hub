@@ -67,6 +67,7 @@ import {
 import { OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
+import { devicePath } from "@/components/products/device-paths";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { LatestDevices } from "@/components/products/latest-devices";
 import { ReviewsCarousel } from "@/components/reviews/reviews-carousel";
@@ -220,7 +221,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   </p>
                 </div>
                 <Link
-                  to={ALTERNATES.iphone18[lang]}
+                  to={devicePath(lang, "iphone-18")}
                   className="tap group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                 >
                   {<MoneyText text={t.hero.imageCta} />}
