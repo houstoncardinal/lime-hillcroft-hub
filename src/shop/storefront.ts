@@ -320,6 +320,8 @@ export type CartLineResult = {
   quantity: number;
   price: number;
   lease: boolean;
+  /** The line qualifies for Shop Pay Installments (also true when the plan was selected). */
+  installments: boolean;
 };
 
 export type ShopifyCart = { cartId: string; checkoutUrl: string; lines: CartLineResult[] };
@@ -381,6 +383,7 @@ function toCart(cart: RawCart): ShopifyCart {
       lease: n.attributes.some(
         (a) => a.key === "Payment option" && a.value.includes("Installments"),
       ),
+      installments: n.attributes.some((a) => a.value.includes("Installments")),
     })),
   };
 }
