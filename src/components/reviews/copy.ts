@@ -1,12 +1,13 @@
 // Text for the reviews page (/reviews, /es/resenas).
 
+import { RATING, REVIEW_COUNT } from "@/components/site/business";
 export const REVIEWS_COPY = {
   en: {
-    title: "TIC Wireless Reviews — 4.7★ on Google from 408 Reviews",
+    title: `TIC Wireless Reviews — ${RATING}★ on Google from ${REVIEW_COUNT} Reviews`,
     description:
-      "Real Google reviews of TIC Wireless on Hillcroft in Houston: phone sales, same-day screen repair, cases and friendly bilingual staff. 4.7 from 408 reviews.",
+      `Real Google reviews of TIC Wireless on Hillcroft in Houston: phone sales, same-day screen repair, cases and friendly bilingual staff. ${RATING} from ${REVIEW_COUNT} reviews.`,
     breadcrumb: ["Home", "Reviews"],
-    imageAlt: "TIC Wireless is rated 4.7 out of 5 on Google from 408 reviews",
+    imageAlt: `TIC Wireless is rated ${RATING} out of 5 on Google from ${REVIEW_COUNT} reviews`,
     kicker: "Customer reviews",
     h1: ["Houston trusts TIC Wireless.", "Here's why."],
     intro:
@@ -25,11 +26,11 @@ export const REVIEWS_COPY = {
     directions: "Directions",
   },
   es: {
-    title: "Reseñas de TIC Wireless — 4.7★ en Google con 408 Reseñas",
+    title: `Reseñas de TIC Wireless — ${RATING}★ en Google con ${REVIEW_COUNT} Reseñas`,
     description:
-      "Reseñas reales de Google de TIC Wireless en Hillcroft, Houston: celulares, reparación de pantallas el mismo día, fundas y personal bilingüe. 4.7 de 408 reseñas.",
+      `Reseñas reales de Google de TIC Wireless en Hillcroft, Houston: celulares, reparación de pantallas el mismo día, fundas y personal bilingüe. ${RATING} de ${REVIEW_COUNT} reseñas.`,
     breadcrumb: ["Inicio", "Reseñas"],
-    imageAlt: "TIC Wireless tiene 4.7 de 5 en Google con 408 reseñas",
+    imageAlt: `TIC Wireless tiene ${RATING} de 5 en Google con ${REVIEW_COUNT} reseñas`,
     kicker: "Reseñas de clientes",
     h1: ["Houston confía en TIC Wireless.", "Esto dicen."],
     intro:

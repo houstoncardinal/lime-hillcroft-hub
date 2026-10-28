@@ -3,7 +3,7 @@ import { ALTERNATES, absoluteUrl, type Lang, type Paths } from "@/components/sit
 
 // schema.org JSON-LD for every page, as one connected @graph.
 // No aggregateRating: Google's guidelines don't allow a business to mark up its own (or
-// re-published third-party) star ratings, so the 4.7 Google rating stays visible text only.
+// re-published third-party) star ratings, so the Google rating stays visible text only.
 
 const STORE_ID = absoluteUrl("/#store");
 // Bump when the business facts on the site change (freshness signal for search and AI answers).

@@ -5,9 +5,11 @@
 // No Review/AggregateRating schema: Google doesn't allow a business to mark up reviews of
 // itself, so these stay visible text only (see src/components/site/schema.ts).
 
+import { RATING, REVIEW_COUNT } from "@/components/site/business";
+
 export const REVIEWS_IMPORTED = "2026-10-13";
-export const GOOGLE_RATING = 4.7;
-export const GOOGLE_REVIEW_COUNT = 408;
+export const GOOGLE_RATING = RATING;
+export const GOOGLE_REVIEW_COUNT = REVIEW_COUNT;
 
 /** Google Maps reviews for TIC Wireless. */
 export const GOOGLE_REVIEWS_URL =

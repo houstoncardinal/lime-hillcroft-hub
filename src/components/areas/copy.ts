@@ -1,7 +1,7 @@
 import { GOOGLE_REVIEW_COUNT } from "@/components/reviews/data";
 import { routeStep } from "@/components/location/copy";
 import { servicePath } from "@/components/services/paths";
-import { PHONE } from "@/components/site/business";
+import { PHONE, RATING } from "@/components/site/business";
 import type { Faq } from "@/components/site/schema";
 import { ALTERNATES, withBrand, type Lang } from "@/components/site/seo";
 
@@ -60,7 +60,7 @@ export function areaCopy(a: Area, lang: Lang) {
       faqTitle: `Preguntas de clientes de ${short}`,
       nearbyTitle: "Zonas cercanas",
       allAreas: "Todas las zonas",
-      rating: `4.7★ en Google · ${GOOGLE_REVIEW_COUNT} reseñas`,
+      rating: `${RATING}★ en Google · ${GOOGLE_REVIEW_COUNT} reseñas`,
       whyTitle: `Por qué ${short} elige TIC Wireless Electronic & Repair Center`,
       aboutTitle: `Sobre ${short}`,
       faqs: [
@@ -121,7 +121,7 @@ export function areaCopy(a: Area, lang: Lang) {
     faqTitle: `Questions from ${short} customers`,
     nearbyTitle: "Nearby areas",
     allAreas: "All areas we serve",
-    rating: `4.7★ on Google · ${GOOGLE_REVIEW_COUNT} reviews`,
+    rating: `${RATING}★ on Google · ${GOOGLE_REVIEW_COUNT} reviews`,
     whyTitle: `Why ${short} chooses TIC Wireless Electronic & Repair Center`,
     aboutTitle: `About ${short}`,
     faqs: [

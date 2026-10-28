@@ -2,6 +2,11 @@
 // Every page states that the team speaks English and Spanish. Have a native speaker review these
 // before promoting them. Dollar amounts are written as "$40" so the currency converter picks them up.
 
+import { RATING, REVIEW_COUNT } from "@/components/site/business";
+
+// Vietnamese, French and Portuguese write decimals with a comma.
+const RATING_COMMA = String(RATING).replace(".", ",");
+
 export type IntlLang = {
   code: string;
   /** BCP-47 tag for <html lang> and hreflang. */
@@ -63,7 +68,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Chỉ đường",
     address: "Địa chỉ",
     phone: "Điện thoại",
-    rating: "4,7★ trên Google · 408 đánh giá",
+    rating: `${RATING_COMMA}★ trên Google · ${REVIEW_COUNT} đánh giá`,
     leaseNote: "Thuê mua không phải là khoản vay; tổng chi phí cao hơn giá mua trả thẳng.",
     fullSite: "Xem toàn bộ trang web bằng tiếng Anh",
   },
@@ -97,7 +102,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "导航",
     address: "地址",
     phone: "电话",
-    rating: "Google 评分 4.7★ · 408 条评价",
+    rating: `Google 评分 ${RATING}★ · ${REVIEW_COUNT} 条评价`,
     leaseNote: "租购不是贷款；总成本高于现金价格。",
     fullSite: "查看完整英文网站",
   },
@@ -135,7 +140,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "الاتجاهات",
     address: "العنوان",
     phone: "الهاتف",
-    rating: "تقييم 4.7★ على Google · 408 مراجعات",
+    rating: `تقييم ${RATING}★ على Google · ${REVIEW_COUNT} مراجعات`,
     leaseNote: "التأجير المنتهي بالتملك ليس قرضًا؛ التكلفة الإجمالية أعلى من سعر الشراء نقدًا.",
     fullSite: "عرض الموقع الكامل بالإنجليزية",
   },
@@ -173,7 +178,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "راستہ",
     address: "پتہ",
     phone: "فون",
-    rating: "Google پر 4.7★ · 408 ریویوز",
+    rating: `Google پر ${RATING}★ · ${REVIEW_COUNT} ریویوز`,
     leaseNote: "لیز ٹو اون قرض نہیں ہے؛ کل لاگت نقد قیمت سے زیادہ ہوتی ہے۔",
     fullSite: "مکمل ویب سائٹ انگریزی میں دیکھیں",
   },
@@ -212,7 +217,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "रास्ता देखें",
     address: "पता",
     phone: "फ़ोन",
-    rating: "Google पर 4.7★ · 408 रिव्यू",
+    rating: `Google पर ${RATING}★ · ${REVIEW_COUNT} रिव्यू`,
     leaseNote: "लीज़-टू-ओन ऋण नहीं है; कुल लागत नकद कीमत से अधिक होती है।",
     fullSite: "पूरी वेबसाइट अंग्रेज़ी में देखें",
   },
@@ -247,7 +252,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Itinéraire",
     address: "Adresse",
     phone: "Téléphone",
-    rating: "4,7★ sur Google · 408 avis",
+    rating: `${RATING_COMMA}★ sur Google · ${REVIEW_COUNT} avis`,
     leaseNote:
       "La location avec option d'achat n'est pas un prêt ; le coût total dépasse le prix comptant.",
     fullSite: "Voir le site complet en anglais",
@@ -283,7 +288,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Como chegar",
     address: "Endereço",
     phone: "Telefone",
-    rating: "4,7★ no Google · 408 avaliações",
+    rating: `${RATING_COMMA}★ no Google · ${REVIEW_COUNT} avaliações`,
     leaseNote:
       "O leasing com opção de compra não é um empréstimo; o custo total é maior que o preço à vista.",
     fullSite: "Ver o site completo em inglês",
@@ -318,7 +323,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "길찾기",
     address: "주소",
     phone: "전화",
-    rating: "Google 평점 4.7★ · 리뷰 408개",
+    rating: `Google 평점 ${RATING}★ · 리뷰 ${REVIEW_COUNT}개`,
     leaseNote: "리스 후 구매는 대출이 아니며, 총비용이 현금 가격보다 높습니다.",
     fullSite: "전체 웹사이트 영어로 보기",
   },
@@ -357,7 +362,7 @@ export const INTL_LANGS: IntlLang[] = [
     directions: "Direksyon",
     address: "Address",
     phone: "Telepono",
-    rating: "4.7★ sa Google · 408 na review",
+    rating: `${RATING}★ sa Google · ${REVIEW_COUNT} na review`,
     leaseNote:
       "Ang lease-to-own ay hindi loan; ang kabuuang halaga ay mas mataas kaysa sa cash price.",
     fullSite: "Tingnan ang buong website sa English",

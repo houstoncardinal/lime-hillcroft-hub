@@ -9,7 +9,9 @@ export const MAPS =
 export const DIRECTIONS =
   "https://www.google.com/maps/dir/?api=1&destination=TIC+Wireless&destination_place_id=ChIJixKWSLTDQIYR3zudR495CpQ";
 export const FACEBOOK = "https://www.facebook.com/ticwireless";
-export const RATING = 4.7;
+// Google rating and review count; update both when the Business Profile changes.
+export const RATING = 4.8;
+export const REVIEW_COUNT = 414;
 
 // [open, close] in 24h Houston time; day 0 is Sunday.
 export const hoursOn = (day: number): [number, number] => (day === 0 ? [9, 17] : [9, 20]);

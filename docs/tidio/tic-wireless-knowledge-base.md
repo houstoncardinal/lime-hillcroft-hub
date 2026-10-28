@@ -184,7 +184,7 @@ customers should call (713) 339-9300.
 
 ## Reviews
 
-- TIC Wireless Electronic & Repair Center is rated 4.7 out of 5 on Google, from 408 reviews (October 2026).
+- TIC Wireless Electronic & Repair Center is rated 4.8 out of 5 on Google, from 414 reviews (October 2026).
 
 ## Language
 

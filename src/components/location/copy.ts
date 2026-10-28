@@ -1,3 +1,4 @@
+import { RATING, REVIEW_COUNT } from "@/components/site/business";
 import type { Faq } from "@/components/site/schema";
 import type { Lang } from "@/components/site/seo";
 
@@ -140,8 +141,8 @@ const en = {
     body: "TIC Wireless moved from 3838 Hillcroft St, Suite 100 to a bigger store at 3640 Hillcroft St, Suite C. Some map apps may still show the old address; the right one is 3640 Hillcroft St, Suite C, Houston, TX 77057.",
   },
   reviews: {
-    rating: "4.7 on Google",
-    count: "from 408 reviews",
+    rating: `${RATING} on Google`,
+    count: `from ${REVIEW_COUNT} reviews`,
     cta: "Read our reviews",
   },
   faqTitle: "Location questions",
@@ -308,8 +309,8 @@ const es: LocationCopy = {
     body: "TIC Wireless se mudó de 3838 Hillcroft St, Suite 100 a una tienda más grande en 3640 Hillcroft St, Suite C. Algunas apps de mapas todavía muestran la dirección anterior; la correcta es 3640 Hillcroft St, Suite C, Houston, TX 77057.",
   },
   reviews: {
-    rating: "4.7 en Google",
-    count: "con 408 reseñas",
+    rating: `${RATING} en Google`,
+    count: `con ${REVIEW_COUNT} reseñas`,
     cta: "Ver reseñas",
   },
   faqTitle: "Preguntas sobre la tienda",

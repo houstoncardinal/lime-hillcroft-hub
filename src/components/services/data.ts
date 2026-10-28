@@ -1,3 +1,4 @@
+import { RATING, REVIEW_COUNT } from "@/components/site/business";
 import type { Faq } from "@/components/site/schema";
 import type { Lang } from "@/components/site/seo";
 
@@ -98,7 +99,7 @@ export const SERVICES: Service[] = [
           "Unlocked phones — no carrier lock-in",
           "No credit needed for leasing",
           "Same-day setup in store",
-          "4.7★ on Google, 408 reviews",
+          `${RATING}★ on Google, ${REVIEW_COUNT} reviews`,
         ],
         faq: [
           {
@@ -160,7 +161,7 @@ export const SERVICES: Service[] = [
           "Celulares desbloqueados, sin plazo forzoso",
           "Arrendamiento sin necesidad de crédito",
           "Configuración el mismo día",
-          "4.7★ en Google, 408 reseñas",
+          `${RATING}★ en Google, ${REVIEW_COUNT} reseñas`,
         ],
         faq: [
           {

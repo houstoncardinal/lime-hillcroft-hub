@@ -1,5 +1,6 @@
 // What goes on each page's share image (1200×630), rendered by scripts/og.mjs into public/og.
 // Not imported by the app; the page heads point at the files through ogImage().
+import { RATING, REVIEW_COUNT } from "@/components/site/business";
 import { AREAS, shortName } from "@/components/areas/data";
 import { GUIDES } from "@/components/guides/data";
 import { CATEGORY_PAGES } from "@/components/products/data";
@@ -180,7 +181,9 @@ export function ogCards(): OgCard[] {
       page("reviews", lang, "store-counter", {
         kicker: lang === "en" ? "Customer reviews" : "Reseñas de clientes",
         headline:
-          lang === "en" ? "4.7★ on Google from 408 customers." : "4.7★ en Google de 408 clientes.",
+          lang === "en"
+            ? `${RATING}★ on Google from ${REVIEW_COUNT} customers.`
+            : `${RATING}★ en Google de ${REVIEW_COUNT} clientes.`,
         sub:
           lang === "en"
             ? "Phone selection · Polite staff · Easy process · Same-day screen repair"

@@ -21,6 +21,7 @@ async function loadPlaywright() {
   }
 }
 
+const { RATING } = await loadModule("/src/components/site/business.ts");
 const loadCards = async () => (await loadModule("/src/components/site/og-cards.ts")).ogCards();
 
 const photoCache = new Map();
@@ -85,7 +86,7 @@ h1{margin-top:18px;font-family:Saira,"Noto Sans","PingFang SC","Apple SD Gothic 
 <div class="glow"></div>
 <div class="photo"><img src="${await photo(card.photo)}" alt=""></div>
 <div class="bar"></div>
-<div class="rating"><i>★</i> 4.7 Google</div>
+<div class="rating"><i>★</i> ${RATING} Google</div>
 <div class="content">
   <div class="brand">${dotRing()}<div><b>TIC Wireless</b><small>Electronic &amp; Repair Center</small></div></div>
   <div class="text" dir="${card.dir}">
