@@ -239,6 +239,7 @@ export function CartDrawer({ lang }: { lang: Lang }) {
   const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
   const [preview, setPreview] = useState(false);
   const leaseItems = items.filter((i) => i.lease);
+  const eligibleItems = items.filter((i) => i.installments);
 
   // Keeps the remembered cart honest when the shopper returns from Shopify checkout.
   useCartSync();
@@ -320,10 +321,14 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                           {l.variantTitle && (
                             <p className="text-sm text-muted-foreground">{l.variantTitle}</p>
                           )}
-                          {l.lease && (
+                          {l.lease ? (
                             <p className="mt-1.5 inline-block rounded-full bg-shoppay/10 px-2 py-0.5 text-[11px] font-semibold text-shoppay ring-1 ring-inset ring-shoppay/20">
                               {t.lease.lineBadge}
                             </p>
+                          ) : (
+                            l.installments && (
+                              <InstallmentChip cents={l.price} lang={lang} className="mt-1.5" />
+                            )
                           )}
                         </div>
                         {l.lease ? (
@@ -384,11 +389,15 @@ export function CartDrawer({ lang }: { lang: Lang }) {
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{t.cart.note}</p>
-                {leaseItems.length > 0 && (
+                {eligibleItems.length > 0 && (
                   <div className="mt-3 rounded-lg border border-shoppay/25 bg-shoppay/8 px-4 py-3 text-xs leading-relaxed">
-                    <p className="font-semibold text-shoppay">{t.lease.dueToday}</p>
+                    <p className="font-semibold text-shoppay">
+                      {leaseItems.length > 0 ? t.lease.dueToday : t.lease.cartTitle}
+                    </p>
                     <p className="text-muted-foreground">Shop Pay Installments · {t.lease.provider}</p>
-                    <p className="mt-1 text-muted-foreground">{t.lease.howTo}</p>
+                    <p className="mt-1 text-muted-foreground">
+                      {leaseItems.length > 0 ? t.lease.howTo : t.lease.availableNote}
+                    </p>
                     <InstallmentSteps lang={lang} />
                   </div>
                 )}
