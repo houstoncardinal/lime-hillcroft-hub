@@ -320,6 +320,8 @@ export type CartLineResult = {
   quantity: number;
   price: number;
   lease: boolean;
+  /** The line qualifies for Shop Pay Installments (also true when the plan was selected). */
+  installments: boolean;
 };
 
 export type ShopifyCart = { cartId: string; checkoutUrl: string; lines: CartLineResult[] };
@@ -381,6 +383,7 @@ function toCart(cart: RawCart): ShopifyCart {
       lease: n.attributes.some(
         (a) => a.key === "Payment option" && a.value.includes("Installments"),
       ),
+      installments: n.attributes.some((a) => a.value.includes("Installments")),
     })),
   };
 }
@@ -393,6 +396,22 @@ const errorMessage = (errors: UserError[]) =>
 
 const previewLine = (variantId: string) => variantId.startsWith("preview:");
 
+// Line attributes are shown on the Shopify checkout and order, so the installments label
+// follows the item all the way through checkout.
+const lineAttributes = (l: unknown) => {
+  const lease = (l as { lease?: unknown }).lease === true;
+  const installments = (l as { installments?: unknown }).installments === true;
+  if (!lease && !installments) return {};
+  return {
+    attributes: [
+      ...(lease ? [{ key: "Payment option", value: "Lease — Shop Pay Installments" }] : []),
+      ...(installments && !lease
+        ? [{ key: "Installments", value: "Available — Shop Pay Installments" }]
+        : []),
+    ],
+  };
+};
+
 const asLines = (d: unknown) => {
   const lines = (d as { lines?: unknown }).lines;
   if (!Array.isArray(lines) || lines.length === 0 || lines.length > 100)
@@ -401,9 +420,7 @@ const asLines = (d: unknown) => {
     merchandiseId: String((l as { variantId: unknown }).variantId),
     quantity: Math.min(99, Math.max(1, Math.floor(Number((l as { quantity: unknown }).quantity)))),
     // Shown on the Shopify order so staff can see the customer chose leasing.
-    ...((l as { lease?: unknown }).lease === true
-      ? { attributes: [{ key: "Payment option", value: "Lease — Shop Pay Installments" }] }
-      : {}),
+    ...lineAttributes(l),
   }));
 };
 
@@ -463,13 +480,9 @@ export const updateCartLines = createServerFn({ method: "POST" })
       cartId: asCartId(d),
       lines: lines.map((l) => ({
         id: String((l as { lineId: unknown }).lineId),
-        ...((l as { lease?: unknown }).lease !== undefined
-          ? {
-              attributes:
-                (l as { lease?: unknown }).lease === true
-                  ? [{ key: "Payment option", value: "Lease — Shop Pay Installments" }]
-                  : [],
-            }
+        ...((l as { lease?: unknown }).lease !== undefined ||
+        (l as { installments?: unknown }).installments !== undefined
+          ? lineAttributes(l)
           : {}),
         quantity: Math.min(
           99,

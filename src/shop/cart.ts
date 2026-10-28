@@ -10,13 +10,19 @@ import {
   updateCartLines,
   type CartResult,
 } from "@/shop/storefront";
+import { showsInstallments } from "@/shop/installments";
 import type { CartLine, ShopProduct, ShopVariant } from "@/shop/types";
 
 // The shopper's cart. It lives in the browser for speed, and every change is mirrored into a real
 // Shopify cart so checkout can use Shopify's own secure URL. Preview items (no store connected)
 // stay local only.
 
-export type CartItem = CartLine & { lineId: string | null; lease?: boolean | undefined };
+export type CartItem = CartLine & {
+  lineId: string | null;
+  lease?: boolean | undefined;
+  /** The product qualifies for Shop Pay Installments, whether or not the shopper picked the plan. */
+  installments?: boolean | undefined;
+};
 
 const isPreviewLine = (variantId: string) => variantId.startsWith("preview:");
 
@@ -87,13 +93,13 @@ export const useCartStore = create<CartStore>()(
         const clean = items.filter((i) => !isPreviewLine(i.variantId));
         const existing = clean.find((i) => i.variantId === variant.id);
         const wanted = Math.min(99, (existing?.quantity ?? 0) + Math.max(1, Math.floor(quantity)));
-        const local: CartItem = { variantId: variant.id, handle: product.handle, title: product.title, variantTitle: product.optionName ? variant.title : null, price: variant.price, image: variant.image ?? product.images[0] ?? null, quantity: wanted, lineId: existing?.lineId ?? null, lease };
+        const local: CartItem = { variantId: variant.id, handle: product.handle, title: product.title, variantTitle: product.optionName ? variant.title : null, price: variant.price, image: variant.image ?? product.images[0] ?? null, quantity: wanted, lineId: existing?.lineId ?? null, lease, installments: showsInstallments(product.category, variant.price) };
         const candidates = existing ? clean.map((i) => i.variantId === variant.id ? local : i) : [...clean, local];
         const result = !cartId
-          ? await createCart({ data: { lines: candidates.map((i) => ({ variantId: i.variantId, quantity: i.quantity, lease: i.lease })) } })
+          ? await createCart({ data: { lines: candidates.map((i) => ({ variantId: i.variantId, quantity: i.quantity, lease: i.lease, installments: i.installments })) } })
           : existing?.lineId
-            ? await updateCartLines({ data: { cartId, lines: [{ lineId: existing.lineId, quantity: wanted, lease }] } })
-            : await addCartLines({ data: { cartId, lines: [{ variantId: variant.id, quantity: wanted, lease }] } });
+            ? await updateCartLines({ data: { cartId, lines: [{ lineId: existing.lineId, quantity: wanted, lease, installments: local.installments }] } })
+            : await addCartLines({ data: { cartId, lines: [{ variantId: variant.id, quantity: wanted, lease, installments: local.installments }] } });
         return apply(result, candidates) && result.mode === "shopify";
       }),
       setQuantity: (variantId, quantity) => {
