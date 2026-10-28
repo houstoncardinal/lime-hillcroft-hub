@@ -1,6 +1,8 @@
 // Online store data model. Shaped after the Shopify Storefront API so the preview catalog and
 // the live Shopify catalog render through the same components.
 
+import type { DescriptionBlock } from "@/shop/description";
+
 export const SHOP_CATEGORIES = [
   "phones",
   "tablets",
@@ -35,6 +37,8 @@ export type ShopProduct = {
   vendor: string;
   category: ShopCategory;
   description: string;
+  /** The Shopify description's structure (summary, highlights, specs…) for the product page. */
+  details?: DescriptionBlock[];
   features: string[];
   images: ShopImage[];
   optionName: string | null;

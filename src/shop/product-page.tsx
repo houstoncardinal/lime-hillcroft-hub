@@ -15,6 +15,7 @@ import { showsInstallments, showsLeasing } from "@/shop/installments";
 import { LeasingOptions } from "@/components/site/leasing-portals";
 import { cn } from "@/lib/utils";
 import { PaymentOptions } from "@/shop/payment-options";
+import { InlineText, ProductDetails, productLead } from "@/shop/product-details";
 
 export function ProductPage({
   lang,
@@ -42,6 +43,7 @@ export function ProductPage({
   const canLeaseToOwn = Boolean(
     variant && showsLeasing(product.category, variant.price, product.leaseToOwn),
   );
+  const lead = productLead(product);
   const busy = useCartStore((s) => s.busy);
   const error = useCartStore((s) => s.error);
 
@@ -117,6 +119,11 @@ export function ProductPage({
             <h1 className="mt-2 text-4xl font-semibold leading-tight md:text-5xl">
               {product.title}
             </h1>
+            {lead && (
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
+                <InlineText runs={lead} />
+              </p>
+            )}
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="tabular-nums font-display text-3xl font-semibold md:text-4xl">
                 {variant ? <Money usd={variant.price / 100} /> : ""}
@@ -223,28 +230,6 @@ export function ProductPage({
 
             {canLeaseToOwn && <LeasingOptions lang={lang} className="mt-8" />}
 
-            {/* Below the buy controls, so "Add to cart" stays near the top on phones. */}
-            {product.description && (
-              <p className="mt-8 whitespace-pre-line border-t pt-8 leading-relaxed text-muted-foreground">
-                {product.description}
-              </p>
-            )}
-
-            {product.features.length > 0 && (
-              <div className="mt-8 border-t pt-8">
-                <h2 className="font-display text-lg font-semibold">
-                  {<MoneyText text={t.features} />}
-                </h2>
-                <ul className="mt-4 space-y-3">
-                  {product.features.map((f) => (
-                    <li key={f} className="flex gap-3 text-muted-foreground">
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             <div className="mt-8 rounded-3xl bg-ink p-6 text-white">
               <p className="font-semibold">{<MoneyText text={t.questions} />}</p>
               <p className="mt-1 text-sm text-white/65">{<MoneyText text={t.trust[2]?.[1]} />}</p>
@@ -258,6 +243,8 @@ export function ProductPage({
           </div>
         </div>
       </section>
+
+      <ProductDetails product={product} lang={lang} />
 
       {related.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 pb-16">

@@ -2,6 +2,7 @@ import { ogImage } from "@/components/site/og";
 import { pageSchema } from "@/components/site/schema";
 import { ALTERNATES, absoluteUrl, pageHead, type Lang } from "@/components/site/seo";
 import { SHOP_COPY } from "@/shop/copy";
+import { descriptionSummary, specRows } from "@/shop/description";
 import { productPath, productPaths } from "@/shop/paths";
 import type { Catalog, ShopProduct } from "@/shop/types";
 
@@ -100,7 +101,10 @@ export function productHead(
   const paths = productPaths(product.handle);
   const url = absoluteUrl(paths[lang]);
   const image = product.images[0]?.url ?? ogImage("home", lang);
-  const description = product.description.slice(0, 155);
+  // The description's summary, not the whole flattened text (specs, store address, photo credits).
+  const summary = (product.details && descriptionSummary(product.details)) || product.description;
+  const description = summary.length > 155 ? `${summary.slice(0, 154).trimEnd()}…` : summary;
+  const specs = product.details ? specRows(product.details) : [];
   const title = `${product.title} | ${lang === "es" ? "Compra" : "Shop"} TIC Wireless`;
   return pageHead({
     paths,
@@ -127,10 +131,19 @@ export function productHead(
           "@type": "Product",
           "@id": `${url}#product`,
           name: product.title,
-          description: product.description,
+          description: summary,
           brand: { "@type": "Brand", name: product.vendor },
           image: product.images.map((im) => absoluteUrl(im.url)),
           url,
+          ...(specs.length
+            ? {
+                additionalProperty: specs.map(([name, value]) => ({
+                  "@type": "PropertyValue",
+                  name,
+                  value,
+                })),
+              }
+            : {}),
           // Offers only with real Shopify prices; preview prices are placeholders.
           ...(source === "shopify"
             ? {

@@ -51,6 +51,7 @@ const en = {
   inStock: "In stock",
   quantity: "Quantity",
   features: "Highlights",
+  details: { title: "About this item", specs: "Specs" },
   related: "You might also like",
   trust: [
     ["Real store on Hillcroft", "See it, hold it, ask questions — 3640 Hillcroft St, Suite C."],
@@ -180,6 +181,7 @@ const es: ShopCopy = {
   inStock: "Disponible",
   quantity: "Cantidad",
   features: "Características",
+  details: { title: "Sobre este producto", specs: "Especificaciones" },
   related: "También te puede gustar",
   trust: [
     ["Tienda real en Hillcroft", "Velo, tócalo y pregunta — 3640 Hillcroft St, Suite C."],

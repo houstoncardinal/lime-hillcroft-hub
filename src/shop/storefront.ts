@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
+import { parseDescription } from "@/shop/description";
 import type { Catalog, ShopCategory, ShopProduct } from "@/shop/types";
 
 // Shopify Storefront API bridge for the public shop. Runs on the server: the Storefront token is
@@ -189,6 +190,7 @@ async function loadCatalog(): Promise<Catalog> {
       vendor: p.vendor || "TIC Wireless",
       category,
       description: toText(p.descriptionHtml),
+      details: parseDescription(p.descriptionHtml),
       features: [],
       images: p.images.nodes.map((im) => ({ url: im.url, alt: im.altText ?? p.title })),
       optionName:
