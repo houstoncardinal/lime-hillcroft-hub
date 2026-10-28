@@ -20,7 +20,7 @@ describe("confirmed Shopify cart", () => {
     api.createCart.mockResolvedValue(result()); api.updateCartLines.mockResolvedValue(result(2));
     await Promise.all([useCartStore.getState().addItem(product, variant), useCartStore.getState().addItem(product, variant)]);
     expect(api.createCart).toHaveBeenCalledTimes(1);
-    expect(api.updateCartLines).toHaveBeenCalledWith({ data: { cartId: "cart", lines: [{ lineId: "line", quantity: 2, lease: false }] } });
+    expect(api.updateCartLines).toHaveBeenCalledWith({ data: { cartId: "cart", lines: [{ lineId: "line", quantity: 2, lease: false, installments: true }] } });
     expect(useCartStore.getState().items[0]?.quantity).toBe(2);
   });
   it("passes the cart identity correctly on reload and removes expired carts", async () => {
