@@ -84,10 +84,11 @@ const T = {
   },
 };
 
-// Short labels for the apply buttons, so all three fit on one row.
+// Short labels for the apply buttons, so all four fit on one row.
 const PORTAL_LABEL: Record<string, string> = {
-  "progressive-leasing": "Progressive Leasing",
-  "american-first-finance": "American First",
+  acima: "Acima",
+  "progressive-leasing": "Progressive",
+  "american-first-finance": "AFF",
   payvantage: "Payvantage",
 };
 
@@ -356,7 +357,7 @@ export function MobileMenu({
               <p className="px-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/50 tiny:hidden">
                 {t.apply}
               </p>
-              <div className="mt-1.5 grid grid-cols-3 gap-1.5 tiny:mt-0">
+              <div className="mt-1.5 grid grid-cols-4 gap-1.5 tiny:mt-0">
                 {PORTALS.map((p) => (
                   <a
                     key={p.id}

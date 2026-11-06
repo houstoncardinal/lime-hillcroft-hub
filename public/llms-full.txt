@@ -104,7 +104,8 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
   controller.
 - Consoles are available with leasing (lease-to-own): no credit needed, as low as $40 down, weekly,
   biweekly or monthly payments, subject to approval. The store calls this leasing, not financing.
-- Progressive Leasing online application: https://approve.me/s/ticwireless/69977#/marketing ; other online applications:
+- Acima online application (primary lender): https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en ;
+  Progressive Leasing online application: https://approve.me/s/ticwireless/69977#/marketing ; other online applications:
   American First Finance https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA ,
   Payvantage https://payvan.me/3RM885c — or apply at the counter with a valid photo ID.
 - Page: https://www.ticwirelesstx.com/game-consoles

@@ -26,7 +26,7 @@ export type PolicyDoc = {
 
 const STORE = "TIC Wireless Electronic & Repair Center";
 const SITE = "www.ticwirelesstx.com";
-const PORTALS = "Progressive Leasing, American First Finance (AFF) and Payvantage";
+const PORTALS = "Acima, Progressive Leasing, American First Finance (AFF) and Payvantage";
 
 const contact = {
   en: {

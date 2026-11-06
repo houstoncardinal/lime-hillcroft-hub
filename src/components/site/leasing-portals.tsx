@@ -5,7 +5,18 @@ import { cn } from "@/lib/utils";
 
 // TIC Wireless's online lease-to-own applications (dealer links from each provider). Each opens
 // the provider's own secure site in a new tab; approval and terms come from the provider.
+// Acima is the store's primary lender, so it is listed first everywhere.
 export const PORTALS = [
+  {
+    id: "acima",
+    name: "Acima",
+    initials: "A",
+    href: "https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en",
+    blurb: {
+      en: "Our primary leasing partner — no credit needed.",
+      es: "Nuestro socio principal de arrendamiento — sin necesidad de crédito.",
+    },
+  },
   {
     id: "progressive-leasing",
     name: "Progressive Leasing",
@@ -143,7 +154,7 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
           ))}
         </ul>
 
-        <ul className="mt-8 grid gap-3 md:grid-cols-3">
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {PORTALS.map((p) => (
             <li
               key={p.id}
@@ -248,7 +259,7 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
           <p className="font-display text-2xl font-semibold leading-tight">{t.bannerTitle}</p>
           <p className="mt-1 text-sm opacity-85">{t.bannerBody}</p>
         </div>
-        <div className="grid gap-2 sm:grid-cols-3 lg:flex lg:shrink-0">
+        <div className="grid gap-2 sm:grid-cols-2 xl:flex xl:shrink-0">
           {PORTALS.map((p) => (
             <PortalButton
               key={p.id}
