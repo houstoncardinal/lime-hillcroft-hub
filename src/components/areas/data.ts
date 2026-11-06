@@ -121,8 +121,8 @@ export const AREAS: Area[] = [
     minutes: 11,
     route: ["Westpark Tollway east", "Westpark Drive", "Hillcroft Avenue"],
     intro: {
-      en: "Alief is one of the most ethnically diverse communities in Houston. From Alief it's about eleven minutes east on the Westpark Tollway to Hillcroft, where we handle phone repairs, unlocking, prepaid plans from 12 carriers and international recharge.",
-      es: "Alief es una de las comunidades más diversas de Houston. Desde Alief son unos once minutos hacia el este por el Westpark Tollway hasta Hillcroft, donde reparamos y liberamos celulares, vendemos planes prepagados de 12 compañías y hacemos recargas internacionales.",
+      en: "Alief is one of the most ethnically diverse communities in Houston. From Alief it's about eleven minutes east on the Westpark Tollway to Hillcroft, where we handle phone repairs, unlocking, prepaid plans from 9 carriers and international recharge.",
+      es: "Alief es una de las comunidades más diversas de Houston. Desde Alief son unos once minutos hacia el este por el Westpark Tollway hasta Hillcroft, donde reparamos y liberamos celulares, vendemos planes prepagados de 9 compañías y hacemos recargas internacionales.",
     },
     lat: 29.71106,
     lon: -95.59633,

@@ -17,6 +17,7 @@ import {
 import { servicePath } from "@/components/services/paths";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { CARRIER_COUNT } from "@/components/services/carriers";
 
 // One source for the site's navigation: the desktop dropdowns, the mobile menu and the footer
 // all list these, so every product and service page is reachable from every device.
@@ -39,7 +40,7 @@ const L = {
     accessories: ["Accessories", "Cases, glass, chargers & mounts"],
     audio: ["Audio & smartwatches", "JBL, AirPods, Galaxy Buds & Watch"],
     shop: ["Shop online", "Phones, tablets & accessories"],
-    prepaid: ["Prepaid plans & prices", "12 carriers, from $10/mo"],
+    prepaid: ["Prepaid plans & prices", `${CARRIER_COUNT} carriers, from $10/mo`],
     repair: ["Phone repair", "Same-day screens & batteries"],
     iphoneRepair: ["iPhone repair", "Screens, batteries & charging ports"],
     samsungRepair: ["Samsung Galaxy repair", "Galaxy & Android screens, batteries"],
@@ -58,7 +59,7 @@ const L = {
     accessories: ["Accesorios", "Fundas, micas, cargadores y soportes"],
     audio: ["Audio y relojes", "JBL, AirPods, Galaxy Buds y Watch"],
     shop: ["Tienda en línea", "Celulares, tabletas y accesorios"],
-    prepaid: ["Planes prepagados y precios", "12 compañías, desde $10/mes"],
+    prepaid: ["Planes prepagados y precios", `${CARRIER_COUNT} compañías, desde $10/mes`],
     repair: ["Reparación de celulares", "Pantallas y baterías el mismo día"],
     iphoneRepair: ["Reparación de iPhone", "Pantallas, baterías y puertos de carga"],
     samsungRepair: ["Reparación de Samsung", "Pantallas y baterías de Galaxy y Android"],

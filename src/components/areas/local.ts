@@ -71,7 +71,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "No-contract prepaid plans",
-          "Verizon, AT&T, T-Mobile, Metro, Cricket, Boost and more, plus bill pay.",
+          "Verizon, AT&T, T-Mobile, Cricket, Simple Mobile and more, plus bill pay.",
         ],
       ],
       es: [
@@ -85,7 +85,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Planes prepagados sin contrato",
-          "Verizon, AT&T, T-Mobile, Metro, Cricket, Boost y más, y pago de facturas.",
+          "Verizon, AT&T, T-Mobile, Cricket, Simple Mobile y más, y pago de facturas.",
         ],
       ],
     },
@@ -137,11 +137,11 @@ export const LOCAL: Record<string, Local> = {
     },
     faq: {
       en: {
-        q: "Can I pay my Metro, Cricket or Boost bill near Sharpstown?",
+        q: "Can I pay my Cricket, T-Mobile or Verizon prepaid bill near Sharpstown?",
         a: "Yes. We take in-person bill payments for the major prepaid carriers with no extra charges, about 2.6 miles from Sharpstown on Hillcroft.",
       },
       es: {
-        q: "¿Puedo pagar mi factura de Metro, Cricket o Boost cerca de Sharpstown?",
+        q: "¿Puedo pagar mi factura prepagada de Cricket, T-Mobile o Verizon cerca de Sharpstown?",
         a: "Sí. Recibimos pagos de las principales compañías prepagadas sin cargos extra, a unas 2.6 millas de Sharpstown sobre Hillcroft.",
       },
     },

@@ -84,14 +84,6 @@ const T = {
   },
 };
 
-// Short labels for the apply buttons, so all four fit on one row.
-const PORTAL_LABEL: Record<string, string> = {
-  acima: "Acima",
-  "progressive-leasing": "Progressive",
-  "american-first-finance": "AFF",
-  payvantage: "Payvantage",
-};
-
 type Item = [label: string, href: string, icon: typeof Phone];
 
 /**
@@ -367,7 +359,7 @@ export function MobileMenu({
                     aria-label={`${p.name} (${t.newTab})`}
                     className="flex h-11 items-center justify-center rounded-xl px-1 text-center text-[13px] font-bold leading-tight ring-1 ring-primary/60 transition hover:bg-primary hover:text-primary-foreground short:h-10 tiny:h-9"
                   >
-                    {PORTAL_LABEL[p.id] ?? p.name}
+                    {p.short}
                   </a>
                 ))}
               </div>

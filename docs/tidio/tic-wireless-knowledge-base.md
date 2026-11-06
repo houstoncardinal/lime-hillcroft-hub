@@ -61,9 +61,8 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 
 ## Prepaid plans, internet and payments
 
-- Prepaid plans from 12 carriers: T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket,
-  Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile
-  and GoSmart. No contracts.
+- Prepaid plans from 9 carriers: T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket,
+  Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile and Gen Mobile. No contracts.
 - Xfinity Prepaid home internet is sold and set up in store.
 - Bill payments: customers can pay their phone bill in person for the major prepaid carriers,
   with no extra charges.

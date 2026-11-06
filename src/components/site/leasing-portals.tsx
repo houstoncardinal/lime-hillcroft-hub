@@ -10,6 +10,7 @@ export const PORTALS = [
   {
     id: "acima",
     name: "Acima",
+    short: "Acima",
     initials: "A",
     href: "https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en",
     blurb: {
@@ -20,6 +21,7 @@ export const PORTALS = [
   {
     id: "progressive-leasing",
     name: "Progressive Leasing",
+    short: "Progressive",
     initials: "PL",
     href: "https://approve.me/s/ticwireless/69977#/marketing",
     blurb: {
@@ -30,6 +32,7 @@ export const PORTALS = [
   {
     id: "american-first-finance",
     name: "American First Finance",
+    short: "AFF",
     initials: "AFF",
     href: "https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA",
     blurb: {
@@ -40,6 +43,7 @@ export const PORTALS = [
   {
     id: "payvantage",
     name: "Payvantage",
+    short: "Payvantage",
     initials: "P",
     href: "https://payvan.me/3RM885c",
     blurb: {
@@ -66,6 +70,8 @@ const T = {
     secure: "Each application opens on the provider's own secure site.",
     fine: "Subject to approval. Lease-to-own is not a loan; the total cost to own is more than the cash price. Terms are set by each provider.",
     newTab: "(opens in a new tab)",
+    cardTitle: "Lease-to-own · no credit needed",
+    cardApply: "Apply online:",
     optionKicker: "Or lease-to-own",
     optionTitle: "No credit needed. Apply online, pick it up today.",
     optionBody:
@@ -87,6 +93,8 @@ const T = {
     secure: "Cada solicitud se abre en el sitio seguro del proveedor.",
     fine: "Sujeto a aprobación. El arrendamiento no es un préstamo; el costo total es mayor que el precio de contado. Los términos los fija cada proveedor.",
     newTab: "(se abre en una pestaña nueva)",
+    cardTitle: "Arrendamiento · sin crédito",
+    cardApply: "Solicita en línea:",
     optionKicker: "O arrendamiento con opción a compra",
     optionTitle: "Sin necesidad de crédito. Solicita en línea y llévatelo hoy.",
     optionBody:
@@ -246,6 +254,40 @@ export function LeasingOptions({ lang, className }: { lang: Lang; className?: st
         </span>
       </p>
     </section>
+  );
+}
+
+/**
+ * Product-card strip: every lender's application, small enough for a grid card. Links sit above a
+ * card's stretched link (relative z-10) so they open the application, not the product.
+ */
+export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: string }) {
+  const t = T[lang];
+  return (
+    <div className={cn("relative z-10 rounded-2xl bg-secondary/70 p-2.5", className)}>
+      <p className="flex items-center gap-1.5 text-[11px] font-bold leading-tight text-ink">
+        <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
+        {t.cardTitle}
+      </p>
+      <p className="sr-only">{t.cardApply}</p>
+      <ul className="mt-2 grid grid-cols-2 gap-1">
+        {PORTALS.map((p) => (
+          <li key={p.id}>
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noopener"
+              data-portal={p.id}
+              aria-label={`${t.apply(p.name)} ${t.newTab}`}
+              className="flex min-h-8 items-center justify-center gap-0.5 rounded-lg bg-card px-1.5 text-center text-[11px] font-semibold leading-tight ring-1 ring-border transition hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+            >
+              {p.short}
+              <ArrowUpRight className="h-3 w-3 shrink-0 opacity-60" aria-hidden="true" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

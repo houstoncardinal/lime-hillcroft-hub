@@ -1,3 +1,4 @@
+import { PREPAID_CARRIERS } from "@/components/services/carriers";
 import { Link } from "@tanstack/react-router";
 import { Money, MoneyText } from "@/components/intl/money";
 import {
@@ -87,22 +88,8 @@ const SERVICE_SLUGS = [
   "international-recharge",
 ];
 
-// The 12 prepaid carriers (src/components/services/data.ts), plus Xfinity Prepaid internet.
-const CARRIERS = [
-  "T-Mobile Prepaid",
-  "Verizon Prepaid",
-  "AT&T Prepaid",
-  "Cricket",
-  "Simple Mobile",
-  "Tracfone",
-  "H2O Wireless",
-  "Lyca Mobile",
-  "Gen Mobile",
-  "Metro by T-Mobile",
-  "Boost Mobile",
-  "GoSmart",
-  "Xfinity Prepaid",
-];
+// The prepaid carriers (src/components/services/carriers.ts), plus Xfinity Prepaid internet.
+const CARRIERS = [...PREPAID_CARRIERS, "Xfinity Prepaid"];
 const RECHARGE = ["Tigo", "Digicel", "Movistar", "Telcel"];
 
 const ACCESSORY_PHOTOS = [

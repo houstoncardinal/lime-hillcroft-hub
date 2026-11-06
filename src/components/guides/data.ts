@@ -321,7 +321,7 @@ export const GUIDES: Guide[] = [
               "Don't cancel your old service first — porting your number needs the old account active.",
               "Get your account number and number-transfer PIN from your current carrier.",
               "Back up your phone and make sure it's unlocked.",
-              "Pick the new prepaid plan and activate it — TIC Wireless Electronic & Repair Center offers Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart and Gen Mobile.",
+              "Pick the new prepaid plan and activate it — TIC Wireless Electronic & Repair Center offers Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca and Gen Mobile.",
             ],
           },
         ],
@@ -376,7 +376,7 @@ export const GUIDES: Guide[] = [
               "No canceles primero tu servicio: para pasar tu número, la cuenta vieja debe estar activa.",
               "Pide a tu compañía actual tu número de cuenta y el PIN de transferencia.",
               "Respalda tu celular y asegúrate de que esté liberado.",
-              "Elige y activa tu nuevo plan prepagado: TIC Wireless Electronic & Repair Center tiene Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart y Gen Mobile.",
+              "Elige y activa tu nuevo plan prepagado: TIC Wireless Electronic & Repair Center tiene Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca y Gen Mobile.",
             ],
           },
         ],
@@ -410,7 +410,7 @@ export const GUIDES: Guide[] = [
         quick: [
           "Prepaid plans have no contract and no credit check: you pay before each month, so there are no surprise bills.",
           "Choose by three things: how much data you use, which network covers your home and work best, and whether you call or text family abroad.",
-          "At TIC Wireless Electronic & Repair Center on Hillcroft you can compare Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart and Gen Mobile, and pay your bill in person with no extra charges.",
+          "At TIC Wireless Electronic & Repair Center on Hillcroft you can compare Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca and Gen Mobile, and pay your bill in person with no extra charges.",
         ],
         sections: [
           {
@@ -445,7 +445,7 @@ export const GUIDES: Guide[] = [
         faq: [
           {
             q: "Which prepaid carriers does TIC Wireless Electronic & Repair Center offer?",
-            a: "Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro by T-Mobile, Cricket, Boost Mobile, Simple Mobile, Lyca Mobile, GoSmart and Gen Mobile — plus Xfinity Prepaid home internet.",
+            a: "Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile and Gen Mobile — plus Xfinity Prepaid home internet.",
           },
           {
             q: "How much are prepaid plans?",
@@ -462,7 +462,7 @@ export const GUIDES: Guide[] = [
         quick: [
           "Los planes prepagados no tienen contrato ni revisión de crédito: pagas antes de cada mes, así que no hay sorpresas.",
           "Elige por tres cosas: cuántos datos usas, qué red tiene mejor señal en tu casa y trabajo, y si llamas o mandas mensajes a tu familia en otro país.",
-          "En TIC Wireless Electronic & Repair Center sobre Hillcroft puedes comparar Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost, Simple Mobile, Lyca, GoSmart y Gen Mobile, y pagar tu factura en persona sin cargos extra.",
+          "En TIC Wireless Electronic & Repair Center sobre Hillcroft puedes comparar Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca y Gen Mobile, y pagar tu factura en persona sin cargos extra.",
         ],
         sections: [
           {
@@ -497,7 +497,7 @@ export const GUIDES: Guide[] = [
         faq: [
           {
             q: "¿Qué compañías prepagadas tiene TIC Wireless Electronic & Repair Center?",
-            a: "Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro by T-Mobile, Cricket, Boost Mobile, Simple Mobile, Lyca Mobile, GoSmart y Gen Mobile, además de internet prepagado Xfinity.",
+            a: "Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile y Gen Mobile, además de internet prepagado Xfinity.",
           },
           {
             q: "¿Cuánto cuestan los planes prepagados?",

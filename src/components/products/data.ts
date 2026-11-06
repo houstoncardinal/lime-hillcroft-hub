@@ -1,6 +1,7 @@
 import type { Faq } from "@/components/site/schema";
 import type { Lang } from "@/components/site/seo";
 import type { ClipKey } from "@/components/site/store-clips";
+import { CARRIER_COUNT } from "@/components/services/carriers";
 
 // Product category pages (/accessories, /game-consoles, /laptops-tablets, /iphone-18 and their
 // Spanish versions). Products are what's on the store's walls and display cases in the photos
@@ -1052,8 +1053,8 @@ export const IPHONE_18: CategoryPageData = {
       items: [
         l("Trade in your old phone toward it", "Cambia tu celular usado por el nuevo"),
         l(
-          "Prepaid plans from 12 carriers — usually keep your number",
-          "Planes prepagados de 12 compañías; normalmente conservas tu número",
+          `Prepaid plans from ${CARRIER_COUNT} carriers — usually keep your number`,
+          `Planes prepagados de ${CARRIER_COUNT} compañías; normalmente conservas tu número`,
         ),
         l("Unlocking help to switch carriers", "Ayuda para liberar y cambiar de compañía"),
         l(

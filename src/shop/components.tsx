@@ -15,7 +15,8 @@ import {
   useMounted,
 } from "@/shop/cart";
 import { SHOP_COPY } from "@/shop/copy";
-import { payInFour, showsInstallments } from "@/shop/installments";
+import { payInFour, showsInstallments, showsLeasing } from "@/shop/installments";
+import { LeasingCardStrip } from "@/components/site/leasing-portals";
 import { productPath } from "@/shop/paths";
 import { InstallmentSteps } from "@/shop/installment-steps";
 import { Button } from "@/components/ui/button";
@@ -140,6 +141,7 @@ export function ProductCard({
   const t = SHOP_COPY[lang];
   const first = product.variants.find((v) => v.available) ?? product.variants[0];
   const single = product.variants.length === 1;
+  const leasing = Boolean(first && showsLeasing(product.category, first.price, product.leaseToOwn));
   const addItem = useCartStore((s) => s.addItem);
 
   const quickAdd = async () => {
@@ -181,6 +183,7 @@ export function ProductCard({
         )}
         <div className="mt-auto pt-3">
           <Price product={product} lang={lang} />
+          {leasing && <LeasingCardStrip lang={lang} className="mt-3" />}
           {single && first ? (
             <button
               type="button"

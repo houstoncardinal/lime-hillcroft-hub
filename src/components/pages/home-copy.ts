@@ -1,3 +1,4 @@
+import { CARRIER_COUNT, PREPAID_CARRIERS } from "@/components/services/carriers";
 import { GOOGLE_REVIEW_COUNT } from "@/components/reviews/data";
 import { PHONE, RATING, STREET } from "@/components/site/business";
 
@@ -54,7 +55,7 @@ const en = {
       "Inside the new TIC Wireless Electronic & Repair Center store on Hillcroft: glass display counters, accessory walls and service stations",
     stats: [
       [`${RATING}★`, `${REVIEWS_N} Google reviews`],
-      ["12", "Prepaid carriers"],
+      [String(CARRIER_COUNT), "Prepaid carriers"],
       ["Same day", "Most repairs"],
       ["7 days", "Open every week"],
     ],
@@ -76,7 +77,7 @@ const en = {
     items: [
       [
         "Prepaid plans",
-        "12 carriers, including Verizon, AT&T, T-Mobile, Cricket and Simple Mobile. No contracts, no surprise bills.",
+        `${CARRIER_COUNT} carriers, including Verizon, AT&T, T-Mobile, Cricket and Simple Mobile. No contracts, no surprise bills.`,
       ],
       [
         "Xfinity Prepaid internet",
@@ -101,7 +102,7 @@ const en = {
   },
   carriers: {
     kicker: "Plans & payments",
-    title: "12 prepaid carriers, one counter.",
+    title: `${CARRIER_COUNT} prepaid carriers, one counter.`,
     recharge: "International recharge:",
     more: "& more",
   },
@@ -159,7 +160,7 @@ const en = {
     kicker: "At a glance",
     title: "TIC Wireless Electronic & Repair Center in 30 seconds.",
     summary:
-      "TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down (subject to approval), prepaid plans from 12 carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.",
+      `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down (subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.`,
     facts: [
       ["Address", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Phone", "(713) 339-9300"],
@@ -171,7 +172,7 @@ const en = {
       ["Repairs", "Same-day screen, battery & charging-port repair for iPhone, Samsung & Android"],
       [
         "Prepaid carriers",
-        "T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile, GoSmart",
+        PREPAID_CARRIERS.join(", "),
       ],
       ["Languages", "English & Spanish"],
       ["Rating", `${RATING}★ on Google · ${REVIEWS_N} reviews`],
@@ -313,7 +314,7 @@ const es: HomeCopy = {
       "Interior de la nueva tienda TIC Wireless Electronic & Repair Center en Hillcroft: vitrinas, paredes de accesorios y estaciones de servicio",
     stats: [
       [`${RATING}★`, `${REVIEWS_N} reseñas en Google`],
-      ["12", "Compañías prepagadas"],
+      [String(CARRIER_COUNT), "Compañías prepagadas"],
       ["Mismo día", "La mayoría de reparaciones"],
       ["7 días", "Abiertos toda la semana"],
     ],
@@ -335,7 +336,7 @@ const es: HomeCopy = {
     items: [
       [
         "Planes prepagados",
-        "12 compañías, entre ellas Verizon, AT&T, T-Mobile, Cricket y Simple Mobile. Sin contratos, sin sorpresas.",
+        `${CARRIER_COUNT} compañías, entre ellas Verizon, AT&T, T-Mobile, Cricket y Simple Mobile. Sin contratos, sin sorpresas.`,
       ],
       [
         "Internet prepagado Xfinity",
@@ -366,7 +367,7 @@ const es: HomeCopy = {
   },
   carriers: {
     kicker: "Planes y pagos",
-    title: "12 compañías prepagadas, en un solo mostrador.",
+    title: `${CARRIER_COUNT} compañías prepagadas, en un solo mostrador.`,
     recharge: "Recargas internacionales:",
     more: "y más",
   },
@@ -427,7 +428,7 @@ const es: HomeCopy = {
     kicker: "En resumen",
     title: "TIC Wireless Electronic & Repair Center en 30 segundos.",
     summary:
-      "TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche (sujeto a aprobación), planes prepagados de 12 compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.",
+      `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.`,
     facts: [
       ["Dirección", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Teléfono", "(713) 339-9300"],
@@ -442,7 +443,7 @@ const es: HomeCopy = {
       ],
       [
         "Compañías prepagadas",
-        "T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile, GoSmart",
+        PREPAID_CARRIERS.join(", "),
       ],
       ["Idiomas", "Español e inglés"],
       ["Calificación", `${RATING}★ en Google · ${REVIEWS_N} reseñas`],

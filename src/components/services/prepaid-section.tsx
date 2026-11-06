@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Money, MoneyText } from "@/components/intl/money";
 import {
   CARRIERS,
-  OTHER_CARRIERS,
   PLANS_CHECKED,
   type Carrier,
 } from "@/components/services/prepaid-plans";
@@ -34,7 +33,6 @@ const UI = {
     checked: (d: string) => `Prices checked ${d}`,
     disclaimer:
       "Prices set by each carrier, as advertised. Plus taxes & fees; we confirm today's price before you pay.",
-    others: (names: string) => `Also available: ${names} — ask at the counter.`,
     call: "Call",
     plans: (n: number) => `${n} plans`,
   },
@@ -56,7 +54,6 @@ const UI = {
     checked: (d: string) => `Precios revisados el ${d}`,
     disclaimer:
       "Precios fijados por cada compañía, como se anuncian. Más impuestos y cargos; confirmamos el precio del día antes de que pagues.",
-    others: (names: string) => `También: ${names}. Pregunta en el mostrador.`,
     call: "Llamar",
     plans: (n: number) => `${n} planes`,
   },
@@ -235,7 +232,7 @@ export function PrepaidPlans({ lang }: { lang: Lang }) {
           <p className="flex gap-2">
             <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
             <span>
-              {t.disclaimer} {t.others(OTHER_CARRIERS.join(", "))}
+              {t.disclaimer}
             </span>
           </p>
           <a

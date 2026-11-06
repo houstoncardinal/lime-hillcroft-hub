@@ -33,7 +33,7 @@ export function deviceFaqs(device: Device, lang: Lang, name: string, leaseFrom: 
           }
         : {
             q: `¿Con qué compañías funciona el ${name}?`,
-            a: "Pregúntanos y revisamos la unidad exacta. Los celulares desbloqueados funcionan con la mayoría de las compañías, y en la tienda también activamos planes prepagados de T-Mobile, Cricket, Metro, Boost y más.",
+            a: "Pregúntanos y revisamos la unidad exacta. Los celulares desbloqueados funcionan con la mayoría de las compañías, y en la tienda también activamos planes prepagados de T-Mobile, Verizon, AT&T, Cricket y más.",
           },
       {
         q: "¿Qué capacidad, color y estado tiene?",
@@ -57,7 +57,7 @@ export function deviceFaqs(device: Device, lang: Lang, name: string, leaseFrom: 
         }
       : {
           q: `Which carriers does the ${name} work with?`,
-          a: "Ask us and we'll check the exact unit. Unlocked phones work with most carriers, and we also activate prepaid plans from T-Mobile, Cricket, Metro, Boost and more in store.",
+          a: "Ask us and we'll check the exact unit. Unlocked phones work with most carriers, and we also activate prepaid plans from T-Mobile, Verizon, AT&T, Cricket and more in store.",
         },
     {
       q: "What storage, color and condition is it?",

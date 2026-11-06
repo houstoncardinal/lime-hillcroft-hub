@@ -660,9 +660,6 @@ export const CARRIERS: Carrier[] = [
   },
 ];
 
-/** Carriers we sell without a current brochure on file — ask in store for today's plans. */
-export const OTHER_CARRIERS = ["Metro by T-Mobile", "Boost Mobile", "GoSmart"];
-
 export const lowestPrice = Math.min(...CARRIERS.flatMap((c) => c.plans.map((p) => p.price)));
 export const lowestUnlimited = Math.min(
   ...CARRIERS.flatMap((c) => c.plans.filter((p) => p.unlimited).map((p) => p.price)),

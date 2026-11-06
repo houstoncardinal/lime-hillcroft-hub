@@ -51,7 +51,7 @@ const services = {
     ],
     [
       "Prepaid cell phone plans",
-      "Prepaid plans from T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca, Gen Mobile, Metro, Boost and GoSmart.",
+      "Prepaid plans from T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca and Gen Mobile.",
     ],
     ["Xfinity Prepaid internet", "Prepaid home internet sold and set up in store."],
     [
@@ -88,7 +88,7 @@ const services = {
     ],
     [
       "Planes prepagados",
-      "Planes prepagados de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca, Gen Mobile, Metro, Boost y GoSmart.",
+      "Planes prepagados de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca y Gen Mobile.",
     ],
     [
       "Internet prepagado Xfinity",

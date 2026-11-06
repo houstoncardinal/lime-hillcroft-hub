@@ -1,3 +1,4 @@
+import { CARRIER_COUNT, carrierList } from "@/components/services/carriers";
 import { RATING, REVIEW_COUNT } from "@/components/site/business";
 import type { Faq } from "@/components/site/schema";
 import type { Lang } from "@/components/site/seo";
@@ -47,8 +48,7 @@ export type Service = {
   text: Record<Lang, ServiceText>;
 };
 
-const CARRIERS =
-  "T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile and GoSmart";
+const CARRIERS = carrierList("en");
 
 export const SERVICES: Service[] = [
   {
@@ -112,7 +112,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Will an unlocked phone work with my carrier?",
-            a: "Unlocked phones work with any compatible carrier. We can set you up on Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost and more in store.",
+            a: "Unlocked phones work with any compatible carrier. We can set you up on Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile and more in store.",
           },
         ],
         cta: "Check availability",
@@ -174,7 +174,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",
-            a: "Los celulares desbloqueados funcionan con cualquier compañía compatible. Te activamos en Verizon Prepaid, AT&T Prepaid, T-Mobile, Metro, Cricket, Boost y más en la tienda.",
+            a: "Los celulares desbloqueados funcionan con cualquier compañía compatible. Te activamos en Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile y más en la tienda.",
           },
         ],
         cta: "Confirmar disponibilidad",
@@ -710,10 +710,10 @@ export const SERVICES: Service[] = [
     text: {
       en: {
         name: "Prepaid phone plans",
-        metaTitle: "Prepaid Plans in Houston — Compare 12 Carriers from $10/mo",
+        metaTitle: `Prepaid Plans in Houston — Compare ${CARRIER_COUNT} Carriers from $10/mo`,
         metaDescription:
           "Compare T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca & Gen Mobile prepaid plans and prices. Unlimited from $35/mo. On Hillcroft.",
-        h1: "Prepaid phone plans in Houston — 12 carriers",
+        h1: `Prepaid phone plans in Houston — ${CARRIER_COUNT} carriers`,
         intro:
           "Compare prepaid plans from the major carriers at one counter, get set up in store, and keep your number. Prepaid means no contract, no credit check and no surprise bills.",
         offersTitle: "Carriers we offer",
@@ -745,7 +745,7 @@ export const SERVICES: Service[] = [
           ],
         ],
         why: [
-          "12 prepaid carriers",
+          `${CARRIER_COUNT} prepaid carriers`,
           "No contract, no credit check",
           "Keep your number",
           "Se habla español",
@@ -760,8 +760,8 @@ export const SERVICES: Service[] = [
             a: "Plans start at $10/mo (Gen Mobile, 2GB). Unlimited data starts at $35/mo with AutoPay (Cricket Select Unlimited), and most unlimited plans with hotspot run $45–$60/mo. See every plan above — prices change, so we confirm today's price before you pay.",
           },
           {
-            q: "Is there a Cricket, Metro or Boost store near me?",
-            a: "We carry Cricket, Metro by T-Mobile and Boost Mobile prepaid plans, plus nine other carriers, at 3640 Hillcroft St, Suite C, Houston, TX 77057 — near Hillcroft & Windswept in Southwest Houston. Walk in during store hours; no appointment needed.",
+            q: "Is there a Cricket or T-Mobile Prepaid store near me?",
+            a: `We activate Cricket and T-Mobile Prepaid plans, plus ${CARRIER_COUNT - 2} other prepaid carriers, at 3640 Hillcroft St, Suite C, Houston, TX 77057 — near Hillcroft & Windswept in Southwest Houston. Walk in during store hours; no appointment needed.`,
           },
           {
             q: "Can I keep my phone number?",
@@ -774,15 +774,15 @@ export const SERVICES: Service[] = [
       },
       es: {
         name: "Planes prepagados",
-        metaTitle: "Planes Prepagados en Houston — 12 Compañías desde $10/mes",
+        metaTitle: `Planes Prepagados en Houston — ${CARRIER_COUNT} Compañías desde $10/mes`,
         metaDescription:
           "Compara planes y precios de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca y Gen Mobile. Ilimitados desde $35/mes. En Hillcroft.",
-        h1: "Planes prepagados en Houston — 12 compañías",
+        h1: `Planes prepagados en Houston — ${CARRIER_COUNT} compañías`,
         intro:
           "Compara planes prepagados de las principales compañías en un solo mostrador, actívalo en la tienda y conserva tu número. Prepagado significa sin contrato, sin revisión de crédito y sin sorpresas.",
         offersTitle: "Compañías que manejamos",
         offers: [
-          `${CARRIERS.replace(" and ", " y ")}.`,
+          `${carrierList("es")}.`,
           "Activaciones nuevas y cambio de compañía, conservando tu número.",
           "Te ayudamos a elegir el plan según los datos que realmente usas.",
           "Pago mensual del plan en la tienda sin cargos extra.",
@@ -809,7 +809,7 @@ export const SERVICES: Service[] = [
           ],
         ],
         why: [
-          "12 compañías prepagadas",
+          `${CARRIER_COUNT} compañías prepagadas`,
           "Sin contrato ni crédito",
           "Conserva tu número",
           "We speak English",
@@ -817,15 +817,15 @@ export const SERVICES: Service[] = [
         faq: [
           {
             q: "¿Qué compañías prepagadas tienen?",
-            a: `${CARRIERS.replace(" and ", " y ")}, además de internet prepagado Xfinity.`,
+            a: `${carrierList("es")}, además de internet prepagado Xfinity.`,
           },
           {
             q: "¿Cuánto cuestan los planes?",
             a: "Hay planes desde $10/mes (Gen Mobile, 2GB). Los datos ilimitados empiezan en $35/mes con AutoPay (Cricket Select Unlimited) y la mayoría de los ilimitados con hotspot cuestan entre $45 y $60/mes. Mira todos los planes arriba; los precios cambian, así que confirmamos el precio del día antes de que pagues.",
           },
           {
-            q: "¿Hay una tienda de Cricket, Metro o Boost cerca de mí?",
-            a: "Manejamos planes prepagados de Cricket, Metro by T-Mobile y Boost Mobile, además de otras nueve compañías, en 3640 Hillcroft St, Suite C, Houston, TX 77057, cerca de Hillcroft y Windswept en el suroeste de Houston. Ven en horario de tienda, sin cita.",
+            q: "¿Hay una tienda de Cricket o T-Mobile Prepaid cerca de mí?",
+            a: `Activamos planes de Cricket y T-Mobile Prepaid, además de otras ${CARRIER_COUNT - 2} compañías prepagadas, en 3640 Hillcroft St, Suite C, Houston, TX 77057, cerca de Hillcroft y Windswept en el suroeste de Houston. Ven en horario de tienda; no necesitas cita.`,
           },
           {
             q: "¿Puedo conservar mi número?",

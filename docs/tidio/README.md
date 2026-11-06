@@ -62,9 +62,8 @@ These came from older signs, the old website or a business card and should be do
 - [ ] **Leasing ID requirements** — currently "a valid photo ID".
 - [ ] **Services list** still accurate: tablet/laptop/computer repair, buy·sell·trade, bill
       payments with no extra charges, international recharge (Tigo, Digicel, Movistar, Telcel).
-- [ ] **Carrier list (12):** T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple
-      Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile, Metro by T-Mobile, Boost Mobile,
-      GoSmart.
+- [ ] **Carrier list (9):** T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple
+      Mobile, Tracfone, H2O Wireless, Lyca Mobile, Gen Mobile.
 - [ ] **Accepted payment methods** (cash, cards, Zelle?) — not included yet; add a Q&A once known.
 - [ ] **Warranty on repairs / return policy** — not included; add if the store has one.
 - [x] **Online checkout** is live: the shop sells the store's Shopify catalog and pays through

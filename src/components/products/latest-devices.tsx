@@ -3,6 +3,7 @@ import { ArrowRight, Phone, ShoppingBag } from "lucide-react";
 
 import { INVENTORY_UPDATED, LATEST_DEVICES, type Device } from "@/components/products/inventory";
 import { TEL } from "@/components/site/business";
+import { LeasingCardStrip } from "@/components/site/leasing-portals";
 import { Scroller } from "@/components/site/scroller";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { Money } from "@/components/intl/money";
@@ -124,6 +125,8 @@ export function DeviceCard({ device: d, lang }: { device: Device; lang: Lang }) 
             </p>
           </div>
         )}
+        {/* Every in-store device can be leased. */}
+        <LeasingCardStrip lang={lang} className="mt-3" />
         <p className="mt-auto flex items-center gap-1.5 pt-3 text-xs font-semibold text-muted-foreground">
           <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
           {price ? (price.available ? t.online : t.soldOut) : t.inStore}
