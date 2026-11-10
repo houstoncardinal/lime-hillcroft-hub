@@ -3,8 +3,8 @@ import { ALTERNATES, type Lang } from "@/components/site/seo";
 // Lease-to-own catalog: devices the store leases in person, with the owner's price sheet
 // ("100% Phone Price – Sheet1", updated sheet received 2026-11-10). Leasing prices and the weekly /
 // bi-weekly / monthly payment estimates are the sheet's, exactly. A row is listed only when it has
-// a leasing price and its payments; unlabeled rows are left out. Exceptions, noted where they
-// are: iPhone 18 Pro (bi-weekly $0 on the sheet) and iPhone 13 Pro Max 256GB (prices one line down).
+// a leasing price and its payments; unlabeled rows are left out, except the iPhone 13 Pro Max 256GB,
+// whose prices sit one line under its label.
 // The sheet's internal columns (discount eligibility, "check cost") are not published.
 // These pages never use Shopify: customers apply with a leasing partner and pick up in store.
 
@@ -85,16 +85,15 @@ const o = (
 export const LEASE_DEVICES: LeaseDevice[] = [
   // ---------- iPhone ----------
   { id: "iphone-18-pro-max", name: "iPhone 18 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-18",
-    options: [o("256GB", 1649, 1699, 83, 191, 323), o("512GB", 1899, 1949, 96, 152, 370)] },
+    options: [o("256GB", 1649, 1699, 83, 167, 323), o("512GB", 1899, 1949, 96, 191, 370)] },
   { id: "iphone-18-pro", name: "iPhone 18 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-18-pro",
-    // The sheet's bi-weekly cell is $0; $152 is 2 × the $76 weekly, as on the sheet's other rows.
     options: [o("256GB", 1499, 1549, 76, 152, 294)] },
   { id: "iphone-17-pro-max", name: "iPhone 17 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-17-pro-max",
     options: [o(SEALED("256GB"), 1359, 1399, 69, 137, 266), o(OPEN_BOX("256GB"), 1399, 1429, 70, 140, 271)] },
   { id: "iphone-17-pro", name: "iPhone 17 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-17-pro",
     options: [o("256GB", 1199, 1299, 64, 128, 247)] },
   { id: "iphone-air", name: "iPhone Air", brand: "Apple", category: "iphone",
-    options: [o("256GB", 1099, 1150, 56, 167, 218)] },
+    options: [o("256GB", 1099, 1150, 56, 113, 218)] },
   { id: "iphone-17", name: "iPhone 17", brand: "Apple", category: "iphone", deviceId: "iphone-17",
     options: [o("256GB", 950, 1049, 51, 103, 199)] },
   { id: "iphone-16-pro-max", name: "iPhone 16 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-16-pro-max",

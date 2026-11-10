@@ -64,8 +64,9 @@ describe("lease-to-own catalog", () => {
   it("matches the owner's price sheet (spot checks)", () => {
     const opt = (id: string, label: string) =>
       findLeaseDevice(id)!.options.find((o) => o.label.en === label);
-    expect(opt("iphone-18-pro-max", "256GB")).toMatchObject({ cash: 1649, lease: 1699, weekly: 83, biweekly: 191, monthly: 323 });
-    expect(opt("iphone-air", "256GB")).toMatchObject({ lease: 1150, weekly: 56, biweekly: 167, monthly: 218 });
+    expect(opt("iphone-18-pro-max", "256GB")).toMatchObject({ cash: 1649, lease: 1699, weekly: 83, biweekly: 167, monthly: 323 });
+    expect(opt("iphone-18-pro-max", "512GB")).toMatchObject({ lease: 1949, weekly: 96, biweekly: 191, monthly: 370 });
+    expect(opt("iphone-air", "256GB")).toMatchObject({ lease: 1150, weekly: 56, biweekly: 113, monthly: 218 });
     expect(opt("iphone-16-plus", "256GB")).toMatchObject({ lease: 949, weekly: 47, biweekly: 93, monthly: 180 });
     expect(opt("ipad-8", "128GB · Wi-Fi + Cellular")).toMatchObject({ lease: 279, weekly: 14, biweekly: 27, monthly: 53 });
     expect(opt("galaxy-s25-ultra", "512GB")).toMatchObject({ cash: 1050, lease: 1149, monthly: 218 });
