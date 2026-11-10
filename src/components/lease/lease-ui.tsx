@@ -1,5 +1,15 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Gamepad2, Laptop, Smartphone, Tablet, Tv, Watch } from "lucide-react";
+import { useEffect, useId, useState } from "react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Gamepad2,
+  Laptop,
+  Smartphone,
+  Tablet,
+  Tv,
+  Watch,
+} from "lucide-react";
 
 import { Money } from "@/components/intl/money";
 import {
@@ -21,13 +31,16 @@ import { photoSrcSet } from "@/components/products/photo-src";
 import type { Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
 
-/** "$56" for whole dollars, "$379.99" when there are cents; converts like <Money>. */
-export function LeaseMoney({ usd }: { usd: number }) {
-  const label = `$${usd.toLocaleString("en-US", {
+/** "$56" for whole dollars, "$379.99" when there are cents. */
+const usdText = (usd: number) =>
+  `$${usd.toLocaleString("en-US", {
     minimumFractionDigits: Number.isInteger(usd) ? 0 : 2,
     maximumFractionDigits: 2,
   })}`;
-  return <Money usd={usd} label={label} />;
+
+/** A lease price as text that converts like <Money> when the visitor picks another currency. */
+export function LeaseMoney({ usd }: { usd: number }) {
+  return <Money usd={usd} label={usdText(usd)} />;
 }
 
 const ICONS: Record<LeaseCategory, typeof Smartphone> = {
@@ -100,11 +113,15 @@ export function LeaseCard({
 }: {
   device: LeaseDevice;
   lang: Lang;
-  /** Which estimated payment the card shows under the leasing price. */
+  /** The page's payment schedule; the card's own dropdown can change it for this card. */
   frequency?: Frequency;
 }) {
   const t = LEASE_COPY[lang];
   const from = leaseFrom(device);
+  const selectId = useId();
+  const [own, setOwn] = useState<Frequency>(frequency);
+  // The page-wide selector resets every card to its choice.
+  useEffect(() => setOwn(frequency), [frequency]);
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-card transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/5">
       <LeasePhoto
@@ -135,14 +152,35 @@ export function LeaseCard({
           <p className="font-display text-2xl font-semibold tabular-nums">
             <LeaseMoney usd={from.lease} />
           </p>
-          <p className="mt-0.5 text-sm tabular-nums text-muted-foreground">
-            {lang === "en" ? "or " : "o "}
-            <span className="font-semibold text-primary">
-              <LeaseMoney usd={payment(from.option, frequency)} />
-              {t.per[frequency]}
-            </span>{" "}
-            <span className="text-xs">{lang === "en" ? "est." : "aprox."}</span>
-          </p>
+          {/* Payment schedule: a dropdown above the card's stretched link (z-10). */}
+          <div className="relative z-10 mt-2 flex items-center gap-2">
+            <label htmlFor={selectId} className="sr-only">
+              {t.payQuestion}
+            </label>
+            <span className="relative inline-flex min-w-0">
+              <select
+                id={selectId}
+                value={own}
+                onChange={(e) => setOwn(e.target.value as Frequency)}
+                aria-describedby={`${selectId}-hint`}
+                className="min-h-10 w-full cursor-pointer appearance-none truncate rounded-full border border-primary/25 bg-primary/10 py-1.5 pl-3.5 pr-9 text-sm font-semibold tabular-nums text-primary transition hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                {FREQUENCIES.map((f) => (
+                  <option key={f} value={f} className="text-ink">
+                    {usdText(payment(from.option, f))}
+                    {t.per[f]}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary"
+                aria-hidden="true"
+              />
+            </span>
+            <span id={`${selectId}-hint`} className="shrink-0 text-xs text-muted-foreground">
+              {lang === "en" ? "est." : "aprox."}
+            </span>
+          </div>
         </div>
         <p className="mt-auto flex items-center justify-end gap-1 pt-3 text-xs font-semibold text-ink">
           {t.details} <ArrowRight className="h-3.5 w-3.5 text-primary" />
