@@ -6,8 +6,11 @@ import {
   LEASE_DEVICES,
   LEASE_FEATURED,
   LEASE_PATHS,
+  FREQUENCIES,
   leaseDevicePath,
   leaseFrom,
+  payment,
+  type Frequency,
   type LeaseCategory,
   type LeaseDevice,
   type LeaseOption,
@@ -17,6 +20,15 @@ import { LATEST_DEVICES } from "@/components/products/inventory";
 import { photoSrcSet } from "@/components/products/photo-src";
 import type { Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
+
+/** "$56" for whole dollars, "$379.99" when there are cents; converts like <Money>. */
+export function LeaseMoney({ usd }: { usd: number }) {
+  const label = `$${usd.toLocaleString("en-US", {
+    minimumFractionDigits: Number.isInteger(usd) ? 0 : 2,
+    maximumFractionDigits: 2,
+  })}`;
+  return <Money usd={usd} label={label} />;
+}
 
 const ICONS: Record<LeaseCategory, typeof Smartphone> = {
   iphone: Smartphone,
@@ -81,7 +93,16 @@ export function LeasePhoto({
   );
 }
 
-export function LeaseCard({ device, lang }: { device: LeaseDevice; lang: Lang }) {
+export function LeaseCard({
+  device,
+  lang,
+  frequency = "weekly",
+}: {
+  device: LeaseDevice;
+  lang: Lang;
+  /** Which estimated payment the card shows under the leasing price. */
+  frequency?: Frequency;
+}) {
   const t = LEASE_COPY[lang];
   const from = leaseFrom(device);
   return (
@@ -112,14 +133,16 @@ export function LeaseCard({ device, lang }: { device: LeaseDevice; lang: Lang })
         <div className="mt-3">
           <p className="text-xs text-muted-foreground">{t.from}</p>
           <p className="font-display text-2xl font-semibold tabular-nums">
-            <Money usd={from.lease} />
+            <LeaseMoney usd={from.lease} />
           </p>
-          {from.weekly && (
-            <p className="text-xs font-semibold tabular-nums text-primary">
-              <Money usd={from.weekly} />
-              {t.perWeek}
-            </p>
-          )}
+          <p className="mt-0.5 text-sm tabular-nums text-muted-foreground">
+            {lang === "en" ? "or " : "o "}
+            <span className="font-semibold text-primary">
+              <LeaseMoney usd={payment(from.option, frequency)} />
+              {t.per[frequency]}
+            </span>{" "}
+            <span className="text-xs">{lang === "en" ? "est." : "aprox."}</span>
+          </p>
         </div>
         <p className="mt-auto flex items-center justify-end gap-1 pt-3 text-xs font-semibold text-ink">
           {t.details} <ArrowRight className="h-3.5 w-3.5 text-primary" />
@@ -167,49 +190,94 @@ export function LeaseSection({ lang, className }: { lang: Lang; className?: stri
   );
 }
 
-/** Buy-in-full / leasing / estimated payments for one option. */
-export function OptionPrices({ option, lang }: { option: LeaseOption; lang: Lang }) {
+/** Weekly / bi-weekly / monthly switch (a segmented control). */
+export function FrequencyToggle({
+  value,
+  onChange,
+  lang,
+  label,
+  className,
+  tone = "light",
+}: {
+  value: Frequency;
+  onChange: (f: Frequency) => void;
+  lang: Lang;
+  label: string;
+  className?: string;
+  tone?: "light" | "dark";
+}) {
   const t = LEASE_COPY[lang];
-  const est = (
-    [
-      [t.weekly, option.weekly],
-      [t.biweekly, option.biweekly],
-      [t.monthly, option.monthly],
-    ] as const
-  ).filter(([, v]) => v);
   return (
-    <div className="rounded-2xl border bg-card p-4 sm:p-5">
-      <dl className="grid grid-cols-2 gap-3">
-        <div className="rounded-xl bg-primary/10 p-3">
-          <dt className="text-xs font-semibold text-primary">{t.leasingPrice}</dt>
-          <dd className="mt-1 font-display text-2xl font-semibold tabular-nums">
-            <Money usd={option.lease} />
+    <div
+      role="radiogroup"
+      aria-label={label}
+      className={cn(
+        "grid grid-cols-3 gap-1 rounded-full p-1",
+        tone === "dark" ? "bg-white/10" : "bg-secondary",
+        className,
+      )}
+    >
+      {FREQUENCIES.map((f) => (
+        <button
+          key={f}
+          type="button"
+          role="radio"
+          aria-checked={f === value}
+          onClick={() => onChange(f)}
+          className={cn(
+            "min-h-10 cursor-pointer rounded-full px-2 text-sm font-semibold transition",
+            f === value
+              ? tone === "dark"
+                ? "bg-white text-ink shadow"
+                : "bg-ink text-white shadow"
+              : tone === "dark"
+                ? "text-white/75 hover:text-white"
+                : "text-muted-foreground hover:text-foreground",
+          )}
+        >
+          {t.freq[f]}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** One option's estimated payment for the chosen schedule, with its prices underneath. */
+export function PaymentSummary({
+  option,
+  frequency,
+  lang,
+}: {
+  option: LeaseOption;
+  frequency: Frequency;
+  lang: Lang;
+}) {
+  const t = LEASE_COPY[lang];
+  return (
+    <div className="rounded-3xl border bg-card p-5 sm:p-6">
+      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        {t.estimated}
+      </p>
+      <p className="mt-1 flex flex-wrap items-baseline gap-x-2">
+        <span className="font-display text-5xl font-semibold tabular-nums text-primary">
+          <LeaseMoney usd={payment(option, frequency)} />
+        </span>
+        <span className="text-lg font-semibold text-muted-foreground">{t.perLong[frequency]}</span>
+      </p>
+      <dl className="mt-4 grid grid-cols-2 gap-3 border-t pt-4 text-sm">
+        <div>
+          <dt className="text-muted-foreground">{t.leasingPrice}</dt>
+          <dd className="mt-0.5 text-base font-semibold tabular-nums">
+            <LeaseMoney usd={option.lease} />
           </dd>
         </div>
-        <div className="rounded-xl bg-secondary p-3">
-          <dt className="text-xs font-semibold text-muted-foreground">{t.buyInFull}</dt>
-          <dd className="mt-1 font-display text-2xl font-semibold tabular-nums">
-            {option.cash ? <Money usd={option.cash} /> : t.callPrice}
+        <div>
+          <dt className="text-muted-foreground">{t.buyInFull}</dt>
+          <dd className="mt-0.5 text-base font-semibold tabular-nums">
+            {option.cash ? <LeaseMoney usd={option.cash} /> : t.callPrice}
           </dd>
         </div>
       </dl>
-      <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {t.estPayments}
-      </p>
-      {est.length ? (
-        <dl className="mt-2 grid grid-cols-3 gap-2">
-          {est.map(([label, v]) => (
-            <div key={label} className="rounded-xl border p-2.5 text-center">
-              <dt className="text-[11px] text-muted-foreground">{label}</dt>
-              <dd className="mt-0.5 font-semibold tabular-nums">
-                <Money usd={v!} />
-              </dd>
-            </div>
-          ))}
-        </dl>
-      ) : (
-        <p className="mt-2 text-sm text-muted-foreground">{t.noEstimate}</p>
-      )}
     </div>
   );
 }

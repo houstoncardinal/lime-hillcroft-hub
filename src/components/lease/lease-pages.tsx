@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, ChevronRight, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronRight, MapPin, Phone, ShieldCheck } from "lucide-react";
 
-import { Money } from "@/components/intl/money";
 import {
   LEASE_CATEGORIES,
   LEASE_DEVICES,
@@ -10,10 +9,18 @@ import {
   LEASE_PRICES_UPDATED,
   leaseDevicePaths,
   leaseFrom,
+  payment,
+  type Frequency,
   type LeaseDevice,
 } from "@/components/lease/catalog";
 import { LEASE_COPY } from "@/components/lease/copy";
-import { LeaseCard, LeasePhoto, OptionPrices } from "@/components/lease/lease-ui";
+import {
+  FrequencyToggle,
+  LeaseCard,
+  LeaseMoney,
+  LeasePhoto,
+  PaymentSummary,
+} from "@/components/lease/lease-ui";
 import { devicePath } from "@/components/products/device-paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
 import { SiteFooter, SiteHeader } from "@/components/site/chrome";
@@ -72,6 +79,7 @@ function Steps({ lang }: { lang: Lang }) {
 /** /lease-to-own: every device, grouped by category. */
 export function LeaseHubPage({ lang }: { lang: Lang }) {
   const t = LEASE_COPY[lang];
+  const [frequency, setFrequency] = useState<Frequency>("weekly");
   const groups = LEASE_CATEGORIES.map((c) => ({
     ...c,
     devices: LEASE_DEVICES.filter((d) => d.category === c.id),
@@ -103,6 +111,16 @@ export function LeaseHubPage({ lang }: { lang: Lang }) {
               </a>
             ))}
           </nav>
+          <div className="mt-6 max-w-md">
+            <p className="mb-2 text-sm font-semibold text-white/80">{t.showPayments}</p>
+            <FrequencyToggle
+              value={frequency}
+              onChange={setFrequency}
+              lang={lang}
+              label={t.showPayments}
+              tone="dark"
+            />
+          </div>
         </div>
       </section>
 
@@ -120,7 +138,7 @@ export function LeaseHubPage({ lang }: { lang: Lang }) {
             <ul className="mt-6 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
               {g.devices.map((d) => (
                 <li key={d.id}>
-                  <LeaseCard device={d} lang={lang} />
+                  <LeaseCard device={d} lang={lang} frequency={frequency} />
                 </li>
               ))}
             </ul>
@@ -155,7 +173,8 @@ export function LeaseHubPage({ lang }: { lang: Lang }) {
 /** /lease-to-own/<id>: every option with its prices, and all leasing applications. */
 export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: Lang }) {
   const t = LEASE_COPY[lang];
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(() => device.options.indexOf(leaseFrom(device).option));
+  const [frequency, setFrequency] = useState<Frequency>("weekly");
   const option = device.options[index] ?? device.options[0]!;
   const from = leaseFrom(device);
   const category = LEASE_CATEGORIES.find((c) => c.id === device.category)!;
@@ -205,51 +224,58 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
           <p className="mt-4 text-lg text-muted-foreground">
             {t.from}{" "}
             <span className="font-semibold text-foreground">
-              <Money usd={from.lease} />
+              <LeaseMoney usd={from.lease} />
+            </span>{" "}
+            {lang === "en" ? "or" : "o"}{" "}
+            <span className="font-semibold text-primary">
+              <LeaseMoney usd={payment(from.option, frequency)} />
+              {t.per[frequency]}
             </span>
-            {from.weekly && (
-              <>
-                {" · "}
-                <span className="font-semibold text-primary">
-                  <Money usd={from.weekly} />
-                  {t.perWeek}
-                </span>
-              </>
-            )}
           </p>
 
-          {/* Options */}
-          <fieldset className="mt-8">
-            <legend className="mb-3 text-sm font-semibold">{t.chooseOption}</legend>
-            <div className="grid gap-2 sm:grid-cols-2">
-              {device.options.map((x, i) => (
-                <button
-                  key={x.label.en}
-                  type="button"
-                  aria-pressed={i === index}
-                  onClick={() => setIndex(i)}
-                  className={cn(
-                    "cursor-pointer rounded-2xl border bg-card p-3.5 text-left transition",
-                    i === index ? "border-primary ring-1 ring-primary" : "hover:border-ink/30",
-                  )}
-                >
-                  <span className="block text-sm font-semibold leading-snug">{x.label[lang]}</span>
-                  <span className="mt-1 block text-sm tabular-nums text-muted-foreground">
-                    <Money usd={x.lease} />
-                    {x.cash ? (
-                      <>
-                        {" · "}
-                        {t.buyInFull} <Money usd={x.cash} />
-                      </>
-                    ) : null}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </fieldset>
+          {/* 1. How often */}
+          <p className="mt-8 text-sm font-semibold">{t.payQuestion}</p>
+          <FrequencyToggle
+            value={frequency}
+            onChange={setFrequency}
+            lang={lang}
+            label={t.payQuestion}
+            className="mt-3 max-w-md"
+          />
 
+          {/* 2. Which option — each shows only the chosen schedule's payment */}
+          {device.options.length > 1 && (
+            <fieldset className="mt-6">
+              <legend className="mb-3 text-sm font-semibold">{t.chooseOption}</legend>
+              <div className="flex flex-wrap gap-2">
+                {device.options.map((x, i) => (
+                  <button
+                    key={x.label.en}
+                    type="button"
+                    aria-pressed={i === index}
+                    onClick={() => setIndex(i)}
+                    className={cn(
+                      "cursor-pointer rounded-2xl border bg-card px-4 py-2.5 text-left transition",
+                      i === index ? "border-primary ring-1 ring-primary" : "hover:border-ink/30",
+                    )}
+                  >
+                    <span className="block text-sm font-semibold leading-snug">{x.label[lang]}</span>
+                    <span className="block text-xs tabular-nums text-muted-foreground">
+                      <LeaseMoney usd={payment(x, frequency)} />
+                      {t.per[frequency]}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+          )}
+
+          {/* 3. The payment */}
           <div className="mt-4">
-            <OptionPrices option={option} lang={lang} />
+            {device.options.length === 1 && (
+              <p className="mb-2 text-sm font-semibold">{option.label[lang]}</p>
+            )}
+            <PaymentSummary option={option} frequency={frequency} lang={lang} />
           </div>
 
           {/* Applications */}
@@ -317,41 +343,36 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             </div>
           </section>
 
-          {/* Every option at a glance */}
+          {/* Every option at a glance, closed by default to keep the page simple */}
           {device.options.length > 1 && (
-            <section aria-labelledby="all-prices" className="mt-8">
-              <h2 id="all-prices" className="text-xl font-semibold">
-                {t.allPrices}
-              </h2>
-              <div className="mt-3 overflow-x-auto rounded-2xl border">
-                <table className="w-full text-xs sm:text-sm">
-                  <thead className="bg-secondary text-left text-xs uppercase tracking-wider text-muted-foreground">
-                    <tr>
-                      <th className="px-3 py-3 font-semibold sm:px-4">{t.option}</th>
-                      <th className="px-3 py-3 text-right font-semibold sm:px-4">{t.buyInFull}</th>
-                      <th className="px-3 py-3 text-right font-semibold sm:px-4">{t.leasingPrice}</th>
-                      <th className="px-3 py-3 text-right font-semibold sm:px-4">{t.weekly}</th>
+            <details className="group mt-6 rounded-2xl border bg-card">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 font-semibold [&::-webkit-details-marker]:hidden">
+                {t.compare}
+                <ChevronDown className="h-4 w-4 transition group-open:rotate-180" />
+              </summary>
+              <table className="w-full border-t text-xs sm:text-sm">
+                <thead className="bg-secondary text-left text-[11px] uppercase tracking-wider text-muted-foreground">
+                  <tr>
+                    <th className="px-3 py-2.5 font-semibold sm:px-4">{t.option}</th>
+                    <th className="px-3 py-2.5 text-right font-semibold sm:px-4">{t.leasingPrice}</th>
+                    <th className="px-3 py-2.5 text-right font-semibold sm:px-4">{t.freq[frequency]}</th>
+                  </tr>
+                </thead>
+                <tbody className="tabular-nums">
+                  {device.options.map((x) => (
+                    <tr key={x.label.en} className="border-t">
+                      <td className="px-3 py-3 font-medium sm:px-4">{x.label[lang]}</td>
+                      <td className="px-3 py-3 text-right sm:px-4">
+                        <LeaseMoney usd={x.lease} />
+                      </td>
+                      <td className="px-3 py-3 text-right font-semibold text-primary sm:px-4">
+                        <LeaseMoney usd={payment(x, frequency)} />
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody className="tabular-nums">
-                    {device.options.map((x) => (
-                      <tr key={x.label.en} className="border-t">
-                        <td className="px-3 py-3 font-medium sm:px-4">{x.label[lang]}</td>
-                        <td className="px-3 py-3 text-right sm:px-4">
-                          {x.cash ? <Money usd={x.cash} /> : "—"}
-                        </td>
-                        <td className="px-3 py-3 text-right font-semibold sm:px-4">
-                          <Money usd={x.lease} />
-                        </td>
-                        <td className="px-3 py-3 text-right sm:px-4">
-                          {x.weekly ? <Money usd={x.weekly} /> : "—"}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
+                  ))}
+                </tbody>
+              </table>
+            </details>
           )}
           <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
             {t.updated(LEASE_PRICES_UPDATED)} {t.fine}

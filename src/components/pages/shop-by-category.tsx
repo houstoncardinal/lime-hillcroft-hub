@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 
-import { Money } from "@/components/intl/money";
+import { LeaseMoney } from "@/components/lease/lease-ui";
 import { LEASE_DEVICES, LEASE_PATHS, leaseFrom, type LeaseCategory } from "@/components/lease/catalog";
 import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { CARRIER_COUNT } from "@/components/services/carriers";
@@ -237,7 +237,7 @@ export function ShopByCategory({ lang }: { lang: Lang }) {
                     <>
                       {t.leaseFrom}{" "}
                       <span className="font-semibold text-primary">
-                        <Money usd={lowestLease(tile.lease)} />
+                        <LeaseMoney usd={lowestLease(tile.lease)} />
                       </span>
                     </>
                   ) : (

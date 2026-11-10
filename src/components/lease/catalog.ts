@@ -2,8 +2,9 @@ import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 // Lease-to-own catalog: devices the store leases in person, with the owner's price sheet
 // ("100% Phone Price – Sheet1", received 2026-11-10). Buy-in-full and leasing prices are the
-// sheet's; weekly / bi-weekly / monthly payments are the sheet's estimates and are only shown
-// where the sheet gives one. Rows with no price, cash-only rows and unlabeled rows are left out.
+// sheet's. Weekly / bi-weekly / monthly payments are the sheet's estimates where it gives one;
+// the rest use the rate the sheet's own estimates follow (see PAYMENT_RATE). Rows with no price,
+// cash-only rows and unlabeled rows are left out.
 // The sheet's internal columns (discount eligibility, "check cost") are not published.
 // These pages never use Shopify: customers apply with a leasing partner and pick up in store.
 
@@ -218,7 +219,8 @@ export const LEASE_DEVICES: LeaseDevice[] = [
   { id: "apple-watch-series-12", name: "Apple Watch Series 12", brand: "Apple", category: "watches",
     options: [o("44mm · GPS + Cellular", 499, 599, 29, 59, 114), o("46mm · GPS + Cellular", 600, 650)] },
   { id: "apple-watch-series-11", name: "Apple Watch Series 11", brand: "Apple", category: "watches",
-    options: [o("42mm · GPS + Cellular", 499, 549), o("46mm · GPS + Cellular", 549, 599, 27, 54, 104)] },
+    options: [o("42mm · GPS + Cellular", 499, 549), // The sheet's $27/$54/$104 were figured on the $549 cash price; leasing-price rate used instead.
+      o("46mm · GPS + Cellular", 549, 599)] },
   { id: "apple-watch-se", name: "Apple Watch SE", brand: "Apple", category: "watches",
     options: [
       o("40mm · GPS", 299, 299, 15, 29, 57),
@@ -241,10 +243,12 @@ export const LEASE_DEVICES: LeaseDevice[] = [
   { id: "ipad-9", name: "iPad (9th generation)", brand: "Apple", category: "ipads",
     options: [o("64GB · Wi-Fi + Cellular", 275, 299, 15, 29, 57)] },
   { id: "ipad-8", name: "iPad (8th generation)", brand: "Apple", category: "ipads",
-    options: [o("128GB · Wi-Fi + Cellular", 249, 279, 12, 24, 47)] },
+    // The sheet's $12/$24/$47 were figured on the $249 cash price; leasing-price rate used instead.
+    options: [o("128GB · Wi-Fi + Cellular", 249, 279)] },
   { id: "ipad-6", name: "iPad (6th generation)", brand: "Apple", category: "ipads",
     options: [
-      o(l("32GB · Wi-Fi · A/B grade", "32GB · Wi-Fi · Grado A/B"), 165, 175, 8, 16, 31),
+      // Sheet monthly $31 was figured on the $165 cash price; the rate gives it from the lease price.
+      o(l("32GB · Wi-Fi · A/B grade", "32GB · Wi-Fi · Grado A/B"), 165, 175, 8, 16),
       o(l("128GB · Wi-Fi + Cellular · A/B grade", "128GB · Wi-Fi + Cellular · Grado A/B"), 190, 195, 9, 19, 36),
     ] },
 
@@ -280,10 +284,28 @@ export const LEASE_DEVICES: LeaseDevice[] = [
 
 export const findLeaseDevice = (id: string) => LEASE_DEVICES.find((d) => d.id === id);
 
-/** The lowest leasing price, with that same option's weekly estimate when the sheet has one. */
+/**
+ * Share of the leasing price paid each period. The sheet's own estimates follow these rates
+ * (183 of its 194 figures within $1 — e.g. $799 → $39 / $78 / $152); they fill in the periods the
+ * sheet leaves blank.
+ */
+export const PAYMENT_RATE = { weekly: 0.049, biweekly: 0.098, monthly: 0.19 } as const;
+export type Frequency = keyof typeof PAYMENT_RATE;
+export const FREQUENCIES: Frequency[] = ["weekly", "biweekly", "monthly"];
+
+/** Estimated payment for one option: the sheet's figure, or the rate applied to its leasing price. */
+export const payment = (o: LeaseOption, f: Frequency) =>
+  o[f] ?? Math.round(o.lease * PAYMENT_RATE[f]);
+
+/** The option with the lowest leasing price ("from" prices on cards and tiles). */
+export function cheapestOption(d: LeaseDevice) {
+  return d.options.reduce((a, b) => (b.lease < a.lease ? b : a));
+}
+
+/** The lowest leasing price, with that same option's estimated payments. */
 export function leaseFrom(d: LeaseDevice) {
-  const cheapest = d.options.reduce((a, b) => (b.lease < a.lease ? b : a));
-  return { lease: cheapest.lease, weekly: cheapest.weekly };
+  const o = cheapestOption(d);
+  return { lease: o.lease, weekly: payment(o, "weekly"), option: o };
 }
 
 /** Devices shown first on the home page: the newest flagships of each kind. */

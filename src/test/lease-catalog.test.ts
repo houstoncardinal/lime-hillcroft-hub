@@ -4,8 +4,10 @@ import {
   LEASE_CATEGORIES,
   LEASE_DEVICES,
   LEASE_FEATURED,
+  PAYMENT_RATE,
   findLeaseDevice,
   leaseFrom,
+  payment,
 } from "@/components/lease/catalog";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 
@@ -30,11 +32,51 @@ describe("lease-to-own catalog", () => {
     if (d.deviceId) expect(LATEST_DEVICES.some((x) => x.id === d.deviceId), d.deviceId).toBe(true);
   });
 
-  it("pairs the 'from' weekly estimate with the cheapest option only", () => {
-    // Sealed $1,399 has no weekly estimate; the $70/wk belongs to the $1,429 open-box unit.
-    expect(leaseFrom(findLeaseDevice("iphone-17-pro-max")!)).toEqual({ lease: 1399, weekly: undefined });
-    expect(leaseFrom(findLeaseDevice("iphone-16")!)).toEqual({ lease: 650, weekly: undefined });
-    expect(leaseFrom(findLeaseDevice("iphone-16-pro-max")!)).toEqual({ lease: 1149, weekly: 56 });
+  it("uses the sheet's payment estimates where it has them", () => {
+    const o = findLeaseDevice("iphone-16")!.options[0]!; // 128GB, leasing $799
+    expect([payment(o, "weekly"), payment(o, "biweekly"), payment(o, "monthly")]).toEqual([39, 78, 152]);
+    // Higher-than-rate sheet figures are kept, never lowered.
+    const air = findLeaseDevice("iphone-air")!.options[0]!;
+    expect([payment(air, "weekly"), payment(air, "biweekly"), payment(air, "monthly")]).toEqual([88, 177, 342]);
+  });
+
+  it("fills blank periods from the leasing price at the sheet's own rate", () => {
+    // iPhone 17 Pro 256GB: sheet gives only $64/wk on a $1,299 lease.
+    const o = findLeaseDevice("iphone-17-pro")!.options[0]!;
+    expect(payment(o, "weekly")).toBe(64);
+    expect(payment(o, "biweekly")).toBe(Math.round(1299 * 0.098));
+    expect(payment(o, "monthly")).toBe(Math.round(1299 * 0.19));
+    // Cash-price-based sheet figures were dropped: Watch Series 11 46mm uses its $599 lease.
+    const w = findLeaseDevice("apple-watch-series-11")!.options[1]!;
+    expect(payment(w, "monthly")).toBe(114);
+  });
+
+  it("gives every option all three payments, and they rise with the period", () => {
+    for (const d of LEASE_DEVICES)
+      for (const o of d.options) {
+        const [w, b, m] = (["weekly", "biweekly", "monthly"] as const).map((f) => payment(o, f));
+        expect(w, `${d.id} ${o.label.en}`).toBeGreaterThan(0);
+        expect(b).toBeGreaterThan(w!);
+        expect(m).toBeGreaterThan(b!);
+      }
+  });
+
+  it("matches the sheet's own estimates to within $1 almost everywhere", () => {
+    let n = 0;
+    let close = 0;
+    for (const d of LEASE_DEVICES)
+      for (const o of d.options)
+        for (const f of ["weekly", "biweekly", "monthly"] as const) {
+          if (!o[f]) continue;
+          n++;
+          if (Math.abs(Math.round(o.lease * PAYMENT_RATE[f]) - o[f]!) <= 1) close++;
+        }
+    expect(close / n).toBeGreaterThan(0.9);
+  });
+
+  it("'from' prices use the cheapest option and its own payment", () => {
+    expect(leaseFrom(findLeaseDevice("iphone-17-pro-max")!)).toMatchObject({ lease: 1399, weekly: 69 });
+    expect(leaseFrom(findLeaseDevice("iphone-16-pro-max")!)).toMatchObject({ lease: 1149, weekly: 56 });
   });
 
   it("matches the owner's price sheet (spot checks)", () => {
