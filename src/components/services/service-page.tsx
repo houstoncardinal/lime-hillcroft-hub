@@ -8,6 +8,7 @@ import { servicePath, servicePaths } from "@/components/services/paths";
 import { SERVICE_ICONS } from "@/components/services/icons";
 import { SERVICE_PHOTOS } from "@/components/services/photos";
 import { PrepaidPlans } from "@/components/services/prepaid-section";
+import { RepairSection } from "@/components/services/repair-section";
 import { ADDRESS, DIRECTIONS, HOURS, PHONE, TEL } from "@/components/site/business";
 import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
@@ -166,6 +167,9 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       </section>
 
       {service.slug === "prepaid-plans" && <PrepaidPlans lang={lang} />}
+      {service.slug === "phone-repair" && (
+        <RepairSection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
+      )}
       {service.slug === "unlocked-phones" && (
         <>
           <LatestDevices devices={PHONES} lang={lang} limit={16} className="bg-secondary/40" />
@@ -174,59 +178,65 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       )}
 
       <div className="mx-auto max-w-7xl px-5 py-12 md:py-16">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <section aria-labelledby="offers">
-            <h2 id="offers" className="text-3xl font-semibold md:text-4xl">
-              {t.offersTitle}
-            </h2>
-            <ul className="mt-8 space-y-4">
-              {t.offers.map((o) => (
-                <li key={o} className="flex gap-3 text-lg leading-relaxed">
-                  <CircleCheck className="mt-1 h-5 w-5 shrink-0 text-primary" />
-                  <span>
-                    <MoneyText text={o} />
-                  </span>
-                </li>
-              ))}
-            </ul>
-            {t.links && (
-              <ul className="mt-8 flex flex-wrap gap-2">
-                {t.links.map(([label, href]) => (
-                  <li key={href}>
-                    <Link
-                      to={href}
-                      className="group inline-flex min-h-11 items-center gap-1.5 rounded-full border px-5 font-semibold transition hover:border-primary hover:text-primary"
-                    >
-                      {label}
-                      <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-0.5" />
-                    </Link>
+        {/* The repair page shows these as cards and a timeline (RepairSection) instead. */}
+        {service.slug !== "phone-repair" && (
+          <div className="grid gap-8 lg:grid-cols-2">
+            <section aria-labelledby="offers">
+              <h2 id="offers" className="text-3xl font-semibold md:text-4xl">
+                {t.offersTitle}
+              </h2>
+              <ul className="mt-8 space-y-4">
+                {t.offers.map((o) => (
+                  <li key={o} className="flex gap-3 text-lg leading-relaxed">
+                    <CircleCheck className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                    <span>
+                      <MoneyText text={o} />
+                    </span>
                   </li>
                 ))}
               </ul>
-            )}
-          </section>
+              {t.links && (
+                <ul className="mt-8 flex flex-wrap gap-2">
+                  {t.links.map(([label, href]) => (
+                    <li key={href}>
+                      <Link
+                        to={href}
+                        className="group inline-flex min-h-11 items-center gap-1.5 rounded-full border px-5 font-semibold transition hover:border-primary hover:text-primary"
+                      >
+                        {label}
+                        <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-0.5" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
 
-          <section aria-labelledby="steps" className="rounded-3xl bg-secondary/70 p-7 md:p-10">
-            <h2 id="steps" className="text-3xl font-semibold md:text-4xl">
-              {t.stepsTitle}
-            </h2>
-            <ol className="mt-8 space-y-6">
-              {t.steps.map(([h, p], i) => (
-                <li key={h} className="flex gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink font-display text-sm font-semibold text-white">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-lg font-semibold">{h}</h3>
-                    <p className="mt-1 leading-relaxed text-muted-foreground">{p}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        </div>
+            <section aria-labelledby="steps" className="rounded-3xl bg-secondary/70 p-7 md:p-10">
+              <h2 id="steps" className="text-3xl font-semibold md:text-4xl">
+                {t.stepsTitle}
+              </h2>
+              <ol className="mt-8 space-y-6">
+                {t.steps.map(([h, p], i) => (
+                  <li key={h} className="flex gap-4">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink font-display text-sm font-semibold text-white">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg font-semibold">{h}</h3>
+                      <p className="mt-1 leading-relaxed text-muted-foreground">{p}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          </div>
+        )}
 
-        <section className="mt-14 max-w-4xl">
+        <section
+          id="faq"
+          className={cn("max-w-4xl scroll-mt-40", service.slug !== "phone-repair" && "mt-14")}
+        >
           <h2 className="flex items-center gap-2 text-3xl font-semibold md:text-4xl">
             <MessageCircleQuestion className="h-7 w-7 text-primary" /> {ui.faq}
           </h2>
@@ -235,7 +245,10 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
           </div>
         </section>
 
-        <aside className="mt-14 grid gap-8 rounded-3xl bg-ink p-8 text-white md:grid-cols-[1.4fr_1fr] md:p-12">
+        <aside
+          id="visit"
+          className="mt-14 grid scroll-mt-40 gap-8 rounded-3xl bg-ink p-8 text-white md:grid-cols-[1.4fr_1fr] md:p-12"
+        >
           <div>
             <h2 className="text-3xl font-semibold">{ui.visit}</h2>
             <p className="mt-2 text-white/70">{ui.visitBody}</p>
