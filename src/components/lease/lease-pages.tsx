@@ -20,7 +20,7 @@ import {
   LeaseMoney,
   LeasePhoto,
   PaymentSummary,
-  leasePhoto,
+  leasePhotos,
 } from "@/components/lease/lease-ui";
 import { devicePath } from "@/components/products/device-paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
@@ -178,7 +178,10 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
   const [index, setIndex] = useState(() => device.options.indexOf(leaseFrom(device).option));
   const [frequency, setFrequency] = useState<Frequency>("weekly");
   const option = device.options[index] ?? device.options[0]!;
-  const credit = leasePhoto(device)?.credit;
+  const photos = leasePhotos(device);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const shown = photos[photoIndex] ?? photos[0];
+  const credit = shown?.credit;
   const from = leaseFrom(device);
   const category = LEASE_CATEGORIES.find((c) => c.id === device.category)!;
   const related = LEASE_DEVICES.filter(
@@ -200,10 +203,30 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
           <LeasePhoto
             device={device}
             lang={lang}
+            photo={shown}
             sizes="(min-width: 1024px) 45vw, 100vw"
             className="aspect-square rounded-[2rem] border"
             priority
           />
+          {photos.length > 1 && (
+            <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+              {photos.map((p, i) => (
+                <button
+                  key={p.image}
+                  type="button"
+                  onClick={() => setPhotoIndex(i)}
+                  aria-label={p.alt[lang]}
+                  aria-pressed={i === photoIndex}
+                  className={cn(
+                    "h-20 w-20 shrink-0 cursor-pointer overflow-hidden rounded-2xl border bg-white p-1.5 transition",
+                    i === photoIndex ? "border-primary ring-2 ring-primary" : "hover:border-ink/30",
+                  )}
+                >
+                  <img src={p.image} alt="" width={p.w} height={p.h} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                </button>
+              ))}
+            </div>
+          )}
           {credit && (
             <p className="mt-2 text-[11px] text-muted-foreground">
               {lang === "en" ? "Photo" : "Foto"}:{" "}

@@ -5,7 +5,6 @@ import {
   LEASE_CATEGORIES,
   LEASE_DEVICES,
   LEASE_FEATURED,
-  PAYMENT_RATE,
   findLeaseDevice,
   leaseFrom,
   payment,
@@ -35,46 +34,22 @@ describe("lease-to-own catalog", () => {
     if (d.deviceId) expect(LATEST_DEVICES.some((x) => x.id === d.deviceId), d.deviceId).toBe(true);
   });
 
-  it("uses the sheet's payment estimates where it has them", () => {
-    const o = findLeaseDevice("iphone-16")!.options[0]!; // 128GB, leasing $799
-    expect([payment(o, "weekly"), payment(o, "biweekly"), payment(o, "monthly")]).toEqual([39, 78, 152]);
-    // Higher-than-rate sheet figures are kept, never lowered.
-    const air = findLeaseDevice("iphone-air")!.options[0]!;
-    expect([payment(air, "weekly"), payment(air, "biweekly"), payment(air, "monthly")]).toEqual([88, 177, 342]);
-  });
-
-  it("fills blank periods from the leasing price at the sheet's own rate", () => {
-    // iPhone 17 Pro 256GB: sheet gives only $64/wk on a $1,299 lease.
-    const o = findLeaseDevice("iphone-17-pro")!.options[0]!;
-    expect(payment(o, "weekly")).toBe(64);
-    expect(payment(o, "biweekly")).toBe(Math.round(1299 * 0.098));
-    expect(payment(o, "monthly")).toBe(Math.round(1299 * 0.19));
-    // Cash-price-based sheet figures were dropped: Watch Series 11 46mm uses its $599 lease.
-    const w = findLeaseDevice("apple-watch-series-11")!.options[1]!;
-    expect(payment(w, "monthly")).toBe(114);
-  });
-
-  it("gives every option all three payments, and they rise with the period", () => {
+  // Owner's rule (updated sheet): list a row only when it has a leasing price and all three
+  // payments are above $0.
+  it("lists only options with a leasing price and all three payments from the sheet", () => {
     for (const d of LEASE_DEVICES)
       for (const o of d.options) {
         const [w, b, m] = (["weekly", "biweekly", "monthly"] as const).map((f) => payment(o, f));
-        expect(w, `${d.id} ${o.label.en}`).toBeGreaterThan(0);
+        expect(o.lease, `${d.id} ${o.label.en}`).toBeGreaterThan(0);
+        for (const v of [w, b, m]) expect(v, `${d.id} ${o.label.en}`).toBeGreaterThan(0);
         expect(b).toBeGreaterThan(w!);
         expect(m).toBeGreaterThan(b!);
       }
   });
 
-  it("matches the sheet's own estimates to within $1 almost everywhere", () => {
-    let n = 0;
-    let close = 0;
-    for (const d of LEASE_DEVICES)
-      for (const o of d.options)
-        for (const f of ["weekly", "biweekly", "monthly"] as const) {
-          if (!o[f]) continue;
-          n++;
-          if (Math.abs(Math.round(o.lease * PAYMENT_RATE[f]) - o[f]!) <= 1) close++;
-        }
-    expect(close / n).toBeGreaterThan(0.9);
+  it("leaves out devices the sheet doesn't fully price, and the Alcatel 3V", () => {
+    expect(findLeaseDevice("iphone-18-pro")).toBeUndefined(); // bi-weekly $0
+    expect(findLeaseDevice("alcatel-3v")).toBeUndefined(); // removed by the owner
   });
 
   it("'from' prices use the cheapest option and its own payment", () => {
@@ -85,7 +60,10 @@ describe("lease-to-own catalog", () => {
   it("matches the owner's price sheet (spot checks)", () => {
     const opt = (id: string, label: string) =>
       findLeaseDevice(id)!.options.find((o) => o.label.en === label);
-    expect(opt("iphone-18-pro-max", "256GB")).toMatchObject({ cash: 1699, lease: 1799, weekly: 101 });
+    expect(opt("iphone-18-pro-max", "256GB")).toMatchObject({ cash: 1649, lease: 1699, weekly: 83, biweekly: 191, monthly: 323 });
+    expect(opt("iphone-air", "256GB")).toMatchObject({ lease: 1150, weekly: 56, biweekly: 167, monthly: 218 });
+    expect(opt("iphone-16-plus", "256GB")).toMatchObject({ lease: 949, weekly: 47, biweekly: 93, monthly: 180 });
+    expect(opt("ipad-8", "128GB · Wi-Fi + Cellular")).toMatchObject({ lease: 279, weekly: 14, biweekly: 27, monthly: 53 });
     expect(opt("galaxy-s25-ultra", "512GB")).toMatchObject({ cash: 1050, lease: 1149, monthly: 218 });
     expect(opt("nintendo-switch-2", "Console")).toMatchObject({ cash: 650, lease: 750, biweekly: 74 });
     expect(opt("galaxy-s22-ultra", "256GB")).toEqual(
@@ -105,19 +83,14 @@ describe("lease-to-own catalog", () => {
     expect(text).not.toMatch(/\.cash\b|buy.in.full|buyInFull|precio de contado|cash price/i);
   });
 
-  // Wikimedia Commons has no photo of these two; they show the brand tile until the store adds one.
-  const NO_PHOTO_YET = ["moto-g-ace-5g", "alcatel-3v"];
-
-  it("gives every other device a photo, with its files on disk and a credit", () => {
-    for (const d of LEASE_DEVICES) {
-      if (NO_PHOTO_YET.includes(d.id)) continue;
-      expect(leasePhoto(d), d.id).toBeDefined();
-    }
+  it("gives every device a photo, with its files on disk", () => {
+    for (const d of LEASE_DEVICES) expect(leasePhoto(d), d.id).toBeDefined();
     for (const [id, p] of Object.entries(LEASE_PHOTOS)) {
       expect(findLeaseDevice(id), id).toBeDefined();
       for (const f of [p.src, p.jpg]) expect(fs.existsSync(`public${f}`), f).toBe(true);
       if (p.w > 600) expect(fs.existsSync(`public${p.src.replace(".webp", "-480.webp")}`), id).toBe(true);
-      expect(p.credit?.href).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+      // Commons photos are credited; the store's own photos need none.
+      if (p.credit) expect(p.credit.href).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
     }
   });
 });

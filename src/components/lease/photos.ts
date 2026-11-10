@@ -21,6 +21,15 @@ const p = (
   credit: { author, license, href },
 });
 
+/** A photo the store supplied itself (no attribution). */
+const own = (id: string, w: number, h: number, en: string, es: string): ProductPhoto => ({
+  src: `/photos/devices/product/${id}.webp`,
+  jpg: `/photos/devices/product/${id}.jpg`,
+  w,
+  h,
+  alt: { en, es },
+});
+
 export const LEASE_PHOTOS: Record<string, ProductPhoto> = {
   "iphone-air": p("iphone-air", 800, 1200, "iPhone Air in Space Black", "iPhone Air color Negro espacial", "Ahmad Ali Karim", "CC0", "https://commons.wikimedia.org/wiki/File:Space_Black_iPhone_Air.jpg"),
   "iphone-15-pro": p("iphone-15-pro", 435, 1200, "iPhone 15 Pro in Natural Titanium", "iPhone 15 Pro color Titanio natural", "IPHONE 15", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Apple_iPhone_15_Pro.jpg"),
@@ -52,4 +61,16 @@ export const LEASE_PHOTOS: Record<string, ProductPhoto> = {
   "nintendo-switch-2": p("nintendo-switch-2", 1200, 643, "Nintendo Switch 2 in its dock", "Nintendo Switch 2 en su base", "Crisco 1492", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_in_Docking_Console.jpg"),
   "playstation-portal": p("playstation-portal", 1200, 397, "PlayStation Portal remote player", "Reproductor remoto PlayStation Portal", "ArlindoPereira", "CC BY 4.0", "https://commons.wikimedia.org/wiki/File:PlayStation_Portal.jpg"),
   "samsung-tv-65": p("samsung-tv-65", 1200, 675, "Samsung QLED TV", "Televisor Samsung QLED", "Bretwa", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Samsung_QLED_TV_8K_-_75_inches_-_2018-11-02.jpg"),
+  // Photos supplied by the store (no credit needed).
+  "moto-g-ace-5g": own("moto-g-ace-5g", 894, 940, "Moto G Ace 5G, front and back", "Moto G Ace 5G, frente y reverso"),
+};
+
+/** Extra photos shown as thumbnails on a device's lease page (the first is LEASE_PHOTOS[id]). */
+export const LEASE_GALLERY: Record<string, ProductPhoto[]> = {
+  "moto-g-ace-5g": [
+    own("moto-g-ace-5g-2", 332, 990, "Moto G Ace 5G, back at an angle", "Moto G Ace 5G, reverso en ángulo"),
+    own("moto-g-ace-5g-3", 334, 989, "Moto G Ace 5G, front at an angle", "Moto G Ace 5G, frente en ángulo"),
+    own("moto-g-ace-5g-4", 460, 983, "Moto G Ace 5G, back", "Moto G Ace 5G, reverso"),
+    own("moto-g-ace-5g-5", 463, 986, "Moto G Ace 5G, front", "Moto G Ace 5G, frente"),
+  ],
 };

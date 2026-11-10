@@ -26,7 +26,8 @@ import {
   type LeaseOption,
 } from "@/components/lease/catalog";
 import { LEASE_COPY } from "@/components/lease/copy";
-import { LEASE_PHOTOS } from "@/components/lease/photos";
+import { LEASE_GALLERY, LEASE_PHOTOS } from "@/components/lease/photos";
+import type { ProductPhoto } from "@/components/products/devices";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { photoSrcSet } from "@/components/products/photo-src";
 import type { Lang } from "@/components/site/seo";
@@ -56,9 +57,24 @@ const ICONS: Record<LeaseCategory, typeof Smartphone> = {
 };
 
 /** The device's photo: its own (lease/photos.ts), else its /devices page photo, else a brand tile. */
+/** Every photo of a device for its page's gallery: the main one, then any extras. */
+export function leasePhotos(device: LeaseDevice) {
+  const main = leasePhoto(device);
+  return main ? [main, ...(LEASE_GALLERY[device.id] ?? []).map(fromProductPhoto)] : [];
+}
+
+const fromProductPhoto = (p: ProductPhoto) => ({
+  image: p.src,
+  w: p.w,
+  h: p.h,
+  alt: p.alt,
+  fit: "contain" as const,
+  credit: p.credit,
+});
+
 export function leasePhoto(device: LeaseDevice) {
   const own = LEASE_PHOTOS[device.id];
-  if (own) return { image: own.src, w: own.w, h: own.h, alt: own.alt, fit: "contain" as const, credit: own.credit };
+  if (own) return fromProductPhoto(own);
   const d = device.deviceId ? LATEST_DEVICES.find((x) => x.id === device.deviceId) : undefined;
   return d ? { image: d.image, w: d.w, h: d.h, alt: d.alt, fit: d.fit, credit: undefined } : undefined;
 }
@@ -69,14 +85,17 @@ export function LeasePhoto({
   sizes,
   className,
   priority,
+  photo: chosen,
 }: {
   device: LeaseDevice;
   lang: Lang;
   sizes: string;
   className?: string;
   priority?: boolean;
+  /** A specific gallery photo; defaults to the device's main photo. */
+  photo?: ReturnType<typeof leasePhoto>;
 }) {
-  const photo = leasePhoto(device);
+  const photo = chosen ?? leasePhoto(device);
   const Icon = ICONS[device.category];
   return (
     <div className={cn("relative overflow-hidden bg-white", className)}>
