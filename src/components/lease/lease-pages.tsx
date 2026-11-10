@@ -120,6 +120,7 @@ export function LeaseHubPage({ lang }: { lang: Lang }) {
               label={t.showPayments}
               tone="dark"
             />
+            <p className="mt-2 text-xs leading-relaxed text-white/60">{t.freqNote}</p>
           </div>
         </div>
       </section>
@@ -242,6 +243,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             label={t.payQuestion}
             className="mt-3 max-w-md"
           />
+          <p className="mt-2 max-w-md text-xs leading-relaxed text-muted-foreground">{t.freqNote}</p>
 
           {/* 2. Which option — each shows only the chosen schedule's payment */}
           {device.options.length > 1 && (

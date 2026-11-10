@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -89,5 +90,16 @@ describe("lease-to-own catalog", () => {
       expect.objectContaining({ lease: 649 }),
     );
     expect(opt("galaxy-s22-ultra", "256GB")?.cash).toBeUndefined();
+  });
+
+  // Lease pages are for leasing only: the sheet's cash prices are kept in the data, never shown.
+  it.each([
+    "src/components/lease/lease-ui.tsx",
+    "src/components/lease/lease-pages.tsx",
+    "src/components/lease/heads.ts",
+    "src/components/lease/copy.ts",
+  ])("%s never shows a buy-in-full price", (file) => {
+    const text = fs.readFileSync(file, "utf8");
+    expect(text).not.toMatch(/\.cash\b|buy.in.full|buyInFull|precio de contado|cash price/i);
   });
 });

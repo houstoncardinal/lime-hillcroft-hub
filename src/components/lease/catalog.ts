@@ -15,7 +15,7 @@ type L = Record<Lang, string>;
 export type LeaseOption = {
   /** Storage / size / condition, e.g. "256GB · Sealed". */
   label: L;
-  /** Buy-in-full (cash) price, USD. Missing when the sheet only has a leasing price. */
+  /** Buy-in-full (cash) price from the sheet, USD — kept for reference, never shown on lease pages. */
   cash?: number;
   /** Leasing price, USD. */
   lease: number;

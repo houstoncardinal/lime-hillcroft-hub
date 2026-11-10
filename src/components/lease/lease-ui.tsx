@@ -280,7 +280,7 @@ export function FrequencyToggle({
   );
 }
 
-/** One option's estimated payment for the chosen schedule, with its prices underneath. */
+/** One option's estimated payment for the chosen schedule, with its leasing price underneath. */
 export function PaymentSummary({
   option,
   frequency,
@@ -302,20 +302,12 @@ export function PaymentSummary({
         </span>
         <span className="text-lg font-semibold text-muted-foreground">{t.perLong[frequency]}</span>
       </p>
-      <dl className="mt-4 grid grid-cols-2 gap-3 border-t pt-4 text-sm">
-        <div>
-          <dt className="text-muted-foreground">{t.leasingPrice}</dt>
-          <dd className="mt-0.5 text-base font-semibold tabular-nums">
-            <LeaseMoney usd={option.lease} />
-          </dd>
-        </div>
-        <div>
-          <dt className="text-muted-foreground">{t.buyInFull}</dt>
-          <dd className="mt-0.5 text-base font-semibold tabular-nums">
-            {option.cash ? <LeaseMoney usd={option.cash} /> : t.callPrice}
-          </dd>
-        </div>
-      </dl>
+      <p className="mt-4 flex items-baseline justify-between gap-3 border-t pt-4 text-sm">
+        <span className="text-muted-foreground">{t.leasingPrice}</span>
+        <span className="text-base font-semibold tabular-nums">
+          <LeaseMoney usd={option.lease} />
+        </span>
+      </p>
     </div>
   );
 }
