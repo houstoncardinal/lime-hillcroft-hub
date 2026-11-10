@@ -7,7 +7,14 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  vite: { optimizeDeps: { include: ["recharts"] } },
+  vite: {
+    optimizeDeps: { include: ["recharts"] },
+    // Lovable-hosted assets (src/assets/**/*.asset.json point at /__l5e/…) are only served by
+    // Lovable's hosting; in local dev, fetch them from the live site so images still show.
+    server: {
+      proxy: { "/__l5e": { target: "https://www.ticwirelesstx.com", changeOrigin: true } },
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
