@@ -69,7 +69,7 @@ import {
 import { OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
-import { devicePath } from "@/components/products/device-paths";
+import { leaseDevicePath } from "@/components/lease/catalog";
 import { LeaseBanner } from "@/components/lease/lease-banner";
 import { LeaseSection } from "@/components/lease/lease-ui";
 import { ShopByCategory } from "@/components/pages/shop-by-category";
@@ -223,7 +223,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   </p>
                 </div>
                 <Link
-                  to={devicePath(lang, "iphone-18")}
+                  to={leaseDevicePath(lang, "iphone-18-pro-max")}
                   className="tap group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                 >
                   {<MoneyText text={t.hero.imageCta} />}
