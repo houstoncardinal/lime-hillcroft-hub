@@ -10,6 +10,7 @@ import type { LeaseDevice, LeaseOption } from "@/components/lease/catalog";
 export const SHOPIFY_LISTINGS: Record<string, Record<string, string>> = {
   // iPhone
   "iphone-18-pro-max": { "256GB": "iphone-18-pro-max", "512GB": "iphone-18-pro-max" },
+  "iphone-18-pro": { "256GB": "iphone-18-pro" },
   "iphone-17-pro-max": { "256GB · Sealed": "iphone-17-pro-max" },
   "iphone-17-pro": { "256GB": "iphone-17-pro" },
   "iphone-air": { "256GB": "apple-i-phone-air-black-color-256-gb" },

@@ -48,8 +48,11 @@ describe("lease-to-own catalog", () => {
       }
   });
 
-  it("leaves out devices the sheet doesn't fully price, and the Alcatel 3V", () => {
-    expect(findLeaseDevice("iphone-18-pro")).toBeUndefined(); // bi-weekly $0
+  it("includes the iPhone 18 Pro and iPhone 13 Pro Max 256GB; leaves out the Alcatel 3V", () => {
+    expect(findLeaseDevice("iphone-18-pro")!.options[0]).toMatchObject({ lease: 1549, weekly: 76, biweekly: 152, monthly: 294 });
+    expect(findLeaseDevice("iphone-13-pro-max")!.options).toContainEqual(
+      expect.objectContaining({ lease: 750, weekly: 37, biweekly: 74, monthly: 142 }),
+    );
     expect(findLeaseDevice("alcatel-3v")).toBeUndefined(); // removed by the owner
   });
 

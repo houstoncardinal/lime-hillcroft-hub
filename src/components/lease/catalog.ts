@@ -3,7 +3,8 @@ import { ALTERNATES, type Lang } from "@/components/site/seo";
 // Lease-to-own catalog: devices the store leases in person, with the owner's price sheet
 // ("100% Phone Price – Sheet1", updated sheet received 2026-11-10). Leasing prices and the weekly /
 // bi-weekly / monthly payment estimates are the sheet's, exactly. A row is listed only when it has
-// a leasing price and all three payments are above $0; unlabeled rows are left out.
+// a leasing price and its payments; unlabeled rows are left out. Exceptions, noted where they
+// are: iPhone 18 Pro (bi-weekly $0 on the sheet) and iPhone 13 Pro Max 256GB (prices one line down).
 // The sheet's internal columns (discount eligibility, "check cost") are not published.
 // These pages never use Shopify: customers apply with a leasing partner and pick up in store.
 
@@ -85,6 +86,9 @@ export const LEASE_DEVICES: LeaseDevice[] = [
   // ---------- iPhone ----------
   { id: "iphone-18-pro-max", name: "iPhone 18 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-18",
     options: [o("256GB", 1649, 1699, 83, 191, 323), o("512GB", 1899, 1949, 96, 152, 370)] },
+  { id: "iphone-18-pro", name: "iPhone 18 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-18-pro",
+    // The sheet's bi-weekly cell is $0; $152 is 2 × the $76 weekly, as on the sheet's other rows.
+    options: [o("256GB", 1499, 1549, 76, 152, 294)] },
   { id: "iphone-17-pro-max", name: "iPhone 17 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-17-pro-max",
     options: [o(SEALED("256GB"), 1359, 1399, 69, 137, 266), o(OPEN_BOX("256GB"), 1399, 1429, 70, 140, 271)] },
   { id: "iphone-17-pro", name: "iPhone 17 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-17-pro",
@@ -126,7 +130,8 @@ export const LEASE_DEVICES: LeaseDevice[] = [
   { id: "iphone-14", name: "iPhone 14", brand: "Apple", category: "iphone", deviceId: "iphone-14",
     options: [o("128GB", 479, 549, 27, 54, 104), o("256GB", 499, 569, 28, 56, 108)] },
   { id: "iphone-13-pro-max", name: "iPhone 13 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-13-pro-max",
-    options: [o(UNLOCKED("128GB"), 599, 649, 32, 64, 123)] },
+    // 256GB: the sheet puts its prices on the line just under the "256 Unlocked" label.
+    options: [o(UNLOCKED("128GB"), 599, 649, 32, 64, 123), o(UNLOCKED("256GB"), 650, 750, 37, 74, 142)] },
   { id: "iphone-13", name: "iPhone 13", brand: "Apple", category: "iphone", deviceId: "iphone-13",
     options: [
       o(l("128GB · Unlocked · Black", "128GB · Desbloqueado · Negro"), 399, 450, 22, 44, 85),
