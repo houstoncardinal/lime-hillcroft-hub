@@ -1,6 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, ChevronDown, ChevronRight, MapPin, Phone, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarClock,
+  ChevronDown,
+  ChevronRight,
+  MapPin,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
 import {
   LEASE_CATEGORIES,
@@ -14,6 +23,9 @@ import {
   type LeaseDevice,
 } from "@/components/lease/catalog";
 import { LEASE_COPY } from "@/components/lease/copy";
+import { shopifyHandle } from "@/components/lease/shopify-links";
+import { SHOP_ENABLED } from "@/components/site/features";
+import { productPath } from "@/shop/paths";
 import {
   FrequencyToggle,
   LeaseCard,
@@ -182,6 +194,8 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
   const [photoIndex, setPhotoIndex] = useState(0);
   const shown = photos[photoIndex] ?? photos[0];
   const credit = shown?.credit;
+  const shopHandle = shopifyHandle(device, option);
+  const onlineOptions = device.options.filter((x) => shopifyHandle(device, x));
   const from = leaseFrom(device);
   const category = LEASE_CATEGORIES.find((c) => c.id === device.category)!;
   const related = LEASE_DEVICES.filter(
@@ -313,6 +327,34 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             )}
             <PaymentSummary option={option} frequency={frequency} lang={lang} />
           </div>
+
+          {/* Special online option: the same model on our Shopify store, with Affirm pay-in-4 */}
+          {SHOP_ENABLED && shopHandle && (
+            <section
+              aria-labelledby="pay-in-4-title"
+              className="mt-4 rounded-3xl border border-shoppay/30 bg-shoppay/[0.06] p-5 sm:p-6"
+            >
+              <p className="inline-flex items-center gap-1.5 rounded-full bg-shoppay px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-shoppay-foreground">
+                <Sparkles className="h-3.5 w-3.5" /> {t.payIn4Kicker}
+              </p>
+              <h2 id="pay-in-4-title" className="mt-3 font-display text-lg font-semibold sm:text-xl">
+                {t.payIn4Title}
+              </h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.payIn4Body}</p>
+              <Link
+                to={productPath(lang, shopHandle)}
+                className="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-shoppay px-6 font-bold text-shoppay-foreground shadow-lg shadow-shoppay/25 transition hover:brightness-110 sm:w-auto"
+              >
+                <CalendarClock className="h-5 w-5" /> {t.payIn4Button}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </section>
+          )}
+          {SHOP_ENABLED && !shopHandle && onlineOptions.length > 0 && (
+            <p className="mt-3 text-xs text-muted-foreground">
+              {t.payIn4Other(onlineOptions.map((x) => x.label[lang]).join(", "))}
+            </p>
+          )}
 
           {/* Applications */}
           <section
