@@ -11,6 +11,8 @@ import {
   payment,
 } from "@/components/lease/catalog";
 import { LATEST_DEVICES } from "@/components/products/inventory";
+import { leasePhoto } from "@/components/lease/lease-ui";
+import { LEASE_PHOTOS } from "@/components/lease/photos";
 
 describe("lease-to-own catalog", () => {
   it("has unique ids, valid categories and featured devices", () => {
@@ -101,5 +103,21 @@ describe("lease-to-own catalog", () => {
   ])("%s never shows a buy-in-full price", (file) => {
     const text = fs.readFileSync(file, "utf8");
     expect(text).not.toMatch(/\.cash\b|buy.in.full|buyInFull|precio de contado|cash price/i);
+  });
+
+  // Wikimedia Commons has no photo of these two; they show the brand tile until the store adds one.
+  const NO_PHOTO_YET = ["moto-g-ace-5g", "alcatel-3v"];
+
+  it("gives every other device a photo, with its files on disk and a credit", () => {
+    for (const d of LEASE_DEVICES) {
+      if (NO_PHOTO_YET.includes(d.id)) continue;
+      expect(leasePhoto(d), d.id).toBeDefined();
+    }
+    for (const [id, p] of Object.entries(LEASE_PHOTOS)) {
+      expect(findLeaseDevice(id), id).toBeDefined();
+      for (const f of [p.src, p.jpg]) expect(fs.existsSync(`public${f}`), f).toBe(true);
+      if (p.w > 600) expect(fs.existsSync(`public${p.src.replace(".webp", "-480.webp")}`), id).toBe(true);
+      expect(p.credit?.href).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    }
   });
 });

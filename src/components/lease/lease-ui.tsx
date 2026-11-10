@@ -26,6 +26,7 @@ import {
   type LeaseOption,
 } from "@/components/lease/catalog";
 import { LEASE_COPY } from "@/components/lease/copy";
+import { LEASE_PHOTOS } from "@/components/lease/photos";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { photoSrcSet } from "@/components/products/photo-src";
 import type { Lang } from "@/components/site/seo";
@@ -54,7 +55,14 @@ const ICONS: Record<LeaseCategory, typeof Smartphone> = {
   tv: Tv,
 };
 
-/** The model's photo from its /devices page, or a uniform brand tile when the site has none. */
+/** The device's photo: its own (lease/photos.ts), else its /devices page photo, else a brand tile. */
+export function leasePhoto(device: LeaseDevice) {
+  const own = LEASE_PHOTOS[device.id];
+  if (own) return { image: own.src, w: own.w, h: own.h, alt: own.alt, fit: "contain" as const, credit: own.credit };
+  const d = device.deviceId ? LATEST_DEVICES.find((x) => x.id === device.deviceId) : undefined;
+  return d ? { image: d.image, w: d.w, h: d.h, alt: d.alt, fit: d.fit, credit: undefined } : undefined;
+}
+
 export function LeasePhoto({
   device,
   lang,
@@ -68,7 +76,7 @@ export function LeasePhoto({
   className?: string;
   priority?: boolean;
 }) {
-  const photo = device.deviceId ? LATEST_DEVICES.find((d) => d.id === device.deviceId) : undefined;
+  const photo = leasePhoto(device);
   const Icon = ICONS[device.category];
   return (
     <div className={cn("relative overflow-hidden bg-white", className)}>

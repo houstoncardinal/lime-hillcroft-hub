@@ -1,5 +1,6 @@
 import { LEASE_DEVICES, LEASE_PATHS, leaseDevicePaths, leaseFrom, type LeaseDevice } from "@/components/lease/catalog";
 import { LEASE_COPY } from "@/components/lease/copy";
+import { LEASE_PHOTOS } from "@/components/lease/photos";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { ogImage } from "@/components/site/og";
 import { leasingService, pageSchema } from "@/components/site/schema";
@@ -59,8 +60,10 @@ export function leaseDeviceHead(lang: Lang, device: LeaseDevice | undefined) {
   const paths = leaseDevicePaths(device.id);
   const title = `${device.name} — ${t.crumb} | TIC Wireless Houston`;
   const description = t.deviceMeta(device.name, usd(leaseFrom(device).lease));
+  const own = LEASE_PHOTOS[device.id];
   const photo = device.deviceId ? LATEST_DEVICES.find((d) => d.id === device.deviceId) : undefined;
-  const image = photo ? absoluteUrl(photo.image) : ogImage("home", lang);
+  // Share images use the .jpg copy; social sites don't all read WebP.
+  const image = own ? absoluteUrl(own.jpg) : photo ? absoluteUrl(photo.image) : ogImage("home", lang);
   return pageHead({
     paths,
     lang,

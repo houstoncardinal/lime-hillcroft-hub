@@ -20,6 +20,7 @@ import {
   LeaseMoney,
   LeasePhoto,
   PaymentSummary,
+  leasePhoto,
 } from "@/components/lease/lease-ui";
 import { devicePath } from "@/components/products/device-paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
@@ -177,6 +178,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
   const [index, setIndex] = useState(() => device.options.indexOf(leaseFrom(device).option));
   const [frequency, setFrequency] = useState<Frequency>("weekly");
   const option = device.options[index] ?? device.options[0]!;
+  const credit = leasePhoto(device)?.credit;
   const from = leaseFrom(device);
   const category = LEASE_CATEGORIES.find((c) => c.id === device.category)!;
   const related = LEASE_DEVICES.filter(
@@ -202,6 +204,15 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             className="aspect-square rounded-[2rem] border"
             priority
           />
+          {credit && (
+            <p className="mt-2 text-[11px] text-muted-foreground">
+              {lang === "en" ? "Photo" : "Foto"}:{" "}
+              <a href={credit.href} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">
+                {credit.author}
+              </a>
+              , {credit.license} · Wikimedia Commons
+            </p>
+          )}
           {device.deviceId && (
             <Link
               to={devicePath(lang, device.deviceId)}
