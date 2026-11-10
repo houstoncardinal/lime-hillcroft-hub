@@ -5,6 +5,7 @@ import {
   CalendarClock,
   ChevronDown,
   ChevronRight,
+  Info,
   MapPin,
   Phone,
   ShieldCheck,
@@ -341,6 +342,12 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                 {t.payIn4Title}
               </h2>
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.payIn4Body}</p>
+              <p className="mt-2 flex items-start gap-2 text-sm font-bold leading-snug text-ink sm:text-[15px]">
+                <Info className="mt-0.5 h-4 w-4 shrink-0 text-shoppay" aria-hidden="true" />
+                <span className="underline decoration-shoppay decoration-2 underline-offset-4">
+                  {t.payIn4Note}
+                </span>
+              </p>
               <Link
                 to={productPath(lang, shopHandle)}
                 className="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-shoppay px-6 font-bold text-shoppay-foreground shadow-lg shadow-shoppay/25 transition hover:brightness-110 sm:w-auto"
