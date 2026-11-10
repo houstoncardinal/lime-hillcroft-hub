@@ -33,7 +33,7 @@ const own = (id: string, w: number, h: number, en: string, es: string): ProductP
 export const LEASE_PHOTOS: Record<string, ProductPhoto> = {
   "iphone-air": p("iphone-air", 800, 1200, "iPhone Air in Space Black", "iPhone Air color Negro espacial", "Ahmad Ali Karim", "CC0", "https://commons.wikimedia.org/wiki/File:Space_Black_iPhone_Air.jpg"),
   "iphone-15-pro": p("iphone-15-pro", 435, 1200, "iPhone 15 Pro in Natural Titanium", "iPhone 15 Pro color Titanio natural", "IPHONE 15", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Apple_iPhone_15_Pro.jpg"),
-  "iphone-xs-max": p("iphone-xs-max", 1200, 782, "iPhone XS Max in Gold", "iPhone XS Max color Oro", "GillyBerlin", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:IPhone_XS_Max_gold_%26_Cappuccino_20180921.jpg"),
+  "iphone-xs-max": p("iphone-xs-max", 1207, 1200, "iPhone XS Max in Gold, front", "iPhone XS Max color Oro, frente", "Rafael Fernandez", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:IPhone_XS_Max_Gold.svg"),
   "iphone-xr": p("iphone-xr", 900, 1200, "iPhone XR in Blue", "iPhone XR color Azul", "Asdaiang14453", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:IPhone_XR.jpg"),
   "iphone-se-2": p("iphone-se-2", 900, 1200, "iPhone SE (2nd generation) in (PRODUCT)RED", "iPhone SE (2.ª generación) color (PRODUCT)RED", "Seth Whales", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:IPhone_SE_(2020)_Product_Red.jpg"),
   "iphone-8": p("iphone-8", 1200, 800, "iPhone 8 in Silver", "iPhone 8 color Plata", "Tinh tế Photo", "CC0", "https://commons.wikimedia.org/wiki/File:IPhone_8_silver_with_white_rear.jpg"),
