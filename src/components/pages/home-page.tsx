@@ -69,6 +69,7 @@ import { OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chro
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { devicePath } from "@/components/products/device-paths";
+import { LeaseSection } from "@/components/lease/lease-ui";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { LatestDevices } from "@/components/products/latest-devices";
 import { ReviewsCarousel } from "@/components/reviews/reviews-carousel";
@@ -250,6 +251,9 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           ))}
         </div>
       </section>
+
+      {/* Lease-to-own catalog (owner's price sheet; no Shopify checkout) */}
+      <LeaseSection lang={lang} />
 
       <LatestDevices devices={LATEST_DEVICES} lang={lang} limit={16} className="bg-secondary/40" />
 

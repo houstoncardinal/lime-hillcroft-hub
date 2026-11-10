@@ -14,6 +14,8 @@ import { DEVICE_PAGES } from "@/components/products/devices";
 import { categoryHead, deviceHead, devicesHubHead } from "@/components/products/heads";
 import { reviewsHead } from "@/components/reviews/heads";
 import { homeHead, leasingHead } from "@/components/pages/heads";
+import { LEASE_DEVICES, leaseDevicePath } from "@/components/lease/catalog";
+import { leaseDeviceHead, leaseHubHead } from "@/components/lease/heads";
 import { SERVICES } from "@/components/services/data";
 import { serviceHead, servicesHubHead } from "@/components/services/heads";
 import { servicePath } from "@/components/services/paths";
@@ -42,6 +44,8 @@ function pages(): [string, Head][] {
       [ALTERNATES.laptops[l], categoryHead("laptops", l)],
       [ALTERNATES.iphone18[l], categoryHead("iphone18", l)],
       [ALTERNATES.devices[l], devicesHubHead(l)],
+      [ALTERNATES.leaseCatalog[l], leaseHubHead(l)],
+      ...LEASE_DEVICES.map((d): [string, Head] => [leaseDevicePath(l, d.id), leaseDeviceHead(l, d)]),
       ...DEVICE_PAGES.map((d): [string, Head] => [devicePath(l, d.device.id), deviceHead(l, d)]),
       [ALTERNATES.reviews[l], reviewsHead(l)],
       [ALTERNATES.services[l], servicesHubHead(l)],

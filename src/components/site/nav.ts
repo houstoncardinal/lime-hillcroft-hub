@@ -1,4 +1,5 @@
 import {
+  BadgeCheck,
   Gamepad2,
   Globe,
   Headphones,
@@ -32,6 +33,7 @@ export type NavItem = {
 
 const L = {
   en: {
+    leaseCatalog: ["Lease-to-own devices", "Phones, iPads, MacBooks & consoles · no credit"],
     allDevices: ["All phones & tablets", "iPhone 11–18, Galaxy S20–S26 & iPad"],
     phones: ["Unlocked phones", "iPhone, Samsung Galaxy & Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max in store, leasing"],
@@ -51,6 +53,7 @@ const L = {
     recharge: ["International recharge", "Top up phones abroad"],
   },
   es: {
+    leaseCatalog: ["Equipos en arrendamiento", "Celulares, iPad, MacBook y consolas · sin crédito"],
     allDevices: ["Todos los celulares y tabletas", "iPhone 11–18, Galaxy S20–S26 y iPad"],
     phones: ["Celulares desbloqueados", "iPhone, Samsung Galaxy y Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max en tienda, a pagos"],
@@ -82,6 +85,7 @@ const item = ([label, hint]: string[], href: string, icon: typeof Smartphone): N
 export function productNav(lang: Lang): NavItem[] {
   const t = L[lang];
   return [
+    item(t.leaseCatalog, ALTERNATES.leaseCatalog[lang], BadgeCheck),
     item(t.allDevices, ALTERNATES.devices[lang], Smartphone),
     item(t.phones, servicePath(lang, "unlocked-phones"), Smartphone),
     item(t.iphone18, ALTERNATES.iphone18[lang], Smartphone),

@@ -37,6 +37,8 @@ import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
 import { Route as Iphone18IndexRouteImport } from './routes/iphone-18/index'
 import { Route as LaptopsTabletsIndexRouteImport } from './routes/laptops-tablets/index'
+import { Route as LeaseToOwnIndexRouteImport } from './routes/lease-to-own/index'
+import { Route as LeaseToOwnIdRouteImport } from './routes/lease-to-own/$id'
 import { Route as LocationIndexRouteImport } from './routes/location/index'
 import { Route as PoliciesPolicyRouteImport } from './routes/policies/$policy'
 import { Route as ReviewsIndexRouteImport } from './routes/reviews/index'
@@ -46,6 +48,8 @@ import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopHandleRouteImport } from './routes/shop/$handle'
 import { Route as ApiPublicSitemapRouteImport } from './routes/api/public/sitemap'
 import { Route as EsAccesoriosIndexRouteImport } from './routes/es/accesorios/index'
+import { Route as EsArrendamientoEquiposIndexRouteImport } from './routes/es/arrendamiento-equipos/index'
+import { Route as EsArrendamientoEquiposIdRouteImport } from './routes/es/arrendamiento-equipos/$id'
 import { Route as EsConsolasIndexRouteImport } from './routes/es/consolas/index'
 import { Route as EsEquiposIndexRouteImport } from './routes/es/equipos/index'
 import { Route as EsEquiposSlugRouteImport } from './routes/es/equipos/$slug'
@@ -203,6 +207,16 @@ const LaptopsTabletsIndexRoute = LaptopsTabletsIndexRouteImport.update({
   path: '/laptops-tablets/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeaseToOwnIndexRoute = LeaseToOwnIndexRouteImport.update({
+  id: '/lease-to-own/',
+  path: '/lease-to-own/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaseToOwnIdRoute = LeaseToOwnIdRouteImport.update({
+  id: '/lease-to-own/$id',
+  path: '/lease-to-own/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocationIndexRoute = LocationIndexRouteImport.update({
   id: '/location/',
   path: '/location/',
@@ -248,6 +262,18 @@ const EsAccesoriosIndexRoute = EsAccesoriosIndexRouteImport.update({
   path: '/es/accesorios/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsArrendamientoEquiposIndexRoute =
+  EsArrendamientoEquiposIndexRouteImport.update({
+    id: '/es/arrendamiento-equipos/',
+    path: '/es/arrendamiento-equipos/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EsArrendamientoEquiposIdRoute =
+  EsArrendamientoEquiposIdRouteImport.update({
+    id: '/es/arrendamiento-equipos/$id',
+    path: '/es/arrendamiento-equipos/$id',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EsConsolasIndexRoute = EsConsolasIndexRouteImport.update({
   id: '/es/consolas/',
   path: '/es/consolas/',
@@ -349,6 +375,7 @@ export interface FileRoutesByFullPath {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/lease-to-own/$id': typeof LeaseToOwnIdRoute
   '/policies/$policy': typeof PoliciesPolicyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
@@ -361,11 +388,13 @@ export interface FileRoutesByFullPath {
   '/guides/': typeof GuidesIndexRoute
   '/iphone-18/': typeof Iphone18IndexRoute
   '/laptops-tablets/': typeof LaptopsTabletsIndexRoute
+  '/lease-to-own/': typeof LeaseToOwnIndexRoute
   '/location/': typeof LocationIndexRoute
   '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/api/public/sitemap': typeof ApiPublicSitemapRoute
+  '/es/arrendamiento-equipos/$id': typeof EsArrendamientoEquiposIdRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
@@ -373,6 +402,7 @@ export interface FileRoutesByFullPath {
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/accesorios/': typeof EsAccesoriosIndexRoute
+  '/es/arrendamiento-equipos/': typeof EsArrendamientoEquiposIndexRoute
   '/es/consolas/': typeof EsConsolasIndexRoute
   '/es/equipos/': typeof EsEquiposIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
@@ -403,6 +433,7 @@ export interface FileRoutesByTo {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/lease-to-own/$id': typeof LeaseToOwnIdRoute
   '/policies/$policy': typeof PoliciesPolicyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
@@ -415,11 +446,13 @@ export interface FileRoutesByTo {
   '/guides': typeof GuidesIndexRoute
   '/iphone-18': typeof Iphone18IndexRoute
   '/laptops-tablets': typeof LaptopsTabletsIndexRoute
+  '/lease-to-own': typeof LeaseToOwnIndexRoute
   '/location': typeof LocationIndexRoute
   '/reviews': typeof ReviewsIndexRoute
   '/services': typeof ServicesIndexRoute
   '/shop': typeof ShopIndexRoute
   '/api/public/sitemap': typeof ApiPublicSitemapRoute
+  '/es/arrendamiento-equipos/$id': typeof EsArrendamientoEquiposIdRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
@@ -427,6 +460,7 @@ export interface FileRoutesByTo {
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/accesorios': typeof EsAccesoriosIndexRoute
+  '/es/arrendamiento-equipos': typeof EsArrendamientoEquiposIndexRoute
   '/es/consolas': typeof EsConsolasIndexRoute
   '/es/equipos': typeof EsEquiposIndexRoute
   '/es/guias': typeof EsGuiasIndexRoute
@@ -459,6 +493,7 @@ export interface FileRoutesById {
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/lease-to-own/$id': typeof LeaseToOwnIdRoute
   '/policies/$policy': typeof PoliciesPolicyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/shop/$handle': typeof ShopHandleRoute
@@ -471,11 +506,13 @@ export interface FileRoutesById {
   '/guides/': typeof GuidesIndexRoute
   '/iphone-18/': typeof Iphone18IndexRoute
   '/laptops-tablets/': typeof LaptopsTabletsIndexRoute
+  '/lease-to-own/': typeof LeaseToOwnIndexRoute
   '/location/': typeof LocationIndexRoute
   '/reviews/': typeof ReviewsIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/shop/': typeof ShopIndexRoute
   '/api/public/sitemap': typeof ApiPublicSitemapRoute
+  '/es/arrendamiento-equipos/$id': typeof EsArrendamientoEquiposIdRoute
   '/es/equipos/$slug': typeof EsEquiposSlugRoute
   '/es/guias/$slug': typeof EsGuiasSlugRoute
   '/es/politicas/$policy': typeof EsPoliticasPolicyRoute
@@ -483,6 +520,7 @@ export interface FileRoutesById {
   '/es/tienda/$handle': typeof EsTiendaHandleRoute
   '/es/zonas/$slug': typeof EsZonasSlugRoute
   '/es/accesorios/': typeof EsAccesoriosIndexRoute
+  '/es/arrendamiento-equipos/': typeof EsArrendamientoEquiposIndexRoute
   '/es/consolas/': typeof EsConsolasIndexRoute
   '/es/equipos/': typeof EsEquiposIndexRoute
   '/es/guias/': typeof EsGuiasIndexRoute
@@ -516,6 +554,7 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/lease-to-own/$id'
     | '/policies/$policy'
     | '/services/$slug'
     | '/shop/$handle'
@@ -528,11 +567,13 @@ export interface FileRouteTypes {
     | '/guides/'
     | '/iphone-18/'
     | '/laptops-tablets/'
+    | '/lease-to-own/'
     | '/location/'
     | '/reviews/'
     | '/services/'
     | '/shop/'
     | '/api/public/sitemap'
+    | '/es/arrendamiento-equipos/$id'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/politicas/$policy'
@@ -540,6 +581,7 @@ export interface FileRouteTypes {
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
     | '/es/accesorios/'
+    | '/es/arrendamiento-equipos/'
     | '/es/consolas/'
     | '/es/equipos/'
     | '/es/guias/'
@@ -570,6 +612,7 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/lease-to-own/$id'
     | '/policies/$policy'
     | '/services/$slug'
     | '/shop/$handle'
@@ -582,11 +625,13 @@ export interface FileRouteTypes {
     | '/guides'
     | '/iphone-18'
     | '/laptops-tablets'
+    | '/lease-to-own'
     | '/location'
     | '/reviews'
     | '/services'
     | '/shop'
     | '/api/public/sitemap'
+    | '/es/arrendamiento-equipos/$id'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/politicas/$policy'
@@ -594,6 +639,7 @@ export interface FileRouteTypes {
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
     | '/es/accesorios'
+    | '/es/arrendamiento-equipos'
     | '/es/consolas'
     | '/es/equipos'
     | '/es/guias'
@@ -625,6 +671,7 @@ export interface FileRouteTypes {
     | '/es/arrendamiento'
     | '/es/financiamiento'
     | '/guides/$slug'
+    | '/lease-to-own/$id'
     | '/policies/$policy'
     | '/services/$slug'
     | '/shop/$handle'
@@ -637,11 +684,13 @@ export interface FileRouteTypes {
     | '/guides/'
     | '/iphone-18/'
     | '/laptops-tablets/'
+    | '/lease-to-own/'
     | '/location/'
     | '/reviews/'
     | '/services/'
     | '/shop/'
     | '/api/public/sitemap'
+    | '/es/arrendamiento-equipos/$id'
     | '/es/equipos/$slug'
     | '/es/guias/$slug'
     | '/es/politicas/$policy'
@@ -649,6 +698,7 @@ export interface FileRouteTypes {
     | '/es/tienda/$handle'
     | '/es/zonas/$slug'
     | '/es/accesorios/'
+    | '/es/arrendamiento-equipos/'
     | '/es/consolas/'
     | '/es/equipos/'
     | '/es/guias/'
@@ -673,6 +723,7 @@ export interface RootRouteChildren {
   EsArrendamientoRoute: typeof EsArrendamientoRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
+  LeaseToOwnIdRoute: typeof LeaseToOwnIdRoute
   PoliciesPolicyRoute: typeof PoliciesPolicyRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ShopHandleRoute: typeof ShopHandleRoute
@@ -684,11 +735,13 @@ export interface RootRouteChildren {
   GuidesIndexRoute: typeof GuidesIndexRoute
   Iphone18IndexRoute: typeof Iphone18IndexRoute
   LaptopsTabletsIndexRoute: typeof LaptopsTabletsIndexRoute
+  LeaseToOwnIndexRoute: typeof LeaseToOwnIndexRoute
   LocationIndexRoute: typeof LocationIndexRoute
   ReviewsIndexRoute: typeof ReviewsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
   ApiPublicSitemapRoute: typeof ApiPublicSitemapRoute
+  EsArrendamientoEquiposIdRoute: typeof EsArrendamientoEquiposIdRoute
   EsEquiposSlugRoute: typeof EsEquiposSlugRoute
   EsGuiasSlugRoute: typeof EsGuiasSlugRoute
   EsPoliticasPolicyRoute: typeof EsPoliticasPolicyRoute
@@ -696,6 +749,7 @@ export interface RootRouteChildren {
   EsTiendaHandleRoute: typeof EsTiendaHandleRoute
   EsZonasSlugRoute: typeof EsZonasSlugRoute
   EsAccesoriosIndexRoute: typeof EsAccesoriosIndexRoute
+  EsArrendamientoEquiposIndexRoute: typeof EsArrendamientoEquiposIndexRoute
   EsConsolasIndexRoute: typeof EsConsolasIndexRoute
   EsEquiposIndexRoute: typeof EsEquiposIndexRoute
   EsGuiasIndexRoute: typeof EsGuiasIndexRoute
@@ -906,6 +960,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LaptopsTabletsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lease-to-own/': {
+      id: '/lease-to-own/'
+      path: '/lease-to-own'
+      fullPath: '/lease-to-own/'
+      preLoaderRoute: typeof LeaseToOwnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lease-to-own/$id': {
+      id: '/lease-to-own/$id'
+      path: '/lease-to-own/$id'
+      fullPath: '/lease-to-own/$id'
+      preLoaderRoute: typeof LeaseToOwnIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/location/': {
       id: '/location/'
       path: '/location'
@@ -967,6 +1035,20 @@ declare module '@tanstack/react-router' {
       path: '/es/accesorios'
       fullPath: '/es/accesorios/'
       preLoaderRoute: typeof EsAccesoriosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/arrendamiento-equipos/': {
+      id: '/es/arrendamiento-equipos/'
+      path: '/es/arrendamiento-equipos'
+      fullPath: '/es/arrendamiento-equipos/'
+      preLoaderRoute: typeof EsArrendamientoEquiposIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/arrendamiento-equipos/$id': {
+      id: '/es/arrendamiento-equipos/$id'
+      path: '/es/arrendamiento-equipos/$id'
+      fullPath: '/es/arrendamiento-equipos/$id'
+      preLoaderRoute: typeof EsArrendamientoEquiposIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/consolas/': {
@@ -1122,6 +1204,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsArrendamientoRoute: EsArrendamientoRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
   GuidesSlugRoute: GuidesSlugRoute,
+  LeaseToOwnIdRoute: LeaseToOwnIdRoute,
   PoliciesPolicyRoute: PoliciesPolicyRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ShopHandleRoute: ShopHandleRoute,
@@ -1133,11 +1216,13 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesIndexRoute: GuidesIndexRoute,
   Iphone18IndexRoute: Iphone18IndexRoute,
   LaptopsTabletsIndexRoute: LaptopsTabletsIndexRoute,
+  LeaseToOwnIndexRoute: LeaseToOwnIndexRoute,
   LocationIndexRoute: LocationIndexRoute,
   ReviewsIndexRoute: ReviewsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
   ApiPublicSitemapRoute: ApiPublicSitemapRoute,
+  EsArrendamientoEquiposIdRoute: EsArrendamientoEquiposIdRoute,
   EsEquiposSlugRoute: EsEquiposSlugRoute,
   EsGuiasSlugRoute: EsGuiasSlugRoute,
   EsPoliticasPolicyRoute: EsPoliticasPolicyRoute,
@@ -1145,6 +1230,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsTiendaHandleRoute: EsTiendaHandleRoute,
   EsZonasSlugRoute: EsZonasSlugRoute,
   EsAccesoriosIndexRoute: EsAccesoriosIndexRoute,
+  EsArrendamientoEquiposIndexRoute: EsArrendamientoEquiposIndexRoute,
   EsConsolasIndexRoute: EsConsolasIndexRoute,
   EsEquiposIndexRoute: EsEquiposIndexRoute,
   EsGuiasIndexRoute: EsGuiasIndexRoute,
