@@ -103,8 +103,8 @@ const en = {
   carriers: {
     kicker: "Plans & payments",
     title: `${CARRIER_COUNT} prepaid carriers, one counter.`,
-    recharge: "International recharge:",
-    more: "& more",
+    body: "Compare plans side by side, keep your number and get set up in minutes. No contracts, no credit check.",
+    cta: "Compare plans & prices",
   },
   repair: {
     kicker: "Repair · Unlock · Protect",
@@ -368,8 +368,8 @@ const es: HomeCopy = {
   carriers: {
     kicker: "Planes y pagos",
     title: `${CARRIER_COUNT} compañías prepagadas, en un solo mostrador.`,
-    recharge: "Recargas internacionales:",
-    more: "y más",
+    body: "Compara planes lado a lado, conserva tu número y quedas listo en minutos. Sin contratos ni revisión de crédito.",
+    cta: "Comparar planes y precios",
   },
   repair: {
     kicker: "Reparar · Liberar · Proteger",

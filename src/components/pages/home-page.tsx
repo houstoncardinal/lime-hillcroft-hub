@@ -1,3 +1,4 @@
+import { CarrierLogo } from "@/components/services/carrier-logo";
 import { PREPAID_CARRIERS } from "@/components/services/carriers";
 import { Link } from "@tanstack/react-router";
 import { Money, MoneyText } from "@/components/intl/money";
@@ -69,6 +70,7 @@ import { OpenBadge, SiteFooter, SiteHeader, Stars } from "@/components/site/chro
 import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { devicePath } from "@/components/products/device-paths";
+import { LeaseBanner } from "@/components/lease/lease-banner";
 import { LeaseSection } from "@/components/lease/lease-ui";
 import { ShopByCategory } from "@/components/pages/shop-by-category";
 import { LATEST_DEVICES } from "@/components/products/inventory";
@@ -90,9 +92,20 @@ const SERVICE_SLUGS = [
   "international-recharge",
 ];
 
-// The prepaid carriers (src/components/services/carriers.ts), plus Xfinity Prepaid internet.
-const CARRIERS = [...PREPAID_CARRIERS, "Xfinity Prepaid"];
-const RECHARGE = ["Tigo", "Digicel", "Movistar", "Telcel"];
+// The prepaid carriers (src/components/services/carriers.ts) with their logo ids, which are
+// also the prepaid page's tab ids (#plans-<id>).
+const LOGO_IDS: Record<(typeof PREPAID_CARRIERS)[number], string> = {
+  "T-Mobile Prepaid": "t-mobile",
+  "Verizon Prepaid": "verizon",
+  "AT&T Prepaid": "att",
+  Cricket: "cricket",
+  "Simple Mobile": "simple-mobile",
+  Tracfone: "tracfone",
+  "H2O Wireless": "h2o",
+  "Lyca Mobile": "lyca",
+  "Gen Mobile": "gen-mobile",
+};
+const CARRIER_LOGOS = PREPAID_CARRIERS.map((name) => [name, LOGO_IDS[name]] as const);
 
 const ACCESSORY_PHOTOS = [
   { src: caseWall, sm: caseWallSm, w: 2000, h: 1500, span: "sm:col-span-2 sm:row-span-2" },
@@ -234,24 +247,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         </div>
       </section>
 
-      {/* Ticker */}
-      <section
-        className="border-y border-ink/10 bg-primary py-4 text-primary-foreground"
-        aria-label="Highlights"
-      >
-        <div className="flex w-max animate-marquee">
-          {[0, 1].map((k) => (
-            <ul key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
-              {t.ticker.map((item) => (
-                <li key={item} className="eyebrow flex items-center gap-8 px-4 text-sm">
-                  {<MoneyText text={item} />}
-                  <span className="h-1.5 w-1.5 rounded-full bg-ink" />
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </section>
+      {/* Lease-to-own banner (replaces the scrolling ticker) */}
+      <LeaseBanner lang={lang} />
 
       {/* Shop by category: every product and service, one tile each */}
       <ShopByCategory lang={lang} />
@@ -396,38 +393,35 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       <ReviewsCarousel lang={lang} />
 
-      {/* Carriers */}
+      {/* Carriers: the nine prepaid carriers as logo tiles, each opening its plans */}
       <section className="border-y bg-secondary/60">
-        <div className="mx-auto max-w-7xl px-5 py-12 md:py-14">
-          <div className="grid gap-8 lg:grid-cols-[1fr_2fr] lg:items-center">
-            <div>
-              <p className="eyebrow text-slate">{<MoneyText text={t.carriers.kicker} />}</p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-                {<MoneyText text={t.carriers.title} />}
-              </h2>
-            </div>
-            <div>
-              <ul className="flex flex-wrap gap-2">
-                {CARRIERS.map((c) => (
-                  <li
-                    key={c}
-                    className="rounded-full border bg-card px-4 py-2 font-display text-sm font-medium text-ink"
-                  >
-                    {c}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                <Globe className="h-4 w-4" /> {<MoneyText text={t.carriers.recharge} />}
-                {RECHARGE.map((r) => (
-                  <span key={r} className="font-semibold text-ink">
-                    {r}
-                  </span>
-                ))}
-                <span>{<MoneyText text={t.carriers.more} />}</span>
-              </p>
-            </div>
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:py-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-12">
+          <div>
+            <p className="eyebrow text-slate">{<MoneyText text={t.carriers.kicker} />}</p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
+              {<MoneyText text={t.carriers.title} />}
+            </h2>
+            <p className="mt-3 max-w-md text-muted-foreground">{t.carriers.body}</p>
+            <Link
+              to={servicePath(lang, "prepaid-plans")}
+              className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 font-semibold text-white transition hover:bg-primary hover:text-primary-foreground"
+            >
+              {t.carriers.cta} <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
+          <ul className="grid grid-cols-3 gap-2 sm:gap-3">
+            {CARRIER_LOGOS.map(([name, id]) => (
+              <li key={id}>
+                <a
+                  href={`${servicePath(lang, "prepaid-plans")}#plans-${id}`}
+                  className="group flex h-full flex-col items-center justify-center gap-2 rounded-2xl border bg-card px-2 py-4 text-center transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:py-5"
+                >
+                  <CarrierLogo id={id} name={name} className="h-9 w-20 bg-transparent sm:h-10 sm:w-24" />
+                  <span className="text-xs font-semibold leading-tight text-ink sm:text-sm">{name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

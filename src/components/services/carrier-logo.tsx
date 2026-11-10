@@ -21,6 +21,9 @@ const LOGOS: Record<string, string> = {
   "gen-mobile": logo8.url,
 };
 
+// Some logo files are mostly empty margin around a small mark; zoom those to match the others.
+const ZOOM: Record<string, number> = { h2o: 2.4, "simple-mobile": 1.7 };
+
 export function CarrierLogo({ id, name, className }: { id: string; name: string; className?: string }) {
-  return <span className={cn("inline-flex h-10 w-20 shrink-0 items-center justify-center rounded-md bg-brand-surface px-2", className)}><img src={LOGOS[id]} alt={`${name} logo`} width={100} height={40} className="max-h-full w-full object-contain" decoding="async" /></span>;
+  return <span className={cn("inline-flex h-10 w-20 shrink-0 items-center justify-center overflow-hidden rounded-md bg-brand-surface px-2", className)}><img src={LOGOS[id]} alt={`${name} logo`} width={100} height={40} className="max-h-full w-full object-contain" style={ZOOM[id] ? { scale: String(ZOOM[id]) } : undefined} decoding="async" /></span>;
 }
