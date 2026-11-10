@@ -109,7 +109,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Can I get an iPhone with bad credit?",
-            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones with no credit needed, from $40 down. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID; it takes a few minutes in store to find out.",
+            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones with no credit needed, from $40 initial payment. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID; it takes a few minutes in store to find out.",
           },
           {
             q: "Will an unlocked phone work with my carrier?",
@@ -171,7 +171,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Puedo sacar un iPhone con mal crédito?",
-            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, sin necesidad de crédito y desde $40 de enganche. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación con foto; en unos minutos en la tienda sabes si calificas.",
+            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, sin necesidad de crédito y desde $40 de pago inicial. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación con foto; en unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",

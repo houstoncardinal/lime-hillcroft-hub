@@ -71,6 +71,7 @@ import { FaqList } from "@/components/site/faq";
 import { DotRing } from "@/components/site/logo";
 import { leaseDevicePath } from "@/components/lease/catalog";
 import { LeaseBanner } from "@/components/lease/lease-banner";
+import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeaseSection } from "@/components/lease/lease-ui";
 import { ShopByCategory } from "@/components/pages/shop-by-category";
 import { LATEST_DEVICES } from "@/components/products/inventory";
@@ -234,8 +235,8 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             <div className="absolute -left-6 top-8 hidden max-w-[15rem] rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-left-8 xl:-left-24">
               <p className="eyebrow text-slate">{<MoneyText text={t.hero.leaseLabel} />}</p>
               <p className="mt-1 font-display text-3xl font-semibold">
-                <Money usd={65} stacked />{" "}
-                <span className="text-base font-medium text-muted-foreground">
+                <Money usd={LEASING_INITIAL_PAYMENT_USD} stacked />
+                <span className="mt-0.5 block text-base font-semibold text-primary">
                   {<MoneyText text={t.hero.leaseUnit} />}
                 </span>
               </p>

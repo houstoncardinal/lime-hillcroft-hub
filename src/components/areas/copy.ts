@@ -42,7 +42,7 @@ export function areaCopy(a: Area, lang: Lang) {
         ],
         [
           "Celulares a pagos",
-          "Sin necesidad de crédito, desde $40 de enganche. Sujeto a aprobación.",
+          "Sin necesidad de crédito, desde $40 de pago inicial. Sujeto a aprobación.",
           ALTERNATES.leasing.es,
         ],
         ["Liberación", "Usa la compañía que quieras.", servicePath("es", "phone-unlocking")],
@@ -75,7 +75,7 @@ export function areaCopy(a: Area, lang: Lang) {
         },
         {
           q: `¿Puedo sacar un celular sin crédito cerca de ${short}?`,
-          a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados, sin necesidad de crédito, desde $40 de enganche y con pagos semanales, quincenales o mensuales (sujeto a aprobación).",
+          a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados, sin necesidad de crédito, desde $40 de pago inicial y con pagos semanales, quincenales o mensuales (sujeto a aprobación).",
         },
       ] as Faq[],
     };
@@ -103,7 +103,7 @@ export function areaCopy(a: Area, lang: Lang) {
       ],
       [
         "Phones with leasing",
-        "No credit needed, from $40 down. Subject to approval.",
+        "No credit needed, from $40 initial payment. Subject to approval.",
         ALTERNATES.leasing.en,
       ],
       ["Unlocking", "Use the carrier you choose.", servicePath("en", "phone-unlocking")],
@@ -136,7 +136,7 @@ export function areaCopy(a: Area, lang: Lang) {
       },
       {
         q: `Can I get a phone with no credit near ${short}?`,
-        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Androids with no credit needed, from $40 down, with weekly, biweekly or monthly payments (subject to approval).",
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Androids with no credit needed, from $40 initial payment, with weekly, biweekly or monthly payments (subject to approval).",
       },
     ] as Faq[],
   };

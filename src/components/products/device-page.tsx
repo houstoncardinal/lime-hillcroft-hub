@@ -43,7 +43,7 @@ const UI = {
     updated: (d: string) => `On our shelves ${d}`,
     leaseTitle: "Lease-to-own · no credit needed",
     leaseBody: (usd: number) =>
-      `As low as $${usd} down, subject to approval. Apply online in minutes, then pick it up in store.`,
+      `As low as $${usd} initial payment, subject to approval. Apply online in minutes, then pick it up in store.`,
     call: "Call to check stock",
     directions: "Directions",
     product: "Product photo",
@@ -76,7 +76,7 @@ const UI = {
     updated: (d: string) => `En vitrina el ${d}`,
     leaseTitle: "Arrendamiento · sin necesidad de crédito",
     leaseBody: (usd: number) =>
-      `Desde $${usd} de enganche, sujeto a aprobación. Solicita en línea en minutos y recoge en la tienda.`,
+      `Desde $${usd} de pago inicial, sujeto a aprobación. Solicita en línea en minutos y recoge en la tienda.`,
     call: "Llama para ver existencias",
     directions: "Cómo llegar",
     product: "Foto del producto",

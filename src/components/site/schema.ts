@@ -382,8 +382,8 @@ export function leasingService(lang: Lang, items: string[]) {
     serviceType: lang === "en" ? "Leasing (lease-to-own)" : "Arrendamiento con opción a compra",
     description:
       lang === "en"
-        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. No credit needed; options starting at $40 down. Subject to approval."
-        : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Sin necesidad de crédito; opciones desde $40 de enganche. Sujeto a aprobación.",
+        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. No credit needed; options starting at $40 initial payment. Subject to approval."
+        : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Sin necesidad de crédito; opciones desde $40 de pago inicial. Sujeto a aprobación.",
     url,
     provider: { "@id": STORE_ID },
     areaServed: houston,
@@ -402,13 +402,13 @@ export function leasingService(lang: Lang, items: string[]) {
       url,
       description:
         lang === "en"
-          ? "Options starting at $40 down. Subject to approval."
-          : "Opciones desde $40 de enganche. Sujeto a aprobación.",
+          ? "Options starting at $40 initial payment. Subject to approval."
+          : "Opciones desde $40 de pago inicial. Sujeto a aprobación.",
       priceSpecification: {
         "@type": "PriceSpecification",
         minPrice: 40,
         priceCurrency: "USD",
-        description: lang === "en" ? "Starting down payment" : "Enganche inicial",
+        description: lang === "en" ? "Starting initial payment" : "Pago inicial",
       },
     },
     hasOfferCatalog: {

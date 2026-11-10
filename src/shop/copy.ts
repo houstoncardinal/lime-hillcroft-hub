@@ -98,7 +98,7 @@ const en = {
     checkout: "Checkout with Shop Pay Installments",
     howTo: "Your cart shows the full purchase price, not a charge due now. Choose Shop Pay at checkout to see available installment plans and your actual payment amounts before placing your order.",
     availableNote: "Items marked with the purple Shop Pay chip can be split into installments. Continue to checkout and choose Shop Pay to review your plan before placing your order.",
-    fine: "Subject to eligibility and approval by Affirm. Estimates exclude taxes and shipping and are not a financing offer. Available plans, APR, any down payment and payment dates are confirmed at checkout. Monthly plans may include interest. Selecting this option here does not approve or activate financing.",
+    fine: "Subject to eligibility and approval by Affirm. Estimates exclude taxes and shipping and are not a financing offer. Available plans, APR, any initial payment and payment dates are confirmed at checkout. Monthly plans may include interest. Selecting this option here does not approve or activate financing.",
     provider: "Powered by Affirm",
     estimateNote: "Estimated 4-payment option · final terms at checkout",
     processTitle: "How to pay in installments",

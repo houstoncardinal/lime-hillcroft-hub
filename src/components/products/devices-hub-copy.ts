@@ -28,12 +28,12 @@ export const DEVICES_HUB_COPY = {
     crumb: "All devices",
     kicker: (date: string) => `In store · updated ${date}`,
     title: ["Every phone & tablet", "in our store."],
-    body: "iPhone 11 through iPhone 18 Pro Max, Samsung Galaxy S20 through S26 Ultra, Galaxy Z Fold and Flip foldables, Galaxy A phones and iPads — sold unlocked at 3640 Hillcroft St, with leasing from $40 down, no credit needed, subject to approval. Stock changes quickly, so call to confirm the model, storage and color you want.",
+    body: "iPhone 11 through iPhone 18 Pro Max, Samsung Galaxy S20 through S26 Ultra, Galaxy Z Fold and Flip foldables, Galaxy A phones and iPads — sold unlocked at 3640 Hillcroft St, with leasing from $40 initial payment, no credit needed, subject to approval. Stock changes quickly, so call to confirm the model, storage and color you want.",
     call: "Call to check stock",
     apply: "Apply for leasing",
     metaTitle: "Unlocked iPhones & Samsung Galaxy Phones in Houston — All Models",
     metaDescription:
-      "iPhone 11 to iPhone 18 Pro Max and Galaxy S20 to S26 Ultra in stock on Hillcroft in Houston. Unlocked, with leasing from $40 down, no credit needed.",
+      "iPhone 11 to iPhone 18 Pro Max and Galaxy S20 to S26 Ultra in stock on Hillcroft in Houston. Unlocked, with leasing from $40 initial payment, no credit needed.",
     sections: {
       iphone: "iPhone",
       "galaxy-s": "Galaxy S & Note",
@@ -66,7 +66,7 @@ export const DEVICES_HUB_COPY = {
       },
       {
         q: "Can I get a phone with no credit?",
-        a: "Yes, you can apply. Leasing (lease-to-own) needs no credit, starts at $40 down (iPhone 18 Pro Max from $65 down) and is subject to approval. Apply online with Acima, Progressive Leasing, American First Finance or Payvantage, or in store with a valid photo ID.",
+        a: "Yes, you can apply. Leasing (lease-to-own) needs no credit, starts at $40 initial payment (iPhone 18 Pro Max from $49 initial payment) and is subject to approval. Apply online with Acima, Progressive Leasing, American First Finance or Payvantage, or in store with a valid photo ID.",
       },
       {
         q: "Is everything on this page in stock right now?",
@@ -79,12 +79,12 @@ export const DEVICES_HUB_COPY = {
     crumb: "Todos los equipos",
     kicker: (date: string) => `En tienda · actualizado el ${date}`,
     title: ["Todos los celulares y tabletas", "de nuestra tienda."],
-    body: "Del iPhone 11 al iPhone 18 Pro Max, del Samsung Galaxy S20 al S26 Ultra, plegables Galaxy Z Fold y Flip, celulares Galaxy A y iPads, desbloqueados en 3640 Hillcroft St y a pagos desde $40 de enganche, sin necesidad de crédito, sujeto a aprobación. El inventario cambia rápido: llama para confirmar el modelo, la capacidad y el color.",
+    body: "Del iPhone 11 al iPhone 18 Pro Max, del Samsung Galaxy S20 al S26 Ultra, plegables Galaxy Z Fold y Flip, celulares Galaxy A y iPads, desbloqueados en 3640 Hillcroft St y a pagos desde $40 de pago inicial, sin necesidad de crédito, sujeto a aprobación. El inventario cambia rápido: llama para confirmar el modelo, la capacidad y el color.",
     call: "Llama para ver existencias",
     apply: "Solicita arrendamiento",
     metaTitle: "iPhone y Samsung Galaxy desbloqueados en Houston — Todos los modelos",
     metaDescription:
-      "Del iPhone 11 al iPhone 18 Pro Max y del Galaxy S20 al S26 Ultra en Hillcroft, Houston. Desbloqueados y a pagos desde $40 de enganche, sin crédito.",
+      "Del iPhone 11 al iPhone 18 Pro Max y del Galaxy S20 al S26 Ultra en Hillcroft, Houston. Desbloqueados y a pagos desde $40 de pago inicial, sin crédito.",
     sections: {
       iphone: "iPhone",
       "galaxy-s": "Galaxy S y Note",
@@ -117,7 +117,7 @@ export const DEVICES_HUB_COPY = {
       },
       {
         q: "¿Puedo sacar un celular sin crédito?",
-        a: "Sí, puedes solicitarlo. El arrendamiento con opción a compra no necesita crédito, empieza desde $40 de enganche (iPhone 18 Pro Max desde $65) y está sujeto a aprobación. Solicita en línea con Acima, Progressive Leasing, American First Finance o Payvantage, o en la tienda con una identificación con foto.",
+        a: "Sí, puedes solicitarlo. El arrendamiento con opción a compra no necesita crédito, empieza desde $40 de pago inicial (iPhone 18 Pro Max desde $49) y está sujeto a aprobación. Solicita en línea con Acima, Progressive Leasing, American First Finance o Payvantage, o en la tienda con una identificación con foto.",
       },
       {
         q: "¿Todo lo de esta página está en existencia?",

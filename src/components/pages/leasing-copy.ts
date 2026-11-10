@@ -5,7 +5,7 @@ const en = {
   meta: {
     title: "Lease-to-Own Phones, PS5 & Laptops in Houston — No Credit Needed",
     description:
-      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. No credit needed, from $40 down, subject to approval. On Hillcroft.",
+      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. No credit needed, from $40 initial payment, subject to approval. On Hillcroft.",
     imageAlt:
       "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Home", "Leasing"],
@@ -19,12 +19,12 @@ const en = {
       "Take home an iPhone or Samsung Galaxy phone, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad today — ",
       "no credit needed",
       ", starting at ",
-      "$40 down",
+      "$40 initial payment",
       ", subject to approval.",
     ],
     call: "Check your options",
     visit: "Visit the store",
-    chips: ["No credit needed", "From $40 down", "Take it home today", "Se habla español"],
+    chips: ["No credit needed", "From $40 initial payment", "Take it home today", "Se habla español"],
     mainAlt:
       "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center next to a lease-to-own, no credit needed sign",
     mainCaption: "PS5 & Switch 2 — in store now",
@@ -99,7 +99,7 @@ const en = {
       ],
       [
         "Pay a little to start",
-        "Options starting at $40 down, depending on the item and the plan you're approved for.",
+        "Options starting at $40 initial payment, depending on the item and the plan you're approved for.",
       ],
       [
         "Take it home today",
@@ -117,7 +117,7 @@ const en = {
         "No credit needed",
         "No credit history is needed to apply, and bad credit is OK. Subject to approval.",
       ],
-      ["From $40 down", "Start with a small amount instead of paying the full price on day one."],
+      ["From $40 initial payment", "Start with a small amount instead of paying the full price on day one."],
       [
         "Predictable payments",
         "Regular payments on a set schedule. Ask us about early-payoff options.",
@@ -134,7 +134,7 @@ const en = {
     items: [
       {
         q: "Can I get an iPhone or Samsung phone with bad credit?",
-        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones needs no credit, from $40 down, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID and it takes a few minutes in store to find out.",
+        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones needs no credit, from $40 initial payment, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID and it takes a few minutes in store to find out.",
       },
       {
         q: "Can I get a PS5 or Xbox with bad credit?",
@@ -150,7 +150,7 @@ const en = {
       },
       {
         q: "How much do I pay upfront?",
-        a: "Options start at $40 down. The exact amount depends on the item you choose and the plan you're approved for.",
+        a: "Options start at $40 initial payment. The exact amount depends on the item you choose and the plan you're approved for.",
       },
       {
         q: "Can I pay it off early?",
@@ -172,7 +172,7 @@ const en = {
     directions: "Get directions",
   },
   disclaimer:
-    "Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own is more than the cash price. Down payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
+    "Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own is more than the cash price. Initial payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
 };
 
 export type LeasingCopy = typeof en;
@@ -181,7 +181,7 @@ const es: LeasingCopy = {
   meta: {
     title: "Celulares, PS5 y Laptops a Pagos en Houston — Sin Crédito",
     description:
-      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Sin necesidad de crédito, desde $40 de enganche, sujeto a aprobación. En Hillcroft.",
+      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Sin necesidad de crédito, desde $40 de pago inicial, sujeto a aprobación. En Hillcroft.",
     imageAlt:
       "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Inicio", "Arrendamiento"],
@@ -194,14 +194,14 @@ const es: LeasingCopy = {
       "Llévate hoy un iPhone o Samsung Galaxy, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad — ",
       "sin necesidad de crédito",
       ", desde ",
-      "$40 de enganche",
+      "$40 de pago inicial",
       ", sujeto a aprobación.",
     ],
     call: "Consulta tus opciones",
     visit: "Visita la tienda",
     chips: [
       "Sin necesidad de crédito",
-      "Desde $40 de enganche",
+      "Desde $40 de pago inicial",
       "Llévatelo hoy",
       "We speak English",
     ],
@@ -279,8 +279,8 @@ const es: LeasingCopy = {
         "Una solicitud rápida en el mostrador. Trae una identificación oficial con foto — te avisamos si se necesita algo más.",
       ],
       [
-        "Da un enganche pequeño",
-        "Opciones desde $40 de enganche, según el equipo y el plan que te aprueben.",
+        "Da un pago inicial pequeño",
+        "Opciones desde $40 de pago inicial, según el equipo y el plan que te aprueben.",
       ],
       [
         "Llévatelo hoy",
@@ -299,7 +299,7 @@ const es: LeasingCopy = {
         "No necesitas historial de crédito para aplicar, y el mal crédito está bien. Sujeto a aprobación.",
       ],
       [
-        "Desde $40 de enganche",
+        "Desde $40 de pago inicial",
         "Empieza con poco en lugar de pagar el precio completo el primer día.",
       ],
       [
@@ -318,7 +318,7 @@ const es: LeasingCopy = {
     items: [
       {
         q: "¿Puedo sacar un iPhone o Samsung a pagos con mal crédito?",
-        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados no necesita crédito y empieza desde $40 de enganche, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación con foto y en unos minutos en la tienda sabes si calificas.",
+        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados no necesita crédito y empieza desde $40 de pago inicial, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación con foto y en unos minutos en la tienda sabes si calificas.",
       },
       {
         q: "¿Puedo sacar un PS5 o Xbox a pagos con mal crédito?",
@@ -333,8 +333,8 @@ const es: LeasingCopy = {
         a: "Un préstamo es dinero que pides y pagas con el tiempo. El arrendamiento con opción a compra funciona distinto: rentas el equipo y haces pagos regulares; al terminar el plan — o si lo liquidas antes — es tuyo. No es un préstamo, y el costo total es mayor que el precio de contado. Te explicamos los términos exactos antes de firmar.",
       },
       {
-        q: "¿Cuánto doy de enganche?",
-        a: "Las opciones empiezan desde $40 de enganche. La cantidad exacta depende del equipo y del plan que te aprueben.",
+        q: "¿Cuánto doy de pago inicial?",
+        a: "Las opciones empiezan desde $40 de pago inicial. La cantidad exacta depende del equipo y del plan que te aprueben.",
       },
       {
         q: "¿Puedo liquidarlo antes?",
@@ -356,7 +356,7 @@ const es: LeasingCopy = {
     directions: "Cómo llegar",
   },
   disclaimer:
-    "El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total es mayor que el precio de contado. El enganche, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
+    "El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total es mayor que el precio de contado. El pago inicial, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
 };
 
 export const LEASING_COPY = { en, es };

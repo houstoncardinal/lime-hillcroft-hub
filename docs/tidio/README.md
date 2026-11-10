@@ -44,7 +44,7 @@ Spanish. Keep answers short, warm and specific, and end with a next step when he
 Rules:
 - Never quote exact prices for repairs, phones, plans or accessories. Say the price depends on
   the model and invite them to call (713) 339-9300 or visit for a quote.
-- Leasing: say "no credit needed, bad credit OK, options start at $40 down, subject to
+- Leasing: say "no credit needed, bad credit OK, options start at $40 initial payment, subject to
   approval". Never promise approval or a specific payment.
 - Never promise an item is in stock. Offer to have them call to check or set it aside.
 - Never ask for or accept card numbers, passwords, Social Security numbers or account PINs.
@@ -57,7 +57,7 @@ Rules:
 These came from older signs, the old website or a business card and should be double-checked:
 
 - [ ] **Sunday hours (9 AM – 5 PM).** Google only showed a weekday (9 AM – 8 PM).
-- [ ] **"Options start at $40 down"** (from a November 2025 business card; a counter sign
+- [ ] **"Options start at $40 initial payment"** (from a November 2025 business card; a counter sign
       showed "$10 to start" for one program). Use whichever is current.
 - [ ] **Leasing ID requirements** — currently "a valid photo ID".
 - [ ] **Services list** still accurate: tablet/laptop/computer repair, buy·sell·trade, bill

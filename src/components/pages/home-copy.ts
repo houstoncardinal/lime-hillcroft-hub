@@ -9,7 +9,7 @@ const en = {
   meta: {
     title: "Cell Phone Store & Phone Repair in Houston, TX | TIC Wireless",
     description:
-      "Cell phone store at 3640 Hillcroft St, Suite C, Houston: phones with no-credit leasing from $40 down, same-day screen repair & unlocking. Se habla español.",
+      "Cell phone store at 3640 Hillcroft St, Suite C, Houston: phones with no-credit leasing from $40 initial payment, same-day screen repair & unlocking. Se habla español.",
     imageAlt:
       "The storefront of TIC Wireless Electronic & Repair Center at 3640 Hillcroft St, Suite C, Houston",
     breadcrumb: "Home",
@@ -21,7 +21,7 @@ const en = {
     slogan: "Your phone, sorted.",
     body: [
       "The new iPhone 18 Pro Max and unlocked Android phones, with leasing from ",
-      "$40 down",
+      "$40 initial payment",
       " — no credit needed, subject to approval. Plus prepaid plans, same-day repairs and the accessories you need.",
     ],
     directions: "Get directions",
@@ -34,11 +34,11 @@ const en = {
     imageAlt:
       "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless Electronic & Repair Center",
     leaseLabel: "iPhone 18 Pro Max leasing",
-    leaseUnit: "down",
-    leaseNote: "Minimum down payment to lease the iPhone 18 Pro Max, subject to approval. Weekly, biweekly or monthly payments.",
+    leaseUnit: "Initial payment",
+    leaseNote: "Minimum initial payment to lease the iPhone 18 Pro Max, subject to approval. Weekly, biweekly or monthly payments.",
   },
   ticker: [
-    "Leasing from $40 down",
+    "Leasing from $40 initial payment",
     "No credit needed",
     "Unlocked iPhones & Androids",
     "Prepaid plans",
@@ -68,8 +68,8 @@ const en = {
       "Buying, switching, fixing or paying — skip the mall and the big-box lines. We handle it all on Hillcroft.",
     featured: {
       title: "Unlocked iPhones & Androids",
-      body: "Walk out with a new phone today. Leasing starting at $40 down on iPhone and Galaxy models, subject to approval.",
-      chips: ["Bad credit OK", "$40 down", "iPhone & Galaxy", "Take it home today"],
+      body: "Walk out with a new phone today. Leasing starting at $40 initial payment on iPhone and Galaxy models, subject to approval.",
+      chips: ["Bad credit OK", "$40 initial payment", "iPhone & Galaxy", "Take it home today"],
       link: "Leasing on consoles, laptops & more",
       imageAlt:
         "Samsung Galaxy S24 Ultra unboxed on the TIC Wireless Electronic & Repair Center counter",
@@ -160,14 +160,14 @@ const en = {
     kicker: "At a glance",
     title: "TIC Wireless Electronic & Repair Center in 30 seconds.",
     summary:
-      `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 down (subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.`,
+      `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 initial payment (subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.`,
     facts: [
       ["Address", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Phone", "(713) 339-9300"],
       ["Hours", "Mon–Sat 9 AM–8 PM · Sun 9 AM–5 PM · no appointment needed"],
       [
         "Leasing",
-        "No credit needed · from $40 down · subject to approval · weekly, biweekly or monthly payments",
+        "No credit needed · from $40 initial payment · subject to approval · weekly, biweekly or monthly payments",
       ],
       ["Repairs", "Same-day screen, battery & charging-port repair for iPhone, Samsung & Android"],
       [
@@ -214,7 +214,7 @@ const en = {
       },
       {
         q: "Can I get a phone with bad credit or no credit?",
-        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones starting at $40 down. No credit is needed, so bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Stop by with a valid photo ID and we'll walk you through the options in a few minutes.",
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones starting at $40 initial payment. No credit is needed, so bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Stop by with a valid photo ID and we'll walk you through the options in a few minutes.",
       },
       {
         q: "Do you fix cracked iPhone and Samsung screens?",
@@ -280,7 +280,7 @@ const es: HomeCopy = {
     slogan: "Tu celular, resuelto.",
     body: [
       "El nuevo iPhone 18 Pro Max y celulares Android, desbloqueados y a pagos desde ",
-      "$40 de enganche",
+      "$40 de pago inicial",
       " — sin necesidad de crédito, sujeto a aprobación. Además planes prepagados, reparaciones el mismo día y los accesorios que necesitas.",
     ],
     directions: "Cómo llegar",
@@ -293,8 +293,8 @@ const es: HomeCopy = {
     imageAlt:
       "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless Electronic & Repair Center",
     leaseLabel: "iPhone 18 Pro Max a pagos",
-    leaseUnit: "de enganche",
-    leaseNote: "Enganche mínimo para arrendar el iPhone 18 Pro Max, sujeto a aprobación. Pagos semanales, quincenales o mensuales.",
+    leaseUnit: "Pago inicial",
+    leaseNote: "Pago inicial mínimo para arrendar el iPhone 18 Pro Max, sujeto a aprobación. Pagos semanales, quincenales o mensuales.",
   },
   ticker: [
     "A pagos desde $40",
@@ -327,8 +327,8 @@ const es: HomeCopy = {
       "Comprar, cambiar de compañía, reparar o pagar — sin filas de centro comercial. Lo resolvemos todo en Hillcroft.",
     featured: {
       title: "iPhone y Android desbloqueados",
-      body: "Llévate tu celular nuevo hoy mismo. A pagos desde $40 de enganche en modelos de iPhone y Galaxy, sujeto a aprobación.",
-      chips: ["Mal crédito OK", "$40 de enganche", "iPhone y Galaxy", "Llévatelo hoy"],
+      body: "Llévate tu celular nuevo hoy mismo. A pagos desde $40 de pago inicial en modelos de iPhone y Galaxy, sujeto a aprobación.",
+      chips: ["Mal crédito OK", "$40 de pago inicial", "iPhone y Galaxy", "Llévatelo hoy"],
       link: "Consolas, laptops y más a pagos",
       imageAlt:
         "Samsung Galaxy S24 Ultra en el mostrador de TIC Wireless Electronic & Repair Center",
@@ -428,14 +428,14 @@ const es: HomeCopy = {
     kicker: "En resumen",
     title: "TIC Wireless Electronic & Repair Center en 30 segundos.",
     summary:
-      `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de enganche (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.`,
+      `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de pago inicial (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.`,
     facts: [
       ["Dirección", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Teléfono", "(713) 339-9300"],
       ["Horario", "Lun–Sáb 9 AM–8 PM · Dom 9 AM–5 PM · sin cita"],
       [
         "Arrendamiento",
-        "Sin necesidad de crédito · desde $40 de enganche · sujeto a aprobación · pagos semanales, quincenales o mensuales",
+        "Sin necesidad de crédito · desde $40 de pago inicial · sujeto a aprobación · pagos semanales, quincenales o mensuales",
       ],
       [
         "Reparaciones",
@@ -485,7 +485,7 @@ const es: HomeCopy = {
       },
       {
         q: "¿Puedo sacar un celular a pagos con mal crédito o sin crédito?",
-        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $40 de enganche. No necesitas crédito, así que el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Ven con una identificación con foto y te explicamos las opciones en unos minutos.",
+        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $40 de pago inicial. No necesitas crédito, así que el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Ven con una identificación con foto y te explicamos las opciones en unos minutos.",
       },
       {
         q: "¿Reparan pantallas rotas de iPhone y Samsung?",

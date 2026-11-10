@@ -117,7 +117,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Phones with no credit needed",
-          "From $40 down, with weekly, biweekly or monthly payments.",
+          "From $40 initial payment, with weekly, biweekly or monthly payments.",
         ],
       ],
       es: [
@@ -131,7 +131,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Celulares sin necesidad de crédito",
-          "Desde $40 de enganche, con pagos semanales, quincenales o mensuales.",
+          "Desde $40 de pago inicial, con pagos semanales, quincenales o mensuales.",
         ],
       ],
     },
@@ -244,7 +244,7 @@ export const LOCAL: Record<string, Local> = {
           "Phones, tablets and laptops — including the kids' iPads.",
         ],
         ["Protect it after the fix", "Tempered glass and a case fitted before you leave."],
-        ["Upgrade without big upfront cost", "Unlocked phones from $40 down, no credit needed."],
+        ["Upgrade without big upfront cost", "Unlocked phones from $40 initial payment, no credit needed."],
       ],
       es: [
         [
@@ -254,7 +254,7 @@ export const LOCAL: Record<string, Local> = {
         ["Protégelo después de repararlo", "Mica de vidrio templado y funda antes de irte."],
         [
           "Estrena sin pagar todo de una vez",
-          "Celulares desbloqueados desde $40 de enganche, sin crédito.",
+          "Celulares desbloqueados desde $40 de pago inicial, sin crédito.",
         ],
       ],
     },
@@ -282,7 +282,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "A new phone without the big bill",
-          "Unlocked iPhones and Androids, no credit needed, from $40 down.",
+          "Unlocked iPhones and Androids, no credit needed, from $40 initial payment.",
         ],
         ["Buy, sell & trade", "Trade in your old phone toward a new one."],
       ],
@@ -293,7 +293,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Celular nuevo sin pagarlo todo",
-          "iPhone y Android desbloqueados, sin crédito, desde $40 de enganche.",
+          "iPhone y Android desbloqueados, sin crédito, desde $40 de pago inicial.",
         ],
         ["Compra, venta e intercambio", "Cambia tu celular usado por uno nuevo."],
       ],

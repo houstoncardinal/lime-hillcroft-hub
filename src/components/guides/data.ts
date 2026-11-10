@@ -63,7 +63,7 @@ export const GUIDES: Guide[] = [
             h: "Step 2: compare the repair with the phone's value",
             p: [
               "A simple rule: if the repair costs a small part of what a comparable phone would cost, and the rest of the phone is healthy, repair it. If the phone was already slow, the battery barely lasts a day, or it no longer gets software updates, putting that money toward a new phone is often the better deal.",
-              "Remember that a new phone doesn't have to be paid all at once — TIC Wireless Electronic & Repair Center offers leasing (lease-to-own) on unlocked iPhones and Androids with no credit needed, starting at $40 down, subject to approval.",
+              "Remember that a new phone doesn't have to be paid all at once — TIC Wireless Electronic & Repair Center offers leasing (lease-to-own) on unlocked iPhones and Androids with no credit needed, starting at $40 initial payment, subject to approval.",
             ],
           },
           {
@@ -118,7 +118,7 @@ export const GUIDES: Guide[] = [
             h: "Paso 2: compara la reparación con lo que vale el celular",
             p: [
               "Una regla sencilla: si la reparación cuesta una parte pequeña de lo que costaría un celular similar y lo demás funciona bien, repáralo. Si ya estaba lento, la batería no aguanta el día o ya no recibe actualizaciones, muchas veces conviene usar ese dinero para uno nuevo.",
-              "Y un celular nuevo no tiene que pagarse de una vez: TIC Wireless Electronic & Repair Center ofrece arrendamiento con opción a compra en iPhone y Android desbloqueados, sin necesidad de crédito, desde $40 de enganche, sujeto a aprobación.",
+              "Y un celular nuevo no tiene que pagarse de una vez: TIC Wireless Electronic & Repair Center ofrece arrendamiento con opción a compra en iPhone y Android desbloqueados, sin necesidad de crédito, desde $40 de pago inicial, sujeto a aprobación.",
             ],
           },
           {
@@ -164,7 +164,7 @@ export const GUIDES: Guide[] = [
         quick: [
           "Lease-to-own lets you take a phone, console or laptop home today and make regular payments; when the plan is complete — or you buy it out early — it's yours.",
           "It isn't a loan, and no credit history is needed, so bad credit isn't automatically a deal-breaker. Approval still isn't guaranteed.",
-          "The total cost to own is more than the cash price, so ask about early-payoff options. At TIC Wireless Electronic & Repair Center options start at $40 down, with weekly, biweekly or monthly payments.",
+          "The total cost to own is more than the cash price, so ask about early-payoff options. At TIC Wireless Electronic & Repair Center options start at $40 initial payment, with weekly, biweekly or monthly payments.",
         ],
         sections: [
           {
@@ -180,7 +180,7 @@ export const GUIDES: Guide[] = [
             list: [
               "Pick the item — a phone such as the iPhone 18 Pro Max, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad.",
               "Apply at the counter with a valid photo ID. It takes a few minutes, and the store will tell you if anything else is needed.",
-              "Pay the starting amount (at TIC Wireless Electronic & Repair Center, options start at $40 down depending on the item and plan).",
+              "Pay the starting amount (at TIC Wireless Electronic & Repair Center, options start at $40 initial payment depending on the item and plan).",
               "Take it home the same day and make your scheduled weekly, biweekly or monthly payments.",
               "Own it when the plan is complete, or pay it off early.",
             ],
@@ -222,7 +222,7 @@ export const GUIDES: Guide[] = [
         quick: [
           "Con el arrendamiento con opción a compra te llevas hoy un celular, consola o laptop y haces pagos regulares; al terminar el plan —o si lo liquidas antes— es tuyo.",
           "No es un préstamo y no necesitas historial de crédito, así que el mal crédito no es impedimento automático. La aprobación no está garantizada.",
-          "El costo total es mayor que el precio de contado, así que pregunta por la liquidación anticipada. En TIC Wireless Electronic & Repair Center las opciones empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales.",
+          "El costo total es mayor que el precio de contado, así que pregunta por la liquidación anticipada. En TIC Wireless Electronic & Repair Center las opciones empiezan desde $40 de pago inicial, con pagos semanales, quincenales o mensuales.",
         ],
         sections: [
           {
@@ -238,7 +238,7 @@ export const GUIDES: Guide[] = [
             list: [
               "Escoge el equipo: un celular como el iPhone 18 Pro Max, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad.",
               "Aplica en el mostrador con una identificación oficial con foto. Toma unos minutos y te avisamos si se necesita algo más.",
-              "Da el pago inicial (en TIC Wireless Electronic & Repair Center, desde $40 de enganche según el equipo y el plan).",
+              "Da el pago inicial (en TIC Wireless Electronic & Repair Center, desde $40 de pago inicial según el equipo y el plan).",
               "Llévatelo el mismo día y haz tus pagos semanales, quincenales o mensuales.",
               "Es tuyo al terminar el plan, o liquídalo antes.",
             ],

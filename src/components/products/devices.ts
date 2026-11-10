@@ -47,7 +47,7 @@ export type DeviceDetail = {
   id: string;
   /** Page title when it should be more specific than the shelf card's name. */
   title?: string;
-  /** Lowest lease-to-own down payment in USD when it isn't the store-wide $40. */
+  /** Lowest lease-to-own initial payment in USD when it isn't the store-wide $40. */
   leaseFrom?: number;
   /** Year the model came out. */
   year: number;
@@ -97,7 +97,7 @@ const DETAILS: DeviceDetail[] = [
     id: "iphone-18",
     title: "iPhone 18 Pro Max",
     // Same figure as the /iphone-18 page and the home page hero card.
-    leaseFrom: 65,
+    leaseFrom: 49,
     year: 2026,
     tagline: {
       en: "Apple's newest and biggest iPhone: a 6.9-inch display, A20 Pro and a variable-aperture camera.",

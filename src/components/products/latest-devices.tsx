@@ -17,7 +17,7 @@ const T = {
   en: {
     kicker: "In store now",
     title: "Phones and tablets on our shelves.",
-    body: "In stock at 3640 Hillcroft St on the date shown and available with leasing — no credit needed, as low as $40 down, subject to approval. Stock changes quickly, so call to confirm, and ask us which carriers each phone works with.",
+    body: "In stock at 3640 Hillcroft St on the date shown and available with leasing — no credit needed, as low as $40 initial payment, subject to approval. Stock changes quickly, so call to confirm, and ask us which carriers each phone works with.",
     updated: (d: string) => `Updated ${d}`,
     inStore: "In store now",
     details: "Details",
@@ -37,7 +37,7 @@ const T = {
   es: {
     kicker: "Recién llegados",
     title: "Celulares y tabletas en nuestras vitrinas.",
-    body: "Disponibles en 3640 Hillcroft St en la fecha indicada y con arrendamiento: sin necesidad de crédito, desde $40 de enganche, sujeto a aprobación. El inventario cambia rápido, así que llama para confirmar y pregúntanos con qué compañías funciona cada celular.",
+    body: "Disponibles en 3640 Hillcroft St en la fecha indicada y con arrendamiento: sin necesidad de crédito, desde $40 de pago inicial, sujeto a aprobación. El inventario cambia rápido, así que llama para confirmar y pregúntanos con qué compañías funciona cada celular.",
     updated: (d: string) => `Actualizado el ${d}`,
     inStore: "En tienda",
     details: "Ver más",

@@ -48,7 +48,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Dịch vụ của chúng tôi",
     services: [
       "Điện thoại mới đã mở khóa: iPhone 18 Pro Max, Samsung Galaxy và nhiều dòng Android khác.",
-      "Thuê mua (lease-to-own): không cần tín dụng, trả trước chỉ từ $40, thanh toán hằng tuần, hai tuần một lần hoặc hằng tháng (cần được duyệt).",
+      "Thuê mua (lease-to-own): không cần tín dụng, thanh toán ban đầu chỉ từ $40, thanh toán hằng tuần, hai tuần một lần hoặc hằng tháng (cần được duyệt).",
       "Thuê mua cả PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop và iPad.",
       "Sửa điện thoại trong ngày: màn hình, pin, cổng sạc cho iPhone, Samsung và Android. Báo giá trước khi sửa.",
       "Mở mạng điện thoại để dùng với nhà mạng bạn chọn.",
@@ -80,14 +80,14 @@ export const INTL_LANGS: IntlLang[] = [
     dir: "ltr",
     title: "休斯顿手机店及手机维修 | TIC Wireless",
     description:
-      "已解锁手机、免信用租购（首付 $40 起）、当日修屏、手机解锁、预付费套餐及国际充值。地址：3640 Hillcroft St, Suite C, Houston。",
+      "已解锁手机、免信用租购（首期付款 $40 起）、当日修屏、手机解锁、预付费套餐及国际充值。地址：3640 Hillcroft St, Suite C, Houston。",
     h1: "休斯顿手机店与手机维修",
     intro:
       "TIC Wireless Electronic & Repair Center 是位于 3640 Hillcroft St, Suite C, Houston, TX 77057 的独立手机店。我们销售已解锁手机，提供当日手机维修，并提供 9 家运营商的预付费套餐。",
     servicesTitle: "我们的服务",
     services: [
       "全新已解锁手机：iPhone 18 Pro Max、Samsung Galaxy 及更多 Android 机型。",
-      "租购（lease-to-own）：无需信用记录，首付 $40 起，可按周、双周或按月付款（需审核）。",
+      "租购（lease-to-own）：无需信用记录，首期付款 $40 起，可按周、双周或按月付款（需审核）。",
       "PlayStation 5、Xbox、Nintendo Switch 2、MacBook、笔记本电脑和 iPad 也可租购。",
       "当日维修：iPhone、Samsung 及 Android 的屏幕、电池和充电口，维修前先报价。",
       "手机解锁，可使用您选择的运营商。",
@@ -236,7 +236,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Nos services",
     services: [
       "Téléphones neufs débloqués : iPhone 18 Pro Max, Samsung Galaxy et autres Android.",
-      "Location avec option d'achat : sans crédit, dès $40 d'acompte, paiements hebdomadaires, toutes les deux semaines ou mensuels (sous réserve d'approbation).",
+      "Location avec option d'achat : sans crédit, dès $40 de paiement initial, paiements hebdomadaires, toutes les deux semaines ou mensuels (sous réserve d'approbation).",
       "Également disponible pour PlayStation 5, Xbox, Nintendo Switch 2, MacBook, ordinateurs portables et iPad.",
       "Réparation le jour même : écrans, batteries et ports de charge pour iPhone, Samsung et Android ; devis avant toute intervention.",
       "Déblocage de téléphone pour utiliser l'opérateur de votre choix.",
@@ -272,7 +272,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Nossos serviços",
     services: [
       "Celulares novos desbloqueados: iPhone 18 Pro Max, Samsung Galaxy e outros Android.",
-      "Leasing com opção de compra: sem necessidade de crédito, entrada a partir de $40, pagamentos semanais, quinzenais ou mensais (sujeito a aprovação).",
+      "Leasing com opção de compra: sem necessidade de crédito, pagamento inicial a partir de $40, pagamentos semanais, quinzenais ou mensais (sujeito a aprovação).",
       "Também disponível para PlayStation 5, Xbox, Nintendo Switch 2, MacBook, notebooks e iPad.",
       "Conserto no mesmo dia: telas, baterias e entradas de carregamento de iPhone, Samsung e Android; orçamento antes do serviço.",
       "Desbloqueio de celular para usar a operadora que você escolher.",

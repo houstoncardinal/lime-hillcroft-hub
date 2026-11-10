@@ -40,7 +40,7 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
   Motorola and more. A phone may be new or pre-owned depending on the unit; staff confirm
   condition, storage and color. Full list with specs: https://www.ticwirelesstx.com/devices
 - Leasing (lease-to-own) is available: no credit needed, bad credit is OK, options start at
-  $40 down. The exact down payment and payments depend on the item and the plan the customer is
+  $40 initial payment. The exact initial payment and payments depend on the item and the plan the customer is
   approved for. Approval is not guaranteed.
 - Lease-to-own is not a loan: the customer leases the item and makes regular payments; when the
   plan is complete (or bought out early) the item is theirs. The total cost to own is more
@@ -93,7 +93,7 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 58 models on the shelves at 3640 Hillcroft St, Suite C, sold unlocked. A phone may be new or
 pre-owned depending on the unit — staff confirm condition, storage, color and price. Specs are the
 manufacturer's US launch specs. Stock changes quickly — call (713) 339-9300 to confirm a model before visiting.
-Leasing (lease-to-own) on every device: no credit needed, as low as $40 down (iPhone 18 Pro Max from $65 down), subject to approval.
+Leasing (lease-to-own) on every device: no credit needed, as low as $40 initial payment (iPhone 18 Pro Max from $49 initial payment), subject to approval.
 All devices, with photos and filters: https://www.ticwirelesstx.com/devices (Spanish: https://www.ticwirelesstx.com/es/equipos)
 
 iPhones:
@@ -198,8 +198,7 @@ customers should call (713) 339-9300.
 
 - Do not quote specific prices for repairs, phones, plans or accessories — prices depend on the
   model and change often. Direct the customer to call (713) 339-9300 or visit.
-- Do not promise leasing approval or a specific down payment beyond "options start at $40
-  down, subject to approval".
+- Do not promise leasing approval or a specific initial payment beyond "options start at $40 initial payment, subject to approval".
 - Do not promise that an item is in stock — suggest calling to check or to set it aside.
 - Do not ask for or accept card numbers, passwords, Social Security numbers or account PINs in
   chat.

@@ -581,17 +581,17 @@ export const CONSOLES: CategoryPageData = {
   leasing: true,
   text: {
     en: {
-      title: "PS5, Xbox & Nintendo Switch 2 in Houston — Leasing $40 Down",
+      title: "PS5, Xbox & Nintendo Switch 2 in Houston — Leasing with $40 Initial Payment",
       description:
-        "PS5 Slim, Xbox Series X and Nintendo Switch 2 on Hillcroft in Houston. Lease-to-own with no credit needed, as low as $40 down. Apply online in minutes.",
+        "PS5 Slim, Xbox Series X and Nintendo Switch 2 on Hillcroft in Houston. Lease-to-own with no credit needed, as low as $40 initial payment. Apply online in minutes.",
       breadcrumb: "Game consoles",
       imageAlt:
         "PS5 Slim, Xbox Series X and Nintendo Switch 2 on display at TIC Wireless in Houston",
       kicker: "Game consoles · Leasing · Houston",
       h1: ["PS5, Xbox & Switch 2.", "Take it home today."],
       intro:
-        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and you don't need credit to apply. Our leasing programs start as low as $40 down, with weekly, biweekly or monthly payments, subject to approval.",
-      chips: ["No credit needed", "As low as $40 down", "Take it home today", "Se habla español"],
+        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and you don't need credit to apply. Our leasing programs start as low as $40 initial payment, with weekly, biweekly or monthly payments, subject to approval.",
+      chips: ["No credit needed", "As low as $40 initial payment", "Take it home today", "Se habla español"],
       cta: "Call to check stock",
       groupsKicker: "In store now",
       groupsTitle: "The consoles everyone's asking for.",
@@ -604,7 +604,7 @@ export const CONSOLES: CategoryPageData = {
         ["Pick your console", "PS5, Xbox or Switch 2 — add a controller or headset if you like."],
         [
           "Take it home today",
-          "Start with as low as $40 down, then weekly, biweekly or monthly payments.",
+          "Start with as low as $40 initial payment, then weekly, biweekly or monthly payments.",
         ],
       ],
       galleryTitle: "On display at the store",
@@ -616,7 +616,7 @@ export const CONSOLES: CategoryPageData = {
         },
         {
           q: "Can I get a PS5 or Xbox with no credit?",
-          a: "Yes. Our leasing programs need no credit, with options as low as $40 down. Approval isn't guaranteed and depends on the program.",
+          a: "Yes. Our leasing programs need no credit, with options as low as $40 initial payment. Approval isn't guaranteed and depends on the program.",
         },
         {
           q: "What do I need to apply?",
@@ -638,22 +638,22 @@ export const CONSOLES: CategoryPageData = {
       ],
       ogKicker: "Game consoles · Leasing",
       ogHeadline: "PS5, Xbox & Nintendo Switch 2. Take it home today.",
-      ogSub: "No credit needed · As low as $40 down · Weekly, biweekly or monthly payments",
+      ogSub: "No credit needed · As low as $40 initial payment · Weekly, biweekly or monthly payments",
     },
     es: {
       title: "PS5, Xbox y Nintendo Switch 2 en Houston — Desde $40",
       description:
-        "PS5 Slim, Xbox Series X y Nintendo Switch 2 en Hillcroft, Houston. Arrendamiento sin necesidad de crédito, desde $40 de enganche. Solicita en línea.",
+        "PS5 Slim, Xbox Series X y Nintendo Switch 2 en Hillcroft, Houston. Arrendamiento sin necesidad de crédito, desde $40 de pago inicial. Solicita en línea.",
       breadcrumb: "Consolas",
       imageAlt:
         "PS5 Slim, Xbox Series X y Nintendo Switch 2 en exhibición en TIC Wireless en Houston",
       kicker: "Consolas · Arrendamiento · Houston",
       h1: ["PS5, Xbox y Switch 2.", "Llévatelo hoy."],
       intro:
-        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y no necesitas crédito para aplicar. Nuestros programas de arrendamiento empiezan desde $40 de enganche, con pagos semanales, quincenales o mensuales, sujeto a aprobación.",
+        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y no necesitas crédito para aplicar. Nuestros programas de arrendamiento empiezan desde $40 de pago inicial, con pagos semanales, quincenales o mensuales, sujeto a aprobación.",
       chips: [
         "Sin necesidad de crédito",
-        "Desde $40 de enganche",
+        "Desde $40 de pago inicial",
         "Llévatelo hoy",
         "We speak English",
       ],
@@ -672,7 +672,7 @@ export const CONSOLES: CategoryPageData = {
         ["Elige tu consola", "PS5, Xbox o Switch 2; agrega un control o audífonos si quieres."],
         [
           "Llévatela hoy",
-          "Empieza desde $40 de enganche y luego pagos semanales, quincenales o mensuales.",
+          "Empieza desde $40 de pago inicial y luego pagos semanales, quincenales o mensuales.",
         ],
       ],
       galleryTitle: "En exhibición en la tienda",
@@ -684,7 +684,7 @@ export const CONSOLES: CategoryPageData = {
         },
         {
           q: "¿Puedo llevarme un PS5 o Xbox sin crédito?",
-          a: "Sí. Nuestros programas de arrendamiento no piden crédito y empiezan desde $40 de enganche. La aprobación no está garantizada y depende del programa.",
+          a: "Sí. Nuestros programas de arrendamiento no piden crédito y empiezan desde $40 de pago inicial. La aprobación no está garantizada y depende del programa.",
         },
         {
           q: "¿Qué necesito para solicitar?",
@@ -707,7 +707,7 @@ export const CONSOLES: CategoryPageData = {
       ogKicker: "Consolas · Arrendamiento",
       ogHeadline: "PS5, Xbox y Nintendo Switch 2. Llévatelo hoy.",
       ogSub:
-        "Sin necesidad de crédito · Desde $40 de enganche · Pagos semanales, quincenales o mensuales",
+        "Sin necesidad de crédito · Desde $40 de pago inicial · Pagos semanales, quincenales o mensuales",
     },
   },
 };
@@ -821,16 +821,16 @@ export const LAPTOPS: CategoryPageData = {
   leasing: true,
   text: {
     en: {
-      title: "MacBook, iPad & Galaxy Tab in Houston — Leasing from $40 Down",
+      title: "MacBook, iPad & Galaxy Tab in Houston — Leasing from $40 Initial Payment",
       description:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Galaxy Tab on Hillcroft in Houston. Lease-to-own with no credit needed, as low as $40 down.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Galaxy Tab on Hillcroft in Houston. Lease-to-own with no credit needed, as low as $40 initial payment.",
       breadcrumb: "Laptops & tablets",
       imageAlt: "MacBook Air, iPad Pro, iPad and iPad mini on display at TIC Wireless in Houston",
       kicker: "Laptops & tablets · Leasing · Houston",
       h1: ["MacBook, iPad & Galaxy Tab.", "Take it home today."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. No credit needed — our leasing programs start as low as $40 down, with weekly, biweekly or monthly payments, subject to approval.",
-      chips: ["No credit needed", "As low as $40 down", "Apple & Samsung", "Se habla español"],
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. No credit needed — our leasing programs start as low as $40 initial payment, with weekly, biweekly or monthly payments, subject to approval.",
+      chips: ["No credit needed", "As low as $40 initial payment", "Apple & Samsung", "Se habla español"],
       cta: "Call to check stock",
       groupsKicker: "In store now",
       groupsTitle: "Laptops and tablets for school, work and play.",
@@ -846,7 +846,7 @@ export const LAPTOPS: CategoryPageData = {
         ],
         [
           "Take it home today",
-          "Start with as low as $40 down, then weekly, biweekly or monthly payments.",
+          "Start with as low as $40 initial payment, then weekly, biweekly or monthly payments.",
         ],
       ],
       galleryTitle: "On display at the store",
@@ -858,7 +858,7 @@ export const LAPTOPS: CategoryPageData = {
         },
         {
           q: "Can I get a MacBook or iPad with no credit?",
-          a: "Yes. Our leasing programs need no credit, with options as low as $40 down. Approval isn't guaranteed and depends on the program.",
+          a: "Yes. Our leasing programs need no credit, with options as low as $40 initial payment. Approval isn't guaranteed and depends on the program.",
         },
         {
           q: "What do I need to apply?",
@@ -877,21 +877,21 @@ export const LAPTOPS: CategoryPageData = {
       ],
       ogKicker: "Laptops & tablets · Leasing",
       ogHeadline: "MacBook, iPad & Galaxy Tab. Take it home today.",
-      ogSub: "No credit needed · As low as $40 down · Weekly, biweekly or monthly payments",
+      ogSub: "No credit needed · As low as $40 initial payment · Weekly, biweekly or monthly payments",
     },
     es: {
       title: "MacBook, iPad y Galaxy Tab en Houston — Desde $40",
       description:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Galaxy Tab en Hillcroft, Houston. Arrendamiento sin necesidad de crédito, desde $40 de enganche.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Galaxy Tab en Hillcroft, Houston. Arrendamiento sin necesidad de crédito, desde $40 de pago inicial.",
       breadcrumb: "Laptops y tabletas",
       imageAlt: "MacBook Air, iPad Pro, iPad y iPad mini en exhibición en TIC Wireless en Houston",
       kicker: "Laptops y tabletas · Arrendamiento · Houston",
       h1: ["MacBook, iPad y Galaxy Tab.", "Llévatelo hoy."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Sin necesidad de crédito: nuestros programas de arrendamiento empiezan desde $40 de enganche, sujeto a aprobación, con pagos semanales, quincenales o mensuales.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Sin necesidad de crédito: nuestros programas de arrendamiento empiezan desde $40 de pago inicial, sujeto a aprobación, con pagos semanales, quincenales o mensuales.",
       chips: [
         "Sin necesidad de crédito",
-        "Desde $40 de enganche",
+        "Desde $40 de pago inicial",
         "Apple y Samsung",
         "We speak English",
       ],
@@ -910,7 +910,7 @@ export const LAPTOPS: CategoryPageData = {
         ["Elige tu equipo", "MacBook, iPad o Galaxy Tab; agrega funda o mica si quieres."],
         [
           "Llévatelo hoy",
-          "Empieza desde $40 de enganche y luego pagos semanales, quincenales o mensuales.",
+          "Empieza desde $40 de pago inicial y luego pagos semanales, quincenales o mensuales.",
         ],
       ],
       galleryTitle: "En exhibición en la tienda",
@@ -922,7 +922,7 @@ export const LAPTOPS: CategoryPageData = {
         },
         {
           q: "¿Puedo llevarme una MacBook o iPad sin crédito?",
-          a: "Sí. Nuestros programas de arrendamiento no piden crédito y empiezan desde $40 de enganche. La aprobación no está garantizada y depende del programa.",
+          a: "Sí. Nuestros programas de arrendamiento no piden crédito y empiezan desde $40 de pago inicial. La aprobación no está garantizada y depende del programa.",
         },
         {
           q: "¿Qué necesito para solicitar?",
@@ -942,7 +942,7 @@ export const LAPTOPS: CategoryPageData = {
       ogKicker: "Laptops y tabletas · Arrendamiento",
       ogHeadline: "MacBook, iPad y Galaxy Tab. Llévatelo hoy.",
       ogSub:
-        "Sin necesidad de crédito · Desde $40 de enganche · Pagos semanales, quincenales o mensuales",
+        "Sin necesidad de crédito · Desde $40 de pago inicial · Pagos semanales, quincenales o mensuales",
     },
   },
 };
@@ -1013,8 +1013,8 @@ export const IPHONE_18: CategoryPageData = {
           "Desbloqueado: pregunta con qué compañías funciona",
         ),
         l(
-          "Leasing — no credit needed, iPhone 18 Pro Max from $65 down",
-          "A pagos sin necesidad de crédito, iPhone 18 Pro Max desde $65 de enganche",
+          "Leasing — no credit needed, iPhone 18 Pro Max from $49 initial payment",
+          "A pagos sin necesidad de crédito, iPhone 18 Pro Max desde $49 de pago inicial",
         ),
       ],
     },
@@ -1068,19 +1068,19 @@ export const IPHONE_18: CategoryPageData = {
   leaseItems: [n("iPhone 18 Pro Max"), l("iPhone 18 models", "Modelos de iPhone 18")],
   text: {
     en: {
-      title: "iPhone 18 & iPhone 18 Pro Max in Houston — Lease $65 Down",
+      title: "iPhone 18 & iPhone 18 Pro Max in Houston — Lease with $49 Initial Payment",
       description:
-        "iPhone 18 Pro Max in store on Hillcroft in Houston. Lease-to-own from $65 down, no credit needed, subject to approval. Trade-in, cases & glass.",
+        "iPhone 18 Pro Max in store on Hillcroft in Houston. Lease-to-own from $49 initial payment, no credit needed, subject to approval. Trade-in, cases & glass.",
       breadcrumb: "iPhone 18",
       imageAlt:
         "A hand holding an iPhone 18 Pro Max in front of its box at TIC Wireless in Houston",
       kicker: "iPhone 18 · In store · Houston",
       h1: ["iPhone 18 Pro Max in Houston.", "In store on Hillcroft."],
       intro:
-        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — no credit needed, from $65 down, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Stock changes quickly, so call to confirm the color and storage you want.",
+        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — no credit needed, from $49 initial payment, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Stock changes quickly, so call to confirm the color and storage you want.",
       chips: [
         "No credit needed",
-        "Lease from $65 down",
+        "Lease from $49 initial payment",
         "Trade in your old phone",
         "Se habla español",
       ],
@@ -1099,7 +1099,7 @@ export const IPHONE_18: CategoryPageData = {
         ],
         [
           "Take it home today",
-          "Start with as little as $65 down on the iPhone 18 Pro Max, then weekly, biweekly or monthly payments.",
+          "Start with as little as $49 initial payment on the iPhone 18 Pro Max, then weekly, biweekly or monthly payments.",
         ],
         [
           "Set up and go",
@@ -1115,7 +1115,7 @@ export const IPHONE_18: CategoryPageData = {
         },
         {
           q: "Can I get an iPhone 18 with no credit or bad credit?",
-          a: "You can apply. Leasing (lease-to-own) needs no credit — the iPhone 18 Pro Max starts at $65 down — with weekly, biweekly or monthly payments. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
+          a: "You can apply. Leasing (lease-to-own) needs no credit — the iPhone 18 Pro Max starts at $49 initial payment — with weekly, biweekly or monthly payments. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
         },
         {
           q: "What do I need to apply for leasing?",
@@ -1143,22 +1143,22 @@ export const IPHONE_18: CategoryPageData = {
       ],
       ogKicker: "iPhone 18 · Leasing",
       ogHeadline: "iPhone 18 Pro Max. In store on Hillcroft.",
-      ogSub: "No credit needed · From $65 down · Trade in your old phone",
+      ogSub: "No credit needed · From $49 initial payment · Trade in your old phone",
     },
     es: {
-      title: "iPhone 18 y 18 Pro Max en Houston — A Pagos desde $65",
+      title: "iPhone 18 y 18 Pro Max en Houston — A Pagos desde $49",
       description:
-        "iPhone 18 Pro Max en nuestra tienda de Hillcroft, Houston. A pagos desde $65 de enganche, sin necesidad de crédito, sujeto a aprobación. Intercambio y fundas.",
+        "iPhone 18 Pro Max en nuestra tienda de Hillcroft, Houston. A pagos desde $49 de pago inicial, sin necesidad de crédito, sujeto a aprobación. Intercambio y fundas.",
       breadcrumb: "iPhone 18",
       imageAlt:
         "Una mano sosteniendo un iPhone 18 Pro Max frente a su caja en TIC Wireless en Houston",
       kicker: "iPhone 18 · En tienda · Houston",
       h1: ["iPhone 18 Pro Max en Houston.", "En la tienda de Hillcroft."],
       intro:
-        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: sin necesidad de crédito, desde $65 de enganche, sujeto a aprobación. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
+        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: sin necesidad de crédito, desde $49 de pago inicial, sujeto a aprobación. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
       chips: [
         "Sin necesidad de crédito",
-        "Desde $65 de enganche",
+        "Desde $49 de pago inicial",
         "Cambia tu celular usado",
         "We speak English",
       ],
@@ -1180,7 +1180,7 @@ export const IPHONE_18: CategoryPageData = {
         ],
         [
           "Llévatelo hoy",
-          "Empieza desde $65 de enganche en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales.",
+          "Empieza desde $49 de pago inicial en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales.",
         ],
         [
           "Configúralo y listo",
@@ -1196,7 +1196,7 @@ export const IPHONE_18: CategoryPageData = {
         },
         {
           q: "¿Puedo sacar un iPhone 18 sin crédito o con mal crédito?",
-          a: "Puedes aplicar. El arrendamiento con opción a compra no pide crédito: el iPhone 18 Pro Max empieza desde $65 de enganche, con pagos semanales, quincenales o mensuales. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
+          a: "Puedes aplicar. El arrendamiento con opción a compra no pide crédito: el iPhone 18 Pro Max empieza desde $49 de pago inicial, con pagos semanales, quincenales o mensuales. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
         },
         {
           q: "¿Qué necesito para solicitar el arrendamiento?",
@@ -1224,7 +1224,7 @@ export const IPHONE_18: CategoryPageData = {
       ],
       ogKicker: "iPhone 18 · A pagos",
       ogHeadline: "iPhone 18 Pro Max. En la tienda de Hillcroft.",
-      ogSub: "Sin necesidad de crédito · Desde $65 de enganche · Cambia tu celular usado",
+      ogSub: "Sin necesidad de crédito · Desde $49 de pago inicial · Cambia tu celular usado",
     },
   },
 };
