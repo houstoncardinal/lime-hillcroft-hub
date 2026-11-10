@@ -40,7 +40,7 @@ export function ServicesHubPage({ lang }: { lang: Lang }) {
       <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
         <h2 className="sr-only">{t.kicker}</h2>
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-          {SERVICES.map((s) => (
+          {SERVICES.filter((s) => s.slug !== "iphone-repair" && s.slug !== "samsung-repair").map((s) => (
             <ServiceCard key={s.slug} service={s} lang={lang} />
           ))}
           <Link

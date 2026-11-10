@@ -1,4 +1,8 @@
-import { ArrowUpRight, BadgeCheck, Clock, IdCard, ShieldCheck } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
+import { ALTERNATES } from "@/components/site/seo";
+import { ArrowRight, ArrowUpRight, BadgeCheck, Clock, IdCard, ShieldCheck } from "lucide-react";
 
 import type { Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
@@ -132,161 +136,49 @@ export function PortalButton({
   );
 }
 
-/** Full section: heading, three provider cards and the terms. */
+/** All lease-to-own providers, visible without expanding a menu. */
 export function LeasingPortals({ lang, className }: { lang: Lang; className?: string }) {
   const t = T[lang];
   return (
-    <section
-      id="apply"
-      aria-labelledby="apply-title"
-      className={cn("scroll-mt-24 px-3 py-10 sm:px-5 md:py-14", className)}
-    >
-      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-ink px-5 py-8 text-white sm:px-10 md:py-10">
-        <div className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-primary/30 blur-[120px]" />
-        <div className="grain absolute inset-0 -z-10 opacity-50" />
-        <p className="eyebrow flex items-center gap-3 text-primary">
-          <span className="h-px w-8 bg-primary" /> {t.kicker}
-        </p>
-        <h2
-          id="apply-title"
-          className="mt-4 max-w-2xl text-3xl font-semibold leading-[1.05] sm:text-4xl md:text-5xl"
-        >
-          {t.title}
-        </h2>
-        <p className="mt-4 max-w-2xl text-white/75">{t.body}</p>
-        <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
-          {t.steps.map(([Icon, label]) => (
-            <li key={label} className="flex items-center gap-2">
-              <Icon className="h-4 w-4 text-primary" /> {label}
-            </li>
-          ))}
-        </ul>
-
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <section id="apply" aria-labelledby="apply-title" className={cn("scroll-mt-24 border-y bg-secondary/40 px-5 py-8 md:py-10", className)}>
+      <div className="mx-auto max-w-7xl">
+        <p className="eyebrow text-muted-foreground">{t.kicker}</p>
+        <h2 id="apply-title" className="mt-2 text-2xl font-semibold sm:text-3xl">{lang === "en" ? "Choose your leasing partner" : "Elige tu socio de arrendamiento"}</h2>
+        <ul className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {PORTALS.map((p) => (
-            <li
-              key={p.id}
-              className="flex flex-col rounded-3xl bg-white/[0.06] p-5 ring-1 ring-white/10 sm:p-6"
-            >
-              <span className="flex h-10 min-w-10 items-center justify-center self-start rounded-2xl bg-primary px-2.5 font-display text-sm font-bold text-primary-foreground">
-                {p.initials}
-              </span>
-              <h3 className="mt-4 font-display text-xl font-semibold">{p.name}</h3>
-              <p className="mt-1 flex-1 text-sm leading-relaxed text-white/70">{p.blurb[lang]}</p>
-              <PortalButton
-                portal={p}
-                lang={lang}
-                short
-                className="mt-5 w-full bg-primary text-primary-foreground hover:brightness-110"
-              />
+            <li key={p.id} className="flex flex-col rounded-lg border bg-card p-5">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-md bg-secondary px-2 text-xs font-bold text-secondary-foreground">{p.initials}</span>
+                <h3 className="font-display text-lg font-semibold leading-tight">{p.name}</h3>
+              </div>
+              <p className="mt-3 flex-1 text-sm text-muted-foreground">{p.blurb[lang]}</p>
+              <PortalButton portal={p} lang={lang} short className="mt-4 w-full rounded-md bg-primary text-primary-foreground hover:bg-primary/90" />
             </li>
           ))}
         </ul>
-
-        <p className="mt-6 flex items-start gap-2 text-xs leading-relaxed text-white/55">
-          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>
-            {t.secure} {t.fine}
-          </span>
-        </p>
+        <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground"><ShieldCheck className="h-4 w-4 shrink-0 text-primary" /><span>{t.secure} {t.fine}</span></p>
       </div>
     </section>
   );
 }
 
-/** Buy-box card: the lease-to-own alternative to checking out online, beside a product's price. */
 export function LeasingOptions({ lang, className }: { lang: Lang; className?: string }) {
-  const t = T[lang];
-  return (
-    <section
-      aria-labelledby="lease-options-title"
-      className={cn(
-        "relative isolate overflow-hidden rounded-3xl bg-ink p-5 text-white sm:p-6",
-        className,
-      )}
-    >
-      <div className="absolute -right-16 -top-16 -z-10 h-48 w-48 rounded-full bg-primary/30 blur-[80px]" />
-      <p className="eyebrow flex items-center gap-3 text-primary">
-        <span className="h-px w-6 bg-primary" /> {t.optionKicker}
-      </p>
-      <h2
-        id="lease-options-title"
-        className="mt-3 font-display text-xl font-semibold leading-snug sm:text-2xl"
-      >
-        {t.optionTitle}
-      </h2>
-      <p className="mt-2 text-sm leading-relaxed text-white/70">{t.optionBody}</p>
-      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/80">
-        {t.steps.map(([Icon, label]) => (
-          <li key={label} className="flex items-center gap-1.5">
-            <Icon className="h-4 w-4 text-primary" /> {label}
-          </li>
-        ))}
-      </ul>
-      <ul className="mt-5 grid gap-2">
-        {PORTALS.map((p) => (
-          <li
-            key={p.id}
-            className="flex flex-col gap-3 rounded-2xl bg-white/[0.06] p-3 ring-1 ring-white/10 sm:flex-row sm:items-center"
-          >
-            <span className="flex min-w-0 flex-1 items-center gap-3">
-              <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-xl bg-primary px-2 font-display text-xs font-bold text-primary-foreground">
-                {p.initials}
-              </span>
-              <span className="min-w-0">
-                <span className="block font-semibold leading-tight">{p.name}</span>
-                <span className="block text-xs leading-snug text-white/60">{p.blurb[lang]}</span>
-              </span>
-            </span>
-            <PortalButton
-              portal={p}
-              lang={lang}
-              short
-              className="min-h-11 w-full shrink-0 bg-primary text-primary-foreground hover:brightness-110 sm:w-auto"
-            />
-          </li>
-        ))}
-      </ul>
-      <p className="mt-4 flex items-start gap-2 text-[11px] leading-relaxed text-white/55">
-        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-        <span>
-          {t.secure} {t.fine}
-        </span>
-      </p>
-    </section>
-  );
+  return <LeasingCardStrip lang={lang} className={cn("p-5", className)} />;
 }
 
-/**
- * Product-card strip: every lender's application, small enough for a grid card. Links sit above a
- * card's stretched link (relative z-10) so they open the application, not the product.
- */
+/** One clear application entry point; online installments remain a separate choice. */
 export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: string }) {
   const t = T[lang];
   return (
-    <div className={cn("relative z-10 rounded-2xl bg-secondary/70 p-2.5", className)}>
-      <p className="flex items-center gap-1.5 text-[11px] font-bold leading-tight text-ink">
-        <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
-        {t.cardTitle}
+    <div className={cn("relative z-10 rounded-lg border border-primary/25 bg-primary/5 p-3", className)}>
+      <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-foreground">
+        <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+        <span>{lang === "en" ? `Lease-to-own no credit needed, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.` : `Arrendamiento sin necesidad de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}</span>
       </p>
-      <p className="sr-only">{t.cardApply}</p>
-      <ul className="mt-2 grid grid-cols-2 gap-1">
-        {PORTALS.map((p) => (
-          <li key={p.id}>
-            <a
-              href={p.href}
-              target="_blank"
-              rel="noopener"
-              data-portal={p.id}
-              aria-label={`${t.apply(p.name)} ${t.newTab}`}
-              className="flex min-h-8 items-center justify-center gap-0.5 rounded-lg bg-card px-1.5 text-center text-[11px] font-semibold leading-tight ring-1 ring-border transition hover:bg-primary hover:text-primary-foreground hover:ring-primary"
-            >
-              {p.short}
-              <ArrowUpRight className="h-3 w-3 shrink-0 opacity-60" aria-hidden="true" />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-[11px] text-muted-foreground">{lang === "en" ? "Subject to approval." : "Sujeto a aprobación."}</p>
+        <Button asChild variant="link" className="h-auto px-0 py-1 text-xs font-bold"><Link to={ALTERNATES.leasing[lang]}>{t.applyNow}<ArrowRight /></Link></Button>
+      </div>
     </div>
   );
 }

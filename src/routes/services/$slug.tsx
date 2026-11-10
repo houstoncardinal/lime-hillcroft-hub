@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 
 import { findService } from "@/components/services/data";
 import { serviceHead } from "@/components/services/heads";
@@ -6,6 +6,9 @@ import { ServicePage } from "@/components/services/service-page";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
+    if (params.slug === "iphone-repair" || params.slug === "samsung-repair") {
+      throw redirect({ to: "/services/$slug", params: { slug: "phone-repair" }, statusCode: 301 });
+    }
     const service = findService(params.slug);
     if (!service) throw notFound();
     return { slug: service.slug };

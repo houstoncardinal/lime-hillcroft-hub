@@ -30,7 +30,7 @@ import { servicePath } from "@/components/services/paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
 import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
-import { LeasingPortals, PORTALS, PortalButton } from "@/components/site/leasing-portals";
+import { LeasingPortals, LeasingCardStrip } from "@/components/site/leasing-portals";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
 
@@ -334,20 +334,7 @@ export function DevicePage({
           {/* Buy box */}
           <div className="rounded-lg bg-card p-5 text-card-foreground ring-1 ring-border sm:p-7 lg:col-start-2 lg:row-start-2 lg:self-start">
             {shop && <DeviceBuy product={shop} lang={lang} />}
-            <p className="font-display text-xl font-semibold">{t.leaseTitle}</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              <MoneyText text={t.leaseBody(detail.leaseFrom ?? 40)} />
-            </p>
-            <div className="mt-5 grid gap-2">
-              {PORTALS.map((p) => (
-                <PortalButton
-                  key={p.id}
-                  portal={p}
-                  lang={lang}
-                  className="w-full bg-primary px-4 text-primary-foreground hover:brightness-110"
-                />
-              ))}
-            </div>
+            <LeasingCardStrip lang={lang} className="mt-4" />
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               <a
                 href={TEL}

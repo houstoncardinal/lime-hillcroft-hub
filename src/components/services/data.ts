@@ -8,6 +8,7 @@ import type { Lang } from "@/components/site/seo";
 // in prepaid-plans.ts (dated); every other price is quoted in store.
 
 export type PhotoKey =
+  | "repair"
   | "iphone18"
   | "counter"
   | "jbl"
@@ -187,16 +188,16 @@ export const SERVICES: Service[] = [
   {
     slug: "phone-repair",
     icon: "repair",
-    photo: "protector",
+    photo: "repair",
     related: ["unlocked-phones", "phone-unlocking", "buy-sell-trade"],
     serviceType: "Mobile phone repair",
     text: {
       en: {
-        name: "Same-day phone repair",
+        name: "Phone & device repair",
         metaTitle: "Same-Day Phone & Screen Repair on Hillcroft in Houston",
         metaDescription:
           "Cracked screen, dead battery or bad charging port? Same-day iPhone, Samsung & Android repair on Hillcroft in Houston. Walk in — quote before work starts.",
-        h1: "Same-day phone repair in Houston",
+        h1: "iPhone, Samsung & device repair in Houston",
         intro:
           "Cracked iPhone or Samsung screen, a battery that won't last, or a phone that won't charge? Bring it to our store on Hillcroft in Houston — no appointment needed. We check it in front of you, quote the price before any work starts, and most phone repairs are done the same day.",
         offersTitle: "What we repair",
@@ -207,10 +208,6 @@ export const SERVICES: Service[] = [
           "Software problems and setup help.",
           "Tablet, laptop and computer repairs.",
           "Tempered glass and cases fitted after the repair.",
-        ],
-        links: [
-          ["iPhone repair", "/services/iphone-repair"],
-          ["Samsung Galaxy repair", "/services/samsung-repair"],
         ],
         stepsTitle: "How repairs work",
         steps: [
@@ -273,14 +270,14 @@ export const SERVICES: Service[] = [
         ],
         cta: "Call for a repair quote",
         ogKicker: "Repairs",
-        imageAlt: "Premium 9H tempered glass screen protector next to a Samsung Galaxy box",
+        imageAlt: "Illustrative image of a technician repairing an opened smartphone with precision tools",
       },
       es: {
-        name: "Reparación de celulares el mismo día",
+        name: "Reparación de celulares y equipos",
         metaTitle: "Reparación de Celulares el Mismo Día en Hillcroft, Houston",
         metaDescription:
           "¿Pantalla rota, batería que no dura o no carga? Reparamos iPhone, Samsung y Android el mismo día en Hillcroft, Houston. Precio antes de empezar.",
-        h1: "Reparación de celulares el mismo día en Houston",
+        h1: "Reparación de iPhone, Samsung y equipos en Houston",
         intro:
           "¿Pantalla rota de iPhone o Samsung, batería que no aguanta o celular que no carga? Tráelo a nuestra tienda en Hillcroft, Houston, sin cita. Lo revisamos frente a ti, te damos el precio antes de empezar y la mayoría de reparaciones quedan el mismo día.",
         offersTitle: "Lo que reparamos",
@@ -291,10 +288,6 @@ export const SERVICES: Service[] = [
           "Problemas de software y ayuda con la configuración.",
           "Reparación de tabletas, laptops y computadoras.",
           "Micas de vidrio templado y fundas después de la reparación.",
-        ],
-        links: [
-          ["Reparación de iPhone", "/es/servicios/iphone-repair"],
-          ["Reparación de Samsung Galaxy", "/es/servicios/samsung-repair"],
         ],
         stepsTitle: "Cómo funcionan las reparaciones",
         steps: [
@@ -357,7 +350,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Llamar para cotizar",
         ogKicker: "Reparaciones",
-        imageAlt: "Mica de vidrio templado 9H junto a una caja de Samsung Galaxy",
+        imageAlt: "Imagen ilustrativa de un técnico reparando un celular abierto con herramientas de precisión",
       },
     },
   },

@@ -31,6 +31,9 @@
 - [x] Refresh the sitemap and check the whole flow end to end
 
 ## New tasks
+- [ ] Simplify prepaid plans into logo-led carrier tabs and vertically stacked plans; verify desktop and phones
+- [ ] Replace product leasing-provider lists with a $49 initial-payment message and one Apply Now link; show all partners immediately on the leasing page
+- [ ] Consolidate repair navigation and content into the phone-repair page, preserve existing links, and replace case imagery with repair imagery
 - [x] Grant hunainm.qureshi@gmail.com full dashboard admin access; verified authenticated access to all nine dashboard sections, phone navigation, lock/reload denial and role security tests.
 - [x] Clarify estimated installment amounts and Affirm checkout steps; signed-out device selection opens real checkout showing “Shop Pay · Pay in full or in installments”; cart checked at 393/768/1030px, 119 tests pass. Final Affirm approval/paid-order completion remains merchant/customer-dependent; checkout still says “My Store”.
 - [x] Unify shelf-device online payment choices with the existing Shopify cart, without merchant or customer sign-in; shared selector carries installment intent and opens cart only after confirmation

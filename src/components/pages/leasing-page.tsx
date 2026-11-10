@@ -13,6 +13,7 @@ import {
   Wallet,
 } from "lucide-react";
 
+import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
 import consoles from "@/assets/photos/consoles-wide.webp";
@@ -60,144 +61,19 @@ export function LeasingPage({ lang }: { lang: Lang }) {
     <main className="overflow-x-hidden">
       <SiteHeader lang={lang} paths={ALTERNATES.leasing} />
 
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-ink text-white">
-        <div className="grain absolute inset-0 -z-10 opacity-60" />
-        <div className="absolute -left-40 top-1/2 -z-10 h-[40rem] w-[40rem] rounded-full bg-primary/20 blur-[160px]" />
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-14 pt-28 lg:grid-cols-[1fr_1.1fr] lg:pb-12 lg:pt-28">
-          <div className="animate-rise">
-            <p className="eyebrow flex items-center gap-3 text-primary">
-              <span className="h-px w-8 bg-primary" /> {<MoneyText text={t.hero.kicker} />}
-            </p>
-            <h1 className="mt-6 text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.95]">
-              {<MoneyText text={t.hero.title[0]} />}{" "}
-              <span className="text-primary">{<MoneyText text={t.hero.title[1]} />}</span>
-            </h1>
-            <p className="mt-5 font-display text-2xl font-semibold text-white/85 md:text-3xl">
-              {<MoneyText text={t.hero.slogan} />}
-            </p>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-              {<MoneyText text={t.hero.body[0]} />}
-              <strong className="font-semibold text-white">
-                {<MoneyText text={t.hero.body[1]} />}
-              </strong>
-              {<MoneyText text={t.hero.body[2]} />}
-              <strong className="font-semibold text-white">
-                {<MoneyText text={t.hero.body[3]} />}
-              </strong>
-              {<MoneyText text={t.hero.body[4]} />}
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a
-                href={TEL}
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition hover:brightness-110"
-              >
-                <Phone className="h-4 w-4" /> {<MoneyText text={t.hero.call} />}
-              </a>
-              <a
-                href={DIRECTIONS}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold transition hover:border-white/60"
-              >
-                {<MoneyText text={t.hero.visit} />}
-                <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </div>
-            <ul className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-8">
-              {t.hero.chips.map((chip) => (
-                <li
-                  key={chip}
-                  className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-white/85"
-                >
-                  {<MoneyText text={chip} />}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative grid animate-rise grid-cols-2 gap-3 [animation-delay:150ms] sm:gap-4">
-            <DotRing
-              className="animate-spin-slow absolute -right-28 -top-28 -z-10 hidden h-[30rem] w-[30rem] opacity-60 lg:block"
-              rings={[
-                { r: 92, count: 26, dot: 2.6, className: "fill-primary" },
-                { r: 76, count: 22, dot: 2.2, className: "fill-slate" },
-              ]}
-            />
-            <figure className="relative col-span-2 overflow-hidden rounded-[2rem] ring-1 ring-white/10">
-              <Photo
-                src={consoles}
-                srcSm={consolesSm}
-                width={1240}
-                height={720}
-                priority
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                alt={t.hero.mainAlt}
-                className="aspect-[16/9]"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-5 pb-4 pt-8 font-display text-lg font-semibold">
-                {<MoneyText text={t.hero.mainCaption} />}
-              </figcaption>
-            </figure>
-            {TILE_MEDIA.map((g, i) => {
-              const [alt = "", caption = ""] = t.hero.tiles[i] ?? [];
-              return (
-                <figure
-                  key={caption}
-                  className="relative overflow-hidden rounded-3xl ring-1 ring-white/10"
-                >
-                  <Photo
-                    src={g.src}
-                    srcSm={g.sm}
-                    width={g.w}
-                    height={g.h}
-                    sizes="(min-width: 1024px) 25vw, 50vw"
-                    alt={alt}
-                    className="aspect-[4/3]"
-                    {...(g.focus ? { style: { objectPosition: g.focus } } : {})}
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-4 pb-3 pt-8 text-sm font-semibold">
-                    {caption}
-                  </figcaption>
-                </figure>
-              );
-            })}
-            <div className="absolute right-4 -top-6 hidden rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-right-6">
-              <p className="eyebrow text-slate">{<MoneyText text={t.hero.cardLabel} />}</p>
-              <p className="mt-1 font-display text-3xl font-semibold">
-                <Money usd={40} stacked />{" "}
-                <span className="text-base font-medium text-muted-foreground">
-                  {<MoneyText text={t.hero.cardUnit} />}
-                </span>
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {<MoneyText text={t.hero.cardNote} />}
-              </p>
-            </div>
-          </div>
+      <section className="border-b bg-background px-5 pb-7 pt-28 md:pt-32">
+        <div className="mx-auto max-w-7xl">
+          <p className="eyebrow text-muted-foreground">TIC Wireless · Houston</p>
+          <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">{lang === "en" ? "Lease-to-own. No credit needed." : "Arrendamiento sin necesidad de crédito."}</h1>
+          <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{lang === "en" ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.` : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`}</p>
         </div>
       </section>
-
-      {/* Ticker */}
-      <section
-        className="border-y border-ink/10 bg-primary py-4 text-primary-foreground"
-        aria-label="Products"
-      >
-        <div className="flex w-max animate-marquee">
-          {[0, 1].map((k) => (
-            <ul key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
-              {t.ticker.map((item) => (
-                <li key={item} className="eyebrow flex items-center gap-8 px-4 text-sm">
-                  {<MoneyText text={item} />}
-                  <span className="h-1.5 w-1.5 rounded-full bg-ink" />
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </section>
-
       <LeasingPortals lang={lang} />
+      <section className="mx-auto max-w-7xl px-5 py-8">
+        <ol className="grid gap-5 sm:grid-cols-3">
+          {(lang === "en" ? [["Apply online", "Choose a partner above and complete its application."], ["Review your offer", "Confirm approval, initial payment and the total cost with your provider."], ["Visit TIC Wireless", "Bring your ID to 3640 Hillcroft St, Suite C. Confirm stock before you visit."]] : [["Solicita en línea", "Elige un socio y completa su solicitud."], ["Revisa tu oferta", "Confirma la aprobación, pago inicial y costo total con el proveedor."], ["Visita TIC Wireless", "Trae tu ID a 3640 Hillcroft St, Suite C. Confirma las existencias antes de venir."]]).map(([title, body], i) => <li key={title} className="flex gap-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary font-bold text-primary-foreground">{i + 1}</span><div><h2 className="font-semibold">{title}</h2><p className="mt-1 text-sm text-muted-foreground">{body}</p></div></li>)}
+        </ol>
+      </section>
 
       {/* Categories */}
       <section className="mx-auto max-w-7xl px-5 py-16 md:py-20">

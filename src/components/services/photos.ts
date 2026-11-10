@@ -20,6 +20,7 @@ import xfinity from "@/assets/photos/xfinity-prepaid-kit.webp";
 import xfinitySm from "@/assets/photos/xfinity-prepaid-kit-sm.webp";
 import simTray from "@/assets/photos/sim-tray-unlock.webp";
 import simTraySm from "@/assets/photos/sim-tray-unlock-sm.webp";
+import repair from "@/assets/phone-repair-workbench.jpg";
 
 import type { PhotoKey } from "@/components/services/data";
 
@@ -37,6 +38,7 @@ export type ServicePhoto = {
 };
 
 export const SERVICE_PHOTOS: Record<PhotoKey, ServicePhoto> = {
+  repair: { src: repair, sm: repair, w: 1440, h: 1024 },
   iphone18: { src: iphone18, sm: iphone18Sm, w: 1400, h: 1750 },
   counter: { src: counter, sm: counterSm, w: 2000, h: 1500 },
   jbl: { src: jbl, sm: jblSm, w: 2000, h: 1500 },

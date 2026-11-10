@@ -23,6 +23,9 @@
 - The public product sitemap reads published handles directly from Shopify without session-dependent data or nested server-function calls.
 - Connection failures render a retryable bilingual recovery state, not a crash report; server RPC responses must never be rewritten into HTML error documents.
 - Leasing destinations are centralized in PORTALS and shared by page, banner, and mobile menu links so updates remain consistent across languages.
+- Product lease-to-own promotions share LeasingCardStrip/LeasingOptions and the initial-payment constant; applications are centralized on the leasing page to keep product decisions simple.
+- Prepaid carrier tabs preserve the dated catalog and render one carrier's complete vertical plan list; logo assets are local CDN pointers to avoid third-party image dependencies.
+- The phone-repair page is the canonical repair destination; legacy iPhone/Samsung service URLs permanently redirect to it to preserve published links.
 
 - Shelf-device and shop product pages share the payment selector and confirmed cart action so installment intent remains consistent without requiring customer sign-in.
 - Product selectors and cart share expandable installment checkout instructions; the cart never labels a calculated amount as actually due today because Shopify/Affirm determines the approved plan.
