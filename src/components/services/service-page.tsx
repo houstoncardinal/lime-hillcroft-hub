@@ -49,8 +49,22 @@ const OWN_SECTIONS = new Set([
   "bill-payments",
 ]);
 
-// Brand logo shown in the hero instead of the service icon (light version, for the dark hero).
-const HERO_LOGOS: Record<string, { src: string; alt: string; w: number; h: number }> = {
+// Brand logo shown in the hero instead of the service icon. Light logos sit straight on the dark
+// hero; `chip` logos sit in a transparent outlined badge with a short label.
+const HERO_LOGOS: Record<
+  string,
+  { src: string; alt: string; w: number; h: number; chip?: Record<Lang, string> }
+> = {
+  "international-recharge": {
+    src: "/brands/boss-revolution-light.svg",
+    alt: "Boss Revolution",
+    w: 161,
+    h: 48,
+    chip: {
+      en: "International calling & top-up — available in store",
+      es: "Llamadas y recargas internacionales, en la tienda",
+    },
+  },
   "xfinity-prepaid-internet": {
     src: "/brands/xfinity-white.webp",
     alt: "Xfinity",
@@ -122,7 +136,23 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
               <span>/</span>
               <span className="text-white/85">{t.name}</span>
             </nav>
-            {HERO_LOGOS[service.slug] ? (
+            {HERO_LOGOS[service.slug]?.chip ? (
+              <a
+                href="#boss"
+                className="group inline-flex max-w-full items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.04] py-2.5 pl-3 pr-4 text-white backdrop-blur-sm transition hover:border-white/35 hover:bg-white/[0.07]"
+              >
+                <img
+                  src={HERO_LOGOS[service.slug]!.src}
+                  alt={HERO_LOGOS[service.slug]!.alt}
+                  width={HERO_LOGOS[service.slug]!.w}
+                  height={HERO_LOGOS[service.slug]!.h}
+                  className="h-9 w-auto shrink-0 md:h-11"
+                />
+                <span className="border-l border-white/20 pl-3 text-xs font-semibold leading-snug text-white/90 sm:text-sm">
+                  {HERO_LOGOS[service.slug]!.chip![lang]}
+                </span>
+              </a>
+            ) : HERO_LOGOS[service.slug] ? (
               <img
                 src={HERO_LOGOS[service.slug]!.src}
                 alt={HERO_LOGOS[service.slug]!.alt}
@@ -169,7 +199,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
           <figure
             className={cn(
               "relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10",
-              photo.fit === "contain" && "bg-white",
+              (photo.plain || photo.fit === "contain") && "bg-white",
             )}
           >
             <Photo
@@ -183,9 +213,16 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
               {...(photo.fit === "contain" ? { className: "object-contain px-6 pb-16 pt-8" } : {})}
               {...(photo.focus ? { style: { objectPosition: photo.focus } } : {})}
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-6 pt-14">
-              <OpenBadge lang={lang} />
-            </div>
+            {photo.plain || photo.fit === "contain" ? (
+              // White product images: a small dark pill instead of a dark fade over the image
+              <div className="absolute bottom-4 left-4 rounded-full bg-ink/90 px-4 py-2 shadow-lg">
+                <OpenBadge lang={lang} />
+              </div>
+            ) : (
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-6 pt-14">
+                <OpenBadge lang={lang} />
+              </div>
+            )}
             {photo.credit && (
               <figcaption className="absolute right-3 top-3 rounded-full bg-ink/60 px-2.5 py-1 text-[11px] text-white/80 backdrop-blur">
                 <a

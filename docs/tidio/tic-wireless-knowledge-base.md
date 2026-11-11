@@ -65,10 +65,13 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 - Prepaid plans from 9 carriers: T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket,
   Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile and Gen Mobile. No contracts.
 - Xfinity Prepaid home internet is sold and set up in store: 100 Mbps for $30/mo or 200 Mbps for $45/mo, WiFi equipment, unlimited data, taxes and fees included; no credit check, no annual contract (prices from Xfinity, checked 2026-11-10; subject to change; not available in all areas).
-- Bill payments: customers can pay their phone bill in person for the major prepaid carriers,
-  with no extra charges.
+- Bill payments: customers can pay their phone bill in person for the major prepaid carriers.
+  A small payment fee may apply, depending on the carrier or service.
 - International recharge (top-ups to phones abroad), including Tigo, Digicel, Movistar and
   Telcel, and more.
+- Boss Revolution is also available at the counter: international calling (calls and texts in the
+  Boss Revolution app) and international mobile top-up to 280+ carriers in 95 countries.
+  Rates and promotions are set by Boss Revolution (IDT).
 - Plan prices change often and depend on the carrier — customers should call or visit for
   current prices.
 

@@ -410,7 +410,7 @@ export const GUIDES: Guide[] = [
         quick: [
           "Prepaid plans have no contract and no credit check: you pay before each month, so there are no surprise bills.",
           "Choose by three things: how much data you use, which network covers your home and work best, and whether you call or text family abroad.",
-          "At TIC Wireless Electronic & Repair Center on Hillcroft you can compare Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca and Gen Mobile, and pay your bill in person with no extra charges.",
+          "At TIC Wireless Electronic & Repair Center on Hillcroft you can compare Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca and Gen Mobile, and pay your bill in person (a small payment fee may apply).",
         ],
         sections: [
           {
@@ -462,7 +462,7 @@ export const GUIDES: Guide[] = [
         quick: [
           "Los planes prepagados no tienen contrato ni revisión de crédito: pagas antes de cada mes, así que no hay sorpresas.",
           "Elige por tres cosas: cuántos datos usas, qué red tiene mejor señal en tu casa y trabajo, y si llamas o mandas mensajes a tu familia en otro país.",
-          "En TIC Wireless Electronic & Repair Center sobre Hillcroft puedes comparar Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca y Gen Mobile, y pagar tu factura en persona sin cargos extra.",
+          "En TIC Wireless Electronic & Repair Center sobre Hillcroft puedes comparar Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca y Gen Mobile, y pagar tu factura en persona (puede aplicar un pequeño cargo).",
         ],
         sections: [
           {

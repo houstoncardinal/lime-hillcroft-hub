@@ -40,6 +40,13 @@ const PHOTO_FILES: Record<string, string> = {
   laptops: "laptops-tablets",
   xfinity: "xfinity-prepaid-kit",
   simTray: "sim-tray-unlock",
+  // The page heroes are product illustrations; share images keep the store photos.
+  unlockedHero: "iphone-18-pro-max",
+  prepaidHero: "store-counter",
+  unlockingHero: "sim-tray-unlock",
+  tradeHero: "galaxy-s24-ultra",
+  billsHero: "storefront-3640",
+  rechargeHero: "storefront-3640",
 };
 
 // One in-store or storefront photo per area, so each area's card looks different.

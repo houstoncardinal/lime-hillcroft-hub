@@ -138,11 +138,11 @@ export const LOCAL: Record<string, Local> = {
     faq: {
       en: {
         q: "Can I pay my Cricket, T-Mobile or Verizon prepaid bill near Sharpstown?",
-        a: "Yes. We take in-person bill payments for the major prepaid carriers with no extra charges, about 2.6 miles from Sharpstown on Hillcroft.",
+        a: "Yes. We take in-person bill payments for the major prepaid carriers (a small payment fee may apply), about 2.6 miles from Sharpstown on Hillcroft.",
       },
       es: {
         q: "¿Puedo pagar mi factura prepagada de Cricket, T-Mobile o Verizon cerca de Sharpstown?",
-        a: "Sí. Recibimos pagos de las principales compañías prepagadas sin cargos extra, a unas 2.6 millas de Sharpstown sobre Hillcroft.",
+        a: "Sí. Recibimos pagos de las principales compañías prepagadas (puede aplicar un pequeño cargo), a unas 2.6 millas de Sharpstown sobre Hillcroft.",
       },
     },
   },

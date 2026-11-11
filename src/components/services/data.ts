@@ -19,7 +19,14 @@ export type PhotoKey =
   | "s22"
   | "laptops"
   | "xfinity"
-  | "simTray";
+  | "simTray"
+  | "repairHero"
+  | "unlockedHero"
+  | "prepaidHero"
+  | "unlockingHero"
+  | "tradeHero"
+  | "billsHero"
+  | "rechargeHero";
 
 type ServiceText = {
   name: string;
@@ -55,7 +62,7 @@ export const SERVICES: Service[] = [
   {
     slug: "unlocked-phones",
     icon: "phone",
-    photo: "iphone18",
+    photo: "unlockedHero",
     related: ["phone-repair", "trade-in-or-sell", "prepaid-plans"],
     serviceType: "Mobile phone sales",
     text: {
@@ -118,8 +125,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Check availability",
         ogKicker: "New phones",
-        imageAlt:
-          "A plum iPhone 18 Pro Max in front of its box at TIC Wireless Electronic & Repair Center",
+        imageAlt: "iPhone 18 Pro Max and Samsung Galaxy S26 Ultra with an unlocked padlock badge",
       },
       es: {
         name: "iPhone y Android desbloqueados",
@@ -180,15 +186,14 @@ export const SERVICES: Service[] = [
         ],
         cta: "Confirmar disponibilidad",
         ogKicker: "Celulares nuevos",
-        imageAlt:
-          "Un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless Electronic & Repair Center",
+        imageAlt: "iPhone 18 Pro Max y Samsung Galaxy S26 Ultra con un candado abierto",
       },
     },
   },
   {
     slug: "phone-repair",
     icon: "repair",
-    photo: "repair",
+    photo: "repairHero",
     related: ["unlocked-phones", "phone-unlocking", "trade-in-or-sell"],
     serviceType: "Mobile phone repair",
     text: {
@@ -270,8 +275,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Call for a repair quote",
         ogKicker: "Repairs",
-        imageAlt:
-          "Illustrative image of a technician repairing an opened smartphone with precision tools",
+        imageAlt: "Two damaged phones — a shattered screen and a dead battery — with a repair screwdriver",
       },
       es: {
         name: "Reparación de celulares y equipos",
@@ -351,8 +355,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Llamar para cotizar",
         ogKicker: "Reparaciones",
-        imageAlt:
-          "Imagen ilustrativa de un técnico reparando un celular abierto con herramientas de precisión",
+        imageAlt: "Dos celulares dañados, uno con la pantalla rota y otro sin batería, con un desarmador de reparación",
       },
     },
   },
@@ -699,7 +702,7 @@ export const SERVICES: Service[] = [
   {
     slug: "prepaid-plans",
     icon: "plans",
-    photo: "counter",
+    photo: "prepaidHero",
     related: ["bill-payments", "phone-unlocking", "international-recharge"],
     serviceType: "Prepaid mobile phone plans",
     text: {
@@ -716,7 +719,7 @@ export const SERVICES: Service[] = [
           `${CARRIERS}.`,
           "New activations and switching carriers — keep your number when you transfer.",
           "Help choosing the right plan for how much data you actually use.",
-          "Monthly plan payments in store with no extra charges.",
+          "Monthly plan payments in store (a small payment fee may apply).",
           "International recharge for family abroad.",
           "Xfinity Prepaid home internet.",
         ],
@@ -765,7 +768,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Compare plans in store",
         ogKicker: "Prepaid plans",
-        imageAlt: "The counter at TIC Wireless Electronic & Repair Center with carrier displays",
+        imageAlt: "Logos of the prepaid carriers we sell: T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile and Gen Mobile",
       },
       es: {
         name: "Planes prepagados",
@@ -780,7 +783,7 @@ export const SERVICES: Service[] = [
           `${carrierList("es")}.`,
           "Activaciones nuevas y cambio de compañía, conservando tu número.",
           "Te ayudamos a elegir el plan según los datos que realmente usas.",
-          "Pago mensual del plan en la tienda sin cargos extra.",
+          "Pago mensual del plan en la tienda (puede aplicar un pequeño cargo).",
           "Recargas internacionales para tu familia.",
           "Internet prepagado Xfinity para tu casa.",
         ],
@@ -829,8 +832,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Comparar planes en la tienda",
         ogKicker: "Planes prepagados",
-        imageAlt:
-          "El mostrador de TIC Wireless Electronic & Repair Center con exhibidores de compañías",
+        imageAlt: "Logos de las compañías prepagadas que vendemos: T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca Mobile y Gen Mobile",
       },
     },
   },
@@ -995,7 +997,7 @@ export const SERVICES: Service[] = [
   {
     slug: "phone-unlocking",
     icon: "unlock",
-    photo: "simTray",
+    photo: "unlockingHero",
     related: ["prepaid-plans", "phone-repair", "unlocked-phones"],
     serviceType: "Mobile phone unlocking",
     text: {
@@ -1044,7 +1046,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Ask about unlocking",
         ogKicker: "Unlocking",
-        imageAlt: "A phone showing the Insert SIM card screen with its SIM tray ejected",
+        imageAlt: "An iPhone with a SIM card and an unlocked padlock badge",
       },
       es: {
         name: "Liberación de celulares",
@@ -1091,14 +1093,14 @@ export const SERVICES: Service[] = [
         ],
         cta: "Preguntar por liberación",
         ogKicker: "Liberación",
-        imageAlt: "Un celular con la pantalla para insertar la SIM y la bandeja de la SIM afuera",
+        imageAlt: "Un iPhone con una tarjeta SIM y un candado abierto",
       },
     },
   },
   {
     slug: "trade-in-or-sell",
     icon: "trade",
-    photo: "s24",
+    photo: "tradeHero",
     related: ["unlocked-phones", "phone-repair", "phone-unlocking"],
     serviceType: "Mobile phone trade-in",
     text: {
@@ -1154,7 +1156,7 @@ export const SERVICES: Service[] = [
         ],
         cta: "Get an offer in store",
         ogKicker: "Trade In Or Sell",
-        imageAlt: "Samsung Galaxy S24 Ultra unboxed on the store counter",
+        imageAlt: "An older iPhone 13 traded toward a new iPhone 17 Pro, with a dollar badge",
       },
       es: {
         name: "Cambia o vende tu equipo",
@@ -1203,29 +1205,29 @@ export const SERVICES: Service[] = [
         ],
         cta: "Recibir una oferta en tienda",
         ogKicker: "Cambia o vende",
-        imageAlt: "Samsung Galaxy S24 Ultra en el mostrador de la tienda",
+        imageAlt: "Un iPhone 13 usado cambiado por un iPhone 17 Pro nuevo, con un ícono de dólar",
       },
     },
   },
   {
     slug: "bill-payments",
     icon: "bill",
-    photo: "storefront",
+    photo: "billsHero",
     related: ["prepaid-plans", "international-recharge", "xfinity-prepaid-internet"],
     serviceType: "Mobile bill payment",
     text: {
       en: {
         name: "Phone bill payments",
-        metaTitle: "Pay Your Phone Bill in Person in Houston — No Extra Charges",
+        metaTitle: "Pay Your Phone Bill in Person in Houston — Open 7 Days",
         metaDescription:
-          "Pay your prepaid phone bill in person at our Hillcroft store in Houston — the major prepaid carriers, no extra charges. Open 7 days. Se habla español.",
+          "Pay your prepaid phone bill in person at our Hillcroft store in Houston — the major prepaid carriers, done at the counter. Open 7 days. Se habla español.",
         h1: "Pay your phone bill in person in Houston",
         intro:
-          "Prefer to pay in person? Pay your prepaid phone bill at our store on Hillcroft, with no extra charges. Open 7 days a week.",
+          "Prefer to pay in person? Pay your prepaid phone bill at our store on Hillcroft. A small payment fee may apply, depending on the service. Open 7 days a week.",
         offersTitle: "What you can pay",
         offers: [
           "Prepaid phone bills for the major prepaid carriers — ask us about yours.",
-          "No extra charges for paying in store.",
+          "A small payment fee may apply, depending on the carrier or service.",
           "Help changing or renewing your prepaid plan.",
           "International recharge while you're here.",
         ],
@@ -1233,10 +1235,10 @@ export const SERVICES: Service[] = [
         steps: [
           ["Come by", "Monday–Saturday 9 AM–8 PM, Sunday 9 AM–5 PM."],
           ["Tell us your number", "Bring the phone number on the account you're paying."],
-          ["Pay", "Pay at the counter — no extra charges."],
+          ["Pay", "Pay at the counter — we'll let you know about any payment fee."],
           ["Done", "Your payment is applied and you're good to go."],
         ],
-        why: ["No extra charges", "Major prepaid carriers", "Open 7 days", "Se habla español"],
+        why: ["Paid at the counter", "Major prepaid carriers", "Open 7 days", "Se habla español"],
         faq: [
           {
             q: "Which bills can I pay at TIC Wireless?",
@@ -1244,26 +1246,25 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Is there a fee to pay my bill in store?",
-            a: "No — we take prepaid bill payments in store with no extra charges.",
+            a: "A small payment fee may apply, depending on the carrier or service. Ask at the counter or call (713) 339-9300 for the fee on your bill.",
           },
         ],
         cta: "Visit to pay your bill",
         ogKicker: "Bill payments",
-        imageAlt:
-          "The glass storefront of TIC Wireless Electronic & Repair Center with carrier signs",
+        imageAlt: "A phone and a paid receipt, with T-Mobile, AT&T, Cricket and Simple Mobile logos",
       },
       es: {
         name: "Pago de facturas",
-        metaTitle: "Paga tu Factura de Celular en Persona en Houston — Sin Cargos",
+        metaTitle: "Paga tu Factura de Celular en Persona en Houston — Abiertos 7 Días",
         metaDescription:
-          "Paga en persona tu factura prepagada en nuestra tienda de Hillcroft, Houston: las principales compañías prepagadas, sin cargos extra. Abiertos 7 días.",
+          "Paga en persona tu factura prepagada en nuestra tienda de Hillcroft, Houston: las principales compañías prepagadas, en el mostrador. Abiertos 7 días.",
         h1: "Paga tu factura de celular en persona en Houston",
         intro:
-          "¿Prefieres pagar en persona? Paga tu factura prepagada en nuestra tienda de Hillcroft, sin cargos extra. Abiertos los 7 días.",
+          "¿Prefieres pagar en persona? Paga tu factura prepagada en nuestra tienda de Hillcroft. Puede aplicar un pequeño cargo según el servicio. Abiertos los 7 días.",
         offersTitle: "Lo que puedes pagar",
         offers: [
           "Facturas de las principales compañías prepagadas; pregúntanos por la tuya.",
-          "Sin cargos extra por pagar en la tienda.",
+          "Puede aplicar un pequeño cargo por pago, según la compañía o el servicio.",
           "Ayuda para cambiar o renovar tu plan prepagado.",
           "Recargas internacionales en la misma visita.",
         ],
@@ -1271,11 +1272,11 @@ export const SERVICES: Service[] = [
         steps: [
           ["Ven a la tienda", "Lunes a sábado de 9 AM a 8 PM, domingo de 9 AM a 5 PM."],
           ["Dinos tu número", "Trae el número de teléfono de la cuenta que vas a pagar."],
-          ["Paga", "Paga en el mostrador, sin cargos extra."],
+          ["Paga", "Paga en el mostrador; te informamos de cualquier cargo por pago."],
           ["Listo", "Tu pago se aplica y quedas al corriente."],
         ],
         why: [
-          "Sin cargos extra",
+          "Pago en el mostrador",
           "Principales compañías prepagadas",
           "Abiertos 7 días",
           "We speak English",
@@ -1287,31 +1288,30 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Cobran comisión por pagar en la tienda?",
-            a: "No, recibimos pagos de facturas prepagadas sin cargos extra.",
+            a: "Puede aplicar un pequeño cargo por pago, según la compañía o el servicio. Pregunta en el mostrador o llama al (713) 339-9300 para saber el cargo de tu factura.",
           },
         ],
         cta: "Ven a pagar tu factura",
         ogKicker: "Pago de facturas",
-        imageAlt:
-          "La fachada de vidrio de TIC Wireless Electronic & Repair Center con letreros de compañías",
+        imageAlt: "Un celular y un recibo pagado, con los logos de T-Mobile, AT&T, Cricket y Simple Mobile",
       },
     },
   },
   {
     slug: "international-recharge",
     icon: "globe",
-    photo: "storefront",
+    photo: "rechargeHero",
     related: ["bill-payments", "prepaid-plans", "phone-unlocking"],
     serviceType: "International mobile top-up",
     text: {
       en: {
         name: "International recharge",
-        metaTitle: "International Phone Recharge in Houston — Tigo, Telcel & More",
+        metaTitle: "International Phone Recharge & Calling — Telcel, Tigo, Movistar & More",
         metaDescription:
-          "Send mobile top-ups to family abroad from Hillcroft in Houston: Tigo, Digicel, Movistar, Telcel and more. Walk in, help in English & Spanish.",
-        h1: "International phone recharge in Houston",
+          "Send mobile top-ups to family abroad — Telcel, Tigo, Movistar, Digicel and more — plus Boss Revolution international calling. Walk in to our Hillcroft store; help in English & Spanish.",
+        h1: "International phone recharge & calling",
         intro:
-          "Top up a phone for family and friends abroad from our store on Hillcroft. We do international mobile recharges including Tigo, Digicel, Movistar and Telcel, and more.",
+          "Top up a phone for family and friends abroad — Telcel, Tigo, Movistar, Digicel and more — or call them for less with Boss Revolution international calling and mobile top-up. Done at our counter on Hillcroft.",
         offersTitle: "Recharge brands",
         offers: [
           "Tigo, Digicel, Movistar and Telcel, and more.",
@@ -1332,9 +1332,9 @@ export const SERVICES: Service[] = [
           ["Pay and send", "We send the recharge while you're at the counter."],
         ],
         why: [
-          "Tigo, Digicel, Movistar, Telcel",
+          "Boss Revolution calling & top-up",
+          "Telcel, Tigo, Movistar, Digicel",
           "Done at the counter",
-          "Open 7 days",
           "Se habla español",
         ],
         faq: [
@@ -1343,23 +1343,26 @@ export const SERVICES: Service[] = [
             a: "We do recharges including Tigo, Digicel, Movistar and Telcel, and more. Ask in store about the carrier you need.",
           },
           {
+            q: "Do you offer Boss Revolution?",
+            a: "Yes. Ask at the counter about Boss Revolution for international calling and international mobile top-up — it sends airtime to 280+ carriers in 95 countries.",
+          },
+          {
             q: "What do I need to send a recharge?",
             a: "The full phone number, including the country, and the carrier of the person you're sending to.",
           },
         ],
         cta: "Visit to send a recharge",
         ogKicker: "International recharge",
-        imageAlt:
-          "The TIC Wireless Electronic & Repair Center storefront with an Unlimited World sign",
+        imageAlt: "A globe linked to the flags of Mexico, Guatemala, Honduras, El Salvador, Panama, Colombia, Jamaica and Haiti",
       },
       es: {
         name: "Recargas internacionales",
-        metaTitle: "Recargas Internacionales en Houston — Tigo, Telcel y Más",
+        metaTitle: "Recargas y Llamadas Internacionales — Telcel, Tigo, Movistar y Más",
         metaDescription:
-          "Envía recargas a celulares de tu familia en otro país desde Hillcroft, Houston: Tigo, Digicel, Movistar, Telcel y más. Ven sin cita, te atendemos en español.",
-        h1: "Recargas internacionales en Houston",
+          "Envía recargas a celulares de tu familia en otro país (Telcel, Tigo, Movistar, Digicel y más) y llama con Boss Revolution. Ven a nuestra tienda en Hillcroft; te atendemos en español.",
+        h1: "Recargas y llamadas internacionales",
         intro:
-          "Recarga el celular de tu familia y amigos en otro país desde nuestra tienda en Hillcroft. Hacemos recargas internacionales, incluyendo Tigo, Digicel, Movistar, Telcel y más.",
+          "Recarga el celular de tu familia y amigos en otro país (Telcel, Tigo, Movistar, Digicel y más) o llámales por menos con Boss Revolution: llamadas y recargas internacionales. En nuestro mostrador de Hillcroft.",
         offersTitle: "Compañías para recargar",
         offers: [
           "Tigo, Digicel, Movistar, Telcel y más.",
@@ -1374,9 +1377,9 @@ export const SERVICES: Service[] = [
           ["Paga y envía", "Enviamos la recarga mientras estás en el mostrador."],
         ],
         why: [
-          "Tigo, Digicel, Movistar, Telcel",
-          "Lista en el mostrador",
-          "Abiertos 7 días",
+          "Llamadas y recargas Boss Revolution",
+          "Telcel, Tigo, Movistar, Digicel",
+          "Al momento en el mostrador",
           "Se habla español",
         ],
         faq: [
@@ -1385,14 +1388,17 @@ export const SERVICES: Service[] = [
             a: "Hacemos recargas incluyendo Tigo, Digicel, Movistar, Telcel y más. Pregunta en la tienda por la compañía que necesitas.",
           },
           {
+            q: "¿Tienen Boss Revolution?",
+            a: "Sí. Pregunta en el mostrador por Boss Revolution para llamadas internacionales y recargas internacionales; envía saldo a más de 280 compañías en 95 países.",
+          },
+          {
             q: "¿Qué necesito para enviar una recarga?",
             a: "El número completo, incluyendo el país, y la compañía de la persona a quien le envías.",
           },
         ],
         cta: "Ven a enviar una recarga",
         ogKicker: "Recargas internacionales",
-        imageAlt:
-          "La fachada de TIC Wireless Electronic & Repair Center con un letrero de Unlimited World",
+        imageAlt: "Un globo terráqueo conectado con las banderas de México, Guatemala, Honduras, El Salvador, Panamá, Colombia, Jamaica y Haití",
       },
     },
   },

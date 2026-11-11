@@ -66,7 +66,7 @@ const services = {
     ["Buy, sell & trade phones", "Trade in or sell your used phone."],
     [
       "Phone bill payments",
-      "In-store bill payments for major prepaid carriers with no extra charges.",
+      "In-store bill payments for major prepaid carriers.",
     ],
     [
       "International recharge",
@@ -107,7 +107,7 @@ const services = {
       "Desbloqueo de compañía para usar tu teléfono con la red que elijas.",
     ],
     ["Compra, venta e intercambio de celulares", "Intercambia o vende tu celular usado."],
-    ["Pago de facturas", "Paga tu factura de teléfono en la tienda, sin cargos extra."],
+    ["Pago de facturas", "Paga tu factura de teléfono en persona en la tienda."],
     [
       "Recargas internacionales",
       "Recargas a celulares en el extranjero: Tigo, Digicel, Movistar, Telcel y más.",

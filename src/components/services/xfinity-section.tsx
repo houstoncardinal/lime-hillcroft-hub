@@ -182,7 +182,7 @@ export function XfinitySection({
         {
           icon: CreditCard,
           title: "Phone bill payments",
-          body: "Pay your prepaid phone bill in store, no extra charges.",
+          body: "Pay your prepaid phone bill in person at the counter.",
           href: servicePath(lang, "bill-payments"),
         },
       ]
@@ -202,7 +202,7 @@ export function XfinitySection({
         {
           icon: CreditCard,
           title: "Pago de facturas",
-          body: "Paga tu plan prepagado en la tienda, sin cargos extra.",
+          body: "Paga tu plan prepagado en persona en el mostrador.",
           href: servicePath(lang, "bill-payments"),
         },
       ];

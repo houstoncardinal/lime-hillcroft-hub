@@ -32,8 +32,6 @@ import plaza from "@/assets/photos/plaza.webp";
 import plazaSm from "@/assets/photos/plaza-sm.webp";
 import s24 from "@/assets/photos/galaxy-s24-ultra.webp";
 import s24Sm from "@/assets/photos/galaxy-s24-ultra-sm.webp";
-import protector from "@/assets/photos/screen-protector.webp";
-import protectorSm from "@/assets/photos/screen-protector-sm.webp";
 import caseWall from "@/assets/photos/case-wall.webp";
 import caseWallSm from "@/assets/photos/case-wall-sm.webp";
 import jbl from "@/assets/photos/jbl-display.webp";
@@ -446,14 +444,15 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:py-20 lg:grid-cols-2">
           <div className="relative">
             <div className="overflow-hidden rounded-3xl">
+              {/* Broken devices on white (also the repair page hero): public/photos/services */}
               <Photo
-                src={protector}
-                srcSm={protectorSm}
-                width={1500}
+                src="/photos/services/repair.webp"
+                srcSm="/photos/services/repair-sm.webp"
+                width={1600}
                 height={2000}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 alt={t.repair.imageAlt}
-                className="aspect-[4/4.4]"
+                className="aspect-[4/4.4] bg-white"
               />
             </div>
             <div className="absolute -bottom-6 left-6 rounded-2xl bg-primary px-6 py-4 text-primary-foreground shadow-2xl sm:left-auto sm:right-8">

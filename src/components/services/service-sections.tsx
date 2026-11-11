@@ -39,12 +39,12 @@ import {
   StepsSection,
   type Feature,
 } from "@/components/services/service-ui";
-import { DIRECTIONS } from "@/components/site/business";
+import { DIRECTIONS, TEL } from "@/components/site/business";
 import type { Lang } from "@/components/site/seo";
 
 // The own sections of the phone-unlocking, international-recharge and bill-payments pages.
 // Facts only from each page's copy in services/data.ts (what we do, the brands named there,
-// store hours, no extra charges for bill payments); nothing about prices we don't publish.
+// store hours; bill payments may carry a small fee); nothing about prices we don't publish.
 
 type Steps = { lang: Lang; stepsTitle: string; steps: [string, string][] };
 
@@ -361,11 +361,104 @@ const BRANDS: { name: string; where: Record<Lang, string> }[] = [
   { name: "Digicel", where: { en: "Caribbean & Central America", es: "Caribe y Centroamérica" } },
 ];
 
+/** Boss Revolution (IDT) — international calling and mobile top-up, offered at the counter.
+ *  Facts from bossrevolution.com (checked 2026-11-10): calling and texting through the Boss
+ *  Revolution app; mobile top-up to 280+ carriers in 95 countries. Promotions are left out
+ *  because they change. Logo: public/brands/boss-revolution.svg. */
+function BossRevolutionBanner({ lang }: { lang: Lang }) {
+  const en = lang === "en";
+  const options = en
+    ? [
+        {
+          icon: Phone,
+          title: "International calling",
+          body: "Low-cost calls to friends and family abroad — plus calls and texts in the Boss Revolution app.",
+        },
+        {
+          icon: Send,
+          title: "International mobile top-up",
+          body: "Send airtime to 280+ carriers in 95 countries.",
+        },
+      ]
+    : [
+        {
+          icon: Phone,
+          title: "Llamadas internacionales",
+          body: "Llamadas a bajo costo a tu familia y amigos en otro país, además de llamadas y mensajes en la app de Boss Revolution.",
+        },
+        {
+          icon: Send,
+          title: "Recargas internacionales",
+          body: "Envía saldo a más de 280 compañías en 95 países.",
+        },
+      ];
+  return (
+    <section id="boss" aria-labelledby="boss-title" className="scroll-mt-40">
+      <div className="mx-auto max-w-7xl px-5 pb-12 md:pb-16">
+        <div className="relative isolate overflow-hidden rounded-3xl border bg-card shadow-sm">
+          <span className="absolute inset-y-0 left-0 w-1.5 bg-[#E4002B]" aria-hidden="true" />
+          <div className="absolute -right-24 -top-24 -z-10 h-64 w-64 rounded-full bg-[#E4002B]/[0.07] blur-3xl" />
+          <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-10">
+            <div className="flex flex-col gap-3">
+              <img
+                src="/brands/boss-revolution.svg"
+                alt="Boss Revolution"
+                width={161}
+                height={48}
+                className="h-12 w-auto self-start sm:h-14"
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="inline-flex self-start rounded-full bg-[#E4002B]/10 px-3 py-1 text-xs font-bold text-[#C10024]">
+                {en ? "Also available in store" : "También en la tienda"}
+              </span>
+            </div>
+            <div>
+              <h2 id="boss-title" className="text-2xl font-semibold leading-tight md:text-3xl">
+                {en
+                  ? "International calling & mobile top-up with Boss Revolution"
+                  : "Llamadas y recargas internacionales con Boss Revolution"}
+              </h2>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {options.map(({ icon: Icon, title, body }) => (
+                  <li key={title} className="flex gap-3 rounded-2xl bg-secondary/60 p-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E4002B] text-white">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span>
+                      <span className="block font-semibold">{title}</span>
+                      <span className="mt-0.5 block text-sm leading-relaxed text-muted-foreground">
+                        {body}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-muted-foreground">
+                {en
+                  ? "Boss Revolution is part of IDT Corporation. Rates and promotions are set by Boss Revolution — ask us for today's options."
+                  : "Boss Revolution es parte de IDT Corporation. Las tarifas y promociones las fija Boss Revolution; pregúntanos por las opciones de hoy."}
+              </p>
+            </div>
+            <a
+              href={TEL}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 font-bold text-white transition hover:bg-ink/85"
+            >
+              <Phone className="h-4 w-4" /> {en ? "Ask at the counter" : "Pregunta en el mostrador"}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
   const en = lang === "en";
   const nav: [string, string][] = en
     ? [
         ["brands", "Carriers"],
+        ["boss", "Boss Revolution"],
         ["need", "What you need"],
         ["how", "How it works"],
         ["more", "While you're here"],
@@ -374,6 +467,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
       ]
     : [
         ["brands", "Compañías"],
+        ["boss", "Boss Revolution"],
         ["need", "Qué necesitas"],
         ["how", "Cómo funciona"],
         ["more", "Aprovecha tu visita"],
@@ -431,7 +525,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Receipt,
           title: "Pay your phone bill",
-          body: "Prepaid bill payments in store, no extra charges.",
+          body: "Pay your prepaid phone bill in person at the counter.",
           href: servicePath(lang, "bill-payments"),
         },
         {
@@ -451,7 +545,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Receipt,
           title: "Paga tu factura",
-          body: "Pagos de planes prepagados en tienda, sin cargos extra.",
+          body: "Paga tu plan prepagado en persona en el mostrador.",
           href: servicePath(lang, "bill-payments"),
         },
         {
@@ -502,6 +596,8 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         </p>
         <FeatureGrid items={perks} cols={3} className="mt-8" />
       </Band>
+
+      <BossRevolutionBanner lang={lang} />
 
       <ChecklistAndCall
         id="need"
@@ -565,8 +661,8 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
     ? [
         {
           icon: BadgeDollarSign,
-          title: "No extra charges",
-          body: "Pay your prepaid bill in store at no extra cost.",
+          title: "Small payment fee",
+          body: "A small fee may apply, depending on the carrier or service — ask us.",
         },
         {
           icon: Zap,
@@ -583,8 +679,8 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
     : [
         {
           icon: BadgeDollarSign,
-          title: "Sin cargos extra",
-          body: "Paga tu plan prepagado en la tienda sin costo adicional.",
+          title: "Pequeño cargo por pago",
+          body: "Puede aplicar un pequeño cargo según la compañía o el servicio; pregúntanos.",
         },
         { icon: Zap, title: "En el mostrador", body: "Tu pago se aplica y listo." },
         { icon: Clock, title: "Abiertos 7 días", body: "Lun–Sáb 9 AM–8 PM, Dom 9 AM–5 PM." },
@@ -683,8 +779,8 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
           title={en ? "Pay your phone bill in person" : "Paga tu factura en persona"}
           sub={
             en
-              ? "Prefer to pay with a person? Bring your number to our Hillcroft store — no extra charges."
-              : "¿Prefieres pagar en persona? Trae tu número a nuestra tienda en Hillcroft, sin cargos extra."
+              ? "Prefer to pay with a person? Bring your number to our Hillcroft store and pay at the counter."
+              : "¿Prefieres pagar en persona? Trae tu número a nuestra tienda en Hillcroft y paga en el mostrador."
           }
           aside={
             <a

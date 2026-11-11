@@ -31,13 +31,32 @@ export type ServicePhoto = {
   h: number;
   /** "contain" shows the whole product shot on white instead of cropping it to fill. */
   fit?: "contain";
+  /** A white, edge-to-edge product image: no dark fade over it. */
+  plain?: true;
   /** CSS object-position for the crop. */
   focus?: string;
   /** Attribution for photos used under a Creative Commons license. */
   credit?: { text: string; href: string };
 };
 
+// Service-page heroes on white, built from manufacturer product images, carrier logos and
+// public-domain flags (public/photos/services). 4:5, the same shape as the hero frame.
+const hero = (id: string): ServicePhoto => ({
+  src: `/photos/services/${id}.webp`,
+  sm: `/photos/services/${id}-sm.webp`,
+  w: 1600,
+  h: 2000,
+  plain: true,
+});
+
 export const SERVICE_PHOTOS: Record<PhotoKey, ServicePhoto> = {
+  repairHero: hero("repair"),
+  unlockedHero: hero("unlocked"),
+  prepaidHero: hero("prepaid"),
+  unlockingHero: hero("unlocking"),
+  tradeHero: hero("trade"),
+  billsHero: hero("bills"),
+  rechargeHero: hero("recharge"),
   repair: { src: repair, sm: repair, w: 1440, h: 1024 },
   iphone18: { src: iphone18, sm: iphone18Sm, w: 1400, h: 1750 },
   counter: { src: counter, sm: counterSm, w: 2000, h: 1500 },

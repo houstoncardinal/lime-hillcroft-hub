@@ -95,7 +95,7 @@ const en = {
       ],
       [
         "Bill payments",
-        "Pay your phone bill in person for the major prepaid carriers. No extra charges.",
+        "Pay your phone bill in person for the major prepaid carriers, right at the counter.",
       ],
       [
         "International recharge",
@@ -116,7 +116,8 @@ const en = {
     body: "iPhone, Samsung and Android phones, tablets, laptops and computers — screens, batteries, charging ports and software. Then we'll fit tempered glass and a case so it doesn't happen again.",
     badgeLabel: "Turnaround",
     badge: "Same day",
-    imageAlt: "Premium 9H tempered glass screen protector next to a Samsung Galaxy S21+ box",
+    imageAlt:
+      "Two damaged phones — a shattered screen and a dead battery — with a repair screwdriver",
     steps: [
       [
         "Walk in",
@@ -226,7 +227,7 @@ const en = {
       },
       {
         q: "Can I pay my phone bill at TIC Wireless Electronic & Repair Center?",
-        a: "Yes. We take bill payments for all major prepaid carriers in store, with no extra charges. We also sell Xfinity Prepaid internet and international recharge.",
+        a: "Yes. We take bill payments for all major prepaid carriers in store; a small payment fee may apply, depending on the service. We also sell Xfinity Prepaid internet and international recharge.",
       },
       {
         q: "What are your hours?",
@@ -357,7 +358,7 @@ const es: HomeCopy = {
       ],
       [
         "Pago de facturas",
-        "Paga en persona la factura de las principales compañías prepagadas. Sin cargos extra.",
+        "Paga en persona la factura de las principales compañías prepagadas, en el mostrador.",
       ],
       [
         "Recargas internacionales",
@@ -378,7 +379,8 @@ const es: HomeCopy = {
     body: "Celulares iPhone, Samsung y Android, tabletas, laptops y computadoras — pantallas, baterías, puertos de carga y software. Después te ponemos mica de vidrio templado y funda para que no vuelva a pasar.",
     badgeLabel: "Entrega",
     badge: "Mismo día",
-    imageAlt: "Mica de vidrio templado 9H junto a una caja de Samsung Galaxy S21+",
+    imageAlt:
+      "Dos celulares dañados, uno con la pantalla rota y otro sin batería, con un desarmador de reparación",
     steps: [
       [
         "Ven sin cita",
@@ -494,7 +496,7 @@ const es: HomeCopy = {
       },
       {
         q: "¿Puedo pagar mi factura de teléfono en TIC Wireless Electronic & Repair Center?",
-        a: "Sí. Recibimos pagos de las principales compañías prepagadas, sin cargos extra. También vendemos internet prepagado Xfinity y recargas internacionales.",
+        a: "Sí. Recibimos pagos de las principales compañías prepagadas; puede aplicar un pequeño cargo según el servicio. También vendemos internet prepagado Xfinity y recargas internacionales.",
       },
       {
         q: "¿Cuál es su horario?",
