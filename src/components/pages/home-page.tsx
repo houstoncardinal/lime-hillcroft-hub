@@ -22,16 +22,18 @@ import {
   Wrench,
 } from "lucide-react";
 
-import iphone18 from "@/assets/photos/iphone-18-pro-max.webp";
-import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.webp";
+// Apple's official iPhone 18 Pro Max render (transparent PNG from the Apple Store) on a plum glow.
+import iphone18 from "@/assets/photos/iphone-18-pro-max-cutout.webp";
+import iphone18Sm from "@/assets/photos/iphone-18-pro-max-cutout-sm.webp";
+// iPhone 18 Pro / Pro Max and Galaxy S26 Ultra lineup (official images, transparent)
+import lineup from "@/assets/photos/lineup-iphone-galaxy.webp";
+import lineupSm from "@/assets/photos/lineup-iphone-galaxy-sm.webp";
 import counter from "@/assets/photos/store-counter.webp";
 import counterSm from "@/assets/photos/store-counter-sm.webp";
 import storefront from "@/assets/photos/storefront-3640.webp";
 import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
 import plaza from "@/assets/photos/plaza.webp";
 import plazaSm from "@/assets/photos/plaza-sm.webp";
-import s24 from "@/assets/photos/galaxy-s24-ultra.webp";
-import s24Sm from "@/assets/photos/galaxy-s24-ultra-sm.webp";
 import caseWall from "@/assets/photos/case-wall.webp";
 import caseWallSm from "@/assets/photos/case-wall-sm.webp";
 import jbl from "@/assets/photos/jbl-display.webp";
@@ -200,37 +202,38 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             />
             {/* Soft glow in the phone's plum finish */}
             <div className="absolute inset-x-6 top-1/4 -z-10 h-2/3 rounded-full bg-[#8a3f68]/45 blur-[90px]" />
-            <div className="relative overflow-hidden rounded-[2.25rem] shadow-2xl shadow-black/60 ring-1 ring-white/10">
-              <Photo
+            {/* The phone itself (official Apple image, transparent) on the hero, no card */}
+            <div className="relative">
+              <img
                 src={iphone18}
-                srcSm={iphone18Sm}
-                width={1400}
-                height={1750}
-                sizes="(min-width: 1024px) 480px, 100vw"
-                priority
+                srcSet={`${iphone18Sm} 572w, ${iphone18} 980w`}
+                sizes="(min-width: 1024px) 420px, 80vw"
+                width={980}
+                height={1200}
                 alt={t.hero.imageAlt}
-                className="aspect-[4/3] object-[55%_40%] sm:aspect-[4/5] sm:object-[55%_50%]"
+                fetchPriority="high"
+                decoding="async"
+                className="relative mx-auto block w-[74%] max-w-[20rem] drop-shadow-[0_40px_60px_rgba(0,0,0,0.55)] sm:w-[60%] lg:ml-auto lg:mr-4 lg:w-[72%] lg:max-w-none"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
-              <span className="absolute right-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink backdrop-blur">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                </span>
-                {<MoneyText text={t.hero.imageKicker} />}
-              </span>
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 sm:p-7">
+              <div className="mt-6 flex flex-col items-center gap-4 text-center lg:items-end lg:text-right">
                 <div>
-                  <p className="font-display text-2xl font-semibold leading-tight sm:text-3xl">
+                  <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink backdrop-blur">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                    </span>
+                    {<MoneyText text={t.hero.imageKicker} />}
+                  </span>
+                  <p className="whitespace-nowrap font-display text-3xl font-semibold leading-tight">
                     {<MoneyText text={t.hero.imageTitle} />}
                   </p>
-                  <p className="mt-1 text-sm text-white/75">
+                  <p className="mt-1 text-base text-white/75">
                     {<MoneyText text={t.hero.imageSub} />}
                   </p>
                 </div>
                 <Link
                   to={leaseDevicePath(lang, "iphone-18-pro-max")}
-                  className="tap group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                  className="tap group inline-flex min-h-12 shrink-0 items-center gap-1.5 rounded-full bg-primary px-6 font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition hover:brightness-110"
                 >
                   {<MoneyText text={t.hero.imageCta} />}
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -278,20 +281,22 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            <article className="relative isolate col-span-2 flex min-h-[340px] flex-col justify-between overflow-hidden rounded-3xl bg-ink p-6 text-white sm:min-h-[400px] sm:p-8 md:p-10 lg:row-span-2">
-              <Photo
-                src={s24}
-                srcSm={s24Sm}
-                width={1500}
-                height={2000}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                alt={t.services.featured.imageAlt}
-                className="absolute inset-0 -z-10 opacity-90"
-              />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/20" />
+            <article className="relative isolate col-span-2 flex flex-col overflow-hidden rounded-3xl bg-ink p-6 text-white sm:p-8 md:p-10 lg:row-span-2">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                 <Smartphone className="h-5 w-5" />
               </span>
+              {/* The latest iPhones and Galaxys (official Apple & Samsung images, transparent) */}
+              <img
+                src={lineup}
+                srcSet={`${lineupSm} 800w, ${lineup} 1600w`}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                width={1600}
+                height={760}
+                alt={t.services.featured.imageAlt}
+                loading="lazy"
+                decoding="async"
+                className="-mx-2 my-4 w-[calc(100%+1rem)] max-w-none sm:my-6 lg:my-auto"
+              />
               <div>
                 <h3 className="max-w-md text-3xl font-semibold md:text-5xl">
                   <Link

@@ -32,7 +32,7 @@ const en = {
     imageSub: "Unlocked · lease-to-own available",
     imageCta: "See the iPhone 18",
     imageAlt:
-      "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless Electronic & Repair Center",
+      "iPhone 18 Pro Max in burgundy, front and back — official Apple product image",
     leaseLabel: "iPhone 18 Pro Max leasing",
     leaseUnit: "Initial payment",
     leaseNote:
@@ -73,7 +73,7 @@ const en = {
       chips: ["Bad credit OK", "$40 initial payment", "iPhone & Galaxy", "Take it home today"],
       link: "Leasing on consoles, laptops & more",
       imageAlt:
-        "Samsung Galaxy S24 Ultra unboxed on the TIC Wireless Electronic & Repair Center counter",
+        "The latest iPhone 18 Pro, iPhone 18 Pro Max and Samsung Galaxy S26 Ultra, official Apple and Samsung images",
     },
     items: [
       [
@@ -292,7 +292,7 @@ const es: HomeCopy = {
     imageSub: "Desbloqueado · con opción a compra",
     imageCta: "Ver el iPhone 18",
     imageAlt:
-      "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless Electronic & Repair Center",
+      "iPhone 18 Pro Max color burdeos, frente y reverso: imagen oficial de Apple",
     leaseLabel: "iPhone 18 Pro Max a pagos",
     leaseUnit: "Pago inicial",
     leaseNote:
@@ -333,7 +333,7 @@ const es: HomeCopy = {
       chips: ["Mal crédito OK", "$40 de pago inicial", "iPhone y Galaxy", "Llévatelo hoy"],
       link: "Consolas, laptops y más a pagos",
       imageAlt:
-        "Samsung Galaxy S24 Ultra en el mostrador de TIC Wireless Electronic & Repair Center",
+        "Los nuevos iPhone 18 Pro, iPhone 18 Pro Max y Samsung Galaxy S26 Ultra, imágenes oficiales de Apple y Samsung",
     },
     items: [
       [

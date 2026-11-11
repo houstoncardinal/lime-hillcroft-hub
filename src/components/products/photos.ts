@@ -1,3 +1,19 @@
+import catPs5 from "@/assets/photos/cat-ps5.webp";
+import catPs5Sm from "@/assets/photos/cat-ps5-sm.webp";
+import catXbox from "@/assets/photos/cat-xbox.webp";
+import catXboxSm from "@/assets/photos/cat-xbox-sm.webp";
+import catSwitch2 from "@/assets/photos/cat-switch2.webp";
+import catSwitch2Sm from "@/assets/photos/cat-switch2-sm.webp";
+import catGamingAudio from "@/assets/photos/cat-gaming-audio.webp";
+import catGamingAudioSm from "@/assets/photos/cat-gaming-audio-sm.webp";
+import catMacbook from "@/assets/photos/cat-macbook.webp";
+import catMacbookSm from "@/assets/photos/cat-macbook-sm.webp";
+import catIpad from "@/assets/photos/cat-ipad.webp";
+import catIpadSm from "@/assets/photos/cat-ipad-sm.webp";
+import catGalaxyTab from "@/assets/photos/cat-galaxy-tab.webp";
+import catGalaxyTabSm from "@/assets/photos/cat-galaxy-tab-sm.webp";
+import catTabletExtras from "@/assets/photos/cat-tablet-extras.webp";
+import catTabletExtrasSm from "@/assets/photos/cat-tablet-extras-sm.webp";
 import iphone18 from "@/assets/photos/iphone-18-pro-max.webp";
 import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.webp";
 import counter from "@/assets/photos/store-counter.webp";
@@ -36,6 +52,28 @@ export const PRODUCT_PHOTOS: Record<
   ProductPhoto,
   { src: string; sm: string; w: number; h: number; file: string }
 > = {
+  // Official manufacturer product images on white (16:10), for the category cards.
+  catPs5: { src: catPs5, sm: catPs5Sm, w: 1600, h: 1000, file: "cat-ps5" },
+  catXbox: { src: catXbox, sm: catXboxSm, w: 1600, h: 1000, file: "cat-xbox" },
+  catSwitch2: { src: catSwitch2, sm: catSwitch2Sm, w: 1600, h: 1000, file: "cat-switch2" },
+  catGamingAudio: {
+    src: catGamingAudio,
+    sm: catGamingAudioSm,
+    w: 1600,
+    h: 1000,
+    file: "cat-gaming-audio",
+  },
+  catMacbook: { src: catMacbook, sm: catMacbookSm, w: 1600, h: 1000, file: "cat-macbook" },
+  catIpad: { src: catIpad, sm: catIpadSm, w: 1600, h: 1000, file: "cat-ipad" },
+  catGalaxyTab: { src: catGalaxyTab, sm: catGalaxyTabSm, w: 1600, h: 1000, file: "cat-galaxy-tab" },
+  catTabletExtras: {
+    src: catTabletExtras,
+    sm: catTabletExtrasSm,
+    w: 1600,
+    h: 1000,
+    file: "cat-tablet-extras",
+  },
+
   caseWall: { src: caseWall, sm: caseWallSm, w: 1562, h: 1168, file: "accessories-case-wall" },
   iphoneCases: { src: iphoneCases, sm: iphoneCasesSm, w: 876, h: 1170, file: "iphone-cases-wall" },
   samsungCases: {

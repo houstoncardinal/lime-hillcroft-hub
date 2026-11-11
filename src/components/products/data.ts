@@ -25,7 +25,15 @@ export type ProductPhoto =
   | "laptopsTablets"
   | "appleDisplay"
   | "iphone18"
-  | "counter";
+  | "counter"
+  | "catPs5"
+  | "catXbox"
+  | "catSwitch2"
+  | "catGamingAudio"
+  | "catMacbook"
+  | "catIpad"
+  | "catGalaxyTab"
+  | "catTabletExtras";
 
 type L = Record<Lang, string>;
 const l = (en: string, es: string): L => ({ en, es });
@@ -518,12 +526,10 @@ export const CONSOLES: CategoryPageData = {
         "The slim PS5 in both editions — with a disc drive or all-digital.",
         "El PS5 slim en sus dos versiones: con lector de discos o totalmente digital.",
       ),
-      photo: "consoles",
-      focus: "38% 62%",
-      zoom: 1.7,
+      photo: "catPs5",
       photoAlt: l(
-        "PS5 Slim Digital Edition and PS5 Slim boxes",
-        "Cajas de PS5 Slim Digital y PS5 Slim",
+        "PlayStation 5 Slim with DualSense controller, official Sony image",
+        "PlayStation 5 Slim con control DualSense, imagen oficial de Sony",
       ),
       items: [
         l("PS5 Slim — 1TB, with disc drive", "PS5 Slim de 1TB con lector de discos"),
@@ -541,10 +547,11 @@ export const CONSOLES: CategoryPageData = {
         "Xbox Series X with a 1TB SSD and 4K gaming at up to 120 FPS.",
         "Xbox Series X con SSD de 1TB y juegos en 4K a hasta 120 FPS.",
       ),
-      photo: "consoles",
-      focus: "80% 52%",
-      zoom: 2.1,
-      photoAlt: l("Xbox Series X 1TB box", "Caja de Xbox Series X de 1TB"),
+      photo: "catXbox",
+      photoAlt: l(
+        "Xbox Series X with controller, official Microsoft image",
+        "Xbox Series X con control, imagen oficial de Microsoft",
+      ),
       items: [l("Xbox Series X — 1TB SSD", "Xbox Series X con SSD de 1TB"), n("Xbox Series S")],
     },
     {
@@ -554,10 +561,11 @@ export const CONSOLES: CategoryPageData = {
         "The new Nintendo Switch 2 — play on the TV or take it with you.",
         "El nuevo Nintendo Switch 2: juega en la tele o llévatelo contigo.",
       ),
-      photo: "consoles",
-      focus: "68% 18%",
-      zoom: 2.4,
-      photoAlt: l("Nintendo Switch 2 box", "Caja de Nintendo Switch 2"),
+      photo: "catSwitch2",
+      photoAlt: l(
+        "Nintendo Switch 2 with Joy-Con and dock, official Nintendo image",
+        "Nintendo Switch 2 con Joy-Con y base, imagen oficial de Nintendo",
+      ),
       items: [n("Nintendo Switch 2")],
     },
     {
@@ -567,10 +575,11 @@ export const CONSOLES: CategoryPageData = {
         "Play on your phone, hear every footstep, and bring the party.",
         "Juega en tu celular, escucha cada detalle y arma la fiesta.",
       ),
-      photo: "consoles",
-      focus: "28% 2%",
-      zoom: 2.6,
-      photoAlt: l("Razer Kishi controller and AirPods Max", "Control Razer Kishi y AirPods Max"),
+      photo: "catGamingAudio",
+      photoAlt: l(
+        "Apple AirPods Max, official Apple image",
+        "AirPods Max de Apple, imagen oficial de Apple",
+      ),
       items: [
         l("Razer Kishi phone controller", "Control para celular Razer Kishi"),
         n("Apple AirPods Max"),
@@ -763,10 +772,11 @@ export const LAPTOPS: CategoryPageData = {
         "Apple laptops for school, work and everything in between.",
         "Laptops de Apple para la escuela, el trabajo y todo lo demás.",
       ),
-      photo: "airpodsMax",
-      focus: "53% 82%",
-      zoom: 2.4,
-      photoAlt: l("MacBook Neo box in the display case", "Caja de MacBook Neo en la vitrina"),
+      photo: "catMacbook",
+      photoAlt: l(
+        "MacBook Air 13-inch in sky blue and 15-inch, official Apple images",
+        "MacBook Air de 13 pulgadas en azul cielo y de 15 pulgadas, imágenes oficiales de Apple",
+      ),
       items: [
         l("MacBook Air (13-inch)", "MacBook Air (13 pulgadas)"),
         l("MacBook Air in sky blue", "MacBook Air en azul cielo"),
@@ -780,10 +790,11 @@ export const LAPTOPS: CategoryPageData = {
         "From the pocket-size iPad mini to the iPad Pro.",
         "Desde el iPad mini de bolsillo hasta el iPad Pro.",
       ),
-      photo: "laptopsTablets",
-      focus: "78% 45%",
-      zoom: 1.6,
-      photoAlt: l("iPad Pro, iPad and iPad mini boxes", "Cajas de iPad Pro, iPad y iPad mini"),
+      photo: "catIpad",
+      photoAlt: l(
+        "iPad Pro, iPad and iPad mini, official Apple images",
+        "iPad Pro, iPad y iPad mini, imágenes oficiales de Apple",
+      ),
       items: [
         n("iPad Pro 11-inch (4th gen, M2)"),
         n("iPad Pro"),
@@ -799,10 +810,11 @@ export const LAPTOPS: CategoryPageData = {
         "Android tablets with big screens, including a 5G model.",
         "Tabletas Android de pantalla grande, incluida una con 5G.",
       ),
-      photo: "watchTab",
-      focus: "62% 82%",
-      zoom: 2.2,
-      photoAlt: l("Samsung Galaxy Tab S10 FE+ box", "Caja de Samsung Galaxy Tab S10 FE+"),
+      photo: "catGalaxyTab",
+      photoAlt: l(
+        "Samsung Galaxy Tab S10 FE+, front and back, official Samsung images",
+        "Samsung Galaxy Tab S10 FE+, frente y reverso, imágenes oficiales de Samsung",
+      ),
       items: [n("Galaxy Tab S10 FE+"), n("Galaxy Tab A9+ 5G")],
     },
     {
@@ -812,10 +824,11 @@ export const LAPTOPS: CategoryPageData = {
         "Ask about Windows laptops in stock, and protect what you take home.",
         "Pregunta por laptops Windows disponibles y protege lo que te llevas.",
       ),
-      photo: "appleDisplay",
-      focus: "35% 75%",
-      zoom: 1.5,
-      photoAlt: l("MacBook Air box in the display case", "Caja de MacBook Air en la vitrina"),
+      photo: "catTabletExtras",
+      photoAlt: l(
+        "iPad with an Apple Smart Folio and sleeve, official Apple images",
+        "iPad con Smart Folio y funda de Apple, imágenes oficiales de Apple",
+      ),
       items: [
         l("Windows laptops — ask for current models", "Laptops Windows: pregunta por modelos"),
         l("iPad & tablet tempered glass", "Vidrio templado para iPad y tabletas"),

@@ -58,7 +58,7 @@ const en = {
       {
         title: "Phones",
         items: ["iPhone 18 Pro Max", "iPhone 17 Pro", "Samsung Galaxy", "Unlocked Android"],
-        alt: "Boxed iPhone 17 Pro phones with a TIC Wireless Electronic & Repair Center business card",
+        alt: "iPhone 17 Pro, iPhone 18 Pro Max, Galaxy S26 Ultra and Galaxy Z Fold7, official Apple and Samsung images",
       },
       {
         title: "Game consoles",
@@ -68,7 +68,7 @@ const en = {
           "Nintendo Switch 2",
           "Controllers & headsets",
         ],
-        alt: "PlayStation 5 Slim and Nintendo Switch 2 boxes on display at TIC Wireless Electronic & Repair Center",
+        alt: "PlayStation 5, Xbox Series X and Nintendo Switch 2, official product images",
       },
       {
         title: "Laptops & tablets",
@@ -78,12 +78,12 @@ const en = {
           "Galaxy Tab S10 FE+ & A9+",
           "Windows laptops",
         ],
-        alt: "MacBook Air, iPad Pro, iPad and iPad mini boxes in a TIC Wireless Electronic & Repair Center display case",
+        alt: "MacBook Air, iPad Pro and iPad mini, official Apple images",
       },
       {
         title: "Audio & wearables",
         items: ["AirPods & AirPods Max", "Galaxy Buds", "JBL speakers", "Smartwatches"],
-        alt: "JBL speakers, smartwatches and chargers in a display case",
+        alt: "AirPods Max, Apple Watch and AirPods Pro, official Apple images",
       },
     ],
     stock: ["Stock changes often — call", "to check availability on a specific model."],
@@ -238,12 +238,12 @@ const es: LeasingCopy = {
       {
         title: "Celulares",
         items: ["iPhone 18 Pro Max", "iPhone 17 Pro", "Samsung Galaxy", "Android desbloqueado"],
-        alt: "Cajas de iPhone 17 Pro con una tarjeta de presentación de TIC Wireless Electronic & Repair Center",
+        alt: "iPhone 17 Pro, iPhone 18 Pro Max, Galaxy S26 Ultra y Galaxy Z Fold7, imágenes oficiales de Apple y Samsung",
       },
       {
         title: "Consolas de videojuegos",
         items: ["PlayStation 5", "Xbox Series X y S", "Nintendo Switch 2", "Controles y audífonos"],
-        alt: "Cajas de PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center",
+        alt: "PlayStation 5, Xbox Series X y Nintendo Switch 2, imágenes oficiales",
       },
       {
         title: "Laptops y tabletas",
@@ -253,12 +253,12 @@ const es: LeasingCopy = {
           "Galaxy Tab S10 FE+ y A9+",
           "Laptops Windows",
         ],
-        alt: "Cajas de MacBook Air, iPad Pro, iPad y iPad mini en una vitrina de TIC Wireless Electronic & Repair Center",
+        alt: "MacBook Air, iPad Pro y iPad mini, imágenes oficiales de Apple",
       },
       {
         title: "Audio y relojes",
         items: ["AirPods y AirPods Max", "Galaxy Buds", "Bocinas JBL", "Relojes inteligentes"],
-        alt: "Bocinas JBL, relojes inteligentes y cargadores en una vitrina",
+        alt: "AirPods Max, Apple Watch y AirPods Pro, imágenes oficiales de Apple",
       },
     ],
     stock: [

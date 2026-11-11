@@ -149,7 +149,7 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
         >
           {t.groupsTitle}
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {page.groups.map((g) => {
             const p = PRODUCT_PHOTOS[g.photo];
             return (
@@ -158,13 +158,13 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
                 id={g.id}
                 className="flex scroll-mt-24 flex-col overflow-hidden rounded-3xl border bg-card"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+                <div className="relative aspect-[16/10] overflow-hidden bg-white">
                   <Photo
                     src={p.src}
                     srcSm={p.sm}
                     width={p.w}
                     height={p.h}
-                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     alt={g.photoAlt[lang]}
                     className="absolute inset-0"
                     {...(g.focus

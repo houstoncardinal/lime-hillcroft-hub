@@ -16,16 +16,18 @@ import {
 import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
-import consoles from "@/assets/photos/consoles-wide.webp";
-import consolesSm from "@/assets/photos/consoles-wide-sm.webp";
 import laptops from "@/assets/photos/laptops-tablets.webp";
 import laptopsSm from "@/assets/photos/laptops-tablets-sm.webp";
-import iphone17 from "@/assets/photos/iphone-17-pro.webp";
-import iphone17Sm from "@/assets/photos/iphone-17-pro-sm.webp";
 import iphone18 from "@/assets/photos/iphone-18-pro-max.webp";
 import iphone18Sm from "@/assets/photos/iphone-18-pro-max-sm.webp";
-import jbl from "@/assets/photos/jbl-display.webp";
-import jblSm from "@/assets/photos/jbl-display-sm.webp";
+import catPhones from "@/assets/photos/lease-cat-phones.webp";
+import catPhonesSm from "@/assets/photos/lease-cat-phones-sm.webp";
+import catConsoles from "@/assets/photos/lease-cat-consoles.webp";
+import catConsolesSm from "@/assets/photos/lease-cat-consoles-sm.webp";
+import catLaptops from "@/assets/photos/lease-cat-laptops.webp";
+import catLaptopsSm from "@/assets/photos/lease-cat-laptops-sm.webp";
+import catAudio from "@/assets/photos/lease-cat-audio.webp";
+import catAudioSm from "@/assets/photos/lease-cat-audio-sm.webp";
 import { LEASING_COPY } from "@/components/pages/leasing-copy";
 import { DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
@@ -43,11 +45,12 @@ const CATEGORY_LINKS: Record<Lang, string>[] = [
   { en: "/accessories#audio", es: "/es/accesorios#audio" },
 ];
 
+// Official Apple, Samsung, Sony, Microsoft and Nintendo product images on white, one row per card.
 const CATEGORY_MEDIA = [
-  { icon: Smartphone, src: iphone17, sm: iphone17Sm, w: 2000, h: 1206 },
-  { icon: Gamepad2, src: consoles, sm: consolesSm, w: 1240, h: 720 },
-  { icon: Laptop, src: laptops, sm: laptopsSm, w: 2000, h: 1400 },
-  { icon: Headphones, src: jbl, sm: jblSm, w: 2000, h: 1500 },
+  { icon: Smartphone, src: catPhones, sm: catPhonesSm, w: 1600, h: 1000 },
+  { icon: Gamepad2, src: catConsoles, sm: catConsolesSm, w: 1600, h: 1000 },
+  { icon: Laptop, src: catLaptops, sm: catLaptopsSm, w: 1600, h: 1000 },
+  { icon: Headphones, src: catAudio, sm: catAudioSm, w: 1600, h: 1000 },
 ];
 const TILE_MEDIA: { src: string; sm: string; w: number; h: number; focus?: string }[] = [
   { src: laptops, sm: laptopsSm, w: 2000, h: 1400 },
@@ -64,14 +67,55 @@ export function LeasingPage({ lang }: { lang: Lang }) {
       <section className="border-b bg-background px-5 pb-7 pt-28 md:pt-32">
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow text-muted-foreground">TIC Wireless · Houston</p>
-          <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">{lang === "en" ? "Lease-to-own. No credit needed." : "Arrendamiento sin necesidad de crédito."}</h1>
-          <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{lang === "en" ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.` : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`}</p>
+          <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">
+            {lang === "en"
+              ? "Lease-to-own. No credit needed."
+              : "Arrendamiento sin necesidad de crédito."}
+          </h1>
+          <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
+            {lang === "en"
+              ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
+              : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`}
+          </p>
         </div>
       </section>
       <LeasingPortals lang={lang} />
       <section className="mx-auto max-w-7xl px-5 py-8">
         <ol className="grid gap-5 sm:grid-cols-3">
-          {(lang === "en" ? [["Apply online", "Choose a partner above and complete its application."], ["Review your offer", "Confirm approval, initial payment and the total cost with your provider."], ["Visit TIC Wireless", "Bring your ID to 3640 Hillcroft St, Suite C. Confirm stock before you visit."]] : [["Solicita en línea", "Elige un socio y completa su solicitud."], ["Revisa tu oferta", "Confirma la aprobación, pago inicial y costo total con el proveedor."], ["Visita TIC Wireless", "Trae tu ID a 3640 Hillcroft St, Suite C. Confirma las existencias antes de venir."]]).map(([title, body], i) => <li key={title} className="flex gap-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary font-bold text-primary-foreground">{i + 1}</span><div><h2 className="font-semibold">{title}</h2><p className="mt-1 text-sm text-muted-foreground">{body}</p></div></li>)}
+          {(lang === "en"
+            ? [
+                ["Apply online", "Choose a partner above and complete its application."],
+                [
+                  "Review your offer",
+                  "Confirm approval, initial payment and the total cost with your provider.",
+                ],
+                [
+                  "Visit TIC Wireless",
+                  "Bring your ID to 3640 Hillcroft St, Suite C. Confirm stock before you visit.",
+                ],
+              ]
+            : [
+                ["Solicita en línea", "Elige un socio y completa su solicitud."],
+                [
+                  "Revisa tu oferta",
+                  "Confirma la aprobación, pago inicial y costo total con el proveedor.",
+                ],
+                [
+                  "Visita TIC Wireless",
+                  "Trae tu ID a 3640 Hillcroft St, Suite C. Confirma las existencias antes de venir.",
+                ],
+              ]
+          ).map(([title, body], i) => (
+            <li key={title} className="flex gap-3">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary font-bold text-primary-foreground">
+                {i + 1}
+              </span>
+              <div>
+                <h2 className="font-semibold">{title}</h2>
+                <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+              </div>
+            </li>
+          ))}
         </ol>
       </section>
 
@@ -89,7 +133,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {t.categories.items.map(({ title, items, alt }, i) => {
             const m = CATEGORY_MEDIA[i];
             if (!m) return null;
@@ -98,37 +142,40 @@ export function LeasingPage({ lang }: { lang: Lang }) {
               <Link
                 key={title}
                 to={CATEGORY_LINKS[i]?.[lang] ?? ALTERNATES.leasing[lang]}
-                className={`group relative isolate flex min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl bg-ink p-6 text-white transition hover:-translate-y-1 hover:shadow-2xl sm:min-h-[360px] md:min-h-[420px] md:p-10 ${i === 0 ? "md:min-h-[520px]" : ""}`}
+                className="group flex flex-col overflow-hidden rounded-3xl bg-ink text-white ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-2xl"
               >
-                <Photo
-                  src={m.src}
-                  srcSm={m.sm}
-                  width={m.w}
-                  height={m.h}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  alt={alt}
-                  className="absolute inset-0 -z-10 transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/70 to-ink/5" />
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-                  <Icon className="h-5 w-5" />
+                <span className="block overflow-hidden bg-white">
+                  <Photo
+                    src={m.src}
+                    srcSm={m.sm}
+                    width={m.w}
+                    height={m.h}
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    alt={alt}
+                    className="aspect-[16/10] object-contain transition duration-700 group-hover:scale-105"
+                  />
                 </span>
-                <h3 className="mt-5 text-3xl font-semibold md:text-4xl">
-                  {<MoneyText text={title} />}
-                </h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {items.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-sm backdrop-blur"
-                    >
-                      {<MoneyText text={item} />}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-primary">
-                  {lang === "en" ? `See ${title.toLowerCase()}` : `Ver ${title.toLowerCase()}`}
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                <span className="flex flex-1 flex-col p-5 sm:p-6">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-4 text-xl font-semibold md:text-2xl">
+                    {<MoneyText text={title} />}
+                  </h3>
+                  <ul className="mt-3 flex flex-wrap gap-1.5">
+                    {items.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur sm:text-[13px]"
+                      >
+                        {<MoneyText text={item} />}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 font-semibold text-primary">
+                    {lang === "en" ? `See ${title.toLowerCase()}` : `Ver ${title.toLowerCase()}`}
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </span>
                 </span>
               </Link>
             );
