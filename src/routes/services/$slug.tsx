@@ -9,6 +9,13 @@ export const Route = createFileRoute("/services/$slug")({
     if (params.slug === "iphone-repair" || params.slug === "samsung-repair") {
       throw redirect({ to: "/services/$slug", params: { slug: "phone-repair" }, statusCode: 301 });
     }
+    if (params.slug === "buy-sell-trade") {
+      throw redirect({
+        to: "/services/$slug",
+        params: { slug: "trade-in-or-sell" },
+        statusCode: 301,
+      });
+    }
     const service = findService(params.slug);
     if (!service) throw notFound();
     return { slug: service.slug };

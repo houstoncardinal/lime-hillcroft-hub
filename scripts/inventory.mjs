@@ -15,6 +15,12 @@ const { DEVICE_PAGES, deviceTitle, specValue } = await loadModule(
   "/src/components/products/devices.ts",
 );
 const { INVENTORY_UPDATED } = await loadModule("/src/components/products/inventory.ts");
+const { leaseIdForDevice } = await loadModule("/src/components/lease/catalog.ts");
+// Each model links to its lease-to-own page (the old /devices pages redirect there).
+const pageUrl = (id) => {
+  const lease = leaseIdForDevice(id);
+  return lease ? `${SITE}/lease-to-own/${lease}` : `${SITE}/lease-to-own`;
+};
 
 const date = new Date(`${INVENTORY_UPDATED}T12:00:00`);
 const long = date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
@@ -43,10 +49,10 @@ const line = ({ device, detail }) => {
   ]
     .filter(Boolean)
     .join("; ");
-  return `- ${deviceTitle(device, detail)} (${detail.year}${device.fiveG ? ", 5G" : ""}) — ${facts}. ${SITE}/devices/${device.id}`;
+  return `- ${deviceTitle(device, detail)} (${detail.year}${device.fiveG ? ", 5G" : ""}) — ${facts}. ${pageUrl(device.id)}`;
 };
 const leasing = (from) =>
-  `Leasing (lease-to-own) on every device: no credit needed, as low as $${from} down (iPhone 18 Pro Max from $65 down), subject to approval.`;
+  `Leasing (lease-to-own) on every device: no credit needed, as low as $${from} initial payment (iPhone 18 Pro Max from $49 initial payment), subject to approval.`;
 
 const full = [
   `## Devices in store now (updated ${long})`,
@@ -55,7 +61,7 @@ const full = [
   "pre-owned depending on the unit — staff confirm condition, storage, color and price. Specs are the",
   "manufacturer's US launch specs. Stock changes quickly — call (713) 339-9300 to confirm a model before visiting.",
   leasing(40),
-  `All devices, with photos and filters: ${SITE}/devices (Spanish: ${SITE}/es/equipos)`,
+  `All lease-to-own devices, with photos and payment options: ${SITE}/lease-to-own (Spanish: ${SITE}/es/arrendamiento-equipos)`,
   "",
   ...[...groups].flatMap(([name, list]) => [`${name}:`, ...list.map(line), ""]),
 ].join("\n");
@@ -69,7 +75,7 @@ const brief = [
   "",
   ...[...groups].map(([name, list]) => `- ${name}: ${names(list)}`),
   "",
-  `${leasing(40)} Every model has its own page with specs and photos: [All devices](${SITE}/devices) · [Todos los equipos](${SITE}/es/equipos)`,
+  `${leasing(40)} Every model has its own lease-to-own page with photos and weekly, biweekly and monthly payments: [Lease-to-own devices](${SITE}/lease-to-own) · [Arrendamiento de equipos](${SITE}/es/arrendamiento-equipos)`,
   "",
 ].join("\n");
 

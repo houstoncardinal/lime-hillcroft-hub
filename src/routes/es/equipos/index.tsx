@@ -1,9 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { DevicesHubPage } from "@/components/products/devices-hub";
-import { devicesHubHead } from "@/components/products/heads";
-
+// Retired: the device catalog is now the lease-to-own catalog. Permanent redirect keeps old links.
 export const Route = createFileRoute("/es/equipos/")({
-  head: () => devicesHubHead("es"),
-  component: () => <DevicesHubPage lang="es" />,
+  beforeLoad: () => {
+    throw redirect({ href: "/es/arrendamiento-equipos", statusCode: 301 });
+  },
 });

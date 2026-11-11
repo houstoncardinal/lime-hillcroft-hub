@@ -43,6 +43,8 @@ export type LeaseDevice = {
   /** The model's spec page and photo at /devices/<id>, when the site has one. */
   deviceId?: string;
   note?: L;
+  /** Key facts from the manufacturer's product page, shown on the device's lease page. */
+  highlights?: L[];
   options: LeaseOption[];
 };
 
@@ -282,8 +284,20 @@ export const LEASE_DEVICES: LeaseDevice[] = [
     options: [o(l("Remote player", "Reproductor remoto"), 300, 450, 22, 44, 85)] },
 
   // ---------- TVs ----------
-  { id: "samsung-tv-65", name: 'Samsung 65" TV', brand: "Samsung", category: "tv",
-    options: [o('65"', 550, 650, 32, 64, 123)] },
+  // From samsung.com/us (un65u8000hfxza), checked 2026-11-10.
+  { id: "samsung-tv-65", name: 'Samsung 65" Crystal UHD U8000H', brand: "Samsung", category: "tv",
+    note: l("4K Smart TV · Model UN65U8000HFXZA", "Smart TV 4K · Modelo UN65U8000HFXZA"),
+    highlights: [
+      l('65" class 4K Crystal UHD screen (64.5" diagonal)', 'Pantalla 4K Crystal UHD clase 65" (64.5" en diagonal)'),
+      l("Crystal Processor 4K with 4K upscaling", "Procesador Crystal 4K con escalado a 4K"),
+      l("PurColor, HDR and Color Booster", "PurColor, HDR y Color Booster"),
+      l("Motion Xcelerator for smoother sports and games", "Motion Xcelerator para deportes y juegos más fluidos"),
+      l("Samsung Gaming Hub and Samsung TV Plus free channels", "Samsung Gaming Hub y canales gratis de Samsung TV Plus"),
+      l("One UI Tizen smart TV, secured by Samsung Knox", "Smart TV One UI Tizen, protegida con Samsung Knox"),
+      l("3 HDMI ports (one eARC), USB, Wi-Fi and Ethernet", "3 puertos HDMI (uno eARC), USB, Wi-Fi y Ethernet"),
+      l('56.9" × 32.7" without stand · 56.9" × 34.7" with stand', '56.9" × 32.7" sin base · 56.9" × 34.7" con base'),
+    ],
+    options: [o('65" · UN65U8000HFXZA', 550, 650, 32, 64, 123)] },
 ];
 
 /**
@@ -297,6 +311,10 @@ export function phoneLeasingOnly(device: LeaseDevice, option: LeaseOption) {
 
 /** Lease partners that only apply to phones and cellular iPads (see phoneLeasingOnly). */
 export const PHONE_ONLY_PORTALS = ["payvantage"];
+
+/** The lease page for a retired /devices/<id> page (by its shared deviceId), for redirects. */
+export const leaseIdForDevice = (deviceId: string) =>
+  LEASE_DEVICES.find((d) => d.deviceId === deviceId || d.id === deviceId)?.id;
 
 export const findLeaseDevice = (id: string) => LEASE_DEVICES.find((d) => d.id === id);
 

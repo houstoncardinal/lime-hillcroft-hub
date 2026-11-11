@@ -9,11 +9,17 @@ import { SERVICE_ICONS } from "@/components/services/icons";
 import { SERVICE_PHOTOS } from "@/components/services/photos";
 import { PrepaidPlans } from "@/components/services/prepaid-section";
 import { RepairSection } from "@/components/services/repair-section";
+import { TradeSection } from "@/components/services/trade-section";
+import { XfinitySection } from "@/components/services/xfinity-section";
+import {
+  BillsSection,
+  RechargeSection,
+  UnlockSection,
+} from "@/components/services/service-sections";
 import { ADDRESS, DIRECTIONS, HOURS, PHONE, TEL } from "@/components/site/business";
 import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
-import { LatestDevices } from "@/components/products/latest-devices";
-import { PHONES } from "@/components/products/inventory";
+import { LeaseGrid } from "@/components/lease/lease-ui";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { NearYou } from "@/components/site/near-you";
 import { Photo } from "@/components/site/photo";
@@ -30,7 +36,27 @@ const SERVICE_REVIEWS: Record<string, ReviewPick> = {
   "samsung-repair": "repair",
   "prepaid-plans": "plans",
   "bill-payments": "bills",
-  "buy-sell-trade": "trade",
+  "trade-in-or-sell": "trade",
+};
+
+// Pages whose offers and steps are shown by their own section component.
+const OWN_SECTIONS = new Set([
+  "phone-repair",
+  "trade-in-or-sell",
+  "xfinity-prepaid-internet",
+  "phone-unlocking",
+  "international-recharge",
+  "bill-payments",
+]);
+
+// Brand logo shown in the hero instead of the service icon (light version, for the dark hero).
+const HERO_LOGOS: Record<string, { src: string; alt: string; w: number; h: number }> = {
+  "xfinity-prepaid-internet": {
+    src: "/brands/xfinity-white.webp",
+    alt: "Xfinity",
+    w: 298,
+    h: 120,
+  },
 };
 
 const UI = {
@@ -96,9 +122,19 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
               <span>/</span>
               <span className="text-white/85">{t.name}</span>
             </nav>
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-              <Icon className="h-5 w-5" />
-            </span>
+            {HERO_LOGOS[service.slug] ? (
+              <img
+                src={HERO_LOGOS[service.slug]!.src}
+                alt={HERO_LOGOS[service.slug]!.alt}
+                width={HERO_LOGOS[service.slug]!.w}
+                height={HERO_LOGOS[service.slug]!.h}
+                className="h-10 w-auto md:h-12"
+              />
+            ) : (
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                <Icon className="h-5 w-5" />
+              </span>
+            )}
             <h1 className="mt-6 text-[clamp(2.25rem,5.5vw,4.5rem)] font-semibold leading-[1.02]">
               {t.h1}
             </h1>
@@ -170,16 +206,39 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
       {service.slug === "phone-repair" && (
         <RepairSection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
       )}
+      {service.slug === "phone-unlocking" && (
+        <UnlockSection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
+      )}
+      {service.slug === "international-recharge" && (
+        <RechargeSection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
+      )}
+      {service.slug === "bill-payments" && (
+        <BillsSection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
+      )}
+      {service.slug === "xfinity-prepaid-internet" && (
+        <XfinitySection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
+      )}
+      {service.slug === "trade-in-or-sell" && (
+        <TradeSection lang={lang} stepsTitle={t.stepsTitle} steps={t.steps} />
+      )}
       {service.slug === "unlocked-phones" && (
         <>
-          <LatestDevices devices={PHONES} lang={lang} limit={16} className="bg-secondary/40" />
+          <LeaseGrid
+            lang={lang}
+            category={["iphone", "samsung"]}
+            limit={12}
+            title={
+              lang === "en" ? "Phones you can lease today." : "Celulares que puedes arrendar hoy."
+            }
+            className="border-y bg-secondary/40 max-w-none [&>*]:mx-auto [&>*]:max-w-7xl"
+          />
           <LeasingPortals lang={lang} />
         </>
       )}
 
       <div className="mx-auto max-w-7xl px-5 py-12 md:py-16">
-        {/* The repair page shows these as cards and a timeline (RepairSection) instead. */}
-        {service.slug !== "phone-repair" && (
+        {/* The repair and trade-in pages show these as cards and a timeline instead. */}
+        {!OWN_SECTIONS.has(service.slug) && (
           <div className="grid gap-8 lg:grid-cols-2">
             <section aria-labelledby="offers">
               <h2 id="offers" className="text-3xl font-semibold md:text-4xl">
@@ -235,7 +294,7 @@ export function ServicePage({ service, lang }: { service: Service; lang: Lang })
 
         <section
           id="faq"
-          className={cn("max-w-4xl scroll-mt-40", service.slug !== "phone-repair" && "mt-14")}
+          className={cn("max-w-4xl scroll-mt-40", !OWN_SECTIONS.has(service.slug) && "mt-14")}
         >
           <h2 className="flex items-center gap-2 text-3xl font-semibold md:text-4xl">
             <MessageCircleQuestion className="h-7 w-7 text-primary" /> {ui.faq}

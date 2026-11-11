@@ -3,8 +3,7 @@ import { ArrowRight, CircleCheck, MapPin, MessageCircleQuestion, Phone } from "l
 
 import { MoneyText } from "@/components/intl/money";
 import { CATEGORY_PAGES, type CategoryKey } from "@/components/products/data";
-import { TABLETS } from "@/components/products/inventory";
-import { LatestDevices } from "@/components/products/latest-devices";
+import { LeaseGrid } from "@/components/lease/lease-ui";
 import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
@@ -200,13 +199,13 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
       </section>
 
       {category === "laptops" && (
-        <LatestDevices
-          devices={TABLETS}
+        <LeaseGrid
           lang={lang}
+          category={["ipads", "macbooks"]}
           title={
             lang === "en"
-              ? "In store now: iPads on our shelves."
-              : "Recién llegados: iPad en nuestras vitrinas."
+              ? "iPads and MacBooks you can lease today."
+              : "iPad y MacBook que puedes arrendar hoy."
           }
           className="pt-0 md:pt-0"
         />

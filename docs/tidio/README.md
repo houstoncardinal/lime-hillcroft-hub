@@ -13,7 +13,7 @@ Also add the website as a source so Lyro learns from it directly:
 - `https://www.ticwirelesstx.com/` (English)
 - `https://www.ticwirelesstx.com/es` (Spanish)
 - `https://www.ticwirelesstx.com/leasing`
-- `https://www.ticwirelesstx.com/devices` (every phone and tablet in store, each with its own page)
+- `https://www.ticwirelesstx.com/lease-to-own` (every lease-to-own device, each with its own page)
 
 When the stock list changes, update the device data (src/components/products) and run
 `npm run inventory` — it rewrites the "Devices in store now" section of the knowledge base and

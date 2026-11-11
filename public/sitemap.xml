@@ -3,7 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ticwirelesstx.com/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -22,10 +22,20 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/leasing</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/leasing"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/leasing"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/leasing-en.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/in-house-leasing</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/in-house-leasing"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-en-tienda"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/in-house-leasing"/>
     <image:image>
       <image:loc>https://www.ticwirelesstx.com/og/leasing-en.jpg</image:loc>
     </image:image>
@@ -42,7 +52,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/location</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/location"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/ubicacion"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/location"/>
@@ -108,7 +118,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/accessories</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/accessories"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/accesorios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/accessories"/>
@@ -145,7 +155,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/game-consoles</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/game-consoles"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/consolas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/game-consoles"/>
@@ -167,7 +177,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/laptops-tablets</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/laptops-tablets"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/laptops-y-tabletas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/laptops-tablets"/>
@@ -195,7 +205,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/iphone-18</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/iphone-18"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/iphone-18"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/iphone-18"/>
@@ -222,598 +232,778 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/og/home-en.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-18</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-18"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-18-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/iphone-18.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-18-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-18-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-18-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-18-pro"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-18-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-18-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s26-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s26-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s26-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s26-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-17-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s26</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s26"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s26"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s26"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-17-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-z-fold8-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold8-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold8-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold8-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-air</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-air"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-air"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-air"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-air.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-17-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-17-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-17-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-17-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-17</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-17.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-17-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-17-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-17-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-17-pro"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-17</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-17"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-17"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-17"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s25-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s25-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s25-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s25-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-16-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s25-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s25-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s25-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s25-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-16</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s25</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s25"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s25"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s25"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-z-fold7</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold7"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold7"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold7"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15-pro.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-z-flip7</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-flip7"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-flip7"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-flip7"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-15-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a36</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a36"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-15</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a26</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a26"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/ipad-11</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-11"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-11"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-11"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/laptops-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-16-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-14-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-16-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-14</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-16-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16-pro"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-13-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-13-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-13-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-16</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-13</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-13.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s24-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s24-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s24-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s24-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-12-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-12-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-12-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s24-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s24-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s24-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s24-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-12</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-12"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-12.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s24</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s24"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s24"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s24"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-11-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-11-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-11-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-z-fold6</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold6"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold6"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold6"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-11</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-11"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-11.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a16</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a16"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-xs-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xs-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-xs-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xs-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-xs-max.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-15-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-15-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-15-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-15-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-xr</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xr"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-xr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xr"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-xr.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-15-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-15-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-15-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-15-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-se-2</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-se-2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-se-2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-se-2"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-se-2.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-15</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-15"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-15"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-15"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-8-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-8-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-8-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s23-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s23-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s23-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s23-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/iphone-8</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-8"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-8.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s23-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s23-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s23-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s23-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold7</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold7"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold7"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-fold7.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s23</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s23"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s23"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s23"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip7</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip7"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-flip7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip7"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-flip7.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a15</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a15"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold6</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold6"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold6"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-fold6.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a14</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a14"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold5"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-fold5.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-14-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip4</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip4"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-flip4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip4"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-flip4.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-14-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s26-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s26-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s26-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s26-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s26-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-14-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14-pro"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s25-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s25-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s25-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s25-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s25-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-14</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s24-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s24-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s24-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s22-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s22-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s22-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s22-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s24</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s24"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s24.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s22-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s22-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s22-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s22-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s23-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s23-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s23-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s22</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s22"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s22"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s22"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s23</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s23"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s23.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a53</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a53"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s22-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/ipad-pro-m2</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-pro-m2"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/laptops-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s22-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-13-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-13-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-13-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-13-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s22</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s22.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-13</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-13"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-13"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-13"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s21-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s21-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s21-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s21-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s21-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s21-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s21-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s21-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s21-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s21-plus"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s21</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s21.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s21</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s21"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s21"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s21"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-note20-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note20-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/note20-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-z-fold3</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold3"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold3"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold3"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/s20-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a13</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a13"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s20-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s20-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a03s</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a03s"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-note10-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note10-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-note10-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note10-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-note10-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-12-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-12-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-12-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-12-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-s9-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s9-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s9-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s9-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s9-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-12</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-12"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-12"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-12"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-a54</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a54"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a54"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a54"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-a54.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-s20-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-a15</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a15"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/a15.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-note20-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-note20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-a13</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a13"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/a13.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-11-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-11-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-11-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-11-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/galaxy-a03s</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a03s"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/a03.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/iphone-11</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-11"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-11"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-11"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/moto-g-ace-5g</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/moto-g-ace-5g"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/moto-g-ace-5g"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/moto-g-ace-5g"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/moto-g-ace-5g.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/galaxy-a20</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a20"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-12</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-12"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-series-12"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-12"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/apple-watch-series-12.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/devices/ipad-mini-5</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-mini-5"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-11</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-11"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-series-11"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-11"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/laptops-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/apple-watch-series-11.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/apple-watch-se</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-se"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-se"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-se"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/apple-watch-se.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-pro-11-m2</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-pro-11-m2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-pro-11-m2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-pro-11-m2"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/ipad-pro.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-11</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-11"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-11"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-11"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-11.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-mini-6</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-6"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-mini-6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-6"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-mini-6.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-mini-5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/ipad-mini.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-9</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-9"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-9"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-9"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-9.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-8</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-8"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-8"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-8"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-8.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/ipad-6</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-6"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-6"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-6.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-13-m5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-air-13-m5.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/macbook-air-15-m5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-15-m5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-15-m5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-15-m5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-air-15-m5.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m4</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m4"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-13-m4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m4"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-air-13-m4.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/macbook-neo-13</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-neo-13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-neo-13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-neo-13"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-neo-13.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/playstation-5-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-5-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5-pro"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/playstation-5-pro.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/playstation-5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/playstation-5.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/xbox-series-x</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/xbox-series-x"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/xbox-series-x"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/xbox-series-x"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/xbox-series-x.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/nintendo-switch-2</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/nintendo-switch-2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/nintendo-switch-2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/nintendo-switch-2"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/nintendo-switch-2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/playstation-portal</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/playstation-portal"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-portal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/playstation-portal"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/playstation-portal.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/lease-to-own/samsung-tv-65</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/samsung-tv-65"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/samsung-tv-65"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/samsung-tv-65"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/samsung-tv-65.jpg</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/reviews</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/reviews"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/resenas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/reviews"/>
@@ -823,7 +1013,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services"/>
@@ -833,7 +1023,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/unlocked-phones</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
@@ -879,7 +1069,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/phone-repair</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-repair"/>
@@ -889,7 +1079,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/iphone-repair</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/iphone-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
@@ -899,7 +1089,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/samsung-repair</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/samsung-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
@@ -909,7 +1099,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/prepaid-plans</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
@@ -919,7 +1109,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/xfinity-prepaid-internet</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
@@ -929,7 +1119,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/phone-unlocking</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
@@ -938,18 +1128,18 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/services/buy-sell-trade</loc>
-    <lastmod>2026-10-22</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/buy-sell-trade"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
+    <loc>https://www.ticwirelesstx.com/services/trade-in-or-sell</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/trade-in-or-sell"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/trade-in-or-sell"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/trade-in-or-sell"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-buy-sell-trade-en.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/og/service-trade-in-or-sell-en.jpg</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/bill-payments</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/bill-payments"/>
@@ -959,7 +1149,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/services/international-recharge</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/international-recharge"/>
@@ -969,7 +1159,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas"/>
@@ -979,7 +1169,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/mahatma-gandhi-district</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
@@ -989,7 +1179,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/gulfton</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/gulfton"/>
@@ -999,7 +1189,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/sharpstown</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
@@ -1009,7 +1199,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/westchase</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/westchase"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/westchase"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/westchase"/>
@@ -1019,7 +1209,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/galleria-uptown</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
@@ -1029,7 +1219,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/bellaire</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/bellaire"/>
@@ -1039,7 +1229,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/alief</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/alief"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/alief"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/alief"/>
@@ -1049,7 +1239,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/areas/meyerland</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/meyerland"/>
@@ -1059,7 +1249,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/guides</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides"/>
@@ -1109,7 +1299,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -1128,10 +1318,20 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/arrendamiento</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/leasing"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/leasing"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/og/leasing-es.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-en-tienda</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/in-house-leasing"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-en-tienda"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/in-house-leasing"/>
     <image:image>
       <image:loc>https://www.ticwirelesstx.com/og/leasing-es.jpg</image:loc>
     </image:image>
@@ -1148,7 +1348,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/ubicacion</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/location"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/ubicacion"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/location"/>
@@ -1214,7 +1414,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/accesorios</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/accessories"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/accesorios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/accessories"/>
@@ -1251,7 +1451,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/consolas</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/game-consoles"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/consolas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/game-consoles"/>
@@ -1273,7 +1473,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/laptops-y-tabletas</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/laptops-tablets"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/laptops-y-tabletas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/laptops-tablets"/>
@@ -1301,7 +1501,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/iphone-18</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/iphone-18"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/iphone-18"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/iphone-18"/>
@@ -1328,598 +1528,778 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/og/home-es.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-18</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-18"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-18"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-18-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-18-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/iphone-18.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-18-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-18-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-18-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-18-pro"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-18-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-18-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-18-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-18-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s26-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s26-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s26-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s26-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-17-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s26</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s26"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s26"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s26"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-17-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold8-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold8-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold8-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold8-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-air</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-air"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-air"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-air"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-air.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-17-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-17-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-17-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-17-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-17"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-17"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-17.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-17-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-17-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-17-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-17-pro"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-17</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-17"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-17"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-17"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s25-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s25-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s25-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s25-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s25-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s25-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s25-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s25-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-16"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-16.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s25</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s25"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s25"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s25"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold7</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold7"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold7"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold7"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15-pro.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-z-flip7</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-flip7"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-flip7"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-flip7"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a36</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a36"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a36"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-15"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-15"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-15.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a26</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a26"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a26"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/ipad-11</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-11"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-11"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-11"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-pro"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/laptops-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14-pro.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-16-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-16-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-14"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-14"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-14.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-16-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16-pro"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-13-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-13-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-13-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-16</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-16"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-16"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-16"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-13</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-13"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-13.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s24-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s24-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s24-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s24-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-12-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-12-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-12-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s24-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s24-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s24-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s24-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-12</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-12"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-12"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-12.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s24</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s24"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s24"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s24"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-11-pro-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-11-pro-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11-pro-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-11-pro-max.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold6</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold6"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold6"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold6"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-11</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-11"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-11"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-11.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a16</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a16"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a16"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-xs-max</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xs-max"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-xs-max"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xs-max"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-xs-max.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-15-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-15-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-15-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-15-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-xr</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xr"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-xr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-xr"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-xr.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-15-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-15-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-15-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-15-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-se-2</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-se-2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-se-2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-se-2"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-se-2.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-15</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-15"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-15"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-15"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-8-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-8-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-8-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s23-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s23-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s23-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s23-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-8</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/iphone-8"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/iphone-8"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/iphone-8.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s23-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s23-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s23-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s23-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold7</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold7"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold7"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-fold7.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s23</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s23"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s23"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s23"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-flip7</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip7"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-flip7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip7"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-flip7.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a15</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a15"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a15"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold6</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold6"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold6"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-fold6.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a14</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a14"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a14"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-fold5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-fold5"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-fold5.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-14-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-flip4</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip4"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-z-flip4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-z-flip4"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-z-flip4.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-14-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s26-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s26-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s26-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s26-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s26-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-14-pro</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14-pro"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14-pro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14-pro"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s25-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s25-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s25-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s25-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s25-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-14</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-14"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-14"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-14"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s24-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s24-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s24-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s22-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s22-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s22-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s22-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s24</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s24"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s24"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s24.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s22-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s22-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s22-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s22-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s23-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s23-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s23-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s22</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s22"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s22"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s22"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s23</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s23"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s23"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s23.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a53</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a53"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a53"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s22-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/ipad-pro-m2</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-pro-m2"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-pro-m2"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/laptops-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s22-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-13-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-13-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-13-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-13-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s22"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s22"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s22.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-13</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-13"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-13"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-13"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s21-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s21-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s21-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s21-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s21-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s21-plus.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s21-plus</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s21-plus"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s21-plus"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s21-plus"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s21"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s21"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s21.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s21</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s21"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s21"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s21"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-note20-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-note20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note20-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/note20-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold3</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold3"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-z-fold3"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-z-fold3"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s20-ultra</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s20-ultra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-ultra"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/s20-ultra.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a13</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a13"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a13"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s20-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s20-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s20-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s20-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a03s</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a03s"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a03s"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-note10-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note10-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-note10-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-note10-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-note10-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-12-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-12-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-12-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-12-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s9-plus</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s9-plus"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-s9-plus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-s9-plus"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-s9-plus.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-12</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-12"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-12"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-12"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a54</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a54"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a54"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a54"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/galaxy-a54.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-s20-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-s20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-s20-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a15</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a15"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a15"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/a15.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-note20-ultra</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-note20-ultra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-note20-ultra"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a13</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a13"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/a13.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-11-pro-max</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-11-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-11-pro-max"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-11-pro-max"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a03s</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/galaxy-a03s"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/galaxy-a03s"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/a03.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/iphone-11</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/iphone-11"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/iphone-11"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/iphone-11"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/moto-g-ace-5g</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/moto-g-ace-5g"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/moto-g-ace-5g"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/moto-g-ace-5g"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/moto-g-ace-5g.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/galaxy-a20</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/galaxy-a20"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/galaxy-a20"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-series-12</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-12"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-series-12"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-12"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-unlocked-phones-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/apple-watch-series-12.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/equipos/ipad-mini-5</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/equipos/ipad-mini-5"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/devices/ipad-mini-5"/>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-series-11</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-11"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-series-11"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-series-11"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/laptops-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/apple-watch-series-11.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-se</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-se"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/apple-watch-se"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/apple-watch-se"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/apple-watch-se.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-pro-11-m2</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-pro-11-m2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-pro-11-m2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-pro-11-m2"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/ipad-pro.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-11</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-11"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-11"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-11"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-11.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-mini-6</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-6"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-mini-6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-6"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-mini-6.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-mini-5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-mini-5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-mini-5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/ipad-mini.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-9</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-9"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-9"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-9"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-9.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-8</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-8"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-8"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-8"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-8.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-6</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/ipad-6"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/ipad-6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/ipad-6"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/ipad-6.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-13-m5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-13-m5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-air-13-m5.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-15-m5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-15-m5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-15-m5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-15-m5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-air-15-m5.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-13-m4</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m4"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-air-13-m4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-air-13-m4"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-air-13-m4.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-neo-13</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/macbook-neo-13"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/macbook-neo-13"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/macbook-neo-13"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/macbook-neo-13.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-5-pro</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5-pro"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-5-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5-pro"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/playstation-5-pro.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-5</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/playstation-5"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/playstation-5.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/xbox-series-x</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/xbox-series-x"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/xbox-series-x"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/xbox-series-x"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/xbox-series-x.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/nintendo-switch-2</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/nintendo-switch-2"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/nintendo-switch-2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/nintendo-switch-2"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/nintendo-switch-2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-portal</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/playstation-portal"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/playstation-portal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/playstation-portal"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/playstation-portal.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ticwirelesstx.com/es/arrendamiento-equipos/samsung-tv-65</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/lease-to-own/samsung-tv-65"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/arrendamiento-equipos/samsung-tv-65"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/lease-to-own/samsung-tv-65"/>
+    <image:image>
+      <image:loc>https://www.ticwirelesstx.com/photos/devices/product/samsung-tv-65.jpg</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/resenas</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/reviews"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/resenas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/reviews"/>
@@ -1929,7 +2309,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services"/>
@@ -1939,7 +2319,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/unlocked-phones</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/unlocked-phones"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/unlocked-phones"/>
@@ -1985,7 +2365,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/phone-repair</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-repair"/>
@@ -1995,7 +2375,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/iphone-repair</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/iphone-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/iphone-repair"/>
@@ -2005,7 +2385,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/samsung-repair</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/samsung-repair"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/samsung-repair"/>
@@ -2015,7 +2395,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/prepaid-plans</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/prepaid-plans"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/prepaid-plans"/>
@@ -2025,7 +2405,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/xfinity-prepaid-internet</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/xfinity-prepaid-internet"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/xfinity-prepaid-internet"/>
@@ -2035,7 +2415,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/phone-unlocking</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/phone-unlocking"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/phone-unlocking"/>
@@ -2044,18 +2424,18 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.ticwirelesstx.com/es/servicios/buy-sell-trade</loc>
-    <lastmod>2026-10-22</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/buy-sell-trade"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/buy-sell-trade"/>
+    <loc>https://www.ticwirelesstx.com/es/servicios/trade-in-or-sell</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/trade-in-or-sell"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/trade-in-or-sell"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/trade-in-or-sell"/>
     <image:image>
-      <image:loc>https://www.ticwirelesstx.com/og/service-buy-sell-trade-es.jpg</image:loc>
+      <image:loc>https://www.ticwirelesstx.com/og/service-trade-in-or-sell-es.jpg</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/bill-payments</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/bill-payments"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/bill-payments"/>
@@ -2065,7 +2445,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/servicios/international-recharge</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/services/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/servicios/international-recharge"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/services/international-recharge"/>
@@ -2075,7 +2455,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas"/>
@@ -2085,7 +2465,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/mahatma-gandhi-district</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/mahatma-gandhi-district"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/mahatma-gandhi-district"/>
@@ -2095,7 +2475,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/gulfton</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/gulfton"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/gulfton"/>
@@ -2105,7 +2485,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/sharpstown</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/sharpstown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/sharpstown"/>
@@ -2115,7 +2495,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/westchase</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/westchase"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/westchase"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/westchase"/>
@@ -2125,7 +2505,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/galleria-uptown</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/galleria-uptown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/galleria-uptown"/>
@@ -2135,7 +2515,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/bellaire</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/bellaire"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/bellaire"/>
@@ -2145,7 +2525,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/alief</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/alief"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/alief"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/alief"/>
@@ -2155,7 +2535,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/zonas/meyerland</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/areas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/zonas/meyerland"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/areas/meyerland"/>
@@ -2165,7 +2545,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/es/guias</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/guides"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es/guias"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ticwirelesstx.com/guides"/>
@@ -2215,7 +2595,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/vi</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2234,7 +2614,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/zh</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2253,7 +2633,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/ar</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2272,7 +2652,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/ur</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2291,7 +2671,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/hi</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2310,7 +2690,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/fr</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2329,7 +2709,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/pt</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2348,7 +2728,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/ko</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>
@@ -2367,7 +2747,7 @@
   </url>
   <url>
     <loc>https://www.ticwirelesstx.com/tl</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.ticwirelesstx.com/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://www.ticwirelesstx.com/es"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://www.ticwirelesstx.com/vi"/>

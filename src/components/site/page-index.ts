@@ -9,9 +9,7 @@ import { guidePath } from "@/components/guides/paths";
 import { intlHead } from "@/components/intl/heads";
 import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import { locationHead } from "@/components/location/heads";
-import { devicePath } from "@/components/products/device-paths";
-import { DEVICE_PAGES } from "@/components/products/devices";
-import { categoryHead, deviceHead, devicesHubHead } from "@/components/products/heads";
+import { categoryHead } from "@/components/products/heads";
 import { reviewsHead } from "@/components/reviews/heads";
 import { homeHead, leasingHead } from "@/components/pages/heads";
 import { inHouseHead } from "@/components/pages/in-house-head";
@@ -39,16 +37,29 @@ function pages(): [string, Head][] {
       ...["privacy", "returns", "shipping", "terms", "warranty"].map((key): [string, Head] => {
         const path = `${l === "es" ? "/es/politicas" : "/policies"}/${key}`;
         const title = `${key} | TIC Wireless ${l === "es" ? "Políticas" : "Policies"}`;
-        return [path, { meta: [{ title }, { name: "description", content: "TIC Wireless purchase policies and store contact information in Houston, Texas." }] }];
+        return [
+          path,
+          {
+            meta: [
+              { title },
+              {
+                name: "description",
+                content:
+                  "TIC Wireless purchase policies and store contact information in Houston, Texas.",
+              },
+            ],
+          },
+        ];
       }),
       [ALTERNATES.accessories[l], categoryHead("accessories", l)],
       [ALTERNATES.consoles[l], categoryHead("consoles", l)],
       [ALTERNATES.laptops[l], categoryHead("laptops", l)],
       [ALTERNATES.iphone18[l], categoryHead("iphone18", l)],
-      [ALTERNATES.devices[l], devicesHubHead(l)],
       [ALTERNATES.leaseCatalog[l], leaseHubHead(l)],
-      ...LEASE_DEVICES.map((d): [string, Head] => [leaseDevicePath(l, d.id), leaseDeviceHead(l, d)]),
-      ...DEVICE_PAGES.map((d): [string, Head] => [devicePath(l, d.device.id), deviceHead(l, d)]),
+      ...LEASE_DEVICES.map((d): [string, Head] => [
+        leaseDevicePath(l, d.id),
+        leaseDeviceHead(l, d),
+      ]),
       [ALTERNATES.reviews[l], reviewsHead(l)],
       [ALTERNATES.services[l], servicesHubHead(l)],
       ...SERVICES.map((s): [string, Head] => [servicePath(l, s.slug), serviceHead(l, s)]),

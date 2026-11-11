@@ -86,7 +86,7 @@ const SERVICE_SLUGS = [
   "xfinity-prepaid-internet",
   "phone-repair",
   "phone-unlocking",
-  "buy-sell-trade",
+  "trade-in-or-sell",
   "bill-payments",
   "international-recharge",
 ];
@@ -145,7 +145,16 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               {<MoneyText text={t.hero.body[2]} />}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              {SHOP_ENABLED && <Button asChild className="h-auto min-h-12 rounded-full px-7 py-3.5 text-base font-semibold"><Link to={ALTERNATES.shop[lang]}><ShoppingBag />{lang === "en" ? "Shop all products" : "Ver todos los productos"}<ArrowRight /></Link></Button>}
+              <Button
+                asChild
+                className="h-auto min-h-12 rounded-full px-7 py-3.5 text-base font-semibold"
+              >
+                <Link to={ALTERNATES.leaseCatalog[lang]}>
+                  <ShoppingBag />
+                  {lang === "en" ? "Shop lease-to-own devices" : "Ver equipos con arrendamiento"}
+                  <ArrowRight />
+                </Link>
+              </Button>
               <a
                 href={DIRECTIONS}
                 target="_blank"
@@ -265,7 +274,9 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                 {<MoneyText text={t.services.title} />}
               </h2>
             </div>
-            <p className="max-w-sm text-muted-foreground">{<MoneyText text={t.services.intro} />}</p>
+            <p className="max-w-sm text-muted-foreground">
+              {<MoneyText text={t.services.intro} />}
+            </p>
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
@@ -352,7 +363,7 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               </span>
             </a>
           </div>
-  </div>
+        </div>
       </section>
 
       <LeasingPortals lang={lang} />
@@ -415,8 +426,14 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                   href={`${servicePath(lang, "prepaid-plans")}#plans-${id}`}
                   className="group flex h-full flex-col items-center justify-center gap-2 rounded-2xl border bg-card px-2 py-4 text-center transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:py-5"
                 >
-                  <CarrierLogo id={id} name={name} className="h-9 w-20 bg-transparent sm:h-10 sm:w-24" />
-                  <span className="text-xs font-semibold leading-tight text-ink sm:text-sm">{name}</span>
+                  <CarrierLogo
+                    id={id}
+                    name={name}
+                    className="h-9 w-20 bg-transparent sm:h-10 sm:w-24"
+                  />
+                  <span className="text-xs font-semibold leading-tight text-ink sm:text-sm">
+                    {name}
+                  </span>
                 </a>
               </li>
             ))}

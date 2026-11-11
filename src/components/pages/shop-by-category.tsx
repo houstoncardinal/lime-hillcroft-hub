@@ -2,15 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 
 import { LEASE_PATHS, type LeaseCategory } from "@/components/lease/catalog";
-import { PRODUCT_PHOTOS } from "@/components/products/photos";
 import { servicePath } from "@/components/services/paths";
-import { SERVICE_PHOTOS } from "@/components/services/photos";
 import { SHOP_ENABLED } from "@/components/site/features";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
 
 // Home page "Shop by category": one tile per kind of product or service the store offers, each a
-// store photo and a name. Product tiles open their lease-to-own catalog section or category page;
+// picture on white and a name: manufacturer images for products; for repair, Samsung's Galaxy
+// render with a cracked screen drawn on and a repair badge; for prepaid, the carriers' logos. Product tiles open their lease-to-own catalog section or category page;
 // service tiles open their service page. Prices live on those pages, not here.
 
 type L = Record<Lang, string>;
@@ -36,66 +35,69 @@ const service = (slug: Parameters<typeof servicePath>[1]) => ({
   en: servicePath("en", slug),
   es: servicePath("es", slug),
 });
-const P = PRODUCT_PHOTOS;
-const S = SERVICE_PHOTOS;
 
+// Product tiles: manufacturer product images on white (public/photos/categories, built from the
+// official images in public/photos/devices/official and Apple's store images), 4:3 with room.
+const cat = (id: string): Img => ({
+  src: `/photos/categories/${id}.webp`,
+  sm: `/photos/categories/${id}-600.webp`,
+  w: 1200,
+  h: 900,
+  fit: "contain",
+});
+
+// 12 tiles with the lease-to-own tile: full rows at 2, 3, 4 and 6 columns.
 const TILES: Tile[] = [
-  { id: "iphone", title: both("iPhone"), href: lease("iphone"), img: P.iphone18 },
-  { id: "samsung", title: both("Samsung Galaxy"), href: lease("samsung"), img: S.s24 },
+  { id: "iphone", title: both("iPhone"), href: lease("iphone"), img: cat("iphone") },
+  { id: "samsung", title: both("Samsung Galaxy"), href: lease("samsung"), img: cat("samsung") },
   {
     id: "ipads",
     title: both("iPad & tablets", "iPad y tabletas"),
     href: lease("ipads"),
-    // The bottom shelf of the display case: iPad and Galaxy Tab boxes.
-    img: { ...P.airpodsMax, focus: "80% 82%", zoom: 2 },
+    img: cat("ipads"),
   },
   {
     id: "laptops",
     title: both("Laptops", "Laptops"),
     href: ALTERNATES.laptops,
-    img: P.laptopsTablets,
+    img: cat("laptops"),
   },
   {
     id: "consoles",
     title: both("Game consoles", "Consolas"),
     href: ALTERNATES.consoles,
-    img: P.consoles,
+    img: cat("consoles"),
   },
   {
     id: "watches",
     title: both("Smartwatches", "Relojes"),
     href: lease("watches"),
-    img: P.airpodsWatches,
+    img: cat("watches"),
   },
+  { id: "tv", title: both("TVs", "Televisores"), href: lease("tv"), img: cat("tv") },
   {
     id: "audio",
     title: both("Audio", "Audio"),
     href: { en: `${ALTERNATES.accessories.en}#audio`, es: `${ALTERNATES.accessories.es}#audio` },
-    img: P.jbl,
+    img: cat("audio"),
   },
   {
     id: "accessories",
     title: both("Accessories", "Accesorios"),
     href: ALTERNATES.accessories,
-    img: P.caseWall,
+    img: cat("accessories"),
   },
   {
     id: "repair",
     title: both("Phone repair", "Reparación"),
     href: service("phone-repair"),
-    img: S.repair,
+    img: cat("repair"),
   },
   {
     id: "prepaid",
     title: both("Prepaid plans", "Planes prepagados"),
     href: service("prepaid-plans"),
-    img: S.counter,
-  },
-  {
-    id: "xfinity",
-    title: both("Home internet", "Internet en casa"),
-    href: service("xfinity-prepaid-internet"),
-    img: S.xfinity,
+    img: cat("prepaid"),
   },
 ];
 
@@ -137,7 +139,7 @@ function TileName({ children }: { children: string }) {
 
 export function ShopByCategory({ lang }: { lang: Lang }) {
   const t = T[lang];
-  const allHref = SHOP_ENABLED ? ALTERNATES.shop[lang] : ALTERNATES.devices[lang];
+  const allHref = ALTERNATES.leaseCatalog[lang];
   return (
     <section
       id="categories"
@@ -171,7 +173,9 @@ export function ShopByCategory({ lang }: { lang: Lang }) {
                 <span className="font-display text-sm font-bold uppercase leading-tight tracking-wide sm:text-base">
                   {t.dealBadge}
                 </span>
-                <span className="hidden text-xs leading-snug opacity-90 sm:block">{t.dealHint}</span>
+                <span className="hidden text-xs leading-snug opacity-90 sm:block">
+                  {t.dealHint}
+                </span>
               </span>
               <TileName>{t.dealTitle}</TileName>
             </Link>

@@ -1,5 +1,5 @@
 // Manufacturer product images for lease-to-own devices (Apple Store & Apple Support, Samsung
-// Mobile Press, PlayStation, Xbox and Nintendo), downloaded 2026-11-10, trimmed onto white and
+// Mobile Press and samsung.com product galleries, PlayStation, Xbox and Nintendo), downloaded 2026-11-10, trimmed onto white and
 // credited to the manufacturer on each page. Files: public/photos/devices/official/<id>-<n>.*
 // Generated from the image plan; the first photo of each device is its main photo.
 import type { ProductPhoto } from "@/components/products/devices";
@@ -319,5 +319,73 @@ export const OFFICIAL_PHOTOS: Record<string, ProductPhoto[]> = {
     o("galaxy-a54-1", 432, 541, "Galaxy A54 5G, official Samsung product image", "Galaxy A54 5G, imagen oficial de Samsung", "Samsung", "https://www.samsungmobilepress.com/media-assets/galaxy-a54-5g"),
     o("galaxy-a54-2", 285, 541, "Galaxy A54 5G, official Samsung product image", "Galaxy A54 5G, imagen oficial de Samsung", "Samsung", "https://www.samsungmobilepress.com/media-assets/galaxy-a54-5g"),
     o("galaxy-a54-3", 254, 542, "Galaxy A54 5G, official Samsung product image", "Galaxy A54 5G, imagen oficial de Samsung", "Samsung", "https://www.samsungmobilepress.com/media-assets/galaxy-a54-5g"),
+  ],
+  "galaxy-s24-ultra": [
+    o("galaxy-s24-ultra-1", 1554, 1087, "Galaxy S24 Ultra, in Titanium Black, official Samsung product image", "Galaxy S24 Ultra, color Titanium Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24-ultra/buy/"),
+    o("galaxy-s24-ultra-2", 1554, 1087, "Galaxy S24 Ultra, in Titanium Gray, official Samsung product image", "Galaxy S24 Ultra, color Titanium Gray, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24-ultra/buy/"),
+    o("galaxy-s24-ultra-3", 1554, 1087, "Galaxy S24 Ultra, in Titanium Violet, official Samsung product image", "Galaxy S24 Ultra, color Titanium Violet, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24-ultra/buy/"),
+    o("galaxy-s24-ultra-4", 1554, 1087, "Galaxy S24 Ultra, in Titanium Yellow, official Samsung product image", "Galaxy S24 Ultra, color Titanium Yellow, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24-ultra/buy/"),
+  ],
+  "galaxy-s24": [
+    o("galaxy-s24-1", 1554, 1087, "Galaxy S24, in Onyx Black, official Samsung product image", "Galaxy S24, color Onyx Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24/buy/"),
+    o("galaxy-s24-2", 1554, 1087, "Galaxy S24, in Marble Gray, official Samsung product image", "Galaxy S24, color Marble Gray, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24/buy/"),
+    o("galaxy-s24-3", 1554, 1087, "Galaxy S24, in Cobalt Violet, official Samsung product image", "Galaxy S24, color Cobalt Violet, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24/buy/"),
+    o("galaxy-s24-4", 1554, 1087, "Galaxy S24, in Amber Yellow, official Samsung product image", "Galaxy S24, color Amber Yellow, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ph/smartphones/galaxy-s24/buy/"),
+  ],
+  "galaxy-s21": [
+    o("galaxy-s21-1", 356, 356, "Galaxy S21 5G, in Phantom Gray, official Samsung product image", "Galaxy S21 5G, color Phantom Gray, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s21-5g/buy/"),
+    o("galaxy-s21-2", 356, 356, "Galaxy S21 5G, in Phantom Violet, official Samsung product image", "Galaxy S21 5G, color Phantom Violet, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s21-5g/buy/"),
+    o("galaxy-s21-3", 356, 356, "Galaxy S21 5G, in Phantom White, official Samsung product image", "Galaxy S21 5G, color Phantom White, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s21-5g/buy/"),
+    o("galaxy-s21-4", 356, 356, "Galaxy S21 5G, in Phantom Pink, official Samsung product image", "Galaxy S21 5G, color Phantom Pink, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s21-5g/buy/"),
+  ],
+  "galaxy-s21-plus": [
+    o("galaxy-s21-plus-1", 356, 356, "Galaxy S21+ 5G, in Phantom Black, official Samsung product image", "Galaxy S21+ 5G, color Phantom Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s21-5g/buy/"),
+  ],
+  "galaxy-note20-ultra": [
+    o("galaxy-note20-ultra-1", 1554, 1087, "Galaxy Note20 Ultra 5G, in Mystic Black with S Pen, official Samsung product image", "Galaxy Note20 Ultra 5G, color Mystic Black con S Pen, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/business/smartphones/galaxy-note/galaxy-note20-ultra-5g-256gb-sm-n986-sm-n986bzkgeua/buy"),
+    o("galaxy-note20-ultra-2", 1554, 1087, "Galaxy Note20 Ultra 5G, in Mystic Black, back, official Samsung product image", "Galaxy Note20 Ultra 5G, color Mystic Black, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/business/smartphones/galaxy-note/galaxy-note20-ultra-5g-256gb-sm-n986-sm-n986bzkgeua/buy"),
+    o("galaxy-note20-ultra-3", 1554, 1087, "Galaxy Note20 Ultra 5G, front, official Samsung product image", "Galaxy Note20 Ultra 5G, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/business/smartphones/galaxy-note/galaxy-note20-ultra-5g-256gb-sm-n986-sm-n986bzkgeua/buy"),
+    o("galaxy-note20-ultra-4", 1554, 1087, "Galaxy Note20 Ultra 5G, with S Pen, official Samsung product image", "Galaxy Note20 Ultra 5G, con S Pen, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/business/smartphones/galaxy-note/galaxy-note20-ultra-5g-256gb-sm-n986-sm-n986bzkgeua/buy"),
+  ],
+  "galaxy-s20-ultra": [
+    o("galaxy-s20-ultra-1", 1554, 1087, "Galaxy S20 Ultra 5G, in Cosmic Black, front, official Samsung product image", "Galaxy S20 Ultra 5G, color Cosmic Black, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/kz_ru/smartphones/galaxy-s/galaxy-s20-ultra-5g-cosmic-black-512gb-sm-g988bzkgskz/buy"),
+  ],
+  "galaxy-s20-plus": [
+    o("galaxy-s20-plus-1", 1554, 1087, "Galaxy S20+ 5G, in Cosmic Black, back, official Samsung product image", "Galaxy S20+ 5G, color Cosmic Black, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-s/galaxy-s20-plus-enterprise-edition-sm-g986bzkdeea"),
+    o("galaxy-s20-plus-2", 1554, 1087, "Galaxy S20+ 5G, front, official Samsung product image", "Galaxy S20+ 5G, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-s/galaxy-s20-plus-enterprise-edition-sm-g986bzkdeea"),
+    o("galaxy-s20-plus-3", 1554, 1087, "Galaxy S20+ 5G, angled view, official Samsung product image", "Galaxy S20+ 5G, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-s/galaxy-s20-plus-enterprise-edition-sm-g986bzkdeea"),
+  ],
+  "galaxy-note10-plus": [
+    o("galaxy-note10-plus-1", 1554, 1087, "Galaxy Note10+, in Aura Glow with S Pen, official Samsung product image", "Galaxy Note10+, color Aura Glow con S Pen, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
+    o("galaxy-note10-plus-2", 1554, 1087, "Galaxy Note10+, in Aura Glow, back, official Samsung product image", "Galaxy Note10+, color Aura Glow, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
+    o("galaxy-note10-plus-3", 1554, 1087, "Galaxy Note10+, front with S Pen, official Samsung product image", "Galaxy Note10+, frente con S Pen, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
+    o("galaxy-note10-plus-4", 1554, 1087, "Galaxy Note10+, angled view, official Samsung product image", "Galaxy Note10+, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
+  ],
+  "galaxy-s9-plus": [
+    o("galaxy-s9-plus-1", 1076, 1341, "Galaxy S9+, in Midnight Black, official Samsung product image", "Galaxy S9+, color Midnight Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
+    o("galaxy-s9-plus-2", 1554, 1087, "Galaxy S9+, back, official Samsung product image", "Galaxy S9+, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
+    o("galaxy-s9-plus-3", 1554, 1087, "Galaxy S9+, front, official Samsung product image", "Galaxy S9+, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
+    o("galaxy-s9-plus-4", 1554, 1087, "Galaxy S9+, angled view, official Samsung product image", "Galaxy S9+, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
+  ],
+  "galaxy-a15": [
+    o("galaxy-a15-1", 1554, 1087, "Galaxy A15 5G, in Blue Black, official Samsung product image", "Galaxy A15 5G, color Blue Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a15-5g-blue-black-128gb-sm-a156bzkdeub"),
+    o("galaxy-a15-2", 1554, 1087, "Galaxy A15 5G, back, official Samsung product image", "Galaxy A15 5G, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a15-5g-blue-black-128gb-sm-a156bzkdeub"),
+    o("galaxy-a15-3", 1554, 1087, "Galaxy A15 5G, front, official Samsung product image", "Galaxy A15 5G, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a15-5g-blue-black-128gb-sm-a156bzkdeub"),
+    o("galaxy-a15-4", 1554, 1087, "Galaxy A15 5G, angled view, official Samsung product image", "Galaxy A15 5G, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a15-5g-blue-black-128gb-sm-a156bzkdeub"),
+  ],
+  "galaxy-a13": [
+    o("galaxy-a13-1", 1554, 1087, "Galaxy A13 5G, in Awesome Black, official Samsung product image", "Galaxy A13 5G, color Awesome Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a13-5g-awesome-black-64gb-sm-a136bzkueub"),
+    o("galaxy-a13-2", 1554, 1087, "Galaxy A13 5G, back, official Samsung product image", "Galaxy A13 5G, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a13-5g-awesome-black-64gb-sm-a136bzkueub"),
+    o("galaxy-a13-3", 1554, 1087, "Galaxy A13 5G, front, official Samsung product image", "Galaxy A13 5G, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a13-5g-awesome-black-64gb-sm-a136bzkueub"),
+    o("galaxy-a13-4", 1554, 1087, "Galaxy A13 5G, angled view, official Samsung product image", "Galaxy A13 5G, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a13-5g-awesome-black-64gb-sm-a136bzkueub"),
+  ],
+  "galaxy-a03s": [
+    o("galaxy-a03s-1", 1554, 1087, "Galaxy A03s, in Black, front, official Samsung product image", "Galaxy A03s, color Black, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/gr/smartphones/galaxy-a/galaxy-a03s-black-32gb-sm-a037gzkneue/buy"),
+  ],
+  "samsung-tv-65": [
+    o("samsung-tv-65-1", 1554, 1087, "Samsung 65\" Crystal UHD U8000H 4K TV, angled view, official Samsung product image", "Samsung 65\" Crystal UHD U8000H TV 4K, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/us/tvs/uhd-4k-tv/65-inch-crystal-uhd-4k-tv-u8000h-sku-un65u8000hfxza/"),
+    o("samsung-tv-65-2", 1554, 1087, "Samsung 65\" Crystal UHD U8000H 4K TV, front, official Samsung product image", "Samsung 65\" Crystal UHD U8000H TV 4K, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/us/tvs/uhd-4k-tv/65-inch-crystal-uhd-4k-tv-u8000h-sku-un65u8000hfxza/"),
+    o("samsung-tv-65-3", 1554, 1087, "Samsung 65\" Crystal UHD U8000H 4K TV, side profile, official Samsung product image", "Samsung 65\" Crystal UHD U8000H TV 4K, perfil lateral, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/us/tvs/uhd-4k-tv/65-inch-crystal-uhd-4k-tv-u8000h-sku-un65u8000hfxza/"),
+    o("samsung-tv-65-4", 1528, 1178, "Samsung 65\" Crystal UHD U8000H 4K TV, dimensions, official Samsung product image", "Samsung 65\" Crystal UHD U8000H TV 4K, medidas, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/us/tvs/uhd-4k-tv/65-inch-crystal-uhd-4k-tv-u8000h-sku-un65u8000hfxza/"),
   ],
 };

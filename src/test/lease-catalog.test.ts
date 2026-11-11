@@ -6,6 +6,7 @@ import {
   LEASE_DEVICES,
   LEASE_FEATURED,
   findLeaseDevice,
+  leaseIdForDevice,
   leaseFrom,
   payment,
   phoneLeasingOnly,
@@ -25,16 +26,31 @@ describe("lease-to-own catalog", () => {
     for (const id of LEASE_FEATURED) expect(findLeaseDevice(id), id).toBeDefined();
   });
 
-  it.each(LEASE_DEVICES.map((d) => [d.id, d] as const))("%s has priced, distinct options", (_, d) => {
-    expect(d.options.length).toBeGreaterThan(0);
-    expect(new Set(d.options.map((o) => o.label.en)).size).toBe(d.options.length);
-    for (const o of d.options) {
-      expect(o.lease).toBeGreaterThan(0);
-      if (o.cash !== undefined) expect(o.cash).toBeGreaterThan(0);
-      for (const v of [o.weekly, o.biweekly, o.monthly]) if (v !== undefined) expect(v).toBeGreaterThan(0);
-    }
-    // Photos and spec links point at real /devices pages.
-    if (d.deviceId) expect(LATEST_DEVICES.some((x) => x.id === d.deviceId), d.deviceId).toBe(true);
+  it.each(LEASE_DEVICES.map((d) => [d.id, d] as const))(
+    "%s has priced, distinct options",
+    (_, d) => {
+      expect(d.options.length).toBeGreaterThan(0);
+      expect(new Set(d.options.map((o) => o.label.en)).size).toBe(d.options.length);
+      for (const o of d.options) {
+        expect(o.lease).toBeGreaterThan(0);
+        if (o.cash !== undefined) expect(o.cash).toBeGreaterThan(0);
+        for (const v of [o.weekly, o.biweekly, o.monthly])
+          if (v !== undefined) expect(v).toBeGreaterThan(0);
+      }
+      // Shared photos and specs come from a real device record (and old /devices URLs redirect here).
+      if (d.deviceId)
+        expect(
+          LATEST_DEVICES.some((x) => x.id === d.deviceId),
+          d.deviceId,
+        ).toBe(true);
+    },
+  );
+
+  it("redirects retired /devices pages to the matching lease page", () => {
+    expect(leaseIdForDevice("iphone-18-pro-max")).toBe("iphone-18-pro-max");
+    for (const d of LEASE_DEVICES)
+      if (d.deviceId) expect(leaseIdForDevice(d.deviceId)).toBeDefined();
+    expect(leaseIdForDevice("no-such-phone")).toBeUndefined();
   });
 
   // Owner's rule (updated sheet): list a row only when it has a leasing price and all three
@@ -51,7 +67,12 @@ describe("lease-to-own catalog", () => {
   });
 
   it("includes the iPhone 18 Pro and iPhone 13 Pro Max 256GB; leaves out the Alcatel 3V", () => {
-    expect(findLeaseDevice("iphone-18-pro")!.options[0]).toMatchObject({ lease: 1549, weekly: 76, biweekly: 152, monthly: 294 });
+    expect(findLeaseDevice("iphone-18-pro")!.options[0]).toMatchObject({
+      lease: 1549,
+      weekly: 76,
+      biweekly: 152,
+      monthly: 294,
+    });
     expect(findLeaseDevice("iphone-13-pro-max")!.options).toContainEqual(
       expect.objectContaining({ lease: 750, weekly: 37, biweekly: 74, monthly: 142 }),
     );
@@ -59,23 +80,61 @@ describe("lease-to-own catalog", () => {
   });
 
   it("'from' prices use the cheapest option and its own payment", () => {
-    expect(leaseFrom(findLeaseDevice("iphone-17-pro-max")!)).toMatchObject({ lease: 1399, weekly: 69 });
-    expect(leaseFrom(findLeaseDevice("iphone-16-pro-max")!)).toMatchObject({ lease: 1149, weekly: 56 });
+    expect(leaseFrom(findLeaseDevice("iphone-17-pro-max")!)).toMatchObject({
+      lease: 1399,
+      weekly: 69,
+    });
+    expect(leaseFrom(findLeaseDevice("iphone-16-pro-max")!)).toMatchObject({
+      lease: 1149,
+      weekly: 56,
+    });
   });
 
   it("matches the owner's price sheet (spot checks)", () => {
     const opt = (id: string, label: string) =>
       findLeaseDevice(id)!.options.find((o) => o.label.en === label);
-    expect(opt("iphone-18-pro-max", "256GB")).toMatchObject({ cash: 1649, lease: 1699, weekly: 83, biweekly: 167, monthly: 323 });
-    expect(opt("iphone-18-pro-max", "512GB")).toMatchObject({ lease: 1949, weekly: 96, biweekly: 191, monthly: 370 });
-    expect(opt("iphone-air", "256GB")).toMatchObject({ lease: 1150, weekly: 56, biweekly: 113, monthly: 218 });
-    expect(opt("iphone-16-plus", "256GB")).toMatchObject({ lease: 949, weekly: 47, biweekly: 93, monthly: 180 });
-    expect(opt("ipad-8", "128GB · Wi-Fi + Cellular")).toMatchObject({ lease: 279, weekly: 14, biweekly: 27, monthly: 53 });
-    expect(opt("galaxy-s25-ultra", "512GB")).toMatchObject({ cash: 1050, lease: 1149, monthly: 218 });
-    expect(opt("nintendo-switch-2", "Console")).toMatchObject({ cash: 650, lease: 750, biweekly: 74 });
-    expect(opt("galaxy-s22-ultra", "256GB")).toEqual(
-      expect.objectContaining({ lease: 649 }),
-    );
+    expect(opt("iphone-18-pro-max", "256GB")).toMatchObject({
+      cash: 1649,
+      lease: 1699,
+      weekly: 83,
+      biweekly: 167,
+      monthly: 323,
+    });
+    expect(opt("iphone-18-pro-max", "512GB")).toMatchObject({
+      lease: 1949,
+      weekly: 96,
+      biweekly: 191,
+      monthly: 370,
+    });
+    expect(opt("iphone-air", "256GB")).toMatchObject({
+      lease: 1150,
+      weekly: 56,
+      biweekly: 113,
+      monthly: 218,
+    });
+    expect(opt("iphone-16-plus", "256GB")).toMatchObject({
+      lease: 949,
+      weekly: 47,
+      biweekly: 93,
+      monthly: 180,
+    });
+    expect(opt("ipad-8", "128GB · Wi-Fi + Cellular")).toMatchObject({
+      lease: 279,
+      weekly: 14,
+      biweekly: 27,
+      monthly: 53,
+    });
+    expect(opt("galaxy-s25-ultra", "512GB")).toMatchObject({
+      cash: 1050,
+      lease: 1149,
+      monthly: 218,
+    });
+    expect(opt("nintendo-switch-2", "Console")).toMatchObject({
+      cash: 650,
+      lease: 750,
+      biweekly: 74,
+    });
+    expect(opt("galaxy-s22-ultra", "256GB")).toEqual(expect.objectContaining({ lease: 649 }));
     expect(opt("galaxy-s22-ultra", "256GB")?.cash).toBeUndefined();
   });
 
@@ -95,7 +154,8 @@ describe("lease-to-own catalog", () => {
     for (const [id, p] of Object.entries(LEASE_PHOTOS)) {
       expect(findLeaseDevice(id), id).toBeDefined();
       for (const f of [p.src, p.jpg]) expect(fs.existsSync(`public${f}`), f).toBe(true);
-      if (p.w > 600) expect(fs.existsSync(`public${p.src.replace(".webp", "-480.webp")}`), id).toBe(true);
+      if (p.w > 600)
+        expect(fs.existsSync(`public${p.src.replace(".webp", "-480.webp")}`), id).toBe(true);
       // Commons photos are credited; the store's own photos need none.
       if (p.credit) expect(p.credit.href).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
     }
@@ -113,7 +173,10 @@ describe("lease-to-own catalog", () => {
       const d = findLeaseDevice(id);
       expect(d, id).toBeDefined();
       for (const [label, handle] of Object.entries(byLabel)) {
-        expect(d!.options.some((o) => o.label.en === label), `${id} ${label}`).toBe(true);
+        expect(
+          d!.options.some((o) => o.label.en === label),
+          `${id} ${label}`,
+        ).toBe(true);
         expect(handle).toMatch(/^[a-z0-9-]+$/);
       }
     }
@@ -130,7 +193,13 @@ describe("lease-to-own catalog", () => {
     expect(allowed("ipad-11", "128GB · Wi-Fi + Cellular")).toBe(true);
     expect(allowed("ipad-11", "128GB · Wi-Fi")).toBe(false);
     expect(allowed("ipad-6", "32GB · Wi-Fi · A/B grade")).toBe(false);
-    for (const id of ["macbook-air-13-m4", "apple-watch-series-11", "playstation-5", "samsung-tv-65", "moto-g-ace-5g"])
+    for (const id of [
+      "macbook-air-13-m4",
+      "apple-watch-series-11",
+      "playstation-5",
+      "samsung-tv-65",
+      "moto-g-ace-5g",
+    ])
       expect(allowed(id), id).toBe(false);
   });
 });

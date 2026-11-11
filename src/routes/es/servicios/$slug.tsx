@@ -7,7 +7,18 @@ import { ServicePage } from "@/components/services/service-page";
 export const Route = createFileRoute("/es/servicios/$slug")({
   loader: ({ params }) => {
     if (params.slug === "iphone-repair" || params.slug === "samsung-repair") {
-      throw redirect({ to: "/es/servicios/$slug", params: { slug: "phone-repair" }, statusCode: 301 });
+      throw redirect({
+        to: "/es/servicios/$slug",
+        params: { slug: "phone-repair" },
+        statusCode: 301,
+      });
+    }
+    if (params.slug === "buy-sell-trade") {
+      throw redirect({
+        to: "/es/servicios/$slug",
+        params: { slug: "trade-in-or-sell" },
+        statusCode: 301,
+      });
     }
     const service = findService(params.slug);
     if (!service) throw notFound();

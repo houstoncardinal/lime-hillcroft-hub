@@ -25,7 +25,6 @@ export const ALTERNATES = {
   consoles: { en: "/game-consoles", es: "/es/consolas" },
   laptops: { en: "/laptops-tablets", es: "/es/laptops-y-tabletas" },
   iphone18: { en: "/iphone-18", es: "/es/iphone-18" },
-  devices: { en: "/devices", es: "/es/equipos" },
   leaseCatalog: { en: "/lease-to-own", es: "/es/arrendamiento-equipos" },
   inHouse: { en: "/in-house-leasing", es: "/es/arrendamiento-en-tienda" },
   reviews: { en: "/reviews", es: "/es/resenas" },
@@ -63,7 +62,8 @@ export function pageHead({
   noindex?: boolean;
 }) {
   const url = absoluteUrl(alt[lang]);
-  const summary = description.length > 160 ? `${description.slice(0, 156).replace(/\s+\S*$/, "")}…` : description;
+  const summary =
+    description.length > 160 ? `${description.slice(0, 156).replace(/\s+\S*$/, "")}…` : description;
   const img = absoluteUrl(image);
   return {
     meta: [

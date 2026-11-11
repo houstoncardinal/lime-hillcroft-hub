@@ -591,7 +591,12 @@ export const CONSOLES: CategoryPageData = {
       h1: ["PS5, Xbox & Switch 2.", "Take it home today."],
       intro:
         "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and you don't need credit to apply. Our leasing programs start as low as $40 initial payment, with weekly, biweekly or monthly payments, subject to approval.",
-      chips: ["No credit needed", "As low as $40 initial payment", "Take it home today", "Se habla español"],
+      chips: [
+        "No credit needed",
+        "As low as $40 initial payment",
+        "Take it home today",
+        "Se habla español",
+      ],
       cta: "Call to check stock",
       groupsKicker: "In store now",
       groupsTitle: "The consoles everyone's asking for.",
@@ -638,7 +643,8 @@ export const CONSOLES: CategoryPageData = {
       ],
       ogKicker: "Game consoles · Leasing",
       ogHeadline: "PS5, Xbox & Nintendo Switch 2. Take it home today.",
-      ogSub: "No credit needed · As low as $40 initial payment · Weekly, biweekly or monthly payments",
+      ogSub:
+        "No credit needed · As low as $40 initial payment · Weekly, biweekly or monthly payments",
     },
     es: {
       title: "PS5, Xbox y Nintendo Switch 2 en Houston — Desde $40",
@@ -830,7 +836,12 @@ export const LAPTOPS: CategoryPageData = {
       h1: ["MacBook, iPad & Galaxy Tab.", "Take it home today."],
       intro:
         "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. No credit needed — our leasing programs start as low as $40 initial payment, with weekly, biweekly or monthly payments, subject to approval.",
-      chips: ["No credit needed", "As low as $40 initial payment", "Apple & Samsung", "Se habla español"],
+      chips: [
+        "No credit needed",
+        "As low as $40 initial payment",
+        "Apple & Samsung",
+        "Se habla español",
+      ],
       cta: "Call to check stock",
       groupsKicker: "In store now",
       groupsTitle: "Laptops and tablets for school, work and play.",
@@ -877,7 +888,8 @@ export const LAPTOPS: CategoryPageData = {
       ],
       ogKicker: "Laptops & tablets · Leasing",
       ogHeadline: "MacBook, iPad & Galaxy Tab. Take it home today.",
-      ogSub: "No credit needed · As low as $40 initial payment · Weekly, biweekly or monthly payments",
+      ogSub:
+        "No credit needed · As low as $40 initial payment · Weekly, biweekly or monthly payments",
     },
     es: {
       title: "MacBook, iPad y Galaxy Tab en Houston — Desde $40",
@@ -1137,7 +1149,7 @@ export const IPHONE_18: CategoryPageData = {
       related: [
         ["Unlocked phones", "/services/unlocked-phones"],
         ["Leasing — no credit needed", "/leasing"],
-        ["Trade in or sell your phone", "/services/buy-sell-trade"],
+        ["Trade in or sell your phone", "/services/trade-in-or-sell"],
         ["Prepaid plans & prices", "/services/prepaid-plans"],
         ["iPhone repair", "/services/iphone-repair"],
       ],
@@ -1218,7 +1230,7 @@ export const IPHONE_18: CategoryPageData = {
       related: [
         ["Celulares desbloqueados", "/es/servicios/unlocked-phones"],
         ["Arrendamiento sin crédito", "/es/arrendamiento"],
-        ["Vende o cambia tu celular", "/es/servicios/buy-sell-trade"],
+        ["Vende o cambia tu celular", "/es/servicios/trade-in-or-sell"],
         ["Planes prepagados y precios", "/es/servicios/prepaid-plans"],
         ["Reparación de iPhone", "/es/servicios/iphone-repair"],
       ],

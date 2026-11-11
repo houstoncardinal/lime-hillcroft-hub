@@ -122,6 +122,7 @@ export function PortalButton({
   className,
   short,
   compact,
+  tiny,
 }: {
   portal: (typeof PORTALS)[number];
   lang: Lang;
@@ -130,6 +131,8 @@ export function PortalButton({
   short?: boolean;
   /** With short: just "Apply" on phones, where rows are narrow. */
   compact?: boolean;
+  /** With short: just "Apply" at every width, for rows two to a line. */
+  tiny?: boolean;
 }) {
   return (
     <a
@@ -143,7 +146,13 @@ export function PortalButton({
         className,
       )}
     >
-      {short && compact ? (
+      {short && tiny ? (
+        lang === "en" ? (
+          "Apply"
+        ) : (
+          "Solicitar"
+        )
+      ) : short && compact ? (
         <>
           <span className="sm:hidden">{lang === "en" ? "Apply" : "Solicitar"}</span>
           <span className="hidden sm:inline">{T[lang].applyNow}</span>
@@ -171,7 +180,10 @@ export const IN_HOUSE = {
     es: "Aprueba directamente en nuestra tienda: trae una identificación con foto y una cuenta bancaria.",
   },
   cta: { en: "See how it works", es: "Ver cómo funciona" },
-  devices: { en: "iPhone, Samsung Galaxy & cellular iPad", es: "iPhone, Samsung Galaxy e iPad celular" },
+  devices: {
+    en: "iPhone, Samsung Galaxy & cellular iPad",
+    es: "iPhone, Samsung Galaxy e iPad celular",
+  },
 };
 
 /** Which devices Payvantage and In-House Leasing cover (owner's rule; see lease/catalog.ts). */
@@ -208,7 +220,10 @@ export function PhoneOnlyNote({
       )}
     >
       <Info
-        className={cn("mt-0.5 h-4 w-4 shrink-0", tone === "light" ? "text-primary" : "text-primary")}
+        className={cn(
+          "mt-0.5 h-4 w-4 shrink-0",
+          tone === "light" ? "text-primary" : "text-primary",
+        )}
         aria-hidden="true"
       />
       <span>
@@ -272,25 +287,43 @@ export function InHouseCard({ lang, className }: { lang: Lang; className?: strin
 export function LeasingPortals({ lang, className }: { lang: Lang; className?: string }) {
   const t = T[lang];
   return (
-    <section id="apply" aria-labelledby="apply-title" className={cn("scroll-mt-24 border-y bg-secondary/40 px-5 py-8 md:py-10", className)}>
+    <section
+      id="apply"
+      aria-labelledby="apply-title"
+      className={cn("scroll-mt-24 border-y bg-secondary/40 px-5 py-8 md:py-10", className)}
+    >
       <div className="mx-auto max-w-7xl">
         <p className="eyebrow text-muted-foreground">{t.kicker}</p>
-        <h2 id="apply-title" className="mt-2 text-2xl font-semibold sm:text-3xl">{lang === "en" ? "Choose your leasing partner" : "Elige tu socio de arrendamiento"}</h2>
+        <h2 id="apply-title" className="mt-2 text-2xl font-semibold sm:text-3xl">
+          {lang === "en" ? "Choose your leasing partner" : "Elige tu socio de arrendamiento"}
+        </h2>
         <ul className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {PORTALS.map((p) => (
             <li key={p.id} className="flex flex-col rounded-lg border bg-card p-5">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-md bg-secondary px-2 text-xs font-bold text-secondary-foreground">{p.initials}</span>
+                <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-md bg-secondary px-2 text-xs font-bold text-secondary-foreground">
+                  {p.initials}
+                </span>
                 <h3 className="font-display text-lg font-semibold leading-tight">{p.name}</h3>
               </div>
               <p className="mt-3 flex-1 text-sm text-muted-foreground">{p.blurb[lang]}</p>
-              <PortalButton portal={p} lang={lang} short className="mt-4 w-full rounded-md bg-primary text-primary-foreground hover:bg-primary/90" />
+              <PortalButton
+                portal={p}
+                lang={lang}
+                short
+                className="mt-4 w-full rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+              />
             </li>
           ))}
         </ul>
         <InHouseCard lang={lang} className="mt-3" />
         <PhoneOnlyNote lang={lang} className="mt-3" />
-        <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground"><ShieldCheck className="h-4 w-4 shrink-0 text-primary" /><span>{t.secure} {t.fine}</span></p>
+        <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+          <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+          <span>
+            {t.secure} {t.fine}
+          </span>
+        </p>
       </div>
     </section>
   );
@@ -304,14 +337,30 @@ export function LeasingOptions({ lang, className }: { lang: Lang; className?: st
 export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: string }) {
   const t = T[lang];
   return (
-    <div className={cn("relative z-10 rounded-lg border border-primary/25 bg-primary/5 p-3", className)}>
+    <div
+      className={cn(
+        "relative z-10 rounded-lg border border-primary/25 bg-primary/5 p-3",
+        className,
+      )}
+    >
       <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-foreground">
         <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-        <span>{lang === "en" ? `Lease-to-own no credit needed, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.` : `Arrendamiento sin necesidad de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}</span>
+        <span>
+          {lang === "en"
+            ? `Lease-to-own no credit needed, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.`
+            : `Arrendamiento sin necesidad de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}
+        </span>
       </p>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
-        <p className="text-[11px] text-muted-foreground">{lang === "en" ? "Subject to approval." : "Sujeto a aprobación."}</p>
-        <Button asChild variant="link" className="h-auto px-0 py-1 text-xs font-bold"><Link to={ALTERNATES.leasing[lang]}>{t.applyNow}<ArrowRight /></Link></Button>
+        <p className="text-[11px] text-muted-foreground">
+          {lang === "en" ? "Subject to approval." : "Sujeto a aprobación."}
+        </p>
+        <Button asChild variant="link" className="h-auto px-0 py-1 text-xs font-bold">
+          <Link to={ALTERNATES.leasing[lang]}>
+            {t.applyNow}
+            <ArrowRight />
+          </Link>
+        </Button>
       </div>
       <Link
         to={ALTERNATES.inHouse[lang]}
@@ -346,7 +395,10 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
               className="bg-ink text-white hover:bg-ink/85"
             />
           ))}
-          <InHouseLink lang={lang} className="bg-white text-ink hover:bg-white/90 sm:col-span-2 lg:col-span-1" />
+          <InHouseLink
+            lang={lang}
+            className="bg-white text-ink hover:bg-white/90 sm:col-span-2 lg:col-span-1"
+          />
         </div>
         <PhoneOnlyNote lang={lang} tone="onPrimary" />
       </div>

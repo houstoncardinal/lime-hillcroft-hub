@@ -56,7 +56,7 @@ export const SERVICES: Service[] = [
     slug: "unlocked-phones",
     icon: "phone",
     photo: "iphone18",
-    related: ["phone-repair", "buy-sell-trade", "prepaid-plans"],
+    related: ["phone-repair", "trade-in-or-sell", "prepaid-plans"],
     serviceType: "Mobile phone sales",
     text: {
       en: {
@@ -189,7 +189,7 @@ export const SERVICES: Service[] = [
     slug: "phone-repair",
     icon: "repair",
     photo: "repair",
-    related: ["unlocked-phones", "phone-unlocking", "buy-sell-trade"],
+    related: ["unlocked-phones", "phone-unlocking", "trade-in-or-sell"],
     serviceType: "Mobile phone repair",
     text: {
       en: {
@@ -270,7 +270,8 @@ export const SERVICES: Service[] = [
         ],
         cta: "Call for a repair quote",
         ogKicker: "Repairs",
-        imageAlt: "Illustrative image of a technician repairing an opened smartphone with precision tools",
+        imageAlt:
+          "Illustrative image of a technician repairing an opened smartphone with precision tools",
       },
       es: {
         name: "Reparación de celulares y equipos",
@@ -350,7 +351,8 @@ export const SERVICES: Service[] = [
         ],
         cta: "Llamar para cotizar",
         ogKicker: "Reparaciones",
-        imageAlt: "Imagen ilustrativa de un técnico reparando un celular abierto con herramientas de precisión",
+        imageAlt:
+          "Imagen ilustrativa de un técnico reparando un celular abierto con herramientas de precisión",
       },
     },
   },
@@ -838,106 +840,155 @@ export const SERVICES: Service[] = [
     photo: "xfinity",
     related: ["prepaid-plans", "bill-payments", "unlocked-phones"],
     serviceType: "Prepaid home internet",
+    // Plans and terms from Xfinity's prepaid internet page (checked 2026-11-10); see xfinity-section.tsx.
     text: {
       en: {
         name: "Xfinity Prepaid internet",
-        metaTitle: "Xfinity Prepaid Internet in Houston — Sign Up In Store",
+        metaTitle: "Xfinity Prepaid Internet in Houston — From $30/mo",
         metaDescription:
-          "Get Xfinity Prepaid home internet on Hillcroft in Houston. We sell it and help you set it up in store. Ask about availability at your address.",
+          "Xfinity Prepaid home internet on Hillcroft in Houston: 100 Mbps for $30/mo or 200 Mbps for $45/mo, WiFi equipment, taxes and fees included. No credit check, no annual contract.",
         h1: "Xfinity Prepaid home internet in Houston",
         intro:
-          "Get home internet on a prepaid plan without a long-term contract. We sell Xfinity Prepaid at our Hillcroft store and help you get it set up — in English or Spanish.",
+          "Home internet on the Xfinity network, prepaid: 100 Mbps for $30/mo or 200 Mbps for $45/mo, with WiFi equipment, unlimited data, and taxes and fees included. No credit check and no annual contract — and we help you get set up in store, in English or Spanish.",
         offersTitle: "What we help with",
         offers: [
-          "Xfinity Prepaid home internet, sold in store.",
-          "Help getting your service set up.",
+          "Xfinity Prepaid internet starter kits, sold in store.",
+          "Help activating your service in the Xfinity app.",
           "Checking whether Xfinity Prepaid is available at your address.",
-          "Wi-Fi-ready phones, tablets and laptops if you need a new device.",
+          "WiFi-ready phones, tablets and laptops if you need a new device.",
           "Prepaid phone plans to go with your home internet.",
         ],
         stepsTitle: "Getting connected",
         steps: [
-          [
-            "Check your address",
-            "Service depends on your address — bring it with you or call ahead.",
-          ],
-          ["Pick it up in store", "We go over how Xfinity Prepaid works and current pricing."],
-          ["Set it up", "We help you get your service started."],
-          ["Refill when you need", "Prepaid means you pay ahead — no surprise bills."],
+          ["Check your address", "Xfinity Prepaid isn't available everywhere — bring your address or call ahead."],
+          ["Get your kit in store", "Pick up the starter kit with the WiFi gateway, and pick 100 or 200 Mbps."],
+          ["Plug in and activate", "Self-install in minutes and activate in the Xfinity app — we can help."],
+          ["Stay connected", "Autopay keeps you online. Turn autopay off to pause, and back on to resume."],
         ],
-        why: [
-          "Sold and set up in store",
-          "No long-term contract",
-          "Help in English & Spanish",
-          "Open 7 days",
-        ],
+        why: ["From $30/mo", "No credit check", "No annual contract", "Set up help in store"],
         faq: [
           {
-            q: "Do I need a credit check for Xfinity Prepaid?",
-            a: "Xfinity Prepaid is a prepaid service, so you pay ahead instead of being billed later. Ask us in store about current requirements and pricing.",
+            q: "What is Xfinity Prepaid internet?",
+            a: "Prepaid high-speed home internet on the Xfinity network. There's no credit check and no annual contract, you pay ahead each month, and you get unlimited data and WiFi equipment you don't have to return.",
+          },
+          {
+            q: "What plans are there, and how much are they?",
+            a: "Two speeds: 100 Mbps for $30/month, good for everyday browsing, music and social media, or 200 Mbps for $45/month for smoother streaming. Taxes and fees are included in the monthly price. Prices are set by Xfinity and can change.",
+          },
+          {
+            q: "How fast is it?",
+            a: "Up to 100 or 200 Mbps download, depending on your plan, and up to 10 Mbps upload. Actual speeds vary and are not guaranteed.",
+          },
+          {
+            q: "Is it fast enough for streaming and gaming?",
+            a: "For most homes, yes — including streaming, gaming and video calls on several devices at once. It's a wired connection, so speeds stay consistent with low lag, unlike 5G home internet.",
+          },
+          {
+            q: "Can I upgrade my speed later?",
+            a: "Yes. You can upgrade from 100 Mbps to 200 Mbps instantly from the Plans page of your account, or move to a faster Xfinity internet plan where it's available.",
+          },
+          {
+            q: "Do I need a credit check or a contract?",
+            a: "No. There's no credit check and no annual contract.",
+          },
+          {
+            q: "How do I set it up?",
+            a: "It's self-install: plug in the WiFi gateway that comes in the starter kit (a refurbished gateway) and activate your service in the Xfinity app in minutes. We're happy to help you activate it in store.",
+          },
+          {
+            q: "How do I pay each month?",
+            a: "Xfinity takes monthly payments online only, by credit, debit or prepaid card, and autopay and paperless billing are required. We can help you set that up when you activate.",
+          },
+          {
+            q: "Can I pause my service?",
+            a: "Yes. Turn off autopay and your service and payments pause until you turn it back on — handy for a seasonal home or rental.",
+          },
+          {
+            q: "Is there a money-back guarantee?",
+            a: "No. Xfinity's 30-day money-back guarantee doesn't apply to prepaid internet service, and service is limited to a single outlet.",
           },
           {
             q: "Is Xfinity Prepaid available at my address?",
-            a: "It depends on where you live. Bring your address or call (713) 339-9300 and we'll help you check.",
+            a: "It's not available in all areas. Bring your address or call (713) 339-9300 and we'll help you check before you buy.",
           },
         ],
         cta: "Ask about Xfinity Prepaid",
-        ogKicker: "Home internet",
-        imageAlt:
-          "Xfinity Prepaid Internet Starter Kit box with the Wi-Fi gateway that comes in it",
+        ogKicker: "Xfinity Prepaid",
+        imageAlt: "Xfinity prepaid internet starter kit box with the WiFi gateway that comes in it",
       },
       es: {
         name: "Internet prepagado Xfinity",
-        metaTitle: "Internet Prepagado Xfinity en Houston — Contrátalo en Tienda",
+        metaTitle: "Internet Prepagado Xfinity en Houston — Desde $30/mes",
         metaDescription:
-          "Contrata internet prepagado Xfinity para tu casa en Hillcroft, Houston. Lo vendemos y te ayudamos a activarlo. Pregunta por disponibilidad en tu domicilio.",
+          "Internet prepagado Xfinity en Hillcroft, Houston: 100 Mbps por $30/mes o 200 Mbps por $45/mes, con equipo WiFi, impuestos y cargos incluidos. Sin revisión de crédito ni contrato anual.",
         h1: "Internet prepagado Xfinity en Houston",
         intro:
-          "Ten internet en casa con un plan prepagado, sin contrato a largo plazo. Vendemos Xfinity Prepaid en nuestra tienda de Hillcroft y te ayudamos a activarlo, en español o inglés.",
+          "Internet para tu casa en la red de Xfinity, prepagado: 100 Mbps por $30/mes o 200 Mbps por $45/mes, con equipo WiFi, datos ilimitados, e impuestos y cargos incluidos. Sin revisión de crédito ni contrato anual, y te ayudamos a activarlo en la tienda, en español o inglés.",
         offersTitle: "En qué te ayudamos",
         offers: [
-          "Internet prepagado Xfinity para tu casa, a la venta en la tienda.",
-          "Ayuda para activar tu servicio.",
+          "Kits de inicio de internet prepagado Xfinity, a la venta en la tienda.",
+          "Ayuda para activar tu servicio en la app de Xfinity.",
           "Verificamos si Xfinity Prepaid está disponible en tu domicilio.",
-          "Celulares, tabletas y laptops si necesitas un equipo nuevo.",
+          "Celulares, tabletas y laptops con WiFi si necesitas un equipo nuevo.",
           "Planes prepagados de celular para complementar tu internet.",
         ],
         stepsTitle: "Cómo conectarte",
         steps: [
-          [
-            "Verifica tu domicilio",
-            "El servicio depende de tu dirección: tráela o llámanos antes.",
-          ],
-          [
-            "Recógelo en la tienda",
-            "Te explicamos cómo funciona Xfinity Prepaid y los precios actuales.",
-          ],
-          ["Actívalo", "Te ayudamos a iniciar tu servicio."],
-          [
-            "Recarga cuando lo necesites",
-            "Prepagado significa que pagas por adelantado, sin sorpresas.",
-          ],
+          ["Verifica tu domicilio", "Xfinity Prepaid no está disponible en todas partes: trae tu dirección o llámanos antes."],
+          ["Recoge tu kit en la tienda", "Llévate el kit de inicio con el módem WiFi y elige 100 o 200 Mbps."],
+          ["Conéctalo y actívalo", "Lo instalas tú en minutos y lo activas en la app de Xfinity; te ayudamos."],
+          ["Sigue conectado", "El pago automático te mantiene en línea. Desactívalo para pausar y actívalo para continuar."],
         ],
-        why: [
-          "Venta y activación en tienda",
-          "Sin contrato a largo plazo",
-          "Ayuda en español e inglés",
-          "Abiertos 7 días",
-        ],
+        why: ["Desde $30/mes", "Sin revisión de crédito", "Sin contrato anual", "Ayuda en la tienda"],
         faq: [
           {
-            q: "¿Necesito revisión de crédito para Xfinity Prepaid?",
-            a: "Xfinity Prepaid es un servicio prepagado: pagas por adelantado en lugar de recibir factura. Pregunta en la tienda por los requisitos y precios actuales.",
+            q: "¿Qué es el internet prepagado Xfinity?",
+            a: "Internet de alta velocidad prepagado para tu casa, en la red de Xfinity. Sin revisión de crédito ni contrato anual: pagas por adelantado cada mes e incluye datos ilimitados y equipo WiFi que no tienes que devolver.",
+          },
+          {
+            q: "¿Qué planes hay y cuánto cuestan?",
+            a: "Dos velocidades: 100 Mbps por $30 al mes, ideal para navegar, música y redes sociales, o 200 Mbps por $45 al mes para streaming más fluido. Los impuestos y cargos están incluidos en el precio mensual. Xfinity fija los precios y pueden cambiar.",
+          },
+          {
+            q: "¿Qué tan rápido es?",
+            a: "Hasta 100 o 200 Mbps de descarga, según tu plan, y hasta 10 Mbps de subida. La velocidad real varía y no está garantizada.",
+          },
+          {
+            q: "¿Es suficiente para streaming y juegos?",
+            a: "Para la mayoría de los hogares, sí, incluso streaming, juegos y videollamadas en varios equipos a la vez. Es una conexión por cable, así que la velocidad es constante y con poca latencia, a diferencia del internet 5G.",
+          },
+          {
+            q: "¿Puedo subir de velocidad después?",
+            a: "Sí. Puedes cambiar de 100 a 200 Mbps al instante en la página de Planes de tu cuenta, o pasarte a un plan de internet más rápido de Xfinity donde esté disponible.",
+          },
+          {
+            q: "¿Necesito revisión de crédito o contrato?",
+            a: "No. No hay revisión de crédito ni contrato anual.",
+          },
+          {
+            q: "¿Cómo lo instalo?",
+            a: "Lo instalas tú: conecta el módem WiFi que viene en el kit de inicio (un módem reacondicionado) y activa tu servicio en la app de Xfinity en minutos. Con gusto te ayudamos a activarlo en la tienda.",
+          },
+          {
+            q: "¿Cómo pago cada mes?",
+            a: "Xfinity recibe los pagos mensuales solo en línea, con tarjeta de crédito, débito o prepagada, y se requiere pago automático y factura sin papel. Te ayudamos a configurarlo al activarlo.",
+          },
+          {
+            q: "¿Puedo pausar mi servicio?",
+            a: "Sí. Desactiva el pago automático y tu servicio y tus pagos se pausan hasta que lo vuelvas a activar; útil para una casa de temporada o una propiedad en renta.",
+          },
+          {
+            q: "¿Hay garantía de devolución?",
+            a: "No. La garantía de devolución de 30 días de Xfinity no aplica al internet prepagado, y el servicio es para una sola toma.",
           },
           {
             q: "¿Xfinity Prepaid está disponible en mi domicilio?",
-            a: "Depende de dónde vivas. Trae tu dirección o llama al (713) 339-9300 y te ayudamos a verificarlo.",
+            a: "No está disponible en todas las zonas. Trae tu dirección o llama al (713) 339-9300 y te ayudamos a verificarlo antes de comprar.",
           },
         ],
         cta: "Preguntar por Xfinity Prepaid",
-        ogKicker: "Internet en casa",
-        imageAlt:
-          "Caja del kit de inicio de Xfinity Prepaid Internet con el módem Wi-Fi que incluye",
+        ogKicker: "Xfinity Prepaid",
+        imageAlt: "Caja del kit de inicio de internet prepagado Xfinity con el módem WiFi que incluye",
       },
     },
   },
@@ -1045,32 +1096,32 @@ export const SERVICES: Service[] = [
     },
   },
   {
-    slug: "buy-sell-trade",
+    slug: "trade-in-or-sell",
     icon: "trade",
     photo: "s24",
     related: ["unlocked-phones", "phone-repair", "phone-unlocking"],
     serviceType: "Mobile phone trade-in",
     text: {
       en: {
-        name: "Buy · Sell · Trade phones",
-        metaTitle: "Sell or Trade In Your Phone in Houston — Buy · Sell · Trade",
+        name: "Trade In Or Sell Your Device",
+        metaTitle: "Trade In or Sell Your Phone in Houston — Offer in Store",
         metaDescription:
-          "Trade in your old iPhone or Android toward a new one, or sell it, at TIC Wireless on Hillcroft in Houston. Bring it in for an offer.",
-        h1: "Buy, sell or trade your phone in Houston",
+          "Trade in your old iPhone, Samsung Galaxy or Android toward a new device, or sell it, at TIC Wireless on Hillcroft in Houston. We check it and make you an offer on the spot.",
+        h1: "Trade in or sell your device in Houston",
         intro:
-          "Upgrading? Put your old phone toward a new one, or sell it. Bring it to our store on Hillcroft and we'll take a look and make you an offer.",
+          "Upgrading? Put your old phone toward a new one, or sell it. Bring it to our store on Hillcroft — we check it in front of you and make you an offer on the spot.",
         offersTitle: "What you can do",
         offers: [
-          "Trade in your old phone toward a new unlocked iPhone or Android.",
-          "Sell your phone.",
-          "Buy a new unlocked phone, with leasing available — no credit needed.",
+          "Trade in your old phone toward a new unlocked iPhone, Samsung Galaxy or Android.",
+          "Sell your phone and take the offer.",
+          "Lease your next device — no credit needed, subject to approval.",
           "Move your contacts and number to the new phone.",
         ],
         stepsTitle: "How trade-in works",
         steps: [
-          ["Bring your phone", "Bring the phone, its charger if you have it, and your passcode."],
-          ["We check it", "We look at the model, condition and whether it works."],
-          ["Get an offer", "Use it toward a new phone or take the offer for your phone."],
+          ["Bring your device", "Bring the phone, its charger if you have it, and your passcode."],
+          ["We check it", "We look at the model, storage, condition and whether everything works."],
+          ["Get an offer", "Put it toward a new device, or take the offer for your phone."],
           ["Transfer and go", "We help move your number and data to your new phone."],
         ],
         why: [
@@ -1082,52 +1133,76 @@ export const SERVICES: Service[] = [
         faq: [
           {
             q: "How much will I get for my old phone?",
-            a: "It depends on the model and condition. Bring it in and we'll check it and make you an offer.",
+            a: "It depends on the model, storage and condition. Bring it in — we check it in front of you and make you an offer on the spot. You can also call with the model for an idea first.",
           },
           {
-            q: "What should I do before trading in my phone?",
-            a: "Back it up, sign out of iCloud or your Google account, and bring your passcode so we can check the phone.",
+            q: "What should I do before trading in or selling my phone?",
+            a: "Back it up, sign out of iCloud (turn off Find My) or your Google account, and bring your passcode so we can check the phone.",
+          },
+          {
+            q: "Can I put my trade-in toward a lease-to-own device?",
+            a: "Yes — put your old phone toward a new device, and leasing is available on the new one with no credit needed, subject to approval.",
+          },
+          {
+            q: "My phone is cracked or doesn't work well. Can I still bring it?",
+            a: "Yes, bring it in. Condition affects the offer, so we'll check it and tell you what we can do — or quote a repair if you'd rather keep it.",
+          },
+          {
+            q: "Do you take tablets and other devices?",
+            a: "Phones are what we trade in most. For an iPad, tablet or other device, call (713) 339-9300 with the model and we'll let you know.",
           },
         ],
         cta: "Get an offer in store",
-        ogKicker: "Buy · Sell · Trade",
+        ogKicker: "Trade In Or Sell",
         imageAlt: "Samsung Galaxy S24 Ultra unboxed on the store counter",
       },
       es: {
-        name: "Compra · Venta · Intercambio",
-        metaTitle: "Vende o Cambia tu Celular en Houston — Compra y Venta",
+        name: "Cambia o vende tu equipo",
+        metaTitle: "Cambia o Vende tu Celular en Houston — Oferta en Tienda",
         metaDescription:
-          "Cambia tu iPhone o Android usado por uno nuevo, o véndelo, en TIC Wireless en Hillcroft, Houston. Tráelo y te hacemos una oferta.",
-        h1: "Compra, vende o cambia tu celular en Houston",
+          "Cambia tu iPhone, Samsung Galaxy o Android usado por un equipo nuevo, o véndelo, en TIC Wireless en Hillcroft, Houston. Lo revisamos y te hacemos una oferta al momento.",
+        h1: "Cambia o vende tu equipo en Houston",
         intro:
-          "¿Vas a estrenar? Usa tu celular viejo para el nuevo, o véndelo. Tráelo a nuestra tienda en Hillcroft, lo revisamos y te hacemos una oferta.",
+          "¿Vas a estrenar? Usa tu celular viejo para el nuevo, o véndelo. Tráelo a nuestra tienda en Hillcroft: lo revisamos frente a ti y te hacemos una oferta al momento.",
         offersTitle: "Lo que puedes hacer",
         offers: [
-          "Cambiar tu celular usado por un iPhone o Android desbloqueado nuevo.",
-          "Vender tu celular.",
-          "Comprar un celular desbloqueado, con arrendamiento sin necesidad de crédito.",
+          "Cambiar tu celular usado por un iPhone, Samsung Galaxy o Android desbloqueado nuevo.",
+          "Vender tu celular y aceptar la oferta.",
+          "Arrendar tu próximo equipo, sin necesidad de crédito y sujeto a aprobación.",
           "Pasar tus contactos y tu número al celular nuevo.",
         ],
         stepsTitle: "Cómo funciona el intercambio",
         steps: [
-          ["Trae tu celular", "Trae el celular, su cargador si lo tienes y tu código."],
-          ["Lo revisamos", "Vemos el modelo, el estado y si funciona."],
-          ["Recibe una oferta", "Úsala para un celular nuevo o acepta la oferta por tu equipo."],
+          ["Trae tu equipo", "Trae el celular, su cargador si lo tienes y tu código."],
+          ["Lo revisamos", "Vemos el modelo, el almacenamiento, el estado y si todo funciona."],
+          ["Recibe una oferta", "Úsala para un equipo nuevo o acepta la oferta por tu celular."],
           ["Pasa tus datos y listo", "Te ayudamos a pasar tu número y datos al nuevo celular."],
         ],
         why: ["Estrena por menos", "Oferta al momento", "Ayuda con tus datos", "Español e inglés"],
         faq: [
           {
             q: "¿Cuánto me dan por mi celular?",
-            a: "Depende del modelo y del estado. Tráelo, lo revisamos y te hacemos una oferta.",
+            a: "Depende del modelo, el almacenamiento y el estado. Tráelo: lo revisamos frente a ti y te hacemos una oferta al momento. También puedes llamar con el modelo para darte una idea.",
           },
           {
-            q: "¿Qué hago antes de entregar mi celular?",
-            a: "Haz un respaldo, cierra sesión de iCloud o de tu cuenta de Google y trae tu código para revisarlo.",
+            q: "¿Qué hago antes de cambiar o vender mi celular?",
+            a: "Haz un respaldo, cierra sesión de iCloud (apaga Buscar) o de tu cuenta de Google y trae tu código para revisarlo.",
+          },
+          {
+            q: "¿Puedo usar mi celular para un equipo con arrendamiento?",
+            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento, sin necesidad de crédito y sujeto a aprobación.",
+          },
+          {
+            q: "Mi celular está roto o no funciona bien. ¿Lo puedo traer?",
+            a: "Sí, tráelo. El estado cambia la oferta, así que lo revisamos y te decimos qué podemos hacer, o te cotizamos la reparación si prefieres quedártelo.",
+          },
+          {
+            q: "¿Reciben tabletas y otros equipos?",
+            a: "Lo que más recibimos son celulares. Para un iPad, tableta u otro equipo, llama al (713) 339-9300 con el modelo y te decimos.",
           },
         ],
         cta: "Recibir una oferta en tienda",
-        ogKicker: "Compra · Venta · Intercambio",
+        ogKicker: "Cambia o vende",
         imageAlt: "Samsung Galaxy S24 Ultra en el mostrador de la tienda",
       },
     },

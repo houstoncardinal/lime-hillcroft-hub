@@ -81,7 +81,9 @@ export function leasePhoto(device: LeaseDevice) {
   const own = LEASE_PHOTOS[device.id];
   if (own) return fromProductPhoto(own);
   const d = device.deviceId ? LATEST_DEVICES.find((x) => x.id === device.deviceId) : undefined;
-  return d ? { image: d.image, w: d.w, h: d.h, alt: d.alt, fit: d.fit, credit: undefined } : undefined;
+  return d
+    ? { image: d.image, w: d.w, h: d.h, alt: d.alt, fit: d.fit, credit: undefined }
+    : undefined;
 }
 
 export function LeasePhoto({
@@ -345,5 +347,51 @@ export function PaymentSummary({
         </span>
       </p>
     </div>
+  );
+}
+
+/** A titled grid of lease-to-own cards (by category or a list of ids) with a link to the catalog. */
+export function LeaseGrid({
+  lang,
+  title,
+  category,
+  ids,
+  limit = 8,
+  className,
+}: {
+  lang: Lang;
+  title: string;
+  category?: LeaseCategory | LeaseCategory[];
+  ids?: string[];
+  limit?: number;
+  className?: string;
+}) {
+  const t = LEASE_COPY[lang];
+  const cats = category ? ([] as LeaseCategory[]).concat(category) : [];
+  const devices = (
+    ids
+      ? ids.flatMap((id) => LEASE_DEVICES.filter((d) => d.id === id))
+      : LEASE_DEVICES.filter((d) => cats.includes(d.category))
+  ).slice(0, limit);
+  const href = cats.length === 1 ? `${LEASE_PATHS[lang]}#${cats[0]}` : LEASE_PATHS[lang];
+  return (
+    <section className={cn("mx-auto max-w-7xl px-5 py-12 md:py-16", className)}>
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <h2 className="max-w-2xl text-3xl font-semibold md:text-4xl">{title}</h2>
+        <Link
+          to={href}
+          className="inline-flex min-h-11 shrink-0 items-center gap-2 self-start rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 md:self-auto"
+        >
+          {t.viewAll(LEASE_DEVICES.length)} <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+      <ul className="mt-6 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+        {devices.map((d) => (
+          <li key={d.id}>
+            <LeaseCard device={d} lang={lang} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

@@ -1,5 +1,4 @@
 import { CATALOG_DEVICES } from "@/components/products/catalog";
-import { devicePaths } from "@/components/products/device-paths";
 import type { Lang } from "@/components/site/seo";
 
 // Devices in the store, from the owner's lists (Oct 13 and Oct 16, 2026). The shelf devices
@@ -244,16 +243,14 @@ const SHELF: Device[] = [
 const tier = (d: Device) => (/Pro Max|Ultra/.test(d.name) ? 0 : /Pro|\+|Plus/.test(d.name) ? 1 : 2);
 const KIND_ORDER: DeviceKind[] = ["iphone", "galaxy-flagship", "galaxy-fold", "galaxy-a", "ipad"];
 
-// Every device opens its own page at /devices/<id> (src/components/products/devices.ts).
+// Device facts and photos shared by the lease-to-own pages (the old /devices pages are retired).
 // Newest first, so the scrollers lead with the latest phones.
-export const LATEST_DEVICES: (Device & { page: L })[] = [...SHELF, ...CATALOG_DEVICES]
-  .map((d) => ({ ...d, page: d.page ?? devicePaths(d.id) }))
-  .sort(
-    (a, b) =>
-      (b.year ?? 0) - (a.year ?? 0) ||
-      KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind) ||
-      tier(a) - tier(b),
-  );
+export const LATEST_DEVICES: Device[] = [...SHELF, ...CATALOG_DEVICES].sort(
+  (a, b) =>
+    (b.year ?? 0) - (a.year ?? 0) ||
+    KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind) ||
+    tier(a) - tier(b),
+);
 
 export const PHONES = LATEST_DEVICES.filter((d) => d.kind !== "ipad");
 export const TABLETS = LATEST_DEVICES.filter((d) => d.kind === "ipad");

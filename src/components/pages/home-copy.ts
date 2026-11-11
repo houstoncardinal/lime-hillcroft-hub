@@ -35,7 +35,8 @@ const en = {
       "A hand holding a plum iPhone 18 Pro Max in front of its box at TIC Wireless Electronic & Repair Center",
     leaseLabel: "iPhone 18 Pro Max leasing",
     leaseUnit: "Initial payment",
-    leaseNote: "Minimum initial payment to lease the iPhone 18 Pro Max, subject to approval. Weekly, biweekly or monthly payments.",
+    leaseNote:
+      "Minimum initial payment to lease the iPhone 18 Pro Max, subject to approval. Weekly, biweekly or monthly payments.",
   },
   ticker: [
     "Leasing from $40 initial payment",
@@ -88,7 +89,10 @@ const en = {
         "Phones, tablets and laptops. Cracked screens, batteries and charging ports.",
       ],
       ["Unlocking", "Unlock your device and take it to the carrier that works best for you."],
-      ["Buy · Sell · Trade", "Trade in your old phone toward something new, or sell it for cash."],
+      [
+        "Trade In Or Sell Your Device",
+        "Put your old phone toward something new, or sell it. Offer on the spot.",
+      ],
       [
         "Bill payments",
         "Pay your phone bill in person for the major prepaid carriers. No extra charges.",
@@ -159,8 +163,7 @@ const en = {
   glance: {
     kicker: "At a glance",
     title: "TIC Wireless Electronic & Repair Center in 30 seconds.",
-    summary:
-      `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 initial payment (subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.`,
+    summary: `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with no-credit-needed leasing from $40 initial payment (subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.`,
     facts: [
       ["Address", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Phone", "(713) 339-9300"],
@@ -170,10 +173,7 @@ const en = {
         "No credit needed · from $40 initial payment · subject to approval · weekly, biweekly or monthly payments",
       ],
       ["Repairs", "Same-day screen, battery & charging-port repair for iPhone, Samsung & Android"],
-      [
-        "Prepaid carriers",
-        PREPAID_CARRIERS.join(", "),
-      ],
+      ["Prepaid carriers", PREPAID_CARRIERS.join(", ")],
       ["Languages", "English & Spanish"],
       ["Rating", `${RATING}★ on Google · ${REVIEWS_N} reviews`],
     ],
@@ -294,7 +294,8 @@ const es: HomeCopy = {
       "Una mano sosteniendo un iPhone 18 Pro Max color ciruela frente a su caja en TIC Wireless Electronic & Repair Center",
     leaseLabel: "iPhone 18 Pro Max a pagos",
     leaseUnit: "Pago inicial",
-    leaseNote: "Pago inicial mínimo para arrendar el iPhone 18 Pro Max, sujeto a aprobación. Pagos semanales, quincenales o mensuales.",
+    leaseNote:
+      "Pago inicial mínimo para arrendar el iPhone 18 Pro Max, sujeto a aprobación. Pagos semanales, quincenales o mensuales.",
   },
   ticker: [
     "A pagos desde $40",
@@ -351,8 +352,8 @@ const es: HomeCopy = {
         "Libera tu teléfono y úsalo con la compañía que más te convenga.",
       ],
       [
-        "Compra · Venta · Intercambio",
-        "Cambia tu celular usado por uno nuevo, o véndelo en efectivo.",
+        "Cambia o vende tu equipo",
+        "Usa tu celular viejo para uno nuevo, o véndelo. Oferta al momento.",
       ],
       [
         "Pago de facturas",
@@ -427,8 +428,7 @@ const es: HomeCopy = {
   glance: {
     kicker: "En resumen",
     title: "TIC Wireless Electronic & Repair Center en 30 segundos.",
-    summary:
-      `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de pago inicial (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.`,
+    summary: `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos sin necesidad de crédito desde $40 de pago inicial (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.`,
     facts: [
       ["Dirección", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Teléfono", "(713) 339-9300"],
@@ -441,10 +441,7 @@ const es: HomeCopy = {
         "Reparaciones",
         "Pantallas, baterías y puertos de carga el mismo día para iPhone, Samsung y Android",
       ],
-      [
-        "Compañías prepagadas",
-        PREPAID_CARRIERS.join(", "),
-      ],
+      ["Compañías prepagadas", PREPAID_CARRIERS.join(", ")],
       ["Idiomas", "Español e inglés"],
       ["Calificación", `${RATING}★ en Google · ${REVIEWS_N} reseñas`],
     ],
