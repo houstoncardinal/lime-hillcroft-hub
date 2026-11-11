@@ -74,8 +74,6 @@ import { LeaseBanner } from "@/components/lease/lease-banner";
 import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeaseSection } from "@/components/lease/lease-ui";
 import { ShopByCategory } from "@/components/pages/shop-by-category";
-import { LATEST_DEVICES } from "@/components/products/inventory";
-import { LatestDevices } from "@/components/products/latest-devices";
 import { ReviewsCarousel } from "@/components/reviews/reviews-carousel";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Photo } from "@/components/site/photo";
@@ -256,8 +254,6 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
 
       {/* Lease-to-own catalog (owner's price sheet; no Shopify checkout) */}
       <LeaseSection lang={lang} />
-
-      <LatestDevices devices={LATEST_DEVICES} lang={lang} limit={16} className="bg-secondary/40" />
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 md:py-20">
