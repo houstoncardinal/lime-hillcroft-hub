@@ -36,7 +36,7 @@ export const IN_HOUSE_COPY = {
     body: "Lease your phone, tablet, laptop or console directly with us — no online application. Visit our Hillcroft store with a photo ID and a bank account, and we'll walk you through approval in person.",
     chips: ["iPhone, Galaxy & cellular iPad", "Done at our store", "Photo ID + bank account", "Se habla español"],
     eligible:
-      "In-House Leasing is available for iPhones, Samsung Galaxy phones and iPads with cellular. For MacBooks, watches, consoles and other devices, apply with Acima, Progressive Leasing or American First Finance.",
+      "In-House Leasing is available for iPhones, Samsung Galaxy phones and Cellular iPads. For MacBooks, watches, consoles and other devices, apply with Acima, Progressive Leasing or American First Finance.",
     devicesKicker: "Eligible devices",
     devicesHeading: "Devices you can lease in-house",
     seeAll: "See all lease-to-own devices",
@@ -81,7 +81,7 @@ export const IN_HOUSE_COPY = {
     faqs: [
       {
         q: "Which devices can I get with In-House Leasing?",
-        a: "iPhones, Samsung Galaxy phones and iPads with cellular. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Acima, Progressive Leasing or American First Finance.",
+        a: "iPhones, Samsung Galaxy phones and Cellular iPads. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Acima, Progressive Leasing or American First Finance.",
       },
       {
         q: "What do I need for In-House Leasing?",

@@ -178,7 +178,7 @@ export const IN_HOUSE = {
 export const PHONE_ONLY_NOTE = {
   en: {
     lead: "Payvantage and In-House Leasing",
-    rest: "are only for iPhones, Samsung Galaxy phones and iPads with cellular. Every other device can be leased with Acima, Progressive Leasing or American First Finance.",
+    rest: "are only for iPhones, Samsung Galaxy phones and Cellular iPads. Every other device can be leased with Acima, Progressive Leasing or American First Finance.",
   },
   es: {
     lead: "Payvantage y el arrendamiento en tienda",
