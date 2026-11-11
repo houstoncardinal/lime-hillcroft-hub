@@ -264,20 +264,33 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
               ))}
             </div>
           )}
-          {credit && (
-            <p className="mt-2 text-[11px] text-muted-foreground">
-              {lang === "en" ? "Photo" : "Foto"}:{" "}
-              <a
-                href={credit.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-offset-2 hover:underline"
-              >
-                {credit.author}
-              </a>
-              , {credit.license} · Wikimedia Commons
-            </p>
-          )}
+          {credit &&
+            (credit.license === "manufacturer" ? (
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                {lang === "en" ? "Product images" : "Imágenes del producto"}:{" "}
+                <a
+                  href={credit.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-2 hover:underline"
+                >
+                  {credit.author}
+                </a>
+              </p>
+            ) : (
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                {lang === "en" ? "Photo" : "Foto"}:{" "}
+                <a
+                  href={credit.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-2 hover:underline"
+                >
+                  {credit.author}
+                </a>
+                , {credit.license} · Wikimedia Commons
+              </p>
+            ))}
           {device.deviceId && (
             <Link
               to={devicePath(lang, device.deviceId)}

@@ -13,6 +13,7 @@ import {
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { leasePhoto } from "@/components/lease/lease-ui";
 import { LEASE_PHOTOS } from "@/components/lease/photos";
+import { OFFICIAL_PHOTOS } from "@/components/lease/official-photos";
 import { SHOPIFY_LISTINGS } from "@/components/lease/shopify-links";
 
 describe("lease-to-own catalog", () => {
@@ -97,6 +98,13 @@ describe("lease-to-own catalog", () => {
       if (p.w > 600) expect(fs.existsSync(`public${p.src.replace(".webp", "-480.webp")}`), id).toBe(true);
       // Commons photos are credited; the store's own photos need none.
       if (p.credit) expect(p.credit.href).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    }
+    for (const [id, list] of Object.entries(OFFICIAL_PHOTOS)) {
+      expect(findLeaseDevice(id), id).toBeDefined();
+      for (const p of list) {
+        for (const f of [p.src, p.jpg]) expect(fs.existsSync(`public${f}`), f).toBe(true);
+        expect(p.credit?.license).toBe("manufacturer");
+      }
     }
   });
 

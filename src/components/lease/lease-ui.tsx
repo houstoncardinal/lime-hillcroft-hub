@@ -26,6 +26,7 @@ import {
   type LeaseOption,
 } from "@/components/lease/catalog";
 import { LEASE_COPY } from "@/components/lease/copy";
+import { OFFICIAL_PHOTOS } from "@/components/lease/official-photos";
 import { LEASE_GALLERY, LEASE_PHOTOS } from "@/components/lease/photos";
 import type { ProductPhoto } from "@/components/products/devices";
 import { LATEST_DEVICES } from "@/components/products/inventory";
@@ -59,6 +60,8 @@ const ICONS: Record<LeaseCategory, typeof Smartphone> = {
 /** The device's photo: its own (lease/photos.ts), else its /devices page photo, else a brand tile. */
 /** Every photo of a device for its page's gallery: the main one, then any extras. */
 export function leasePhotos(device: LeaseDevice) {
+  const official = OFFICIAL_PHOTOS[device.id];
+  if (official?.length) return official.map(fromProductPhoto);
   const main = leasePhoto(device);
   return main ? [main, ...(LEASE_GALLERY[device.id] ?? []).map(fromProductPhoto)] : [];
 }
@@ -73,6 +76,8 @@ const fromProductPhoto = (p: ProductPhoto) => ({
 });
 
 export function leasePhoto(device: LeaseDevice) {
+  const official = OFFICIAL_PHOTOS[device.id]?.[0];
+  if (official) return fromProductPhoto(official);
   const own = LEASE_PHOTOS[device.id];
   if (own) return fromProductPhoto(own);
   const d = device.deviceId ? LATEST_DEVICES.find((x) => x.id === device.deviceId) : undefined;
