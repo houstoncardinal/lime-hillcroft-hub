@@ -73,17 +73,17 @@ function Crumbs({ lang, name }: { lang: Lang; name?: string }) {
 function Steps({ lang }: { lang: Lang }) {
   const t = LEASE_COPY[lang];
   return (
-    <section aria-labelledby="lease-steps" className="mx-auto max-w-7xl px-5 py-12 md:py-16">
+    <section aria-labelledby="lease-steps" className="mx-auto max-w-7xl px-5 py-8 md:py-12">
       <h2 id="lease-steps" className="text-3xl font-semibold md:text-4xl">
         {t.stepsTitle}
       </h2>
-      <ol className="mt-8 grid gap-4 md:grid-cols-3">
+      <ol className="mt-5 grid gap-3 md:grid-cols-3 md:gap-4">
         {t.steps.map(([Icon, title, body], i) => (
-          <li key={title} className="rounded-3xl border bg-card p-6">
+          <li key={title} className="flex gap-4 rounded-3xl border bg-card p-5 md:block">
             <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
               <Icon className="h-5 w-5" />
             </span>
-            <p className="mt-4 font-display text-lg font-semibold">
+            <p className="font-display text-lg font-semibold md:mt-4">
               {i + 1}. {title}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
@@ -211,19 +211,19 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
       <SiteHeader lang={lang} paths={leaseDevicePaths(device.id)} />
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="grain absolute inset-0 -z-10 opacity-60" />
-        <div className="mx-auto max-w-7xl px-5 pb-8 pt-28 md:pt-32">
+        <div className="mx-auto max-w-7xl px-5 pb-4 pt-24 md:pb-5 md:pt-28">
           <Crumbs lang={lang} name={device.name} />
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-8 px-5 py-8 md:py-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+      <section className="mx-auto grid max-w-7xl gap-5 px-5 py-5 md:gap-8 md:py-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <LeasePhoto
             device={device}
             lang={lang}
             photo={shown}
             sizes="(min-width: 1024px) 45vw, 100vw"
-            className="aspect-square rounded-[2rem] border"
+            className="aspect-[4/3] rounded-3xl border lg:aspect-square lg:rounded-[2rem]"
             priority
           />
           {photos.length > 1 && (
@@ -236,7 +236,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                   aria-label={p.alt[lang]}
                   aria-pressed={i === photoIndex}
                   className={cn(
-                    "h-20 w-20 shrink-0 cursor-pointer overflow-hidden rounded-2xl border bg-white p-1.5 transition",
+                    "h-16 w-16 shrink-0 cursor-pointer overflow-hidden rounded-2xl border bg-white p-1.5 transition",
                     i === photoIndex ? "border-primary ring-2 ring-primary" : "hover:border-ink/30",
                   )}
                 >
@@ -270,7 +270,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
           {device.deviceId && (
             <Link
               to={devicePath(lang, device.deviceId)}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold hover:text-primary"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold hover:text-primary"
             >
               {t.fullSpecs} <ArrowRight className="h-4 w-4 text-primary" />
             </Link>
@@ -278,16 +278,16 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
         </div>
 
         <div className="min-w-0">
-          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             {device.brand} · {t.crumb}
           </p>
-          <h1 className="mt-2 text-4xl font-semibold leading-tight md:text-5xl">{device.name}</h1>
+          <h1 className="mt-1 text-3xl font-semibold leading-tight md:text-4xl">{device.name}</h1>
           {device.note && (
-            <p className="mt-3 inline-flex rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+            <p className="mt-2 inline-flex rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
               {device.note[lang]}
             </p>
           )}
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-2 text-base text-muted-foreground md:text-lg">
             {t.from}{" "}
             <span className="font-semibold text-foreground">
               <LeaseMoney usd={from.lease} />
@@ -300,22 +300,22 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
           </p>
 
           {/* 1. How often */}
-          <p className="mt-8 text-sm font-semibold">{t.payQuestion}</p>
+          <p className="mt-5 text-sm font-semibold">{t.payQuestion}</p>
           <FrequencyToggle
             value={frequency}
             onChange={setFrequency}
             lang={lang}
             label={t.payQuestion}
-            className="mt-3 max-w-md"
+            className="mt-2 max-w-md"
           />
-          <p className="mt-2 max-w-md text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-1.5 max-w-md text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
             {t.freqNote}
           </p>
 
           {/* 2. Which option — each shows only the chosen schedule's payment */}
           {device.options.length > 1 && (
-            <fieldset className="mt-6">
-              <legend className="mb-3 text-sm font-semibold">{t.chooseOption}</legend>
+            <fieldset className="mt-4">
+              <legend className="mb-2 text-sm font-semibold">{t.chooseOption}</legend>
               <div className="flex flex-wrap gap-2">
                 {device.options.map((x, i) => (
                   <button
@@ -324,7 +324,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                     aria-pressed={i === index}
                     onClick={() => setIndex(i)}
                     className={cn(
-                      "cursor-pointer rounded-2xl border bg-card px-4 py-2.5 text-left transition",
+                      "cursor-pointer rounded-2xl border bg-card px-3.5 py-2 text-left transition",
                       i === index ? "border-primary ring-1 ring-primary" : "hover:border-ink/30",
                     )}
                   >
@@ -342,7 +342,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
           )}
 
           {/* 3. The payment */}
-          <div className="mt-4">
+          <div className="mt-3">
             {device.options.length === 1 && (
               <p className="mb-2 text-sm font-semibold">{option.label[lang]}</p>
             )}
@@ -351,7 +351,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
 
           {/* Every option at a glance, closed by default to keep the page simple */}
           {device.options.length > 1 && (
-            <details className="group mt-6 rounded-2xl border bg-card">
+            <details className="group mt-3 rounded-2xl border bg-card">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 font-semibold [&::-webkit-details-marker]:hidden">
                 {t.compare}
                 <ChevronDown className="h-4 w-4 transition group-open:rotate-180" />
@@ -388,7 +388,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
       </section>
 
       {/* How to get it: lease with a partner (or in-house) beside the online Pay-in-4 option */}
-      <section aria-label={t.applyTitle} className="mx-auto max-w-7xl px-5 pb-8 md:pb-12">
+      <section aria-label={t.applyTitle} className="mx-auto max-w-7xl px-5 pb-6 md:pb-10">
         <div
           className={cn(
             "grid items-stretch gap-4",
@@ -567,8 +567,8 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
 
       {related.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 pb-4">
-          <h2 className="text-3xl font-semibold">{t.more(category.title[lang])}</h2>
-          <ul className="mt-6 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          <h2 className="text-2xl font-semibold md:text-3xl">{t.more(category.title[lang])}</h2>
+          <ul className="mt-4 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {related.map((d) => (
               <li key={d.id}>
                 <LeaseCard device={d} lang={lang} />
