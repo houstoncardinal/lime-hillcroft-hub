@@ -256,101 +256,103 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       <LeaseSection lang={lang} />
 
       {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 md:py-20">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow text-slate">{<MoneyText text={t.services.kicker} />}</p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-5xl">
-              {<MoneyText text={t.services.title} />}
-            </h2>
-          </div>
-          <p className="max-w-sm text-muted-foreground">{<MoneyText text={t.services.intro} />}</p>
-        </div>
-
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-          <article className="relative isolate col-span-2 flex min-h-[340px] flex-col justify-between overflow-hidden rounded-3xl bg-ink p-6 text-white sm:min-h-[400px] sm:p-8 md:p-10 lg:row-span-2">
-            <Photo
-              src={s24}
-              srcSm={s24Sm}
-              width={1500}
-              height={2000}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              alt={t.services.featured.imageAlt}
-              className="absolute inset-0 -z-10 opacity-90"
-            />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/20" />
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-              <Smartphone className="h-5 w-5" />
-            </span>
+      <section id="services" className="scroll-mt-24 border-y bg-card">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <h3 className="max-w-md text-3xl font-semibold md:text-5xl">
-                <Link
-                  to={servicePath(lang, "unlocked-phones")}
-                  className="after:absolute after:inset-0 after:content-[''] hover:text-primary"
-                >
-                  {<MoneyText text={t.services.featured.title} />}
-                </Link>
-              </h3>
-              <p className="mt-3 max-w-md text-lg leading-relaxed text-white/75">
-                {<MoneyText text={t.services.featured.body} />}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-2">
-                {t.services.featured.chips.map((chip) => (
-                  <span
-                    key={chip}
-                    className="rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm text-white/85 backdrop-blur"
-                  >
-                    {<MoneyText text={chip} />}
-                  </span>
-                ))}
-              </div>
-              <Link
-                to={ALTERNATES.leasing[lang]}
-                className="tap relative z-10 mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
-              >
-                {<MoneyText text={t.services.featured.link} />} <ArrowRight className="h-4 w-4" />
-              </Link>
+              <p className="eyebrow text-slate">{<MoneyText text={t.services.kicker} />}</p>
+              <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.02] md:text-5xl">
+                {<MoneyText text={t.services.title} />}
+              </h2>
             </div>
-          </article>
+            <p className="max-w-sm text-muted-foreground">{<MoneyText text={t.services.intro} />}</p>
+          </div>
 
-          {t.services.items.map(([title, body], i) => {
-            const Icon = SERVICE_ICONS[i] ?? Wrench;
-            return (
-              <Link
-                key={title}
-                to={servicePath(lang, SERVICE_SLUGS[i] ?? "")}
-                className="group flex flex-col rounded-3xl border bg-card p-4 transition sm:p-7 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-ink transition group-hover:bg-primary sm:h-11 sm:w-11 sm:rounded-2xl">
-                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
-                </span>
-                <h3 className="mt-3 font-semibold leading-snug group-hover:text-primary sm:mt-6 sm:text-lg">
-                  {<MoneyText text={title} />}
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+            <article className="relative isolate col-span-2 flex min-h-[340px] flex-col justify-between overflow-hidden rounded-3xl bg-ink p-6 text-white sm:min-h-[400px] sm:p-8 md:p-10 lg:row-span-2">
+              <Photo
+                src={s24}
+                srcSm={s24Sm}
+                width={1500}
+                height={2000}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                alt={t.services.featured.imageAlt}
+                className="absolute inset-0 -z-10 opacity-90"
+              />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/20" />
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                <Smartphone className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="max-w-md text-3xl font-semibold md:text-5xl">
+                  <Link
+                    to={servicePath(lang, "unlocked-phones")}
+                    className="after:absolute after:inset-0 after:content-[''] hover:text-primary"
+                  >
+                    {<MoneyText text={t.services.featured.title} />}
+                  </Link>
                 </h3>
-                <p className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:line-clamp-none sm:text-sm sm:leading-relaxed">
-                  {<MoneyText text={body} />}
+                <p className="mt-3 max-w-md text-lg leading-relaxed text-white/75">
+                  {<MoneyText text={t.services.featured.body} />}
                 </p>
-                <span className="mt-auto flex items-center gap-1 pt-3 text-sm font-semibold sm:pt-5">
-                  {t.services.more}
-                  <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-1" />
-                </span>
-              </Link>
-            );
-          })}
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {t.services.featured.chips.map((chip) => (
+                    <span
+                      key={chip}
+                      className="rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm text-white/85 backdrop-blur"
+                    >
+                      {<MoneyText text={chip} />}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  to={ALTERNATES.leasing[lang]}
+                  className="tap relative z-10 mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
+                >
+                  {<MoneyText text={t.services.featured.link} />} <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </article>
 
-          <a
-            href={TEL}
-            className="group flex flex-col justify-between gap-4 rounded-3xl bg-primary p-4 text-primary-foreground sm:gap-8 sm:p-7 transition hover:-translate-y-1"
-          >
-            <p className="font-display text-lg font-semibold leading-tight sm:text-2xl">
-              {<MoneyText text={t.services.cta} />}
-            </p>
-            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold sm:text-base">
-              <Phone className="h-4 w-4" /> {PHONE}
-              <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </span>
-          </a>
-        </div>
+            {t.services.items.map(([title, body], i) => {
+              const Icon = SERVICE_ICONS[i] ?? Wrench;
+              return (
+                <Link
+                  key={title}
+                  to={servicePath(lang, SERVICE_SLUGS[i] ?? "")}
+                  className="group flex flex-col rounded-3xl border bg-card p-4 transition sm:p-7 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-ink transition group-hover:bg-primary sm:h-11 sm:w-11 sm:rounded-2xl">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </span>
+                  <h3 className="mt-3 font-semibold leading-snug group-hover:text-primary sm:mt-6 sm:text-lg">
+                    {<MoneyText text={title} />}
+                  </h3>
+                  <p className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:line-clamp-none sm:text-sm sm:leading-relaxed">
+                    {<MoneyText text={body} />}
+                  </p>
+                  <span className="mt-auto flex items-center gap-1 pt-3 text-sm font-semibold sm:pt-5">
+                    {t.services.more}
+                    <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              );
+            })}
+
+            <a
+              href={TEL}
+              className="group flex flex-col justify-between gap-4 rounded-3xl bg-primary p-4 text-primary-foreground sm:gap-8 sm:p-7 transition hover:-translate-y-1"
+            >
+              <p className="font-display text-lg font-semibold leading-tight sm:text-2xl">
+                {<MoneyText text={t.services.cta} />}
+              </p>
+              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold sm:text-base">
+                <Phone className="h-4 w-4" /> {PHONE}
+                <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </span>
+            </a>
+          </div>
+  </div>
       </section>
 
       <LeasingPortals lang={lang} />

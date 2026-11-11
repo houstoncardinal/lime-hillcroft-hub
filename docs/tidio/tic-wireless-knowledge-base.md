@@ -52,6 +52,7 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
   (https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en).
   Customers can also apply with Progressive Leasing, American First Finance or Payvantage from
   https://www.ticwirelesstx.com/leasing.
+- In-House Financing (special option): financing done directly with TIC Wireless at the Hillcroft store — visit with a valid photo ID and a bank account to get approved, subject to approval. Details: https://www.ticwirelesstx.com/in-house-financing
 - Early payoff: customers can ask about early-payoff options when they apply.
 - Leasing is also available on game consoles (PlayStation 5, Xbox, Nintendo Switch 2),
   laptops (including MacBook Air and Windows laptops), tablets (iPad, iPad Pro, iPad mini,

@@ -10,6 +10,7 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  Store,
 } from "lucide-react";
 
 import {
@@ -38,7 +39,7 @@ import {
 import { devicePath } from "@/components/products/device-paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
 import { SiteFooter, SiteHeader } from "@/components/site/chrome";
-import { PORTALS, PortalButton } from "@/components/site/leasing-portals";
+import { IN_HOUSE, PORTALS, PortalButton } from "@/components/site/leasing-portals";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
 
@@ -405,6 +406,31 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                   />
                 </li>
               ))}
+              {/* Special option: the store's own In-House Financing */}
+              <li>
+                <Link
+                  to={ALTERNATES.inHouse[lang]}
+                  className="flex flex-col gap-3 rounded-2xl bg-primary/15 p-3 ring-1 ring-primary/40 transition hover:bg-primary/25 sm:flex-row sm:items-center"
+                >
+                  <span className="flex min-w-0 flex-1 items-center gap-3">
+                    <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-xl bg-white px-2 text-ink">
+                      <Store className="h-5 w-5" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="flex flex-wrap items-center gap-2 font-semibold leading-tight">
+                        {IN_HOUSE.name[lang]}
+                        <span className="rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
+                          {IN_HOUSE.kicker[lang]}
+                        </span>
+                      </span>
+                      <span className="block text-xs leading-snug text-white/70">{IN_HOUSE.blurb[lang]}</span>
+                    </span>
+                  </span>
+                  <span className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-ink sm:w-auto">
+                    {IN_HOUSE.cta[lang]} <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </li>
             </ul>
             <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-white/60">
               <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

@@ -14,6 +14,7 @@ import { DEVICE_PAGES } from "@/components/products/devices";
 import { categoryHead, deviceHead, devicesHubHead } from "@/components/products/heads";
 import { reviewsHead } from "@/components/reviews/heads";
 import { homeHead, leasingHead } from "@/components/pages/heads";
+import { inHouseHead } from "@/components/pages/in-house-head";
 import { LEASE_DEVICES, leaseDevicePath } from "@/components/lease/catalog";
 import { leaseDeviceHead, leaseHubHead } from "@/components/lease/heads";
 import { SERVICES } from "@/components/services/data";
@@ -32,6 +33,7 @@ function pages(): [string, Head][] {
     ...LANGS.flatMap((l): [string, Head][] => [
       [ALTERNATES.home[l], homeHead(l)],
       [ALTERNATES.leasing[l], leasingHead(l)],
+      [ALTERNATES.inHouse[l], inHouseHead(l)],
       ...(SHOP_ENABLED ? [[ALTERNATES.shop[l], shopHead(l, undefined)] as [string, Head]] : []),
       [ALTERNATES.location[l], locationHead(l)],
       ...["privacy", "returns", "shipping", "terms", "warranty"].map((key): [string, Head] => {

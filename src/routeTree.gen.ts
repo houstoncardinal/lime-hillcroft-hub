@@ -14,6 +14,7 @@ import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as FinancingRouteImport } from './routes/financing'
+import { Route as InHouseFinancingRouteImport } from './routes/in-house-financing'
 import { Route as LeasingRouteImport } from './routes/leasing'
 import { Route as AccessoriesIndexRouteImport } from './routes/accessories/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
@@ -32,6 +33,7 @@ import { Route as DevicesSlugRouteImport } from './routes/devices/$slug'
 import { Route as EsIndexRouteImport } from './routes/es/index'
 import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
+import { Route as EsFinanciamientoEnTiendaRouteImport } from './routes/es/financiamiento-en-tienda'
 import { Route as GameConsolesIndexRouteImport } from './routes/game-consoles/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
@@ -90,6 +92,11 @@ const AuthRoute = AuthRouteImport.update({
 const FinancingRoute = FinancingRouteImport.update({
   id: '/financing',
   path: '/financing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InHouseFinancingRoute = InHouseFinancingRouteImport.update({
+  id: '/in-house-financing',
+  path: '/in-house-financing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeasingRoute = LeasingRouteImport.update({
@@ -182,6 +189,12 @@ const EsFinanciamientoRoute = EsFinanciamientoRouteImport.update({
   path: '/es/financiamiento',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsFinanciamientoEnTiendaRoute =
+  EsFinanciamientoEnTiendaRouteImport.update({
+    id: '/es/financiamiento-en-tienda',
+    path: '/es/financiamiento-en-tienda',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const GameConsolesIndexRoute = GameConsolesIndexRouteImport.update({
   id: '/game-consoles/',
   path: '/game-consoles/',
@@ -361,6 +374,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
+  '/in-house-financing': typeof InHouseFinancingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
@@ -374,6 +388,7 @@ export interface FileRoutesByFullPath {
   '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/es/financiamiento-en-tienda': typeof EsFinanciamientoEnTiendaRoute
   '/guides/$slug': typeof GuidesSlugRoute
   '/lease-to-own/$id': typeof LeaseToOwnIdRoute
   '/policies/$policy': typeof PoliciesPolicyRoute
@@ -419,6 +434,7 @@ export interface FileRoutesByTo {
   '/$lang': typeof LangRoute
   '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
+  '/in-house-financing': typeof InHouseFinancingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
@@ -432,6 +448,7 @@ export interface FileRoutesByTo {
   '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/es/financiamiento-en-tienda': typeof EsFinanciamientoEnTiendaRoute
   '/guides/$slug': typeof GuidesSlugRoute
   '/lease-to-own/$id': typeof LeaseToOwnIdRoute
   '/policies/$policy': typeof PoliciesPolicyRoute
@@ -479,6 +496,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
+  '/in-house-financing': typeof InHouseFinancingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
@@ -492,6 +510,7 @@ export interface FileRoutesById {
   '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
+  '/es/financiamiento-en-tienda': typeof EsFinanciamientoEnTiendaRoute
   '/guides/$slug': typeof GuidesSlugRoute
   '/lease-to-own/$id': typeof LeaseToOwnIdRoute
   '/policies/$policy': typeof PoliciesPolicyRoute
@@ -540,6 +559,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/auth'
     | '/financing'
+    | '/in-house-financing'
     | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
@@ -553,6 +573,7 @@ export interface FileRouteTypes {
     | '/devices/$slug'
     | '/es/arrendamiento'
     | '/es/financiamiento'
+    | '/es/financiamiento-en-tienda'
     | '/guides/$slug'
     | '/lease-to-own/$id'
     | '/policies/$policy'
@@ -598,6 +619,7 @@ export interface FileRouteTypes {
     | '/$lang'
     | '/auth'
     | '/financing'
+    | '/in-house-financing'
     | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
@@ -611,6 +633,7 @@ export interface FileRouteTypes {
     | '/devices/$slug'
     | '/es/arrendamiento'
     | '/es/financiamiento'
+    | '/es/financiamiento-en-tienda'
     | '/guides/$slug'
     | '/lease-to-own/$id'
     | '/policies/$policy'
@@ -657,6 +680,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/auth'
     | '/financing'
+    | '/in-house-financing'
     | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
@@ -670,6 +694,7 @@ export interface FileRouteTypes {
     | '/devices/$slug'
     | '/es/arrendamiento'
     | '/es/financiamiento'
+    | '/es/financiamiento-en-tienda'
     | '/guides/$slug'
     | '/lease-to-own/$id'
     | '/policies/$policy'
@@ -717,11 +742,13 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRouteWithChildren
   AuthRoute: typeof AuthRoute
   FinancingRoute: typeof FinancingRoute
+  InHouseFinancingRoute: typeof InHouseFinancingRoute
   LeasingRoute: typeof LeasingRoute
   AreasSlugRoute: typeof AreasSlugRoute
   DevicesSlugRoute: typeof DevicesSlugRoute
   EsArrendamientoRoute: typeof EsArrendamientoRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
+  EsFinanciamientoEnTiendaRoute: typeof EsFinanciamientoEnTiendaRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
   LeaseToOwnIdRoute: typeof LeaseToOwnIdRoute
   PoliciesPolicyRoute: typeof PoliciesPolicyRoute
@@ -797,6 +824,13 @@ declare module '@tanstack/react-router' {
       path: '/financing'
       fullPath: '/financing'
       preLoaderRoute: typeof FinancingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/in-house-financing': {
+      id: '/in-house-financing'
+      path: '/in-house-financing'
+      fullPath: '/in-house-financing'
+      preLoaderRoute: typeof InHouseFinancingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leasing': {
@@ -923,6 +957,13 @@ declare module '@tanstack/react-router' {
       path: '/es/financiamiento'
       fullPath: '/es/financiamiento'
       preLoaderRoute: typeof EsFinanciamientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/financiamiento-en-tienda': {
+      id: '/es/financiamiento-en-tienda'
+      path: '/es/financiamiento-en-tienda'
+      fullPath: '/es/financiamiento-en-tienda'
+      preLoaderRoute: typeof EsFinanciamientoEnTiendaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/game-consoles/': {
@@ -1198,11 +1239,13 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRouteWithChildren,
   AuthRoute: AuthRoute,
   FinancingRoute: FinancingRoute,
+  InHouseFinancingRoute: InHouseFinancingRoute,
   LeasingRoute: LeasingRoute,
   AreasSlugRoute: AreasSlugRoute,
   DevicesSlugRoute: DevicesSlugRoute,
   EsArrendamientoRoute: EsArrendamientoRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
+  EsFinanciamientoEnTiendaRoute: EsFinanciamientoEnTiendaRoute,
   GuidesSlugRoute: GuidesSlugRoute,
   LeaseToOwnIdRoute: LeaseToOwnIdRoute,
   PoliciesPolicyRoute: PoliciesPolicyRoute,

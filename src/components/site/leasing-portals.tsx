@@ -2,7 +2,16 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { ALTERNATES } from "@/components/site/seo";
-import { ArrowRight, ArrowUpRight, BadgeCheck, Clock, IdCard, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BadgeCheck,
+  Clock,
+  IdCard,
+  Landmark,
+  ShieldCheck,
+  Store,
+} from "lucide-react";
 
 import type { Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
@@ -136,6 +145,68 @@ export function PortalButton({
   );
 }
 
+/**
+ * In-House Financing: the store's own option, done in person at Hillcroft (photo ID + bank account
+ * to get approved). Shown as a special extra next to the four online partners, linking to its page.
+ */
+export const IN_HOUSE = {
+  name: { en: "In-House Financing", es: "Financiamiento en tienda" },
+  short: { en: "In-House", es: "En tienda" },
+  kicker: { en: "Special option", es: "Opción especial" },
+  blurb: {
+    en: "Get approved directly at our store — bring a photo ID and a bank account.",
+    es: "Aprueba directamente en nuestra tienda: trae una identificación con foto y una cuenta bancaria.",
+  },
+  cta: { en: "See how it works", es: "Ver cómo funciona" },
+};
+
+/** The In-House Financing link in a compact form, for buttons and menus. */
+export function InHouseLink({ lang, className }: { lang: Lang; className?: string }) {
+  return (
+    <Link
+      to={ALTERNATES.inHouse[lang]}
+      className={cn(
+        "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold transition",
+        className,
+      )}
+    >
+      <Store className="h-4 w-4 shrink-0" /> {IN_HOUSE.name[lang]}
+      <ArrowRight className="h-4 w-4 shrink-0" />
+    </Link>
+  );
+}
+
+/** A wide "special option" card for In-House Financing, under the four partner cards. */
+export function InHouseCard({ lang, className }: { lang: Lang; className?: string }) {
+  return (
+    <Link
+      to={ALTERNATES.inHouse[lang]}
+      className={cn(
+        "group flex flex-col gap-4 rounded-lg border-2 border-ink bg-ink p-5 text-white transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20 sm:flex-row sm:items-center sm:justify-between",
+        className,
+      )}
+    >
+      <span className="flex items-start gap-4">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground">
+          <Landmark className="h-5 w-5" />
+        </span>
+        <span>
+          <span className="inline-flex rounded-full bg-primary/20 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-primary">
+            {IN_HOUSE.kicker[lang]}
+          </span>
+          <span className="mt-1.5 block font-display text-lg font-semibold leading-tight">
+            {IN_HOUSE.name[lang]}
+          </span>
+          <span className="mt-1 block text-sm text-white/70">{IN_HOUSE.blurb[lang]}</span>
+        </span>
+      </span>
+      <span className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-md bg-primary px-5 text-sm font-bold text-primary-foreground transition group-hover:brightness-110">
+        {IN_HOUSE.cta[lang]} <ArrowRight className="h-4 w-4" />
+      </span>
+    </Link>
+  );
+}
+
 /** All lease-to-own providers, visible without expanding a menu. */
 export function LeasingPortals({ lang, className }: { lang: Lang; className?: string }) {
   const t = T[lang];
@@ -156,6 +227,7 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
             </li>
           ))}
         </ul>
+        <InHouseCard lang={lang} className="mt-3" />
         <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground"><ShieldCheck className="h-4 w-4 shrink-0 text-primary" /><span>{t.secure} {t.fine}</span></p>
       </div>
     </section>
@@ -179,6 +251,14 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
         <p className="text-[11px] text-muted-foreground">{lang === "en" ? "Subject to approval." : "Sujeto a aprobación."}</p>
         <Button asChild variant="link" className="h-auto px-0 py-1 text-xs font-bold"><Link to={ALTERNATES.leasing[lang]}>{t.applyNow}<ArrowRight /></Link></Button>
       </div>
+      <Link
+        to={ALTERNATES.inHouse[lang]}
+        className="mt-1 flex items-center gap-1.5 border-t border-primary/15 pt-2 text-[11px] font-semibold text-foreground hover:text-primary"
+      >
+        <Store className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
+        {lang === "en" ? "Or In-House Financing at our store" : "O financiamiento directo en nuestra tienda"}
+        <ArrowRight className="h-3 w-3" aria-hidden="true" />
+      </Link>
     </div>
   );
 }
@@ -188,12 +268,12 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
   const t = T[lang];
   return (
     <aside aria-label={t.kicker} className="bg-primary text-primary-foreground">
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8">
         <div>
           <p className="font-display text-2xl font-semibold leading-tight">{t.bannerTitle}</p>
           <p className="mt-1 text-sm opacity-85">{t.bannerBody}</p>
         </div>
-        <div className="grid gap-2 sm:grid-cols-2 xl:flex xl:shrink-0">
+        <div className="grid gap-2 sm:grid-cols-2 lg:flex lg:flex-wrap">
           {PORTALS.map((p) => (
             <PortalButton
               key={p.id}
@@ -202,6 +282,7 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
               className="bg-ink text-white hover:bg-ink/85"
             />
           ))}
+          <InHouseLink lang={lang} className="bg-white text-ink hover:bg-white/90 sm:col-span-2 lg:col-span-1" />
         </div>
       </div>
       <p className="mx-auto max-w-7xl px-5 pb-6 text-[12px] leading-relaxed opacity-75">{t.fine}</p>

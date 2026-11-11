@@ -14,6 +14,7 @@ import {
   Smartphone,
   Wallet,
   X,
+  Store,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -22,7 +23,7 @@ import { setLangPref } from "@/components/intl/lang-pref";
 import { INTL_LANGS, intlPath } from "@/components/intl/languages";
 import { servicePath } from "@/components/services/paths";
 import { DIRECTIONS, TEL } from "@/components/site/business";
-import { PORTALS } from "@/components/site/leasing-portals";
+import { IN_HOUSE, PORTALS } from "@/components/site/leasing-portals";
 import { serviceNav } from "@/components/site/nav";
 import { Logo } from "@/components/site/logo";
 import { ALTERNATES, type Lang, type Paths } from "@/components/site/seo";
@@ -363,6 +364,12 @@ export function MobileMenu({
                   </a>
                 ))}
               </div>
+              <Link
+                to={ALTERNATES.inHouse[lang]}
+                className="mt-1.5 flex h-11 items-center justify-center gap-2 rounded-xl bg-primary text-[13px] font-bold text-primary-foreground transition hover:brightness-110 short:h-10 tiny:h-9"
+              >
+                <Store className="h-4 w-4" /> {IN_HOUSE.name[lang]} · {IN_HOUSE.kicker[lang]}
+              </Link>
 
               <div className="mt-2 flex items-center justify-between gap-2 text-sm micro:hidden">
                 <div className="flex min-w-0 items-center">
