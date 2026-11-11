@@ -51,9 +51,6 @@ import { GuideCard } from "@/components/guides/guide-page";
 import { servicePath } from "@/components/services/paths";
 import { HOME_COPY } from "@/components/pages/home-copy";
 import { Button } from "@/components/ui/button";
-import { SHOP_ENABLED } from "@/components/site/features";
-import { ProductCard } from "@/shop/components";
-import { SHOP_COPY } from "@/shop/copy";
 import type { Catalog } from "@/shop/types";
 import {
   ADDRESS,
@@ -113,10 +110,9 @@ const ACCESSORY_PHOTOS = [
   { src: otterbox, sm: otterboxSm, w: 1500, h: 2000, span: "" },
 ];
 
-export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
+// `catalog` is still passed by the route (the online shop teaser that used it was removed).
+export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
   const t = HOME_COPY[lang];
-  const shop = SHOP_COPY[lang];
-  const featured = catalog.products.filter((p) => p.featured).slice(0, 4);
   return (
     <main className="overflow-x-hidden">
       <SiteHeader lang={lang} paths={ALTERNATES.home} />
@@ -553,31 +549,6 @@ export function HomePage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
       </section>
 
       {/* Shop teaser */}
-      {SHOP_ENABLED && featured.length > 0 && (
-        <section className="mx-auto max-w-7xl px-5 pb-16 md:pb-20">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="eyebrow text-slate">{shop.homeTeaser.kicker}</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-[1.02] md:text-5xl">
-                {shop.homeTeaser.title}
-              </h2>
-              <p className="mt-4 max-w-md text-muted-foreground">{shop.homeTeaser.body}</p>
-            </div>
-            <Link
-              to={ALTERNATES.shop[lang]}
-              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white transition hover:bg-ink-soft"
-            >
-              {shop.homeTeaser.cta}
-              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-6">
-            {featured.map((p) => (
-              <ProductCard key={p.id} product={p} lang={lang} />
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Rating band */}
       <section className="px-5">
