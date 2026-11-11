@@ -22,6 +22,8 @@ import {
   leaseDevicePaths,
   leaseFrom,
   payment,
+  phoneLeasingOnly,
+  PHONE_ONLY_PORTALS,
   type Frequency,
   type LeaseDevice,
 } from "@/components/lease/catalog";
@@ -70,25 +72,32 @@ function Crumbs({ lang, name }: { lang: Lang; name?: string }) {
   );
 }
 
-function Steps({ lang }: { lang: Lang }) {
+/** Lease-to-own steps; `partners` names only the partners that apply to this device. */
+function Steps({ lang, partners }: { lang: Lang; partners?: string[] }) {
   const t = LEASE_COPY[lang];
+  const or = lang === "en" ? "or" : "o";
+  const list = partners && `${partners.slice(0, -1).join(", ")} ${or} ${partners.at(-1)}.`;
   return (
     <section aria-labelledby="lease-steps" className="mx-auto max-w-7xl px-5 py-8 md:py-12">
       <h2 id="lease-steps" className="text-3xl font-semibold md:text-4xl">
         {t.stepsTitle}
       </h2>
       <ol className="mt-5 grid gap-3 md:grid-cols-3 md:gap-4">
-        {t.steps.map(([Icon, title, body], i) => (
-          <li key={title} className="flex gap-4 rounded-3xl border bg-card p-5 md:block">
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-              <Icon className="h-5 w-5" />
-            </span>
-            <p className="font-display text-lg font-semibold md:mt-4">
-              {i + 1}. {title}
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
-          </li>
-        ))}
+        {t.steps.map(([Icon, title, stepBody], i) => {
+          const body =
+            i === 1 && list ? `${lang === "en" ? "Apply with" : "Solicita con"} ${list}` : stepBody;
+          return (
+            <li key={title} className="flex gap-4 rounded-3xl border bg-card p-5 md:block">
+              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                <Icon className="h-5 w-5" />
+              </span>
+              <p className="font-display text-lg font-semibold md:mt-4">
+                {i + 1}. {title}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          );
+        })}
       </ol>
       <p className="mt-6 text-xs leading-relaxed text-muted-foreground">{t.fine}</p>
     </section>
@@ -198,6 +207,8 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
   const [photoIndex, setPhotoIndex] = useState(0);
   const shown = photos[photoIndex] ?? photos[0];
   const credit = shown?.credit;
+  const phoneOnly = phoneLeasingOnly(device, option);
+  const portals = PORTALS.filter((p) => phoneOnly || !PHONE_ONLY_PORTALS.includes(p.id));
   const shopHandle = shopifyHandle(device, option);
   const onlineOptions = device.options.filter((x) => shopifyHandle(device, x));
   const from = leaseFrom(device);
@@ -407,7 +418,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-white/70">{t.applyBody}</p>
               <ul className="mt-5 grid gap-2">
-                {PORTALS.map((p, i) => (
+                {portals.map((p, i) => (
                   <li
                     key={p.id}
                     className="flex items-center gap-3 rounded-2xl bg-white/[0.06] p-3 ring-1 ring-white/10"
@@ -439,35 +450,37 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                     />
                   </li>
                 ))}
-                {/* Special option: the store's own In-House Leasing */}
-                <li>
-                  <Link
-                    to={ALTERNATES.inHouse[lang]}
-                    className="flex items-center gap-3 rounded-2xl bg-primary/15 p-3 ring-1 ring-primary/40 transition hover:bg-primary/25"
-                  >
-                    <span className="flex min-w-0 flex-1 items-center gap-3">
-                      <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-xl bg-white px-2 text-ink">
-                        <Store className="h-5 w-5" />
-                      </span>
-                      <span className="min-w-0">
-                        <span className="flex flex-wrap items-center gap-2 font-semibold leading-tight">
-                          {IN_HOUSE.name[lang]}
-                          <span className="rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
-                            {IN_HOUSE.kicker[lang]}
+                {/* Special option: the store's own In-House Leasing (phones and cellular iPads only) */}
+                {phoneOnly && (
+                  <li>
+                    <Link
+                      to={ALTERNATES.inHouse[lang]}
+                      className="flex items-center gap-3 rounded-2xl bg-primary/15 p-3 ring-1 ring-primary/40 transition hover:bg-primary/25"
+                    >
+                      <span className="flex min-w-0 flex-1 items-center gap-3">
+                        <span className="flex h-10 min-w-10 shrink-0 items-center justify-center rounded-xl bg-white px-2 text-ink">
+                          <Store className="h-5 w-5" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="flex flex-wrap items-center gap-2 font-semibold leading-tight">
+                            {IN_HOUSE.name[lang]}
+                            <span className="rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
+                              {IN_HOUSE.kicker[lang]}
+                            </span>
+                          </span>
+                          <span className="hidden text-xs leading-snug text-white/70 sm:block">
+                            {IN_HOUSE.blurb[lang]}
                           </span>
                         </span>
-                        <span className="hidden text-xs leading-snug text-white/70 sm:block">
-                          {IN_HOUSE.blurb[lang]}
-                        </span>
                       </span>
-                    </span>
-                    <span className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-bold text-ink">
-                      <span className="sm:hidden">{lang === "en" ? "Details" : "Ver"}</span>
-                      <span className="hidden sm:inline">{IN_HOUSE.cta[lang]}</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </Link>
-                </li>
+                      <span className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-bold text-ink">
+                        <span className="sm:hidden">{lang === "en" ? "Details" : "Ver"}</span>
+                        <span className="hidden sm:inline">{IN_HOUSE.cta[lang]}</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </Link>
+                  </li>
+                )}
               </ul>
               <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-white/60">
                 <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -523,7 +536,10 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                   </p>
                   <ol className="mt-3 space-y-3 lg:mt-4 lg:space-y-5">
                     {t.payIn4Steps.map((step, i) => (
-                      <li key={step} className="flex items-start gap-3 text-sm leading-snug lg:text-[15px]">
+                      <li
+                        key={step}
+                        className="flex items-start gap-3 text-sm leading-snug lg:text-[15px]"
+                      >
                         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-shoppay text-xs font-bold text-shoppay-foreground lg:h-7 lg:w-7">
                           {i + 1}
                         </span>
@@ -578,7 +594,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
         </section>
       )}
 
-      <Steps lang={lang} />
+      <Steps lang={lang} partners={portals.map((p) => p.name)} />
       <SiteFooter lang={lang} portals={false} />
     </main>
   );

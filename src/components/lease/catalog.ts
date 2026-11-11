@@ -286,6 +286,18 @@ export const LEASE_DEVICES: LeaseDevice[] = [
     options: [o('65"', 550, 650, 32, 64, 123)] },
 ];
 
+/**
+ * Payvantage and In-House Leasing are only for iPhones, Samsung Galaxy phones and the cellular
+ * versions of iPads (owner's rule). Other devices show the other three partners only.
+ */
+export function phoneLeasingOnly(device: LeaseDevice, option: LeaseOption) {
+  if (device.category === "iphone" || device.category === "samsung") return true;
+  return device.category === "ipads" && /cellular/i.test(option.label.en);
+}
+
+/** Lease partners that only apply to phones and cellular iPads (see phoneLeasingOnly). */
+export const PHONE_ONLY_PORTALS = ["payvantage"];
+
 export const findLeaseDevice = (id: string) => LEASE_DEVICES.find((d) => d.id === id);
 
 export type Frequency = "weekly" | "biweekly" | "monthly";

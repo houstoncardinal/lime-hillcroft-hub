@@ -8,6 +8,7 @@ import {
   findLeaseDevice,
   leaseFrom,
   payment,
+  phoneLeasingOnly,
 } from "@/components/lease/catalog";
 import { LATEST_DEVICES } from "@/components/products/inventory";
 import { leasePhoto } from "@/components/lease/lease-ui";
@@ -108,5 +109,20 @@ describe("lease-to-own catalog", () => {
         expect(handle).toMatch(/^[a-z0-9-]+$/);
       }
     }
+  });
+
+  it("offers Payvantage and In-House Leasing only on iPhones, Galaxy phones and cellular iPads", () => {
+    const allowed = (id: string, label?: string) => {
+      const d = findLeaseDevice(id)!;
+      const o = label ? d.options.find((x) => x.label.en === label)! : d.options[0]!;
+      return phoneLeasingOnly(d, o);
+    };
+    expect(allowed("iphone-17-pro")).toBe(true);
+    expect(allowed("galaxy-s25-ultra")).toBe(true);
+    expect(allowed("ipad-11", "128GB · Wi-Fi + Cellular")).toBe(true);
+    expect(allowed("ipad-11", "128GB · Wi-Fi")).toBe(false);
+    expect(allowed("ipad-6", "32GB · Wi-Fi · A/B grade")).toBe(false);
+    for (const id of ["macbook-air-13-m4", "apple-watch-series-11", "playstation-5", "samsung-tv-65", "moto-g-ace-5g"])
+      expect(allowed(id), id).toBe(false);
   });
 });
