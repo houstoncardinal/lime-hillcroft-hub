@@ -267,8 +267,8 @@ export function MobileMenu({
                   <li>
                     <Dialog.Close asChild>
                       <Link
-                        to={ALTERNATES.shop[lang]}
-                        aria-current={isCurrent(ALTERNATES.shop[lang]) ? "page" : undefined}
+                        to={ALTERNATES.leaseCatalog[lang]}
+                        aria-current={isCurrent(ALTERNATES.leaseCatalog[lang]) ? "page" : undefined}
                         className="flex h-12 items-center gap-3 rounded-t-2xl bg-primary px-4 text-[15px] font-bold text-primary-foreground transition short:h-10 tiny:h-9 micro:h-8 micro:text-sm nano:h-[30px] hover:brightness-105"
                       >
                         <ShoppingBag className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />

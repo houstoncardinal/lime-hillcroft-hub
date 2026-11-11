@@ -89,6 +89,7 @@ function Panel({
 export function DesktopNav({ lang }: { lang: Lang }) {
   const t = T[lang];
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const productsActive = pathname.startsWith(ALTERNATES.leaseCatalog[lang]);
   // Hovering opens a menu; the click that usually follows shouldn't immediately close it.
   const [value, setValue] = useState("");
   const openedAt = useRef(0);
@@ -121,14 +122,14 @@ export function DesktopNav({ lang }: { lang: Lang }) {
       className="relative hidden lg:block"
     >
       <Nav.List className="flex items-center gap-0.5 xl:gap-1.5">
-        {/** Products = the online store: one tap, no dropdown, always visible. */}
+        {/** Products = the lease-to-own catalog (each device links on to its Shopify listing). */}
         <Nav.Item>
-          <Nav.Link asChild active={pathname === ALTERNATES.shop[lang]}>
+          <Nav.Link asChild active={productsActive}>
             <Link
-              to={ALTERNATES.shop[lang]}
-              aria-current={pathname === ALTERNATES.shop[lang] ? "page" : undefined}
+              to={ALTERNATES.leaseCatalog[lang]}
+              aria-current={productsActive ? "page" : undefined}
               className={
-                pathname === ALTERNATES.shop[lang]
+                productsActive
                   ? "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary px-2.5 text-sm font-semibold !text-primary-foreground transition xl:px-3"
                   : "inline-flex h-10 items-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground xl:px-3"
               }

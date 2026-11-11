@@ -1,9 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { inHouseHead } from "@/components/pages/in-house-head";
-import { InHousePage } from "@/components/pages/in-house-page";
-
+// Old address: the page is now /in-house-leasing. Permanent redirect keeps shared links working.
 export const Route = createFileRoute("/in-house-financing")({
-  head: () => inHouseHead("en"),
-  component: () => <InHousePage lang="en" />,
+  beforeLoad: () => {
+    throw redirect({ to: "/in-house-leasing", statusCode: 301 });
+  },
 });

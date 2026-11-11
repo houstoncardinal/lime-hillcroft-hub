@@ -27,7 +27,7 @@ export const ALTERNATES = {
   iphone18: { en: "/iphone-18", es: "/es/iphone-18" },
   devices: { en: "/devices", es: "/es/equipos" },
   leaseCatalog: { en: "/lease-to-own", es: "/es/arrendamiento-equipos" },
-  inHouse: { en: "/in-house-financing", es: "/es/financiamiento-en-tienda" },
+  inHouse: { en: "/in-house-leasing", es: "/es/arrendamiento-en-tienda" },
   reviews: { en: "/reviews", es: "/es/resenas" },
 } as const;
 

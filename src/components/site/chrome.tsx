@@ -28,7 +28,7 @@ const T = {
     guides: "Guides",
     directions: "Directions",
     shop: "Products",
-    shopAria: "Shop all products — phones, tablets & electronics",
+    shopAria: "Products — lease-to-own phones, tablets, laptops & consoles",
     home: "TIC Wireless Electronic & Repair Center home",
     tagline: "Buy · Sell · Repair · Unlock. Your one-stop phone shop in Houston. Se habla español.",
     trademarks:
@@ -44,7 +44,7 @@ const T = {
     guides: "Guías",
     directions: "Cómo llegar",
     shop: "Productos",
-    shopAria: "Compra todos los productos — celulares, tabletas y electrónicos",
+    shopAria: "Productos — celulares, tabletas, laptops y consolas en arrendamiento",
     home: "Inicio de TIC Wireless Electronic & Repair Center",
     tagline:
       "Compra · Venta · Reparación · Liberación. Tu tienda de celulares en Houston. We speak English.",
@@ -148,7 +148,7 @@ export function SiteHeader({
           </div>
           {/* Tablets: Products shortcut. Phones use the first row of the menu. */}
           <Link
-            to={ALTERNATES.shop[lang]}
+            to={ALTERNATES.leaseCatalog[lang]}
             aria-label={T[lang].shopAria}
             className="hidden h-11 min-w-11 items-center justify-center gap-1.5 rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground sm:inline-flex lg:hidden"
           >

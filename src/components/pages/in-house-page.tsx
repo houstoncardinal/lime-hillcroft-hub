@@ -20,17 +20,17 @@ import { PORTALS } from "@/components/site/leasing-portals";
 import type { Faq } from "@/components/site/schema";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
-// /in-house-financing: financing done directly with TIC Wireless at the Hillcroft store. The owner's
+// /in-house-leasing: leasing done directly with TIC Wireless at the Hillcroft store. The owner's
 // facts only — visit the store, bring a photo ID and a bank account to get approved, subject to
 // approval. No rates, terms or credit claims are stated; staff explain those in person.
 
 export const IN_HOUSE_COPY = {
   en: {
     home: "Home",
-    crumb: "In-House Financing",
+    crumb: "In-House Leasing",
     kicker: "Special option · In store",
-    title: "In-House Financing at TIC Wireless",
-    body: "Finance your phone, tablet, laptop or console directly with us — no online application. Visit our Hillcroft store with a photo ID and a bank account, and we'll walk you through approval in person.",
+    title: "In-House Leasing at TIC Wireless",
+    body: "Lease your phone, tablet, laptop or console directly with us — no online application. Visit our Hillcroft store with a photo ID and a bank account, and we'll walk you through approval in person.",
     chips: ["Done at our store", "Photo ID + bank account", "Se habla español"],
     call: "Call",
     directions: "Directions",
@@ -40,15 +40,15 @@ export const IN_HOUSE_COPY = {
       [IdCard, "A valid photo ID", "Bring it with you to the store."],
       [Landmark, "A bank account", "We use it to get you approved."],
     ] as const,
-    stepsTitle: "How In-House Financing works",
+    stepsTitle: "How In-House Leasing works",
     steps: [
       ["Visit the store", "Come to 3640 Hillcroft St, Suite C during store hours."],
       ["Bring your ID and bank account", "We review them with you at the counter."],
       ["Get approved in store", "Approval happens right here, with our team."],
       ["Take it home", "Pick your device and leave with it once you're approved."],
     ] as const,
-    compareTitle: "In-House Financing or online lease-to-own?",
-    inHouseCol: "In-House Financing",
+    compareTitle: "In-House Leasing or online lease-to-own?",
+    inHouseCol: "In-House Leasing",
     onlineCol: "Online lease-to-own partners",
     inHousePoints: [
       "Done directly with TIC Wireless",
@@ -67,22 +67,22 @@ export const IN_HOUSE_COPY = {
     faqTitle: "Common questions",
     visit: "Visit the store",
     visitBody: "Walk in — no appointment needed.",
-    fine: "In-House Financing is subject to approval. Our team explains the details in store before you sign anything.",
-    metaTitle: "In-House Financing in Houston — Get Approved at Our Hillcroft Store",
+    fine: "In-House Leasing is subject to approval. Our team explains the details in store before you sign anything.",
+    metaTitle: "In-House Leasing in Houston — Get Approved at Our Hillcroft Store",
     metaDescription:
-      "Finance a phone, tablet, laptop or console directly with TIC Wireless on Hillcroft in Houston. Visit the store with a photo ID and a bank account to get approved. Subject to approval.",
+      "Lease a phone, tablet, laptop or console directly with TIC Wireless on Hillcroft in Houston. Visit the store with a photo ID and a bank account to get approved. Subject to approval.",
     faqs: [
       {
-        q: "What do I need for In-House Financing?",
+        q: "What do I need for In-House Leasing?",
         a: "A valid photo ID and a bank account. Bring them to our store at 3640 Hillcroft St, Suite C, Houston, TX 77057.",
       },
       {
         q: "Do I apply online?",
-        a: "No. In-House Financing is done in person at our Hillcroft store. If you'd rather apply online first, you can use one of our lease-to-own partners instead.",
+        a: "No. In-House Leasing is done in person at our Hillcroft store. If you'd rather apply online first, you can use one of our lease-to-own partners instead.",
       },
       {
         q: "Is approval guaranteed?",
-        a: "No, In-House Financing is subject to approval. Our team will go over everything with you in store.",
+        a: "No, In-House Leasing is subject to approval. Our team will go over everything with you in store.",
       },
       {
         q: "Do I need an appointment?",
@@ -92,10 +92,10 @@ export const IN_HOUSE_COPY = {
   },
   es: {
     home: "Inicio",
-    crumb: "Financiamiento en tienda",
+    crumb: "Arrendamiento en tienda",
     kicker: "Opción especial · En tienda",
-    title: "Financiamiento directo en TIC Wireless",
-    body: "Financia tu celular, tableta, laptop o consola directamente con nosotros, sin solicitud en línea. Visita nuestra tienda de Hillcroft con una identificación con foto y una cuenta bancaria, y te guiamos en la aprobación en persona.",
+    title: "Arrendamiento directo en TIC Wireless",
+    body: "Arrienda tu celular, tableta, laptop o consola directamente con nosotros, sin solicitud en línea. Visita nuestra tienda de Hillcroft con una identificación con foto y una cuenta bancaria, y te guiamos en la aprobación en persona.",
     chips: ["En nuestra tienda", "ID con foto + cuenta bancaria", "We speak English"],
     call: "Llamar",
     directions: "Cómo llegar",
@@ -105,15 +105,15 @@ export const IN_HOUSE_COPY = {
       [IdCard, "Identificación con foto vigente", "Tráela contigo a la tienda."],
       [Landmark, "Una cuenta bancaria", "La usamos para aprobarte."],
     ] as const,
-    stepsTitle: "Cómo funciona el financiamiento en tienda",
+    stepsTitle: "Cómo funciona el arrendamiento en tienda",
     steps: [
       ["Visita la tienda", "Ven a 3640 Hillcroft St, Suite C en horario de tienda."],
       ["Trae tu ID y cuenta bancaria", "Los revisamos contigo en el mostrador."],
       ["Aprobación en la tienda", "La aprobación se hace aquí, con nuestro equipo."],
       ["Llévatelo", "Elige tu equipo y llévatelo una vez aprobado."],
     ] as const,
-    compareTitle: "¿Financiamiento en tienda o arrendamiento en línea?",
-    inHouseCol: "Financiamiento en tienda",
+    compareTitle: "¿Arrendamiento en tienda o arrendamiento en línea?",
+    inHouseCol: "Arrendamiento en tienda",
     onlineCol: "Socios de arrendamiento en línea",
     inHousePoints: [
       "Directamente con TIC Wireless",
@@ -132,22 +132,22 @@ export const IN_HOUSE_COPY = {
     faqTitle: "Preguntas frecuentes",
     visit: "Visita la tienda",
     visitBody: "Ven sin cita.",
-    fine: "El financiamiento en tienda está sujeto a aprobación. Nuestro equipo te explica los detalles en la tienda antes de firmar.",
-    metaTitle: "Financiamiento en Tienda en Houston — Aprobación en Hillcroft",
+    fine: "El arrendamiento en tienda está sujeto a aprobación. Nuestro equipo te explica los detalles en la tienda antes de firmar.",
+    metaTitle: "Arrendamiento en Tienda en Houston — Aprobación en Hillcroft",
     metaDescription:
-      "Financia un celular, tableta, laptop o consola directamente con TIC Wireless sobre Hillcroft en Houston. Visita la tienda con identificación con foto y cuenta bancaria. Sujeto a aprobación.",
+      "Arrienda un celular, tableta, laptop o consola directamente con TIC Wireless sobre Hillcroft en Houston. Visita la tienda con identificación con foto y cuenta bancaria. Sujeto a aprobación.",
     faqs: [
       {
-        q: "¿Qué necesito para el financiamiento en tienda?",
+        q: "¿Qué necesito para el arrendamiento en tienda?",
         a: "Una identificación con foto vigente y una cuenta bancaria. Tráelas a nuestra tienda en 3640 Hillcroft St, Suite C, Houston, TX 77057.",
       },
       {
         q: "¿Solicito en línea?",
-        a: "No. El financiamiento en tienda se hace en persona en nuestra tienda de Hillcroft. Si prefieres solicitar en línea primero, puedes usar uno de nuestros socios de arrendamiento.",
+        a: "No. El arrendamiento en tienda se hace en persona en nuestra tienda de Hillcroft. Si prefieres solicitar en línea primero, puedes usar uno de nuestros socios de arrendamiento.",
       },
       {
         q: "¿La aprobación está garantizada?",
-        a: "No, el financiamiento en tienda está sujeto a aprobación. Nuestro equipo revisa todo contigo en la tienda.",
+        a: "No, el arrendamiento en tienda está sujeto a aprobación. Nuestro equipo revisa todo contigo en la tienda.",
       },
       {
         q: "¿Necesito cita?",

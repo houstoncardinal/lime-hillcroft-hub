@@ -35,7 +35,7 @@ export type NavItem = {
 const L = {
   en: {
     leaseCatalog: ["Lease-to-own devices", "Phones, iPads, MacBooks & consoles · no credit"],
-    inHouse: ["In-House Financing", "Get approved at our store · photo ID + bank account"],
+    inHouse: ["In-House Leasing", "Get approved at our store · photo ID + bank account"],
     allDevices: ["All phones & tablets", "iPhone 11–18, Galaxy S20–S26 & iPad"],
     phones: ["Unlocked phones", "iPhone, Samsung Galaxy & Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max in store, leasing"],
@@ -56,7 +56,7 @@ const L = {
   },
   es: {
     leaseCatalog: ["Equipos en arrendamiento", "Celulares, iPad, MacBook y consolas · sin crédito"],
-    inHouse: ["Financiamiento en tienda", "Aprobación en la tienda · ID con foto + cuenta bancaria"],
+    inHouse: ["Arrendamiento en tienda", "Aprobación en la tienda · ID con foto + cuenta bancaria"],
     allDevices: ["Todos los celulares y tabletas", "iPhone 11–18, Galaxy S20–S26 y iPad"],
     phones: ["Celulares desbloqueados", "iPhone, Samsung Galaxy y Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max en tienda, a pagos"],

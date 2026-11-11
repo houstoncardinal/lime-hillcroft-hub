@@ -15,6 +15,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as FinancingRouteImport } from './routes/financing'
 import { Route as InHouseFinancingRouteImport } from './routes/in-house-financing'
+import { Route as InHouseLeasingRouteImport } from './routes/in-house-leasing'
 import { Route as LeasingRouteImport } from './routes/leasing'
 import { Route as AccessoriesIndexRouteImport } from './routes/accessories/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
@@ -32,6 +33,7 @@ import { Route as DevicesIndexRouteImport } from './routes/devices/index'
 import { Route as DevicesSlugRouteImport } from './routes/devices/$slug'
 import { Route as EsIndexRouteImport } from './routes/es/index'
 import { Route as EsArrendamientoRouteImport } from './routes/es/arrendamiento'
+import { Route as EsArrendamientoEnTiendaRouteImport } from './routes/es/arrendamiento-en-tienda'
 import { Route as EsFinanciamientoRouteImport } from './routes/es/financiamiento'
 import { Route as EsFinanciamientoEnTiendaRouteImport } from './routes/es/financiamiento-en-tienda'
 import { Route as GameConsolesIndexRouteImport } from './routes/game-consoles/index'
@@ -97,6 +99,11 @@ const FinancingRoute = FinancingRouteImport.update({
 const InHouseFinancingRoute = InHouseFinancingRouteImport.update({
   id: '/in-house-financing',
   path: '/in-house-financing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InHouseLeasingRoute = InHouseLeasingRouteImport.update({
+  id: '/in-house-leasing',
+  path: '/in-house-leasing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeasingRoute = LeasingRouteImport.update({
@@ -182,6 +189,11 @@ const EsIndexRoute = EsIndexRouteImport.update({
 const EsArrendamientoRoute = EsArrendamientoRouteImport.update({
   id: '/es/arrendamiento',
   path: '/es/arrendamiento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsArrendamientoEnTiendaRoute = EsArrendamientoEnTiendaRouteImport.update({
+  id: '/es/arrendamiento-en-tienda',
+  path: '/es/arrendamiento-en-tienda',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsFinanciamientoRoute = EsFinanciamientoRouteImport.update({
@@ -375,6 +387,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
   '/in-house-financing': typeof InHouseFinancingRoute
+  '/in-house-leasing': typeof InHouseLeasingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
@@ -387,6 +400,7 @@ export interface FileRoutesByFullPath {
   '/areas/$slug': typeof AreasSlugRoute
   '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
+  '/es/arrendamiento-en-tienda': typeof EsArrendamientoEnTiendaRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/es/financiamiento-en-tienda': typeof EsFinanciamientoEnTiendaRoute
   '/guides/$slug': typeof GuidesSlugRoute
@@ -435,6 +449,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
   '/in-house-financing': typeof InHouseFinancingRoute
+  '/in-house-leasing': typeof InHouseLeasingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
@@ -447,6 +462,7 @@ export interface FileRoutesByTo {
   '/areas/$slug': typeof AreasSlugRoute
   '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
+  '/es/arrendamiento-en-tienda': typeof EsArrendamientoEnTiendaRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/es/financiamiento-en-tienda': typeof EsFinanciamientoEnTiendaRoute
   '/guides/$slug': typeof GuidesSlugRoute
@@ -497,6 +513,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/financing': typeof FinancingRoute
   '/in-house-financing': typeof InHouseFinancingRoute
+  '/in-house-leasing': typeof InHouseLeasingRoute
   '/leasing': typeof LeasingRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/cameras': typeof AdminCamerasRoute
@@ -509,6 +526,7 @@ export interface FileRoutesById {
   '/areas/$slug': typeof AreasSlugRoute
   '/devices/$slug': typeof DevicesSlugRoute
   '/es/arrendamiento': typeof EsArrendamientoRoute
+  '/es/arrendamiento-en-tienda': typeof EsArrendamientoEnTiendaRoute
   '/es/financiamiento': typeof EsFinanciamientoRoute
   '/es/financiamiento-en-tienda': typeof EsFinanciamientoEnTiendaRoute
   '/guides/$slug': typeof GuidesSlugRoute
@@ -560,6 +578,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/financing'
     | '/in-house-financing'
+    | '/in-house-leasing'
     | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
@@ -572,6 +591,7 @@ export interface FileRouteTypes {
     | '/areas/$slug'
     | '/devices/$slug'
     | '/es/arrendamiento'
+    | '/es/arrendamiento-en-tienda'
     | '/es/financiamiento'
     | '/es/financiamiento-en-tienda'
     | '/guides/$slug'
@@ -620,6 +640,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/financing'
     | '/in-house-financing'
+    | '/in-house-leasing'
     | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
@@ -632,6 +653,7 @@ export interface FileRouteTypes {
     | '/areas/$slug'
     | '/devices/$slug'
     | '/es/arrendamiento'
+    | '/es/arrendamiento-en-tienda'
     | '/es/financiamiento'
     | '/es/financiamiento-en-tienda'
     | '/guides/$slug'
@@ -681,6 +703,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/financing'
     | '/in-house-financing'
+    | '/in-house-leasing'
     | '/leasing'
     | '/admin/analytics'
     | '/admin/cameras'
@@ -693,6 +716,7 @@ export interface FileRouteTypes {
     | '/areas/$slug'
     | '/devices/$slug'
     | '/es/arrendamiento'
+    | '/es/arrendamiento-en-tienda'
     | '/es/financiamiento'
     | '/es/financiamiento-en-tienda'
     | '/guides/$slug'
@@ -743,10 +767,12 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   FinancingRoute: typeof FinancingRoute
   InHouseFinancingRoute: typeof InHouseFinancingRoute
+  InHouseLeasingRoute: typeof InHouseLeasingRoute
   LeasingRoute: typeof LeasingRoute
   AreasSlugRoute: typeof AreasSlugRoute
   DevicesSlugRoute: typeof DevicesSlugRoute
   EsArrendamientoRoute: typeof EsArrendamientoRoute
+  EsArrendamientoEnTiendaRoute: typeof EsArrendamientoEnTiendaRoute
   EsFinanciamientoRoute: typeof EsFinanciamientoRoute
   EsFinanciamientoEnTiendaRoute: typeof EsFinanciamientoEnTiendaRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
@@ -831,6 +857,13 @@ declare module '@tanstack/react-router' {
       path: '/in-house-financing'
       fullPath: '/in-house-financing'
       preLoaderRoute: typeof InHouseFinancingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/in-house-leasing': {
+      id: '/in-house-leasing'
+      path: '/in-house-leasing'
+      fullPath: '/in-house-leasing'
+      preLoaderRoute: typeof InHouseLeasingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leasing': {
@@ -950,6 +983,13 @@ declare module '@tanstack/react-router' {
       path: '/es/arrendamiento'
       fullPath: '/es/arrendamiento'
       preLoaderRoute: typeof EsArrendamientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/arrendamiento-en-tienda': {
+      id: '/es/arrendamiento-en-tienda'
+      path: '/es/arrendamiento-en-tienda'
+      fullPath: '/es/arrendamiento-en-tienda'
+      preLoaderRoute: typeof EsArrendamientoEnTiendaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/financiamiento': {
@@ -1240,10 +1280,12 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   FinancingRoute: FinancingRoute,
   InHouseFinancingRoute: InHouseFinancingRoute,
+  InHouseLeasingRoute: InHouseLeasingRoute,
   LeasingRoute: LeasingRoute,
   AreasSlugRoute: AreasSlugRoute,
   DevicesSlugRoute: DevicesSlugRoute,
   EsArrendamientoRoute: EsArrendamientoRoute,
+  EsArrendamientoEnTiendaRoute: EsArrendamientoEnTiendaRoute,
   EsFinanciamientoRoute: EsFinanciamientoRoute,
   EsFinanciamientoEnTiendaRoute: EsFinanciamientoEnTiendaRoute,
   GuidesSlugRoute: GuidesSlugRoute,

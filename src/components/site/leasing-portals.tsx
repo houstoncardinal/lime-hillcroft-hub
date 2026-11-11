@@ -120,12 +120,15 @@ export function PortalButton({
   lang,
   className,
   short,
+  compact,
 }: {
   portal: (typeof PORTALS)[number];
   lang: Lang;
   className?: string;
   /** "Apply now" instead of "Apply with <name>", where the name is already shown above. */
   short?: boolean;
+  /** With short: just "Apply" on phones, where rows are narrow. */
+  compact?: boolean;
 }) {
   return (
     <a
@@ -139,18 +142,27 @@ export function PortalButton({
         className,
       )}
     >
-      {short ? T[lang].applyNow : T[lang].apply(portal.name)}
+      {short && compact ? (
+        <>
+          <span className="sm:hidden">{lang === "en" ? "Apply" : "Solicitar"}</span>
+          <span className="hidden sm:inline">{T[lang].applyNow}</span>
+        </>
+      ) : short ? (
+        T[lang].applyNow
+      ) : (
+        T[lang].apply(portal.name)
+      )}
       <ArrowUpRight className="h-4 w-4 shrink-0" />
     </a>
   );
 }
 
 /**
- * In-House Financing: the store's own option, done in person at Hillcroft (photo ID + bank account
+ * In-House Leasing: the store's own option, done in person at Hillcroft (photo ID + bank account
  * to get approved). Shown as a special extra next to the four online partners, linking to its page.
  */
 export const IN_HOUSE = {
-  name: { en: "In-House Financing", es: "Financiamiento en tienda" },
+  name: { en: "In-House Leasing", es: "Arrendamiento en tienda" },
   short: { en: "In-House", es: "En tienda" },
   kicker: { en: "Special option", es: "Opción especial" },
   blurb: {
@@ -160,7 +172,7 @@ export const IN_HOUSE = {
   cta: { en: "See how it works", es: "Ver cómo funciona" },
 };
 
-/** The In-House Financing link in a compact form, for buttons and menus. */
+/** The In-House Leasing link in a compact form, for buttons and menus. */
 export function InHouseLink({ lang, className }: { lang: Lang; className?: string }) {
   return (
     <Link
@@ -176,7 +188,7 @@ export function InHouseLink({ lang, className }: { lang: Lang; className?: strin
   );
 }
 
-/** A wide "special option" card for In-House Financing, under the four partner cards. */
+/** A wide "special option" card for In-House Leasing, under the four partner cards. */
 export function InHouseCard({ lang, className }: { lang: Lang; className?: string }) {
   return (
     <Link
@@ -256,7 +268,7 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
         className="mt-1 flex items-center gap-1.5 border-t border-primary/15 pt-2 text-[11px] font-semibold text-foreground hover:text-primary"
       >
         <Store className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
-        {lang === "en" ? "Or In-House Financing at our store" : "O financiamiento directo en nuestra tienda"}
+        {lang === "en" ? "Or In-House Leasing at our store" : "O arrendamiento directo en nuestra tienda"}
         <ArrowRight className="h-3 w-3" aria-hidden="true" />
       </Link>
     </div>
