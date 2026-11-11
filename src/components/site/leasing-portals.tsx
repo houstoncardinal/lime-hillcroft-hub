@@ -8,6 +8,7 @@ import {
   BadgeCheck,
   Clock,
   IdCard,
+  Info,
   Landmark,
   ShieldCheck,
   Store,
@@ -170,7 +171,52 @@ export const IN_HOUSE = {
     es: "Aprueba directamente en nuestra tienda: trae una identificación con foto y una cuenta bancaria.",
   },
   cta: { en: "See how it works", es: "Ver cómo funciona" },
+  devices: { en: "iPhone, Samsung Galaxy & cellular iPad", es: "iPhone, Samsung Galaxy e iPad celular" },
 };
+
+/** Which devices Payvantage and In-House Leasing cover (owner's rule; see lease/catalog.ts). */
+export const PHONE_ONLY_NOTE = {
+  en: {
+    lead: "Payvantage and In-House Leasing",
+    rest: "are only for iPhones, Samsung Galaxy phones and iPads with cellular. Every other device can be leased with Acima, Progressive Leasing or American First Finance.",
+  },
+  es: {
+    lead: "Payvantage y el arrendamiento en tienda",
+    rest: "son solo para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Los demás equipos se pueden arrendar con Acima, Progressive Leasing o American First Finance.",
+  },
+};
+
+/** The note above, as a readable callout wherever all five options are listed together. */
+export function PhoneOnlyNote({
+  lang,
+  tone = "light",
+  className,
+}: {
+  lang: Lang;
+  tone?: "light" | "dark" | "onPrimary";
+  className?: string;
+}) {
+  const n = PHONE_ONLY_NOTE[lang];
+  return (
+    <p
+      className={cn(
+        "flex items-start gap-2.5 rounded-xl px-4 py-3 text-sm leading-relaxed",
+        tone === "light" && "border border-primary/25 bg-primary/5 text-foreground",
+        tone === "dark" && "bg-white/10 text-white",
+        tone === "onPrimary" && "bg-ink/90 text-white",
+        className,
+      )}
+    >
+      <Info
+        className={cn("mt-0.5 h-4 w-4 shrink-0", tone === "light" ? "text-primary" : "text-primary")}
+        aria-hidden="true"
+      />
+      <span>
+        <strong className="font-semibold">{n.lead}</strong> {n.rest}
+      </span>
+    </p>
+  );
+}
 
 /** The In-House Leasing link in a compact form, for buttons and menus. */
 export function InHouseLink({ lang, className }: { lang: Lang; className?: string }) {
@@ -210,6 +256,9 @@ export function InHouseCard({ lang, className }: { lang: Lang; className?: strin
             {IN_HOUSE.name[lang]}
           </span>
           <span className="mt-1 block text-sm text-white/70">{IN_HOUSE.blurb[lang]}</span>
+          <span className="mt-1 block text-xs font-semibold text-primary">
+            {lang === "en" ? "For" : "Para"} {IN_HOUSE.devices[lang]}
+          </span>
         </span>
       </span>
       <span className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-md bg-primary px-5 text-sm font-bold text-primary-foreground transition group-hover:brightness-110">
@@ -240,6 +289,7 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
           ))}
         </ul>
         <InHouseCard lang={lang} className="mt-3" />
+        <PhoneOnlyNote lang={lang} className="mt-3" />
         <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground"><ShieldCheck className="h-4 w-4 shrink-0 text-primary" /><span>{t.secure} {t.fine}</span></p>
       </div>
     </section>
@@ -268,7 +318,9 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
         className="mt-1 flex items-center gap-1.5 border-t border-primary/15 pt-2 text-[11px] font-semibold text-foreground hover:text-primary"
       >
         <Store className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
-        {lang === "en" ? "Or In-House Leasing at our store" : "O arrendamiento directo en nuestra tienda"}
+        {lang === "en"
+          ? `Or In-House Leasing at our store (${IN_HOUSE.devices.en} only)`
+          : `O arrendamiento en nuestra tienda (solo ${IN_HOUSE.devices.es})`}
         <ArrowRight className="h-3 w-3" aria-hidden="true" />
       </Link>
     </div>
@@ -296,6 +348,7 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
           ))}
           <InHouseLink lang={lang} className="bg-white text-ink hover:bg-white/90 sm:col-span-2 lg:col-span-1" />
         </div>
+        <PhoneOnlyNote lang={lang} tone="onPrimary" />
       </div>
       <p className="mx-auto max-w-7xl px-5 pb-6 text-[12px] leading-relaxed opacity-75">{t.fine}</p>
     </aside>

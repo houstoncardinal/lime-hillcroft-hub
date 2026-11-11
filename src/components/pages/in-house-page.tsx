@@ -6,6 +6,7 @@ import {
   CircleCheck,
   Globe,
   IdCard,
+  Info,
   Landmark,
   MapPin,
   Phone,
@@ -13,6 +14,8 @@ import {
   Store,
 } from "lucide-react";
 
+import { findLeaseDevice } from "@/components/lease/catalog";
+import { LeaseCard } from "@/components/lease/lease-ui";
 import { ADDRESS, DIRECTIONS, HOURS, PHONE, TEL } from "@/components/site/business";
 import { OpenBadge, SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { FaqList } from "@/components/site/faq";
@@ -31,7 +34,13 @@ export const IN_HOUSE_COPY = {
     kicker: "Special option · In store",
     title: "In-House Leasing at TIC Wireless",
     body: "Lease your phone, tablet, laptop or console directly with us — no online application. Visit our Hillcroft store with a photo ID and a bank account, and we'll walk you through approval in person.",
-    chips: ["Done at our store", "Photo ID + bank account", "Se habla español"],
+    chips: ["iPhone, Galaxy & cellular iPad", "Done at our store", "Photo ID + bank account", "Se habla español"],
+    eligible:
+      "In-House Leasing is available for iPhones, Samsung Galaxy phones and iPads with cellular. For MacBooks, watches, consoles and other devices, apply with Acima, Progressive Leasing or American First Finance.",
+    devicesKicker: "Eligible devices",
+    devicesHeading: "Devices you can lease in-house",
+    seeAll: "See all lease-to-own devices",
+    browse: [["iPhone", "iphone"], ["Samsung Galaxy", "samsung"], ["iPad", "ipads"]] as const,
     call: "Call",
     directions: "Directions",
     needKicker: "What you need",
@@ -54,6 +63,7 @@ export const IN_HOUSE_COPY = {
       "Done directly with TIC Wireless",
       "At our store — no online application",
       "Photo ID and a bank account to get approved",
+      "For iPhone, Samsung Galaxy & cellular iPad",
     ],
     onlinePoints: [
       `Apply online with ${PORTALS.map((p) => p.name).join(", ")}`,
@@ -61,9 +71,6 @@ export const IN_HOUSE_COPY = {
       "Pick up your device in store once approved",
     ],
     onlineCta: "See online leasing options",
-    devicesTitle: "Not sure what to get?",
-    devicesBody: "Browse the phones, iPads, MacBooks, watches and consoles we carry, then come see us.",
-    devicesCta: "Browse devices",
     faqTitle: "Common questions",
     visit: "Visit the store",
     visitBody: "Walk in — no appointment needed.",
@@ -72,6 +79,10 @@ export const IN_HOUSE_COPY = {
     metaDescription:
       "Lease a phone, tablet, laptop or console directly with TIC Wireless on Hillcroft in Houston. Visit the store with a photo ID and a bank account to get approved. Subject to approval.",
     faqs: [
+      {
+        q: "Which devices can I get with In-House Leasing?",
+        a: "iPhones, Samsung Galaxy phones and iPads with cellular. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Acima, Progressive Leasing or American First Finance.",
+      },
       {
         q: "What do I need for In-House Leasing?",
         a: "A valid photo ID and a bank account. Bring them to our store at 3640 Hillcroft St, Suite C, Houston, TX 77057.",
@@ -96,7 +107,13 @@ export const IN_HOUSE_COPY = {
     kicker: "Opción especial · En tienda",
     title: "Arrendamiento directo en TIC Wireless",
     body: "Arrienda tu celular, tableta, laptop o consola directamente con nosotros, sin solicitud en línea. Visita nuestra tienda de Hillcroft con una identificación con foto y una cuenta bancaria, y te guiamos en la aprobación en persona.",
-    chips: ["En nuestra tienda", "ID con foto + cuenta bancaria", "We speak English"],
+    chips: ["iPhone, Galaxy e iPad celular", "En nuestra tienda", "ID con foto + cuenta bancaria", "We speak English"],
+    eligible:
+      "El arrendamiento en tienda es para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Para MacBook, relojes, consolas y otros equipos, solicita con Acima, Progressive Leasing o American First Finance.",
+    devicesKicker: "Equipos elegibles",
+    devicesHeading: "Equipos que puedes arrendar en tienda",
+    seeAll: "Ver todos los equipos en arrendamiento",
+    browse: [["iPhone", "iphone"], ["Samsung Galaxy", "samsung"], ["iPad", "ipads"]] as const,
     call: "Llamar",
     directions: "Cómo llegar",
     needKicker: "Lo que necesitas",
@@ -119,6 +136,7 @@ export const IN_HOUSE_COPY = {
       "Directamente con TIC Wireless",
       "En nuestra tienda, sin solicitud en línea",
       "Identificación con foto y cuenta bancaria para aprobarte",
+      "Para iPhone, Samsung Galaxy e iPad celular",
     ],
     onlinePoints: [
       `Solicita en línea con ${PORTALS.map((p) => p.name).join(", ")}`,
@@ -126,9 +144,6 @@ export const IN_HOUSE_COPY = {
       "Recoge tu equipo en la tienda ya aprobado",
     ],
     onlineCta: "Ver opciones de arrendamiento en línea",
-    devicesTitle: "¿No sabes qué elegir?",
-    devicesBody: "Mira los celulares, iPad, MacBook, relojes y consolas que tenemos y ven a vernos.",
-    devicesCta: "Ver equipos",
     faqTitle: "Preguntas frecuentes",
     visit: "Visita la tienda",
     visitBody: "Ven sin cita.",
@@ -137,6 +152,10 @@ export const IN_HOUSE_COPY = {
     metaDescription:
       "Arrienda un celular, tableta, laptop o consola directamente con TIC Wireless sobre Hillcroft en Houston. Visita la tienda con identificación con foto y cuenta bancaria. Sujeto a aprobación.",
     faqs: [
+      {
+        q: "¿Qué equipos puedo obtener con arrendamiento en tienda?",
+        a: "iPhone, celulares Samsung Galaxy e iPad con datos celulares. Otros equipos, como MacBook, Apple Watch y consolas, se pueden arrendar con Acima, Progressive Leasing o American First Finance.",
+      },
       {
         q: "¿Qué necesito para el arrendamiento en tienda?",
         a: "Una identificación con foto vigente y una cuenta bancaria. Tráelas a nuestra tienda en 3640 Hillcroft St, Suite C, Houston, TX 77057.",
@@ -156,6 +175,18 @@ export const IN_HOUSE_COPY = {
     ] satisfies Faq[],
   },
 };
+
+/** Featured devices In-House Leasing covers (iPhone, Galaxy phones, cellular iPad). */
+const IN_HOUSE_DEVICES = [
+  "iphone-18-pro-max",
+  "iphone-17-pro-max",
+  "iphone-16-pro-max",
+  "iphone-15",
+  "galaxy-s26-ultra",
+  "galaxy-z-fold7",
+  "galaxy-s25-ultra",
+  "ipad-11",
+].flatMap((id) => findLeaseDevice(id) ?? []);
 
 const HOURS_ES: [string, string][] = [
   ["Lunes – Sábado", "9:00 AM – 8:00 PM"],
@@ -215,6 +246,10 @@ export function InHousePage({ lang }: { lang: Lang }) {
                 </li>
               ))}
             </ul>
+            <p className="mt-5 flex max-w-2xl items-start gap-2.5 rounded-xl bg-white/10 px-4 py-3 text-sm leading-relaxed text-white">
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+              <span>{t.eligible}</span>
+            </p>
           </div>
 
           {/* What you need, up front */}
@@ -302,19 +337,47 @@ export function InHousePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* Devices + FAQ */}
-      <section className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:py-16 lg:grid-cols-[1fr_1.4fr]">
-        <div className="self-start rounded-3xl bg-primary p-6 text-primary-foreground sm:p-8 lg:sticky lg:top-28">
-          <h2 className="text-2xl font-semibold md:text-3xl">{t.devicesTitle}</h2>
-          <p className="mt-2 leading-relaxed opacity-90">{t.devicesBody}</p>
+      {/* Devices you can lease in-house: iPhones, Galaxy phones and cellular iPads */}
+      <section aria-labelledby="ih-devices" className="mx-auto max-w-7xl px-5 py-12 md:py-16">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow flex items-center gap-3 text-primary">
+              <span className="h-px w-8 bg-primary" /> {t.devicesKicker}
+            </p>
+            <h2 id="ih-devices" className="mt-3 text-3xl font-semibold md:text-4xl">
+              {t.devicesHeading}
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {t.browse.map(([label, cat]) => (
+                <a
+                  key={cat}
+                  href={`${ALTERNATES.leaseCatalog[lang]}#${cat}`}
+                  className="inline-flex min-h-10 items-center rounded-full border bg-card px-4 text-sm font-semibold transition hover:border-primary hover:text-primary"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
           <Link
             to={ALTERNATES.leaseCatalog[lang]}
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 font-bold text-white transition hover:bg-ink/85"
+            className="inline-flex min-h-12 shrink-0 items-center gap-2 self-start rounded-full bg-primary px-6 font-semibold text-primary-foreground transition hover:brightness-110 md:self-auto"
           >
-            {t.devicesCta} <ArrowRight className="h-4 w-4" />
+            {t.seeAll} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div>
+        <ul className="mt-6 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          {IN_HOUSE_DEVICES.map((d) => (
+            <li key={d.id}>
+              <LeaseCard device={d} lang={lang} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t bg-secondary/40">
+        <div className="mx-auto max-w-4xl px-5 py-12 md:py-16">
           <h2 className="text-3xl font-semibold md:text-4xl">{t.faqTitle}</h2>
           <div className="mt-6">
             <FaqList items={t.faqs} />
@@ -323,7 +386,7 @@ export function InHousePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Visit */}
-      <section className="mx-auto max-w-7xl px-5 pb-12 md:pb-16">
+      <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
         <div className="grid gap-8 rounded-3xl bg-ink p-8 text-white md:grid-cols-[1.4fr_1fr] md:p-12">
           <div>
             <h2 className="text-3xl font-semibold">{t.visit}</h2>

@@ -370,6 +370,11 @@ export function MobileMenu({
               >
                 <Store className="h-4 w-4" /> {IN_HOUSE.name[lang]} · {IN_HOUSE.kicker[lang]}
               </Link>
+              <p className="mt-1 px-1 text-xs leading-snug text-white/70 short:hidden">
+                {lang === "en"
+                  ? "Payvantage & In-House: iPhone, Samsung Galaxy and cellular iPad only."
+                  : "Payvantage y en tienda: solo iPhone, Samsung Galaxy e iPad celular."}
+              </p>
 
               <div className="mt-2 flex items-center justify-between gap-2 text-sm micro:hidden">
                 <div className="flex min-w-0 items-center">
