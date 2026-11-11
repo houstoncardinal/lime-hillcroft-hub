@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Sparkles,
   Store,
+  Truck,
 } from "lucide-react";
 
 import {
@@ -515,6 +516,34 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                     {t.payIn4Note}
                   </span>
                 </p>
+                {/* How pay-in-4 works, so the card is as useful as the lender list beside it */}
+                <div className="mb-5 rounded-2xl bg-card p-4 ring-1 ring-shoppay/15 sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t.payIn4StepsTitle}
+                  </p>
+                  <ol className="mt-3 space-y-3 lg:mt-4 lg:space-y-5">
+                    {t.payIn4Steps.map((step, i) => (
+                      <li key={step} className="flex items-start gap-3 text-sm leading-snug lg:text-[15px]">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-shoppay text-xs font-bold text-shoppay-foreground lg:h-7 lg:w-7">
+                          {i + 1}
+                        </span>
+                        <span className="pt-0.5">{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+                <ul className="mb-5 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                  {t.payIn4Trust.map((x, i) => (
+                    <li key={x} className="flex items-center gap-2">
+                      {i === 0 ? (
+                        <ShieldCheck className="h-4 w-4 shrink-0 text-shoppay" />
+                      ) : (
+                        <Truck className="h-4 w-4 shrink-0 text-shoppay" />
+                      )}
+                      {x}
+                    </li>
+                  ))}
+                </ul>
                 <Link
                   to={productPath(lang, shopHandle)}
                   className="mt-auto inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-shoppay px-6 font-bold text-shoppay-foreground shadow-lg shadow-shoppay/25 transition hover:brightness-110"

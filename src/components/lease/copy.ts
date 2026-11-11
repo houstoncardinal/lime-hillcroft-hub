@@ -50,6 +50,13 @@ export const LEASE_COPY = {
     payIn4Body:
       "Check out on our online store with Shop Pay Installments by Affirm: split the price into 4 interest-free payments, every 2 weeks. Subject to approval by Affirm.",
     payIn4Note: "The online price can differ from the leasing price.",
+    payIn4StepsTitle: "How it works",
+    payIn4Steps: [
+      "Tap the button to open this device in our online store",
+      "Choose Shop Pay at checkout",
+      "Split it into 4 interest-free payments, every 2 weeks",
+    ],
+    payIn4Trust: ["Secure Shopify checkout", "Ship in the US or pick up in store"],
     payIn4Button: "Pay in 4 with Affirm",
     payIn4Other: (labels: string) => `Pay in 4 online is available for: ${labels}.`,
     fromWord: "From",
@@ -134,6 +141,13 @@ export const LEASE_COPY = {
     payIn4Body:
       "Paga en nuestra tienda en línea con Shop Pay Installments de Affirm: divide el precio en 4 pagos sin intereses, cada 2 semanas. Sujeto a la aprobación de Affirm.",
     payIn4Note: "El precio en línea puede ser distinto al de arrendamiento.",
+    payIn4StepsTitle: "Cómo funciona",
+    payIn4Steps: [
+      "Toca el botón para abrir este equipo en nuestra tienda en línea",
+      "Elige Shop Pay al pagar",
+      "Divídelo en 4 pagos sin intereses, cada 2 semanas",
+    ],
+    payIn4Trust: ["Pago seguro con Shopify", "Envío en EE. UU. o recógelo en la tienda"],
     payIn4Button: "Paga en 4 con Affirm",
     payIn4Other: (labels: string) => `Pago en 4 en línea disponible para: ${labels}.`,
     fromWord: "Desde",
