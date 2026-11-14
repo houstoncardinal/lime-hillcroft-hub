@@ -21,7 +21,7 @@ const en = {
     slogan: "Your phone, sorted.",
     body: [
       "The new iPhone 18 Pro Max and unlocked Android phones, with leasing from ",
-      "$40 initial payment",
+      "$49 initial payment",
       " — all credit welcome, subject to approval. Plus prepaid plans, same-day repairs and the accessories you need.",
     ],
     directions: "Get directions",
@@ -281,7 +281,7 @@ const es: HomeCopy = {
     slogan: "Tu celular, resuelto.",
     body: [
       "El nuevo iPhone 18 Pro Max y celulares Android, desbloqueados y a pagos desde ",
-      "$40 de pago inicial",
+      "$49 de pago inicial",
       " — con todo tipo de crédito, sujeto a aprobación. Además planes prepagados, reparaciones el mismo día y los accesorios que necesitas.",
     ],
     directions: "Cómo llegar",

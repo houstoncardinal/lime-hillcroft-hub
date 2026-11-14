@@ -211,6 +211,26 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                 decoding="async"
                 className="relative mx-auto block w-[74%] max-w-[20rem] drop-shadow-[0_40px_60px_rgba(0,0,0,0.55)] sm:w-[60%] lg:ml-auto lg:mr-4 lg:w-[72%] lg:max-w-none"
               />
+              {/* Phones: the leasing card sits under the photo (it floats beside it from sm up) */}
+              <div className="relative mx-auto mt-5 w-full max-w-sm overflow-hidden rounded-2xl bg-white p-4 text-ink shadow-2xl shadow-black/40 sm:hidden">
+                <span className="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true" />
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="eyebrow text-[10px] leading-snug text-slate">
+                      {<MoneyText text={t.hero.leaseLabel} />}
+                    </p>
+                    <p className="mt-1.5 font-display text-[2rem] font-semibold leading-none tabular-nums">
+                      <Money usd={LEASING_INITIAL_PAYMENT_USD} stacked />
+                    </p>
+                  </div>
+                  <span className="mt-0.5 shrink-0 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                    {<MoneyText text={t.hero.leaseUnit} />}
+                  </span>
+                </div>
+                <p className="mt-2.5 border-t pt-2.5 text-[13px] leading-snug text-muted-foreground">
+                  {<MoneyText text={t.hero.leaseNote} />}
+                </p>
+              </div>
               <div className="mt-6 flex flex-col items-center gap-4 text-center lg:items-end lg:text-right">
                 <div>
                   <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink backdrop-blur">

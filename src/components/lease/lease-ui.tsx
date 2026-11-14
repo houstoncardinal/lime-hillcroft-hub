@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState, type ReactNode } from "react";
 import {
   ArrowRight,
   ChevronDown,
@@ -323,29 +323,37 @@ export function PaymentSummary({
   option,
   frequency,
   lang,
+  children,
 }: {
   option: LeaseOption;
   frequency: Frequency;
   lang: Lang;
+  /** Ways to get it (leasing partners, online checkout), shown in the card's lower panel. */
+  children?: ReactNode;
 }) {
   const t = LEASE_COPY[lang];
   return (
-    <div className="rounded-3xl border bg-card p-4 sm:p-5">
-      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {t.estimated}
-      </p>
-      <p className="mt-1 flex flex-wrap items-baseline gap-x-2">
-        <span className="font-display text-4xl font-semibold tabular-nums text-primary md:text-5xl">
-          <LeaseMoney usd={payment(option, frequency)} />
-        </span>
-        <span className="text-lg font-semibold text-muted-foreground">{t.perLong[frequency]}</span>
-      </p>
-      <p className="mt-3 flex items-baseline justify-between gap-3 border-t pt-3 text-sm">
-        <span className="text-muted-foreground">{t.leasingPrice}</span>
-        <span className="text-base font-semibold tabular-nums">
-          <LeaseMoney usd={option.lease} />
-        </span>
-      </p>
+    <div className="overflow-hidden rounded-3xl border bg-card">
+      <div className="p-4 sm:p-5">
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          {t.estimated}
+        </p>
+        <p className="mt-1 flex flex-wrap items-baseline gap-x-2">
+          <span className="font-display text-4xl font-semibold tabular-nums text-primary md:text-5xl">
+            <LeaseMoney usd={payment(option, frequency)} />
+          </span>
+          <span className="text-lg font-semibold text-muted-foreground">
+            {t.perLong[frequency]}
+          </span>
+        </p>
+        <p className="mt-3 flex items-baseline justify-between gap-3 border-t pt-3 text-sm">
+          <span className="text-muted-foreground">{t.leasingPrice}</span>
+          <span className="text-base font-semibold tabular-nums">
+            <LeaseMoney usd={option.lease} />
+          </span>
+        </p>
+      </div>
+      {children && <div className="border-t bg-secondary/50 p-4 sm:p-5">{children}</div>}
     </div>
   );
 }

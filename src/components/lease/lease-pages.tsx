@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
+  ArrowUpRight,
   CalendarClock,
   ChevronDown,
   ChevronRight,
@@ -362,7 +363,95 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             {device.options.length === 1 && (
               <p className="mb-2 text-sm font-semibold">{option.label[lang]}</p>
             )}
-            <PaymentSummary option={option} frequency={frequency} lang={lang} />
+            <PaymentSummary option={option} frequency={frequency} lang={lang}>
+              {/* Lease it: every partner that covers this option (and In-House where it applies) */}
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  {lang === "en" ? "Apply to lease" : "Solicita tu arrendamiento"}
+                </p>
+                <p className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary">
+                  <CircleCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                  {lang === "en" ? "All credit welcome" : "Todo crédito es bienvenido"}
+                </p>
+              </div>
+              <ul className="mt-2.5 grid grid-cols-2 gap-2">
+                {portals.map((p, i) => (
+                  <li
+                    key={p.id}
+                    className={cn(
+                      portals.length % 2 === 1 && i === portals.length - 1 && "col-span-2",
+                    )}
+                  >
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener"
+                      data-portal={p.id}
+                      aria-label={
+                        lang === "en"
+                          ? `Apply with ${p.name} (opens in a new tab)`
+                          : `Solicitar con ${p.name} (se abre en una pestaña nueva)`
+                      }
+                      className="group flex h-full min-h-12 items-center gap-2.5 rounded-xl border bg-card px-2.5 py-2 transition hover:border-primary hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    >
+                      <span className="flex h-8 min-w-8 shrink-0 items-center justify-center rounded-lg bg-ink px-1 text-[10px] font-bold text-white transition group-hover:bg-primary group-hover:text-primary-foreground">
+                        {p.initials}
+                      </span>
+                      <span className="min-w-0 flex-1 text-[13px] font-semibold leading-tight">
+                        {p.name}
+                      </span>
+                      <ArrowUpRight
+                        className="hidden h-4 w-4 shrink-0 text-muted-foreground transition group-hover:text-primary min-[400px]:block"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                ))}
+                {phoneOnly && (
+                  <li className="col-span-2">
+                    <Link
+                      to={ALTERNATES.inHouse[lang]}
+                      className="group flex min-h-12 items-center gap-2.5 rounded-xl bg-ink px-2.5 py-2 text-white transition hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                        <Store className="h-4 w-4" aria-hidden="true" />
+                      </span>
+                      <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5 text-[13px] font-semibold leading-tight">
+                        {IN_HOUSE.name[lang]}
+                        <span className="rounded-full bg-primary px-1.5 py-px text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
+                          {IN_HOUSE.kicker[lang]}
+                        </span>
+                      </span>
+                      <ArrowRight
+                        className="h-4 w-4 shrink-0 text-white/70 transition group-hover:translate-x-0.5 group-hover:text-white"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </li>
+                )}
+              </ul>
+
+              {/* Or buy it online with Affirm, where this exact option is in our online store */}
+              {SHOP_ENABLED && shopHandle && (
+                <>
+                  <div className="my-3 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span className="h-px flex-1 bg-border" />
+                    {lang === "en" ? "Or buy online" : "O compra en línea"}
+                    <span className="h-px flex-1 bg-border" />
+                  </div>
+                  <Link
+                    to={productPath(lang, shopHandle)}
+                    className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-shoppay px-5 text-sm font-bold text-shoppay-foreground shadow-md shadow-shoppay/20 transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shoppay focus-visible:ring-offset-2"
+                  >
+                    <CalendarClock className="h-4 w-4" aria-hidden="true" /> {t.payIn4Button}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <p className="mt-1.5 text-center text-[11px] text-muted-foreground">
+                    {t.payIn4Note}
+                  </p>
+                </>
+              )}
+            </PaymentSummary>
           </div>
 
           {/* Every option at a glance, closed by default to keep the page simple */}
