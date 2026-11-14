@@ -28,8 +28,8 @@ export const PORTALS = [
     initials: "A",
     href: "https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en",
     blurb: {
-      en: "Our primary leasing partner — no credit needed.",
-      es: "Nuestro socio principal de arrendamiento — sin necesidad de crédito.",
+      en: "Our primary leasing partner — all credit welcome.",
+      es: "Nuestro socio principal de arrendamiento — Todo crédito es bienvenido.",
     },
   },
   {
@@ -39,8 +39,8 @@ export const PORTALS = [
     initials: "PL",
     href: "https://approve.me/s/ticwireless/69977#/marketing",
     blurb: {
-      en: "Lease-to-own application — no credit needed.",
-      es: "Solicitud de arrendamiento — sin necesidad de crédito.",
+      en: "Lease-to-own application — all credit welcome.",
+      es: "Solicitud de arrendamiento — Todo crédito es bienvenido.",
     },
   },
   {
@@ -72,7 +72,7 @@ const T = {
     kicker: "Apply online",
     title: "Get approved for leasing before you come in.",
     body: "Apply with any of our lease-to-own partners in a few minutes from your phone. Once you're approved, come to the store, pick your phone, console or laptop and take it home today.",
-    bannerTitle: "Lease-to-own · no credit needed",
+    bannerTitle: "Lease-to-own · all credit welcome",
     bannerBody: "Apply online in minutes, then pick it up in store.",
     apply: (name: string) => `Apply with ${name}`,
     applyNow: "Apply now",
@@ -84,10 +84,10 @@ const T = {
     secure: "Each application opens on the provider's own secure site.",
     fine: "Subject to approval. Lease-to-own is not a loan; the total cost to own is more than the retail price. Terms are set by each provider.",
     newTab: "(opens in a new tab)",
-    cardTitle: "Lease-to-own · no credit needed",
+    cardTitle: "Lease-to-own · all credit welcome",
     cardApply: "Apply online:",
     optionKicker: "Or lease-to-own",
-    optionTitle: "No credit needed. Apply online, pick it up today.",
+    optionTitle: "all credit welcome. Apply online, pick it up today.",
     optionBody:
       "Not ready to pay online? Get approved with one of our leasing partners in minutes, then take this home from our Hillcroft store.",
   },
@@ -95,7 +95,7 @@ const T = {
     kicker: "Solicita en línea",
     title: "Aprueba tu arrendamiento antes de venir.",
     body: "Solicita con cualquiera de nuestros socios de arrendamiento en unos minutos desde tu celular. Ya aprobado, ven a la tienda, elige tu celular, consola o laptop y llévatelo hoy.",
-    bannerTitle: "Arrendamiento · sin necesidad de crédito",
+    bannerTitle: "Arrendamiento · Todo crédito es bienvenido",
     bannerBody: "Solicita en línea en minutos y recoge en la tienda.",
     apply: (name: string) => `Solicitar con ${name}`,
     applyNow: "Solicitar ahora",
@@ -107,10 +107,10 @@ const T = {
     secure: "Cada solicitud se abre en el sitio seguro del proveedor.",
     fine: "Sujeto a aprobación. El arrendamiento no es un préstamo; el costo total es mayor que el precio de venta. Los términos los fija cada proveedor.",
     newTab: "(se abre en una pestaña nueva)",
-    cardTitle: "Arrendamiento · sin crédito",
+    cardTitle: "Arrendamiento · Todo crédito es bienvenido",
     cardApply: "Solicita en línea:",
     optionKicker: "O arrendamiento con opción a compra",
-    optionTitle: "Sin necesidad de crédito. Solicita en línea y llévatelo hoy.",
+    optionTitle: "Todo crédito es bienvenido. Solicita en línea y llévatelo hoy.",
     optionBody:
       "¿Prefieres no pagar en línea? Aprueba con uno de nuestros socios de arrendamiento en minutos y recógelo en nuestra tienda de Hillcroft.",
   },
@@ -347,8 +347,8 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
         <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
         <span>
           {lang === "en"
-            ? `Lease-to-own no credit needed, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.`
-            : `Arrendamiento sin necesidad de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}
+            ? `Lease-to-own all credit welcome, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.`
+            : `Arrendamiento Todo crédito es bienvenido, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}
         </span>
       </p>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">

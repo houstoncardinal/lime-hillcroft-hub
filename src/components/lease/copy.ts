@@ -19,17 +19,17 @@ export const LEASE_COPY = {
     home: "Home",
     crumb: "Lease-to-own",
     kicker: "Lease-to-own ready",
-    title: "Take it home today. No credit needed.",
+    title: "Take it home today. all credit welcome.",
     body: "Every device below can be leased in store. Pick one, see every storage and condition option with its leasing price and estimated payments, then apply online with a leasing partner and pick it up at our Hillcroft store.",
     homeTitle: "Lease-to-own ready devices",
     homeBody:
-      "Phones, iPads, MacBooks, watches and consoles you can lease in store — no credit needed. See every option and its price, then apply online in minutes.",
+      "Phones, iPads, MacBooks, watches and consoles you can lease in store — all credit welcome. See every option and its price, then apply online in minutes.",
     viewAll: (n: number) => `See all ${n} lease-to-own devices`,
-    metaTitle: "Lease-to-Own Phones, iPads, MacBooks & Consoles in Houston — No Credit Needed",
+    metaTitle: "Lease-to-Own Phones, iPads, MacBooks & Consoles in Houston — all credit welcome",
     metaDescription:
       "Lease an iPhone, Samsung Galaxy, iPad, MacBook, Apple Watch, PlayStation or Xbox at TIC Wireless on Hillcroft in Houston. Leasing prices and weekly, bi-weekly or monthly payment estimates for every option; apply online with Acima, Progressive Leasing, American First Finance or Payvantage.",
     deviceMeta: (name: string, from: string) =>
-      `Lease the ${name} at TIC Wireless in Houston from ${from} — no credit needed. Every storage and condition option with its leasing price and payment estimates; apply online and pick it up in store.`,
+      `Lease the ${name} at TIC Wireless in Houston from ${from} — all credit welcome. Every storage and condition option with its leasing price and payment estimates; apply online and pick it up in store.`,
     from: "Leasing from",
     perWeek: "/wk est.",
     payQuestion: "Payment frequency",
@@ -40,7 +40,7 @@ export const LEASE_COPY = {
     perLong: { weekly: "per week", biweekly: "every 2 weeks", monthly: "per month" },
     estimated: "Estimated payment",
     paymentsFrom: "Est. payments from",
-    bannerTitle: "Lease-to-own · No credit needed",
+    bannerTitle: "Lease-to-own · all credit welcome",
     bannerSub: "Apply online, take it home today",
     bannerCta: (n: number) => `See all ${n} devices`,
     bannerCtaShort: "See all",
@@ -94,7 +94,7 @@ export const LEASE_COPY = {
     faqs: [
       {
         q: "Do I need credit to lease a phone at TIC Wireless?",
-        a: "No credit is needed. Lease-to-own is subject to approval by the leasing company, and you can apply online with Acima, Progressive Leasing, American First Finance or Payvantage before you come in.",
+        a: "All Credit Welcome. Lease-to-own is subject to approval by the leasing company, and you can apply online with Acima, Progressive Leasing, American First Finance or Payvantage before you come in.",
       },
       {
         q: "Should I choose weekly, bi-weekly or monthly payments?",
@@ -110,17 +110,17 @@ export const LEASE_COPY = {
     home: "Inicio",
     crumb: "Arrendamiento",
     kicker: "Listos para arrendamiento",
-    title: "Llévatelo hoy. Sin necesidad de crédito.",
+    title: "Llévatelo hoy. Todo crédito es bienvenido.",
     body: "Todos estos equipos se pueden arrendar en la tienda. Elige uno, mira cada opción de almacenamiento y condición con su precio de arrendamiento y pagos aproximados, solicita en línea con un socio de arrendamiento y recógelo en nuestra tienda de Hillcroft.",
     homeTitle: "Equipos listos para arrendamiento",
     homeBody:
-      "Celulares, iPad, MacBook, relojes y consolas que puedes arrendar en la tienda — sin necesidad de crédito. Mira cada opción y su precio, y solicita en línea en minutos.",
+      "Celulares, iPad, MacBook, relojes y consolas que puedes arrendar en la tienda — Todo crédito es bienvenido. Mira cada opción y su precio, y solicita en línea en minutos.",
     viewAll: (n: number) => `Ver los ${n} equipos en arrendamiento`,
-    metaTitle: "Celulares, iPad, MacBook y Consolas en Arrendamiento en Houston — Sin Crédito",
+    metaTitle: "Celulares, iPad, MacBook y Consolas en Arrendamiento en Houston — Todo crédito es bienvenido",
     metaDescription:
       "Arrienda un iPhone, Samsung Galaxy, iPad, MacBook, Apple Watch, PlayStation o Xbox en TIC Wireless sobre Hillcroft en Houston. Precio de arrendamiento y pagos semanales, quincenales o mensuales aproximados para cada opción; solicita en línea con Acima, Progressive Leasing, American First Finance o Payvantage.",
     deviceMeta: (name: string, from: string) =>
-      `Arrienda el ${name} en TIC Wireless en Houston desde ${from} — sin necesidad de crédito. Cada opción de almacenamiento y condición con su precio de arrendamiento y pagos aproximados; solicita en línea y recógelo en la tienda.`,
+      `Arrienda el ${name} en TIC Wireless en Houston desde ${from} — Todo crédito es bienvenido. Cada opción de almacenamiento y condición con su precio de arrendamiento y pagos aproximados; solicita en línea y recógelo en la tienda.`,
     from: "Arrendamiento desde",
     perWeek: "/sem aprox.",
     payQuestion: "Frecuencia de pago",
@@ -131,7 +131,7 @@ export const LEASE_COPY = {
     perLong: { weekly: "por semana", biweekly: "cada 2 semanas", monthly: "al mes" },
     estimated: "Pago aproximado",
     paymentsFrom: "Pagos aprox. desde",
-    bannerTitle: "Arrendamiento · Sin crédito",
+    bannerTitle: "Arrendamiento · Todo crédito es bienvenido",
     bannerSub: "Solicita en línea y llévatelo hoy",
     bannerCta: (n: number) => `Ver los ${n} equipos`,
     bannerCtaShort: "Ver todo",
@@ -186,7 +186,7 @@ export const LEASE_COPY = {
     faqs: [
       {
         q: "¿Necesito crédito para arrendar un celular en TIC Wireless?",
-        a: "No necesitas crédito. El arrendamiento está sujeto a la aprobación de la compañía, y puedes solicitar en línea con Acima, Progressive Leasing, American First Finance o Payvantage antes de venir.",
+        a: "Todo crédito es bienvenido. El arrendamiento está sujeto a la aprobación de la compañía, y puedes solicitar en línea con Acima, Progressive Leasing, American First Finance o Payvantage antes de venir.",
       },
       {
         q: "¿Me conviene pagar semanal, quincenal o mensual?",

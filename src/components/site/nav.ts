@@ -54,7 +54,7 @@ const L = {
     recharge: ["International recharge", "Top up phones abroad"],
   },
   es: {
-    leaseCatalog: ["Equipos en arrendamiento", "Celulares, iPad, MacBook y consolas · sin crédito"],
+    leaseCatalog: ["Equipos en arrendamiento", "Celulares, iPad, MacBook y consolas · Todo crédito es bienvenido"],
     inHouse: ["Arrendamiento en tienda", "Aprobación en la tienda · ID con foto + cuenta bancaria"],
     phones: ["Celulares desbloqueados", "iPhone, Samsung Galaxy y Motorola"],
     iphone18: ["iPhone 18", "iPhone 18 Pro Max en tienda, a pagos"],

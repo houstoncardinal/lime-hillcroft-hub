@@ -166,7 +166,7 @@ export function UnlockSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "Can't be unlocked?",
-          body: "Get an unlocked phone instead — lease-to-own, no credit needed.",
+          body: "Get an unlocked phone instead — lease-to-own, all credit welcome.",
           href: LEASE_PATHS[lang],
         },
         {
@@ -199,7 +199,7 @@ export function UnlockSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "¿No se puede liberar?",
-          body: "Llévate un celular desbloqueado, con arrendamiento y sin crédito.",
+          body: "Llévate un celular desbloqueado, con arrendamiento y Todo crédito es bienvenido.",
           href: LEASE_PATHS[lang],
         },
         { icon: Languages, title: "Español e inglés", body: "Ven sin cita. We speak English." },
@@ -531,7 +531,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "A new phone",
-          body: "Lease-to-own phones with no credit needed.",
+          body: "Lease-to-own phones with all credit welcome.",
           href: LEASE_PATHS[lang],
         },
       ]
@@ -551,7 +551,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "Un celular nuevo",
-          body: "Celulares con arrendamiento, sin necesidad de crédito.",
+          body: "Celulares con arrendamiento, Todo crédito es bienvenido.",
           href: LEASE_PATHS[lang],
         },
       ];
@@ -744,7 +744,7 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Store,
           title: "Xfinity Prepaid internet",
-          body: "Home internet with no credit check, set up in store.",
+          body: "Home internet with all credit welcome check, set up in store.",
           href: servicePath(lang, "xfinity-prepaid-internet"),
         },
       ]

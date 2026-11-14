@@ -87,7 +87,7 @@ const T = {
       body: "Put your old phone toward a new iPhone, Samsung Galaxy or other device.",
       points: [
         "Upgrade for less",
-        "Lease the new one — no credit needed, subject to approval",
+        "Lease the new one — all credit welcome, subject to approval",
         "We move your number and data",
       ],
       cta: "Browse devices to upgrade to",
@@ -140,7 +140,7 @@ const T = {
       body: "Usa tu celular viejo para un iPhone, Samsung Galaxy u otro equipo nuevo.",
       points: [
         "Estrena por menos",
-        "Arrienda el nuevo, sin crédito y sujeto a aprobación",
+        "Arrienda el nuevo, Todo crédito es bienvenido y sujeto a aprobación",
         "Pasamos tu número y tus datos",
       ],
       cta: "Ver equipos para estrenar",

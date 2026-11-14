@@ -899,7 +899,7 @@ export const POLICIES: Record<PolicyKey, Record<Lang, PolicyDoc>> = {
           title: "Payment plans and lease-to-own",
           body: [
             "Shop Pay Installments is offered by Affirm at checkout, subject to eligibility. Affirm sets the terms, and your agreement is with Affirm.",
-            `Lease-to-own is offered by ${PORTALS}. It is a lease, not a loan or credit. Approval isn't guaranteed and is decided by the leasing company. The leasing company owns the device until the lease is paid off or bought out, and your lease agreement with them sets the payments, fees, ownership and early buyout terms. The total cost of leasing to own is more than the cash price. TIC Wireless is the retailer and isn't the lessor. Initial payments shown on our site (such as "as low as $40 initial payment") are starting points; your actual terms depend on the item and the plan you're approved for.`,
+            `Lease-to-own is offered by ${PORTALS}. It is a lease, not a loan or credit. Approval isn't guaranteed and is decided by the leasing company. The leasing company owns the device until the lease is paid off or bought out, and your lease agreement with them sets the payments, fees, ownership and early buyout terms. The total cost of leasing to own is more than the cash price. TIC Wireless is the retailer and isn't the lessor. Initial payments shown on our site (such as "terms set by your provider") are starting points; your actual terms depend on the item and the plan you're approved for.`,
           ],
         },
         {
@@ -1031,7 +1031,7 @@ export const POLICIES: Record<PolicyKey, Record<Lang, PolicyDoc>> = {
           title: "Planes de pago y arrendamiento con opción a compra",
           body: [
             "Shop Pay Installments lo ofrece Affirm al pagar, sujeto a elegibilidad. Affirm fija las condiciones, y tu contrato es con Affirm.",
-            `El arrendamiento con opción a compra lo ofrecen ${PORTALS}. Es un arrendamiento, no un préstamo ni un crédito. La aprobación no está garantizada y la decide la compañía de arrendamiento. La compañía es dueña del equipo hasta que el arrendamiento se termine de pagar o se liquide, y tu contrato con ella fija los pagos, cargos, propiedad y opciones de compra anticipada. El costo total de arrendar para comprar es mayor que el precio de contado. TIC Wireless es el vendedor y no es el arrendador. Los pagos iniciales que mostramos (como "desde $40 de pago inicial") son puntos de partida; tus condiciones reales dependen del artículo y del plan que te aprueben.`,
+            `El arrendamiento con opción a compra lo ofrecen ${PORTALS}. Es un arrendamiento, no un préstamo ni un crédito. La aprobación no está garantizada y la decide la compañía de arrendamiento. La compañía es dueña del equipo hasta que el arrendamiento se termine de pagar o se liquide, y tu contrato con ella fija los pagos, cargos, propiedad y opciones de compra anticipada. El costo total de arrendar para comprar es mayor que el precio de contado. TIC Wireless es el vendedor y no es el arrendador. Los pagos iniciales que mostramos (como "términos definidos por el proveedor") son puntos de partida; tus condiciones reales dependen del artículo y del plan que te aprueben.`,
           ],
         },
         {

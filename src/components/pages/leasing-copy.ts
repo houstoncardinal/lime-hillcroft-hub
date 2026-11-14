@@ -3,9 +3,9 @@ import { PHONE, STREET } from "@/components/site/business";
 // All visible text on the leasing landing page, in English and Spanish. Keep both in sync.
 const en = {
   meta: {
-    title: "Lease-to-Own Phones, PS5 & Laptops in Houston — No Credit Needed",
+    title: "Lease-to-Own Phones, PS5 & Laptops in Houston — all credit welcome",
     description:
-      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. No credit needed, from $40 initial payment, subject to approval. On Hillcroft.",
+      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. all credit welcome, terms set by your provider, subject to approval. On Hillcroft.",
     imageAlt:
       "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Home", "Leasing"],
@@ -13,20 +13,20 @@ const en = {
   hero: {
     kicker: "Leasing · lease-to-own · Houston",
     // The H1 (keyword line); the slogan is shown under it, outside the H1.
-    title: ["Lease-to-own phones, PS5 & laptops", "— no credit needed."],
+    title: ["Lease-to-own phones, PS5 & laptops", "— all credit welcome."],
     slogan: "Take it home today. Pay over time.",
     body: [
       "Take home an iPhone or Samsung Galaxy phone, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad today — ",
-      "no credit needed",
+      "all credit welcome",
       ", starting at ",
-      "$40 initial payment",
+      "terms set by your provider",
       ", subject to approval.",
     ],
     call: "Check your options",
     visit: "Visit the store",
-    chips: ["No credit needed", "From $40 initial payment", "Take it home today", "Se habla español"],
+    chips: ["all credit welcome", "terms set by your provider", "Take it home today", "Se habla español"],
     mainAlt:
-      "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center next to a lease-to-own, no credit needed sign",
+      "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center next to a lease-to-own, all credit welcome sign",
     mainCaption: "PS5 & Switch 2 — in store now",
     tiles: [
       ["MacBook Air and iPads in a display case", "MacBook & iPad"],
@@ -34,7 +34,7 @@ const en = {
     ],
     cardLabel: "Lease-to-own",
     cardUnit: "to start",
-    cardNote: "No credit needed.",
+    cardNote: "all credit welcome.",
   },
   ticker: [
     "PlayStation 5",
@@ -99,7 +99,7 @@ const en = {
       ],
       [
         "Pay a little to start",
-        "Options starting at $40 initial payment, depending on the item and the plan you're approved for.",
+        "terms set by your provider, depending on the item and the plan you're approved for.",
       ],
       [
         "Take it home today",
@@ -110,14 +110,14 @@ const en = {
   perks: {
     kicker: "Why TIC",
     title: "Bad credit? You can still apply.",
-    body: "No credit is needed for our lease-to-own options, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed — it takes a few minutes at the counter to find out.",
-    quote: "Arrendamiento con opción a compra — sin necesidad de crédito.",
+    body: "All Credit Welcome for our lease-to-own options, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed — it takes a few minutes at the counter to find out.",
+    quote: "Arrendamiento con opción a compra — Todo crédito es bienvenido.",
     items: [
       [
-        "No credit needed",
-        "No credit history is needed to apply, and bad credit is OK. Subject to approval.",
+        "all credit welcome",
+        "All Credit Welcome, and bad credit is OK. Subject to approval.",
       ],
-      ["From $40 initial payment", "Start with a small amount instead of paying the full price on day one."],
+      ["terms set by your provider", "Start with a small amount instead of paying the full price on day one."],
       [
         "Predictable payments",
         "Regular payments on a set schedule. Ask us about early-payoff options.",
@@ -134,14 +134,14 @@ const en = {
     items: [
       {
         q: "Can I get an iPhone or Samsung phone with bad credit?",
-        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones needs no credit, from $40 initial payment, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID and it takes a few minutes in store to find out.",
+        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones welcomes all credit, terms set by your provider, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID and it takes a few minutes in store to find out.",
       },
       {
         q: "Can I get a PS5 or Xbox with bad credit?",
-        a: "Yes. We offer lease-to-own options where no credit is needed, so bad credit isn't a deal-breaker. Approval isn't guaranteed, but it takes just a few minutes in store to find out.",
+        a: "Yes. We offer lease-to-own options where All Credit Welcome, so bad credit isn't a deal-breaker. Approval isn't guaranteed, but it takes just a few minutes in store to find out.",
       },
       {
-        q: "Can I lease a laptop or MacBook with no credit?",
+        q: "Can I lease a laptop or MacBook with all credit welcome?",
         a: "Yes. Lease-to-own works on laptops, MacBooks and iPads as well as phones and consoles. Stop by or call and we'll check what's in stock.",
       },
       {
@@ -150,7 +150,7 @@ const en = {
       },
       {
         q: "How much do I pay upfront?",
-        a: "Options start at $40 initial payment. The exact amount depends on the item you choose and the plan you're approved for.",
+        a: "terms set by your provider. The exact amount depends on the item you choose and the plan you're approved for.",
       },
       {
         q: "Can I pay it off early?",
@@ -162,7 +162,7 @@ const en = {
       },
       {
         q: "¿Puedo aplicar en español?",
-        a: "¡Claro! Arrendamiento con opción a compra, sin necesidad de crédito. Te explicamos todo en español.",
+        a: "¡Claro! Arrendamiento con opción a compra, Todo crédito es bienvenido. Te explicamos todo en español.",
       },
     ],
   },
@@ -179,34 +179,34 @@ export type LeasingCopy = typeof en;
 
 const es: LeasingCopy = {
   meta: {
-    title: "Celulares, PS5 y Laptops a Pagos en Houston — Sin Crédito",
+    title: "Celulares, PS5 y Laptops a Pagos en Houston — Todo crédito es bienvenido",
     description:
-      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Sin necesidad de crédito, desde $40 de pago inicial, sujeto a aprobación. En Hillcroft.",
+      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Todo crédito es bienvenido, términos definidos por el proveedor, sujeto a aprobación. En Hillcroft.",
     imageAlt:
       "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Inicio", "Arrendamiento"],
   },
   hero: {
     kicker: "A pagos con opción a compra · Houston",
-    title: ["Celulares, PS5 y laptops a pagos", "— sin necesidad de crédito."],
+    title: ["Celulares, PS5 y laptops a pagos", "— Todo crédito es bienvenido."],
     slogan: "Llévatelo hoy. Paga poco a poco.",
     body: [
       "Llévate hoy un iPhone o Samsung Galaxy, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad — ",
-      "sin necesidad de crédito",
+      "Todo crédito es bienvenido",
       ", desde ",
-      "$40 de pago inicial",
+      "términos definidos por el proveedor",
       ", sujeto a aprobación.",
     ],
     call: "Consulta tus opciones",
     visit: "Visita la tienda",
     chips: [
-      "Sin necesidad de crédito",
-      "Desde $40 de pago inicial",
+      "Todo crédito es bienvenido",
+      "términos definidos por el proveedor",
       "Llévatelo hoy",
       "We speak English",
     ],
     mainAlt:
-      "PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center junto a un letrero de arrendamiento sin necesidad de crédito",
+      "PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center junto a un letrero de arrendamiento Todo crédito es bienvenido",
     mainCaption: "PS5 y Switch 2 — ya en tienda",
     tiles: [
       ["MacBook Air y iPad en una vitrina", "MacBook y iPad"],
@@ -214,7 +214,7 @@ const es: LeasingCopy = {
     ],
     cardLabel: "Opción a compra",
     cardUnit: "para empezar",
-    cardNote: "Sin necesidad de crédito.",
+    cardNote: "Todo crédito es bienvenido.",
   },
   ticker: [
     "PlayStation 5",
@@ -280,7 +280,7 @@ const es: LeasingCopy = {
       ],
       [
         "Da un pago inicial pequeño",
-        "Opciones desde $40 de pago inicial, según el equipo y el plan que te aprueben.",
+        "Opciones términos definidos por el proveedor, según el equipo y el plan que te aprueben.",
       ],
       [
         "Llévatelo hoy",
@@ -291,15 +291,15 @@ const es: LeasingCopy = {
   perks: {
     kicker: "¿Por qué TIC?",
     title: "¿Mal crédito? Igual puedes aplicar.",
-    body: "Nuestras opciones de arrendamiento con opción a compra no necesitan crédito, así que el mal crédito no es impedimento automático. La aprobación no está garantizada: en unos minutos en el mostrador sabes si calificas.",
-    quote: "Lease-to-own — no credit needed.",
+    body: "Nuestras opciones de arrendamiento con opción a compra acepta todo crédito, así que el mal crédito no es impedimento automático. La aprobación no está garantizada: en unos minutos en el mostrador sabes si calificas.",
+    quote: "Lease-to-own — all credit welcome.",
     items: [
       [
-        "Sin necesidad de crédito",
-        "No necesitas historial de crédito para aplicar, y el mal crédito está bien. Sujeto a aprobación.",
+        "Todo crédito es bienvenido",
+        "Todo crédito es bienvenido, y el mal crédito está bien. Sujeto a aprobación.",
       ],
       [
-        "Desde $40 de pago inicial",
+        "términos definidos por el proveedor",
         "Empieza con poco en lugar de pagar el precio completo el primer día.",
       ],
       [
@@ -318,14 +318,14 @@ const es: LeasingCopy = {
     items: [
       {
         q: "¿Puedo sacar un iPhone o Samsung a pagos con mal crédito?",
-        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados no necesita crédito y empieza desde $40 de pago inicial, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación con foto y en unos minutos en la tienda sabes si calificas.",
+        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados acepta todo crédito y términos definidos por el proveedor, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación con foto y en unos minutos en la tienda sabes si calificas.",
       },
       {
         q: "¿Puedo sacar un PS5 o Xbox a pagos con mal crédito?",
-        a: "Sí. Tenemos opciones de arrendamiento con opción a compra sin necesidad de crédito, así que el mal crédito no es impedimento. La aprobación no está garantizada, pero en unos minutos en la tienda sabes si calificas.",
+        a: "Sí. Tenemos opciones de arrendamiento con opción a compra Todo crédito es bienvenido, así que el mal crédito no es impedimento. La aprobación no está garantizada, pero en unos minutos en la tienda sabes si calificas.",
       },
       {
-        q: "¿Puedo sacar una laptop o MacBook a pagos sin crédito?",
+        q: "¿Puedo sacar una laptop o MacBook a pagos Todo crédito es bienvenido?",
         a: "Sí. El arrendamiento con opción a compra aplica a laptops, MacBook y iPad además de celulares y consolas. Ven o llámanos y revisamos qué tenemos disponible.",
       },
       {
@@ -334,7 +334,7 @@ const es: LeasingCopy = {
       },
       {
         q: "¿Cuánto doy de pago inicial?",
-        a: "Las opciones empiezan desde $40 de pago inicial. La cantidad exacta depende del equipo y del plan que te aprueben.",
+        a: "Las opciones términos definidos por el proveedor. La cantidad exacta depende del equipo y del plan que te aprueben.",
       },
       {
         q: "¿Puedo liquidarlo antes?",

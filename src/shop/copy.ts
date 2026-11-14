@@ -60,7 +60,7 @@ const en = {
   ],
   leasing: {
     title: "Bigger purchase?",
-    body: "Phones, consoles and laptops are available with lease-to-own, no credit needed.",
+    body: "Phones, consoles and laptops are available with lease-to-own, all credit welcome.",
     cta: "See leasing",
   },
   questions: "Questions about this item?",
@@ -117,7 +117,7 @@ const en = {
     ways: [
       ["Pay in full", "Card, Apple Pay, Google Pay or Shop Pay — one secure payment."],
       ["Shop Pay Installments · Affirm", "Eligible purchases may qualify for 4 interest-free payments or monthly plans. Choose Shop Pay at checkout to review offers; approval required."],
-      ["Lease-to-own in store", "No credit needed on phones, consoles and laptops at our Hillcroft store."],
+      ["Lease-to-own in store", "all credit welcome on phones, consoles and laptops at our Hillcroft store."],
     ],
     secure: "Secure checkout powered by Shopify",
   },
@@ -191,7 +191,7 @@ const es: ShopCopy = {
   ],
   leasing: {
     title: "¿Una compra más grande?",
-    body: "Celulares, consolas y laptops con opción a compra, sin necesidad de crédito.",
+    body: "Celulares, consolas y laptops con opción a compra, Todo crédito es bienvenido.",
     cta: "Ver arrendamiento",
   },
   questions: "¿Preguntas sobre este producto?",
@@ -248,7 +248,7 @@ const es: ShopCopy = {
     ways: [
       ["Pago completo", "Tarjeta, Apple Pay, Google Pay o Shop Pay — un pago seguro."],
       ["Shop Pay Installments · Affirm", "Las compras elegibles pueden calificar para 4 pagos sin intereses o planes mensuales. Elige Shop Pay al pagar para revisar las ofertas; sujeto a aprobación."],
-      ["Arrendamiento en tienda", "Sin crédito en celulares, consolas y laptops en nuestra tienda de Hillcroft."],
+      ["Arrendamiento en tienda", "Todo crédito es bienvenido en celulares, consolas y laptops en nuestra tienda de Hillcroft."],
     ],
     secure: "Pago seguro con Shopify",
   },

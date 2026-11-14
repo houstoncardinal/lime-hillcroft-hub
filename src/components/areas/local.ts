@@ -116,8 +116,8 @@ export const LOCAL: Record<string, Local> = {
           "iPhone, Samsung and Android — quoted before we start.",
         ],
         [
-          "Phones with no credit needed",
-          "From $40 initial payment, with weekly, biweekly or monthly payments.",
+          "Phones with all credit welcome",
+          "terms set by your provider, with weekly, biweekly or monthly payments.",
         ],
       ],
       es: [
@@ -130,8 +130,8 @@ export const LOCAL: Record<string, Local> = {
           "iPhone, Samsung y Android, con precio antes de empezar.",
         ],
         [
-          "Celulares sin necesidad de crédito",
-          "Desde $40 de pago inicial, con pagos semanales, quincenales o mensuales.",
+          "Celulares Todo crédito es bienvenido",
+          "términos definidos por el proveedor, con pagos semanales, quincenales o mensuales.",
         ],
       ],
     },
@@ -244,7 +244,7 @@ export const LOCAL: Record<string, Local> = {
           "Phones, tablets and laptops — including the kids' iPads.",
         ],
         ["Protect it after the fix", "Tempered glass and a case fitted before you leave."],
-        ["Upgrade without big upfront cost", "Unlocked phones from $40 initial payment, no credit needed."],
+        ["Upgrade without big upfront cost", "Unlocked phones terms set by your provider, all credit welcome."],
       ],
       es: [
         [
@@ -254,7 +254,7 @@ export const LOCAL: Record<string, Local> = {
         ["Protégelo después de repararlo", "Mica de vidrio templado y funda antes de irte."],
         [
           "Estrena sin pagar todo de una vez",
-          "Celulares desbloqueados desde $40 de pago inicial, sin crédito.",
+          "Celulares desbloqueados términos definidos por el proveedor, Todo crédito es bienvenido.",
         ],
       ],
     },
@@ -282,7 +282,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "A new phone without the big bill",
-          "Unlocked iPhones and Androids, no credit needed, from $40 initial payment.",
+          "Unlocked iPhones and Androids, all credit welcome, terms set by your provider.",
         ],
         ["Buy, sell & trade", "Trade in your old phone toward a new one."],
       ],
@@ -293,7 +293,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Celular nuevo sin pagarlo todo",
-          "iPhone y Android desbloqueados, sin crédito, desde $40 de pago inicial.",
+          "iPhone y Android desbloqueados, Todo crédito es bienvenido, términos definidos por el proveedor.",
         ],
         ["Compra, venta e intercambio", "Cambia tu celular usado por uno nuevo."],
       ],

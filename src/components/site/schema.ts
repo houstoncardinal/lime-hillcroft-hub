@@ -43,7 +43,7 @@ const services = {
   en: [
     [
       "Phone leasing",
-      "Unlocked iPhones and Android phones with leasing (lease-to-own) options, no credit needed.",
+      "Unlocked iPhones and Android phones with leasing (lease-to-own) options, all credit welcome.",
     ],
     [
       "Game console, laptop & tablet leasing",
@@ -80,7 +80,7 @@ const services = {
   es: [
     [
       "Celulares a pagos",
-      "iPhone y Android desbloqueados con arrendamiento con opción a compra, sin necesidad de crédito.",
+      "iPhone y Android desbloqueados con arrendamiento con opción a compra, Todo crédito es bienvenido.",
     ],
     [
       "Consolas, laptops y tabletas a pagos",
@@ -120,8 +120,8 @@ const services = {
 } as const;
 
 const DESCRIPTION = {
-  en: "TIC Wireless Electronic & Repair Center is a one-stop cell phone store on Hillcroft in Houston: leasing on unlocked iPhones and Androids with no credit needed, lease-to-own on game consoles and laptops, prepaid plans, Xfinity Prepaid internet, same-day phone repair, unlocking, bill payments, international recharge and accessories. Se habla español.",
-  es: "TIC Wireless Electronic & Repair Center es una tienda de celulares en Hillcroft, Houston: celulares a pagos sin necesidad de crédito, consolas y laptops con opción a compra, planes prepagados, internet prepagado Xfinity, reparación de celulares el mismo día, liberación, pago de facturas, recargas internacionales y accesorios. Se habla español.",
+  en: "TIC Wireless Electronic & Repair Center is a one-stop cell phone store on Hillcroft in Houston: leasing on unlocked iPhones and Androids with all credit welcome, lease-to-own on game consoles and laptops, prepaid plans, Xfinity Prepaid internet, same-day phone repair, unlocking, bill payments, international recharge and accessories. Se habla español.",
+  es: "TIC Wireless Electronic & Repair Center es una tienda de celulares en Hillcroft, Houston: celulares a pagos Todo crédito es bienvenido, consolas y laptops con opción a compra, planes prepagados, internet prepagado Xfinity, reparación de celulares el mismo día, liberación, pago de facturas, recargas internacionales y accesorios. Se habla español.",
 };
 
 function store(lang: Lang) {
@@ -382,8 +382,8 @@ export function leasingService(lang: Lang, items: string[]) {
     serviceType: lang === "en" ? "Leasing (lease-to-own)" : "Arrendamiento con opción a compra",
     description:
       lang === "en"
-        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. No credit needed; options starting at $40 initial payment. Subject to approval."
-        : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Sin necesidad de crédito; opciones desde $40 de pago inicial. Sujeto a aprobación.",
+        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. all credit welcome; terms set by your provider. Subject to approval."
+        : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Todo crédito es bienvenido; opciones términos definidos por el proveedor. Sujeto a aprobación.",
     url,
     provider: { "@id": STORE_ID },
     areaServed: houston,
@@ -402,8 +402,8 @@ export function leasingService(lang: Lang, items: string[]) {
       url,
       description:
         lang === "en"
-          ? "Options starting at $40 initial payment. Subject to approval."
-          : "Opciones desde $40 de pago inicial. Sujeto a aprobación.",
+          ? "terms set by your provider. Subject to approval."
+          : "Opciones términos definidos por el proveedor. Sujeto a aprobación.",
       priceSpecification: {
         "@type": "PriceSpecification",
         minPrice: 40,

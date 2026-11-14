@@ -84,24 +84,24 @@ const T = {
     en: {
       kicker: "Cell phone store & repair · Houston",
       headline: "Your phone store on Hillcroft — phones, repairs & plans.",
-      sub: "Unlocked phones with leasing — no credit needed. Same-day repair, prepaid plans and unlocking.",
+      sub: "Unlocked phones with leasing — all credit welcome. Same-day repair, prepaid plans and unlocking.",
     },
     es: {
       kicker: "Tienda de celulares y reparación · Houston",
       headline: "Tu tienda de celulares en Hillcroft: celulares, reparaciones y planes.",
-      sub: "Celulares desbloqueados a pagos sin necesidad de crédito. Reparación el mismo día, planes y liberación.",
+      sub: "Celulares desbloqueados a pagos Todo crédito es bienvenido. Reparación el mismo día, planes y liberación.",
     },
   },
   leasing: {
     en: {
       kicker: "Leasing · lease-to-own",
       headline: "PS5, Xbox, laptops & phones. Play now, pay over time.",
-      sub: "Take it home today with weekly, biweekly or monthly options. No credit needed, subject to approval.",
+      sub: "Take it home today with weekly, biweekly or monthly options. all credit welcome, subject to approval.",
     },
     es: {
       kicker: "Arrendamiento con opción a compra",
       headline: "PS5, Xbox, laptops y celulares. Juega hoy, paga poco a poco.",
-      sub: "Llévatelo hoy con pagos semanales, quincenales o mensuales. Sin necesidad de crédito, sujeto a aprobación.",
+      sub: "Llévatelo hoy con pagos semanales, quincenales o mensuales. Todo crédito es bienvenido, sujeto a aprobación.",
     },
   },
   services: {

@@ -176,7 +176,7 @@ export function XfinitySection({
         {
           icon: Smartphone,
           title: "WiFi devices",
-          body: "Phones, iPads, MacBooks and consoles — lease-to-own, no credit needed.",
+          body: "Phones, iPads, MacBooks and consoles — lease-to-own, all credit welcome.",
           href: LEASE_PATHS[lang],
         },
         {
@@ -196,7 +196,7 @@ export function XfinitySection({
         {
           icon: Smartphone,
           title: "Equipos con WiFi",
-          body: "Celulares, iPad, MacBook y consolas con arrendamiento, sin crédito.",
+          body: "Celulares, iPad, MacBook y consolas con arrendamiento, Todo crédito es bienvenido.",
           href: LEASE_PATHS[lang],
         },
         {

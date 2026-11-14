@@ -70,7 +70,7 @@ export const SERVICES: Service[] = [
         name: "Unlocked iPhones & Androids",
         metaTitle: "Unlocked iPhones & Androids in Houston — iPhone 18 Pro Max",
         metaDescription:
-          "Buy a new unlocked iPhone 18 Pro Max, Samsung Galaxy or Android phone on Hillcroft in Houston. Leasing with no credit needed, subject to approval.",
+          "Buy a new unlocked iPhone 18 Pro Max, Samsung Galaxy or Android phone on Hillcroft in Houston. Leasing with all credit welcome, subject to approval.",
         h1: "Unlocked iPhones & Android phones in Houston",
         intro:
           "Walk out with a new phone the same day. We carry unlocked iPhones — including the iPhone 18 Pro Max — plus Samsung Galaxy and other Android phones. Ask us which carriers each model works with, and we'll set it up on a compatible plan in store.",
@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
         offers: [
           "New unlocked iPhones, including the iPhone 18 Pro Max and iPhone 17 Pro.",
           "Samsung Galaxy phones — including the Galaxy A15 5G, A16 5G, A36 5G and A53 — plus Motorola moto g and other unlocked Androids.",
-          "Leasing (lease-to-own) with no credit needed — bad credit is OK, subject to approval.",
+          "Leasing (lease-to-own) with all credit welcome — bad credit is OK, subject to approval.",
           "Weekly, biweekly or monthly payment options.",
           "Trade in your old phone toward a new one.",
           "Cases, tempered glass and chargers fitted before you leave.",
@@ -105,7 +105,7 @@ export const SERVICES: Service[] = [
         ],
         why: [
           "Unlocked phones — no carrier lock-in",
-          "No credit needed for leasing",
+          "all credit welcome for leasing",
           "Same-day setup in store",
           `${RATING}★ on Google, ${REVIEW_COUNT} reviews`,
         ],
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Can I get an iPhone with bad credit?",
-            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones with no credit needed, from $40 initial payment. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID; it takes a few minutes in store to find out.",
+            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones with all credit welcome, terms set by your provider. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID; it takes a few minutes in store to find out.",
           },
           {
             q: "Will an unlocked phone work with my carrier?",
@@ -131,7 +131,7 @@ export const SERVICES: Service[] = [
         name: "iPhone y Android desbloqueados",
         metaTitle: "iPhone y Android Desbloqueados en Houston — iPhone 18 Pro Max",
         metaDescription:
-          "Compra un iPhone 18 Pro Max, Samsung Galaxy o Android desbloqueado en Hillcroft, Houston. A pagos sin necesidad de crédito, sujeto a aprobación.",
+          "Compra un iPhone 18 Pro Max, Samsung Galaxy o Android desbloqueado en Hillcroft, Houston. A pagos Todo crédito es bienvenido, sujeto a aprobación.",
         h1: "iPhone y celulares Android desbloqueados en Houston",
         intro:
           "Llévate tu celular nuevo el mismo día. Tenemos iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— además de Samsung Galaxy y otros Android. Pregúntanos con qué compañías funciona cada modelo y te lo activamos en un plan compatible en la tienda.",
@@ -139,7 +139,7 @@ export const SERVICES: Service[] = [
         offers: [
           "iPhone nuevos desbloqueados, incluyendo el iPhone 18 Pro Max y el iPhone 17 Pro.",
           "Samsung Galaxy —incluidos Galaxy A15 5G, A16 5G, A36 5G y A53— además de Motorola moto g y otros Android desbloqueados.",
-          "Arrendamiento con opción a compra sin necesidad de crédito; con mal crédito también puedes aplicar, sujeto a aprobación.",
+          "Arrendamiento con opción a compra Todo crédito es bienvenido; con mal crédito también puedes aplicar, sujeto a aprobación.",
           "Opciones de pago semanales, quincenales o mensuales.",
           "Cambia tu celular usado por uno nuevo.",
           "Fundas, micas y cargadores instalados antes de irte.",
@@ -166,7 +166,7 @@ export const SERVICES: Service[] = [
         ],
         why: [
           "Celulares desbloqueados, sin plazo forzoso",
-          "Arrendamiento sin necesidad de crédito",
+          "Arrendamiento Todo crédito es bienvenido",
           "Configuración el mismo día",
           `${RATING}★ en Google, ${REVIEW_COUNT} reseñas`,
         ],
@@ -177,7 +177,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Puedo sacar un iPhone con mal crédito?",
-            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, sin necesidad de crédito y desde $40 de pago inicial. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación con foto; en unos minutos en la tienda sabes si calificas.",
+            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, Todo crédito es bienvenido y términos definidos por el proveedor. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación con foto; en unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",
@@ -1116,7 +1116,7 @@ export const SERVICES: Service[] = [
         offers: [
           "Trade in your old phone toward a new unlocked iPhone, Samsung Galaxy or Android.",
           "Sell your phone and take the offer.",
-          "Lease your next device — no credit needed, subject to approval.",
+          "Lease your next device — all credit welcome, subject to approval.",
           "Move your contacts and number to the new phone.",
         ],
         stepsTitle: "How trade-in works",
@@ -1143,7 +1143,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Can I put my trade-in toward a lease-to-own device?",
-            a: "Yes — put your old phone toward a new device, and leasing is available on the new one with no credit needed, subject to approval.",
+            a: "Yes — put your old phone toward a new device, and leasing is available on the new one with all credit welcome, subject to approval.",
           },
           {
             q: "My phone is cracked or doesn't work well. Can I still bring it?",
@@ -1170,7 +1170,7 @@ export const SERVICES: Service[] = [
         offers: [
           "Cambiar tu celular usado por un iPhone, Samsung Galaxy o Android desbloqueado nuevo.",
           "Vender tu celular y aceptar la oferta.",
-          "Arrendar tu próximo equipo, sin necesidad de crédito y sujeto a aprobación.",
+          "Arrendar tu próximo equipo, Todo crédito es bienvenido y sujeto a aprobación.",
           "Pasar tus contactos y tu número al celular nuevo.",
         ],
         stepsTitle: "Cómo funciona el intercambio",
@@ -1192,7 +1192,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Puedo usar mi celular para un equipo con arrendamiento?",
-            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento, sin necesidad de crédito y sujeto a aprobación.",
+            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento, Todo crédito es bienvenido y sujeto a aprobación.",
           },
           {
             q: "Mi celular está roto o no funciona bien. ¿Lo puedo traer?",

@@ -106,7 +106,7 @@ const en = {
     kicker: "At this location",
     title: "Everything you can do here.",
     leasing: "Leasing on consoles, laptops & phones",
-    leasingBody: "PS5, Xbox, Switch 2, MacBook and more — no credit needed, subject to approval.",
+    leasingBody: "PS5, Xbox, Switch 2, MacBook and more — all credit welcome, subject to approval.",
     more: "Learn more",
   },
   bring: {
@@ -274,7 +274,7 @@ const es: LocationCopy = {
     title: "Todo lo que puedes hacer aquí.",
     leasing: "Consolas, laptops y celulares a pagos",
     leasingBody:
-      "PS5, Xbox, Switch 2, MacBook y más, sin necesidad de crédito. Sujeto a aprobación.",
+      "PS5, Xbox, Switch 2, MacBook y más, Todo crédito es bienvenido. Sujeto a aprobación.",
     more: "Ver más",
   },
   bring: {
