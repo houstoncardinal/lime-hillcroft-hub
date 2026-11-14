@@ -168,13 +168,21 @@ export function ShopByCategory({ lang }: { lang: Lang }) {
           {/* Lease-to-own: the store's headline offer, like a "Deals" tile */}
           <li>
             <Link to={LEASE_PATHS[lang]} className={tileClass}>
-              <span className="relative flex aspect-[4/3] flex-col items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-primary to-[oklch(0.62_0.19_40)] px-3 text-center text-primary-foreground">
-                <BadgeCheck className="h-8 w-8 sm:h-9 sm:w-9" strokeWidth={1.75} />
-                <span className="font-display text-sm font-bold uppercase leading-tight tracking-wide sm:text-base">
-                  {t.dealBadge}
-                </span>
-                <span className="hidden text-xs leading-snug opacity-90 sm:block">
-                  {t.dealHint}
+              {/* Every kind of device we lease, in one picture (manufacturer images on white) */}
+              <span className="relative block aspect-[4/3] overflow-hidden rounded-xl bg-white">
+                <img
+                  src="/photos/categories/lease-600.webp"
+                  srcSet="/photos/categories/lease-600.webp 600w, /photos/categories/lease.webp 1200w"
+                  sizes="(min-width: 1280px) 210px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                  alt=""
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
+                />
+                <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground shadow-sm sm:text-[11px]">
+                  <BadgeCheck className="h-3 w-3" strokeWidth={2.25} /> {t.dealBadge}
                 </span>
               </span>
               <TileName>{t.dealTitle}</TileName>
