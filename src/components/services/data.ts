@@ -70,7 +70,7 @@ export const SERVICES: Service[] = [
         name: "Unlocked iPhones & Androids",
         metaTitle: "Unlocked iPhones & Androids in Houston — iPhone 18 Pro Max",
         metaDescription:
-          "Buy a new unlocked iPhone 18 Pro Max, Samsung Galaxy or Android phone on Hillcroft in Houston. Leasing with all credit welcome, subject to approval.",
+          "Buy a new unlocked iPhone 18 Pro Max, Samsung Galaxy or Android phone on Hillcroft in Houston. Leasing, all credit welcome, subject to approval.",
         h1: "Unlocked iPhones & Android phones in Houston",
         intro:
           "Walk out with a new phone the same day. We carry unlocked iPhones — including the iPhone 18 Pro Max — plus Samsung Galaxy and other Android phones. Ask us which carriers each model works with, and we'll set it up on a compatible plan in store.",
@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
         offers: [
           "New unlocked iPhones, including the iPhone 18 Pro Max and iPhone 17 Pro.",
           "Samsung Galaxy phones — including the Galaxy A15 5G, A16 5G, A36 5G and A53 — plus Motorola moto g and other unlocked Androids.",
-          "Leasing (lease-to-own) with all credit welcome, subject to approval.",
+          "Leasing (lease-to-own), all credit welcome — bad credit is OK, subject to approval.",
           "Weekly, biweekly or monthly payment options.",
           "Trade in your old phone toward a new one.",
           "Cases, tempered glass and chargers fitted before you leave.",
@@ -96,7 +96,7 @@ export const SERVICES: Service[] = [
           ],
           [
             "Pay or lease",
-            "Pay in full, or apply for leasing at the counter with a photo ID, your SSN or ITIN, and an active bank account and debit card — it takes minutes.",
+            "Pay in full, or apply for leasing at the counter with a valid photo ID, your SSN or ITIN, and an active bank account and debit card — it takes minutes.",
           ],
           [
             "Set up and go",
@@ -115,8 +115,8 @@ export const SERVICES: Service[] = [
             a: "Yes, the iPhone 18 Pro Max is available unlocked. Stock changes often, so call (713) 339-9300 to confirm the color and storage you want.",
           },
           {
-            q: "Can I lease an iPhone if my credit isn't perfect?",
-            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones — all credit welcome. Approval isn't guaranteed. Bring a photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
+            q: "Can I get an iPhone with bad credit?",
+            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones, all credit welcome, from $40 initial payment. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
           },
           {
             q: "Will an unlocked phone work with my carrier?",
@@ -139,7 +139,7 @@ export const SERVICES: Service[] = [
         offers: [
           "iPhone nuevos desbloqueados, incluyendo el iPhone 18 Pro Max y el iPhone 17 Pro.",
           "Samsung Galaxy —incluidos Galaxy A15 5G, A16 5G, A36 5G y A53— además de Motorola moto g y otros Android desbloqueados.",
-          "Arrendamiento con opción a compra con todo tipo de crédito, sujeto a aprobación.",
+          "Arrendamiento con opción a compra con todo tipo de crédito; con mal crédito también puedes aplicar, sujeto a aprobación.",
           "Opciones de pago semanales, quincenales o mensuales.",
           "Cambia tu celular usado por uno nuevo.",
           "Fundas, micas y cargadores instalados antes de irte.",
@@ -157,7 +157,7 @@ export const SERVICES: Service[] = [
           ],
           [
             "Paga de contado o a pagos",
-            "Paga de contado o aplica al arrendamiento en el mostrador con una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; toma minutos.",
+            "Paga de contado o aplica al arrendamiento en el mostrador con una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; toma minutos.",
           ],
           [
             "Configúralo y listo",
@@ -176,8 +176,8 @@ export const SERVICES: Service[] = [
             a: "Sí, el iPhone 18 Pro Max está disponible desbloqueado. El inventario cambia seguido; llama al (713) 339-9300 para confirmar color y capacidad.",
           },
           {
-            q: "¿Puedo arrendar un iPhone si mi crédito no es perfecto?",
-            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, se acepta todo tipo de crédito. La aprobación no está garantizada. Trae una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
+            q: "¿Puedo sacar un iPhone con mal crédito?",
+            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, con todo tipo de crédito y desde $40 de pago inicial. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",
@@ -808,7 +808,7 @@ export const SERVICES: Service[] = [
         ],
         why: [
           `${CARRIER_COUNT} compañías prepagadas`,
-          "Sin contrato ni crédito",
+          "Sin contrato ni sorpresas",
           "Conserva tu número",
           "We speak English",
         ],
@@ -867,7 +867,7 @@ export const SERVICES: Service[] = [
           ["Plug in and activate", "Self-install in minutes and activate in the Xfinity app — we can help."],
           ["Stay connected", "Autopay keeps you online. Turn autopay off to pause, and back on to resume."],
         ],
-        why: ["From $30/mo", "Unlimited data", "No annual contract", "Set up help in store"],
+        why: ["From $30/mo", "Pay ahead each month", "No annual contract", "Set up help in store"],
         faq: [
           {
             q: "What is Xfinity Prepaid internet?",
@@ -890,8 +890,8 @@ export const SERVICES: Service[] = [
             a: "Yes. You can upgrade from 100 Mbps to 200 Mbps instantly from the Plans page of your account, or move to a faster Xfinity internet plan where it's available.",
           },
           {
-            q: "Is there a contract?",
-            a: "No. There's no annual contract, and you can pause service by turning off autopay.",
+            q: "Do I need a contract?",
+            a: "No. There's no annual contract — you pay ahead each month.",
           },
           {
             q: "How do I set it up?",
@@ -941,7 +941,7 @@ export const SERVICES: Service[] = [
           ["Conéctalo y actívalo", "Lo instalas tú en minutos y lo activas en la app de Xfinity; te ayudamos."],
           ["Sigue conectado", "El pago automático te mantiene en línea. Desactívalo para pausar y actívalo para continuar."],
         ],
-        why: ["Desde $30/mes", "Datos ilimitados", "Sin contrato anual", "Ayuda en la tienda"],
+        why: ["Desde $30/mes", "Pagas por adelantado", "Sin contrato anual", "Ayuda en la tienda"],
         faq: [
           {
             q: "¿Qué es el internet prepagado Xfinity?",
@@ -964,8 +964,8 @@ export const SERVICES: Service[] = [
             a: "Sí. Puedes cambiar de 100 a 200 Mbps al instante en la página de Planes de tu cuenta, o pasarte a un plan de internet más rápido de Xfinity donde esté disponible.",
           },
           {
-            q: "¿Hay contrato?",
-            a: "No. No hay contrato anual, y puedes pausar el servicio desactivando el pago automático.",
+            q: "¿Necesito un contrato?",
+            a: "No. No hay contrato anual; pagas por adelantado cada mes.",
           },
           {
             q: "¿Cómo lo instalo?",
@@ -1143,7 +1143,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Can I put my trade-in toward a lease-to-own device?",
-            a: "Yes — put your old phone toward a new device, and leasing is available on the new one with all credit welcome, subject to approval.",
+            a: "Yes — put your old phone toward a new device, and leasing is available on the new one, all credit welcome, subject to approval.",
           },
           {
             q: "My phone is cracked or doesn't work well. Can I still bring it?",
@@ -1170,7 +1170,7 @@ export const SERVICES: Service[] = [
         offers: [
           "Cambiar tu celular usado por un iPhone, Samsung Galaxy o Android desbloqueado nuevo.",
           "Vender tu celular y aceptar la oferta.",
-          "Arrendar tu próximo equipo con todo tipo de crédito, sujeto a aprobación.",
+          "Arrendar tu próximo equipo, con todo tipo de crédito y sujeto a aprobación.",
           "Pasar tus contactos y tu número al celular nuevo.",
         ],
         stepsTitle: "Cómo funciona el intercambio",
@@ -1192,7 +1192,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Puedo usar mi celular para un equipo con arrendamiento?",
-            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento (se acepta todo tipo de crédito), sujeto a aprobación.",
+            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento, con todo tipo de crédito y sujeto a aprobación.",
           },
           {
             q: "Mi celular está roto o no funciona bien. ¿Lo puedo traer?",

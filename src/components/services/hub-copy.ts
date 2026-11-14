@@ -22,7 +22,7 @@ export const SERVICES_HUB = {
     breadcrumb: ["Inicio", "Servicios"],
     leasing: "Consolas, laptops y celulares a pagos",
     leasingBody:
-      "PS5, Xbox, Nintendo Switch 2, MacBook, iPad y celulares con arrendamiento con opción a compra. Se acepta todo tipo de crédito, sujeto a aprobación.",
+      "PS5, Xbox, Nintendo Switch 2, MacBook, iPad y celulares con arrendamiento con opción a compra. Todo crédito es bienvenido, sujeto a aprobación.",
     more: "Ver más",
   },
 };

@@ -1,6 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
 
-import { compliantText } from "@/shop/compliance";
 import { parseDescription } from "@/shop/description";
 import type { Catalog, ShopCategory, ShopProduct } from "@/shop/types";
 
@@ -190,9 +189,8 @@ async function loadCatalog(): Promise<Catalog> {
       title: p.title,
       vendor: p.vendor || "TIC Wireless",
       category,
-      // Leasing-partner ad rules applied to Shopify text (src/shop/compliance.ts).
-      description: toText(compliantText(p.descriptionHtml)),
-      details: parseDescription(compliantText(p.descriptionHtml)),
+      description: toText(p.descriptionHtml),
+      details: parseDescription(p.descriptionHtml),
       features: [],
       images: p.images.nodes.map((im) => ({ url: im.url, alt: im.altText ?? p.title })),
       optionName:

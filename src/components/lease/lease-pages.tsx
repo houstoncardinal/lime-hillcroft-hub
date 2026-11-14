@@ -440,7 +440,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             </h2>
             <p className="mt-1 text-[13px] leading-snug text-white/65 sm:text-sm">{t.applyBody}</p>
             <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-              {portals.map((p, i) => (
+              {portals.map((p) => (
                 <li
                   key={p.id}
                   title={p.blurb[lang]}
@@ -453,11 +453,9 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                     <span className="block truncate text-sm font-semibold leading-tight">
                       {p.name}
                     </span>
-                    {i === 0 && (
-                      <span className="block text-[10px] font-bold uppercase tracking-wide text-primary">
-                        {t.primary}
-                      </span>
-                    )}
+                    <span className="block text-[11px] leading-snug text-white/60">
+                      {p.blurb[lang]}
+                    </span>
                   </span>
                   <PortalButton
                     portal={p}

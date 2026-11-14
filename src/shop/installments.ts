@@ -10,7 +10,7 @@ export function showsInstallments(category: ShopCategory, priceCents: number) {
   return !SMALL_ACCESSORIES.includes(category) && priceCents >= INSTALLMENTS_MIN_CENTS;
 }
 
-// Lease-to-own (Acima, Progressive Leasing, American First Finance, Payvantage) is applied for online and
+// Lease-to-own (Acima, American First Finance, Payvantage, Progressive Leasing) is applied for online and
 // picked up in store, so it is offered on devices only — the same items the leasing page lists.
 const LEASE_CATEGORIES: ShopCategory[] = ["phones", "tablets", "laptops", "gaming", "wearables"];
 export const LEASING_MIN_CENTS = 10000;
@@ -20,7 +20,7 @@ export function showsLeasing(category: ShopCategory, priceCents: number, tagged 
   return tagged || (LEASE_CATEGORIES.includes(category) && priceCents >= LEASING_MIN_CENTS);
 }
 
-/** Each of Shop Pay's 4 interest-free payments, every 2 weeks, in cents (rounded up). */
+/** Each of Shop Pay's 4 payments, every 2 weeks, in cents (rounded up). */
 export function payInFour(totalCents: number) {
   return Math.ceil(totalCents / PAY_IN_FOUR);
 }

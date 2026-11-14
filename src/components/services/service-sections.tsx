@@ -199,7 +199,7 @@ export function UnlockSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "¿No se puede liberar?",
-          body: "Llévate un celular desbloqueado con arrendamiento; se acepta todo tipo de crédito.",
+          body: "Llévate un celular desbloqueado con arrendamiento; todo crédito es bienvenido.",
           href: LEASE_PATHS[lang],
         },
         { icon: Languages, title: "Español e inglés", body: "Ven sin cita. We speak English." },
@@ -531,7 +531,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "A new phone",
-          body: "Lease-to-own phones with all credit welcome.",
+          body: "Lease-to-own phones, all credit welcome.",
           href: LEASE_PATHS[lang],
         },
       ]
@@ -551,7 +551,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "Un celular nuevo",
-          body: "Celulares con arrendamiento, se acepta todo tipo de crédito.",
+          body: "Celulares con arrendamiento, con todo tipo de crédito.",
           href: LEASE_PATHS[lang],
         },
       ];
@@ -744,7 +744,7 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Store,
           title: "Xfinity Prepaid internet",
-          body: "Prepaid home internet with no annual contract, set up in store.",
+          body: "Prepaid home internet, set up in store.",
           href: servicePath(lang, "xfinity-prepaid-internet"),
         },
       ]
@@ -764,7 +764,7 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Store,
           title: "Internet prepagado Xfinity",
-          body: "Internet prepagado para tu casa sin contrato anual, activado en la tienda.",
+          body: "Internet prepagado para tu casa, activado en la tienda.",
           href: servicePath(lang, "xfinity-prepaid-internet"),
         },
       ];

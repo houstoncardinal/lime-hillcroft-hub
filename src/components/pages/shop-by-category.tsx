@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BadgeCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { LEASE_PATHS, type LeaseCategory } from "@/components/lease/catalog";
 import { servicePath } from "@/components/services/paths";
@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils";
 
 // Home page "Shop by category": one tile per kind of product or service the store offers, each a
 // picture on white and a name: manufacturer images for products; for repair, Samsung's Galaxy
-// render with a cracked screen drawn on and a repair badge; for prepaid, the carriers' logos. Product tiles open their lease-to-own catalog section or category page;
+// render with a cracked screen drawn on and a repair badge; for prepaid, the carriers' logos; for
+// lease-to-own, several of those product renders together (the catalog spans every device). Product tiles open their lease-to-own catalog section or category page;
 // service tiles open their service page. Prices live on those pages, not here.
 
 type L = Record<Lang, string>;
@@ -46,8 +47,14 @@ const cat = (id: string): Img => ({
   fit: "contain",
 });
 
-// 12 tiles with the lease-to-own tile: full rows at 2, 3, 4 and 6 columns.
+// 12 tiles, lease-to-own first: full rows at 2, 3, 4 and 6 columns.
 const TILES: Tile[] = [
+  {
+    id: "lease",
+    title: both("Lease-to-own", "Arrendamiento"),
+    href: LEASE_PATHS,
+    img: cat("lease"),
+  },
   { id: "iphone", title: both("iPhone"), href: lease("iphone"), img: cat("iphone") },
   { id: "samsung", title: both("Samsung Galaxy"), href: lease("samsung"), img: cat("samsung") },
   {
@@ -106,17 +113,11 @@ const T = {
     kicker: "Everything in one store",
     title: "Shop by category",
     shopAll: "Shop all",
-    dealTitle: "Lease-to-own",
-    dealBadge: "All credit welcome",
-    dealHint: "Apply online, pick it up today",
   },
   es: {
     kicker: "Todo en una sola tienda",
     title: "Compra por categoría",
     shopAll: "Ver todo",
-    dealTitle: "Arrendamiento",
-    dealBadge: "Todo tipo de crédito",
-    dealHint: "Solicita en línea y llévatelo hoy",
   },
 };
 
@@ -165,30 +166,6 @@ export function ShopByCategory({ lang }: { lang: Lang }) {
         </div>
 
         <ul className="mt-7 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-6">
-          {/* Lease-to-own: the store's headline offer, like a "Deals" tile */}
-          <li>
-            <Link to={LEASE_PATHS[lang]} className={tileClass}>
-              {/* Every kind of device we lease, in one picture (manufacturer images on white) */}
-              <span className="relative block aspect-[4/3] overflow-hidden rounded-xl bg-white">
-                <img
-                  src="/photos/categories/lease-600.webp"
-                  srcSet="/photos/categories/lease-600.webp 600w, /photos/categories/lease.webp 1200w"
-                  sizes="(min-width: 1280px) 210px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                  alt=""
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
-                />
-                <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground shadow-sm sm:text-[11px]">
-                  <BadgeCheck className="h-3 w-3" strokeWidth={2.25} /> {t.dealBadge}
-                </span>
-              </span>
-              <TileName>{t.dealTitle}</TileName>
-            </Link>
-          </li>
-
           {TILES.map((tile) => (
             <li key={tile.id}>
               <Link to={tile.href[lang]} className={tileClass}>

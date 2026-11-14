@@ -77,7 +77,7 @@ the neighborhood in replies to reviews from customers there.
    home, leasing and shop pages.
 6. **Apple Business Connect** (businessconnect.apple.com) — Siri and Apple Maps answers.
 7. **Reviews.** Ask happy customers for Google reviews that mention what they came in for
-   ("fixed my iPhone screen in an hour", "got a phone with no credit"). AI summaries quote
+   ("fixed my iPhone screen in an hour", "got a phone with bad credit"). AI summaries quote
    review themes.
 8. **Mentions on other sites.** Local news, Houston community pages, carrier dealer locators
    (Cricket, Boost, Metro, Simple Mobile store finders) and Facebook/TikTok posts that link to

@@ -24,7 +24,7 @@ import type { Faq } from "@/components/site/schema";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 
 // /in-house-leasing: leasing done directly with TIC Wireless at the Hillcroft store. The owner's
-// facts only — visit the store, bring a photo ID and a bank account to get approved, subject to
+// facts only — visit the store, bring a photo ID and a bank account to apply, subject to
 // approval. No rates, terms or credit claims are stated; staff explain those in person.
 
 export const IN_HOUSE_COPY = {
@@ -36,7 +36,7 @@ export const IN_HOUSE_COPY = {
     body: "Lease your phone, tablet, laptop or console directly with us — no online application. Visit our Hillcroft store with a photo ID and a bank account, and we'll walk you through approval in person.",
     chips: ["iPhone, Galaxy & cellular iPad", "Done at our store", "Photo ID + bank account", "Se habla español"],
     eligible:
-      "In-House Leasing is available for iPhones, Samsung Galaxy phones and Cellular iPads. For MacBooks, watches, consoles and other devices, apply with Acima, Progressive Leasing or American First Finance.",
+      "In-House Leasing is available for iPhones, Samsung Galaxy phones and Cellular iPads. For MacBooks, watches, consoles and other devices, apply with Acima, American First Finance or Progressive Leasing.",
     devicesKicker: "Eligible devices",
     devicesHeading: "Devices you can lease in-house",
     seeAll: "See all lease-to-own devices",
@@ -44,17 +44,17 @@ export const IN_HOUSE_COPY = {
     call: "Call",
     directions: "Directions",
     needKicker: "What you need",
-    needTitle: "Two things to get approved",
+    needTitle: "Two things to apply",
     need: [
       [IdCard, "A valid photo ID", "Bring it with you to the store."],
-      [Landmark, "A bank account", "We use it to get you approved."],
+      [Landmark, "A bank account", "We use it to review your application."],
     ] as const,
     stepsTitle: "How In-House Leasing works",
     steps: [
       ["Visit the store", "Come to 3640 Hillcroft St, Suite C during store hours."],
       ["Bring your ID and bank account", "We review them with you at the counter."],
-      ["Get approved in store", "Approval happens right here, with our team."],
-      ["Take it home", "Pick your device and leave with it once you're approved."],
+      ["Apply in store", "We review your application right here, with our team."],
+      ["Take it home", "Pick your device and leave with it after approval."],
     ] as const,
     compareTitle: "In-House Leasing or online lease-to-own?",
     inHouseCol: "In-House Leasing",
@@ -62,7 +62,7 @@ export const IN_HOUSE_COPY = {
     inHousePoints: [
       "Done directly with TIC Wireless",
       "At our store — no online application",
-      "Photo ID and a bank account to get approved",
+      "Photo ID and a bank account to apply",
       "For iPhone, Samsung Galaxy & cellular iPad",
     ],
     onlinePoints: [
@@ -75,13 +75,13 @@ export const IN_HOUSE_COPY = {
     visit: "Visit the store",
     visitBody: "Walk in — no appointment needed.",
     fine: "In-House Leasing is subject to approval. Our team explains the details in store before you sign anything.",
-    metaTitle: "In-House Leasing in Houston — Get Approved at Our Hillcroft Store",
+    metaTitle: "In-House Leasing in Houston — Apply at Our Hillcroft Store",
     metaDescription:
-      "Lease a phone, tablet, laptop or console directly with TIC Wireless on Hillcroft in Houston. Visit the store with a photo ID and a bank account to get approved. Subject to approval.",
+      "Lease a phone, tablet, laptop or console directly with TIC Wireless on Hillcroft in Houston. Visit the store with a photo ID and a bank account to apply. Subject to approval.",
     faqs: [
       {
         q: "Which devices can I get with In-House Leasing?",
-        a: "iPhones, Samsung Galaxy phones and Cellular iPads. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Acima, Progressive Leasing or American First Finance.",
+        a: "iPhones, Samsung Galaxy phones and Cellular iPads. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Acima, American First Finance or Progressive Leasing.",
       },
       {
         q: "What do I need for In-House Leasing?",
@@ -109,7 +109,7 @@ export const IN_HOUSE_COPY = {
     body: "Arrienda tu celular, tableta, laptop o consola directamente con nosotros, sin solicitud en línea. Visita nuestra tienda de Hillcroft con una identificación con foto y una cuenta bancaria, y te guiamos en la aprobación en persona.",
     chips: ["iPhone, Galaxy e iPad celular", "En nuestra tienda", "ID con foto + cuenta bancaria", "We speak English"],
     eligible:
-      "El arrendamiento en tienda es para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Para MacBook, relojes, consolas y otros equipos, solicita con Acima, Progressive Leasing o American First Finance.",
+      "El arrendamiento en tienda es para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Para MacBook, relojes, consolas y otros equipos, solicita con Acima, American First Finance o Progressive Leasing.",
     devicesKicker: "Equipos elegibles",
     devicesHeading: "Equipos que puedes arrendar en tienda",
     seeAll: "Ver todos los equipos en arrendamiento",
@@ -117,16 +117,16 @@ export const IN_HOUSE_COPY = {
     call: "Llamar",
     directions: "Cómo llegar",
     needKicker: "Lo que necesitas",
-    needTitle: "Dos cosas para aprobarte",
+    needTitle: "Dos cosas para solicitar",
     need: [
       [IdCard, "Identificación con foto vigente", "Tráela contigo a la tienda."],
-      [Landmark, "Una cuenta bancaria", "La usamos para aprobarte."],
+      [Landmark, "Una cuenta bancaria", "La usamos para revisar tu solicitud."],
     ] as const,
     stepsTitle: "Cómo funciona el arrendamiento en tienda",
     steps: [
       ["Visita la tienda", "Ven a 3640 Hillcroft St, Suite C en horario de tienda."],
       ["Trae tu ID y cuenta bancaria", "Los revisamos contigo en el mostrador."],
-      ["Aprobación en la tienda", "La aprobación se hace aquí, con nuestro equipo."],
+      ["Solicita en la tienda", "Revisamos tu solicitud aquí, con nuestro equipo."],
       ["Llévatelo", "Elige tu equipo y llévatelo una vez aprobado."],
     ] as const,
     compareTitle: "¿Arrendamiento en tienda o arrendamiento en línea?",
@@ -135,13 +135,13 @@ export const IN_HOUSE_COPY = {
     inHousePoints: [
       "Directamente con TIC Wireless",
       "En nuestra tienda, sin solicitud en línea",
-      "Identificación con foto y cuenta bancaria para aprobarte",
+      "Identificación con foto y cuenta bancaria para solicitar",
       "Para iPhone, Samsung Galaxy e iPad celular",
     ],
     onlinePoints: [
       `Solicita en línea con ${PORTALS.map((p) => p.name).join(", ")}`,
       "La aprobación la da la compañía de arrendamiento",
-      "Recoge tu equipo en la tienda ya aprobado",
+      "Recoge tu equipo en la tienda con tu aprobación",
     ],
     onlineCta: "Ver opciones de arrendamiento en línea",
     faqTitle: "Preguntas frecuentes",
@@ -154,7 +154,7 @@ export const IN_HOUSE_COPY = {
     faqs: [
       {
         q: "¿Qué equipos puedo obtener con arrendamiento en tienda?",
-        a: "iPhone, celulares Samsung Galaxy e iPad con datos celulares. Otros equipos, como MacBook, Apple Watch y consolas, se pueden arrendar con Acima, Progressive Leasing o American First Finance.",
+        a: "iPhone, celulares Samsung Galaxy e iPad con datos celulares. Otros equipos, como MacBook, Apple Watch y consolas, se pueden arrendar con Acima, American First Finance o Progressive Leasing.",
       },
       {
         q: "¿Qué necesito para el arrendamiento en tienda?",

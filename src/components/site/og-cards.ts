@@ -63,13 +63,13 @@ const AREA_PHOTOS = [
 
 // Share-image crops that show the product better than the page photo.
 const SERVICE_OG_PHOTO: Record<string, [string, string]> = {
-  "prepaid-plans": ["store-counter", "50% 50%"],
+  "prepaid-plans": ["consoles-wide", "45% 50%"],
   "international-recharge": ["storefront-3640", "85% 50%"],
 };
 
 const GUIDE_PHOTOS: Record<string, string> = {
   screen: "screen-protector",
-  lease: "consoles-table",
+  lease: "consoles-wide",
   unlock: "iphone-otterbox",
   plans: "store-counter",
 };
@@ -101,7 +101,7 @@ const T = {
     es: {
       kicker: "Arrendamiento con opción a compra",
       headline: "PS5, Xbox, laptops y celulares. Juega hoy, paga poco a poco.",
-      sub: "Llévatelo hoy con pagos semanales, quincenales o mensuales. Se acepta todo tipo de crédito, sujeto a aprobación.",
+      sub: "Llévatelo hoy con pagos semanales, quincenales o mensuales. Todo crédito es bienvenido, sujeto a aprobación.",
     },
   },
   services: {
@@ -174,7 +174,7 @@ export function ogCards(): OgCard[] {
   return [
     ...LANGS.flatMap((lang) => [
       page("home", lang, "storefront-3640", T.home[lang]),
-      page("leasing", lang, "consoles-table", T.leasing[lang], "50% 50%"),
+      page("leasing", lang, "consoles-wide", T.leasing[lang], "0% 50%"),
       page("location", lang, "storefront-3640", T.location[lang]),
       ...(["accessories", "consoles", "laptops", "iphone18"] as const).map((key) => {
         const c = CATEGORY_PAGES[key];
