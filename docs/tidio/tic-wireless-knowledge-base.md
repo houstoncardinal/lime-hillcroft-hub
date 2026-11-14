@@ -49,9 +49,9 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
 - To apply: come to the store with a valid photo ID, your SSN or ITIN, and an active bank account and debit card.
   The application takes a few minutes at the counter.
 - To apply online before coming in: customers can apply with any of our four lease-to-own partners —
-  Acima, American First Finance, Payvantage or Progressive Leasing — from
+  Progressive Leasing, Acima, Payvantage or American First Finance — from
   https://www.ticwirelesstx.com/leasing. No partner is preferred over another.
-- In-House Leasing (special option): leasing done directly with TIC Wireless at the Hillcroft store — visit with a valid photo ID and a bank account to apply, subject to approval. Details: https://www.ticwirelesstx.com/in-house-leasing Payvantage and In-House Leasing are only for iPhones, Samsung Galaxy phones and cellular iPads; other devices can be leased with Acima, American First Finance or Progressive Leasing.
+- In-House Leasing (special option): leasing done directly with TIC Wireless at the Hillcroft store — visit with a valid photo ID and a bank account to apply, subject to approval. Details: https://www.ticwirelesstx.com/in-house-leasing Payvantage and In-House Leasing are only for iPhones, Samsung Galaxy phones and cellular iPads; other devices can be leased with Progressive Leasing, Acima or American First Finance.
 - Early payoff: customers can ask about early-payoff options when they apply.
 - Leasing is also available on game consoles (PlayStation 5, Xbox, Nintendo Switch 2),
   laptops (including MacBook Air and Windows laptops), tablets (iPad, iPad Pro, iPad mini,

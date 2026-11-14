@@ -105,13 +105,13 @@ the old address — the correct address is 3640 Hillcroft St, Suite C, Houston, 
   controller.
 - Consoles are available with leasing (lease-to-own): all credit welcome, as low as $40 initial payment, weekly,
   biweekly or monthly payments, subject to approval. The store calls this leasing, not financing.
-- Online lease-to-own applications (all four partners on equal footing):
+- Online lease-to-own applications (all four partners):
+  Progressive Leasing https://approve.me/s/ticwireless/69977#/marketing ;
   Acima https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en ;
-  American First Finance https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA ;
   Payvantage https://payvan.me/3RM885c ;
-  Progressive Leasing https://approve.me/s/ticwireless/69977#/marketing
+  American First Finance https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA
   — or apply at the counter with a valid photo ID, your SSN or ITIN, and an active bank account and debit card.
-- In-House Leasing (special option): leasing done directly with TIC Wireless at the Hillcroft store — visit with a valid photo ID and a bank account to apply, subject to approval. Details: https://www.ticwirelesstx.com/in-house-leasing Payvantage and In-House Leasing are only for iPhones, Samsung Galaxy phones and cellular iPads; other devices can be leased with Acima, American First Finance or Progressive Leasing.
+- In-House Leasing (special option): leasing done directly with TIC Wireless at the Hillcroft store — visit with a valid photo ID and a bank account to apply, subject to approval. Details: https://www.ticwirelesstx.com/in-house-leasing Payvantage and In-House Leasing are only for iPhones, Samsung Galaxy phones and cellular iPads; other devices can be leased with Progressive Leasing, Acima or American First Finance.
 - Page: https://www.ticwirelesstx.com/game-consoles
 
 ## Devices in store now (updated October 16, 2026)

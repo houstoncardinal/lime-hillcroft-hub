@@ -329,7 +329,7 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
             {t.freqNote}
           </p>
 
-          {/* 2. Which option — each shows only the chosen schedule's payment */}
+          {/* 2. Which option — just the option; its payment shows in the card below */}
           {device.options.length > 1 && (
             <fieldset className="mt-4">
               <legend className="mb-2 text-sm font-semibold">{t.chooseOption}</legend>
@@ -341,17 +341,11 @@ export function LeaseDevicePage({ device, lang }: { device: LeaseDevice; lang: L
                     aria-pressed={i === index}
                     onClick={() => setIndex(i)}
                     className={cn(
-                      "cursor-pointer rounded-2xl border bg-card px-3.5 py-2 text-left transition",
+                      "min-h-11 cursor-pointer rounded-2xl border bg-card px-4 py-2 text-sm font-semibold leading-snug transition",
                       i === index ? "border-primary ring-1 ring-primary" : "hover:border-ink/30",
                     )}
                   >
-                    <span className="block text-sm font-semibold leading-snug">
-                      {x.label[lang]}
-                    </span>
-                    <span className="block text-xs tabular-nums text-muted-foreground">
-                      <LeaseMoney usd={payment(x, frequency)} />
-                      {t.per[frequency]}
-                    </span>
+                    {x.label[lang]}
                   </button>
                 ))}
               </div>

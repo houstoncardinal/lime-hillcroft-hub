@@ -20,11 +20,28 @@ import { cn } from "@/lib/utils";
 
 // TIC Wireless's online lease-to-own applications (dealer links from each provider). Each opens
 // the provider's own secure site in a new tab; approval and terms come from the provider.
-// Partners are equals: listed alphabetically, with the same blurb format, and none is featured.
+// Partners share the same blurb format and none is featured; they're listed in the owner's
+// chosen order (Progressive Leasing, Acima, Payvantage, American First Finance) everywhere.
 // Each disclaimer is the provider's own published fine print (AFF: its Marketing Review Guide;
 // Progressive and Payvantage: their website footers; Acima: its support page and standard
 // retailer footnote). Shown in full wherever there is room, names only where there isn't.
 export const PORTALS = [
+  {
+    id: "progressive-leasing",
+    scope: "all",
+    name: "Progressive Leasing",
+    short: "Progressive",
+    initials: "PL",
+    href: "https://approve.me/s/ticwireless/69977#/marketing",
+    blurb: {
+      en: "Lease-to-own on phones, tablets, laptops and consoles. All credit welcome.",
+      es: "Arrendamiento con opción a compra en celulares, tabletas, laptops y consolas. Todo crédito es bienvenido.",
+    },
+    disclaimer: {
+      en: "Ownership by rental/lease agreement with Progressive Leasing costs more than the retailer's cash price. Select items only. Purchase early or return items and cancel lease at any time. Progressive Leasing obtains information from credit bureaus, but a credit history is not required. Not all applicants are approved. Not available in MN, NJ, WI.",
+      es: "Adquirir la propiedad mediante un contrato de renta/arrendamiento con Progressive Leasing cuesta más que el precio de contado del comerciante. Solo artículos seleccionados. Compra anticipadamente o devuelve los artículos y cancela el arrendamiento en cualquier momento. Progressive Leasing obtiene información de las agencias de crédito, pero no se requiere historial de crédito. No todos los solicitantes son aprobados. No disponible en MN, NJ, WI.",
+    },
+  },
   {
     id: "acima",
     scope: "all",
@@ -39,23 +56,6 @@ export const PORTALS = [
     disclaimer: {
       en: "Lease-to-own through Acima Leasing. Acquiring ownership by leasing costs more than the retailer's cash price. Not available in MN, NJ, WI or WY. Subject to approval.",
       es: "Arrendamiento con opción a compra a través de Acima Leasing. Adquirir la propiedad mediante arrendamiento cuesta más que el precio de contado del comerciante. No disponible en MN, NJ, WI ni WY. Sujeto a aprobación.",
-    },
-  },
-  {
-    id: "american-first-finance",
-    scope: "all",
-    name: "American First Finance",
-    short: "AFF",
-    initials: "AFF",
-    href: "https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA",
-    // AFF's pre-approved description and required disclaimer (AFF Marketing Review Guide).
-    blurb: {
-      en: "Get it now. Pay over time. All Credit Welcome!",
-      es: "Llévatelo ahora. Paga con el tiempo. ¡Todo crédito es bienvenido!",
-    },
-    disclaimer: {
-      en: "Applications may be for payment solutions through American First Finance or loans originated by FinWise Bank, a Utah-chartered bank, Member FDIC. Products may vary by location. Terms and conditions subject to change at any time without prior disclosure or notice. See agreement for details.",
-      es: "Las solicitudes pueden ser para soluciones de pago a través de American First Finance o préstamos originados por FinWise Bank, un banco con licencia de Utah, miembro de la FDIC. Los productos pueden variar según la ubicación. Los términos y condiciones pueden cambiar en cualquier momento sin aviso previo. Consulta el contrato para más detalles.",
     },
   },
   {
@@ -75,19 +75,20 @@ export const PORTALS = [
     },
   },
   {
-    id: "progressive-leasing",
+    id: "american-first-finance",
     scope: "all",
-    name: "Progressive Leasing",
-    short: "Progressive",
-    initials: "PL",
-    href: "https://approve.me/s/ticwireless/69977#/marketing",
+    name: "American First Finance",
+    short: "AFF",
+    initials: "AFF",
+    href: "https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA",
+    // AFF's pre-approved description and required disclaimer (AFF Marketing Review Guide).
     blurb: {
-      en: "Lease-to-own on phones, tablets, laptops and consoles. All credit welcome.",
-      es: "Arrendamiento con opción a compra en celulares, tabletas, laptops y consolas. Todo crédito es bienvenido.",
+      en: "Get it now. Pay over time. All Credit Welcome!",
+      es: "Llévatelo ahora. Paga con el tiempo. ¡Todo crédito es bienvenido!",
     },
     disclaimer: {
-      en: "Ownership by rental/lease agreement with Progressive Leasing costs more than the retailer's cash price. Select items only. Purchase early or return items and cancel lease at any time. Progressive Leasing obtains information from credit bureaus, but a credit history is not required. Not all applicants are approved. Not available in MN, NJ, WI.",
-      es: "Adquirir la propiedad mediante un contrato de renta/arrendamiento con Progressive Leasing cuesta más que el precio de contado del comerciante. Solo artículos seleccionados. Compra anticipadamente o devuelve los artículos y cancela el arrendamiento en cualquier momento. Progressive Leasing obtiene información de las agencias de crédito, pero no se requiere historial de crédito. No todos los solicitantes son aprobados. No disponible en MN, NJ, WI.",
+      en: "Applications may be for payment solutions through American First Finance or loans originated by FinWise Bank, a Utah-chartered bank, Member FDIC. Products may vary by location. Terms and conditions subject to change at any time without prior disclosure or notice. See agreement for details.",
+      es: "Las solicitudes pueden ser para soluciones de pago a través de American First Finance o préstamos originados por FinWise Bank, un banco con licencia de Utah, miembro de la FDIC. Los productos pueden variar según la ubicación. Los términos y condiciones pueden cambiar en cualquier momento sin aviso previo. Consulta el contrato para más detalles.",
     },
   },
 ] as const;
@@ -113,7 +114,7 @@ export function PartnerFinePrint({
   );
 }
 
-/** "Acima, American First Finance, Payvantage and Progressive Leasing" — for tight spaces. */
+/** "Progressive Leasing, Acima, Payvantage and American First Finance" — for tight spaces. */
 export function partnerNames(lang: Lang) {
   const names = PORTALS.map((p) => p.name);
   return `${names.slice(0, -1).join(", ")} ${lang === "en" ? "and" : "y"} ${names[names.length - 1]}`;
@@ -248,11 +249,11 @@ export const SCOPE_LABEL = {
 export const PHONE_ONLY_NOTE = {
   en: {
     lead: "Payvantage and In-House Leasing",
-    rest: "are only for iPhones, Samsung Galaxy phones and Cellular iPads. Every other device can be leased with Acima, American First Finance or Progressive Leasing.",
+    rest: "are only for iPhones, Samsung Galaxy phones and Cellular iPads. Every other device can be leased with Progressive Leasing, Acima or American First Finance.",
   },
   es: {
     lead: "Payvantage y el arrendamiento en tienda",
-    rest: "son solo para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Los demás equipos se pueden arrendar con Acima, American First Finance o Progressive Leasing.",
+    rest: "son solo para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Los demás equipos se pueden arrendar con Progressive Leasing, Acima o American First Finance.",
   },
 };
 

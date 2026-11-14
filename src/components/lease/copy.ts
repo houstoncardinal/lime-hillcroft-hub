@@ -27,7 +27,7 @@ export const LEASE_COPY = {
     viewAll: (n: number) => `See all ${n} lease-to-own devices`,
     metaTitle: "Lease-to-Own Phones, iPads, MacBooks & Consoles in Houston — All Credit Welcome",
     metaDescription:
-      "Lease an iPhone, Samsung Galaxy, iPad, MacBook, Apple Watch, PlayStation or Xbox at TIC Wireless on Hillcroft in Houston. Leasing prices and weekly, bi-weekly or monthly payment estimates for every option; apply online with Acima, American First Finance, Payvantage or Progressive Leasing.",
+      "Lease an iPhone, Samsung Galaxy, iPad, MacBook, Apple Watch, PlayStation or Xbox at TIC Wireless on Hillcroft in Houston. Leasing prices and weekly, bi-weekly or monthly payment estimates for every option; apply online with Progressive Leasing, Acima, Payvantage or American First Finance.",
     deviceMeta: (name: string, from: string) =>
       `Lease the ${name} at TIC Wireless in Houston from ${from} — all credit welcome. Every storage and condition option with its leasing price and payment estimates; apply online and pick it up in store.`,
     from: "Leasing from",
@@ -85,7 +85,7 @@ export const LEASE_COPY = {
     stepsTitle: "How lease-to-own works",
     steps: [
       [CircleCheck, "Pick your device", "Choose the model, storage and condition you want."],
-      [IdCard, "Apply online", "Apply with Acima, American First Finance, Payvantage or Progressive Leasing."],
+      [IdCard, "Apply online", "Apply with Progressive Leasing, Acima, Payvantage or American First Finance."],
       [Store, "Pick it up today", "Bring your ID to 3640 Hillcroft St, Suite C and take it home."],
     ] as const,
     updated: (iso: string) => `Prices updated ${fmtDate(iso, "en")}. Call ${PHONE} to confirm stock.`,
@@ -93,7 +93,7 @@ export const LEASE_COPY = {
     faqs: [
       {
         q: "Do I need credit to lease a phone at TIC Wireless?",
-        a: "All credit is welcome. Lease-to-own is subject to approval by the leasing company, and you can apply online with Acima, American First Finance, Payvantage or Progressive Leasing before you come in.",
+        a: "All credit is welcome. Lease-to-own is subject to approval by the leasing company, and you can apply online with Progressive Leasing, Acima, Payvantage or American First Finance before you come in.",
       },
       {
         q: "Should I choose weekly, bi-weekly or monthly payments?",
@@ -117,7 +117,7 @@ export const LEASE_COPY = {
     viewAll: (n: number) => `Ver los ${n} equipos en arrendamiento`,
     metaTitle: "Celulares, iPad, MacBook y Consolas en Arrendamiento en Houston — Todo Crédito Es Bienvenido",
     metaDescription:
-      "Arrienda un iPhone, Samsung Galaxy, iPad, MacBook, Apple Watch, PlayStation o Xbox en TIC Wireless sobre Hillcroft en Houston. Precio de arrendamiento y pagos semanales, quincenales o mensuales aproximados para cada opción; solicita en línea con Acima, American First Finance, Payvantage o Progressive Leasing.",
+      "Arrienda un iPhone, Samsung Galaxy, iPad, MacBook, Apple Watch, PlayStation o Xbox en TIC Wireless sobre Hillcroft en Houston. Precio de arrendamiento y pagos semanales, quincenales o mensuales aproximados para cada opción; solicita en línea con Progressive Leasing, Acima, Payvantage o American First Finance.",
     deviceMeta: (name: string, from: string) =>
       `Arrienda el ${name} en TIC Wireless en Houston desde ${from} — con todo tipo de crédito. Cada opción de almacenamiento y condición con su precio de arrendamiento y pagos aproximados; solicita en línea y recógelo en la tienda.`,
     from: "Arrendamiento desde",
@@ -175,7 +175,7 @@ export const LEASE_COPY = {
     stepsTitle: "Cómo funciona el arrendamiento",
     steps: [
       [CircleCheck, "Elige tu equipo", "Escoge el modelo, almacenamiento y condición que quieres."],
-      [IdCard, "Solicita en línea", "Solicita con Acima, American First Finance, Payvantage o Progressive Leasing."],
+      [IdCard, "Solicita en línea", "Solicita con Progressive Leasing, Acima, Payvantage o American First Finance."],
       [Store, "Recógelo hoy", "Trae tu identificación a 3640 Hillcroft St, Suite C y llévatelo."],
     ] as const,
     updated: (iso: string) =>
@@ -184,7 +184,7 @@ export const LEASE_COPY = {
     faqs: [
       {
         q: "¿Necesito crédito para arrendar un celular en TIC Wireless?",
-        a: "Todo crédito es bienvenido. El arrendamiento está sujeto a la aprobación de la compañía, y puedes solicitar en línea con Acima, American First Finance, Payvantage o Progressive Leasing antes de venir.",
+        a: "Todo crédito es bienvenido. El arrendamiento está sujeto a la aprobación de la compañía, y puedes solicitar en línea con Progressive Leasing, Acima, Payvantage o American First Finance antes de venir.",
       },
       {
         q: "¿Me conviene pagar semanal, quincenal o mensual?",

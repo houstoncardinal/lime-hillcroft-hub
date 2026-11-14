@@ -36,7 +36,7 @@ export const IN_HOUSE_COPY = {
     body: "Lease your phone, tablet, laptop or console directly with us — no online application. Visit our Hillcroft store with a photo ID and a bank account, and we'll walk you through approval in person.",
     chips: ["iPhone, Galaxy & cellular iPad", "Done at our store", "Photo ID + bank account", "Se habla español"],
     eligible:
-      "In-House Leasing is available for iPhones, Samsung Galaxy phones and Cellular iPads. For MacBooks, watches, consoles and other devices, apply with Acima, American First Finance or Progressive Leasing.",
+      "In-House Leasing is available for iPhones, Samsung Galaxy phones and Cellular iPads. For MacBooks, watches, consoles and other devices, apply with Progressive Leasing, Acima or American First Finance.",
     devicesKicker: "Eligible devices",
     devicesHeading: "Devices you can lease in-house",
     seeAll: "See all lease-to-own devices",
@@ -81,7 +81,7 @@ export const IN_HOUSE_COPY = {
     faqs: [
       {
         q: "Which devices can I get with In-House Leasing?",
-        a: "iPhones, Samsung Galaxy phones and Cellular iPads. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Acima, American First Finance or Progressive Leasing.",
+        a: "iPhones, Samsung Galaxy phones and Cellular iPads. Other devices — like MacBooks, Apple Watch and game consoles — can be leased with Progressive Leasing, Acima or American First Finance.",
       },
       {
         q: "What do I need for In-House Leasing?",
@@ -109,7 +109,7 @@ export const IN_HOUSE_COPY = {
     body: "Arrienda tu celular, tableta, laptop o consola directamente con nosotros, sin solicitud en línea. Visita nuestra tienda de Hillcroft con una identificación con foto y una cuenta bancaria, y te guiamos en la aprobación en persona.",
     chips: ["iPhone, Galaxy e iPad celular", "En nuestra tienda", "ID con foto + cuenta bancaria", "We speak English"],
     eligible:
-      "El arrendamiento en tienda es para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Para MacBook, relojes, consolas y otros equipos, solicita con Acima, American First Finance o Progressive Leasing.",
+      "El arrendamiento en tienda es para iPhone, celulares Samsung Galaxy e iPad con datos celulares. Para MacBook, relojes, consolas y otros equipos, solicita con Progressive Leasing, Acima o American First Finance.",
     devicesKicker: "Equipos elegibles",
     devicesHeading: "Equipos que puedes arrendar en tienda",
     seeAll: "Ver todos los equipos en arrendamiento",
@@ -154,7 +154,7 @@ export const IN_HOUSE_COPY = {
     faqs: [
       {
         q: "¿Qué equipos puedo obtener con arrendamiento en tienda?",
-        a: "iPhone, celulares Samsung Galaxy e iPad con datos celulares. Otros equipos, como MacBook, Apple Watch y consolas, se pueden arrendar con Acima, American First Finance o Progressive Leasing.",
+        a: "iPhone, celulares Samsung Galaxy e iPad con datos celulares. Otros equipos, como MacBook, Apple Watch y consolas, se pueden arrendar con Progressive Leasing, Acima o American First Finance.",
       },
       {
         q: "¿Qué necesito para el arrendamiento en tienda?",
