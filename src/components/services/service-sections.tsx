@@ -199,7 +199,7 @@ export function UnlockSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "¿No se puede liberar?",
-          body: "Llévate un celular desbloqueado, con arrendamiento y Todo crédito es bienvenido.",
+          body: "Llévate un celular desbloqueado con arrendamiento; se acepta todo tipo de crédito.",
           href: LEASE_PATHS[lang],
         },
         { icon: Languages, title: "Español e inglés", body: "Ven sin cita. We speak English." },
@@ -551,7 +551,7 @@ export function RechargeSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Smartphone,
           title: "Un celular nuevo",
-          body: "Celulares con arrendamiento, Todo crédito es bienvenido.",
+          body: "Celulares con arrendamiento, se acepta todo tipo de crédito.",
           href: LEASE_PATHS[lang],
         },
       ];
@@ -744,7 +744,7 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Store,
           title: "Xfinity Prepaid internet",
-          body: "Home internet with all credit welcome check, set up in store.",
+          body: "Prepaid home internet with no annual contract, set up in store.",
           href: servicePath(lang, "xfinity-prepaid-internet"),
         },
       ]
@@ -764,7 +764,7 @@ export function BillsSection({ lang, stepsTitle, steps }: Steps) {
         {
           icon: Store,
           title: "Internet prepagado Xfinity",
-          body: "Internet en casa sin revisión de crédito, activado en la tienda.",
+          body: "Internet prepagado para tu casa sin contrato anual, activado en la tienda.",
           href: servicePath(lang, "xfinity-prepaid-internet"),
         },
       ];

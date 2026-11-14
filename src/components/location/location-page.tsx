@@ -18,8 +18,9 @@ import apple from "@/assets/photos/apple-display.webp";
 import appleSm from "@/assets/photos/apple-display-sm.webp";
 import caseWall from "@/assets/photos/case-wall.webp";
 import caseWallSm from "@/assets/photos/case-wall-sm.webp";
-import consoles from "@/assets/photos/consoles-wide.webp";
-import consolesSm from "@/assets/photos/consoles-wide-sm.webp";
+// consoles-wide shows a leasing sign; use the console table photo instead.
+import consoles from "@/assets/photos/consoles-table.webp";
+import consolesSm from "@/assets/photos/consoles-table-sm.webp";
 import counter from "@/assets/photos/store-counter.webp";
 import counterSm from "@/assets/photos/store-counter-sm.webp";
 import jbl from "@/assets/photos/jbl-display.webp";
@@ -55,7 +56,7 @@ const PHOTOS: Record<GalleryPhoto, { src: string; sm: string; w: number; h: numb
   apple: { src: apple, sm: appleSm, w: 1500, h: 2000 },
   jbl: { src: jbl, sm: jblSm, w: 2000, h: 1500 },
   laptops: { src: laptops, sm: laptopsSm, w: 2000, h: 1400 },
-  consoles: { src: consoles, sm: consolesSm, w: 1240, h: 720 },
+  consoles: { src: consoles, sm: consolesSm, w: 1564, h: 1182 },
 };
 
 const FACT_ICONS = [MapPin, Phone, Car, Accessibility, Languages, Footprints];

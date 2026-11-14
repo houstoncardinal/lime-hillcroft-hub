@@ -52,7 +52,7 @@ const line = ({ device, detail }) => {
   return `- ${deviceTitle(device, detail)} (${detail.year}${device.fiveG ? ", 5G" : ""}) — ${facts}. ${pageUrl(device.id)}`;
 };
 const leasing = (from) =>
-  `Leasing (lease-to-own) on every device: no credit needed, as low as $${from} initial payment (iPhone 18 Pro Max from $49 initial payment), subject to approval.`;
+  `Leasing (lease-to-own) on every device: all credit welcome, weekly, biweekly or monthly payments, subject to approval.`;
 
 const full = [
   `## Devices in store now (updated ${long})`,

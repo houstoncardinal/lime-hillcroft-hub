@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
         offers: [
           "New unlocked iPhones, including the iPhone 18 Pro Max and iPhone 17 Pro.",
           "Samsung Galaxy phones — including the Galaxy A15 5G, A16 5G, A36 5G and A53 — plus Motorola moto g and other unlocked Androids.",
-          "Leasing (lease-to-own) with all credit welcome — bad credit is OK, subject to approval.",
+          "Leasing (lease-to-own) with all credit welcome, subject to approval.",
           "Weekly, biweekly or monthly payment options.",
           "Trade in your old phone toward a new one.",
           "Cases, tempered glass and chargers fitted before you leave.",
@@ -96,7 +96,7 @@ export const SERVICES: Service[] = [
           ],
           [
             "Pay or lease",
-            "Pay in full, or apply for leasing at the counter with a valid photo ID — it takes minutes.",
+            "Pay in full, or apply for leasing at the counter with a photo ID, your SSN or ITIN, and an active bank account and debit card — it takes minutes.",
           ],
           [
             "Set up and go",
@@ -105,7 +105,7 @@ export const SERVICES: Service[] = [
         ],
         why: [
           "Unlocked phones — no carrier lock-in",
-          "all credit welcome for leasing",
+          "All credit welcome for leasing",
           "Same-day setup in store",
           `${RATING}★ on Google, ${REVIEW_COUNT} reviews`,
         ],
@@ -115,8 +115,8 @@ export const SERVICES: Service[] = [
             a: "Yes, the iPhone 18 Pro Max is available unlocked. Stock changes often, so call (713) 339-9300 to confirm the color and storage you want.",
           },
           {
-            q: "Can I get an iPhone with bad credit?",
-            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones with all credit welcome, terms set by your provider. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID; it takes a few minutes in store to find out.",
+            q: "Can I lease an iPhone if my credit isn't perfect?",
+            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones — all credit welcome. Approval isn't guaranteed. Bring a photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
           },
           {
             q: "Will an unlocked phone work with my carrier?",
@@ -131,7 +131,7 @@ export const SERVICES: Service[] = [
         name: "iPhone y Android desbloqueados",
         metaTitle: "iPhone y Android Desbloqueados en Houston — iPhone 18 Pro Max",
         metaDescription:
-          "Compra un iPhone 18 Pro Max, Samsung Galaxy o Android desbloqueado en Hillcroft, Houston. A pagos Todo crédito es bienvenido, sujeto a aprobación.",
+          "Compra un iPhone 18 Pro Max, Samsung Galaxy o Android desbloqueado en Hillcroft, Houston. A pagos con todo tipo de crédito, sujeto a aprobación.",
         h1: "iPhone y celulares Android desbloqueados en Houston",
         intro:
           "Llévate tu celular nuevo el mismo día. Tenemos iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— además de Samsung Galaxy y otros Android. Pregúntanos con qué compañías funciona cada modelo y te lo activamos en un plan compatible en la tienda.",
@@ -139,7 +139,7 @@ export const SERVICES: Service[] = [
         offers: [
           "iPhone nuevos desbloqueados, incluyendo el iPhone 18 Pro Max y el iPhone 17 Pro.",
           "Samsung Galaxy —incluidos Galaxy A15 5G, A16 5G, A36 5G y A53— además de Motorola moto g y otros Android desbloqueados.",
-          "Arrendamiento con opción a compra Todo crédito es bienvenido; con mal crédito también puedes aplicar, sujeto a aprobación.",
+          "Arrendamiento con opción a compra con todo tipo de crédito, sujeto a aprobación.",
           "Opciones de pago semanales, quincenales o mensuales.",
           "Cambia tu celular usado por uno nuevo.",
           "Fundas, micas y cargadores instalados antes de irte.",
@@ -157,7 +157,7 @@ export const SERVICES: Service[] = [
           ],
           [
             "Paga de contado o a pagos",
-            "Paga de contado o aplica al arrendamiento en el mostrador con una identificación con foto; toma minutos.",
+            "Paga de contado o aplica al arrendamiento en el mostrador con una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; toma minutos.",
           ],
           [
             "Configúralo y listo",
@@ -166,7 +166,7 @@ export const SERVICES: Service[] = [
         ],
         why: [
           "Celulares desbloqueados, sin plazo forzoso",
-          "Arrendamiento Todo crédito es bienvenido",
+          "Arrendamiento con todo tipo de crédito",
           "Configuración el mismo día",
           `${RATING}★ en Google, ${REVIEW_COUNT} reseñas`,
         ],
@@ -176,8 +176,8 @@ export const SERVICES: Service[] = [
             a: "Sí, el iPhone 18 Pro Max está disponible desbloqueado. El inventario cambia seguido; llama al (713) 339-9300 para confirmar color y capacidad.",
           },
           {
-            q: "¿Puedo sacar un iPhone con mal crédito?",
-            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, Todo crédito es bienvenido y términos definidos por el proveedor. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación con foto; en unos minutos en la tienda sabes si calificas.",
+            q: "¿Puedo arrendar un iPhone si mi crédito no es perfecto?",
+            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, se acepta todo tipo de crédito. La aprobación no está garantizada. Trae una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",
@@ -713,7 +713,7 @@ export const SERVICES: Service[] = [
           "Compare T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca & Gen Mobile prepaid plans and prices. Unlimited from $35/mo. On Hillcroft.",
         h1: `Prepaid phone plans in Houston — ${CARRIER_COUNT} carriers`,
         intro:
-          "Compare prepaid plans from the major carriers at one counter, get set up in store, and keep your number. Prepaid means no contract, no credit check and no surprise bills.",
+          "Compare prepaid plans from the major carriers at one counter, get set up in store, and keep your number. Prepaid means no contract and no surprise bills.",
         offersTitle: "Carriers we offer",
         offers: [
           `${CARRIERS}.`,
@@ -744,7 +744,7 @@ export const SERVICES: Service[] = [
         ],
         why: [
           `${CARRIER_COUNT} prepaid carriers`,
-          "No contract, no credit check",
+          "No contract, no surprise bills",
           "Keep your number",
           "Se habla español",
         ],
@@ -777,7 +777,7 @@ export const SERVICES: Service[] = [
           "Compara planes y precios de T-Mobile, Verizon, AT&T, Cricket, Simple Mobile, Tracfone, H2O, Lyca y Gen Mobile. Ilimitados desde $35/mes. En Hillcroft.",
         h1: `Planes prepagados en Houston — ${CARRIER_COUNT} compañías`,
         intro:
-          "Compara planes prepagados de las principales compañías en un solo mostrador, actívalo en la tienda y conserva tu número. Prepagado significa sin contrato, sin revisión de crédito y sin sorpresas.",
+          "Compara planes prepagados de las principales compañías en un solo mostrador, actívalo en la tienda y conserva tu número. Prepagado significa sin contrato y sin sorpresas.",
         offersTitle: "Compañías que manejamos",
         offers: [
           `${carrierList("es")}.`,
@@ -848,10 +848,10 @@ export const SERVICES: Service[] = [
         name: "Xfinity Prepaid internet",
         metaTitle: "Xfinity Prepaid Internet in Houston — From $30/mo",
         metaDescription:
-          "Xfinity Prepaid home internet on Hillcroft in Houston: 100 Mbps for $30/mo or 200 Mbps for $45/mo, WiFi equipment, taxes and fees included. No credit check, no annual contract.",
+          "Xfinity Prepaid home internet on Hillcroft in Houston: 100 Mbps for $30/mo or 200 Mbps for $45/mo, WiFi equipment, taxes and fees included. No annual contract.",
         h1: "Xfinity Prepaid home internet in Houston",
         intro:
-          "Home internet on the Xfinity network, prepaid: 100 Mbps for $30/mo or 200 Mbps for $45/mo, with WiFi equipment, unlimited data, and taxes and fees included. No credit check and no annual contract — and we help you get set up in store, in English or Spanish.",
+          "Home internet on the Xfinity network, prepaid: 100 Mbps for $30/mo or 200 Mbps for $45/mo, with WiFi equipment, unlimited data, and taxes and fees included. No annual contract — and we help you get set up in store, in English or Spanish.",
         offersTitle: "What we help with",
         offers: [
           "Xfinity Prepaid internet starter kits, sold in store.",
@@ -867,11 +867,11 @@ export const SERVICES: Service[] = [
           ["Plug in and activate", "Self-install in minutes and activate in the Xfinity app — we can help."],
           ["Stay connected", "Autopay keeps you online. Turn autopay off to pause, and back on to resume."],
         ],
-        why: ["From $30/mo", "No credit check", "No annual contract", "Set up help in store"],
+        why: ["From $30/mo", "Unlimited data", "No annual contract", "Set up help in store"],
         faq: [
           {
             q: "What is Xfinity Prepaid internet?",
-            a: "Prepaid high-speed home internet on the Xfinity network. There's no credit check and no annual contract, you pay ahead each month, and you get unlimited data and WiFi equipment you don't have to return.",
+            a: "Prepaid high-speed home internet on the Xfinity network. There's no annual contract, you pay ahead each month, and you get unlimited data and WiFi equipment you don't have to return.",
           },
           {
             q: "What plans are there, and how much are they?",
@@ -890,8 +890,8 @@ export const SERVICES: Service[] = [
             a: "Yes. You can upgrade from 100 Mbps to 200 Mbps instantly from the Plans page of your account, or move to a faster Xfinity internet plan where it's available.",
           },
           {
-            q: "Do I need a credit check or a contract?",
-            a: "No. There's no credit check and no annual contract.",
+            q: "Is there a contract?",
+            a: "No. There's no annual contract, and you can pause service by turning off autopay.",
           },
           {
             q: "How do I set it up?",
@@ -922,10 +922,10 @@ export const SERVICES: Service[] = [
         name: "Internet prepagado Xfinity",
         metaTitle: "Internet Prepagado Xfinity en Houston — Desde $30/mes",
         metaDescription:
-          "Internet prepagado Xfinity en Hillcroft, Houston: 100 Mbps por $30/mes o 200 Mbps por $45/mes, con equipo WiFi, impuestos y cargos incluidos. Sin revisión de crédito ni contrato anual.",
+          "Internet prepagado Xfinity en Hillcroft, Houston: 100 Mbps por $30/mes o 200 Mbps por $45/mes, con equipo WiFi, impuestos y cargos incluidos. Sin contrato anual.",
         h1: "Internet prepagado Xfinity en Houston",
         intro:
-          "Internet para tu casa en la red de Xfinity, prepagado: 100 Mbps por $30/mes o 200 Mbps por $45/mes, con equipo WiFi, datos ilimitados, e impuestos y cargos incluidos. Sin revisión de crédito ni contrato anual, y te ayudamos a activarlo en la tienda, en español o inglés.",
+          "Internet para tu casa en la red de Xfinity, prepagado: 100 Mbps por $30/mes o 200 Mbps por $45/mes, con equipo WiFi, datos ilimitados, e impuestos y cargos incluidos. Sin contrato anual, y te ayudamos a activarlo en la tienda, en español o inglés.",
         offersTitle: "En qué te ayudamos",
         offers: [
           "Kits de inicio de internet prepagado Xfinity, a la venta en la tienda.",
@@ -941,11 +941,11 @@ export const SERVICES: Service[] = [
           ["Conéctalo y actívalo", "Lo instalas tú en minutos y lo activas en la app de Xfinity; te ayudamos."],
           ["Sigue conectado", "El pago automático te mantiene en línea. Desactívalo para pausar y actívalo para continuar."],
         ],
-        why: ["Desde $30/mes", "Sin revisión de crédito", "Sin contrato anual", "Ayuda en la tienda"],
+        why: ["Desde $30/mes", "Datos ilimitados", "Sin contrato anual", "Ayuda en la tienda"],
         faq: [
           {
             q: "¿Qué es el internet prepagado Xfinity?",
-            a: "Internet de alta velocidad prepagado para tu casa, en la red de Xfinity. Sin revisión de crédito ni contrato anual: pagas por adelantado cada mes e incluye datos ilimitados y equipo WiFi que no tienes que devolver.",
+            a: "Internet de alta velocidad prepagado para tu casa, en la red de Xfinity. Sin contrato anual: pagas por adelantado cada mes e incluye datos ilimitados y equipo WiFi que no tienes que devolver.",
           },
           {
             q: "¿Qué planes hay y cuánto cuestan?",
@@ -964,8 +964,8 @@ export const SERVICES: Service[] = [
             a: "Sí. Puedes cambiar de 100 a 200 Mbps al instante en la página de Planes de tu cuenta, o pasarte a un plan de internet más rápido de Xfinity donde esté disponible.",
           },
           {
-            q: "¿Necesito revisión de crédito o contrato?",
-            a: "No. No hay revisión de crédito ni contrato anual.",
+            q: "¿Hay contrato?",
+            a: "No. No hay contrato anual, y puedes pausar el servicio desactivando el pago automático.",
           },
           {
             q: "¿Cómo lo instalo?",
@@ -1170,7 +1170,7 @@ export const SERVICES: Service[] = [
         offers: [
           "Cambiar tu celular usado por un iPhone, Samsung Galaxy o Android desbloqueado nuevo.",
           "Vender tu celular y aceptar la oferta.",
-          "Arrendar tu próximo equipo, Todo crédito es bienvenido y sujeto a aprobación.",
+          "Arrendar tu próximo equipo con todo tipo de crédito, sujeto a aprobación.",
           "Pasar tus contactos y tu número al celular nuevo.",
         ],
         stepsTitle: "Cómo funciona el intercambio",
@@ -1192,7 +1192,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Puedo usar mi celular para un equipo con arrendamiento?",
-            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento, Todo crédito es bienvenido y sujeto a aprobación.",
+            a: "Sí: usa tu celular viejo para un equipo nuevo, y el nuevo puede ser con arrendamiento (se acepta todo tipo de crédito), sujeto a aprobación.",
           },
           {
             q: "Mi celular está roto o no funciona bien. ¿Lo puedo traer?",

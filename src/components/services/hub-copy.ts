@@ -9,7 +9,7 @@ export const SERVICES_HUB = {
     breadcrumb: ["Home", "Services"],
     leasing: "Leasing on consoles, laptops & phones",
     leasingBody:
-      "PS5, Xbox, Nintendo Switch 2, MacBook, iPad and phones with lease-to-own options. all credit welcome, subject to approval.",
+      "PS5, Xbox, Nintendo Switch 2, MacBook, iPad and phones with lease-to-own options. All credit welcome, subject to approval.",
     more: "Learn more",
   },
   es: {
@@ -22,7 +22,7 @@ export const SERVICES_HUB = {
     breadcrumb: ["Inicio", "Servicios"],
     leasing: "Consolas, laptops y celulares a pagos",
     leasingBody:
-      "PS5, Xbox, Nintendo Switch 2, MacBook, iPad y celulares con arrendamiento con opción a compra. Todo crédito es bienvenido, sujeto a aprobación.",
+      "PS5, Xbox, Nintendo Switch 2, MacBook, iPad y celulares con arrendamiento con opción a compra. Se acepta todo tipo de crédito, sujeto a aprobación.",
     more: "Ver más",
   },
 };

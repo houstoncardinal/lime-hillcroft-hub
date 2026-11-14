@@ -115,7 +115,7 @@ const en = {
     items: [
       [
         "Leasing a phone, console or laptop",
-        "A valid photo ID. The application takes a few minutes at the counter.",
+        "Bring a photo ID, your SSN or ITIN, and an active bank account and debit card. The application takes a few minutes at the counter.",
       ],
       [
         "A repair",
@@ -274,7 +274,7 @@ const es: LocationCopy = {
     title: "Todo lo que puedes hacer aquí.",
     leasing: "Consolas, laptops y celulares a pagos",
     leasingBody:
-      "PS5, Xbox, Switch 2, MacBook y más, Todo crédito es bienvenido. Sujeto a aprobación.",
+      "PS5, Xbox, Switch 2, MacBook y más, se acepta todo tipo de crédito. Sujeto a aprobación.",
     more: "Ver más",
   },
   bring: {
@@ -283,7 +283,7 @@ const es: LocationCopy = {
     items: [
       [
         "Arrendamiento de celular, consola o laptop",
-        "Una identificación con foto vigente. La solicitud toma unos minutos en el mostrador.",
+        "Trae identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito. La solicitud toma unos minutos en el mostrador.",
       ],
       [
         "Una reparación",

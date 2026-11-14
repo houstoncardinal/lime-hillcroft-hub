@@ -107,7 +107,7 @@ const T = {
     title: "Shop by category",
     shopAll: "Shop all",
     dealTitle: "Lease-to-own",
-    dealBadge: "all credit welcome",
+    dealBadge: "All credit welcome",
     dealHint: "Apply online, pick it up today",
   },
   es: {
@@ -115,7 +115,7 @@ const T = {
     title: "Compra por categoría",
     shopAll: "Ver todo",
     dealTitle: "Arrendamiento",
-    dealBadge: "Todo crédito es bienvenido",
+    dealBadge: "Todo tipo de crédito",
     dealHint: "Solicita en línea y llévatelo hoy",
   },
 };

@@ -61,7 +61,7 @@ export const LEASE_PHOTOS: Record<string, ProductPhoto> = {
   "nintendo-switch-2": p("nintendo-switch-2", 1200, 643, "Nintendo Switch 2 in its dock", "Nintendo Switch 2 en su base", "Crisco 1492", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_in_Docking_Console.jpg"),
   "playstation-portal": p("playstation-portal", 1200, 397, "PlayStation Portal remote player", "Reproductor remoto PlayStation Portal", "ArlindoPereira", "CC BY 4.0", "https://commons.wikimedia.org/wiki/File:PlayStation_Portal.jpg"),
   "samsung-tv-65": p("samsung-tv-65", 1200, 675, "Samsung QLED TV", "Televisor Samsung QLED", "Bretwa", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Samsung_QLED_TV_8K_-_75_inches_-_2018-11-02.jpg"),
-  // Photos supplied by the store (no credit needed).
+  // Photos supplied by the store.
   "moto-g-ace-5g": own("moto-g-ace-5g", 894, 940, "Moto G Ace 5G, front and back", "Moto G Ace 5G, frente y reverso"),
 };
 

@@ -73,7 +73,7 @@ const T = {
     services: "Todos los servicios",
     servicesMenu: "Servicios",
     back: "Atrás",
-    leasing: "Arrendamiento · Todo crédito es bienvenido",
+    leasing: "Arrendamiento · todo tipo de crédito",
     prepaid: "Planes prepagados y precios",
     location: "Ubicación y horario",
     areas: "Zonas",

@@ -63,7 +63,7 @@ export const GUIDES: Guide[] = [
             h: "Step 2: compare the repair with the phone's value",
             p: [
               "A simple rule: if the repair costs a small part of what a comparable phone would cost, and the rest of the phone is healthy, repair it. If the phone was already slow, the battery barely lasts a day, or it no longer gets software updates, putting that money toward a new phone is often the better deal.",
-              "Remember that a new phone doesn't have to be paid all at once — TIC Wireless Electronic & Repair Center offers leasing (lease-to-own) on unlocked iPhones and Androids with all credit welcome, terms set by your provider, subject to approval.",
+              "Remember that a new phone doesn't have to be paid all at once — TIC Wireless Electronic & Repair Center offers leasing (lease-to-own) on unlocked iPhones and Androids with all credit welcome, subject to approval.",
             ],
           },
           {
@@ -118,7 +118,7 @@ export const GUIDES: Guide[] = [
             h: "Paso 2: compara la reparación con lo que vale el celular",
             p: [
               "Una regla sencilla: si la reparación cuesta una parte pequeña de lo que costaría un celular similar y lo demás funciona bien, repáralo. Si ya estaba lento, la batería no aguanta el día o ya no recibe actualizaciones, muchas veces conviene usar ese dinero para uno nuevo.",
-              "Y un celular nuevo no tiene que pagarse de una vez: TIC Wireless Electronic & Repair Center ofrece arrendamiento con opción a compra en iPhone y Android desbloqueados, Todo crédito es bienvenido, términos definidos por el proveedor, sujeto a aprobación.",
+              "Y un celular nuevo no tiene que pagarse de una vez: TIC Wireless Electronic & Repair Center ofrece arrendamiento con opción a compra en iPhone y Android desbloqueados, se acepta todo tipo de crédito, sujeto a aprobación.",
             ],
           },
           {
@@ -163,15 +163,15 @@ export const GUIDES: Guide[] = [
           "A plain-English guide to lease-to-own for iPhones, Androids, PS5, Xbox and laptops: how it works, what to bring, total cost and paying it off early.",
         quick: [
           "Lease-to-own lets you take a phone, console or laptop home today and make regular payments; when the plan is complete — or you buy it out early — it's yours.",
-          "It isn't a loan, and All Credit Welcome, so bad credit isn't automatically a deal-breaker. Approval still isn't guaranteed.",
-          "The total cost to own is more than the cash price, so ask about early-payoff options. At TIC Wireless Electronic & Repair Center terms set by your provider, with weekly, biweekly or monthly payments.",
+          "It isn't a loan, and all credit is welcome. Approval still isn't guaranteed.",
+          "The total cost to own is more than the cash price, so ask about early-payoff options. At TIC Wireless Electronic & Repair Center you choose weekly, biweekly or monthly payments.",
         ],
         sections: [
           {
             h: "Leasing vs. a loan",
             p: [
               "With a loan, a lender pays for the item and you repay the lender, usually with interest, and the item is yours from the start. Lease-to-own (also called rent-to-own) is a lease: you make regular payments to use the item, and ownership transfers to you when you complete the plan or pay the buyout amount early.",
-              "Because lease-to-own isn't a credit product in the same way, it's often available to people with all credit welcome — which is why stores like TIC Wireless Electronic & Repair Center offer it alongside cash purchases.",
+              "Because lease-to-own isn't a credit product in the same way, it's open to all credit backgrounds — which is why stores like TIC Wireless Electronic & Repair Center offer it alongside cash purchases.",
             ],
           },
           {
@@ -179,8 +179,8 @@ export const GUIDES: Guide[] = [
             p: [],
             list: [
               "Pick the item — a phone such as the iPhone 18 Pro Max, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad.",
-              "Apply at the counter with a valid photo ID. It takes a few minutes, and the store will tell you if anything else is needed.",
-              "Pay the starting amount (at TIC Wireless Electronic & Repair Center, terms set by your provider depending on the item and plan).",
+              "Apply at the counter with a photo ID, your SSN or ITIN, and an active bank account and debit card. It takes a few minutes.",
+              "Pay the starting amount (at TIC Wireless Electronic & Repair Center depending on the item and plan).",
               "Take it home the same day and make your scheduled weekly, biweekly or monthly payments.",
               "Own it when the plan is complete, or pay it off early.",
             ],
@@ -204,32 +204,32 @@ export const GUIDES: Guide[] = [
         ],
         faq: [
           {
-            q: "Can I get a PS5 or iPhone with bad credit?",
-            a: "Often, yes. Lease-to-own welcomes all credit, so bad credit isn't automatically a deal-breaker — but approval isn't guaranteed. It takes a few minutes in store to find out.",
+            q: "Can I lease a PS5 or iPhone if my credit isn't perfect?",
+            a: "Often, yes. Lease-to-own welcomes all credit — but approval isn't guaranteed. It takes a few minutes in store to find out.",
           },
           {
             q: "What do I need to bring?",
-            a: "A valid photo ID. TIC Wireless Electronic & Repair Center will tell you if anything else is needed for your application.",
+            a: "A photo ID, your SSN or ITIN, and an active bank account and debit card.",
           },
         ],
         cta: "See leasing options",
       },
       es: {
-        title: "Cómo funciona el arrendamiento con opción a compra (Todo crédito es bienvenido)",
+        title: "Cómo funciona el arrendamiento con opción a compra (todo tipo de crédito)",
         metaTitle: "Cómo Funciona el Arrendamiento con Opción a Compra",
         description:
           "Guía sencilla del arrendamiento con opción a compra para iPhone, Android, PS5, Xbox y laptops: cómo funciona, qué traer, costo total y cómo liquidarlo.",
         quick: [
           "Con el arrendamiento con opción a compra te llevas hoy un celular, consola o laptop y haces pagos regulares; al terminar el plan —o si lo liquidas antes— es tuyo.",
-          "No es un préstamo y Todo crédito es bienvenido, así que el mal crédito no es impedimento automático. La aprobación no está garantizada.",
-          "El costo total es mayor que el precio de contado, así que pregunta por la liquidación anticipada. En TIC Wireless Electronic & Repair Center las opciones términos definidos por el proveedor, con pagos semanales, quincenales o mensuales.",
+          "No es un préstamo y se acepta todo tipo de crédito. La aprobación no está garantizada.",
+          "El costo total es mayor que el precio de contado, así que pregunta por la liquidación anticipada. En TIC Wireless Electronic & Repair Center las opciones, con pagos semanales, quincenales o mensuales.",
         ],
         sections: [
           {
             h: "Arrendamiento vs. préstamo",
             p: [
               "Con un préstamo, alguien paga el equipo y tú le pagas a esa empresa, normalmente con intereses, y el equipo es tuyo desde el inicio. El arrendamiento con opción a compra es una renta: haces pagos regulares para usarlo y pasa a ser tuyo al terminar el plan o al pagar la liquidación anticipada.",
-              "Como no funciona igual que un crédito, muchas veces está disponible para personas Todo crédito es bienvenido o con mal crédito, y por eso tiendas como TIC Wireless Electronic & Repair Center lo ofrecen junto con las compras de contado.",
+              "Como no es un crédito tradicional, acepta todo tipo de crédito, y por eso tiendas como TIC Wireless Electronic & Repair Center lo ofrecen junto con las compras de contado.",
             ],
           },
           {
@@ -237,8 +237,8 @@ export const GUIDES: Guide[] = [
             p: [],
             list: [
               "Escoge el equipo: un celular como el iPhone 18 Pro Max, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad.",
-              "Aplica en el mostrador con una identificación oficial con foto. Toma unos minutos y te avisamos si se necesita algo más.",
-              "Da el pago inicial (en TIC Wireless Electronic & Repair Center, términos definidos por el proveedor según el equipo y el plan).",
+              "Aplica en el mostrador con una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito. Toma unos minutos.",
+              "Elige tu calendario de pagos (en TIC Wireless Electronic & Repair Center, según el equipo y el plan que te ofrezcan).",
               "Llévatelo el mismo día y haz tus pagos semanales, quincenales o mensuales.",
               "Es tuyo al terminar el plan, o liquídalo antes.",
             ],
@@ -262,12 +262,12 @@ export const GUIDES: Guide[] = [
         ],
         faq: [
           {
-            q: "¿Puedo sacar un PS5 o iPhone con mal crédito?",
-            a: "Muchas veces sí. El arrendamiento acepta todo crédito, así que el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. En unos minutos en la tienda sabes si calificas.",
+            q: "¿Puedo arrendar un PS5 o iPhone si mi crédito no es perfecto?",
+            a: "Muchas veces sí. El arrendamiento acepta todo tipo de crédito, aunque la aprobación no está garantizada. En unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Qué necesito traer?",
-            a: "Una identificación oficial con foto. TIC Wireless Electronic & Repair Center te dirá si se necesita algo más para tu solicitud.",
+            a: "Una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito.",
           },
         ],
         cta: "Ver opciones de arrendamiento",
@@ -408,7 +408,7 @@ export const GUIDES: Guide[] = [
         description:
           "Prepaid vs. postpaid, how much data you need, coverage, international calling and paying in person — a practical guide to picking a prepaid plan in Houston.",
         quick: [
-          "Prepaid plans have no contract and no credit check: you pay before each month, so there are no surprise bills.",
+          "Prepaid plans have no contract: you pay before each month, so there are no surprise bills.",
           "Choose by three things: how much data you use, which network covers your home and work best, and whether you call or text family abroad.",
           "At TIC Wireless Electronic & Repair Center on Hillcroft you can compare Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca and Gen Mobile, and pay your bill in person (a small payment fee may apply).",
         ],
@@ -416,7 +416,7 @@ export const GUIDES: Guide[] = [
           {
             h: "Prepaid vs. postpaid",
             p: [
-              "Postpaid plans bill you after you use the service and usually involve a credit check. Prepaid plans are paid up front, need no credit check or contract, and are easy to change month to month — which is why they're popular for budgeting, for people new to the U.S., and as a second line.",
+              "Postpaid plans bill you after you use the service and usually involve a credit check. Prepaid plans are paid up front, need no contract, and are easy to change month to month — which is why they're popular for budgeting, for people new to the U.S., and as a second line.",
             ],
           },
           {
@@ -460,7 +460,7 @@ export const GUIDES: Guide[] = [
         description:
           "Prepagado vs. pospago, cuántos datos necesitas, cobertura, llamadas internacionales y pago en persona: guía práctica para elegir un plan prepagado en Houston.",
         quick: [
-          "Los planes prepagados no tienen contrato ni revisión de crédito: pagas antes de cada mes, así que no hay sorpresas.",
+          "Los planes prepagados no tienen contrato: pagas antes de cada mes, así que no hay sorpresas.",
           "Elige por tres cosas: cuántos datos usas, qué red tiene mejor señal en tu casa y trabajo, y si llamas o mandas mensajes a tu familia en otro país.",
           "En TIC Wireless Electronic & Repair Center sobre Hillcroft puedes comparar Verizon Prepaid, AT&T Prepaid, T-Mobile Prepaid, Cricket, Simple Mobile, Tracfone, H2O Wireless, Lyca y Gen Mobile, y pagar tu factura en persona (puede aplicar un pequeño cargo).",
         ],
@@ -468,7 +468,7 @@ export const GUIDES: Guide[] = [
           {
             h: "Prepagado vs. pospago",
             p: [
-              "Los planes de pospago te cobran después de usar el servicio y casi siempre revisan tu crédito. Los prepagados se pagan por adelantado, acepta todo crédito ni contrato y se pueden cambiar mes con mes; por eso son populares para cuidar el presupuesto, para quienes acaban de llegar a EE. UU. y como segunda línea.",
+              "Los planes de pospago te cobran después de usar el servicio y casi siempre revisan tu crédito. Los prepagados se pagan por adelantado, no necesitan contrato y se pueden cambiar mes con mes; por eso son populares para cuidar el presupuesto, para quienes acaban de llegar a EE. UU. y como segunda línea.",
             ],
           },
           {

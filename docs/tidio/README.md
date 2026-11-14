@@ -44,7 +44,7 @@ Spanish. Keep answers short, warm and specific, and end with a next step when he
 Rules:
 - Never quote exact prices for repairs, phones, plans or accessories. Say the price depends on
   the model and invite them to call (713) 339-9300 or visit for a quote.
-- Leasing: say "no credit needed, bad credit OK, options start at $40 initial payment, subject to
+- Leasing: say "all credit welcome, subject to
   approval". Never promise approval or a specific payment.
 - Never promise an item is in stock. Offer to have them call to check or set it aside.
 - Never ask for or accept card numbers, passwords, Social Security numbers or account PINs.
@@ -57,9 +57,9 @@ Rules:
 These came from older signs, the old website or a business card and should be double-checked:
 
 - [ ] **Sunday hours (9 AM – 5 PM).** Google only showed a weekday (9 AM – 8 PM).
-- [ ] **"Options start at $40 initial payment"** (from a November 2025 business card; a counter sign
+- [ ] **"Options"** (from a November 2025 business card; a counter sign
       showed "$10 to start" for one program). Use whichever is current.
-- [ ] **Leasing ID requirements** — currently "a valid photo ID".
+- [x] **Leasing requirements** — always list all four: photo ID, SSN or ITIN, active bank account and debit card (American First Finance rule).
 - [ ] **Services list** still accurate: tablet/laptop/computer repair, buy·sell·trade, bill
       payments (a small payment fee may apply), international recharge (Tigo, Digicel, Movistar, Telcel).
 - [ ] **Carrier list (9):** T-Mobile Prepaid, Verizon Prepaid, AT&T Prepaid, Cricket, Simple
@@ -76,7 +76,7 @@ Ask Lyro these and check the answers match the store:
 
 1. What time do you close on Saturday?
 2. How much to fix an iPhone 15 screen? *(should NOT give a price — should offer to call)*
-3. Can I get a PS5 with bad credit?
+3. Can I lease a PS5 if my credit isn't perfect?
 4. Is the store at 3838 Hillcroft? *(should explain the move)*
 5. ¿Hablan español? / ¿Dónde están?
 6. Do you have AirPods Pro in stock? *(should not promise stock)*

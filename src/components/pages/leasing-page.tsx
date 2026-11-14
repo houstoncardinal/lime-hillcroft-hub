@@ -13,7 +13,6 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
 import laptops from "@/assets/photos/laptops-tablets.webp";
@@ -69,13 +68,13 @@ export function LeasingPage({ lang }: { lang: Lang }) {
           <p className="eyebrow text-muted-foreground">TIC Wireless · Houston</p>
           <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">
             {lang === "en"
-              ? "Lease-to-own. all credit welcome."
-              : "Arrendamiento Todo crédito es bienvenido."}
+              ? "Lease-to-own. All credit welcome."
+              : "Arrendamiento con opción a compra. Se acepta todo tipo de crédito."}
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
             {lang === "en"
-              ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
-              : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`}
+              ? `All credit welcome, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
+              : `Se acepta todo tipo de crédito, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`}
           </p>
         </div>
       </section>
@@ -87,22 +86,22 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                 ["Apply online", "Choose a partner above and complete its application."],
                 [
                   "Review your offer",
-                  "Confirm approval, initial payment and the total cost with your provider.",
+                  "Confirm approval, your payment schedule and the total cost with your provider.",
                 ],
                 [
                   "Visit TIC Wireless",
-                  "Bring your ID to 3640 Hillcroft St, Suite C. Confirm stock before you visit.",
+                  "Come to 3640 Hillcroft St, Suite C. Confirm stock before you visit.",
                 ],
               ]
             : [
                 ["Solicita en línea", "Elige un socio y completa su solicitud."],
                 [
                   "Revisa tu oferta",
-                  "Confirma la aprobación, pago inicial y costo total con el proveedor.",
+                  "Confirma la aprobación, tu calendario de pagos y el costo total con el proveedor.",
                 ],
                 [
                   "Visita TIC Wireless",
-                  "Trae tu ID a 3640 Hillcroft St, Suite C. Confirma las existencias antes de venir.",
+                  "Ven a 3640 Hillcroft St, Suite C. Confirma las existencias antes de venir.",
                 ],
               ]
           ).map(([title, body], i) => (

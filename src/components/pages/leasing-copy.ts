@@ -1,11 +1,12 @@
 import { PHONE, STREET } from "@/components/site/business";
+import { AFF_DISCLAIMER } from "@/components/site/leasing-offer";
 
 // All visible text on the leasing landing page, in English and Spanish. Keep both in sync.
 const en = {
   meta: {
-    title: "Lease-to-Own Phones, PS5 & Laptops in Houston — all credit welcome",
+    title: "Lease-to-Own Phones, PS5 & Laptops in Houston — All Credit Welcome",
     description:
-      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. all credit welcome, terms set by your provider, subject to approval. On Hillcroft.",
+      "Lease-to-own iPhones, Samsung Galaxy phones, PS5, Xbox, MacBook & laptops in Houston. All credit welcome, subject to approval. On Hillcroft.",
     imageAlt:
       "PlayStation 5 and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Home", "Leasing"],
@@ -18,23 +19,21 @@ const en = {
     body: [
       "Take home an iPhone or Samsung Galaxy phone, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad today — ",
       "all credit welcome",
-      ", starting at ",
-      "terms set by your provider",
       ", subject to approval.",
     ],
     call: "Check your options",
     visit: "Visit the store",
-    chips: ["all credit welcome", "terms set by your provider", "Take it home today", "Se habla español"],
+    chips: ["All credit welcome", "Weekly, biweekly or monthly payments", "Take it home today", "Se habla español"],
     mainAlt:
-      "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center next to a lease-to-own, all credit welcome sign",
+      "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center in the store",
     mainCaption: "PS5 & Switch 2 — in store now",
     tiles: [
       ["MacBook Air and iPads in a display case", "MacBook & iPad"],
       ["iPhone 18 Pro Max at TIC Wireless", "iPhone 18 Pro Max"],
     ],
     cardLabel: "Lease-to-own",
-    cardUnit: "to start",
-    cardNote: "all credit welcome.",
+    cardUnit: "weekly, biweekly or monthly",
+    cardNote: "All credit welcome.",
   },
   ticker: [
     "PlayStation 5",
@@ -95,11 +94,11 @@ const en = {
       ["Pick it out", "Come see it in store, or call ahead and we'll check what's in stock."],
       [
         "Apply in minutes",
-        "A quick application at the counter. Bring a valid photo ID — we'll tell you if anything else is needed.",
+        "A quick application at the counter. Bring a photo ID, your SSN or ITIN, and an active bank account and debit card.",
       ],
       [
-        "Pay a little to start",
-        "terms set by your provider, depending on the item and the plan you're approved for.",
+        "Choose your schedule",
+        "Weekly, biweekly or monthly payments, depending on the item and the plan offered to you.",
       ],
       [
         "Take it home today",
@@ -109,15 +108,15 @@ const en = {
   },
   perks: {
     kicker: "Why TIC",
-    title: "Bad credit? You can still apply.",
-    body: "All Credit Welcome for our lease-to-own options, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed — it takes a few minutes at the counter to find out.",
-    quote: "Arrendamiento con opción a compra — Todo crédito es bienvenido.",
+    title: "All credit welcome.",
+    body: "All credit is welcome for our lease-to-own options. Approval isn't guaranteed — it takes a few minutes at the counter to find out.",
+    quote: "Arrendamiento con opción a compra — se acepta todo tipo de crédito.",
     items: [
       [
-        "all credit welcome",
-        "All Credit Welcome, and bad credit is OK. Subject to approval.",
+        "All credit welcome",
+        "Apply in minutes online or at our counter. Subject to approval.",
       ],
-      ["terms set by your provider", "Start with a small amount instead of paying the full price on day one."],
+      ["Weekly, biweekly or monthly payments", "Pick the schedule that matches how often you get paid."],
       [
         "Predictable payments",
         "Regular payments on a set schedule. Ask us about early-payoff options.",
@@ -133,15 +132,15 @@ const en = {
     title: "Leasing, explained.",
     items: [
       {
-        q: "Can I get an iPhone or Samsung phone with bad credit?",
-        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones welcomes all credit, terms set by your provider, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID and it takes a few minutes in store to find out.",
+        q: "Can I lease an iPhone or Samsung phone if my credit isn't perfect?",
+        a: "Yes, you can apply — lease-to-own on unlocked iPhones and Samsung Galaxy phones welcomes all credit. Approval isn't guaranteed. Bring a photo ID, your SSN or ITIN, and an active bank account and debit card, and it takes a few minutes in store.",
       },
       {
-        q: "Can I get a PS5 or Xbox with bad credit?",
-        a: "Yes. We offer lease-to-own options where All Credit Welcome, so bad credit isn't a deal-breaker. Approval isn't guaranteed, but it takes just a few minutes in store to find out.",
+        q: "Can I lease a PS5 or Xbox if my credit isn't perfect?",
+        a: "Yes. We offer lease-to-own options where all credit is welcome. Approval isn't guaranteed, but it takes just a few minutes in store to find out.",
       },
       {
-        q: "Can I lease a laptop or MacBook with all credit welcome?",
+        q: "Can I lease a laptop or MacBook?",
         a: "Yes. Lease-to-own works on laptops, MacBooks and iPads as well as phones and consoles. Stop by or call and we'll check what's in stock.",
       },
       {
@@ -149,8 +148,8 @@ const en = {
         a: "A loan is money you borrow and pay back over time. Lease-to-own works differently: you lease the item and make regular payments; once the plan is complete — or you buy it out early — it's yours. Lease-to-own isn't a loan, and the total cost to own is more than the cash price. We'll walk you through the exact terms before you sign.",
       },
       {
-        q: "How much do I pay upfront?",
-        a: "terms set by your provider. The exact amount depends on the item you choose and the plan you're approved for.",
+        q: "How do payments work?",
+        a: "You choose weekly, biweekly or monthly payments, depending on the item and the plan offered to you. Your leasing provider confirms all terms before you sign.",
       },
       {
         q: "Can I pay it off early?",
@@ -162,7 +161,7 @@ const en = {
       },
       {
         q: "¿Puedo aplicar en español?",
-        a: "¡Claro! Arrendamiento con opción a compra, Todo crédito es bienvenido. Te explicamos todo en español.",
+        a: "¡Claro! Arrendamiento con opción a compra, se acepta todo tipo de crédito. Te explicamos todo en español.",
       },
     ],
   },
@@ -172,41 +171,39 @@ const en = {
     directions: "Get directions",
   },
   disclaimer:
-    "Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own is more than the cash price. Initial payment, payment amounts and terms vary by item and plan. Ask in store for full details before signing.",
+    `Leasing (lease-to-own) options are provided by third-party partners and are subject to approval; not all applicants are approved. Lease-to-own is not a loan or credit, and the total cost to own is more than the cash price. Payment amounts and terms vary by item and plan. Ask in store for full details before signing. ${AFF_DISCLAIMER}`,
 };
 
 export type LeasingCopy = typeof en;
 
 const es: LeasingCopy = {
   meta: {
-    title: "Celulares, PS5 y Laptops a Pagos en Houston — Todo crédito es bienvenido",
+    title: "Celulares, PS5 y Laptops a Pagos en Houston — Todo Tipo de Crédito",
     description:
-      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Todo crédito es bienvenido, términos definidos por el proveedor, sujeto a aprobación. En Hillcroft.",
+      "iPhone, Samsung Galaxy, PS5, Xbox, MacBook y laptops a pagos en Houston. Se acepta todo tipo de crédito, sujeto a aprobación. En Hillcroft.",
     imageAlt:
       "PlayStation 5 y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center Houston",
     breadcrumb: ["Inicio", "Arrendamiento"],
   },
   hero: {
     kicker: "A pagos con opción a compra · Houston",
-    title: ["Celulares, PS5 y laptops a pagos", "— Todo crédito es bienvenido."],
+    title: ["Celulares, PS5 y laptops a pagos", "— se acepta todo tipo de crédito."],
     slogan: "Llévatelo hoy. Paga poco a poco.",
     body: [
       "Llévate hoy un iPhone o Samsung Galaxy, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad — ",
-      "Todo crédito es bienvenido",
-      ", desde ",
-      "términos definidos por el proveedor",
+      "se acepta todo tipo de crédito",
       ", sujeto a aprobación.",
     ],
     call: "Consulta tus opciones",
     visit: "Visita la tienda",
     chips: [
-      "Todo crédito es bienvenido",
-      "términos definidos por el proveedor",
+      "Se acepta todo tipo de crédito",
+      "Pagos semanales, quincenales o mensuales",
       "Llévatelo hoy",
       "We speak English",
     ],
     mainAlt:
-      "PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center junto a un letrero de arrendamiento Todo crédito es bienvenido",
+      "PlayStation 5 Slim y Nintendo Switch 2 en exhibición en TIC Wireless Electronic & Repair Center en la tienda",
     mainCaption: "PS5 y Switch 2 — ya en tienda",
     tiles: [
       ["MacBook Air y iPad en una vitrina", "MacBook y iPad"],
@@ -214,7 +211,7 @@ const es: LeasingCopy = {
     ],
     cardLabel: "Opción a compra",
     cardUnit: "para empezar",
-    cardNote: "Todo crédito es bienvenido.",
+    cardNote: "Se acepta todo tipo de crédito.",
   },
   ticker: [
     "PlayStation 5",
@@ -276,11 +273,11 @@ const es: LeasingCopy = {
       ],
       [
         "Aplica en minutos",
-        "Una solicitud rápida en el mostrador. Trae una identificación oficial con foto — te avisamos si se necesita algo más.",
+        "Una solicitud rápida en el mostrador. Trae una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito.",
       ],
       [
-        "Da un pago inicial pequeño",
-        "Opciones términos definidos por el proveedor, según el equipo y el plan que te aprueben.",
+        "Elige tu calendario",
+        "Pagos semanales, quincenales o mensuales, según el equipo y el plan que te ofrezcan.",
       ],
       [
         "Llévatelo hoy",
@@ -290,17 +287,17 @@ const es: LeasingCopy = {
   },
   perks: {
     kicker: "¿Por qué TIC?",
-    title: "¿Mal crédito? Igual puedes aplicar.",
-    body: "Nuestras opciones de arrendamiento con opción a compra acepta todo crédito, así que el mal crédito no es impedimento automático. La aprobación no está garantizada: en unos minutos en el mostrador sabes si calificas.",
+    title: "Se acepta todo tipo de crédito.",
+    body: "Nuestras opciones de arrendamiento con opción a compra aceptan todo tipo de crédito. La aprobación no está garantizada: en unos minutos en el mostrador sabes si calificas.",
     quote: "Lease-to-own — all credit welcome.",
     items: [
       [
-        "Todo crédito es bienvenido",
-        "Todo crédito es bienvenido, y el mal crédito está bien. Sujeto a aprobación.",
+        "Se acepta todo tipo de crédito",
+        "Solicita en minutos en línea o en el mostrador. Sujeto a aprobación.",
       ],
       [
-        "términos definidos por el proveedor",
-        "Empieza con poco en lugar de pagar el precio completo el primer día.",
+        "Pagos semanales, quincenales o mensuales",
+        "Elige el calendario que coincida con tu día de pago.",
       ],
       [
         "Pagos fijos",
@@ -317,15 +314,15 @@ const es: LeasingCopy = {
     title: "El arrendamiento, explicado.",
     items: [
       {
-        q: "¿Puedo sacar un iPhone o Samsung a pagos con mal crédito?",
-        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados acepta todo crédito y términos definidos por el proveedor, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación con foto y en unos minutos en la tienda sabes si calificas.",
+        q: "¿Puedo arrendar un iPhone o Samsung si mi crédito no es perfecto?",
+        a: "Sí, puedes aplicar: el arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados acepta todo tipo de crédito. La aprobación no está garantizada. Trae una identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito, y en unos minutos en la tienda sabes si calificas.",
       },
       {
-        q: "¿Puedo sacar un PS5 o Xbox a pagos con mal crédito?",
-        a: "Sí. Tenemos opciones de arrendamiento con opción a compra Todo crédito es bienvenido, así que el mal crédito no es impedimento. La aprobación no está garantizada, pero en unos minutos en la tienda sabes si calificas.",
+        q: "¿Puedo arrendar un PS5 o Xbox si mi crédito no es perfecto?",
+        a: "Sí. En nuestras opciones de arrendamiento con opción a compra se acepta todo tipo de crédito. La aprobación no está garantizada, pero en unos minutos en la tienda sabes si calificas.",
       },
       {
-        q: "¿Puedo sacar una laptop o MacBook a pagos Todo crédito es bienvenido?",
+        q: "¿Puedo arrendar una laptop o MacBook?",
         a: "Sí. El arrendamiento con opción a compra aplica a laptops, MacBook y iPad además de celulares y consolas. Ven o llámanos y revisamos qué tenemos disponible.",
       },
       {
@@ -333,8 +330,8 @@ const es: LeasingCopy = {
         a: "Un préstamo es dinero que pides y pagas con el tiempo. El arrendamiento con opción a compra funciona distinto: rentas el equipo y haces pagos regulares; al terminar el plan — o si lo liquidas antes — es tuyo. No es un préstamo, y el costo total es mayor que el precio de contado. Te explicamos los términos exactos antes de firmar.",
       },
       {
-        q: "¿Cuánto doy de pago inicial?",
-        a: "Las opciones términos definidos por el proveedor. La cantidad exacta depende del equipo y del plan que te aprueben.",
+        q: "¿Cómo funcionan los pagos?",
+        a: "Eliges pagos semanales, quincenales o mensuales, según el equipo y el plan que te ofrezcan. Tu proveedor de arrendamiento confirma todos los términos antes de firmar.",
       },
       {
         q: "¿Puedo liquidarlo antes?",
@@ -356,7 +353,7 @@ const es: LeasingCopy = {
     directions: "Cómo llegar",
   },
   disclaimer:
-    "El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total es mayor que el precio de contado. El pago inicial, los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar.",
+    `El arrendamiento con opción a compra es ofrecido por compañías asociadas y está sujeto a aprobación; no todos los solicitantes son aprobados. El arrendamiento con opción a compra no es un préstamo ni crédito, y el costo total es mayor que el precio de contado. Los pagos y los términos varían según el equipo y el plan. Pide todos los detalles en la tienda antes de firmar. ${AFF_DISCLAIMER}`,
 };
 
 export const LEASING_COPY = { en, es };

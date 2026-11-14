@@ -21,7 +21,7 @@ export function areaCopy(a: Area, lang: Lang) {
   if (lang === "es") {
     return {
       title: withBrand(`Reparación de Celulares en ${short}, Houston ${a.zips[0]}`),
-      description: `Reparación de celulares el mismo día a ${mi(a.miles)} millas de ${short}: pantallas, baterías, liberación, arrendamiento Todo crédito es bienvenido y planes prepagados.`,
+      description: `Reparación de celulares el mismo día a ${mi(a.miles)} millas de ${short}: pantallas, baterías, liberación, arrendamiento (se acepta todo tipo de crédito) y planes prepagados.`,
       kicker: `Atendemos ${name} · ${zipList(a)}`,
       h1: [`Reparación de celulares cerca de`, short],
       distance: `TIC Wireless Electronic & Repair Center está a ${mi(a.miles)} millas de ${short} — unos ${a.minutes} minutos en carro sin tráfico — en 3640 Hillcroft St, Suite C.`,
@@ -42,7 +42,7 @@ export function areaCopy(a: Area, lang: Lang) {
         ],
         [
           "Celulares a pagos",
-          "Todo crédito es bienvenido, términos definidos por el proveedor. Sujeto a aprobación.",
+          "Se acepta todo tipo de crédito. Sujeto a aprobación.",
           ALTERNATES.leasing.es,
         ],
         ["Liberación", "Usa la compañía que quieras.", servicePath("es", "phone-unlocking")],
@@ -74,15 +74,15 @@ export function areaCopy(a: Area, lang: Lang) {
           a: `Unas ${mi(a.miles)} millas, alrededor de ${a.minutes} minutos en carro sin tráfico, por ${routeSteps(a, "es").join(", ")}.`,
         },
         {
-          q: `¿Puedo sacar un celular Todo crédito es bienvenido cerca de ${short}?`,
-          a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados, Todo crédito es bienvenido, términos definidos por el proveedor y con pagos semanales, quincenales o mensuales (sujeto a aprobación).",
+          q: `¿Puedo arrendar un celular cerca de ${short} si mi crédito no es perfecto?`,
+          a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados, se acepta todo tipo de crédito y con pagos semanales, quincenales o mensuales (sujeto a aprobación).",
         },
       ] as Faq[],
     };
   }
   return {
     title: withBrand(`Phone Repair near ${short}, Houston ${a.zips[0]}`),
-    description: `Same-day phone repair & cell phone store ${mi(a.miles)} mi from ${short}: screens, batteries, unlocking, phone leasing · All Credit Welcome and prepaid plans.`,
+    description: `Same-day phone repair & cell phone store ${mi(a.miles)} mi from ${short}: screens, batteries, unlocking, no-credit phone leasing and prepaid plans.`,
     kicker: `Serving ${name} · ${zipList(a)}`,
     h1: [`Phone repair & cell phone store near`, short],
     distance: `TIC Wireless Electronic & Repair Center is ${mi(a.miles)} miles from ${short} — about ${a.minutes} minutes by car without traffic — at 3640 Hillcroft St, Suite C.`,
@@ -103,7 +103,7 @@ export function areaCopy(a: Area, lang: Lang) {
       ],
       [
         "Phones with leasing",
-        "all credit welcome, terms set by your provider. Subject to approval.",
+        "All credit welcome. Subject to approval.",
         ALTERNATES.leasing.en,
       ],
       ["Unlocking", "Use the carrier you choose.", servicePath("en", "phone-unlocking")],
@@ -135,8 +135,8 @@ export function areaCopy(a: Area, lang: Lang) {
         a: `About ${mi(a.miles)} miles — roughly ${a.minutes} minutes by car without traffic, via ${routeSteps(a, "en").join(", ")}.`,
       },
       {
-        q: `Can I get a phone with all credit welcome near ${short}?`,
-        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Androids with all credit welcome, terms set by your provider, with weekly, biweekly or monthly payments (subject to approval).",
+        q: `Can I lease a phone near ${short} if my credit isn't perfect?`,
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Androids with all credit welcome, with weekly, biweekly or monthly payments (subject to approval).",
       },
     ] as Faq[],
   };
@@ -146,7 +146,7 @@ export const HUB_COPY = {
   en: {
     title: "Phone Repair in Southwest Houston — Find Your Area | TIC Wireless",
     description:
-      "Same-day phone repair, phone leasing · All Credit Welcome and prepaid plans for Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, the Galleria & Harwin.",
+      "Same-day phone repair, no-credit phone leasing and prepaid plans for Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, the Galleria & Harwin.",
     kicker: "Areas we serve",
     h1: ["Your phone store for", "Southwest Houston."],
     body: "One store on Hillcroft, minutes from the neighborhoods around us. Find your area or ZIP code for distance, drive time and directions.",
@@ -161,7 +161,7 @@ export const HUB_COPY = {
   es: {
     title: "Reparación de Celulares en el Suroeste de Houston | TIC Wireless",
     description:
-      "Reparación de celulares el mismo día, celulares a pagos Todo crédito es bienvenido y planes para Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, Galleria y Harwin.",
+      "Reparación de celulares el mismo día, celulares a pagos (todo tipo de crédito) y planes para Gulfton, Sharpstown, Alief, Westchase, Bellaire, Meyerland, Galleria y Harwin.",
     kicker: "Zonas que atendemos",
     h1: ["Tu tienda de celulares en el", "suroeste de Houston."],
     body: "Una tienda en Hillcroft, a minutos de los barrios que nos rodean. Busca tu zona o código postal para ver distancia, tiempo y cómo llegar.",

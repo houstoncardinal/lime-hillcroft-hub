@@ -84,7 +84,7 @@ export function areaHead(lang: Lang, area: Area | undefined) {
           description:
             lang === "en"
               ? `Same-day phone repair (screens, batteries, charging ports), unlocking, unlocked phones with leasing (all credit welcome, subject to approval), prepaid plans and accessories for customers in ${shortName(area)}, at our store on Hillcroft in Southwest Houston.`
-              : `Reparación de celulares el mismo día (pantallas, baterías, puertos de carga), liberación, celulares desbloqueados a pagos (Todo crédito es bienvenido, sujeto a aprobación), planes prepagados y accesorios para clientes de ${shortName(area)}, en nuestra tienda en Hillcroft, en el suroeste de Houston.`,
+              : `Reparación de celulares el mismo día (pantallas, baterías, puertos de carga), liberación, celulares desbloqueados a pagos (se acepta todo tipo de crédito, sujeto a aprobación), planes prepagados y accesorios para clientes de ${shortName(area)}, en nuestra tienda en Hillcroft, en el suroeste de Houston.`,
           url,
           inLanguage: lang === "en" ? "en-US" : "es-US",
           provider: store,

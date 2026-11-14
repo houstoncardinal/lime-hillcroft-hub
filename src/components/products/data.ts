@@ -590,19 +590,19 @@ export const CONSOLES: CategoryPageData = {
   leasing: true,
   text: {
     en: {
-      title: "PS5, Xbox & Nintendo Switch 2 in Houston — Leasing terms set by your provider",
+      title: "PS5, Xbox & Nintendo Switch 2 in Houston",
       description:
-        "PS5 Slim, Xbox Series X and Nintendo Switch 2 on Hillcroft in Houston. Lease-to-own with all credit welcome, terms set by your provider. Apply online in minutes.",
+        "PS5 Slim, Xbox Series X and Nintendo Switch 2 on Hillcroft in Houston. Lease-to-own with all credit welcome. Apply online in minutes.",
       breadcrumb: "Game consoles",
       imageAlt:
         "PS5 Slim, Xbox Series X and Nintendo Switch 2 on display at TIC Wireless in Houston",
       kicker: "Game consoles · Leasing · Houston",
       h1: ["PS5, Xbox & Switch 2.", "Take it home today."],
       intro:
-        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and All Credit Welcome. Our leasing programs start terms set by your provider, with weekly, biweekly or monthly payments, subject to approval.",
+        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and all credit is welcome. Our leasing programs offer weekly, biweekly or monthly payments, subject to approval.",
       chips: [
-        "all credit welcome",
-        "terms set by your provider",
+        "All credit welcome",
+        "Weekly, biweekly or monthly payments",
         "Take it home today",
         "Se habla español",
       ],
@@ -614,11 +614,11 @@ export const CONSOLES: CategoryPageData = {
       buyBody:
         "Leasing (lease-to-own) lets you take the console home today and make regular payments. When the plan is complete — or you pay it off early — it's yours. Subject to approval; the total cost to own is more than the cash price, and we explain every term before you sign.",
       buySteps: [
-        ["Apply", "Online in a few minutes below, or at the counter with a valid photo ID."],
+        ["Apply", "Online in a few minutes below, or at the counter with a photo ID, your SSN or ITIN, and an active bank account and debit card."],
         ["Pick your console", "PS5, Xbox or Switch 2 — add a controller or headset if you like."],
         [
           "Take it home today",
-          "Start with terms set by your provider, then weekly, biweekly or monthly payments.",
+          "Start with, then weekly, biweekly or monthly payments.",
         ],
       ],
       galleryTitle: "On display at the store",
@@ -629,12 +629,12 @@ export const CONSOLES: CategoryPageData = {
           a: "PlayStation 5 Slim (1TB with disc drive and the 825GB Digital Edition), Xbox Series X with a 1TB SSD, Xbox Series S and Nintendo Switch 2. Stock changes quickly — call (713) 339-9300 to check.",
         },
         {
-          q: "Can I get a PS5 or Xbox with all credit welcome?",
-          a: "Yes. Our leasing programs welcome all credit, with terms set by your provider. Approval isn't guaranteed and depends on the program.",
+          q: "Can I lease a PS5 or Xbox if my credit isn't perfect?",
+          a: "Yes. Our leasing programs welcome all credit. Approval isn't guaranteed and depends on the program.",
         },
         {
           q: "What do I need to apply?",
-          a: "A valid photo ID at the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your console.",
+          a: "Bring a photo ID, your SSN or ITIN, and an active bank account and debit card to the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your console.",
         },
         {
           q: "How do the payments work?",
@@ -653,22 +653,22 @@ export const CONSOLES: CategoryPageData = {
       ogKicker: "Game consoles · Leasing",
       ogHeadline: "PS5, Xbox & Nintendo Switch 2. Take it home today.",
       ogSub:
-        "all credit welcome · terms set by your provider · Weekly, biweekly or monthly payments",
+        "All credit welcome · Weekly, biweekly or monthly payments · Subject to approval",
     },
     es: {
-      title: "PS5, Xbox y Nintendo Switch 2 en Houston — Desde terms set by your provider",
+      title: "PS5, Xbox y Nintendo Switch 2 en Houston — Desde $40",
       description:
-        "PS5 Slim, Xbox Series X y Nintendo Switch 2 en Hillcroft, Houston. Arrendamiento Todo crédito es bienvenido, términos definidos por el proveedor. Solicita en línea.",
+        "PS5 Slim, Xbox Series X y Nintendo Switch 2 en Hillcroft, Houston. Arrendamiento con todo tipo de crédito. Solicita en línea.",
       breadcrumb: "Consolas",
       imageAlt:
         "PS5 Slim, Xbox Series X y Nintendo Switch 2 en exhibición en TIC Wireless en Houston",
       kicker: "Consolas · Arrendamiento · Houston",
       h1: ["PS5, Xbox y Switch 2.", "Llévatelo hoy."],
       intro:
-        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y Todo crédito es bienvenido. Nuestros programas de arrendamiento términos definidos por el proveedor, con pagos semanales, quincenales o mensuales, sujeto a aprobación.",
+        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y se acepta todo tipo de crédito. Nuestros programas de arrendamiento ofrecen pagos semanales, quincenales o mensuales, sujeto a aprobación.",
       chips: [
-        "Todo crédito es bienvenido",
-        "términos definidos por el proveedor",
+        "Se acepta todo tipo de crédito",
+        "Pagos semanales, quincenales o mensuales",
         "Llévatelo hoy",
         "We speak English",
       ],
@@ -682,12 +682,12 @@ export const CONSOLES: CategoryPageData = {
       buySteps: [
         [
           "Solicita",
-          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto.",
+          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito.",
         ],
         ["Elige tu consola", "PS5, Xbox o Switch 2; agrega un control o audífonos si quieres."],
         [
           "Llévatela hoy",
-          "términos definidos por el proveedor y luego pagos semanales, quincenales o mensuales.",
+          "Empieza y luego pagos semanales, quincenales o mensuales.",
         ],
       ],
       galleryTitle: "En exhibición en la tienda",
@@ -698,12 +698,12 @@ export const CONSOLES: CategoryPageData = {
           a: "PlayStation 5 Slim (1TB con lector de discos y la Digital Edition de 825GB), Xbox Series X con SSD de 1TB, Xbox Series S y Nintendo Switch 2. Las existencias cambian rápido: llama al (713) 339-9300.",
         },
         {
-          q: "¿Puedo llevarme un PS5 o Xbox Todo crédito es bienvenido?",
-          a: "Sí. Nuestros programas de arrendamiento acepta todo crédito y términos definidos por el proveedor. La aprobación no está garantizada y depende del programa.",
+          q: "¿Puedo arrendar un PS5 o Xbox si mi crédito no es perfecto?",
+          a: "Sí. Nuestros programas de arrendamiento aceptan todo tipo de crédito. La aprobación no está garantizada y depende del programa.",
         },
         {
           q: "¿Qué necesito para solicitar?",
-          a: "Una identificación con foto vigente en el mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu consola.",
+          a: "Trae identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito al mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu consola.",
         },
         {
           q: "¿Cómo son los pagos?",
@@ -722,7 +722,7 @@ export const CONSOLES: CategoryPageData = {
       ogKicker: "Consolas · Arrendamiento",
       ogHeadline: "PS5, Xbox y Nintendo Switch 2. Llévatelo hoy.",
       ogSub:
-        "Todo crédito es bienvenido · términos definidos por el proveedor · Pagos semanales, quincenales o mensuales",
+        "Se acepta todo tipo de crédito · Pagos semanales, quincenales o mensuales · Sujeto a aprobación",
     },
   },
 };
@@ -840,18 +840,18 @@ export const LAPTOPS: CategoryPageData = {
   leasing: true,
   text: {
     en: {
-      title: "MacBook, iPad & Galaxy Tab in Houston — Leasing terms set by your provider",
+      title: "MacBook, iPad & Galaxy Tab in Houston",
       description:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Galaxy Tab on Hillcroft in Houston. Lease-to-own with all credit welcome, terms set by your provider.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Galaxy Tab on Hillcroft in Houston. Lease-to-own with all credit welcome.",
       breadcrumb: "Laptops & tablets",
       imageAlt: "MacBook Air, iPad Pro, iPad and iPad mini on display at TIC Wireless in Houston",
       kicker: "Laptops & tablets · Leasing · Houston",
       h1: ["MacBook, iPad & Galaxy Tab.", "Take it home today."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. all credit welcome — our leasing programs start terms set by your provider, with weekly, biweekly or monthly payments, subject to approval.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. All credit welcome — our leasing programs offer weekly, biweekly or monthly payments, subject to approval.",
       chips: [
-        "all credit welcome",
-        "terms set by your provider",
+        "All credit welcome",
+        "Weekly, biweekly or monthly payments",
         "Apple & Samsung",
         "Se habla español",
       ],
@@ -863,14 +863,14 @@ export const LAPTOPS: CategoryPageData = {
       buyBody:
         "Leasing (lease-to-own) lets you take your laptop or tablet home today and make regular payments. When the plan is complete — or you pay it off early — it's yours. Subject to approval; the total cost to own is more than the cash price, and we explain every term before you sign.",
       buySteps: [
-        ["Apply", "Online in a few minutes below, or at the counter with a valid photo ID."],
+        ["Apply", "Online in a few minutes below, or at the counter with a photo ID, your SSN or ITIN, and an active bank account and debit card."],
         [
           "Pick your device",
           "MacBook, iPad or Galaxy Tab — add a case or screen glass if you like.",
         ],
         [
           "Take it home today",
-          "Start with terms set by your provider, then weekly, biweekly or monthly payments.",
+          "Start with, then weekly, biweekly or monthly payments.",
         ],
       ],
       galleryTitle: "On display at the store",
@@ -881,12 +881,12 @@ export const LAPTOPS: CategoryPageData = {
           a: "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini, Samsung Galaxy Tab S10 FE+ and Galaxy Tab A9+ 5G, plus Windows laptops when in stock. Stock changes quickly — call (713) 339-9300 to check.",
         },
         {
-          q: "Can I get a MacBook or iPad with all credit welcome?",
-          a: "Yes. Our leasing programs welcome all credit, with terms set by your provider. Approval isn't guaranteed and depends on the program.",
+          q: "Can I lease a MacBook or iPad if my credit isn't perfect?",
+          a: "Yes. Our leasing programs welcome all credit. Approval isn't guaranteed and depends on the program.",
         },
         {
           q: "What do I need to apply?",
-          a: "A valid photo ID at the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your device.",
+          a: "Bring a photo ID, your SSN or ITIN, and an active bank account and debit card to the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your device.",
         },
         {
           q: "Do you repair laptops and tablets too?",
@@ -902,21 +902,21 @@ export const LAPTOPS: CategoryPageData = {
       ogKicker: "Laptops & tablets · Leasing",
       ogHeadline: "MacBook, iPad & Galaxy Tab. Take it home today.",
       ogSub:
-        "all credit welcome · terms set by your provider · Weekly, biweekly or monthly payments",
+        "All credit welcome · Weekly, biweekly or monthly payments · Subject to approval",
     },
     es: {
-      title: "MacBook, iPad y Galaxy Tab en Houston — Desde terms set by your provider",
+      title: "MacBook, iPad y Galaxy Tab en Houston — Desde $40",
       description:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Galaxy Tab en Hillcroft, Houston. Arrendamiento Todo crédito es bienvenido, términos definidos por el proveedor.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Galaxy Tab en Hillcroft, Houston. Arrendamiento con todo tipo de crédito.",
       breadcrumb: "Laptops y tabletas",
       imageAlt: "MacBook Air, iPad Pro, iPad y iPad mini en exhibición en TIC Wireless en Houston",
       kicker: "Laptops y tabletas · Arrendamiento · Houston",
       h1: ["MacBook, iPad y Galaxy Tab.", "Llévatelo hoy."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Todo crédito es bienvenido: nuestros programas de arrendamiento términos definidos por el proveedor, sujeto a aprobación, con pagos semanales, quincenales o mensuales.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Se acepta todo tipo de crédito: nuestros programas de arrendamiento ofrecen pagos semanales, quincenales o mensuales, sujeto a aprobación.",
       chips: [
-        "Todo crédito es bienvenido",
-        "términos definidos por el proveedor",
+        "Se acepta todo tipo de crédito",
+        "Pagos semanales, quincenales o mensuales",
         "Apple y Samsung",
         "We speak English",
       ],
@@ -930,12 +930,12 @@ export const LAPTOPS: CategoryPageData = {
       buySteps: [
         [
           "Solicita",
-          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto.",
+          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito.",
         ],
         ["Elige tu equipo", "MacBook, iPad o Galaxy Tab; agrega funda o mica si quieres."],
         [
           "Llévatelo hoy",
-          "términos definidos por el proveedor y luego pagos semanales, quincenales o mensuales.",
+          "Empieza y luego pagos semanales, quincenales o mensuales.",
         ],
       ],
       galleryTitle: "En exhibición en la tienda",
@@ -946,12 +946,12 @@ export const LAPTOPS: CategoryPageData = {
           a: "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini, Samsung Galaxy Tab S10 FE+ y Galaxy Tab A9+ 5G, además de laptops Windows cuando hay. Las existencias cambian rápido: llama al (713) 339-9300.",
         },
         {
-          q: "¿Puedo llevarme una MacBook o iPad Todo crédito es bienvenido?",
-          a: "Sí. Nuestros programas de arrendamiento acepta todo crédito y términos definidos por el proveedor. La aprobación no está garantizada y depende del programa.",
+          q: "¿Puedo arrendar una MacBook o iPad si mi crédito no es perfecto?",
+          a: "Sí. Nuestros programas de arrendamiento aceptan todo tipo de crédito. La aprobación no está garantizada y depende del programa.",
         },
         {
           q: "¿Qué necesito para solicitar?",
-          a: "Una identificación con foto vigente en el mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu equipo.",
+          a: "Trae identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito al mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu equipo.",
         },
         {
           q: "¿También reparan laptops y tabletas?",
@@ -967,7 +967,7 @@ export const LAPTOPS: CategoryPageData = {
       ogKicker: "Laptops y tabletas · Arrendamiento",
       ogHeadline: "MacBook, iPad y Galaxy Tab. Llévatelo hoy.",
       ogSub:
-        "Todo crédito es bienvenido · términos definidos por el proveedor · Pagos semanales, quincenales o mensuales",
+        "Se acepta todo tipo de crédito · Pagos semanales, quincenales o mensuales · Sujeto a aprobación",
     },
   },
 };
@@ -1038,8 +1038,8 @@ export const IPHONE_18: CategoryPageData = {
           "Desbloqueado: pregunta con qué compañías funciona",
         ),
         l(
-          "Leasing — all credit welcome, iPhone 18 Pro Max terms set by your provider",
-          "A pagos Todo crédito es bienvenido, iPhone 18 Pro Max términos definidos por el proveedor",
+          "Leasing — all credit welcome, iPhone 18 Pro Max",
+          "A pagos con todo tipo de crédito, iPhone 18 Pro Max",
         ),
       ],
     },
@@ -1093,19 +1093,19 @@ export const IPHONE_18: CategoryPageData = {
   leaseItems: [n("iPhone 18 Pro Max"), l("iPhone 18 models", "Modelos de iPhone 18")],
   text: {
     en: {
-      title: "iPhone 18 & iPhone 18 Pro Max in Houston — Lease terms set by your provider",
+      title: "iPhone 18 & iPhone 18 Pro Max in Houston — Lease-to-Own, All Credit Welcome",
       description:
-        "iPhone 18 Pro Max in store on Hillcroft in Houston. Lease-to-own terms set by your provider, all credit welcome, subject to approval. Trade-in, cases & glass.",
+        "iPhone 18 Pro Max in store on Hillcroft in Houston. Lease-to-own, all credit welcome, subject to approval. Trade-in, cases & glass.",
       breadcrumb: "iPhone 18",
       imageAlt:
         "A hand holding an iPhone 18 Pro Max in front of its box at TIC Wireless in Houston",
       kicker: "iPhone 18 · In store · Houston",
       h1: ["iPhone 18 Pro Max in Houston.", "In store on Hillcroft."],
       intro:
-        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — all credit welcome, terms set by your provider, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Stock changes quickly, so call to confirm the color and storage you want.",
+        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — all credit welcome, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Stock changes quickly, so call to confirm the color and storage you want.",
       chips: [
-        "all credit welcome",
-        "Lease terms set by your provider",
+        "All credit welcome",
+        "Lease",
         "Trade in your old phone",
         "Se habla español",
       ],
@@ -1117,14 +1117,14 @@ export const IPHONE_18: CategoryPageData = {
       buyBody:
         "Leasing (lease-to-own) lets you take your iPhone home today and make regular payments. When the plan is complete — or you pay it off early — it's yours. Subject to approval; the total cost to own is more than the cash price, and we explain every term before you sign.",
       buySteps: [
-        ["Apply", "Online in a few minutes below, or at the counter with a valid photo ID."],
+        ["Apply", "Online in a few minutes below, or at the counter with a photo ID, your SSN or ITIN, and an active bank account and debit card."],
         [
           "Trade in your old phone",
           "Bring it with its passcode — we check it and make you an offer toward your new iPhone.",
         ],
         [
           "Take it home today",
-          "Start with terms set by your provider on the iPhone 18 Pro Max, then weekly, biweekly or monthly payments.",
+          "Choose weekly, biweekly or monthly payments on the iPhone 18 Pro Max, based on the plan offered to you.",
         ],
         [
           "Set up and go",
@@ -1139,12 +1139,12 @@ export const IPHONE_18: CategoryPageData = {
           a: "Yes — the iPhone 18 Pro Max is in our October 13, 2026 stock list. Stock changes quickly, so call (713) 339-9300 to confirm the color and storage you want before you come in.",
         },
         {
-          q: "Can I get an iPhone 18 with all credit welcome?",
-          a: "You can apply. Leasing (lease-to-own) welcomes all credit — the iPhone 18 Pro Max terms set by your provider — with weekly, biweekly or monthly payments. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
+          q: "Can I lease an iPhone 18 if my credit isn't perfect?",
+          a: "You can apply. Leasing (lease-to-own) welcomes all credit — with weekly, biweekly or monthly payments. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
         },
         {
           q: "What do I need to apply for leasing?",
-          a: "A valid photo ID at the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your phone.",
+          a: "Bring a photo ID, your SSN or ITIN, and an active bank account and debit card to the counter. You can also apply online in a few minutes with the links on this page, then come to the store to pick up your phone.",
         },
         {
           q: "Can I trade in my old phone toward the iPhone 18?",
@@ -1168,22 +1168,22 @@ export const IPHONE_18: CategoryPageData = {
       ],
       ogKicker: "iPhone 18 · Leasing",
       ogHeadline: "iPhone 18 Pro Max. In store on Hillcroft.",
-      ogSub: "all credit welcome · terms set by your provider · Trade in your old phone",
+      ogSub: "All credit welcome · Weekly, biweekly or monthly payments · Trade in your old phone",
     },
     es: {
       title: "iPhone 18 y 18 Pro Max en Houston — A Pagos desde $49",
       description:
-        "iPhone 18 Pro Max en nuestra tienda de Hillcroft, Houston. A pagos términos definidos por el proveedor, Todo crédito es bienvenido, sujeto a aprobación. Intercambio y fundas.",
+        "iPhone 18 Pro Max en nuestra tienda de Hillcroft, Houston. A pagos, se acepta todo tipo de crédito, sujeto a aprobación. Intercambio y fundas.",
       breadcrumb: "iPhone 18",
       imageAlt:
         "Una mano sosteniendo un iPhone 18 Pro Max frente a su caja en TIC Wireless en Houston",
       kicker: "iPhone 18 · En tienda · Houston",
       h1: ["iPhone 18 Pro Max en Houston.", "En la tienda de Hillcroft."],
       intro:
-        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: Todo crédito es bienvenido, términos definidos por el proveedor, sujeto a aprobación. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
+        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: se acepta todo tipo de crédito, sujeto a aprobación. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
       chips: [
-        "Todo crédito es bienvenido",
-        "términos definidos por el proveedor",
+        "Se acepta todo tipo de crédito",
+        "Pagos semanales, quincenales o mensuales",
         "Cambia tu celular usado",
         "We speak English",
       ],
@@ -1197,7 +1197,7 @@ export const IPHONE_18: CategoryPageData = {
       buySteps: [
         [
           "Solicita",
-          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto.",
+          "En línea en unos minutos aquí abajo, o en el mostrador con identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito.",
         ],
         [
           "Cambia tu celular usado",
@@ -1205,7 +1205,7 @@ export const IPHONE_18: CategoryPageData = {
         ],
         [
           "Llévatelo hoy",
-          "términos definidos por el proveedor en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales.",
+          "Empieza en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales.",
         ],
         [
           "Configúralo y listo",
@@ -1220,12 +1220,12 @@ export const IPHONE_18: CategoryPageData = {
           a: "Sí, el iPhone 18 Pro Max está en nuestro inventario del 13 de octubre de 2026. Cambia rápido, así que llama al (713) 339-9300 para confirmar el color y la capacidad antes de venir.",
         },
         {
-          q: "¿Puedo sacar un iPhone 18 Todo crédito es bienvenido o con mal crédito?",
-          a: "Puedes aplicar. El arrendamiento con opción a compra acepta todo crédito: el iPhone 18 Pro Max términos definidos por el proveedor, con pagos semanales, quincenales o mensuales. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
+          q: "¿Puedo arrendar un iPhone 18 si mi crédito no es perfecto?",
+          a: "Puedes aplicar. El arrendamiento con opción a compra acepta todo tipo de crédito: el iPhone 18 Pro Max, con pagos semanales, quincenales o mensuales. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
         },
         {
           q: "¿Qué necesito para solicitar el arrendamiento?",
-          a: "Una identificación con foto vigente en el mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu celular.",
+          a: "Trae identificación con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito al mostrador. También puedes solicitar en línea en unos minutos con los enlaces de esta página y luego vienes a la tienda por tu celular.",
         },
         {
           q: "¿Puedo dar mi celular usado para el iPhone 18?",
@@ -1242,14 +1242,14 @@ export const IPHONE_18: CategoryPageData = {
       ],
       related: [
         ["Celulares desbloqueados", "/es/servicios/unlocked-phones"],
-        ["Arrendamiento Todo crédito es bienvenido", "/es/arrendamiento"],
+        ["Arrendamiento: se acepta todo tipo de crédito", "/es/arrendamiento"],
         ["Vende o cambia tu celular", "/es/servicios/trade-in-or-sell"],
         ["Planes prepagados y precios", "/es/servicios/prepaid-plans"],
         ["Reparación de iPhone", "/es/servicios/iphone-repair"],
       ],
       ogKicker: "iPhone 18 · A pagos",
       ogHeadline: "iPhone 18 Pro Max. En la tienda de Hillcroft.",
-      ogSub: "Todo crédito es bienvenido · términos definidos por el proveedor · Cambia tu celular usado",
+      ogSub: "Se acepta todo tipo de crédito · Pagos semanales, quincenales o mensuales · Cambia tu celular usado",
     },
   },
 };

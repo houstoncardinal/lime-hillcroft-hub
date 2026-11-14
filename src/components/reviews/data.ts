@@ -36,7 +36,8 @@ export type Review = {
 
 // Every 4- and 5-star review from the owner's screenshots of the Google profile, in Google's
 // "most relevant" order. 1–3 star reviews, emoji-only reviews and a few with off-topic remarks
-// are left out.
+// are left out, as are reviews that mention down payments or "same as cash" (leasing partners'
+// advertising rules apply to everything on the site).
 export const REVIEWS: Review[] = [
   {
     author: "Michael R.",
@@ -1349,13 +1350,6 @@ export const REVIEWS: Review[] = [
     topic: "leasing",
   },
   {
-    author: "Joely T.",
-    stars: 5,
-    when: "6 years ago",
-    text: "Lovely Girls Helped Me Get a new phone easy down payments ! Im excited with my new phone 📱",
-    topic: "leasing",
-  },
-  {
     author: "Christina",
     stars: 5,
     when: "4 years ago",
@@ -1753,13 +1747,6 @@ export const REVIEWS: Review[] = [
     when: "2 years ago",
     text: "Good service and friendly customer service. I will definitely shop here again.",
     topic: "service",
-  },
-  {
-    author: "Tee M.",
-    stars: 5,
-    when: "10 years ago",
-    text: "This place is the best place to get the latest updated phone for little down payment!! Plus they give you the option for a 3mth same as cash deal!!! CANT BEAT IT!!!!!! …",
-    topic: "leasing",
   },
   {
     author: "Hashim A.",

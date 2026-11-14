@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import { AFF_DISCLAIMER } from "@/components/site/leasing-offer";
 import { Button } from "@/components/ui/button";
-import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { ALTERNATES } from "@/components/site/seo";
 import {
   ArrowRight,
@@ -29,7 +29,7 @@ export const PORTALS = [
     href: "https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en",
     blurb: {
       en: "Our primary leasing partner — all credit welcome.",
-      es: "Nuestro socio principal de arrendamiento — Todo crédito es bienvenido.",
+      es: "Nuestro socio principal de arrendamiento — se acepta todo tipo de crédito.",
     },
   },
   {
@@ -40,7 +40,7 @@ export const PORTALS = [
     href: "https://approve.me/s/ticwireless/69977#/marketing",
     blurb: {
       en: "Lease-to-own application — all credit welcome.",
-      es: "Solicitud de arrendamiento — Todo crédito es bienvenido.",
+      es: "Solicitud de arrendamiento — se acepta todo tipo de crédito.",
     },
   },
   {
@@ -50,8 +50,10 @@ export const PORTALS = [
     initials: "AFF",
     href: "https://americanfirstfinance.com/app/?dealer=10640&loc=1&src=UA",
     blurb: {
-      en: "Fast decisions on lease-to-own, even with imperfect credit.",
-      es: "Respuesta rápida en arrendamiento, aun con crédito imperfecto.",
+      // American First Finance's pre-approved description (AFF Marketing Review Guide, 06.26.25):
+      // use only this text for AFF, with AFF_DISCLAIMER shown wherever AFF is listed.
+      en: "Get it now. Pay over time. All Credit Welcome!",
+      es: "Get it now. Pay over time. All Credit Welcome!",
     },
   },
   {
@@ -78,16 +80,16 @@ const T = {
     applyNow: "Apply now",
     steps: [
       [Clock, "Takes a few minutes"],
-      [IdCard, "Have your ID & bank info ready"],
+      [IdCard, "Have your photo ID, SSN or ITIN, bank account & debit card ready"],
       [BadgeCheck, "Shop in store once approved"],
     ] as const,
     secure: "Each application opens on the provider's own secure site.",
-    fine: "Subject to approval. Lease-to-own is not a loan; the total cost to own is more than the retail price. Terms are set by each provider.",
+    fine: `Subject to approval. Lease-to-own is not a loan; the total cost to own is more than the retail price. Terms are set by each provider. ${AFF_DISCLAIMER}`,
     newTab: "(opens in a new tab)",
     cardTitle: "Lease-to-own · all credit welcome",
     cardApply: "Apply online:",
     optionKicker: "Or lease-to-own",
-    optionTitle: "all credit welcome. Apply online, pick it up today.",
+    optionTitle: "All credit welcome. Apply online, pick it up today.",
     optionBody:
       "Not ready to pay online? Get approved with one of our leasing partners in minutes, then take this home from our Hillcroft store.",
   },
@@ -95,22 +97,22 @@ const T = {
     kicker: "Solicita en línea",
     title: "Aprueba tu arrendamiento antes de venir.",
     body: "Solicita con cualquiera de nuestros socios de arrendamiento en unos minutos desde tu celular. Ya aprobado, ven a la tienda, elige tu celular, consola o laptop y llévatelo hoy.",
-    bannerTitle: "Arrendamiento · Todo crédito es bienvenido",
+    bannerTitle: "Arrendamiento · se acepta todo tipo de crédito",
     bannerBody: "Solicita en línea en minutos y recoge en la tienda.",
     apply: (name: string) => `Solicitar con ${name}`,
     applyNow: "Solicitar ahora",
     steps: [
       [Clock, "Toma unos minutos"],
-      [IdCard, "Ten a la mano tu ID y datos bancarios"],
+      [IdCard, "Ten a la mano tu ID con foto, SSN o ITIN, cuenta bancaria y tarjeta de débito"],
       [BadgeCheck, "Compra en la tienda ya aprobado"],
     ] as const,
     secure: "Cada solicitud se abre en el sitio seguro del proveedor.",
-    fine: "Sujeto a aprobación. El arrendamiento no es un préstamo; el costo total es mayor que el precio de venta. Los términos los fija cada proveedor.",
+    fine: `Sujeto a aprobación. El arrendamiento no es un préstamo; el costo total es mayor que el precio de venta. Los términos los fija cada proveedor. ${AFF_DISCLAIMER}`,
     newTab: "(se abre en una pestaña nueva)",
-    cardTitle: "Arrendamiento · Todo crédito es bienvenido",
+    cardTitle: "Arrendamiento · todo tipo de crédito",
     cardApply: "Solicita en línea:",
     optionKicker: "O arrendamiento con opción a compra",
-    optionTitle: "Todo crédito es bienvenido. Solicita en línea y llévatelo hoy.",
+    optionTitle: "Se acepta todo tipo de crédito. Solicita en línea y llévatelo hoy.",
     optionBody:
       "¿Prefieres no pagar en línea? Aprueba con uno de nuestros socios de arrendamiento en minutos y recógelo en nuestra tienda de Hillcroft.",
   },
@@ -347,8 +349,8 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
         <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
         <span>
           {lang === "en"
-            ? `Lease-to-own all credit welcome, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.`
-            : `Arrendamiento Todo crédito es bienvenido, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}
+            ? `Lease-to-own — all credit welcome, subject to approval.`
+            : `Arrendamiento con opción a compra: se acepta todo tipo de crédito, sujeto a aprobación.`}
         </span>
       </p>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">

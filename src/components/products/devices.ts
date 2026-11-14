@@ -47,7 +47,7 @@ export type DeviceDetail = {
   id: string;
   /** Page title when it should be more specific than the shelf card's name. */
   title?: string;
-  /** Lowest lease-to-own initial payment in USD when it isn't the store-wide $40. */
+  /** Legacy field, no longer shown on the site (initial payments aren't advertised). */
   leaseFrom?: number;
   /** Year the model came out. */
   year: number;

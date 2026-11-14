@@ -140,7 +140,7 @@ const T = {
       body: "Usa tu celular viejo para un iPhone, Samsung Galaxy u otro equipo nuevo.",
       points: [
         "Estrena por menos",
-        "Arrienda el nuevo, Todo crédito es bienvenido y sujeto a aprobación",
+        "Arrienda el nuevo: todo tipo de crédito, sujeto a aprobación",
         "Pasamos tu número y tus datos",
       ],
       cta: "Ver equipos para estrenar",

@@ -95,8 +95,8 @@ export function XfinitySection({
         ["visit", "Visítanos"],
       ];
   const includes = en
-    ? ["Unlimited data", "WiFi equipment included", "No annual contract", "No credit check"]
-    : ["Datos ilimitados", "Equipo WiFi incluido", "Sin contrato anual", "Sin revisión de crédito"];
+    ? ["Unlimited data", "WiFi equipment included", "No annual contract", "Pause anytime"]
+    : ["Datos ilimitados", "Equipo WiFi incluido", "Sin contrato anual", "Pausa cuando quieras"];
   const included: Feature[] = en
     ? [
         {
@@ -107,7 +107,7 @@ export function XfinitySection({
         {
           icon: CalendarX,
           title: "No annual contract",
-          body: "And no credit check to get started.",
+          body: "Pay ahead each month — no long-term commitment.",
         },
         {
           icon: PauseCircle,
@@ -129,7 +129,7 @@ export function XfinitySection({
         {
           icon: CalendarX,
           title: "Sin contrato anual",
-          body: "Y sin revisión de crédito para empezar.",
+          body: "Pagas por adelantado cada mes, sin compromiso a largo plazo.",
         },
         {
           icon: PauseCircle,
@@ -196,7 +196,7 @@ export function XfinitySection({
         {
           icon: Smartphone,
           title: "Equipos con WiFi",
-          body: "Celulares, iPad, MacBook y consolas con arrendamiento, Todo crédito es bienvenido.",
+          body: "Celulares, iPad, MacBook y consolas con arrendamiento; se acepta todo tipo de crédito.",
           href: LEASE_PATHS[lang],
         },
         {
