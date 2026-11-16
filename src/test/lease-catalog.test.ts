@@ -6,6 +6,7 @@ import {
   LEASE_DEVICES,
   LEASE_FEATURED,
   findLeaseDevice,
+  leaseEstimates,
   leaseIdForDevice,
   leaseFrom,
   payment,
@@ -53,17 +54,27 @@ describe("lease-to-own catalog", () => {
     expect(leaseIdForDevice("no-such-phone")).toBeUndefined();
   });
 
-  // Owner's rule (updated sheet): list a row only when it has a leasing price and all three
-  // payments are above $0.
-  it("lists only options with a leasing price and all three payments from the sheet", () => {
+  // Every row has a leasing price and three increasing estimates. The sheet's own estimates must
+  // match its formula exactly (that's how the formula was derived), and rows the sheet gave no
+  // estimates for use the formula.
+  it("prices every option, with estimates that follow the sheet's formula", () => {
     for (const d of LEASE_DEVICES)
       for (const o of d.options) {
-        const [w, b, m] = (["weekly", "biweekly", "monthly"] as const).map((f) => payment(o, f));
-        expect(o.lease, `${d.id} ${o.label.en}`).toBeGreaterThan(0);
-        for (const v of [w, b, m]) expect(v, `${d.id} ${o.label.en}`).toBeGreaterThan(0);
-        expect(b).toBeGreaterThan(w!);
-        expect(m).toBeGreaterThan(b!);
+        const id = `${d.id} ${o.label.en}`;
+        expect(o.lease, id).toBeGreaterThan(0);
+        expect({ weekly: o.weekly, biweekly: o.biweekly, monthly: o.monthly }, id).toEqual(
+          leaseEstimates(o.lease),
+        );
+        expect(o.biweekly, id).toBeGreaterThan(o.weekly);
+        expect(o.monthly, id).toBeGreaterThan(o.biweekly);
       }
+  });
+
+  it("reproduces the sheet's estimates, including its rounding", () => {
+    expect(leaseEstimates(1699)).toEqual({ weekly: 83, biweekly: 167, monthly: 323 });
+    expect(leaseEstimates(275)).toEqual({ weekly: 14, biweekly: 27, monthly: 52 }); // $13.50 rounds up
+    expect(leaseEstimates(379.99)).toEqual({ weekly: 19, biweekly: 37, monthly: 72 });
+    expect(leaseEstimates(450)).toEqual({ weekly: 22, biweekly: 44, monthly: 85 });
   });
 
   it("includes the iPhone 18 Pro and iPhone 13 Pro Max 256GB; leaves out the Alcatel 3V", () => {
@@ -77,6 +88,31 @@ describe("lease-to-own catalog", () => {
       expect.objectContaining({ lease: 750, weekly: 37, biweekly: 74, monthly: 142 }),
     );
     expect(findLeaseDevice("alcatel-3v")).toBeUndefined(); // removed by the owner
+  });
+
+  it("follows the 2026-11-14 sheet: new prices, new devices, replaced rows", () => {
+    const opt = (id: string, label: string) =>
+      findLeaseDevice(id)!.options.find((o) => o.label.en === label);
+    expect(opt("galaxy-s24-ultra", "256GB")).toMatchObject({ cash: 849, lease: 929, weekly: 46 });
+    expect(opt("xbox-series-x", "1TB")).toMatchObject({ lease: 899, monthly: 171 });
+    expect(opt("samsung-tv-65", '65" · UN65U8000HFXZA')).toMatchObject({ lease: 479, weekly: 24 });
+    expect(opt("apple-watch-ultra-2", "49mm · GPS + Cellular")).toMatchObject({ lease: 649 });
+    // Rows without sheet estimates use the formula and say so.
+    expect(opt("galaxy-z-fold8-ultra", "256GB")).toMatchObject({
+      cash: 1999,
+      lease: 2099,
+      calculated: true,
+      ...leaseEstimates(2099),
+    });
+    // Apple Watch SE 3 replaces the SE 40mm GPS and SE (2nd generation) rows.
+    expect(findLeaseDevice("apple-watch-se")!.options.map((o) => o.label.en)).toEqual([
+      "40mm · GPS + Cellular",
+      "44mm · GPS + Cellular",
+    ]);
+    // No leasing price on the new sheet.
+    expect(findLeaseDevice("iphone-8")).toBeUndefined();
+    expect(findLeaseDevice("iphone-8-plus")).toBeUndefined();
+    expect(opt("ipad-11", "128GB · Wi-Fi + Cellular")).toBeUndefined();
   });
 
   it("'from' prices use the cheapest option and its own payment", () => {
@@ -107,10 +143,11 @@ describe("lease-to-own catalog", () => {
       monthly: 370,
     });
     expect(opt("iphone-air", "256GB")).toMatchObject({
-      lease: 1150,
-      weekly: 56,
-      biweekly: 113,
-      monthly: 218,
+      cash: 899,
+      lease: 999,
+      weekly: 49,
+      biweekly: 98,
+      monthly: 190,
     });
     expect(opt("iphone-16-plus", "256GB")).toMatchObject({
       lease: 949,
@@ -190,7 +227,7 @@ describe("lease-to-own catalog", () => {
     };
     expect(allowed("iphone-17-pro")).toBe(true);
     expect(allowed("galaxy-s25-ultra")).toBe(true);
-    expect(allowed("ipad-11", "128GB · Wi-Fi + Cellular")).toBe(true);
+    expect(allowed("ipad-11", "256GB · Wi-Fi + Cellular")).toBe(true);
     expect(allowed("ipad-11", "128GB · Wi-Fi")).toBe(false);
     expect(allowed("ipad-6", "32GB · Wi-Fi · A/B grade")).toBe(false);
     for (const id of [

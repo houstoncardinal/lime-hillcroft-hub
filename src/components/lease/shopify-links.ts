@@ -60,7 +60,6 @@ export const SHOPIFY_LISTINGS: Record<string, Record<string, string>> = {
   // iPad
   "ipad-pro-11-m2": { "256GB": "ipad-pro-11-4th-gen-m2-256gb" },
   "ipad-11": {
-    "128GB · Wi-Fi + Cellular": "apple-ipad-11th-gen-wifi-cellular-128gb",
     "128GB · Wi-Fi": "apple-ipad-11th-gen-wifi-128gb",
     "256GB · Wi-Fi + Cellular": "apple-ipad-11th-gen-wifi-cellular-256gb",
   },

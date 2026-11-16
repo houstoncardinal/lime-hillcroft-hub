@@ -16,7 +16,10 @@ describe("prepaid carriers", () => {
   it.each(["src", "public"])("%s never offers Boost, Metro or GoSmart", (dir) => {
     const files = fs.readdirSync(dir, { recursive: true, encoding: "utf8" });
     for (const f of files.filter((f) => /\.(tsx?|txt)$/.test(f) && !f.startsWith("test"))) {
-      const text = fs.readFileSync(`${dir}/${f}`, "utf8").replace(/PartyBoost/g, "");
+      // JBL feature names (PartyBoost, Playtime Boost, AI Sound Boost) aren't the carrier.
+      const text = fs
+        .readFileSync(`${dir}/${f}`, "utf8")
+        .replace(/PartyBoost|Playtime Boost|Sound Boost/g, "");
       expect(text, f).not.toMatch(/\b(Boost Mobile|Metro by T-Mobile|GoSmart|Metro, |Boost[,y ])/);
     }
   });

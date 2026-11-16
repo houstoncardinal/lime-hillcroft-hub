@@ -4,6 +4,7 @@ import {
   ArrowRight,
   ChevronDown,
   Gamepad2,
+  Headphones,
   Laptop,
   Smartphone,
   Tablet,
@@ -53,8 +54,10 @@ const ICONS: Record<LeaseCategory, typeof Smartphone> = {
   watches: Watch,
   ipads: Tablet,
   macbooks: Laptop,
+  laptops: Laptop,
   consoles: Gamepad2,
   tv: Tv,
+  audio: Headphones,
 };
 
 /** The device's photo: its own (lease/photos.ts), else its /devices page photo, else a brand tile. */
