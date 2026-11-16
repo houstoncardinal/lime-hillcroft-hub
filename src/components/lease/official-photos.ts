@@ -520,10 +520,4 @@ export const OFFICIAL_PHOTOS: Record<string, ProductPhoto[]> = {
     o("galaxy-tab-a9-plus-3", 1301, 881, "Galaxy Tab A9+ 5G, official Samsung product image", "Galaxy Tab A9+ 5G, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ca/tablets/galaxy-tab-a/galaxy-tab-a9-plus-5g-graphite-64gb-sm-x218uzaaxac/"),
     o("galaxy-tab-a9-plus-4", 1064, 865, "Galaxy Tab A9+ 5G, official Samsung product image", "Galaxy Tab A9+ 5G, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ca/tablets/galaxy-tab-a/galaxy-tab-a9-plus-5g-graphite-64gb-sm-x218uzaaxac/"),
   ],
-  "galaxy-tab-a8": [
-    o("galaxy-tab-a8-1", 811, 1310, "Galaxy Tab A 8.0 (2019) LTE, official Samsung product image", "Galaxy Tab A 8.0 (2019) LTE, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/latin/business/tablets/galaxy-tab-a/galaxy-taba-t295-sm-t295nzkagto/"),
-    o("galaxy-tab-a8-2", 810, 1309, "Galaxy Tab A 8.0 (2019) LTE, official Samsung product image", "Galaxy Tab A 8.0 (2019) LTE, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/latin/business/tablets/galaxy-tab-a/galaxy-taba-t295-sm-t295nzkagto/"),
-    o("galaxy-tab-a8-3", 742, 1401, "Galaxy Tab A 8.0 (2019) LTE, official Samsung product image", "Galaxy Tab A 8.0 (2019) LTE, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/latin/business/tablets/galaxy-tab-a/galaxy-taba-t295-sm-t295nzkagto/"),
-    o("galaxy-tab-a8-4", 696, 1310, "Galaxy Tab A 8.0 (2019) LTE, official Samsung product image", "Galaxy Tab A 8.0 (2019) LTE, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/latin/business/tablets/galaxy-tab-a/galaxy-taba-t295-sm-t295nzkagto/"),
-  ],
 };

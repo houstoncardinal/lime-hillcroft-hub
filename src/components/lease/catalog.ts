@@ -428,17 +428,6 @@ export const LEASE_DEVICES: LeaseDevice[] = [
       l("Slim 6.9 mm design", "Diseño delgado de 6.9 mm"),
     ],
     options: [n("Wi-Fi + Cellular (5G)", 249, 269)] },
-  // The sheet says "Tab A 8.0 Wifi + Cell (pre-owned)": the 2019 LTE model (SM-T295/T297).
-  { id: "galaxy-tab-a8", name: "Galaxy Tab A 8.0 (2019)", brand: "Samsung", category: "ipads",
-    highlights: [
-      l("8.0-inch WXGA (1280 x 800) display", "Pantalla WXGA (1280 x 800) de 8.0 pulgadas"),
-      l("4G LTE cellular connectivity", "Conectividad celular 4G LTE"),
-      l("32 GB storage, microSD up to 512 GB", "32 GB de almacenamiento, microSD de hasta 512 GB"),
-      l("5,100 mAh battery (typical)", "Batería de 5,100 mAh (típica)"),
-      l("Lightweight at 347 g", "Ligera, con solo 347 g"),
-      l("8 MP rear and 2 MP front cameras", "Cámara trasera de 8 MP y frontal de 2 MP"),
-    ],
-    options: [n(PRE_OWNED("Wi-Fi + Cellular"), 75, 75)] },
 
   // ---------- MacBook ----------
   { id: "macbook-air-13-m5", name: 'MacBook Air 13" (M5)', brand: "Apple", category: "macbooks",
