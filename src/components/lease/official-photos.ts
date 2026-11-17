@@ -347,18 +347,6 @@ export const OFFICIAL_PHOTOS: Record<string, ProductPhoto[]> = {
     o("galaxy-s20-plus-2", 1554, 1087, "Galaxy S20+ 5G, front, official Samsung product image", "Galaxy S20+ 5G, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-s/galaxy-s20-plus-enterprise-edition-sm-g986bzkdeea"),
     o("galaxy-s20-plus-3", 1554, 1087, "Galaxy S20+ 5G, angled view, official Samsung product image", "Galaxy S20+ 5G, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-s/galaxy-s20-plus-enterprise-edition-sm-g986bzkdeea"),
   ],
-  "galaxy-note10-plus": [
-    o("galaxy-note10-plus-1", 1554, 1087, "Galaxy Note10+, in Aura Glow with S Pen, official Samsung product image", "Galaxy Note10+, color Aura Glow con S Pen, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
-    o("galaxy-note10-plus-2", 1554, 1087, "Galaxy Note10+, in Aura Glow, back, official Samsung product image", "Galaxy Note10+, color Aura Glow, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
-    o("galaxy-note10-plus-3", 1554, 1087, "Galaxy Note10+, front with S Pen, official Samsung product image", "Galaxy Note10+, frente con S Pen, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
-    o("galaxy-note10-plus-4", 1554, 1087, "Galaxy Note10+, angled view, official Samsung product image", "Galaxy Note10+, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/lb/business/smartphones/galaxy-note/galaxy-note10-plus-n975-sm-n975fzsdmid"),
-  ],
-  "galaxy-s9-plus": [
-    o("galaxy-s9-plus-1", 1076, 1341, "Galaxy S9+, in Midnight Black, official Samsung product image", "Galaxy S9+, color Midnight Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
-    o("galaxy-s9-plus-2", 1554, 1087, "Galaxy S9+, back, official Samsung product image", "Galaxy S9+, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
-    o("galaxy-s9-plus-3", 1554, 1087, "Galaxy S9+, front, official Samsung product image", "Galaxy S9+, frente, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
-    o("galaxy-s9-plus-4", 1554, 1087, "Galaxy S9+, angled view, official Samsung product image", "Galaxy S9+, vista en ángulo, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s9-plus-single-sim-cpo-black-128gb-sm5g965fzkebtu/buy"),
-  ],
   "galaxy-a15": [
     o("galaxy-a15-1", 1554, 1087, "Galaxy A15 5G, in Blue Black, official Samsung product image", "Galaxy A15 5G, color Blue Black, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a15-5g-blue-black-128gb-sm-a156bzkdeub"),
     o("galaxy-a15-2", 1554, 1087, "Galaxy A15 5G, back, official Samsung product image", "Galaxy A15 5G, parte trasera, imagen oficial de Samsung", "Samsung", "https://www.samsung.com/ie/business/smartphones/galaxy-a/galaxy-a15-5g-blue-black-128gb-sm-a156bzkdeub"),

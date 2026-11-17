@@ -80,8 +80,6 @@ export const LEASE_CATEGORIES: { id: LeaseCategory; title: L }[] = [
 ];
 
 const l = (en: string, es = en): L => ({ en, es });
-const SEALED = (s: string) => l(`${s} · Sealed`, `${s} · Sellado`);
-const OPEN_BOX = (s: string) => l(`${s} · Open box`, `${s} · Caja abierta`);
 const PRE_OWNED = (s?: string) =>
   s ? l(`${s} · Pre-owned`, `${s} · Seminuevo`) : l("Pre-owned", "Seminuevo");
 const AB = (s: string) => l(`${s} · A/B grade`, `${s} · Grado A/B`);
@@ -120,7 +118,7 @@ export const LEASE_DEVICES: LeaseDevice[] = [
   { id: "iphone-18-pro", name: "iPhone 18 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-18-pro",
     options: [o("256GB", 1499, 1549, 76, 152, 294)] },
   { id: "iphone-17-pro-max", name: "iPhone 17 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-17-pro-max",
-    options: [o(SEALED("256GB"), 1359, 1399, 69, 137, 266), o(OPEN_BOX("256GB"), 1399, 1429, 70, 140, 271)] },
+    options: [o("256GB", 1359, 1399, 69, 137, 266)] },
   { id: "iphone-17-pro", name: "iPhone 17 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-17-pro",
     options: [o("256GB", 1199, 1299, 64, 128, 247)] },
   { id: "iphone-air", name: "iPhone Air", brand: "Apple", category: "iphone",
@@ -131,7 +129,6 @@ export const LEASE_DEVICES: LeaseDevice[] = [
     options: [
       o("256GB", 1049, 1149, 56, 113, 218),
       o("512GB", 1129, 1229, 60, 121, 233),
-      o("1TB", 1150, 1249, 61, 123, 237),
     ] },
   { id: "iphone-16-pro", name: "iPhone 16 Pro", brand: "Apple", category: "iphone", deviceId: "iphone-16-pro",
     options: [o("256GB", 799, 899, 44, 88, 171)] },
@@ -153,7 +150,6 @@ export const LEASE_DEVICES: LeaseDevice[] = [
     options: [
       o("128GB", 575, 675, 33, 66, 128),
       o("256GB", 675, 775, 38, 76, 147),
-      o(PRE_OWNED(), 450, 500, 25, 49, 95),
     ] },
   { id: "iphone-14-plus", name: "iPhone 14 Plus", brand: "Apple", category: "iphone", deviceId: "iphone-14-plus",
     options: [o("128GB", 549, 599, 29, 59, 114)] },
@@ -163,10 +159,7 @@ export const LEASE_DEVICES: LeaseDevice[] = [
     // 256GB: the sheet puts its prices on the line just under the "256 Unlocked" label.
     options: [o(UNLOCKED("128GB"), 599, 649, 32, 64, 123), o(UNLOCKED("256GB"), 650, 750, 37, 74, 142)] },
   { id: "iphone-13", name: "iPhone 13", brand: "Apple", category: "iphone", deviceId: "iphone-13",
-    options: [
-      o(l("128GB · Unlocked · Black", "128GB · Desbloqueado · Negro"), 399, 450, 22, 44, 85),
-      o(l("128GB · Unlocked · Red / Pink", "128GB · Desbloqueado · Rojo / Rosa"), 425, 475, 23, 47, 90),
-    ] },
+    options: [o(l("128GB · Unlocked · Black", "128GB · Desbloqueado · Negro"), 399, 450, 22, 44, 85)] },
   { id: "iphone-12-pro-max", name: "iPhone 12 Pro Max", brand: "Apple", category: "iphone", deviceId: "iphone-12-pro-max",
     options: [o("128GB · 5G", 525, 599, 29, 59, 114)] },
   { id: "iphone-12", name: "iPhone 12", brand: "Apple", category: "iphone", deviceId: "iphone-12",
@@ -235,17 +228,13 @@ export const LEASE_DEVICES: LeaseDevice[] = [
   { id: "galaxy-s21-plus", name: "Galaxy S21+", brand: "Samsung", category: "samsung", deviceId: "galaxy-s21-plus",
     options: [o("128GB", 389, 489, 24, 48, 93)] },
   { id: "galaxy-s21", name: "Galaxy S21", brand: "Samsung", category: "samsung", deviceId: "galaxy-s21",
-    options: [o("128GB · 5G", 329, 399, 20, 39, 76), o(PRE_OWNED(), 225, 275, 14, 27, 52)] },
+    options: [o("128GB · 5G", 329, 399, 20, 39, 76)] },
   { id: "galaxy-note20-ultra", name: "Galaxy Note20 Ultra", brand: "Samsung", category: "samsung", deviceId: "galaxy-note20-ultra",
     options: [o("128GB", 475, 529, 26, 52, 100)] },
   { id: "galaxy-s20-ultra", name: "Galaxy S20 Ultra 5G", brand: "Samsung", category: "samsung", deviceId: "galaxy-s20-ultra",
     options: [o("5G", 399, 499, 24, 49, 95)] },
   { id: "galaxy-s20-plus", name: "Galaxy S20+ 5G", brand: "Samsung", category: "samsung",
     options: [o("5G", 349, 449, 22, 44, 85)] },
-  { id: "galaxy-note10-plus", name: "Galaxy Note10+", brand: "Samsung", category: "samsung",
-    options: [o(UNLOCKED("256GB"), 375, 449, 22, 44, 85)] },
-  { id: "galaxy-s9-plus", name: "Galaxy S9+", brand: "Samsung", category: "samsung",
-    options: [o("64GB", 245, 299, 15, 29, 57)] },
   { id: "galaxy-a36", name: "Galaxy A36 5G", brand: "Samsung", category: "samsung", deviceId: "galaxy-a36",
     highlights: [
       l("6.7-inch FHD+ Super AMOLED display, 120 Hz", "Pantalla Super AMOLED FHD+ de 6.7 pulgadas, 120 Hz"),

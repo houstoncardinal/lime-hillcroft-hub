@@ -11,7 +11,7 @@ export const SHOPIFY_LISTINGS: Record<string, Record<string, string>> = {
   // iPhone
   "iphone-18-pro-max": { "256GB": "iphone-18-pro-max", "512GB": "iphone-18-pro-max" },
   "iphone-18-pro": { "256GB": "iphone-18-pro" },
-  "iphone-17-pro-max": { "256GB · Sealed": "iphone-17-pro-max" },
+  "iphone-17-pro-max": { "256GB": "iphone-17-pro-max" },
   "iphone-17-pro": { "256GB": "iphone-17-pro" },
   "iphone-air": { "256GB": "apple-i-phone-air-black-color-256-gb" },
   "iphone-17": { "256GB": "iphone-17" },
@@ -27,10 +27,7 @@ export const SHOPIFY_LISTINGS: Record<string, Record<string, string>> = {
   "iphone-14-plus": { "128GB": "iphone-14-plus" },
   "iphone-14": { "128GB": "iphone-14" },
   "iphone-13-pro-max": { "128GB · Unlocked": "iphone-13-pro-max" },
-  "iphone-13": {
-    "128GB · Unlocked · Black": "iphone-13",
-    "128GB · Unlocked · Red / Pink": "iphone-13",
-  },
+  "iphone-13": { "128GB · Unlocked · Black": "iphone-13" },
   "iphone-12-pro-max": { "128GB · 5G": "iphone-12-pro-max" },
   "iphone-12": { "64GB · 5G · A/B grade": "iphone-12", "64GB · 5G": "iphone-12" },
   "iphone-11": { "64GB · Unlocked · A/B grade": "iphone-11", "64GB · Unlocked": "iphone-11" },
