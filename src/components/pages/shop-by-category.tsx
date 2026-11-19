@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 // Home page "Shop by category": one tile per kind of product or service the store offers, each a
 // picture on white and a name: manufacturer images for products; for repair, Samsung's Galaxy
 // render with a cracked screen drawn on and a repair badge; for prepaid, the carriers' logos; for
-// lease-to-own, several of those product renders together (the catalog spans every device). Product tiles open their lease-to-own catalog section or category page;
-// service tiles open their service page. Prices live on those pages, not here.
+// lease-to-own, several of those product renders together (the catalog spans every device). Product tiles open their
+// section of the lease-to-own catalog (accessories: its category page); service tiles open their service page. Prices live on those pages, not here.
 
 type L = Record<Lang, string>;
 type Img = {
@@ -66,13 +66,14 @@ const TILES: Tile[] = [
   {
     id: "laptops",
     title: both("Laptops", "Laptops"),
-    href: ALTERNATES.laptops,
+    // MacBooks open the laptop part of the lease-to-own catalog; the Windows laptops follow them.
+    href: lease("macbooks"),
     img: cat("laptops"),
   },
   {
     id: "consoles",
     title: both("Game consoles", "Consolas"),
-    href: ALTERNATES.consoles,
+    href: lease("consoles"),
     img: cat("consoles"),
   },
   {
@@ -85,7 +86,7 @@ const TILES: Tile[] = [
   {
     id: "audio",
     title: both("Audio", "Audio"),
-    href: { en: `${ALTERNATES.accessories.en}#audio`, es: `${ALTERNATES.accessories.es}#audio` },
+    href: lease("audio"),
     img: cat("audio"),
   },
   {

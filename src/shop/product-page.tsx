@@ -67,11 +67,11 @@ export function ProductPage({
           className="mb-8 flex flex-wrap items-center gap-1 text-sm text-muted-foreground"
         >
           <Link to={ALTERNATES.home[lang]} className="hover:text-foreground">
-            {<MoneyText text={t.meta.breadcrumb[0]} />}
+            {<MoneyText text={t.meta.breadcrumb[0]} plain />}
           </Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <Link to={ALTERNATES.shop[lang]} className="hover:text-foreground">
-            {<MoneyText text={t.meta.breadcrumb[1]} />}
+            {<MoneyText text={t.meta.breadcrumb[1]} plain />}
           </Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <span className="text-foreground">{product.title}</span>

@@ -85,7 +85,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
               </Link>
               <span>/</span>
               <Link to={ALTERNATES.guides[lang]} className="hover:text-white">
-                {<MoneyText text={ui.guides} />}
+                {<MoneyText text={ui.guides} plain />}
               </Link>
             </nav>
             <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
@@ -180,7 +180,7 @@ export function GuidePage({ guide, lang }: { guide: Guide; lang: Lang }) {
                 href={guide.ctaHref[lang]}
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold transition hover:border-white/60"
               >
-                {<MoneyText text={t.cta} />} <ArrowRight className="h-4 w-4" />
+                {<MoneyText text={t.cta} plain />} <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </aside>

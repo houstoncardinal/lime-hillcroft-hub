@@ -27,6 +27,7 @@ export type PolicyDoc = {
 const STORE = "TIC Wireless Electronic & Repair Center";
 const SITE = "www.ticwirelesstx.com";
 const PORTALS = "Progressive Leasing, Acima, Payvantage and American First Finance (AFF)";
+const PORTALS_ES = "Progressive Leasing, Acima, Payvantage y American First Finance (AFF)";
 
 const contact = {
   en: {
@@ -233,7 +234,7 @@ export const POLICIES: Record<PolicyKey, Record<Lang, PolicyDoc>> = {
           id: "arrendamiento",
           title: "Compras con arrendamiento",
           body: [
-            `Si obtuviste tu equipo con arrendamiento con opción a compra de ${PORTALS}, la compañía de arrendamiento es dueña del equipo durante el contrato, y tu contrato explica cómo funcionan las devoluciones y las devoluciones anticipadas. Ven a la tienda dentro de 14 días y tramitamos la devolución con tu compañía de arrendamiento según sus reglas. Los pagos y cargos que hiciste a la compañía de arrendamiento se manejan según tu contrato.`,
+            `Si obtuviste tu equipo con arrendamiento con opción a compra de ${PORTALS_ES}, la compañía de arrendamiento es dueña del equipo durante el contrato, y tu contrato explica cómo funcionan las devoluciones y las devoluciones anticipadas. Ven a la tienda dentro de 14 días y tramitamos la devolución con tu compañía de arrendamiento según sus reglas. Los pagos y cargos que hiciste a la compañía de arrendamiento se manejan según tu contrato.`,
           ],
         },
         {
@@ -776,7 +777,7 @@ export const POLICIES: Record<PolicyKey, Record<Lang, PolicyDoc>> = {
             {
               list: [
                 "Shopify, que opera nuestro pago en línea, pedidos y cobros. Shop Pay Installments lo ofrece Affirm.",
-                `Socios de arrendamiento con opción a compra: ${PORTALS}. Cuando solicitas, lo haces en su sitio seguro y aplican sus políticas de privacidad. Pueden informarnos si te aprobaron y qué equipo arriendas.`,
+                `Socios de arrendamiento con opción a compra: ${PORTALS_ES}. Cuando solicitas, lo haces en su sitio seguro y aplican sus políticas de privacidad. Pueden informarnos si te aprobaron y qué equipo arriendas.`,
                 "Compañías telefónicas y redes de pago, para activar servicio, portar números, pagar facturas y enviar las recargas que pidas.",
                 "Proveedores que nos ayudan a operar: Google Analytics y Hotjar (estadísticas del sitio), Tidio (chat en vivo, que puede responder primero con un asistente automático), nuestro proveedor de hospedaje y base de datos, y paqueterías.",
                 "Autoridades o dependencias de gobierno, cuando la ley lo exige o para reportar un equipo perdido o robado.",
@@ -899,7 +900,7 @@ export const POLICIES: Record<PolicyKey, Record<Lang, PolicyDoc>> = {
           title: "Payment plans and lease-to-own",
           body: [
             "Shop Pay Installments is offered by Affirm at checkout, subject to eligibility. Affirm sets the terms, and your agreement is with Affirm.",
-            `Lease-to-own is offered by ${PORTALS}. It is a lease, not a loan or credit. Approval isn't guaranteed and is decided by the leasing company. The leasing company owns the device until the lease is paid off or bought out, and your lease agreement with them sets the payments, fees, ownership and early buyout terms. The total cost of leasing to own is more than the cash price. TIC Wireless is the retailer and isn't the lessor. Initial payments shown on our site (such as "as low as $40 initial payment") are starting points; your actual terms depend on the item and the plan you qualify for.`,
+            `Lease-to-own is offered by ${PORTALS}. It is a lease, not a loan or credit. Approval isn't guaranteed and is decided by the leasing company. The leasing company owns the device until the lease is paid off or bought out, and your lease agreement with them sets the payments, fees, ownership and early buyout terms. The total cost of leasing to own is more than the cash price. TIC Wireless is the retailer and isn't the lessor. The initial payment shown on our site ("as low as $49 initial payment*") is with Acima, one of our leasing providers, and is a starting point; your actual terms depend on the item, the partner and the plan you qualify for. Acima: Lease-to-own through Acima Leasing. Acquiring ownership by leasing costs more than the retailer's cash price. Not available in MN, NJ, WI or WY. Subject to approval.`,
           ],
         },
         {
@@ -1031,7 +1032,7 @@ export const POLICIES: Record<PolicyKey, Record<Lang, PolicyDoc>> = {
           title: "Planes de pago y arrendamiento con opción a compra",
           body: [
             "Shop Pay Installments lo ofrece Affirm al pagar, sujeto a elegibilidad. Affirm fija las condiciones, y tu contrato es con Affirm.",
-            `El arrendamiento con opción a compra lo ofrecen ${PORTALS}. Es un arrendamiento, no un préstamo ni un crédito. La aprobación no está garantizada y la decide la compañía de arrendamiento. La compañía es dueña del equipo hasta que el arrendamiento se termine de pagar o se liquide, y tu contrato con ella fija los pagos, cargos, propiedad y opciones de compra anticipada. El costo total de arrendar para comprar es mayor que el precio de contado. TIC Wireless es el vendedor y no es el arrendador. Los pagos iniciales que mostramos (como "desde $40 de pago inicial") son puntos de partida; tus condiciones reales dependen del artículo y del plan que te aprueben.`,
+            `El arrendamiento con opción a compra lo ofrecen ${PORTALS_ES}. Es un arrendamiento, no un préstamo ni un crédito. La aprobación no está garantizada y la decide la compañía de arrendamiento. La compañía es dueña del equipo hasta que el arrendamiento se termine de pagar o se liquide, y tu contrato con ella fija los pagos, cargos, propiedad y opciones de compra anticipada. El costo total de arrendar para comprar es mayor que el precio de contado. TIC Wireless es el vendedor y no es el arrendador. El pago inicial que mostramos ("desde $49 de pago inicial*") es con Acima, uno de nuestros proveedores de arrendamiento, y es un punto de partida; tus condiciones reales dependen del artículo, del socio y del plan que te aprueben. Acima: Arrendamiento con opción a compra a través de Acima Leasing. Adquirir la propiedad mediante arrendamiento cuesta más que el precio de contado del comerciante. No disponible en MN, NJ, WI ni WY. Sujeto a aprobación.`,
           ],
         },
         {

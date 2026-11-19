@@ -14,6 +14,7 @@ import { Photo } from "@/components/site/photo";
 import { ReviewQuotes } from "@/components/reviews/review-quotes";
 import { StoreVideo } from "@/components/site/store-video";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { linkAcima } from "@/components/site/acima-link";
 
 const UI = {
   en: {
@@ -181,13 +182,13 @@ export function CategoryPage({ category, lang }: { category: CategoryKey; lang: 
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
                   <h3 className="font-display text-xl font-semibold">{g.title[lang]}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {g.body[lang]}
+                    {linkAcima(g.body[lang])}
                   </p>
                   <ul className="mt-4 space-y-2 border-t pt-4 text-sm">
                     {g.items.map((item) => (
                       <li key={item.en} className="flex gap-2">
                         <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                        <span>{item[lang]}</span>
+                        <span>{linkAcima(item[lang])}</span>
                       </li>
                     ))}
                   </ul>

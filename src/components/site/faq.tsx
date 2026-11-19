@@ -11,7 +11,7 @@ export function FaqList({ items }: { items: Faq[] }) {
       {items.map((f) => (
         <details key={f.q} className="group border-b">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 text-left font-display text-lg font-semibold md:text-xl [&::-webkit-details-marker]:hidden">
-            <h3>{<MoneyText text={f.q} />}</h3>
+            <h3>{<MoneyText text={f.q} plain />}</h3>
             <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition group-open:rotate-180" />
           </summary>
           <p className="pb-6 text-base leading-relaxed text-muted-foreground">

@@ -168,7 +168,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
                         : "bg-card hover:border-ink/40",
                     )}
                   >
-                    {<MoneyText text={`${t.categories[c]} (${n})`} />}
+                    {<MoneyText text={`${t.categories[c]} (${n})`} plain />}
                   </button>
                 );
               })}
@@ -238,7 +238,7 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
               }}
               className="mt-4 cursor-pointer rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white"
             >
-              {<MoneyText text={t.clear} />}
+              {<MoneyText text={t.clear} plain />}
             </button>
           </div>
         ) : (
@@ -268,11 +268,11 @@ export function ShopPage({ lang, catalog }: { lang: Lang; catalog: Catalog }) {
             className="group flex flex-col justify-between rounded-3xl bg-ink p-6 text-white"
           >
             <div>
-              <p className="font-semibold">{<MoneyText text={t.leasing.title} />}</p>
-              <p className="mt-1 text-sm text-white/65">{<MoneyText text={t.leasing.body} />}</p>
+              <p className="font-semibold">{<MoneyText text={t.leasing.title} plain />}</p>
+              <p className="mt-1 text-sm text-white/65">{<MoneyText text={t.leasing.body} plain />}</p>
             </div>
             <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-              {<MoneyText text={t.leasing.cta} />}
+              {<MoneyText text={t.leasing.cta} plain />}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </span>
           </Link>

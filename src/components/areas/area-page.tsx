@@ -69,7 +69,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
             </Link>
             <span>/</span>
             <Link to={ALTERNATES.areas[lang]} className="hover:text-white">
-              {<MoneyText text={t.allAreas} />}
+              {<MoneyText text={t.allAreas} plain />}
             </Link>
             <span>/</span>
             <span className="text-white">{short}</span>
@@ -98,7 +98,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold transition hover:border-white/60"
             >
-              <Navigation className="h-4 w-4" /> {<MoneyText text={t.directions} />}
+              <Navigation className="h-4 w-4" /> {<MoneyText text={t.directions} plain />}
             </a>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-sm text-white/70">
@@ -184,22 +184,26 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
           {t.services.map(([title, body, href], i) => {
             const Icon = SERVICE_ICONS[i] ?? Wrench;
             return (
-              <Link
+              <div
                 key={title}
-                to={href}
-                className="group flex flex-col rounded-3xl border bg-card p-4 transition sm:p-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
+                className="group relative flex flex-col rounded-3xl border bg-card p-4 transition sm:p-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-ink transition group-hover:bg-primary">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-3 font-semibold leading-snug sm:mt-5">
-                  {<MoneyText text={title} />}
+                  <Link
+                    to={href}
+                    className="after:absolute after:inset-0 after:rounded-3xl focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-ring"
+                  >
+                    {<MoneyText text={title} plain />}
+                  </Link>
                 </h3>
                 <p className="mt-1.5 flex-1 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:text-sm sm:leading-relaxed">
                   {<MoneyText text={body} />}
                 </p>
                 <ArrowRight className="mt-4 h-4 w-4 text-primary transition group-hover:translate-x-1" />
-              </Link>
+              </div>
             );
           })}
         </div>
@@ -233,7 +237,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
               rel="noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:brightness-110"
             >
-              {<MoneyText text={t.directions} />} <ArrowUpRight className="h-4 w-4" />
+              {<MoneyText text={t.directions} plain />} <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -300,7 +304,7 @@ export function AreaPage({ area, lang }: { area: Area; lang: Lang }) {
               to={ALTERNATES.areas[lang]}
               className="tap inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
             >
-              {<MoneyText text={t.allAreas} />} <ArrowRight className="h-4 w-4" />
+              {<MoneyText text={t.allAreas} plain />} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">

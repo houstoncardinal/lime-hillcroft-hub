@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "Can I get an iPhone with bad credit?",
-            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones, all credit welcome, from $40 initial payment. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
+            a: "You can apply. We offer leasing (lease-to-own) on unlocked iPhones — including the iPhone 18 Pro Max — and Samsung Galaxy phones, all credit welcome, as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply. Bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Bring a valid photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
           },
           {
             q: "Will an unlocked phone work with my carrier?",
@@ -177,7 +177,7 @@ export const SERVICES: Service[] = [
           },
           {
             q: "¿Puedo sacar un iPhone con mal crédito?",
-            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, con todo tipo de crédito y desde $40 de pago inicial. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
+            a: "Puedes aplicar. Tenemos arrendamiento con opción a compra en iPhone desbloqueados —incluyendo el iPhone 18 Pro Max— y Samsung Galaxy, con todo tipo de crédito y desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones. El mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Trae una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
           },
           {
             q: "¿Un celular desbloqueado funciona con mi compañía?",

@@ -22,6 +22,7 @@ import { FaqList } from "@/components/site/faq";
 import { PORTALS } from "@/components/site/leasing-portals";
 import type { Faq } from "@/components/site/schema";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
+import { linkAcima } from "@/components/site/acima-link";
 
 // /in-house-leasing: leasing done directly with TIC Wireless at the Hillcroft store. The owner's
 // facts only — visit the store, bring a photo ID and a bank account to apply, subject to
@@ -248,7 +249,7 @@ export function InHousePage({ lang }: { lang: Lang }) {
             </ul>
             <p className="mt-5 flex max-w-2xl items-start gap-2.5 rounded-xl bg-white/10 px-4 py-3 text-sm leading-relaxed text-white">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-              <span>{t.eligible}</span>
+              <span>{linkAcima(t.eligible)}</span>
             </p>
           </div>
 
@@ -322,7 +323,8 @@ export function InHousePage({ lang }: { lang: Lang }) {
               <ul className="mt-4 space-y-3">
                 {t.onlinePoints.map((x) => (
                   <li key={x} className="flex gap-3 text-muted-foreground">
-                    <CircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground/60" /> {x}
+                    <CircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground/60" />{" "}
+                    <span>{linkAcima(x)}</span>
                   </li>
                 ))}
               </ul>

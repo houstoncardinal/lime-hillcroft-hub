@@ -42,7 +42,7 @@ export function areaCopy(a: Area, lang: Lang) {
         ],
         [
           "Celulares a pagos",
-          "Todo crédito es bienvenido, desde $40 de pago inicial. Sujeto a aprobación.",
+          "Todo crédito es bienvenido, desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones. Sujeto a aprobación.",
           ALTERNATES.leasing.es,
         ],
         ["Liberación", "Usa la compañía que quieras.", servicePath("es", "phone-unlocking")],
@@ -75,7 +75,7 @@ export function areaCopy(a: Area, lang: Lang) {
         },
         {
           q: `¿Puedo sacar un celular cerca de ${short} si tengo mal crédito o poco historial de crédito?`,
-          a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados, con todo tipo de crédito, desde $40 de pago inicial y con pagos semanales, quincenales o mensuales (sujeto a aprobación).",
+          a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados, con todo tipo de crédito, desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, y con pagos semanales, quincenales o mensuales (sujeto a aprobación). Aplican términos y condiciones.",
         },
       ] as Faq[],
     };
@@ -103,7 +103,7 @@ export function areaCopy(a: Area, lang: Lang) {
       ],
       [
         "Phones with leasing",
-        "All credit welcome, from $40 initial payment. Subject to approval.",
+        "All credit welcome, as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply. Subject to approval.",
         ALTERNATES.leasing.en,
       ],
       ["Unlocking", "Use the carrier you choose.", servicePath("en", "phone-unlocking")],
@@ -136,7 +136,7 @@ export function areaCopy(a: Area, lang: Lang) {
       },
       {
         q: `Can I get a phone with bad credit or little credit history near ${short}?`,
-        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Androids, all credit welcome, from $40 initial payment, with weekly, biweekly or monthly payments (subject to approval).",
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Androids, all credit welcome, as low as $49 initial payment* with Acima, one of our leasing providers, with weekly, biweekly or monthly payments (subject to approval). Terms and conditions apply.",
       },
     ] as Faq[],
   };

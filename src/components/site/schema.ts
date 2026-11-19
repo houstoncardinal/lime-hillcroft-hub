@@ -1,4 +1,5 @@
 import { CITY, FACEBOOK, MAPS, STREET } from "@/components/site/business";
+import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { ALTERNATES, absoluteUrl, type Lang, type Paths } from "@/components/site/seo";
 
 // schema.org JSON-LD for every page, as one connected @graph.
@@ -382,8 +383,8 @@ export function leasingService(lang: Lang, items: string[]) {
     serviceType: lang === "en" ? "Leasing (lease-to-own)" : "Arrendamiento con opción a compra",
     description:
       lang === "en"
-        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. All credit welcome; options starting at $40 initial payment. Subject to approval."
-        : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Todo crédito es bienvenido; opciones desde $40 de pago inicial. Sujeto a aprobación.",
+        ? "Take home a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad or phone today with leasing (lease-to-own) options. All credit welcome; options as low as $49 initial payment with Acima. Subject to approval."
+        : "Llévate hoy un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop, iPad o celular con arrendamiento con opción a compra. Todo crédito es bienvenido; opciones desde $49 de pago inicial con Acima. Sujeto a aprobación.",
     url,
     provider: { "@id": STORE_ID },
     areaServed: houston,
@@ -402,13 +403,13 @@ export function leasingService(lang: Lang, items: string[]) {
       url,
       description:
         lang === "en"
-          ? "Options starting at $40 initial payment. Subject to approval."
-          : "Opciones desde $40 de pago inicial. Sujeto a aprobación.",
+          ? "Options as low as $49 initial payment with Acima. Subject to approval."
+          : "Opciones desde $49 de pago inicial con Acima. Sujeto a aprobación.",
       priceSpecification: {
         "@type": "PriceSpecification",
-        minPrice: 40,
+        minPrice: LEASING_INITIAL_PAYMENT_USD,
         priceCurrency: "USD",
-        description: lang === "en" ? "Starting initial payment" : "Pago inicial",
+        description: lang === "en" ? "Starting initial payment with Acima" : "Pago inicial con Acima",
       },
     },
     hasOfferCatalog: {

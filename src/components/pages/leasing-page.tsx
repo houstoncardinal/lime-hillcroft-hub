@@ -13,6 +13,7 @@ import {
   Wallet,
 } from "lucide-react";
 
+import { linkAcima } from "@/components/site/acima-link";
 import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
@@ -73,9 +74,11 @@ export function LeasingPage({ lang }: { lang: Lang }) {
               : "Arrendamiento con todo tipo de crédito."}
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            {lang === "en"
-              ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
-              : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`}
+            {linkAcima(
+              lang === "en"
+                ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment* with Acima, one of our leasing providers, subject to approval. Terms and conditions apply. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
+                : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, sujeto a aprobación. Aplican términos y condiciones. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`,
+            )}
           </p>
         </div>
       </section>
@@ -160,7 +163,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-4 text-xl font-semibold md:text-2xl">
-                    {<MoneyText text={title} />}
+                    {<MoneyText text={title} plain />}
                   </h3>
                   <ul className="mt-3 flex flex-wrap gap-1.5">
                     {items.map((item) => (
@@ -289,7 +292,7 @@ export function LeasingPage({ lang }: { lang: Lang }) {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-ink/30 px-7 py-3.5 font-semibold transition hover:border-ink"
               >
-                {<MoneyText text={t.cta.directions} />} <ArrowUpRight className="h-4 w-4" />
+                {<MoneyText text={t.cta.directions} plain />} <ArrowUpRight className="h-4 w-4" />
               </a>
               <OpenBadge lang={lang} className="ml-2 rounded-full bg-ink px-4 py-2 text-white" />
             </div>

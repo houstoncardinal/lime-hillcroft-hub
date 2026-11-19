@@ -117,7 +117,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Phones — all credit welcome",
-          "From $40 initial payment, with weekly, biweekly or monthly payments.",
+          "As low as $49 initial payment* with Acima, one of our leasing providers, with weekly, biweekly or monthly payments. Terms and conditions apply.",
         ],
       ],
       es: [
@@ -131,7 +131,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Celulares con todo tipo de crédito",
-          "Desde $40 de pago inicial, con pagos semanales, quincenales o mensuales.",
+          "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, con pagos semanales, quincenales o mensuales. Aplican términos y condiciones.",
         ],
       ],
     },
@@ -244,7 +244,7 @@ export const LOCAL: Record<string, Local> = {
           "Phones, tablets and laptops — including the kids' iPads.",
         ],
         ["Protect it after the fix", "Tempered glass and a case fitted before you leave."],
-        ["Upgrade without big upfront cost", "Unlocked phones from $40 initial payment, all credit welcome."],
+        ["Upgrade without big upfront cost", "Unlocked phones as low as $49 initial payment* with Acima, one of our leasing providers, all credit welcome. Terms and conditions apply."],
       ],
       es: [
         [
@@ -254,7 +254,7 @@ export const LOCAL: Record<string, Local> = {
         ["Protégelo después de repararlo", "Mica de vidrio templado y funda antes de irte."],
         [
           "Estrena sin pagar todo de una vez",
-          "Celulares desbloqueados desde $40 de pago inicial, con todo tipo de crédito.",
+          "Celulares desbloqueados desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, con todo tipo de crédito. Aplican términos y condiciones.",
         ],
       ],
     },
@@ -282,7 +282,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "A new phone without the big bill",
-          "Unlocked iPhones and Androids, all credit welcome, from $40 initial payment.",
+          "Unlocked iPhones and Androids, all credit welcome, as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.",
         ],
         ["Buy, sell & trade", "Trade in your old phone toward a new one."],
       ],
@@ -293,7 +293,7 @@ export const LOCAL: Record<string, Local> = {
         ],
         [
           "Celular nuevo sin pagarlo todo",
-          "iPhone y Android desbloqueados, con todo tipo de crédito, desde $40 de pago inicial.",
+          "iPhone y Android desbloqueados, con todo tipo de crédito, desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
         ],
         ["Compra, venta e intercambio", "Cambia tu celular usado por uno nuevo."],
       ],

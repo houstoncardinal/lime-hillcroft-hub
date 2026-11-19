@@ -2,6 +2,8 @@ import { CarrierLogo } from "@/components/services/carrier-logo";
 import { PREPAID_CARRIERS } from "@/components/services/carriers";
 import { Link } from "@tanstack/react-router";
 import { Money, MoneyText } from "@/components/intl/money";
+import { linkAcima } from "@/components/site/acima-link";
+import { cn } from "@/lib/utils";
 import {
   Accessibility,
   ArrowRight,
@@ -111,6 +113,56 @@ const ACCESSORY_PHOTOS = [
 ];
 
 // `catalog` is still passed by the route (the online shop teaser that used it was removed).
+type LeaseCardCopy = {
+  leaseFrom: string;
+  leaseUnit: string;
+  leaseAcima: string;
+  leaseNote: string;
+};
+
+/** Hero leasing card: "As low as" over a large $49 with "initial payment*" beside it. */
+function LeasePrice({
+  t,
+  size,
+  className,
+}: {
+  t: LeaseCardCopy;
+  size: "sm" | "lg";
+  className?: string;
+}) {
+  return (
+    <div className={cn(size === "sm" && "shrink-0 text-right", className)}>
+      <p className="text-[11px] font-semibold leading-none text-slate">{t.leaseFrom}</p>
+      {/* Phones stack the unit under the amount so the device name keeps one line. */}
+      <p
+        className={cn(
+          "mt-1 flex leading-none",
+          size === "lg" ? "items-baseline gap-1.5" : "flex-col items-end gap-1",
+        )}
+      >
+        <span
+          className={cn(
+            "font-display font-semibold tabular-nums",
+            size === "lg" ? "text-4xl" : "text-[2rem]",
+          )}
+        >
+          <Money usd={LEASING_INITIAL_PAYMENT_USD} label={`$${LEASING_INITIAL_PAYMENT_USD}`} />
+        </span>
+        <span className="text-xs font-semibold text-primary">{t.leaseUnit}</span>
+      </p>
+    </div>
+  );
+}
+
+/** The card's fine print: the Acima statement, approval and payment schedule, in one block. */
+function LeaseFinePrint({ t, className }: { t: LeaseCardCopy; className?: string }) {
+  return (
+    <p className={cn("text-[11px] leading-snug text-muted-foreground", className)}>
+      {linkAcima(t.leaseAcima, "card", { fine: false })} {t.leaseNote}
+    </p>
+  );
+}
+
 export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
   const t = HOME_COPY[lang];
   return (
@@ -157,7 +209,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 font-semibold text-primary transition hover:border-primary"
               >
-                {<MoneyText text={t.hero.directions} />}
+                {<MoneyText text={t.hero.directions} plain />}
                 <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
@@ -212,24 +264,20 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                 className="relative mx-auto block w-[74%] max-w-[20rem] drop-shadow-[0_40px_60px_rgba(0,0,0,0.55)] sm:w-[60%] lg:ml-auto lg:mr-4 lg:w-[72%] lg:max-w-none"
               />
               {/* Phones: the leasing card sits under the photo (it floats beside it from sm up) */}
-              <div className="relative mx-auto mt-5 w-full max-w-sm overflow-hidden rounded-2xl bg-white p-4 text-ink shadow-2xl shadow-black/40 sm:hidden">
+              <div className="relative mx-auto mt-5 w-full max-w-sm overflow-hidden rounded-2xl bg-white px-4 py-3.5 text-ink shadow-2xl shadow-black/40 sm:hidden">
                 <span className="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true" />
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-end justify-between gap-3">
                   <div className="min-w-0">
-                    <p className="eyebrow text-[10px] leading-snug text-slate">
-                      {<MoneyText text={t.hero.leaseLabel} />}
+                    <p className="eyebrow text-[10px] leading-none text-primary">
+                      {t.hero.leaseLabel}
                     </p>
-                    <p className="mt-1.5 font-display text-[2rem] font-semibold leading-none tabular-nums">
-                      <Money usd={LEASING_INITIAL_PAYMENT_USD} stacked />
+                    <p className="mt-1.5 font-display text-lg font-semibold leading-tight">
+                      {t.hero.imageTitle}
                     </p>
                   </div>
-                  <span className="mt-0.5 shrink-0 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
-                    {<MoneyText text={t.hero.leaseUnit} />}
-                  </span>
+                  <LeasePrice t={t.hero} size="sm" />
                 </div>
-                <p className="mt-2.5 border-t pt-2.5 text-[13px] leading-snug text-muted-foreground">
-                  {<MoneyText text={t.hero.leaseNote} />}
-                </p>
+                <LeaseFinePrint t={t.hero} className="mt-2.5 border-t pt-2" />
               </div>
               <div className="mt-6 flex flex-col items-center gap-4 text-center lg:items-end lg:text-right">
                 <div>
@@ -251,22 +299,18 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                   to={leaseDevicePath(lang, "iphone-18-pro-max")}
                   className="tap group inline-flex min-h-12 shrink-0 items-center gap-1.5 rounded-full bg-primary px-6 font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition hover:brightness-110"
                 >
-                  {<MoneyText text={t.hero.imageCta} />}
+                  {<MoneyText text={t.hero.imageCta} plain />}
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </div>
-            <div className="absolute -left-6 top-8 hidden max-w-[15rem] rounded-2xl bg-white p-5 text-ink shadow-2xl sm:block lg:-left-8 xl:-left-24">
-              <p className="eyebrow text-slate">{<MoneyText text={t.hero.leaseLabel} />}</p>
-              <p className="mt-1 font-display text-3xl font-semibold">
-                <Money usd={LEASING_INITIAL_PAYMENT_USD} stacked />
-                <span className="mt-0.5 block text-base font-semibold text-primary">
-                  {<MoneyText text={t.hero.leaseUnit} />}
-                </span>
+            <div className="absolute -left-6 top-8 hidden w-[15rem] rounded-2xl bg-white p-4 text-ink shadow-2xl sm:block lg:-left-8 xl:-left-24">
+              <p className="eyebrow text-[10px] leading-none text-primary">{t.hero.leaseLabel}</p>
+              <p className="mt-1.5 font-display text-xl font-semibold leading-tight">
+                {t.hero.imageTitle}
               </p>
-              <p className="mt-0.5 text-sm leading-snug text-muted-foreground">
-                {<MoneyText text={t.hero.leaseNote} />}
-              </p>
+              <LeasePrice t={t.hero} size="lg" className="mt-3" />
+              <LeaseFinePrint t={t.hero} className="mt-3 border-t pt-2.5" />
             </div>
           </div>
         </div>
@@ -319,7 +363,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                     to={servicePath(lang, "unlocked-phones")}
                     className="after:absolute after:inset-0 after:content-[''] hover:text-primary"
                   >
-                    {<MoneyText text={t.services.featured.title} />}
+                    {<MoneyText text={t.services.featured.title} plain />}
                   </Link>
                 </h3>
                 <p className="mt-3 max-w-md text-lg leading-relaxed text-white/75">
@@ -339,7 +383,8 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                   to={ALTERNATES.leasing[lang]}
                   className="tap relative z-10 mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline"
                 >
-                  {<MoneyText text={t.services.featured.link} />} <ArrowRight className="h-4 w-4" />
+                  {<MoneyText text={t.services.featured.link} plain />}{" "}
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </article>
@@ -356,10 +401,10 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                     <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                   </span>
                   <h3 className="mt-3 font-semibold leading-snug group-hover:text-primary sm:mt-6 sm:text-lg">
-                    {<MoneyText text={title} />}
+                    {<MoneyText text={title} plain />}
                   </h3>
                   <p className="mt-1.5 line-clamp-3 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:line-clamp-none sm:text-sm sm:leading-relaxed">
-                    {<MoneyText text={body} />}
+                    {<MoneyText text={body} plain />}
                   </p>
                   <span className="mt-auto flex items-center gap-1 pt-3 text-sm font-semibold sm:pt-5">
                     {t.services.more}
@@ -506,7 +551,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
               href={TEL}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition hover:brightness-110"
             >
-              <Phone className="h-4 w-4" /> {<MoneyText text={t.repair.cta} />}
+              <Phone className="h-4 w-4" /> {<MoneyText text={t.repair.cta} plain />}
             </a>
           </div>
         </div>
@@ -588,7 +633,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
               rel="noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 font-semibold text-white transition hover:bg-ink-soft"
             >
-              {<MoneyText text={t.rating.cta} />} <ArrowUpRight className="h-4 w-4" />
+              {<MoneyText text={t.rating.cta} plain />} <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
           <div className="relative min-h-[280px]">
@@ -663,7 +708,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
               to={ALTERNATES.areas[lang]}
               className="tap mt-5 inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
             >
-              {<MoneyText text={t.area.cta} />} <ArrowRight className="h-4 w-4" />
+              {<MoneyText text={t.area.cta} plain />} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -702,7 +747,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
             to={ALTERNATES.guides[lang]}
             className="tap inline-flex items-center gap-1.5 font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4"
           >
-            {<MoneyText text={t.faq.allGuides} />} <ArrowRight className="h-4 w-4" />
+            {<MoneyText text={t.faq.allGuides} plain />} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

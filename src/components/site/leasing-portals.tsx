@@ -1,6 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
+import { linkAcima } from "@/components/site/acima-link";
+import {
+  ACIMA_URL,
+  INITIAL_PAYMENT_NOTE,
+  LEASING_INITIAL_PAYMENT_PARTNER,
+  LEASING_INITIAL_PAYMENT_USD,
+} from "@/components/site/leasing-offer";
 import { ALTERNATES } from "@/components/site/seo";
 import {
   ArrowRight,
@@ -48,7 +54,7 @@ export const PORTALS = [
     name: "Acima",
     short: "Acima",
     initials: "A",
-    href: "https://apply.acima.com/auth/v2/otp-start?app_id=lo&utm_source=web&utm_medium=merchant&location_guid=loca-620e6e7f-a8d0-4d60-8e39-4519408e72bb&lang=en",
+    href: ACIMA_URL,
     blurb: {
       en: "Lease-to-own on phones, tablets, laptops and consoles. All credit welcome.",
       es: "Arrendamiento con opción a compra en celulares, tabletas, laptops y consolas. Todo crédito es bienvenido.",
@@ -107,12 +113,39 @@ export function PartnerFinePrint({
     <div className={cn("space-y-1 text-[11px] leading-snug", className)}>
       {portals.map((p) => (
         <p key={p.id}>
-          <strong className="font-semibold">{p.name}:</strong> {p.disclaimer[lang]}
+          <strong className="font-semibold">{p.name}:</strong> {linkAcima(p.disclaimer[lang])}
         </p>
       ))}
     </div>
   );
 }
+
+/**
+ * The advertised initial payment is Acima's: this note plus Acima's own disclaimer, shown in full
+ * (never collapsed) wherever the amount is advertised.
+ */
+export function AcimaInitialPaymentFinePrint({
+  lang,
+  className,
+}: {
+  lang: Lang;
+  className?: string;
+}) {
+  const acima = PORTALS.find((p) => p.name === LEASING_INITIAL_PAYMENT_PARTNER)!;
+  return (
+    <p className={cn("text-[11px] leading-snug", className)}>
+      <strong className="font-semibold">
+        {linkAcima(INITIAL_PAYMENT_NOTE[lang].lead, "lead", { fine: false })}
+      </strong>{" "}
+      {linkAcima(INITIAL_PAYMENT_NOTE[lang].rest, "note")}{" "}
+      <strong className="font-semibold">{acima.name}:</strong>{" "}
+      {linkAcima(acima.disclaimer[lang], "fine")}
+    </p>
+  );
+}
+
+/** The other partners' fine print, for spots that already show AcimaInitialPaymentFinePrint. */
+const NOT_ACIMA = PORTALS.filter((p) => p.name !== LEASING_INITIAL_PAYMENT_PARTNER);
 
 /** "Progressive Leasing, Acima, Payvantage and American First Finance" — for tight spaces. */
 export function partnerNames(lang: Lang) {
@@ -286,7 +319,7 @@ export function PhoneOnlyNote({
         aria-hidden="true"
       />
       <span>
-        <strong className="font-semibold">{n.lead}</strong> {n.rest}
+        <strong className="font-semibold">{n.lead}</strong> {linkAcima(n.rest)}
       </span>
     </p>
   );
@@ -424,6 +457,7 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
               {t.secure} {t.fine}
             </span>
           </p>
+          <AcimaInitialPaymentFinePrint lang={lang} className="text-xs leading-relaxed" />
           <details className="group">
             <summary className="inline-flex cursor-pointer list-none items-center gap-1 font-semibold text-foreground/80 hover:text-foreground [&::-webkit-details-marker]:hidden">
               {lang === "en" ? "Partner disclosures" : "Avisos de los socios"}
@@ -432,7 +466,11 @@ export function LeasingPortals({ lang, className }: { lang: Lang; className?: st
                 aria-hidden="true"
               />
             </summary>
-            <PartnerFinePrint lang={lang} className="mt-2 rounded-lg bg-card p-3" />
+            <PartnerFinePrint
+              lang={lang}
+              portals={NOT_ACIMA}
+              className="mt-2 rounded-lg bg-card p-3"
+            />
           </details>
         </div>
       </div>
@@ -445,7 +483,11 @@ export function LeasingOptions({ lang, className }: { lang: Lang; className?: st
   return (
     <div className={className}>
       <LeasingCardStrip lang={lang} className="p-5" />
-      <PartnerFinePrint lang={lang} className="mt-3 px-1 text-muted-foreground" />
+      <PartnerFinePrint
+        lang={lang}
+        portals={NOT_ACIMA}
+        className="mt-3 px-1 text-muted-foreground"
+      />
     </div>
   );
 }
@@ -463,16 +505,20 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
       <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-foreground">
         <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
         <span>
-          {lang === "en"
-            ? `Lease-to-own, all credit welcome, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment.`
-            : `Arrendamiento con todo tipo de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial.`}
+          {linkAcima(
+            lang === "en"
+              ? `Lease-to-own, all credit welcome, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment* with Acima, one of our leasing providers. Terms and conditions apply.`
+              : `Arrendamiento con todo tipo de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.`,
+          )}
         </span>
       </p>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
         <p className="text-[11px] text-muted-foreground">
-          {lang === "en"
-            ? `With ${partnerNames(lang)}. Subject to approval.`
-            : `Con ${partnerNames(lang)}. Sujeto a aprobación.`}
+          {linkAcima(
+            lang === "en"
+              ? `With ${partnerNames(lang)}. Subject to approval.`
+              : `Con ${partnerNames(lang)}. Sujeto a aprobación.`,
+          )}
         </p>
         <Button asChild variant="link" className="h-auto px-0 py-1 text-xs font-bold">
           <Link to={ALTERNATES.leasing[lang]}>
@@ -491,6 +537,10 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
           : `O arrendamiento en nuestra tienda (solo ${IN_HOUSE.devices.es})`}
         <ArrowRight className="h-3 w-3" aria-hidden="true" />
       </Link>
+      <AcimaInitialPaymentFinePrint
+        lang={lang}
+        className="mt-2 border-t border-primary/15 pt-2 text-muted-foreground"
+      />
     </div>
   );
 }
@@ -523,7 +573,8 @@ export function LeasingPortalsBanner({ lang }: { lang: Lang }) {
       </div>
       <div className="mx-auto max-w-7xl px-5 pb-6 opacity-75">
         <p className="text-[12px] leading-relaxed">{t.fine}</p>
-        <PartnerFinePrint lang={lang} className="mt-2" />
+        <AcimaInitialPaymentFinePrint lang={lang} className="mt-2 text-[12px] leading-relaxed" />
+        <PartnerFinePrint lang={lang} portals={NOT_ACIMA} className="mt-2" />
       </div>
     </aside>
   );
