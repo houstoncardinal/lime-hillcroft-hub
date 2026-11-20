@@ -113,7 +113,7 @@ export function PartnerFinePrint({
     <div className={cn("space-y-1 text-[11px] leading-snug", className)}>
       {portals.map((p) => (
         <p key={p.id}>
-          <strong className="font-semibold">{p.name}:</strong> {linkAcima(p.disclaimer[lang])}
+          <strong className="font-semibold">{p.name}:</strong> {p.disclaimer[lang]}
         </p>
       ))}
     </div>
@@ -135,11 +135,10 @@ export function AcimaInitialPaymentFinePrint({
   return (
     <p className={cn("text-[11px] leading-snug", className)}>
       <strong className="font-semibold">
-        {linkAcima(INITIAL_PAYMENT_NOTE[lang].lead, "lead", { fine: false })}
+        {linkAcima(INITIAL_PAYMENT_NOTE[lang].lead, "lead")}
       </strong>{" "}
-      {linkAcima(INITIAL_PAYMENT_NOTE[lang].rest, "note")}{" "}
-      <strong className="font-semibold">{acima.name}:</strong>{" "}
-      {linkAcima(acima.disclaimer[lang], "fine")}
+      {INITIAL_PAYMENT_NOTE[lang].rest} <strong className="font-semibold">{acima.name}:</strong>{" "}
+      {acima.disclaimer[lang]}
     </p>
   );
 }
@@ -319,7 +318,7 @@ export function PhoneOnlyNote({
         aria-hidden="true"
       />
       <span>
-        <strong className="font-semibold">{n.lead}</strong> {linkAcima(n.rest)}
+        <strong className="font-semibold">{n.lead}</strong> {n.rest}
       </span>
     </p>
   );
@@ -505,20 +504,16 @@ export function LeasingCardStrip({ lang, className }: { lang: Lang; className?: 
       <p className="flex items-start gap-2 text-xs font-semibold leading-relaxed text-foreground">
         <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
         <span>
-          {linkAcima(
-            lang === "en"
-              ? `Lease-to-own, all credit welcome, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment* with Acima, one of our leasing providers. Terms and conditions apply.`
-              : `Arrendamiento con todo tipo de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.`,
-          )}
+          {lang === "en"
+            ? `Lease-to-own, all credit welcome, as low as $${LEASING_INITIAL_PAYMENT_USD} initial payment*.`
+            : `Arrendamiento con todo tipo de crédito, desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial*.`}
         </span>
       </p>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
         <p className="text-[11px] text-muted-foreground">
-          {linkAcima(
-            lang === "en"
-              ? `With ${partnerNames(lang)}. Subject to approval.`
-              : `Con ${partnerNames(lang)}. Sujeto a aprobación.`,
-          )}
+          {lang === "en"
+            ? `With ${partnerNames(lang)}. Subject to approval.`
+            : `Con ${partnerNames(lang)}. Sujeto a aprobación.`}
         </p>
         <Button asChild variant="link" className="h-auto px-0 py-1 text-xs font-bold">
           <Link to={ALTERNATES.leasing[lang]}>

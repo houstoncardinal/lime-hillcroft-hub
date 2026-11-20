@@ -2,7 +2,7 @@ import { CarrierLogo } from "@/components/services/carrier-logo";
 import { PREPAID_CARRIERS } from "@/components/services/carriers";
 import { Link } from "@tanstack/react-router";
 import { Money, MoneyText } from "@/components/intl/money";
-import { linkAcima } from "@/components/site/acima-link";
+import { InitialPaymentDisclaimer, linkAcima } from "@/components/site/acima-link";
 import { cn } from "@/lib/utils";
 import {
   Accessibility,
@@ -158,7 +158,7 @@ function LeasePrice({
 function LeaseFinePrint({ t, className }: { t: LeaseCardCopy; className?: string }) {
   return (
     <p className={cn("text-[11px] leading-snug text-muted-foreground", className)}>
-      {linkAcima(t.leaseAcima, "card", { fine: false })} {t.leaseNote}
+      {linkAcima(t.leaseAcima, "card")} {t.leaseNote}
     </p>
   );
 }
@@ -186,11 +186,14 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
               {<MoneyText text={t.hero.slogan} />}
             </p>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-              {<MoneyText text={t.hero.body[0]} />}
+              {<MoneyText text={t.hero.body[0]} note={false} />}
               <strong className="font-semibold text-white">
-                {<MoneyText text={t.hero.body[1]} />}
+                {<MoneyText text={t.hero.body[1]} note={false} />}
               </strong>
-              {<MoneyText text={t.hero.body[2]} />}
+              {<MoneyText text={t.hero.body[2]} note={false} />}
+            </p>
+            <p className="mt-2 max-w-lg text-white/70">
+              <InitialPaymentDisclaimer lang={lang} block={false} />
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button
@@ -375,7 +378,7 @@ export function HomePage({ lang }: { lang: Lang; catalog: Catalog }) {
                       key={chip}
                       className="rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm text-white/85 backdrop-blur"
                     >
-                      {<MoneyText text={chip} />}
+                      {<MoneyText text={chip} note={false} />}
                     </span>
                   ))}
                 </div>

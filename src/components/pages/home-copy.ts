@@ -21,8 +21,8 @@ const en = {
     slogan: "Your phone, sorted.",
     body: [
       "The new iPhone 18 Pro Max and unlocked Android phones, with leasing ",
-      "as low as $49 initial payment* with Acima, one of our leasing providers",
-      ". Terms and conditions apply. All credit welcome, subject to approval. Plus prepaid plans, same-day repairs and the accessories you need.",
+      "as low as $49 initial payment*",
+      " — all credit welcome, subject to approval. Plus prepaid plans, same-day repairs and the accessories you need.",
     ],
     directions: "Get directions",
     reviews: `${REVIEWS_N} Google reviews`,
@@ -40,7 +40,7 @@ const en = {
     leaseNote: "Subject to approval. Weekly, biweekly or monthly payments.",
   },
   ticker: [
-    "Leasing as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.",
+    "Leasing as low as $49 initial payment*",
     "All credit welcome",
     "Unlocked iPhones & Androids",
     "Prepaid plans",
@@ -70,8 +70,8 @@ const en = {
       "Buying, switching, fixing or paying — skip the mall and the big-box lines. We handle it all on Hillcroft.",
     featured: {
       title: "Unlocked iPhones & Androids",
-      body: "Walk out with a new phone today. Leasing as low as $49 initial payment* with Acima, one of our leasing providers, on iPhone and Galaxy models, subject to approval. Terms and conditions apply.",
-      chips: ["All credit welcome", "As low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.", "iPhone & Galaxy", "Take it home today"],
+      body: "Walk out with a new phone today. Leasing as low as $49 initial payment* on iPhone and Galaxy models, subject to approval.",
+      chips: ["All credit welcome", "As low as $49 initial payment*", "iPhone & Galaxy", "Take it home today"],
       link: "Leasing on consoles, laptops & more",
       imageAlt:
         "The latest iPhone 18 Pro, iPhone 18 Pro Max and Samsung Galaxy S26 Ultra, official Apple and Samsung images",
@@ -165,14 +165,14 @@ const en = {
   glance: {
     kicker: "At a glance",
     title: "TIC Wireless Electronic & Repair Center in 30 seconds.",
-    summary: `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with leasing as low as $49 initial payment* with Acima, one of our leasing providers (all credit welcome, subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish. Terms and conditions apply.`,
+    summary: `TIC Wireless Electronic & Repair Center is an independent cell phone store and phone repair shop at 3640 Hillcroft St, Suite C in Southwest Houston, Texas. It sells unlocked iPhones and Androids with leasing as low as $49 initial payment* (all credit welcome, subject to approval), prepaid plans from ${CARRIER_COUNT} carriers and accessories, and does same-day phone repair, unlocking and bill payments — in English and Spanish.`,
     facts: [
       ["Address", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Phone", "(713) 339-9300"],
       ["Hours", "Mon–Sat 9 AM–8 PM · Sun 9 AM–5 PM · no appointment needed"],
       [
         "Leasing",
-        "All credit welcome · as low as $49 initial payment* with Acima, one of our leasing providers · subject to approval · weekly, biweekly or monthly payments · Terms and conditions apply",
+        "All credit welcome · as low as $49 initial payment* · subject to approval · weekly, biweekly or monthly payments",
       ],
       ["Repairs", "Same-day screen, battery & charging-port repair for iPhone, Samsung & Android"],
       ["Prepaid carriers", PREPAID_CARRIERS.join(", ")],
@@ -216,7 +216,7 @@ const en = {
       },
       {
         q: "Can I get a phone with bad credit or little credit history?",
-        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply. All credit is welcome, so bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Stop by with a valid photo ID, your SSN or ITIN, and an active bank account and debit card, and we'll walk you through the options in a few minutes.",
+        a: "Yes. We offer leasing (lease-to-own) on unlocked iPhones and Android phones as low as $49 initial payment*. All credit is welcome, so bad credit isn't automatically a deal-breaker, though approval isn't guaranteed. Stop by with a valid photo ID, your SSN or ITIN, and an active bank account and debit card, and we'll walk you through the options in a few minutes.",
       },
       {
         q: "Do you fix cracked iPhone and Samsung screens?",
@@ -282,8 +282,8 @@ const es: HomeCopy = {
     slogan: "Tu celular, resuelto.",
     body: [
       "El nuevo iPhone 18 Pro Max y celulares Android, desbloqueados y a pagos desde ",
-      "$49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento",
-      ". Aplican términos y condiciones. Con todo tipo de crédito, sujeto a aprobación. Además planes prepagados, reparaciones el mismo día y los accesorios que necesitas.",
+      "$49 de pago inicial*",
+      " — con todo tipo de crédito, sujeto a aprobación. Además planes prepagados, reparaciones el mismo día y los accesorios que necesitas.",
     ],
     directions: "Cómo llegar",
     reviews: `${REVIEWS_N} reseñas en Google`,
@@ -301,7 +301,7 @@ const es: HomeCopy = {
     leaseNote: "Sujeto a aprobación. Pagos semanales, quincenales o mensuales.",
   },
   ticker: [
-    "A pagos desde $49* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+    "A pagos desde $49*",
     "Todo crédito es bienvenido",
     "iPhone y Android desbloqueados",
     "Planes prepagados",
@@ -331,8 +331,8 @@ const es: HomeCopy = {
       "Comprar, cambiar de compañía, reparar o pagar — sin filas de centro comercial. Lo resolvemos todo en Hillcroft.",
     featured: {
       title: "iPhone y Android desbloqueados",
-      body: "Llévate tu celular nuevo hoy mismo. A pagos desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, en modelos de iPhone y Galaxy, sujeto a aprobación. Aplican términos y condiciones.",
-      chips: ["Todo crédito es bienvenido", "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.", "iPhone y Galaxy", "Llévatelo hoy"],
+      body: "Llévate tu celular nuevo hoy mismo. A pagos desde $49 de pago inicial* en modelos de iPhone y Galaxy, sujeto a aprobación.",
+      chips: ["Todo crédito es bienvenido", "Desde $49 de pago inicial*", "iPhone y Galaxy", "Llévatelo hoy"],
       link: "Consolas, laptops y más a pagos",
       imageAlt:
         "Los nuevos iPhone 18 Pro, iPhone 18 Pro Max y Samsung Galaxy S26 Ultra, imágenes oficiales de Apple y Samsung",
@@ -432,14 +432,14 @@ const es: HomeCopy = {
   glance: {
     kicker: "En resumen",
     title: "TIC Wireless Electronic & Repair Center en 30 segundos.",
-    summary: `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos con todo tipo de crédito desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés. Aplican términos y condiciones.`,
+    summary: `TIC Wireless Electronic & Repair Center es una tienda independiente de celulares y taller de reparación en 3640 Hillcroft St, Suite C, en el suroeste de Houston, Texas. Vende iPhone y Android desbloqueados a pagos con todo tipo de crédito desde $49 de pago inicial* (sujeto a aprobación), planes prepagados de ${CARRIER_COUNT} compañías y accesorios, y hace reparaciones el mismo día, liberaciones y pago de facturas — en español e inglés.`,
     facts: [
       ["Dirección", "3640 Hillcroft St, Suite C, Houston, TX 77057"],
       ["Teléfono", "(713) 339-9300"],
       ["Horario", "Lun–Sáb 9 AM–8 PM · Dom 9 AM–5 PM · sin cita"],
       [
         "Arrendamiento",
-        "Todo crédito es bienvenido · desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento · sujeto a aprobación · pagos semanales, quincenales o mensuales · Aplican términos y condiciones",
+        "Todo crédito es bienvenido · desde $49 de pago inicial* · sujeto a aprobación · pagos semanales, quincenales o mensuales",
       ],
       [
         "Reparaciones",
@@ -486,7 +486,7 @@ const es: HomeCopy = {
       },
       {
         q: "¿Puedo sacar un celular a pagos si tengo mal crédito o poco historial de crédito?",
-        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones. Aceptamos todo tipo de crédito, así que el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Ven con una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito, y te explicamos las opciones en unos minutos.",
+        a: "Sí. Tenemos arrendamiento con opción a compra en iPhone y Android desbloqueados desde $49 de pago inicial*. Aceptamos todo tipo de crédito, así que el mal crédito no es impedimento automático, aunque la aprobación no está garantizada. Ven con una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito, y te explicamos las opciones en unos minutos.",
       },
       {
         q: "¿Reparan pantallas rotas de iPhone y Samsung?",

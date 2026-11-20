@@ -8,7 +8,6 @@ import { pageSchema } from "@/components/site/schema";
 import { ALTERNATES, pageHead, type Lang } from "@/components/site/seo";
 import { POLICIES, POLICY_UPDATED, type PolicyKey } from "@/shop/policy-content";
 import { cn } from "@/lib/utils";
-import { linkAcima } from "@/components/site/acima-link";
 
 export type { PolicyKey };
 
@@ -159,7 +158,7 @@ export function PolicyPage({ lang, policy }: { lang: Lang; policy: PolicyKey }) 
               {doc.points.map((p) => (
                 <li key={p} className="flex gap-3 leading-relaxed">
                   <CircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>{linkAcima(p)}</span>
+                  <span>{p}</span>
                 </li>
               ))}
             </ul>
@@ -179,11 +178,11 @@ export function PolicyPage({ lang, policy }: { lang: Lang; policy: PolicyKey }) 
                 <div className="mt-3 space-y-3 leading-relaxed text-muted-foreground">
                   {s.body.map((b, i) =>
                     typeof b === "string" ? (
-                      <p key={i}>{linkAcima(b)}</p>
+                      <p key={i}>{b}</p>
                     ) : (
                       <ul key={i} className="list-disc space-y-2 pl-5 marker:text-primary">
                         {b.list.map((item) => (
-                          <li key={item}>{linkAcima(item)}</li>
+                          <li key={item}>{item}</li>
                         ))}
                       </ul>
                     ),

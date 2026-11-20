@@ -1,32 +1,24 @@
 import { ACIMA_URL } from "@/components/site/leasing-offer";
 import { cn } from "@/lib/utils";
 
-// Owner's rules for the initial-payment disclosure:
-// - Every advertised initial payment is followed by "with Acima, one of our leasing providers.
-//   Terms and conditions apply." That statement is fine print: smaller, lighter and never bold,
-//   so Acima doesn't look more important than the other leasing companies.
-// - "Acima" links to its application only inside that statement (no underline until hover).
-//   Where all partners are listed together, Acima is plain text like the others.
-const STATEMENT = new RegExp(
-  [
-    "[Ww]ith Acima, one of our leasing providers",
-    "[Cc]on Acima, uno de nuestros proveedores de arrendamiento",
-    "Terms and conditions apply\\.?",
-    "Aplican términos y condiciones\\.?",
-    "\\((?:terms and conditions apply|aplican términos y condiciones)\\)",
-    // Other-language pages (src/components/intl/languages.ts)
-    "với Acima, một trong các nhà cung cấp thuê mua của chúng tôi \\(áp dụng các điều khoản và điều kiện\\)",
-    "（通过我们的租赁服务商之一 Acima；适用条款和条件）",
-    "مع Acima، أحد مزودي التأجير لدينا \\(تطبق الشروط والأحكام\\)",
-    "Acima کے ساتھ جو ہمارے لیزنگ فراہم کنندگان میں سے ایک ہے \\(شرائط و ضوابط لاگو ہیں\\)",
-    "Acima के साथ, जो हमारे लीज़िंग प्रदाताओं में से एक है \\(नियम और शर्तें लागू\\)",
-    "avec Acima, l'un de nos fournisseurs de location \\(conditions générales applicables\\)",
-    "com a Acima, um dos nossos fornecedores de leasing \\(termos e condições se aplicam\\)",
-    "\\(저희 리스 제공업체 중 하나인 Acima 이용 시, 약관 적용\\)",
-    "sa Acima, isa sa aming mga leasing provider \\(may mga tuntunin at kundisyon\\)",
-  ].join("|"),
-  "g",
-);
+// Owner's and client's rules for the advertised initial payment:
+// - The copy says "as low as $49 initial payment*". Right under that text, as its own small
+//   disclaimer line (not part of the sentence): "*With Acima, one of our leasing providers. Terms
+//   and conditions apply." MoneyText adds it automatically to any text with an asterisked amount.
+// - The disclaimer is fine print, so Acima doesn't look more important than the other partners.
+//   "Acima" in it links to the application (underline on hover only); partner lists stay plain.
+
+export const INITIAL_PAYMENT_DISCLAIMER = {
+  en: "*With Acima, one of our leasing providers. Terms and conditions apply.",
+  es: "*Con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+} as const;
+
+/** Which disclaimer a text needs: English or Spanish asterisked initial payment, else none. */
+export function disclaimerLang(text: string): "en" | "es" | null {
+  if (/initial payment\*/i.test(text)) return "en";
+  if (/de pago inicial\*|desde \$\d+\*/i.test(text)) return "es";
+  return null;
+}
 
 export function AcimaLink({
   children = "Acima",
@@ -48,50 +40,43 @@ export function AcimaLink({
   );
 }
 
-function linkWord(s: string, key: string, link: boolean): React.ReactNode[] {
-  if (!link || !s.includes("Acima")) return [s];
-  const i = s.indexOf("Acima");
-  return [s.slice(0, i), <AcimaLink key={`${key}a`}>Acima</AcimaLink>, s.slice(i + "Acima".length)];
-}
-
-/**
- * Renders text with the initial-payment statement as fine print (and "Acima" in it linked).
- * `link: false` inside other links or buttons; `fine: false` where the text is already fine print.
- */
+/** Text with its first "Acima" linked (plain text when `link` is false, e.g. inside a link). */
 export function linkAcima(
   text: string,
   keyPrefix: string | number = "",
-  { link = true, fine = true }: { link?: boolean; fine?: boolean } = {},
+  { link = true }: { link?: boolean } = {},
 ): React.ReactNode[] {
-  if (
-    !/Acima|Terms and conditions apply|Aplican términos|terms and conditions apply|aplican términos/.test(
-      text,
-    )
-  )
-    return [text];
-  const parts: React.ReactNode[] = [];
-  let last = 0;
-  for (const m of text.matchAll(STATEMENT)) {
-    const i = m.index ?? 0;
-    if (i > last) parts.push(text.slice(last, i));
-    const key = `${keyPrefix}s${i}`;
-    const inner = linkWord(m[0], key, link);
-    parts.push(
-      fine ? (
-        <span key={key} className="text-[0.82em] font-normal opacity-75">
-          {inner}
-        </span>
-      ) : (
-        <span key={key}>{inner}</span>
-      ),
-    );
-    last = i + m[0].length;
-  }
-  if (last < text.length) parts.push(text.slice(last));
-  return parts;
+  const i = text.indexOf("Acima");
+  if (!link || i < 0) return [text];
+  return [
+    text.slice(0, i),
+    <AcimaLink key={`${keyPrefix}acima`}>Acima</AcimaLink>,
+    text.slice(i + "Acima".length),
+  ];
 }
 
-/** Text with the initial-payment statement as fine print. */
-export function AcimaText({ text }: { text: string }) {
-  return <>{linkAcima(text)}</>;
+/** The separate disclaimer line shown under any text that advertises the initial payment. */
+export function InitialPaymentDisclaimer({
+  lang,
+  link = true,
+  block = true,
+  className,
+}: {
+  lang: "en" | "es";
+  link?: boolean;
+  /** A line of its own under inline text; false when the caller already places it on its own. */
+  block?: boolean;
+  className?: string;
+}) {
+  return (
+    <span
+      className={cn(
+        "text-[0.78rem] font-normal leading-snug opacity-75",
+        block && "mt-1.5 block",
+        className,
+      )}
+    >
+      {linkAcima(INITIAL_PAYMENT_DISCLAIMER[lang], "disclaimer", { link })}
+    </span>
+  );
 }

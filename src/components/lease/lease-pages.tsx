@@ -46,7 +46,6 @@ import { SiteFooter, SiteHeader } from "@/components/site/chrome";
 import { IN_HOUSE, PORTALS, PortalButton } from "@/components/site/leasing-portals";
 import { ALTERNATES, type Lang } from "@/components/site/seo";
 import { cn } from "@/lib/utils";
-import { linkAcima } from "@/components/site/acima-link";
 
 function Crumbs({ lang, name }: { lang: Lang; name?: string }) {
   const t = LEASE_COPY[lang];
@@ -96,9 +95,7 @@ function Steps({ lang, partners }: { lang: Lang; partners?: string[] }) {
               <p className="font-display text-lg font-semibold md:mt-4">
                 {i + 1}. {title}
               </p>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                {linkAcima(body)}
-              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
             </li>
           );
         })}
@@ -191,7 +188,7 @@ export function LeaseHubPage({ lang }: { lang: Lang }) {
               <summary className="cursor-pointer list-none font-semibold marker:hidden">
                 {f.q}
               </summary>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{linkAcima(f.a)}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
             </details>
           ))}
         </div>

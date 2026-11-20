@@ -599,10 +599,10 @@ export const CONSOLES: CategoryPageData = {
       kicker: "Game consoles · Leasing · Houston",
       h1: ["PS5, Xbox & Switch 2.", "Take it home today."],
       intro:
-        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and all credit is welcome. Our leasing programs start as low as $49 initial payment* with Acima, one of our leasing providers, with weekly, biweekly or monthly payments, subject to approval. Terms and conditions apply.",
+        "PlayStation 5, Xbox Series X and Nintendo Switch 2 are in store on Hillcroft, and all credit is welcome. Our leasing programs start as low as $49 initial payment*, with weekly, biweekly or monthly payments, subject to approval.",
       chips: [
         "All credit welcome",
-        "As low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.",
+        "As low as $49 initial payment*",
         "Take it home today",
         "Se habla español",
       ],
@@ -618,7 +618,7 @@ export const CONSOLES: CategoryPageData = {
         ["Pick your console", "PS5, Xbox or Switch 2 — add a controller or headset if you like."],
         [
           "Take it home today",
-          "Start with as low as $49 initial payment* with Acima, one of our leasing providers, then weekly, biweekly or monthly payments. Terms and conditions apply.",
+          "Start with as low as $49 initial payment*, then weekly, biweekly or monthly payments.",
         ],
       ],
       galleryTitle: "On display at the store",
@@ -630,7 +630,7 @@ export const CONSOLES: CategoryPageData = {
         },
         {
           q: "Can I get a PS5 or Xbox with bad credit or little credit history?",
-          a: "Yes. Our leasing programs welcome all credit, with options as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply. Approval isn't guaranteed and depends on the program.",
+          a: "Yes. Our leasing programs welcome all credit, with options as low as $49 initial payment*. Approval isn't guaranteed and depends on the program.",
         },
         {
           q: "What do I need to apply?",
@@ -665,10 +665,10 @@ export const CONSOLES: CategoryPageData = {
       kicker: "Consolas · Arrendamiento · Houston",
       h1: ["PS5, Xbox y Switch 2.", "Llévatelo hoy."],
       intro:
-        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y aceptamos todo tipo de crédito. Nuestros programas de arrendamiento empiezan desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, con pagos semanales, quincenales o mensuales, sujeto a aprobación. Aplican términos y condiciones.",
+        "PlayStation 5, Xbox Series X y Nintendo Switch 2 están en la tienda de Hillcroft y aceptamos todo tipo de crédito. Nuestros programas de arrendamiento empiezan desde $49 de pago inicial*, con pagos semanales, quincenales o mensuales, sujeto a aprobación.",
       chips: [
         "Todo crédito es bienvenido",
-        "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+        "Desde $49 de pago inicial*",
         "Llévatelo hoy",
         "We speak English",
       ],
@@ -687,7 +687,7 @@ export const CONSOLES: CategoryPageData = {
         ["Elige tu consola", "PS5, Xbox o Switch 2; agrega un control o audífonos si quieres."],
         [
           "Llévatela hoy",
-          "Empieza desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, y luego pagos semanales, quincenales o mensuales. Aplican términos y condiciones.",
+          "Empieza desde $49 de pago inicial* y luego pagos semanales, quincenales o mensuales.",
         ],
       ],
       galleryTitle: "En exhibición en la tienda",
@@ -699,7 +699,7 @@ export const CONSOLES: CategoryPageData = {
         },
         {
           q: "¿Puedo llevarme un PS5 o Xbox si tengo mal crédito o poco historial de crédito?",
-          a: "Sí. Nuestros programas de arrendamiento aceptan todo tipo de crédito y empiezan desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones. La aprobación no está garantizada y depende del programa.",
+          a: "Sí. Nuestros programas de arrendamiento aceptan todo tipo de crédito y empiezan desde $49 de pago inicial*. La aprobación no está garantizada y depende del programa.",
         },
         {
           q: "¿Qué necesito para solicitar?",
@@ -848,10 +848,10 @@ export const LAPTOPS: CategoryPageData = {
       kicker: "Laptops & tablets · Leasing · Houston",
       h1: ["MacBook, iPad & Galaxy Tab.", "Take it home today."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. All credit welcome — our leasing programs start as low as $49 initial payment* with Acima, one of our leasing providers, with weekly, biweekly or monthly payments, subject to approval. Terms and conditions apply.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini and Samsung Galaxy Tab are in the display cases on Hillcroft. All credit welcome — our leasing programs start as low as $49 initial payment*, with weekly, biweekly or monthly payments, subject to approval.",
       chips: [
         "All credit welcome",
-        "As low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.",
+        "As low as $49 initial payment*",
         "Apple & Samsung",
         "Se habla español",
       ],
@@ -870,7 +870,7 @@ export const LAPTOPS: CategoryPageData = {
         ],
         [
           "Take it home today",
-          "Start with as low as $49 initial payment* with Acima, one of our leasing providers, then weekly, biweekly or monthly payments. Terms and conditions apply.",
+          "Start with as low as $49 initial payment*, then weekly, biweekly or monthly payments.",
         ],
       ],
       galleryTitle: "On display at the store",
@@ -882,7 +882,7 @@ export const LAPTOPS: CategoryPageData = {
         },
         {
           q: "Can I get a MacBook or iPad with bad credit or little credit history?",
-          a: "Yes. Our leasing programs welcome all credit, with options as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply. Approval isn't guaranteed and depends on the program.",
+          a: "Yes. Our leasing programs welcome all credit, with options as low as $49 initial payment*. Approval isn't guaranteed and depends on the program.",
         },
         {
           q: "What do I need to apply?",
@@ -913,10 +913,10 @@ export const LAPTOPS: CategoryPageData = {
       kicker: "Laptops y tabletas · Arrendamiento · Houston",
       h1: ["MacBook, iPad y Galaxy Tab.", "Llévatelo hoy."],
       intro:
-        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Todo crédito es bienvenido: nuestros programas de arrendamiento empiezan desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, sujeto a aprobación, con pagos semanales, quincenales o mensuales. Aplican términos y condiciones.",
+        "MacBook Air, MacBook Neo, iPad Pro, iPad, iPad mini y Samsung Galaxy Tab están en las vitrinas de Hillcroft. Todo crédito es bienvenido: nuestros programas de arrendamiento empiezan desde $49 de pago inicial*, sujeto a aprobación, con pagos semanales, quincenales o mensuales.",
       chips: [
         "Todo crédito es bienvenido",
-        "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+        "Desde $49 de pago inicial*",
         "Apple y Samsung",
         "We speak English",
       ],
@@ -935,7 +935,7 @@ export const LAPTOPS: CategoryPageData = {
         ["Elige tu equipo", "MacBook, iPad o Galaxy Tab; agrega funda o mica si quieres."],
         [
           "Llévatelo hoy",
-          "Empieza desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, y luego pagos semanales, quincenales o mensuales. Aplican términos y condiciones.",
+          "Empieza desde $49 de pago inicial* y luego pagos semanales, quincenales o mensuales.",
         ],
       ],
       galleryTitle: "En exhibición en la tienda",
@@ -947,7 +947,7 @@ export const LAPTOPS: CategoryPageData = {
         },
         {
           q: "¿Puedo llevarme una MacBook o iPad si tengo mal crédito o poco historial de crédito?",
-          a: "Sí. Nuestros programas de arrendamiento aceptan todo tipo de crédito y empiezan desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones. La aprobación no está garantizada y depende del programa.",
+          a: "Sí. Nuestros programas de arrendamiento aceptan todo tipo de crédito y empiezan desde $49 de pago inicial*. La aprobación no está garantizada y depende del programa.",
         },
         {
           q: "¿Qué necesito para solicitar?",
@@ -1038,8 +1038,8 @@ export const IPHONE_18: CategoryPageData = {
           "Desbloqueado: pregunta con qué compañías funciona",
         ),
         l(
-          "Leasing — all credit welcome, iPhone 18 Pro Max as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.",
-          "A pagos con todo tipo de crédito, iPhone 18 Pro Max desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+          "Leasing — all credit welcome, iPhone 18 Pro Max as low as $49 initial payment*",
+          "A pagos con todo tipo de crédito, iPhone 18 Pro Max desde $49 de pago inicial*",
         ),
       ],
     },
@@ -1102,10 +1102,10 @@ export const IPHONE_18: CategoryPageData = {
       kicker: "iPhone 18 · In store · Houston",
       h1: ["iPhone 18 Pro Max in Houston.", "In store on Hillcroft."],
       intro:
-        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — all credit welcome, as low as $49 initial payment* with Acima, one of our leasing providers, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Terms and conditions apply. Stock changes quickly, so call to confirm the color and storage you want.",
+        "The iPhone 18 Pro Max is in our store at 3640 Hillcroft St. Take it home today with leasing — all credit welcome, as low as $49 initial payment*, subject to approval — trade in your old phone toward it, and leave with a case, tempered glass and your prepaid plan set up. Stock changes quickly, so call to confirm the color and storage you want.",
       chips: [
         "All credit welcome",
-        "Lease as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.",
+        "Lease as low as $49 initial payment*",
         "Trade in your old phone",
         "Se habla español",
       ],
@@ -1124,7 +1124,7 @@ export const IPHONE_18: CategoryPageData = {
         ],
         [
           "Take it home today",
-          "Start with as low as $49 initial payment* with Acima, one of our leasing providers, on the iPhone 18 Pro Max, then weekly, biweekly or monthly payments. Terms and conditions apply.",
+          "Start with as low as $49 initial payment* on the iPhone 18 Pro Max, then weekly, biweekly or monthly payments.",
         ],
         [
           "Set up and go",
@@ -1140,7 +1140,7 @@ export const IPHONE_18: CategoryPageData = {
         },
         {
           q: "Can I get an iPhone 18 with bad credit or little credit history?",
-          a: "You can apply. Leasing (lease-to-own) welcomes all credit — the iPhone 18 Pro Max starts as low as $49 initial payment* with Acima, one of our leasing providers — with weekly, biweekly or monthly payments. Terms and conditions apply. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
+          a: "You can apply. Leasing (lease-to-own) welcomes all credit — the iPhone 18 Pro Max starts as low as $49 initial payment* — with weekly, biweekly or monthly payments. Approval isn't guaranteed, and the total cost to own is more than the cash price.",
         },
         {
           q: "What do I need to apply for leasing?",
@@ -1180,10 +1180,10 @@ export const IPHONE_18: CategoryPageData = {
       kicker: "iPhone 18 · En tienda · Houston",
       h1: ["iPhone 18 Pro Max en Houston.", "En la tienda de Hillcroft."],
       intro:
-        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: con todo tipo de crédito, desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, sujeto a aprobación. Aplican términos y condiciones. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
+        "El iPhone 18 Pro Max está en nuestra tienda en 3640 Hillcroft St. Llévatelo hoy con arrendamiento: con todo tipo de crédito, desde $49 de pago inicial*, sujeto a aprobación. Cambia tu celular usado por el nuevo y sal con funda, mica y tu plan prepagado activado. El inventario cambia rápido; llama para confirmar color y capacidad.",
       chips: [
         "Todo crédito es bienvenido",
-        "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+        "Desde $49 de pago inicial*",
         "Cambia tu celular usado",
         "We speak English",
       ],
@@ -1205,7 +1205,7 @@ export const IPHONE_18: CategoryPageData = {
         ],
         [
           "Llévatelo hoy",
-          "Empieza desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales. Aplican términos y condiciones.",
+          "Empieza desde $49 de pago inicial* en el iPhone 18 Pro Max y luego pagos semanales, quincenales o mensuales.",
         ],
         [
           "Configúralo y listo",
@@ -1221,7 +1221,7 @@ export const IPHONE_18: CategoryPageData = {
         },
         {
           q: "¿Puedo sacar un iPhone 18 si tengo mal crédito o poco historial de crédito?",
-          a: "Puedes aplicar. El arrendamiento con opción a compra acepta todo tipo de crédito: el iPhone 18 Pro Max empieza desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, con pagos semanales, quincenales o mensuales. Aplican términos y condiciones. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
+          a: "Puedes aplicar. El arrendamiento con opción a compra acepta todo tipo de crédito: el iPhone 18 Pro Max empieza desde $49 de pago inicial*, con pagos semanales, quincenales o mensuales. La aprobación no está garantizada y el costo total es mayor que el precio de contado.",
         },
         {
           q: "¿Qué necesito para solicitar el arrendamiento?",

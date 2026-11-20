@@ -28,6 +28,8 @@ export type IntlLang = {
   address: string;
   phone: string;
   rating: string;
+  /** The separate disclaimer for the asterisked initial payment in `services`. */
+  initialNote: string;
   leaseNote: string;
   fullSite: string;
 };
@@ -48,7 +50,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Dịch vụ của chúng tôi",
     services: [
       "Điện thoại mới đã mở khóa: iPhone 18 Pro Max, Samsung Galaxy và nhiều dòng Android khác.",
-      "Thuê mua (lease-to-own): chấp nhận mọi mức tín dụng, thanh toán ban đầu chỉ từ $49* với Acima, một trong các nhà cung cấp thuê mua của chúng tôi (áp dụng các điều khoản và điều kiện), thanh toán hằng tuần, hai tuần một lần hoặc hằng tháng (cần được duyệt).",
+      "Thuê mua (lease-to-own): chấp nhận mọi mức tín dụng, thanh toán ban đầu chỉ từ $49*, thanh toán hằng tuần, hai tuần một lần hoặc hằng tháng (cần được duyệt).",
       "Thuê mua cả PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop và iPad.",
       "Sửa điện thoại trong ngày: màn hình, pin, cổng sạc cho iPhone, Samsung và Android. Báo giá trước khi sửa.",
       "Mở mạng điện thoại để dùng với nhà mạng bạn chọn.",
@@ -69,6 +71,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "Địa chỉ",
     phone: "Điện thoại",
     rating: `${RATING_COMMA}★ trên Google · ${REVIEW_COUNT} đánh giá`,
+    initialNote: "*Với Acima, một trong các nhà cung cấp thuê mua của chúng tôi. Áp dụng các điều khoản và điều kiện.",
     leaseNote: "Thuê mua không phải là khoản vay; tổng chi phí cao hơn giá mua trả thẳng.",
     fullSite: "Xem toàn bộ trang web bằng tiếng Anh",
   },
@@ -87,7 +90,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "我们的服务",
     services: [
       "全新已解锁手机：iPhone 18 Pro Max、Samsung Galaxy 及更多 Android 机型。",
-      "租购（lease-to-own）：欢迎各种信用记录，首期付款低至 $49*（通过我们的租赁服务商之一 Acima；适用条款和条件），可按周、双周或按月付款（需审核）。",
+      "租购（lease-to-own）：欢迎各种信用记录，首期付款低至 $49*，可按周、双周或按月付款（需审核）。",
       "PlayStation 5、Xbox、Nintendo Switch 2、MacBook、笔记本电脑和 iPad 也可租购。",
       "当日维修：iPhone、Samsung 及 Android 的屏幕、电池和充电口，维修前先报价。",
       "手机解锁，可使用您选择的运营商。",
@@ -103,6 +106,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "地址",
     phone: "电话",
     rating: `Google 评分 ${RATING}★ · ${REVIEW_COUNT} 条评价`,
+    initialNote: "*通过我们的租赁服务商之一 Acima。适用条款和条件。",
     leaseNote: "租购不是贷款；总成本高于现金价格。",
     fullSite: "查看完整英文网站",
   },
@@ -121,7 +125,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "خدماتنا",
     services: [
       "هواتف جديدة مفتوحة: iPhone 18 Pro Max وSamsung Galaxy والمزيد من هواتف Android.",
-      "التأجير المنتهي بالتملك: نرحب بجميع مستويات الائتمان، دفعة أولى تبدأ من $49* فقط مع Acima، أحد مزودي التأجير لدينا (تطبق الشروط والأحكام)، ودفعات أسبوعية أو كل أسبوعين أو شهرية (يخضع للموافقة).",
+      "التأجير المنتهي بالتملك: نرحب بجميع مستويات الائتمان، دفعة أولى تبدأ من $49* فقط، ودفعات أسبوعية أو كل أسبوعين أو شهرية (يخضع للموافقة).",
       "التأجير متاح أيضًا لأجهزة PlayStation 5 وXbox وNintendo Switch 2 وMacBook وأجهزة اللابتوب وiPad.",
       "إصلاح في نفس اليوم: الشاشات والبطاريات ومنافذ الشحن لأجهزة iPhone وSamsung وAndroid، مع تحديد السعر قبل البدء.",
       "فك قفل الهاتف لاستخدامه مع شركة الاتصالات التي تختارها.",
@@ -141,6 +145,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "العنوان",
     phone: "الهاتف",
     rating: `تقييم ${RATING}★ على Google · ${REVIEW_COUNT} مراجعات`,
+    initialNote: "*مع Acima، أحد مزودي التأجير لدينا. تطبق الشروط والأحكام.",
     leaseNote: "التأجير المنتهي بالتملك ليس قرضًا؛ التكلفة الإجمالية أعلى من سعر الشراء نقدًا.",
     fullSite: "عرض الموقع الكامل بالإنجليزية",
   },
@@ -159,7 +164,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "ہماری خدمات",
     services: [
       "نئے ان لاکڈ فون: iPhone 18 Pro Max، Samsung Galaxy اور دیگر Android فون۔",
-      "لیز ٹو اون: ہر طرح کا کریڈٹ قبول، ابتدائی ادائیگی صرف $49* سے، Acima کے ساتھ جو ہمارے لیزنگ فراہم کنندگان میں سے ایک ہے (شرائط و ضوابط لاگو ہیں)، ہفتہ وار، دو ہفتہ وار یا ماہانہ اقساط (منظوری سے مشروط)۔",
+      "لیز ٹو اون: ہر طرح کا کریڈٹ قبول، ابتدائی ادائیگی صرف $49* سے، ہفتہ وار، دو ہفتہ وار یا ماہانہ اقساط (منظوری سے مشروط)۔",
       "PlayStation 5، Xbox، Nintendo Switch 2، MacBook، لیپ ٹاپ اور iPad بھی لیز پر دستیاب ہیں۔",
       "اسی دن مرمت: iPhone، Samsung اور Android کی اسکرین، بیٹری اور چارجنگ پورٹ؛ کام شروع کرنے سے پہلے قیمت بتائی جاتی ہے۔",
       "فون ان لاک کریں تاکہ آپ اپنی پسند کی کمپنی استعمال کر سکیں۔",
@@ -179,6 +184,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "پتہ",
     phone: "فون",
     rating: `Google پر ${RATING}★ · ${REVIEW_COUNT} ریویوز`,
+    initialNote: "*Acima کے ساتھ، جو ہمارے لیزنگ فراہم کنندگان میں سے ایک ہے۔ شرائط و ضوابط لاگو ہیں۔",
     leaseNote: "لیز ٹو اون قرض نہیں ہے؛ کل لاگت نقد قیمت سے زیادہ ہوتی ہے۔",
     fullSite: "مکمل ویب سائٹ انگریزی میں دیکھیں",
   },
@@ -197,7 +203,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "हमारी सेवाएँ",
     services: [
       "नए अनलॉक्ड फ़ोन: iPhone 18 Pro Max, Samsung Galaxy और अन्य Android फ़ोन।",
-      "लीज़-टू-ओन: हर तरह का क्रेडिट स्वीकार, शुरुआती भुगतान सिर्फ़ $49* से, Acima के साथ, जो हमारे लीज़िंग प्रदाताओं में से एक है (नियम और शर्तें लागू), साप्ताहिक, हर दो सप्ताह या मासिक भुगतान (मंज़ूरी के अधीन)।",
+      "लीज़-टू-ओन: हर तरह का क्रेडिट स्वीकार, शुरुआती भुगतान सिर्फ़ $49* से, साप्ताहिक, हर दो सप्ताह या मासिक भुगतान (मंज़ूरी के अधीन)।",
       "PlayStation 5, Xbox, Nintendo Switch 2, MacBook, लैपटॉप और iPad भी लीज़ पर उपलब्ध।",
       "उसी दिन रिपेयर: iPhone, Samsung और Android की स्क्रीन, बैटरी और चार्जिंग पोर्ट; काम शुरू होने से पहले कीमत बताई जाती है।",
       "फ़ोन अनलॉक, ताकि आप अपनी पसंद की कंपनी इस्तेमाल कर सकें।",
@@ -218,6 +224,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "पता",
     phone: "फ़ोन",
     rating: `Google पर ${RATING}★ · ${REVIEW_COUNT} रिव्यू`,
+    initialNote: "*Acima के साथ, जो हमारे लीज़िंग प्रदाताओं में से एक है। नियम और शर्तें लागू।",
     leaseNote: "लीज़-टू-ओन ऋण नहीं है; कुल लागत नकद कीमत से अधिक होती है।",
     fullSite: "पूरी वेबसाइट अंग्रेज़ी में देखें",
   },
@@ -236,7 +243,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Nos services",
     services: [
       "Téléphones neufs débloqués : iPhone 18 Pro Max, Samsung Galaxy et autres Android.",
-      "Location avec option d'achat : tous les profils de crédit sont les bienvenus, à partir de seulement $49 de paiement initial* avec Acima, l'un de nos fournisseurs de location (conditions générales applicables), paiements hebdomadaires, toutes les deux semaines ou mensuels (sous réserve d'approbation).",
+      "Location avec option d'achat : tous les profils de crédit sont les bienvenus, à partir de seulement $49 de paiement initial*, paiements hebdomadaires, toutes les deux semaines ou mensuels (sous réserve d'approbation).",
       "Également disponible pour PlayStation 5, Xbox, Nintendo Switch 2, MacBook, ordinateurs portables et iPad.",
       "Réparation le jour même : écrans, batteries et ports de charge pour iPhone, Samsung et Android ; devis avant toute intervention.",
       "Déblocage de téléphone pour utiliser l'opérateur de votre choix.",
@@ -253,6 +260,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "Adresse",
     phone: "Téléphone",
     rating: `${RATING_COMMA}★ sur Google · ${REVIEW_COUNT} avis`,
+    initialNote: "*Avec Acima, l'un de nos fournisseurs de location. Des conditions générales s'appliquent.",
     leaseNote:
       "La location avec option d'achat n'est pas un prêt ; le coût total dépasse le prix comptant.",
     fullSite: "Voir le site complet en anglais",
@@ -272,7 +280,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Nossos serviços",
     services: [
       "Celulares novos desbloqueados: iPhone 18 Pro Max, Samsung Galaxy e outros Android.",
-      "Leasing com opção de compra: todos os históricos de crédito são bem-vindos, pagamento inicial a partir de apenas $49* com a Acima, um dos nossos fornecedores de leasing (termos e condições se aplicam), pagamentos semanais, quinzenais ou mensais (sujeito a aprovação).",
+      "Leasing com opção de compra: todos os históricos de crédito são bem-vindos, pagamento inicial a partir de apenas $49*, pagamentos semanais, quinzenais ou mensais (sujeito a aprovação).",
       "Também disponível para PlayStation 5, Xbox, Nintendo Switch 2, MacBook, notebooks e iPad.",
       "Conserto no mesmo dia: telas, baterias e entradas de carregamento de iPhone, Samsung e Android; orçamento antes do serviço.",
       "Desbloqueio de celular para usar a operadora que você escolher.",
@@ -289,6 +297,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "Endereço",
     phone: "Telefone",
     rating: `${RATING_COMMA}★ no Google · ${REVIEW_COUNT} avaliações`,
+    initialNote: "*Com a Acima, um dos nossos fornecedores de leasing. Termos e condições se aplicam.",
     leaseNote:
       "O leasing com opção de compra não é um empréstimo; o custo total é maior que o preço à vista.",
     fullSite: "Ver o site completo em inglês",
@@ -308,7 +317,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "서비스",
     services: [
       "새 언락폰: iPhone 18 Pro Max, Samsung Galaxy 및 기타 Android 휴대폰.",
-      "리스 후 구매(lease-to-own): 모든 신용 등급 환영, 초기 납입금 최저 $49부터*(저희 리스 제공업체 중 하나인 Acima 이용 시, 약관 적용), 매주·격주·매월 납부(승인 필요).",
+      "리스 후 구매(lease-to-own): 모든 신용 등급 환영, 초기 납입금 최저 $49부터*, 매주·격주·매월 납부(승인 필요).",
       "PlayStation 5, Xbox, Nintendo Switch 2, MacBook, 노트북, iPad도 리스 가능.",
       "당일 수리: iPhone, Samsung, Android의 액정, 배터리, 충전 포트. 수리 전 가격 안내.",
       "원하는 통신사를 쓸 수 있도록 휴대폰 언락.",
@@ -324,6 +333,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "주소",
     phone: "전화",
     rating: `Google 평점 ${RATING}★ · 리뷰 ${REVIEW_COUNT}개`,
+    initialNote: "*저희 리스 제공업체 중 하나인 Acima 이용 시. 약관이 적용됩니다.",
     leaseNote: "리스 후 구매는 대출이 아니며, 총비용이 현금 가격보다 높습니다.",
     fullSite: "전체 웹사이트 영어로 보기",
   },
@@ -342,7 +352,7 @@ export const INTL_LANGS: IntlLang[] = [
     servicesTitle: "Aming mga serbisyo",
     services: [
       "Bagong unlocked na phone: iPhone 18 Pro Max, Samsung Galaxy at iba pang Android.",
-      "Lease-to-own: tinatanggap ang lahat ng uri ng credit, paunang bayad na mula $49 lang* sa Acima, isa sa aming mga leasing provider (may mga tuntunin at kundisyon), lingguhan, kada dalawang linggo o buwanang hulog (depende sa approval).",
+      "Lease-to-own: tinatanggap ang lahat ng uri ng credit, paunang bayad na mula $49 lang*, lingguhan, kada dalawang linggo o buwanang hulog (depende sa approval).",
       "Puwede ring i-lease ang PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop at iPad.",
       "Same-day na pag-aayos: screen, baterya at charging port ng iPhone, Samsung at Android; sinasabi ang presyo bago simulan.",
       "Pag-unlock ng phone para magamit ang carrier na gusto mo.",
@@ -363,6 +373,7 @@ export const INTL_LANGS: IntlLang[] = [
     address: "Address",
     phone: "Telepono",
     rating: `${RATING}★ sa Google · ${REVIEW_COUNT} na review`,
+    initialNote: "*Sa Acima, isa sa aming mga leasing provider. May mga tuntunin at kundisyon.",
     leaseNote:
       "Ang lease-to-own ay hindi loan; ang kabuuang halaga ay mas mataas kaysa sa cash price.",
     fullSite: "Tingnan ang buong website sa English",

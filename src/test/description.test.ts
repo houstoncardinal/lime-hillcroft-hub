@@ -69,7 +69,10 @@ describe("Shopify descriptions on product pages", () => {
   it("keeps the Dell 15's specs, note and store details in order", () => {
     const [, html = ""] = imported.find(([h]) => h.startsWith("dell-15")) ?? [];
     const blocks = parseDescription(html);
-    expect(blocks.map((b) => b.type)).toEqual(["lead", "heading", "specs", "note", "paragraph"]);
+    expect(blocks.map((b) => b.type)).toEqual(["lead", "heading", "specs", "note", "paragraph", "fine"]);
+    // The lease-to-own line's Acima disclaimer is its own fine-print paragraph.
+    const fine = blocks.at(-1);
+    expect(fine?.type === "fine" && inlineText(fine.text)).toMatch(/^\*As low as \$49 initial payment is with Acima/);
     expect(specRows(blocks)).toContainEqual(["Display", '15.6" Full HD (1920 × 1080) touchscreen with webcam']);
   });
 
@@ -77,8 +80,8 @@ describe("Shopify descriptions on product pages", () => {
     const [, html = ""] = imported.find(([h]) => h === "galaxy-z-fold7") ?? [];
     const blocks = parseDescription(html);
     expect(blocks.find((b) => b.type === "list")).toMatchObject({ items: { length: 4 } });
-    const fine = blocks.find((b) => b.type === "fine");
-    expect(fine?.type === "fine" && fine.text.some((r) => r.href?.startsWith("https://commons."))).toBe(true);
+    const credits = blocks.filter((b) => b.type === "fine");
+    expect(credits.some((f) => f.type === "fine" && f.text.some((r) => r.href?.startsWith("https://commons.")))).toBe(true);
   });
 
   it("handles descriptions typed straight into Shopify", () => {

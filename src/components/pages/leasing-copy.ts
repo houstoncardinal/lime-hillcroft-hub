@@ -19,12 +19,12 @@ const en = {
       "Take home an iPhone or Samsung Galaxy phone, a PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop or iPad today — ",
       "all credit welcome",
       ", as low as ",
-      "$49 initial payment* with Acima, one of our leasing providers",
-      ", subject to approval. Terms and conditions apply.",
+      "$49 initial payment*",
+      ", subject to approval.",
     ],
     call: "Check your options",
     visit: "Visit the store",
-    chips: ["All credit welcome", "As low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply.", "Take it home today", "Se habla español"],
+    chips: ["All credit welcome", "As low as $49 initial payment*", "Take it home today", "Se habla español"],
     mainAlt:
       "PlayStation 5 Slim and Nintendo Switch 2 on display at TIC Wireless Electronic & Repair Center next to a lease-to-own sign",
     mainCaption: "PS5 & Switch 2 — in store now",
@@ -99,7 +99,7 @@ const en = {
       ],
       [
         "Pay a little to start",
-        "Options as low as $49 initial payment* with Acima, one of our leasing providers, depending on the item and the plan you qualify for. Terms and conditions apply.",
+        "Options as low as $49 initial payment* depending on the item and the plan you qualify for.",
       ],
       [
         "Take it home today",
@@ -117,7 +117,7 @@ const en = {
         "All credit welcome",
         "All credit is welcome when you apply, and bad credit is OK. Subject to approval.",
       ],
-      ["As low as $49 initial payment* with Acima, one of our leasing providers", "Start with a small amount instead of paying the full price on day one. Terms and conditions apply."],
+      ["As low as $49 initial payment*", "Start with a small amount instead of paying the full price on day one."],
       [
         "Predictable payments",
         "Regular payments on a set schedule. Ask us about early-payoff options.",
@@ -134,7 +134,7 @@ const en = {
     items: [
       {
         q: "Can I get an iPhone or Samsung phone with bad credit?",
-        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones welcomes all credit, as low as $49 initial payment* with Acima, one of our leasing providers, so bad credit isn't automatically a deal-breaker. Terms and conditions apply. Approval isn't guaranteed; bring a valid photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
+        a: "Yes, you can apply. Lease-to-own on unlocked iPhones and Samsung Galaxy phones welcomes all credit, as low as $49 initial payment*, so bad credit isn't automatically a deal-breaker. Approval isn't guaranteed; bring a valid photo ID, your SSN or ITIN, and an active bank account and debit card; it takes a few minutes in store to find out.",
       },
       {
         q: "Can I get a PS5 or Xbox with bad credit?",
@@ -150,7 +150,7 @@ const en = {
       },
       {
         q: "How much do I pay upfront?",
-        a: "Options start as low as $49 initial payment* with Acima, one of our leasing providers. Terms and conditions apply. The exact amount depends on the item you choose and the plan you qualify for.",
+        a: "Options start as low as $49 initial payment*. The exact amount depends on the item you choose and the plan you qualify for.",
       },
       {
         q: "Can I pay it off early?",
@@ -194,14 +194,14 @@ const es: LeasingCopy = {
       "Llévate hoy un iPhone o Samsung Galaxy, un PlayStation 5, Xbox, Nintendo Switch 2, MacBook, laptop o iPad — ",
       "con todo tipo de crédito",
       ", desde ",
-      "$49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento",
-      ", sujeto a aprobación. Aplican términos y condiciones.",
+      "$49 de pago inicial*",
+      ", sujeto a aprobación.",
     ],
     call: "Consulta tus opciones",
     visit: "Visita la tienda",
     chips: [
       "Todo crédito es bienvenido",
-      "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+      "Desde $49 de pago inicial*",
       "Llévatelo hoy",
       "We speak English",
     ],
@@ -280,7 +280,7 @@ const es: LeasingCopy = {
       ],
       [
         "Da un pago inicial pequeño",
-        "Opciones desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, según el equipo y el plan que te aprueben. Aplican términos y condiciones.",
+        "Opciones desde $49 de pago inicial* según el equipo y el plan que te aprueben.",
       ],
       [
         "Llévatelo hoy",
@@ -299,7 +299,7 @@ const es: LeasingCopy = {
         "Todo crédito es bienvenido al aplicar, y el mal crédito está bien. Sujeto a aprobación.",
       ],
       [
-        "Desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones.",
+        "Desde $49 de pago inicial*",
         "Empieza con poco en lugar de pagar el precio completo el primer día.",
       ],
       [
@@ -318,7 +318,7 @@ const es: LeasingCopy = {
     items: [
       {
         q: "¿Puedo sacar un iPhone o Samsung a pagos con mal crédito?",
-        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados acepta todo tipo de crédito y empieza desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, así que el mal crédito no es impedimento automático. Aplican términos y condiciones. La aprobación no está garantizada; trae una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
+        a: "Sí, puedes aplicar. El arrendamiento con opción a compra en iPhone y Samsung Galaxy desbloqueados acepta todo tipo de crédito y empieza desde $49 de pago inicial*, así que el mal crédito no es impedimento automático. La aprobación no está garantizada; trae una identificación oficial con foto, tu SSN o ITIN, y una cuenta bancaria activa con tarjeta de débito; en unos minutos en la tienda sabes si calificas.",
       },
       {
         q: "¿Puedo sacar un PS5 o Xbox a pagos con mal crédito?",
@@ -334,7 +334,7 @@ const es: LeasingCopy = {
       },
       {
         q: "¿Cuánto doy de pago inicial?",
-        a: "Las opciones empiezan desde $49 de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento. Aplican términos y condiciones. La cantidad exacta depende del equipo y del plan que te aprueben.",
+        a: "Las opciones empiezan desde $49 de pago inicial*. La cantidad exacta depende del equipo y del plan que te aprueben.",
       },
       {
         q: "¿Puedo liquidarlo antes?",

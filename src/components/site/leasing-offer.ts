@@ -1,7 +1,8 @@
 // In-store lease-to-own is separate from online Shop Pay Installments.
-// The advertised initial payment is Acima's (owner's rule): every mention of the amount says,
-// right next to it, that it's with Acima, one of our leasing providers, and that terms and
-// conditions apply; it also carries an asterisk pointing to the footnote below.
+// The advertised initial payment is Acima's (owner's rule). The copy says "as low as $49 initial
+// payment*", and a separate disclaimer line under it says it's with Acima, one of our leasing
+// providers, and that terms and conditions apply (see site/acima-link.tsx); the footnote below
+// adds the details where the partners are listed.
 export const LEASING_INITIAL_PAYMENT_USD = 49;
 export const LEASING_INITIAL_PAYMENT_PARTNER = "Acima";
 /** TIC Wireless's Acima application; every "Acima" in the site's text links here. */

@@ -13,7 +13,6 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { linkAcima } from "@/components/site/acima-link";
 import { LEASING_INITIAL_PAYMENT_USD } from "@/components/site/leasing-offer";
 import { LeasingPortals } from "@/components/site/leasing-portals";
 import { Money, MoneyText } from "@/components/intl/money";
@@ -74,11 +73,13 @@ export function LeasingPage({ lang }: { lang: Lang }) {
               : "Arrendamiento con todo tipo de crédito."}
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            {linkAcima(
-              lang === "en"
-                ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment* with Acima, one of our leasing providers, subject to approval. Terms and conditions apply. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
-                : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial* con Acima, uno de nuestros proveedores de arrendamiento, sujeto a aprobación. Aplican términos y condiciones. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`,
-            )}
+            <MoneyText
+              text={
+                lang === "en"
+                  ? `As low as $${LEASING_INITIAL_PAYMENT_USD} initial payment*, subject to approval. Apply with a partner below, review your terms, then visit our Hillcroft store to choose your device.`
+                  : `Desde $${LEASING_INITIAL_PAYMENT_USD} de pago inicial*, sujeto a aprobación. Solicita con un socio, revisa tus términos y visita nuestra tienda en Hillcroft para elegir tu equipo.`
+              }
+            />
           </p>
         </div>
       </section>

@@ -13,6 +13,7 @@ import {
 import storefront from "@/assets/photos/storefront-3640.webp";
 import storefrontSm from "@/assets/photos/storefront-3640-sm.webp";
 import { MoneyText } from "@/components/intl/money";
+import { linkAcima } from "@/components/site/acima-link";
 import type { IntlLang } from "@/components/intl/languages";
 import { ADDRESS, DIRECTIONS, PHONE, TEL } from "@/components/site/business";
 import { SiteFooter, SiteHeader } from "@/components/site/chrome";
@@ -81,6 +82,12 @@ export function IntlPage({ l }: { l: IntlLang }) {
                 <CircleCheck className="mt-1 h-5 w-5 shrink-0 text-primary" />
                 <span>
                   <MoneyText text={s} />
+                  {/* The separate disclaimer under the line that advertises the initial payment. */}
+                  {s.includes("*") && (
+                    <span className="mt-1.5 block text-[0.78rem] leading-snug text-muted-foreground">
+                      {linkAcima(l.initialNote)}
+                    </span>
+                  )}
                 </span>
               </li>
             ))}
